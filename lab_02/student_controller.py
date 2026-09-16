@@ -1,8 +1,9 @@
 """Student starter for Lab 02.
 
-Complete the TODO sections, then compare the behaviour with the reference
-implementation in lab02.py.  Do not copy threshold values into a real robot
-until its range and mechanical limits have been checked.
+Complete TODO 1-4, then run lab02.py with --controller-source student.
+The simulator calls these methods through StudentControllerAdapter. Each update
+method must return its new value; the adapter keeps state and filtered_distance
+in sync. Do not copy parameters into a real robot without checking its limits.
 """
 
 from __future__ import annotations
@@ -51,4 +52,4 @@ class StudentController:
 
 
 if __name__ == "__main__":
-    print("Open this file and complete TODO 1-4 before connecting it to the lab loop.")
+    print("Complete TODO 1-4, then run lab02.py --controller-source student.")

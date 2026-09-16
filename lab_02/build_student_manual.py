@@ -166,7 +166,7 @@ for item in (
     add_bullet(doc, item)
 
 doc.add_heading("ไฟล์ที่ใช้และข้อควรระวัง", level=1)
-add_body(doc, "ทำงานในโฟลเดอร์ lab_02 ของ GitHub repo RAE67_bio_ins โดยใช้ lab02.py, student_controller.py, plot_trial.py, requirements.txt และ tests/test_lab02.py")
+add_body(doc, "ทำงานในโฟลเดอร์ lab_02 ของ GitHub repo RAE67_bio_ins โดยใช้ lab02.py, student_controller.py, grade_submission.py, plot_trial.py, requirements.txt และ tests/")
 add_body(doc, "แหล่งไฟล์: https://github.com/potiwat/RAE67_bio_ins/tree/main/lab_02 (repo เป็น private ต้องได้รับสิทธิ์เข้าถึงก่อน)")
 add_body(doc, "ค่าระยะ threshold, gain และ command limit ในเอกสารนี้เป็น proposed course model สำหรับ simulator เท่านั้น ห้ามใช้กับหุ่นยนต์จริงก่อนตรวจ datasheet, mechanical limit, หน่วยคำสั่ง และ emergency stop")
 
@@ -190,11 +190,11 @@ for command in (
 ):
     add_command(doc, command)
 add_body(doc, "หาก PowerShell ไม่อนุญาตให้ activate ให้ใช้ .venv\\Scripts\\python.exe แทน python ในคำสั่งถัดไป โดยไม่ต้องเปลี่ยน execution policy ของเครื่อง")
-add_body(doc, "ผลที่คาด: tests ผ่าน 6 รายการ หากไม่ผ่าน ให้จด error และแก้ก่อนเริ่มเก็บข้อมูล")
+add_body(doc, "ผลที่คาด: tests ผ่าน 12 รายการ หากไม่ผ่าน ให้จด error และแก้ก่อนเริ่มเก็บข้อมูล ชุดนี้ทดสอบตัวเชื่อม แต่ไม่ถือว่า TODO ของนักศึกษาเสร็จแล้ว")
 
 doc.add_heading("ขั้นที่ 3 อ่านและเติม controller", level=1)
 add_body(doc, "เปิด student_controller.py และทำ TODO 1 ถึง TODO 4: low pass filter, single threshold, hysteresis และ proportional command พร้อม clamp จากนั้นเทียบแนวคิดกับ lab02.py ซึ่งเป็น reference implementation")
-add_body(doc, "student_controller.py เป็นแบบฝึกเติมฟังก์ชันแยกต่างหาก คำสั่งทดลองด้านล่างรัน implementation ใน lab02.py หากต้องการทดสอบโค้ดของกลุ่ม ให้ผู้สอนตรวจและเชื่อมฟังก์ชันของกลุ่มเข้ากับ experiment loop ก่อน")
+add_body(doc, "lab02.py เชื่อม StudentController เข้ากับ experiment loop แล้ว เมธอด TODO แต่ละตัวต้องคืนค่าที่คำนวณได้ โหมด reference ใช้ตัวอย่างใน lab02.py ส่วนโหมด student ใช้ไฟล์ที่ส่งด้วย --student-file")
 add_table(doc, ["Condition", "หลักการ", "ข้อมูลที่ใช้"], [
     ("C0", "ทำ sequence ตามเวลา", "ไม่ใช้ sensor"),
     ("C1", "threshold 0.35 m", "raw distance"),
@@ -206,7 +206,11 @@ add_body(doc, "ตรวจทิศทางสัญญาณ: ใน simulato
 doc.add_heading("ขั้นที่ 4 ทดลอง A เปรียบเทียบ C0 ถึง C3", level=1)
 add_body(doc, "รัน 5 trials ต่อ condition ที่ noise σ = 0.01 m และ delay = 0 ms รวม 20 trials ทุก condition ใช้ input trajectory เดียวกัน")
 add_command(doc, "python lab02.py --protocol controller-comparison --out results\\comparison")
-add_body(doc, "ตรวจว่ามี run_config.json, summary_trials.csv, summary_aggregate.csv และ raw CSV ในโฟลเดอร์ trials เปิด run_config.json เพื่อบันทึก seed และ parameter ที่ใช้")
+add_body(doc, "หลังเติม TODO ครบ ให้ทดลอง controller ของกลุ่มด้วย input และ metric เดียวกัน แต่เก็บผลคนละโฟลเดอร์")
+add_command(doc, "python lab02.py --controller-source student --student-file student_controller.py --protocol controller-comparison --out results\\student_comparison")
+add_command(doc, "python grade_submission.py --student-file student_controller.py --out results\\student_grade.json")
+add_body(doc, "grade_submission.py รายงาน PASS/FAIL ของ filter, threshold, hysteresis, proportional/clamp, invalid sample และเปรียบเทียบ trace C0–C3 กับ reference หาก TODO ยังไม่เสร็จจะคืน exit code 1 โดยยังไม่สร้างผลทดลองของโหมด student")
+add_body(doc, "ตรวจว่ามี run_config.json, summary_trials.csv, summary_aggregate.csv และ raw CSV ในโฟลเดอร์ trials เปิด run_config.json เพื่อตรวจ seed, parameter, controller_source และ SHA-256 ของไฟล์นักศึกษา")
 add_body(doc, "Input trajectory 20 s: 0–4 s อยู่ไกล 0.60 m; 4–8 s เข้าใกล้ถึง 0.25 m; 8–12 s ค้างใกล้พร้อม disturbance เล็กน้อย; 12–16 s เคลื่อนออก; 16–20 s อยู่ไกล")
 
 doc.add_heading("ขั้นที่ 5 ทดลอง B ผลของ noise และ delay", level=1)
@@ -240,7 +244,6 @@ add_table(doc, ["Condition", "Latency enter mean ± SD s", "False trigger คร
 add_body(doc, "Controller ที่เลือกทดสอบ robustness __________  เหตุผล ________________________________")
 add_body(doc, "จำนวน invalid samples __________  จำนวน trial ที่ exclude __________  เหตุผล ________________")
 
-doc.add_page_break()
 doc.add_heading("คำถามวิเคราะห์", level=1)
 for question in (
     "C1 กับ C2 ต่างกันด้าน extra switches และ latency เท่าใด อ้างตัวเลขและหน่วย",
@@ -254,12 +257,14 @@ for question in (
 doc.add_heading("แนวทางเขียนรายงาน", level=1)
 add_body(doc, "รายงาน 1–2 หน้าเริ่มด้วยคำถามวิจัยและ prediction จากนั้นระบุ protocol, seed และจำนวน trial แสดงตารางผลพร้อมหน่วย เลือกกราฟที่ชี้เหตุการณ์สำคัญ แล้วอธิบายว่าข้อมูลสนับสนุนหรือขัดกับ prediction อย่างไร ปิดด้วยข้อจำกัด เช่น simulator ไม่แทน sensor และ actuator จริง")
 add_body(doc, "หากตัด trial หรือพบ invalid sample ต้องรายงานจำนวนและเหตุผลอย่างเปิดเผย ห้ามแก้ raw CSV หรือคัดเฉพาะผลที่สนับสนุนสมมติฐาน")
+add_body(doc, "ผล PASS/FAIL จาก grade_submission.py ใช้ตรวจการทำงานของโค้ดเท่านั้น ไม่แทนคะแนน 20 คะแนน ผู้สอนยังต้องตรวจ block diagram, protocol, การวิเคราะห์และการตีความ")
 
 doc.add_heading("สิ่งที่ต้องส่ง", level=1)
 for item in (
     "สมมติฐานก่อนทดลองและบันทึกการแก้สมมติฐาน หากมี",
     "Block diagram ของ sensorimotor loop ที่อธิบายทางข้อมูลและ feedback",
     "student_controller.py ที่เติม TODO พร้อม source code อื่นที่แก้",
+    "ผลตรวจจาก grade_submission.py และ run_config.json ของโหมด student",
     "run_config.json, raw CSV ทุก trial และ summary_aggregate.csv",
     "กราฟตัวแทนอย่างน้อย C1 และ C2 พร้อมตำแหน่ง physical crossing และ first correct response",
     "รายงาน 1–2 หน้า ระบุ condition, metric, ตัวเลขเปรียบเทียบ และข้อจำกัดของ simulator",

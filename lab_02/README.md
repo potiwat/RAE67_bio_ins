@@ -13,9 +13,10 @@
 ## 2. ไฟล์สำคัญ
 
 - `lab02.py` — simulator, controller C0–C3, protocol และ metric reference
-- `student_controller.py` — โครงเริ่มต้นที่ให้นักศึกษาเติม TODO 1–4
+- `student_controller.py` — โครงเริ่มต้นที่ให้นักศึกษาเติม TODO 1–4; simulator เรียกใช้ได้ด้วย `--controller-source student`
+- `grade_submission.py` — ตรวจพฤติกรรมโค้ดนักศึกษาแยกตามฟังก์ชันและทดลองครบ C0–C3
 - `plot_trial.py` — สร้างกราฟระยะ, state และ command จาก CSV หนึ่ง trial
-- `tests/test_lab02.py` — ตรวจ hysteresis, command limit, invalid sample และ sensor delay
+- `tests/` — ตรวจ reference, การเชื่อม student controller และกรณี TODO ยังไม่เสร็จ
 - `requirements.txt` — dependency สำหรับสร้างกราฟ
 
 ## 3. เตรียมสภาพแวดล้อม
@@ -64,7 +65,14 @@ python -m unittest discover -s tests -v
 | C2 | Low-pass filter และ hysteresis | filtered distance |
 | C3 | Proportional response และ clamp | filtered distance |
 
-ให้เปิด `student_controller.py` และเติม TODO 1–4 ก่อนอ่านส่วน implementation ใน `lab02.py`
+ให้เปิด `student_controller.py` และเติม TODO 1–4 ก่อนอ่านส่วน implementation ใน `lab02.py` โดยเมธอดแต่ละตัวต้องคืนค่าที่คำนวณได้ ตัวเชื่อมใน `lab02.py` จะจัดการ state, filter history และการส่ง command ให้ simulator
+
+มีสองโหมดที่ใช้ input, seed และ metric ชุดเดียวกัน:
+
+- `--controller-source reference` (ค่าเริ่มต้น) ใช้ตัวอย่างใน `lab02.py`
+- `--controller-source student` ใช้ `StudentController` ในไฟล์ที่ระบุด้วย `--student-file` (ค่าเริ่มต้นคือ `student_controller.py` ในโฟลเดอร์นี้)
+
+ไฟล์เริ่มต้นยังมี TODO จึงรันโหมด student ไม่ผ่านจนกว่านักศึกษาจะเติมฟังก์ชันครบ
 
 ## 7. ขั้นทดลอง A — เปรียบเทียบ C0–C3
 
@@ -73,6 +81,15 @@ python -m unittest discover -s tests -v
 ```powershell
 python lab02.py --protocol controller-comparison --out results\comparison
 ```
+
+เมื่อเติม TODO แล้ว ให้รันโค้ดนักศึกษาในโฟลเดอร์ผลแยกจาก reference:
+
+```powershell
+python lab02.py --controller-source student --protocol controller-comparison `
+  --student-file student_controller.py --out results\student_comparison
+```
+
+`run_config.json` จะบันทึก `controller_source`, ที่อยู่ไฟล์นักศึกษา และ SHA-256 ของไฟล์เพื่อระบุว่า CSV ชุดนั้นสร้างจาก submission ใด
 
 ไฟล์ที่ได้:
 
@@ -175,6 +192,22 @@ python plot_trial.py results\comparison\trials\C2_n0.01_d000_r01.csv `
 1. Prediction ก่อนทดลอง
 2. Block diagram ของ sensorimotor loop พร้อมทิศทางข้อมูลและ feedback
 3. `student_controller.py` ที่เติม TODO และ source code อื่นที่แก้
-4. `run_config.json`, raw CSV ทุก trial และ `summary_aggregate.csv`
+4. ผลตรวจ `grade_submission.py`, `run_config.json` ของโหมด student, raw CSV ทุก trial และ `summary_aggregate.csv`
 5. กราฟตัวแทนอย่างน้อย C1 และ C2 พร้อมเวลา physical crossing และ first correct response
 6. รายงาน 1–2 หน้า พร้อมข้อจำกัดของการทดลอง
+
+## 14. ตรวจงานนักศึกษา
+
+จากโฟลเดอร์ `lab_02` ผู้สอนใช้คำสั่งต่อไปนี้กับไฟล์ที่แต่ละกลุ่มส่ง โดยแยกชื่อรายงานและโฟลเดอร์ผลต่อกลุ่ม:
+
+```powershell
+python grade_submission.py --student-file path\to\student_controller.py `
+  --out results\group01_grade.json
+python lab02.py --controller-source student `
+  --student-file path\to\student_controller.py `
+  --protocol controller-comparison --out results\group01_trials
+```
+
+รายงานตรวจการโหลดไฟล์, filter, threshold, hysteresis, proportional/clamp, invalid sample และการรันเต็ม C0–C3 หากยังมี TODO จะรายงาน FAIL และคืน exit code 1 ผลตรวจนี้เป็นเพียงหลักฐานด้าน controller ไม่ใช่คะแนน 20 คะแนนอัตโนมัติ ผู้สอนยังต้องตรวจ block diagram, ความซื่อสัตย์ของข้อมูล, การวิเคราะห์ และการตีความ
+
+การนำไฟล์ Python ที่นักศึกษาส่งมารันคือการรันโค้ดของผู้ส่ง ควรตรวจใน VM หรือสภาพแวดล้อมแยกที่ไม่มี token, credential หรือข้อมูลส่วนตัว และอย่ารันด้วยสิทธิ์สูง

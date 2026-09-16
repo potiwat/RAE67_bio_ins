@@ -8,15 +8,18 @@ from __future__ import annotations
 
 import argparse
 import csv
+import hashlib
+import importlib.util
 import json
 import math
 import random
 import shutil
 import statistics
+import sys
 from collections import deque
 from dataclasses import asdict, dataclass
 from pathlib import Path
-from typing import Iterable, Sequence
+from typing import Callable, Iterable, Sequence
 
 
 CONDITIONS = ("C0", "C1", "C2", "C3")
@@ -108,6 +111,90 @@ class Controller:
         return self.state, command, filtered
 
 
+class StudentControllerAdapter:
+    """Connect the four student TODO methods to the same experiment loop."""
+
+    def __init__(self, condition: str, config: LabConfig, student_class: type, parameters_class: type) -> None:
+        self.condition = condition
+        parameters = parameters_class(**{
+            name: getattr(config, name)
+            for name in (
+                "threshold_m", "enter_threshold_m", "exit_threshold_m", "beta",
+                "target_distance_m", "kp", "command_min", "command_max",
+            )
+        })
+        self.student = student_class(condition, parameters)
+        self.state = "FAR"
+        self.filtered_distance: float | None = None
+
+    def step(self, time_s: float, raw_distance: float | None, valid: bool) -> tuple[str, float, float | None]:
+        if self.condition == "C0":
+            self.state = "NEAR" if 4.0 <= time_s < 16.0 else "FAR"
+            return self.state, (0.6 if self.state == "NEAR" else 0.0), None
+
+        if not valid or raw_distance is None:
+            command = self.student.safe_command()
+            self._validate_output(command)
+            return self.state, float(command), self.filtered_distance
+
+        try:
+            filtered = self.student.update_filter(raw_distance)
+            if not isinstance(filtered, (int, float)) or not math.isfinite(filtered):
+                raise ValueError("update_filter must return a finite number")
+            self.filtered_distance = float(filtered)
+            self.student.filtered_distance = self.filtered_distance
+
+            if self.condition == "C1":
+                state = self.student.update_state_single_threshold(raw_distance)
+                command = 0.6 if state == "NEAR" else 0.0
+            elif self.condition == "C2":
+                state = self.student.update_state_hysteresis(self.filtered_distance)
+                command = 0.6 if state == "NEAR" else 0.0
+            else:
+                state = self.student.update_state_single_threshold(self.filtered_distance)
+                command = self.student.proportional_command(self.filtered_distance)
+        except NotImplementedError as error:
+            raise NotImplementedError(
+                f"student_controller.py has an unfinished TODO in condition {self.condition}"
+            ) from error
+
+        if state not in ("FAR", "NEAR"):
+            raise ValueError(f"student controller returned invalid state: {state!r}")
+        self.state = state
+        self.student.state = state
+        self._validate_output(command)
+        return state, float(command), self.filtered_distance
+
+    @staticmethod
+    def _validate_output(command: object) -> None:
+        if not isinstance(command, (int, float)) or not math.isfinite(command):
+            raise ValueError("student controller must return a finite numeric command")
+
+
+ControllerFactory = Callable[[str, LabConfig], Controller | StudentControllerAdapter]
+
+
+def load_student_factory(student_file: Path) -> ControllerFactory:
+    """Load one self-contained student submission; importing it executes its code."""
+    student_file = student_file.resolve()
+    if not student_file.is_file():
+        raise FileNotFoundError(f"student controller not found: {student_file}")
+    module_name = f"lab02_submission_{hashlib.sha256(str(student_file).encode()).hexdigest()[:16]}"
+    spec = importlib.util.spec_from_file_location(module_name, student_file)
+    if spec is None or spec.loader is None:
+        raise ImportError(f"cannot load student controller: {student_file}")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[module_name] = module
+    spec.loader.exec_module(module)
+    student_class = getattr(module, "StudentController", None)
+    parameters_class = getattr(module, "Parameters", None)
+    if not isinstance(student_class, type) or not isinstance(parameters_class, type):
+        raise TypeError("student file must define StudentController and Parameters classes")
+    return lambda condition, config: StudentControllerAdapter(
+        condition, config, student_class, parameters_class
+    )
+
+
 def _is_valid_sample(raw: float | None, config: LabConfig) -> tuple[bool, str]:
     if raw is None:
         return False, "MISSING_OR_DELAY_BUFFER"
@@ -125,11 +212,12 @@ def simulate_trial(
     seed: int,
     config: LabConfig | None = None,
     invalid_rate: float = 0.0,
+    controller_factory: ControllerFactory | None = None,
 ) -> list[dict[str, object]]:
     """Simulate one trial and return rows ready for CSV output."""
     config = config or LabConfig()
     rng = random.Random(seed)
-    controller = Controller(condition, config)
+    controller = (controller_factory or Controller)(condition, config)
     delay_steps = max(0, round((delay_ms / 1000.0) / config.dt))
     sensor_buffer: deque[tuple[float, float | None]] = deque()
     rows: list[dict[str, object]] = []
@@ -357,17 +445,26 @@ def run_protocol(
     seed_base: int = 202602,
     config: LabConfig | None = None,
     overwrite: bool = False,
+    controller_source: str = "reference",
+    student_file: Path | None = None,
 ) -> tuple[list[dict[str, object]], list[dict[str, object]]]:
     config = config or LabConfig()
+    if controller_source not in ("reference", "student"):
+        raise ValueError(f"unknown controller source: {controller_source}")
+    if controller_source == "student":
+        student_file = (student_file or Path(__file__).with_name("student_controller.py")).resolve()
+        controller_factory = load_student_factory(student_file)
+    else:
+        controller_factory = Controller
+
+    plan = build_protocol(protocol, condition, trials)
     if output_dir.exists() and any(output_dir.iterdir()):
         if not overwrite:
             raise FileExistsError(f"output directory is not empty: {output_dir}")
-        shutil.rmtree(output_dir)
-    output_dir.mkdir(parents=True, exist_ok=True)
-    trials_dir = output_dir / "trials"
-    trials_dir.mkdir()
 
-    plan = build_protocol(protocol, condition, trials)
+    # Calculate before touching the result directory so a failed submission
+    # cannot leave a partial set of CSV files that looks like a completed run.
+    trial_rows: list[tuple[str, list[dict[str, object]]]] = []
     all_metrics: list[dict[str, object]] = []
     trial_number = 0
     for planned_condition, noise, delay, repeat in plan:
@@ -375,17 +472,31 @@ def run_protocol(
             trial_number += 1
             seed = seed_base + trial_number
             trial_id = f"{planned_condition}_n{noise:.2f}_d{delay:03d}_r{repeat_index + 1:02d}"
-            rows = simulate_trial(planned_condition, noise, delay, seed, config)
+            rows = simulate_trial(
+                planned_condition, noise, delay, seed, config,
+                controller_factory=controller_factory,
+            )
             for row in rows:
                 row["trial_id"] = trial_id
-            _write_csv(trials_dir / f"{trial_id}.csv", rows)
+            trial_rows.append((trial_id, rows))
             all_metrics.append(calculate_metrics(rows, config))
 
     aggregate = aggregate_metrics(all_metrics)
+    if output_dir.exists() and any(output_dir.iterdir()):
+        shutil.rmtree(output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
+    trials_dir = output_dir / "trials"
+    trials_dir.mkdir()
+    for trial_id, rows in trial_rows:
+        _write_csv(trials_dir / f"{trial_id}.csv", rows)
     _write_csv(output_dir / "summary_trials.csv", all_metrics)
     _write_csv(output_dir / "summary_aggregate.csv", aggregate)
     manifest = {
         "protocol": protocol,
+        "controller_source": controller_source,
+        "student_file": str(student_file) if controller_source == "student" else None,
+        "student_file_sha256": hashlib.sha256(student_file.read_bytes()).hexdigest()
+        if controller_source == "student" else None,
         "robustness_condition": condition,
         "seed_base": seed_base,
         "trial_count": trial_number,
@@ -414,6 +525,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--seed-base", type=int, default=202602)
     parser.add_argument("--out", type=Path, default=Path("results/controller_comparison"))
     parser.add_argument("--overwrite", action="store_true")
+    parser.add_argument("--controller-source", choices=("reference", "student"), default="reference")
+    parser.add_argument("--student-file", type=Path, default=Path(__file__).with_name("student_controller.py"))
     return parser.parse_args()
 
 
@@ -426,6 +539,8 @@ def main() -> None:
         trials=args.trials,
         seed_base=args.seed_base,
         overwrite=args.overwrite,
+        controller_source=args.controller_source,
+        student_file=args.student_file,
     )
     print(f"wrote results to: {args.out.resolve()}")
     print(f"aggregate rows: {len(aggregate)}")

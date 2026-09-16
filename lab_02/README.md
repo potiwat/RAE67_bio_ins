@@ -131,7 +131,7 @@ python plot_trial.py results\comparison\trials\C2_n0.01_d000_r01.csv `
 ## 10. Metric ที่โปรแกรมคำนวณ
 
 - `latency_enter_s` และ `latency_exit_s` — เวลาจาก physical crossing ถึง state ถูกต้องครั้งแรก
-- `recovery_time_s` — เวลาจน state ถูกต้องต่อเนื่องอย่างน้อย 0.5 s
+- `recovery_time_s` — เวลาจาก physical threshold crossing จนเริ่มช่วงที่ state ถูกต้องต่อเนื่องอย่างน้อย 0.5 s โดยรายงานค่าที่มากกว่าระหว่าง enter และ exit
 - `false_trigger_rate_per_min` — การเข้าสู่ NEAR ขณะที่ ground truth ยังเป็น FAR ต่อ valid observation minute
 - `switching_count` — จำนวนการเปลี่ยน FAR กับ NEAR ทั้งหมด
 - `extra_switches` — switching count ที่เกิน expected transitions สองครั้ง
@@ -173,8 +173,8 @@ python plot_trial.py results\comparison\trials\C2_n0.01_d000_r01.csv `
 แต่ละกลุ่มส่ง:
 
 1. Prediction ก่อนทดลอง
-2. Source code ที่ระบุส่วนที่แก้
-3. `run_config.json` และ raw CSV ทุก trial
-4. `summary_aggregate.csv`
-5. กราฟตัวแทนอย่างน้อยสอง conditions
+2. Block diagram ของ sensorimotor loop พร้อมทิศทางข้อมูลและ feedback
+3. `student_controller.py` ที่เติม TODO และ source code อื่นที่แก้
+4. `run_config.json`, raw CSV ทุก trial และ `summary_aggregate.csv`
+5. กราฟตัวแทนอย่างน้อย C1 และ C2 พร้อมเวลา physical crossing และ first correct response
 6. รายงาน 1–2 หน้า พร้อมข้อจำกัดของการทดลอง

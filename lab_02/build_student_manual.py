@@ -166,7 +166,8 @@ for item in (
     add_bullet(doc, item)
 
 doc.add_heading("ไฟล์ที่ใช้และข้อควรระวัง", level=1)
-add_body(doc, "ทำงานในโฟลเดอร์ labs/lab02_robust_reactive_lamp โดยใช้ lab02.py, student_controller.py, plot_trial.py, requirements.txt และ tests/test_lab02.py")
+add_body(doc, "ทำงานในโฟลเดอร์ lab_02 ของ GitHub repo RAE67_bio_ins โดยใช้ lab02.py, student_controller.py, plot_trial.py, requirements.txt และ tests/test_lab02.py")
+add_body(doc, "แหล่งไฟล์: https://github.com/potiwat/RAE67_bio_ins/tree/main/lab_02 (repo เป็น private ต้องได้รับสิทธิ์เข้าถึงก่อน)")
 add_body(doc, "ค่าระยะ threshold, gain และ command limit ในเอกสารนี้เป็น proposed course model สำหรับ simulator เท่านั้น ห้ามใช้กับหุ่นยนต์จริงก่อนตรวจ datasheet, mechanical limit, หน่วยคำสั่ง และ emergency stop")
 
 doc.add_heading("ขั้นที่ 1 เขียนสมมติฐานก่อนรัน", level=1)
@@ -222,7 +223,7 @@ add_body(doc, "บนกราฟให้ทำเครื่องหมา�
 add_table(doc, ["Metric", "อ่านค่าอย่างไร"], [
     ("Latency enter/exit", "เวลาตอบสนองครั้งแรก ลบเวลา physical crossing"),
     ("False trigger rate", "จำนวนเข้า NEAR ผิด ÷ valid observation time รายงานครั้งต่อนาที"),
-    ("Recovery time", "เวลาจน state ถูกต้องต่อเนื่องอย่างน้อย 0.5 s"),
+    ("Recovery time", "เวลาจาก physical crossing จนเริ่มช่วง state ถูกต้องต่อเนื่อง 0.5 s รายงานค่ามากกว่าของ enter/exit"),
     ("Extra switches", "switching count ที่เกินการเปลี่ยนตามแผน 2 ครั้ง"),
     ("Mean |Δu|", "ค่าเฉลี่ยการเปลี่ยน command ระหว่าง sample ต่อเนื่อง"),
 ], [2.0, 4.8])
@@ -257,6 +258,7 @@ add_body(doc, "หากตัด trial หรือพบ invalid sample ต้
 doc.add_heading("สิ่งที่ต้องส่ง", level=1)
 for item in (
     "สมมติฐานก่อนทดลองและบันทึกการแก้สมมติฐาน หากมี",
+    "Block diagram ของ sensorimotor loop ที่อธิบายทางข้อมูลและ feedback",
     "student_controller.py ที่เติม TODO พร้อม source code อื่นที่แก้",
     "run_config.json, raw CSV ทุก trial และ summary_aggregate.csv",
     "กราฟตัวแทนอย่างน้อย C1 และ C2 พร้อมตำแหน่ง physical crossing และ first correct response",

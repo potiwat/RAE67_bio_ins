@@ -6,6 +6,7 @@
 |---|---|---|
 | [Lab 02](lab_02/README.md) | Robust Reactive Lamp: sensor uncertainty และ sensorimotor control | [คู่มือนักศึกษา](lab_02/Lab02_Student_Manual_TH.docx) |
 | [Lab 03](lab_03/README.md) | SO(2) CPG และการเดินแบบ alternating tripod ของหุ่นยนต์หกขา | [คู่มือนักศึกษา](lab_03/Lab03_Student_Manual_TH.docx) |
+| [Lab 04](lab_04/README.md) | Artificial Hormone Mechanism: stimulus, hormone dynamics, receptor และ bounded mapping | [ใบงาน Word](lab_04/Lab04_Student_Worksheet_TH.docx) |
 
 ## เริ่ม Lab 02
 
@@ -27,3 +28,20 @@ python cpg_walk_sim.py --condition baseline --duration 2 --output-dir results\sm
 ```
 
 เปิด [คำอธิบาย Lab 03](lab_03/README.md) แล้วดาวน์โหลด [คู่มือนักศึกษา](lab_03/Lab03_Student_Manual_TH.docx) ก่อนเริ่มทำ TODO ใน `student_cpg.py`
+
+## เริ่ม Lab 04
+
+```sh
+git clone https://github.com/potiwat/RAE67_bio_ins.git
+cd RAE67_bio_ins/lab_04
+python3 --version
+```
+
+ใช้ Python 3.10 ขึ้นไปและ standard library เท่านั้น บน Windows ใช้ `py -3` แทน `python3` ได้ เปิด [คู่มือ Lab 04](lab_04/README.md) และ [ใบงาน Word](lab_04/Lab04_Student_Worksheet_TH.docx) เขียน prediction แล้วเติม TODO ใน `student_hormone.py` ก่อนตรวจและรัน:
+
+```sh
+python3 check_submission.py --student-file student_hormone.py
+python3 lab04.py --controller-source student --condition all --profile step --output-dir results/comparison
+```
+
+starter ที่ยังไม่เติม TODO จะไม่ผ่าน checker โดยตั้งใจ Lab04 วัดการตอบสนองของ hormone subsystem ใน proposed course model ไม่ได้ทดสอบ gait หรือความปลอดภัยของหุ่นยนต์จริง ชุดสาธารณะไม่รวมเฉลยหรือผลทดลองของผู้สอน

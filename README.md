@@ -8,6 +8,7 @@
 | [Lab 03](lab_03/README.md) | SO(2) CPG และการเดินแบบ alternating tripod ของหุ่นยนต์หกขา | [คู่มือนักศึกษา](lab_03/Lab03_Student_Manual_TH.docx) |
 | [Lab 04](lab_04/README.md) | Artificial Hormone Mechanism: stimulus, hormone dynamics, receptor และ bounded mapping | [ใบงาน Word](lab_04/Lab04_Student_Worksheet_TH.docx) |
 | [Lab 05](lab_05/README.md) | Hormone → SO(2) CPG: comparison, timing/fault, one-factor และ synthetic contact | [ใบงาน Word](lab_05/Lab05_Student_Worksheet_TH.docx) / [PDF](lab_05/Lab05_Student_Worksheet_TH.pdf) |
+| [Lab 06](lab_06/README.md) | Emotion FSM: interaction, movement/RGB, paired C0/C1 และ replay | [ใบงาน Word](lab_06/Week06_Student_Worksheet_TH.docx) |
 | [Lab 07](lab_07/README.md) | ROS 2 interface: seven topics, paired offline trials และ experimental design | [ใบงาน Word](lab_07/Week07_Student_Worksheet_TH.docx) |
 
 ## เริ่ม Lab 02
@@ -64,6 +65,21 @@ python3 contact_demo.py --output-dir results/contact
 อ่าน [คู่มือ Lab 05](lab_05/README.md) และ [ใบงาน Word](lab_05/Lab05_Student_Worksheet_TH.docx) / [PDF](lab_05/Lab05_Student_Worksheet_TH.pdf) ตั้ง prediction ก่อนรัน เปิด `results/comparison/report.html` และ `results/contact/report.html` ด้วย browser
 
 Lab05 เป็น working scaffold สำหรับ prediction/analysis และเป็น proposed course model ที่ใช้ scheduled stimulus กับ kinematic body ส่วน contact demo ใช้ข้อมูลสังเคราะห์แยกจาก controller ยังไม่ใช่ full ALCS/MNLC หรือ terrain feedback ตามบทความ ชุดสาธารณะไม่รวมคู่มือเฉลย tests หรือผลตรวจของผู้สอน
+
+## เริ่ม Lab 06
+
+```sh
+git clone https://github.com/potiwat/RAE67_bio_ins.git
+cd RAE67_bio_ins/lab_06
+python3 lab06.py --policy student --condition all --repeats 3 --output-dir results/starter
+python3 check_submission.py --contract group
+```
+
+ใช้ Python 3.10 ขึ้นไปและ standard library เท่านั้น บน Windows ใช้ `py -3` แทน `python3` ได้ หากมี checkout เดิมให้เก็บงานของตนเองแล้ว `git pull --ff-only` ที่ root ก่อนเข้า `lab_06`
+
+อ่าน [คู่มือ Lab 06](lab_06/README.md) และ [ใบงาน Word](lab_06/Week06_Student_Worksheet_TH.docx) เติม TODO ใน `student_policy.py` แล้วตรวจ checker ตาม contract ที่เลือก Starter รันได้แต่ยังไม่ครบจึงควร FAIL ก่อนเติม TODO ใช้ชื่อ output ใหม่ทุกครั้งเพื่อรักษา raw traces เดิม
+
+Lab06 เป็น proposed course model แบบ FSM กฎคงที่ เปรียบเทียบ C0 raw กับ C1 debounce/hysteresis และวัด applied software output onset ด้วยเวลาเสมือน ผลนี้ไม่ยืนยัน physical latency หรือการเรียนรู้ ชุดสาธารณะไม่รวมเฉลย reference policy tests หรือผลผู้สอน
 
 ## เริ่ม Lab 07
 

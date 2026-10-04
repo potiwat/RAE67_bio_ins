@@ -8,6 +8,7 @@
 | [Lab 03](lab_03/README.md) | SO(2) CPG และการเดินแบบ alternating tripod ของหุ่นยนต์หกขา | [คู่มือนักศึกษา](lab_03/Lab03_Student_Manual_TH.docx) |
 | [Lab 04](lab_04/README.md) | Artificial Hormone Mechanism: stimulus, hormone dynamics, receptor และ bounded mapping | [ใบงาน Word](lab_04/Lab04_Student_Worksheet_TH.docx) |
 | [Lab 05](lab_05/README.md) | Hormone → SO(2) CPG: comparison, timing/fault, one-factor และ synthetic contact | [ใบงาน Word](lab_05/Lab05_Student_Worksheet_TH.docx) / [PDF](lab_05/Lab05_Student_Worksheet_TH.pdf) |
+| [Lab 07](lab_07/README.md) | ROS 2 interface: seven topics, paired offline trials และ experimental design | [ใบงาน Word](lab_07/Week07_Student_Worksheet_TH.docx) |
 
 ## เริ่ม Lab 02
 
@@ -63,3 +64,19 @@ python3 contact_demo.py --output-dir results/contact
 อ่าน [คู่มือ Lab 05](lab_05/README.md) และ [ใบงาน Word](lab_05/Lab05_Student_Worksheet_TH.docx) / [PDF](lab_05/Lab05_Student_Worksheet_TH.pdf) ตั้ง prediction ก่อนรัน เปิด `results/comparison/report.html` และ `results/contact/report.html` ด้วย browser
 
 Lab05 เป็น working scaffold สำหรับ prediction/analysis และเป็น proposed course model ที่ใช้ scheduled stimulus กับ kinematic body ส่วน contact demo ใช้ข้อมูลสังเคราะห์แยกจาก controller ยังไม่ใช่ full ALCS/MNLC หรือ terrain feedback ตามบทความ ชุดสาธารณะไม่รวมคู่มือเฉลย tests หรือผลตรวจของผู้สอน
+
+## เริ่ม Lab 07
+
+```sh
+git clone https://github.com/potiwat/RAE67_bio_ins.git
+cd RAE67_bio_ins/lab_07
+python3 offline_lab.py --condition all --repeats 3 --output-dir results/starter_run
+python3 check_submission.py --contract group
+python3 check_proposal.py proposal.json
+```
+
+ใช้ Python 3.10 ขึ้นไปและ standard library สำหรับ offline บน Windows ใช้ `py -3` แทน `python3` ได้ หากมี checkout เดิมให้เก็บงานของตนเองแล้ว `git pull --ff-only` ที่ root ก่อนเข้า `lab_07`
+
+อ่าน [คู่มือ Lab 07](lab_07/README.md) และ [ใบงาน Word](lab_07/Week07_Student_Worksheet_TH.docx) เติม TODO ใน `lamp_week07/student_policy.py` และ proposal ก่อนส่ง checker ของ starter ควร FAIL จนกว่างานส่วนนี้ครบ ใช้ Lab07 starter ได้เอง หรือใช้ policy ของกลุ่มที่ทำเสร็จจาก Lab06 ตามคู่มือ
+
+Lab07 เป็น proposed course model เปรียบเทียบ C0 ideal delivery กับ C1 modeled jitter/drop ด้วยเวลาเสมือน ผล offline ไม่ใช่ ROS/DDS หรือ physical latency benchmark ส่วน ROS 2 adapter source ต้องใช้เครื่อง Ubuntu 24.04 + ROS 2 Jazzy ที่เตรียมไว้แล้ว ชุดสาธารณะไม่รวมเฉลย reference policy tests หรือผลทดลองของผู้สอน

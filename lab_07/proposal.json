@@ -1,0 +1,22 @@
+{
+  "question": "TODO measurable research question",
+  "hypothesis": "TODO direction and boundary",
+  "biological_inspiration_source": "TODO source and exact mechanism",
+  "AHM_equation": "TODO source equation and at least one hormone",
+  "SO2_CPG_equation": "TODO Dr. Poramate SO(2) CPG notation",
+  "integration_description": "TODO AHM-CPG or AHM-emotion path",
+  "independent_variable": "TODO one planned factor",
+  "conditions": [{"name":"C0", "baseline":true, "change":"TODO baseline", "repeats":3}, {"name":"C1", "baseline":false, "change":"TODO one change", "repeats":3}],
+  "metrics": [{"name":"TODO metric1", "unit":"TODO", "measurement":"TODO measured boundary", "missing_rule":"TODO"}, {"name":"TODO metric2", "unit":"TODO", "measurement":"TODO measured boundary", "missing_rule":"TODO"}],
+  "controls": ["TODO policy", "TODO stimuli", "TODO hardware/configuration"],
+  "parameters": [{"name":"TODO", "value":null, "unit":"TODO", "provenance":"TODO source or proposed course model"}],
+  "simulation_plan":"TODO graph/clock/traces",
+  "real_robot_plan":"TODO sensors/mapping/calibration/actuator measurement",
+  "clock_correlation_plan":"TODO source ID/clock sync/error bound/log wrapper",
+  "safety_stop_plan":"TODO stop condition and operator",
+  "order_counterbalancing":"TODO C0/C1 order across repeats",
+  "paired_seed_or_participant_plan":"TODO paired assignment and consent handling",
+  "expected_input_ids_before_run":"TODO expected response denominator",
+  "human_scenario_duration_s":600,
+  "timeline":"TODO implementation/calibration/trials/analysis dates"
+}

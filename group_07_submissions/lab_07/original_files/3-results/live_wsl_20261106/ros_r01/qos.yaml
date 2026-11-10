@@ -1,0 +1,65 @@
+/lamp/input/button:
+  history: keep_last
+  depth: 10
+  reliability: reliable
+  durability: volatile
+/lamp/input/touch:
+  history: keep_last
+  depth: 10
+  reliability: reliable
+  durability: volatile
+/lamp/input/distance:
+  history: keep_last
+  depth: 10
+  reliability: reliable
+  durability: volatile
+/lamp/interaction:
+  history: keep_last
+  depth: 10
+  reliability: reliable
+  durability: volatile
+/lamp/emotion:
+  history: keep_last
+  depth: 10
+  reliability: reliable
+  durability: volatile
+/lamp/servo_command:
+  history: keep_last
+  depth: 10
+  reliability: reliable
+  durability: volatile
+/lamp/rgb_command:
+  history: keep_last
+  depth: 10
+  reliability: reliable
+  durability: volatile
+/lamp/input/status:
+  history: keep_last
+  depth: 10
+  reliability: reliable
+  durability: volatile
+/lamp/ahm_cpg/diagnostic:
+  history: keep_last
+  depth: 10
+  reliability: reliable
+  durability: volatile
+/lamp/joint_states:
+  history: keep_last
+  depth: 10
+  reliability: reliable
+  durability: volatile
+/lamp/perception/face:
+  history: keep_last
+  depth: 10
+  reliability: reliable
+  durability: volatile
+/lamp/diagnostics:
+  history: keep_last
+  depth: 10
+  reliability: reliable
+  durability: volatile
+/lamp/trace:
+  history: keep_last
+  depth: 10
+  reliability: reliable
+  durability: volatile

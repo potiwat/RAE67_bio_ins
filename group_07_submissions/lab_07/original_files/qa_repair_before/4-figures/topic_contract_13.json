@@ -1,0 +1,95 @@
+{
+  "topics": [
+    {
+      "topic": "/lamp/input/button",
+      "type": "std_msgs/msg/Bool",
+      "meaning": "pressed true/false",
+      "flow": "Sensor → Interaction / Logger"
+    },
+    {
+      "topic": "/lamp/input/touch",
+      "type": "std_msgs/msg/Bool",
+      "meaning": "pressed true/false",
+      "flow": "Sensor → Interaction / Logger"
+    },
+    {
+      "topic": "/lamp/input/distance",
+      "type": "std_msgs/msg/Float32",
+      "meaning": "m valid only",
+      "flow": "Sensor → Interaction / Logger"
+    },
+    {
+      "topic": "/lamp/interaction",
+      "type": "std_msgs/msg/String",
+      "meaning": "event name",
+      "flow": "Interaction → FSM / AHM / Logger"
+    },
+    {
+      "topic": "/lamp/emotion",
+      "type": "std_msgs/msg/String",
+      "meaning": "6 state names",
+      "flow": "FSM → CPG / Decoder / Logger"
+    },
+    {
+      "topic": "/lamp/servo_command",
+      "type": "std_msgs/msg/Float32MultiArray",
+      "meaning": "rad [ID4,ID2,ID5]",
+      "flow": "Decoder → Output observation / Logger"
+    },
+    {
+      "topic": "/lamp/rgb_command",
+      "type": "std_msgs/msg/ColorRGBA",
+      "meaning": "RGBA 0–1",
+      "flow": "Emotion → LED observation / Logger"
+    },
+    {
+      "topic": "/lamp/input/status",
+      "type": "std_msgs/msg/String",
+      "meaning": "JSON input quality / edges",
+      "flow": "Sensor snapshot → Logger"
+    },
+    {
+      "topic": "/lamp/ahm_cpg/diagnostic",
+      "type": "std_msgs/msg/String",
+      "meaning": "JSON S H R phi o1 o2 mask",
+      "flow": "AHM / CPG → Logger"
+    },
+    {
+      "topic": "/lamp/joint_states",
+      "type": "sensor_msgs/msg/JointState",
+      "meaning": "rad 5 joints relative Normal",
+      "flow": "Encoder snapshot → Logger"
+    },
+    {
+      "topic": "/lamp/perception/face",
+      "type": "std_msgs/msg/String",
+      "meaning": "JSON selected face / time",
+      "flow": "Camera → Gaze / Logger"
+    },
+    {
+      "topic": "/lamp/diagnostics",
+      "type": "diagnostic_msgs/msg/DiagnosticArray",
+      "meaning": "status / V / °C / ages",
+      "flow": "Owner → Logger"
+    },
+    {
+      "topic": "/lamp/trace",
+      "type": "std_msgs/msg/String",
+      "meaning": "JSON source / state / goals",
+      "flow": "Owner / FSM → Logger"
+    }
+  ],
+  "qos": {
+    "reliability": "reliable",
+    "history": "keep_last",
+    "depth": 10,
+    "durability": "volatile"
+  },
+  "servo_mapping": {
+    "tilt": 4,
+    "extend": 2,
+    "nod": 5,
+    "unit": "rad offset from recorded Normal; extend is joint angle, not cm"
+  },
+  "transport": "UART owner on Pi; recorded telemetry replay to ROS2 Jazzy/rosbag in WSL; no ROS actuator subscriber"
+}

@@ -1,0 +1,179 @@
+{
+  "status": "operator_approved_supervised_trial_2026_10_29",
+  "origin_raw": {
+    "1": 2020,
+    "2": 3188,
+    "3": 3233,
+    "4": 1995,
+    "5": 2709
+  },
+  "normal_raw": {
+    "1": 2019,
+    "2": 2837,
+    "3": 2746,
+    "4": 1997,
+    "5": 2696
+  },
+  "speed_raw": 400,
+  "acceleration_raw": 3,
+  "yaw_range_deg": 30,
+  "frame_max_age_s": 0.5,
+  "physical_search_enabled": false,
+  "gaze_enabled": true,
+  "cpg_trial_enabled": true,
+  "interested_pitch_up_deg": 18,
+  "vertical_tracking_enabled": true,
+  "boot_service_enabled": false,
+  "physical_button_enabled": true,
+  "button_debounce_s": 0.06,
+  "yaw_direction": 1,
+  "yaw_direction_evidence": "Operator: ID1 +3deg moved face box left in image; 2026-10-29",
+  "yaw_follow_operator_result": "2026-10-29: operator reported Speed raw100 good and very smooth with P8/I1/D16; ID1 only, existing command inset13 and outer window unchanged. Physical deg/s unmeasured.",
+  "filter_beta": 0.25,
+  "camera_fps": 30,
+  "camera_fps_approval": "Operator approved 30 FPS and adding room light, 2026-10-29",
+  "deadband_px": 6,
+  "centering_trial_approval": "User approved +/-10deg speed3 acceleration3 deadband+/-6px beta0.25; inspect wires both directions before G, 2026-10-29",
+  "control_mode": "image_error_velocity_integrated_heading",
+  "yaw_10deg_operator_clearance": "2026-10-29: operator confirmed Normal and both +10/-10 probe paths had slack wires and no collision; only this stance/path, not global joint limit",
+  "base_p_trial": 16,
+  "faster_trial_approval": "2026-10-29 user approved speed4 acc3 P16 +/-10deg, support and wire inspection; software tested, hardware result pending",
+  "manual_tuning": true,
+  "manual_tuning_approval": "2026-10-29 user approved slider raw1..100; initial7; acc3 and command margin13 unchanged",
+  "command_margin_ticks": 13,
+  "manual_tuning_initial": {
+    "p": 16,
+    "i": 1,
+    "d": 16,
+    "speed": 1
+  },
+  "group_pid_trial": false,
+  "pitch_probe_enabled": true,
+  "group_pid_approval": "2026-10-30 user requested P8/I1/D16 all five; keep startup speed1/acc1; volatile lock1 only",
+  "pitch_probe_approval": "2026-10-30 user approved +3 then -3 and return, speed1/acc1 with support/wire inspection; positive direction confirmed; negative path pending",
+  "pitch_direction": 1,
+  "pitch_direction_evidence": "2026-10-30 operator: ID5 +3deg tilted head down; stationary face box moved up. Positive image y error requires positive raw ID5.",
+  "group_pid_trial_result": "2026-10-30 ID3 drift/overshoot while unsupported READY with P8/I1/D16; fault pos2723 below2724. Reverted ID2-5 baseline P32/I0/D32 after supported servo power cycle. Do not reapply group gains.",
+  "restore_base_pid_on_start": false,
+  "pitch_clearance_operator_result": "2026-10-30 operator confirmed +3 head down/box up and -3 head up/box down, both paths no collision and okay; Normal stance only",
+  "manual_tuning_id": 1,
+  "pitch_range_deg": 6,
+  "yaw_follow_enabled": true,
+  "pitch_6deg_approval": "2026-10-30 user approved +/-6deg P16..32 I0..2 D16..48 start32/0/32 speed1acc1; requires manual path inspection and C before G",
+  "pitch_pid_wide_approval": "2026-10-30 user approved ID5 P1..64 I0..8 D0..64. Slider stages only; no automatic Apply. Keep +/-6deg speed1acc1. Last confirmed applied log16/1/16; staged I0 in screenshot was not applied.",
+  "selected_pid_note": "2026-10-31 selected per-joint PID verified on live bus; ID2 restored32/0/16. Both yaw and pitch enabled; M explicit Normal; pitch probes+C before G. No manual tuning panel requested.",
+  "origin_note": "2026-10-31 resumed hardware session: fresh supported folded pose, all5 torqueOFF before selected PID restore; observe_ready_hold25s enabled. Not a global startup envelope.",
+  "motion_speed_raw": 400,
+  "all_joint_speed_approval": "2026-10-31 user explicitly requested all joints including Normal startup and gestures at raw100 like ID1; retain acceleration1 on joints2-5 and startup, tracking ID1acc3; selected PID and angle guards unchanged. Physical trial pending.",
+  "observe_ready_hold": true,
+  "integral_hold_trial": "2026-10-31 operator approved temporary ID1P8/I0/D16 and ID3P20/I0/D22; favorites unchanged, Speed100/acc/guards unchanged.",
+  "normal_tolerances_ticks": {
+    "2": 34,
+    "3": 34,
+    "5": 34
+  },
+  "normal_tolerance_approval": "2026-10-31 operator approved ID3 +/-34ticks (~3deg) Normal readiness only; other joints22; goal/angle guards unchanged. Preserve stationary loaded ID3 goal within same reviewed tolerance.",
+  "startup_pid_by_id": {
+    "1": {
+      "p": 8,
+      "i": 0,
+      "d": 16
+    },
+    "2": {
+      "p": 32,
+      "i": 0,
+      "d": 20
+    },
+    "3": {
+      "p": 24,
+      "i": 0,
+      "d": 26
+    },
+    "4": {
+      "p": 5,
+      "i": 0,
+      "d": 0
+    },
+    "5": {
+      "p": 7,
+      "i": 0,
+      "d": 3
+    }
+  },
+  "operator_start_note": "Explicit supported M reads a fresh stationary pose and restores this approved trial PID only if all torqueOFF; warm matching PID preserved, mixed/unknown state blocked. No boot autostart implied.",
+  "yaw_30deg_speed400_approval": "2026-11-01 user confirmed yaw20 good/slack and requested +10deg each side and double yaw speed. Supervised yaw30 speed400 acc3; command inset13 unchanged; other joints/base200 unchanged. New paths pending physical inspection.",
+  "gaze_pitch_up_deg": 30,
+  "yaw_paths_operator_confirmed_deg": 30,
+  "all_joint_speed400_approval": "2026-11-01 user approved speed400 as common base for all joints, Normal/Interested/gaze; retain intentional button1000/return750 and Sleepy25. No measured equal angular speed claim.",
+  "gaze_pitch30_approval": "2026-11-01 user approved head-up -30deg / down+6deg from Normal across awake gaze, with support and path inspection; not a fixed upward pose. Physical new path pending.",
+  "yaw30_result": "2026-11-01 user confirmed yaw30 turning range good, wires not taut and speed400 okay.",
+  "all_joint400_pitch30_operator_result": "2026-11-01 user: looks good, continue; closed with Q. Accepted baseline speed400 all5 and yaw30 / awake pitch-30..+6; no precise mechanical calibration claimed.",
+  "cpg_normal_amplitude_deg": 2.0,
+  "pitch_paths_operator_confirmed_up_deg": 30,
+  "cpg_normal3_approval": "2026-11-01 user approved CPG amplitude limit3deg Normal only (SO2 command approx1.71deg actual maximum). Interested1deg, dt/phi/alpha/PID/Speed400/envelope2s unchanged. Physical encoder result pending.",
+  "cpg_normal_amplitude_mode": "manual_1_3",
+  "cpg_variation_seed": 0,
+  "cpg_normal_variable_approval": "2026-11-01 user approved smooth variable Normal decoder limit1..2deg, transition2s. Seed0 is recorded replay metadata, not hormone or random angle injection. Frequency/PID/Speed400 and Interested1 unchanged. Hardware result pending.",
+  "cpg_manual_approval": "2026-11-01 user requested manual fractional CPG amplitude adjustment between ineffective1..2 and excessive3; existing GUI slider1.0..3.0 step0.1, initial2.0, smooth2s. Normal only; random paused, same frequency/PID/Speed400, Interested1 unchanged.",
+  "cpg_interested_amplitude_deg": 1.9,
+  "cpg_interested19_approval": "2026-11-01 user accepted plan and requested implementation: Normal1.9 plus Interested1.9, CPG masked during button look/return/lean/neck hold-and-return then envelope2s, head gaze retained. Existing speed/PID/poses preserved. Physical combined trial pending.",
+  "cpg_phi_rad": 0.1,
+  "diagnostic_trace_samples": 180,
+  "breathing_slow_trial_note": "2026-11-01 user requested resume hardware according to saved breathing plan. Normal gain1.9, phi0.10 (~3.4s cycle), nativeSpeed400/ACC1/PID unchanged. Gaze temporarily paused to isolate body. No random or SyncWrite. Formal worksheet phi0.20 baseline unchanged; this is a preview condition.",
+  "cpg_active_joint_ids": [
+    2,
+    3
+  ],
+  "cpg_isolation_trial": "2026-11-01 user confirmed ID2 alone still hiccups; approved same-settings ID3 alone. gain2/phi.10/PID/speed400/ACC1 unchanged; other joints holdNormal. No SyncWrite.",
+  "id3_small_motion_pid_trial": {
+    "approved": "2026-11-01 user approved P24/I0/D26, D-only comparison after P24/I0/D22 produced movement with residual jerk",
+    "baseline_pid": {
+      "p": 20,
+      "i": 0,
+      "d": 22
+    },
+    "trial_pid": {
+      "p": 24,
+      "i": 0,
+      "d": 26
+    },
+    "outcome": "2026-11-01 user reports P24/I0/D26 slightly better than D22; provisional preference, not fully smooth or final selected PID. Live follow-up happened after STOP/envelope0, so no valid moving-data comparison this time.",
+    "persistence": "RAM lock1 only on explicit operator M; favorites unchanged",
+    "previous_trial_pid": {
+      "p": 24,
+      "i": 0,
+      "d": 22
+    }
+  },
+  "id2_small_motion_pid_trial": {
+    "approved": "2026-11-01 user approved ID2 P32/I0/D20, D-only comparison",
+    "baseline_pid": {
+      "p": 32,
+      "i": 0,
+      "d": 16
+    },
+    "trial_pid": {
+      "p": 32,
+      "i": 0,
+      "d": 20
+    },
+    "outcome": "2026-11-01 user reports D20 better than D16 in ID2-alone trial; fresh follow-up snapshots after operator stop, not a quantified moving comparison",
+    "persistence": "RAM lock1 on operator M; no EEPROM/favorites change"
+  },
+  "breathing_combined_pid_trial": "2026-11-01 user approved combining provisional ID2 32/0/20 and ID3 24/0/26 at gain2/phi.10, same Speed400/ACC1, gaze paused, no SyncWrite; outcome pending",
+  "cpg_time_scale": 0.5,
+  "breathing_time_stretch_approval": "2026-11-01 user: both joints improved/no longer hiccup, but expand and relax too fast. Approved ~6.8s cycle (half speed) at same gain2/PID/native400/ACC1. Wall-to-model scale0.5, logical SO2dt.05/phi.10 unchanged; interpolate decoder between model nodes at existing UART cadence. Explicit preview condition, not original C0/C1 timeline.",
+  "state_leds_enabled": true,
+  "cpg_sleepy_amplitude_deg": 2.0,
+  "three_state_integration_approval": "2026-11-02 operator approved Sleepy CPG gain2.0/time scale0.5 (~6.8s), Normal white3%; Interested gain1.9 warm3%; Sleepy head+18deg blue3%. Restore gaze; direct three-state transitions. Software checked; physical integration pending.",
+  "cpg_happy_amplitude_deg": 4.0,
+  "cpg_happy_time_scale": 0.75,
+  "happy_trial_approval": "2026-11-02 user approved gain2/period~4.5s/Speed400/PID unchanged/yellow255,180,40 at3%; specified coordinated ID2/3 extension-contraction like dancing. Manual HAPPY trial first, not automatic touch FSM. Physical outcome pending.",
+  "happy4_trial_approval": "2026-11-02 user reports Happy2 not visibly distinct from Normal. Approved Happy gain4 only, same period~4.5s/native400/PID/envelope2s; target approx+/-2.3deg per body joint, physical combined path inspection pending. Normal manual range1..3 unchanged.",
+  "physical_touch_enabled": true,
+  "touch_required_for_happy": true,
+  "happy_yaw_enabled": true,
+  "happy_yaw_touch_approval": "2026-11-02 user approved ID1CPGgain4 (~+/-2.3deg) with existing yaw30/inset13 and ID2/3gain4; Happy waits physical touch GPIO22 active HIGH. Keyboard/GUI Happy blocked; release/re-touch edge, .06 debounce reused from accepted input code. Afraid ignores touch until cleared; full Afraid/ToF FSM still pending.",
+  "happy_body_excursion_deg": 6.0,
+  "happy_body6_approval": "2026-11-02 user approved body2/3 command excursion +/-6deg total about current center; normalize deterministic SO2 output for body only, yaw gain4 unchanged; period4.5s/native400/PID unchanged. Physical combined path and actual encoder excursion pending."
+}

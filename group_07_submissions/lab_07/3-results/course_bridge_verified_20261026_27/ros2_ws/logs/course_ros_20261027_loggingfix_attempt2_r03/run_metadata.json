@@ -1,0 +1,105 @@
+{
+  "status": "completed",
+  "seed": 43,
+  "repeat": 3,
+  "source_protocol_s": 22,
+  "policy_sha256": "2a7d07a3cf685a248becc075cb23c06e8bbe7af41631ccf6cb23d8e8cc16159c",
+  "startup_offsets_scope": "Popen request times only; not node clock origins. Do not infer source latency.",
+  "processes": {
+    "recorder": {
+      "pid": 605,
+      "argv": [
+        "ros2",
+        "bag",
+        "record",
+        "-o",
+        "/mnt/c/Users/USER/Desktop/Project/Lamp/Lab07/ros2_ws/bags/course_ros_20261027_loggingfix_attempt2_r03",
+        "/lamp/input/button",
+        "/lamp/input/touch",
+        "/lamp/input/distance",
+        "/lamp/interaction",
+        "/lamp/emotion",
+        "/lamp/servo_command",
+        "/lamp/rgb_command"
+      ],
+      "launch_request_offset_s": 0.005331802
+    },
+    "collector": {
+      "pid": 606,
+      "argv": [
+        "ros2",
+        "run",
+        "lamp_week07",
+        "output_collector",
+        "--ros-args",
+        "-p",
+        "trace_file:=/mnt/c/Users/USER/Desktop/Project/Lamp/Lab07/ros2_ws/logs/course_ros_20261027_loggingfix_attempt2_r03/collector.csv"
+      ],
+      "launch_request_offset_s": 0.009054116
+    },
+    "interaction": {
+      "pid": 607,
+      "argv": [
+        "ros2",
+        "run",
+        "lamp_week07",
+        "interaction",
+        "--ros-args",
+        "-p",
+        "policy_file:=/mnt/c/Users/USER/Desktop/Project/Lamp/Lab07/ros2_ws/completed_policy.py",
+        "-p",
+        "trace_file:=/mnt/c/Users/USER/Desktop/Project/Lamp/Lab07/ros2_ws/logs/course_ros_20261027_loggingfix_attempt2_r03/interaction.csv"
+      ],
+      "launch_request_offset_s": 0.013796412
+    },
+    "inputs": {
+      "pid": 660,
+      "argv": [
+        "ros2",
+        "run",
+        "lamp_week07",
+        "synthetic_inputs",
+        "--ros-args",
+        "-p",
+        "seed:=43",
+        "-p",
+        "trace_file:=/mnt/c/Users/USER/Desktop/Project/Lamp/Lab07/ros2_ws/logs/course_ros_20261027_loggingfix_attempt2_r03/inputs.csv"
+      ],
+      "launch_request_offset_s": 2.762576697
+    }
+  },
+  "shutdowns": {
+    "inputs": {
+      "signal": "SIGINT",
+      "forced": false,
+      "returncode": 0
+    },
+    "interaction": {
+      "signal": "SIGINT",
+      "forced": false,
+      "returncode": 0
+    },
+    "collector": {
+      "signal": "SIGINT",
+      "forced": false,
+      "returncode": 0
+    },
+    "recorder": {
+      "signal": "SIGINT",
+      "forced": false,
+      "returncode": 0
+    }
+  },
+  "source_latency_s": null,
+  "physical_latency_s": null,
+  "ROS_DISTRO": "jazzy",
+  "ROS_DOMAIN_ID_override": null,
+  "course_declared_qos": {
+    "reliability": "RELIABLE",
+    "history": "KEEP_LAST",
+    "depth": 10,
+    "durability": "VOLATILE"
+  },
+  "graph_qos_limit": "UNKNOWN history/depth=0 is unavailable introspection, not a replacement for KEEP_LAST/10. Retain raw graph.",
+  "scope": "Real ROS2 middleware with synthetic inputs. No physical devices; no artificial C1 transport injection."
+}

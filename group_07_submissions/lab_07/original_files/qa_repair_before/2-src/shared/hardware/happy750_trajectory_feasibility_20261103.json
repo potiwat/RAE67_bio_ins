@@ -1,0 +1,16 @@
+{
+  "offline_only": true,
+  "requested_period_s_approx": 4.536,
+  "body_requested_peak_speed_deg_s": 11.317337820250373,
+  "body_requested_peak_acc_deg_s2": 38.993282177845145,
+  "host_body_acc_limit_deg_s2": 8.7,
+  "body_requested_range_ticks": [
+    2803.0000148499944,
+    2870.9998362072115
+  ],
+  "body_limited_command_range_ticks": [
+    2819.258873308168,
+    2854.926195418997
+  ],
+  "max_command_lag_ticks": 51.579678137503834
+}

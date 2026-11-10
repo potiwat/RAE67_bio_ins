@@ -1,0 +1,1167 @@
+{
+  "raw": "shared\\hardware\\happy_search_trace_20261102T155523Z.json",
+  "episodes": [
+    {
+      "start": 15501.831278338,
+      "last": {
+        "t": 15501.756328602,
+        "xy": [
+          -0.24687500000000007,
+          0.02777777777777768
+        ],
+        "goal": 2042,
+        "actual": 2034
+      },
+      "samples": [
+        {
+          "dt": 0.0,
+          "status": "LOST",
+          "owner": "blend_back_to_dance",
+          "remain": null,
+          "goal": 2042,
+          "actual": 2041,
+          "mode": "running"
+        }
+      ]
+    },
+    {
+      "start": 15502.092197641,
+      "last": {
+        "t": 15502.024410088,
+        "xy": [
+          -0.2718750000000001,
+          0.03888888888888897
+        ],
+        "goal": 2042,
+        "actual": 2040
+      },
+      "samples": [
+        {
+          "dt": 0.0,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.3727643009988242,
+          "goal": 2042,
+          "actual": 2040,
+          "mode": "running"
+        }
+      ]
+    },
+    {
+      "start": 15502.288159694,
+      "last": {
+        "t": 15502.216123983,
+        "xy": [
+          -0.25312500000000004,
+          0.02777777777777768
+        ],
+        "goal": 2042,
+        "actual": 2040
+      },
+      "samples": [
+        {
+          "dt": 0.0,
+          "status": "LOST",
+          "owner": "blend_back_to_dance",
+          "remain": null,
+          "goal": 2042,
+          "actual": 2040,
+          "mode": "running"
+        },
+        {
+          "dt": 0.076,
+          "status": "LOST",
+          "owner": "blend_back_to_dance",
+          "remain": null,
+          "goal": 2042,
+          "actual": 2041,
+          "mode": "running"
+        }
+      ]
+    },
+    {
+      "start": 15502.588200357,
+      "last": {
+        "t": 15502.516190052,
+        "xy": [
+          -0.26249999999999996,
+          0.022222222222222143
+        ],
+        "goal": 2041,
+        "actual": 2040
+      },
+      "samples": [
+        {
+          "dt": 0.0,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.17703393299962045,
+          "goal": 2039,
+          "actual": 2040,
+          "mode": "running"
+        }
+      ]
+    },
+    {
+      "start": 15503.220238858,
+      "last": {
+        "t": 15503.144117283,
+        "xy": [
+          -0.25,
+          0.03333333333333344
+        ],
+        "goal": 2039,
+        "actual": 2039
+      },
+      "samples": [
+        {
+          "dt": 0.0,
+          "status": "LOST",
+          "owner": "blend_back_to_dance",
+          "remain": null,
+          "goal": 2039,
+          "actual": 2041,
+          "mode": "running"
+        },
+        {
+          "dt": 0.084,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.32412234600087686,
+          "goal": 2039,
+          "actual": 2041,
+          "mode": "running"
+        }
+      ]
+    },
+    {
+      "start": 15503.464806743,
+      "last": {
+        "t": 15503.384180512,
+        "xy": [
+          -0.25625,
+          0.0
+        ],
+        "goal": 2039,
+        "actual": 2040
+      },
+      "samples": [
+        {
+          "dt": 0.0,
+          "status": "LOST",
+          "owner": "blend_back_to_dance",
+          "remain": null,
+          "goal": 2039,
+          "actual": 2040,
+          "mode": "running"
+        }
+      ]
+    },
+    {
+      "start": 15504.520251623,
+      "last": {
+        "t": 15504.45621203,
+        "xy": [
+          -0.24375000000000002,
+          -0.05555555555555558
+        ],
+        "goal": 2035,
+        "actual": 2040
+      },
+      "samples": [
+        {
+          "dt": 0.0,
+          "status": "LOST",
+          "owner": "blend_back_to_dance",
+          "remain": null,
+          "goal": 2034,
+          "actual": 2040,
+          "mode": "running"
+        }
+      ]
+    },
+    {
+      "start": 15504.756174285,
+      "last": {
+        "t": 15504.676174455,
+        "xy": [
+          -0.24062499999999998,
+          -0.03888888888888886
+        ],
+        "goal": 2034,
+        "actual": 2040
+      },
+      "samples": [
+        {
+          "dt": 0.0,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.34143802499966114,
+          "goal": 2034,
+          "actual": 2040,
+          "mode": "running"
+        },
+        {
+          "dt": 0.072,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.2696539409989782,
+          "goal": 2033,
+          "actual": 2040,
+          "mode": "running"
+        }
+      ]
+    },
+    {
+      "start": 15505.064202083,
+      "last": {
+        "t": 15504.988128582,
+        "xy": [
+          -0.25,
+          -0.06666666666666665
+        ],
+        "goal": 2031,
+        "actual": 2040
+      },
+      "samples": [
+        {
+          "dt": 0.0,
+          "status": "LOST",
+          "owner": "blend_back_to_dance",
+          "remain": null,
+          "goal": 2031,
+          "actual": 2039,
+          "mode": "running"
+        }
+      ]
+    },
+    {
+      "start": 15505.288507147,
+      "last": {
+        "t": 15505.236204096,
+        "xy": [
+          -0.2562500000000001,
+          -0.022222222222222254
+        ],
+        "goal": 2029,
+        "actual": 2039
+      },
+      "samples": [
+        {
+          "dt": 0.0,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.3441650540007686,
+          "goal": 2029,
+          "actual": 2040,
+          "mode": "running"
+        }
+      ]
+    },
+    {
+      "start": 15505.384560342,
+      "last": {
+        "t": 15505.328513423,
+        "xy": [
+          -0.27812499999999996,
+          -0.03888888888888897
+        ],
+        "goal": 2029,
+        "actual": 2040
+      },
+      "samples": [
+        {
+          "dt": 0.0,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.38138800699925923,
+          "goal": 2029,
+          "actual": 2040,
+          "mode": "running"
+        },
+        {
+          "dt": 0.04,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.34141032399929827,
+          "goal": 2029,
+          "actual": 2039,
+          "mode": "running"
+        }
+      ]
+    },
+    {
+      "start": 15505.596467761,
+      "last": {
+        "t": 15505.524395736,
+        "xy": [
+          -0.28125,
+          -0.011111111111111072
+        ],
+        "goal": 2029,
+        "actual": 2039
+      },
+      "samples": [
+        {
+          "dt": 0.0,
+          "status": "LOST",
+          "owner": "blend_back_to_dance",
+          "remain": null,
+          "goal": 2029,
+          "actual": 2039,
+          "mode": "running"
+        },
+        {
+          "dt": 0.068,
+          "status": "LOST",
+          "owner": "blend_back_to_dance",
+          "remain": null,
+          "goal": 2028,
+          "actual": 2039,
+          "mode": "running"
+        }
+      ]
+    },
+    {
+      "start": 15505.812099344,
+      "last": {
+        "t": 15505.740210039,
+        "xy": [
+          -0.2749999999999999,
+          0.022222222222222143
+        ],
+        "goal": 2028,
+        "actual": 2039
+      },
+      "samples": [
+        {
+          "dt": 0.0,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.352039371000501,
+          "goal": 2028,
+          "actual": 2038,
+          "mode": "running"
+        },
+        {
+          "dt": 0.072,
+          "status": "LOST",
+          "owner": "blend_back_to_dance",
+          "remain": null,
+          "goal": 2028,
+          "actual": 2034,
+          "mode": "running"
+        }
+      ]
+    },
+    {
+      "start": 15506.044211009,
+      "last": {
+        "t": 15505.976338328,
+        "xy": [
+          -0.2593749999999999,
+          0.0277777777777779
+        ],
+        "goal": 2028,
+        "actual": 2030
+      },
+      "samples": [
+        {
+          "dt": 0.0,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.3452372909996484,
+          "goal": 2028,
+          "actual": 2028,
+          "mode": "running"
+        },
+        {
+          "dt": 0.072,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.2812597159991128,
+          "goal": 2027,
+          "actual": 2028,
+          "mode": "running"
+        },
+        {
+          "dt": 0.145,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.20881397199991625,
+          "goal": 2025,
+          "actual": 2030,
+          "mode": "running"
+        }
+      ]
+    },
+    {
+      "start": 15506.344561908,
+      "last": {
+        "t": 15506.264183471,
+        "xy": [
+          -0.259375,
+          0.03888888888888897
+        ],
+        "goal": 2025,
+        "actual": 2030
+      },
+      "samples": [
+        {
+          "dt": 0.0,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.3565131549985381,
+          "goal": 2025,
+          "actual": 2030,
+          "mode": "running"
+        },
+        {
+          "dt": 0.084,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.27058579699951224,
+          "goal": 2024,
+          "actual": 2030,
+          "mode": "running"
+        },
+        {
+          "dt": 0.156,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.2004563059999782,
+          "goal": 2021,
+          "actual": 2029,
+          "mode": "running"
+        }
+      ]
+    },
+    {
+      "start": 15506.672132737,
+      "last": {
+        "t": 15506.580126629,
+        "xy": [
+          -0.24687499999999996,
+          -0.016666666666666607
+        ],
+        "goal": 2017,
+        "actual": 2029
+      },
+      "samples": [
+        {
+          "dt": 0.0,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.026635905998773524,
+          "goal": 2011,
+          "actual": 2030,
+          "mode": "running"
+        }
+      ]
+    },
+    {
+      "start": 15506.844243952,
+      "last": {
+        "t": 15506.753341794,
+        "xy": [
+          -0.21562499999999996,
+          -0.07222222222222219
+        ],
+        "goal": 2011,
+        "actual": 2024
+      },
+      "samples": [
+        {
+          "dt": 0.0,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.3610058800004481,
+          "goal": 2011,
+          "actual": 2018,
+          "mode": "running"
+        },
+        {
+          "dt": 0.084,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.2689924010010145,
+          "goal": 2010,
+          "actual": 2012,
+          "mode": "running"
+        },
+        {
+          "dt": 0.164,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.1928606600013154,
+          "goal": 2008,
+          "actual": 2012,
+          "mode": "running"
+        },
+        {
+          "dt": 0.24,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.1129463110009965,
+          "goal": 2004,
+          "actual": 2015,
+          "mode": "running"
+        },
+        {
+          "dt": 0.321,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.033045703001334914,
+          "goal": 2000,
+          "actual": 2015,
+          "mode": "running"
+        },
+        {
+          "dt": 0.399,
+          "status": "AMBIGUOUS",
+          "owner": "blend_back_to_dance",
+          "remain": null,
+          "goal": 2000,
+          "actual": 2013,
+          "mode": "running"
+        },
+        {
+          "dt": 0.468,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.34751305100144236,
+          "goal": 2000,
+          "actual": 2006,
+          "mode": "running"
+        },
+        {
+          "dt": 0.548,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.2754762849999679,
+          "goal": 1999,
+          "actual": 2003,
+          "mode": "running"
+        },
+        {
+          "dt": 0.634,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.1915354610009672,
+          "goal": 1997,
+          "actual": 2001,
+          "mode": "running"
+        },
+        {
+          "dt": 0.716,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.11144087300090177,
+          "goal": 1994,
+          "actual": 2001,
+          "mode": "running"
+        }
+      ]
+    },
+    {
+      "start": 15507.708314468,
+      "last": {
+        "t": 15507.664192366,
+        "xy": [
+          -0.171875,
+          -0.13888888888888884
+        ],
+        "goal": 1990,
+        "actual": 2003
+      },
+      "samples": [
+        {
+          "dt": 0.0,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.007239395001306548,
+          "goal": 1990,
+          "actual": 2003,
+          "mode": "paused_no_recent_face"
+        },
+        {
+          "dt": 0.06,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.007239395001306548,
+          "goal": 1990,
+          "actual": 2001,
+          "mode": "paused_no_recent_face"
+        }
+      ]
+    },
+    {
+      "start": 15507.912535468,
+      "last": {
+        "t": 15507.856774768,
+        "xy": [
+          -0.1499999999999999,
+          -0.12222222222222223
+        ],
+        "goal": 1990,
+        "actual": 1993
+      },
+      "samples": [
+        {
+          "dt": 0.0,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.352506381999774,
+          "goal": 1990,
+          "actual": 1992,
+          "mode": "running"
+        }
+      ]
+    },
+    {
+      "start": 15508.048179146,
+      "last": {
+        "t": 15507.968670034,
+        "xy": [
+          -0.13750000000000007,
+          -0.15555555555555556
+        ],
+        "goal": 1990,
+        "actual": 1992
+      },
+      "samples": [
+        {
+          "dt": 0.0,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.3819229010005074,
+          "goal": 1990,
+          "actual": 1992,
+          "mode": "running"
+        },
+        {
+          "dt": 0.104,
+          "status": "LOST",
+          "owner": "blend_back_to_dance",
+          "remain": null,
+          "goal": 1990,
+          "actual": 1992,
+          "mode": "running"
+        }
+      ]
+    },
+    {
+      "start": 15508.332632603,
+      "last": {
+        "t": 15508.244175142,
+        "xy": [
+          -0.140625,
+          -0.1611111111111111
+        ],
+        "goal": 1990,
+        "actual": 1993
+      },
+      "samples": [
+        {
+          "dt": 0.0,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.3307053699991229,
+          "goal": 1990,
+          "actual": 1993,
+          "mode": "running"
+        }
+      ]
+    },
+    {
+      "start": 15508.640167091,
+      "last": {
+        "t": 15508.532509872,
+        "xy": [
+          -0.17404852664232007,
+          -0.11166640440274467
+        ],
+        "goal": 1989,
+        "actual": 1993
+      },
+      "samples": [
+        {
+          "dt": 0.0,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.3311731099984172,
+          "goal": 1989,
+          "actual": 1993,
+          "mode": "running"
+        }
+      ]
+    },
+    {
+      "start": 15509.108180083,
+      "last": {
+        "t": 15509.024698902,
+        "xy": [
+          -0.15937500000000004,
+          -0.08333333333333337
+        ],
+        "goal": 1986,
+        "actual": 1993
+      },
+      "samples": [
+        {
+          "dt": 0.0,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.36062705000040296,
+          "goal": 1986,
+          "actual": 1993,
+          "mode": "running"
+        }
+      ]
+    },
+    {
+      "start": 15509.280334204,
+      "last": {
+        "t": 15509.212207452,
+        "xy": [
+          -0.19405204468432635,
+          -0.0004129415862563768
+        ],
+        "goal": 1985,
+        "actual": 1993
+      },
+      "samples": [
+        {
+          "dt": 0.0,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.1509741080008098,
+          "goal": 1985,
+          "actual": 1993,
+          "mode": "running"
+        },
+        {
+          "dt": 0.108,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.08518114599974069,
+          "goal": 1985,
+          "actual": 1993,
+          "mode": "running"
+        },
+        {
+          "dt": 0.152,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.08518114599974069,
+          "goal": 1985,
+          "actual": 1993,
+          "mode": "paused_no_recent_face"
+        },
+        {
+          "dt": 0.197,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.08518114599974069,
+          "goal": 1985,
+          "actual": 1992,
+          "mode": "paused_no_recent_face"
+        },
+        {
+          "dt": 0.256,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.08518114599974069,
+          "goal": 1985,
+          "actual": 1992,
+          "mode": "paused_no_recent_face"
+        },
+        {
+          "dt": 0.296,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.08518114599974069,
+          "goal": 1985,
+          "actual": 1992,
+          "mode": "paused_no_recent_face"
+        },
+        {
+          "dt": 0.348,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.08518114599974069,
+          "goal": 1985,
+          "actual": 1993,
+          "mode": "paused_no_recent_face"
+        },
+        {
+          "dt": 0.399,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.08518114599974069,
+          "goal": 1985,
+          "actual": 1993,
+          "mode": "paused_no_recent_face"
+        },
+        {
+          "dt": 0.452,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.08518114599974069,
+          "goal": 1985,
+          "actual": 1993,
+          "mode": "paused_no_recent_face"
+        },
+        {
+          "dt": 0.496,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.08518114599974069,
+          "goal": 1985,
+          "actual": 1993,
+          "mode": "paused_no_recent_face"
+        }
+      ]
+    },
+    {
+      "start": 15509.932361191,
+      "last": {
+        "t": 15509.88042158,
+        "xy": [
+          -0.15312499999999996,
+          -0.01666666666666672
+        ],
+        "goal": 1985,
+        "actual": 1993
+      },
+      "samples": [
+        {
+          "dt": 0.0,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.3319375299997773,
+          "goal": 1985,
+          "actual": 1993,
+          "mode": "running"
+        }
+      ]
+    },
+    {
+      "start": 15510.128208428,
+      "last": {
+        "t": 15510.008570838,
+        "xy": [
+          -0.15937500000000004,
+          0.02777777777777768
+        ],
+        "goal": 1985,
+        "actual": 1993
+      },
+      "samples": [
+        {
+          "dt": 0.0,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.16661711400047352,
+          "goal": 1985,
+          "actual": 1993,
+          "mode": "running"
+        },
+        {
+          "dt": 0.072,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.09584203799931856,
+          "goal": 1985,
+          "actual": 1993,
+          "mode": "running"
+        }
+      ]
+    },
+    {
+      "start": 15512.660208978,
+      "last": {
+        "t": 15512.588282822,
+        "xy": [
+          -0.140625,
+          0.07222222222222219
+        ],
+        "goal": 1986,
+        "actual": 1993
+      },
+      "samples": [
+        {
+          "dt": 0.0,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.3683031239997945,
+          "goal": 1986,
+          "actual": 1993,
+          "mode": "running"
+        },
+        {
+          "dt": 0.076,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.2923298999994586,
+          "goal": 1986,
+          "actual": 1993,
+          "mode": "running"
+        },
+        {
+          "dt": 0.144,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.2163186580000911,
+          "goal": 1985,
+          "actual": 1993,
+          "mode": "running"
+        },
+        {
+          "dt": 0.22,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.1481838499985315,
+          "goal": 1985,
+          "actual": 1993,
+          "mode": "running"
+        },
+        {
+          "dt": 0.312,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.07172063199868717,
+          "goal": 1985,
+          "actual": 1993,
+          "mode": "running"
+        },
+        {
+          "dt": 0.36,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.07172063199868717,
+          "goal": 1985,
+          "actual": 1993,
+          "mode": "paused_no_recent_face"
+        },
+        {
+          "dt": 0.416,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.07172063199868717,
+          "goal": 1985,
+          "actual": 1993,
+          "mode": "paused_no_recent_face"
+        },
+        {
+          "dt": 0.457,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.07172063199868717,
+          "goal": 1985,
+          "actual": 1993,
+          "mode": "paused_no_recent_face"
+        },
+        {
+          "dt": 0.52,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.07172063199868717,
+          "goal": 1985,
+          "actual": 1993,
+          "mode": "paused_no_recent_face"
+        },
+        {
+          "dt": 0.564,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.07172063199868717,
+          "goal": 1985,
+          "actual": 1993,
+          "mode": "paused_no_recent_face"
+        },
+        {
+          "dt": 0.613,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.07172063199868717,
+          "goal": 1985,
+          "actual": 1992,
+          "mode": "paused_no_recent_face"
+        },
+        {
+          "dt": 0.664,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.07172063199868717,
+          "goal": 1985,
+          "actual": 1992,
+          "mode": "paused_no_recent_face"
+        },
+        {
+          "dt": 0.712,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.07172063199868717,
+          "goal": 1985,
+          "actual": 1992,
+          "mode": "paused_no_recent_face"
+        },
+        {
+          "dt": 0.78,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.07172063199868717,
+          "goal": 1985,
+          "actual": 1992,
+          "mode": "paused_no_recent_face"
+        },
+        {
+          "dt": 0.828,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.07172063199868717,
+          "goal": 1985,
+          "actual": 1992,
+          "mode": "paused_no_recent_face"
+        },
+        {
+          "dt": 0.884,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.07172063199868717,
+          "goal": 1985,
+          "actual": 1992,
+          "mode": "paused_no_recent_face"
+        },
+        {
+          "dt": 0.908,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.07172063199868717,
+          "goal": 1985,
+          "actual": 1993,
+          "mode": "paused_no_recent_face"
+        },
+        {
+          "dt": 0.972,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.07172063199868717,
+          "goal": 1985,
+          "actual": 1993,
+          "mode": "paused_no_recent_face"
+        },
+        {
+          "dt": 1.029,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.07172063199868717,
+          "goal": 1985,
+          "actual": 1993,
+          "mode": "paused_no_recent_face"
+        },
+        {
+          "dt": 1.088,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.07172063199868717,
+          "goal": 1985,
+          "actual": 1993,
+          "mode": "paused_no_recent_face"
+        }
+      ]
+    },
+    {
+      "start": 15513.840387567,
+      "last": {
+        "t": 15513.79280041,
+        "xy": [
+          -0.17475675612277186,
+          0.04328765462793571
+        ],
+        "goal": 1985,
+        "actual": 1993
+      },
+      "samples": [
+        {
+          "dt": 0.0,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.35588595000081114,
+          "goal": 1985,
+          "actual": 1993,
+          "mode": "running"
+        },
+        {
+          "dt": 0.049,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.3066720320002787,
+          "goal": 1985,
+          "actual": 1993,
+          "mode": "running"
+        },
+        {
+          "dt": 0.14,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.2477336629999627,
+          "goal": 1985,
+          "actual": 1993,
+          "mode": "running"
+        },
+        {
+          "dt": 0.22,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.17579183999987436,
+          "goal": 1985,
+          "actual": 1993,
+          "mode": "running"
+        }
+      ]
+    },
+    {
+      "start": 15514.22821199,
+      "last": {
+        "t": 15514.144125019,
+        "xy": [
+          -0.14375000000000004,
+          0.05555555555555558
+        ],
+        "goal": 1985,
+        "actual": 1993
+      },
+      "samples": [
+        {
+          "dt": 0.0,
+          "status": "LOST",
+          "owner": "blend_back_to_dance",
+          "remain": null,
+          "goal": 1985,
+          "actual": 1993,
+          "mode": "running"
+        },
+        {
+          "dt": 0.086,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.31784076700023434,
+          "goal": 1985,
+          "actual": 1993,
+          "mode": "running"
+        },
+        {
+          "dt": 0.176,
+          "status": "LOST",
+          "owner": "exit_search",
+          "remain": 0.23175296600129514,
+          "goal": 1985,
+          "actual": 1993,
+          "mode": "running"
+        }
+      ]
+    }
+  ]
+}

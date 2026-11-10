@@ -1,0 +1,11 @@
+{
+  "stream_complete": true,
+  "byte_identical": true,
+  "rows": 934,
+  "bytes": 6561321,
+  "trace_sha256": "a5aabdd647ec126474e62db8794abe317d7b53e4990022a0c52788bc522f67db",
+  "source_capture_complete": true,
+  "source_clean_complete": true,
+  "transport": "live_read_only_SSH_follow",
+  "physical_actuation_via_ros": false
+}

@@ -1,0 +1,54 @@
+{
+  "/lamp/input/button": {
+    "count": 89,
+    "decoded_fields_sha256": "f3e506278d68f2449533e9392028da88b2c2fc1b483bf549f3b1e16b834644b8"
+  },
+  "/lamp/input/touch": {
+    "count": 89,
+    "decoded_fields_sha256": "f3e506278d68f2449533e9392028da88b2c2fc1b483bf549f3b1e16b834644b8"
+  },
+  "/lamp/input/distance": {
+    "count": 89,
+    "decoded_fields_sha256": "ef9f3cad27095c6e320c5526268d2d92dae35bd9806eea786d71a15f73b295e9"
+  },
+  "/lamp/interaction": {
+    "count": 1,
+    "decoded_fields_sha256": "68e70231b0f5be1617e77654a763c198e459fc54ec0a60968ada7476e5a3c819"
+  },
+  "/lamp/emotion": {
+    "count": 89,
+    "decoded_fields_sha256": "dbe7ef53f5ce4a3278064682b3222528e6b2ec0771ca860900ad19d183d6f083"
+  },
+  "/lamp/servo_command": {
+    "count": 89,
+    "decoded_fields_sha256": "ca295d14ecc33da484f87a4f64d42e3154030eebf5dece8eb37a7e8df636ad81"
+  },
+  "/lamp/rgb_command": {
+    "count": 89,
+    "decoded_fields_sha256": "5dc678a01d5f3c96fca5df9e9e330bc6cf4b1e463a582b49a37ba564bf9e83f6"
+  },
+  "/lamp/input/status": {
+    "count": 89,
+    "decoded_fields_sha256": "0ce723e92269db23a5e28f2e4cd0594e7ffd237bef09ede93481d4f745b63fd1"
+  },
+  "/lamp/ahm_cpg/diagnostic": {
+    "count": 89,
+    "decoded_fields_sha256": "761ccfae701d84b4bb4a92fe5df2644fb9771d2558783c84ac800c4c72e577a5"
+  },
+  "/lamp/joint_states": {
+    "count": 89,
+    "decoded_fields_sha256": "f152c5579d093a86f958252dfa90709d10cecac2d83d2bd512d9f604d0ad0aae"
+  },
+  "/lamp/perception/face": {
+    "count": 89,
+    "decoded_fields_sha256": "84f97ef2c8052f3b149ba7b0a9cde617c28229ce906e53996d1a7b6f1dc23568"
+  },
+  "/lamp/diagnostics": {
+    "count": 89,
+    "decoded_fields_sha256": "8501d04ae75ba8c453fa545dc61cd2b4f6c3efd59bc1b961e73323cf5082139a"
+  },
+  "/lamp/trace": {
+    "count": 89,
+    "decoded_fields_sha256": "712c05c1de37b4749a0cb67072d9e093acb05454525564ef56b97b1755f577b5"
+  }
+}

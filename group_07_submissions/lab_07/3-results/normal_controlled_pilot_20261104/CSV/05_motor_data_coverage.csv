@@ -1,0 +1,5 @@
+﻿Condition,Servo ID,Rows with Command and Encoder,Total Rows,Selected for Main Graph,Selection Rule
+C0,2,652,652,True,"Both joints 100 percent complete; ID2 chosen by lower-ID tie break, not by apparent result"
+C0,3,652,652,False,"Both joints 100 percent complete; ID2 chosen by lower-ID tie break, not by apparent result"
+C1,2,659,659,True,"Both joints 100 percent complete; ID2 chosen by lower-ID tie break, not by apparent result"
+C1,3,659,659,False,"Both joints 100 percent complete; ID2 chosen by lower-ID tie break, not by apparent result"

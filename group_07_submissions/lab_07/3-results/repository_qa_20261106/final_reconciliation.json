@@ -1,0 +1,38 @@
+{
+  "audit_start_total": 1777,
+  "audit_start_active": 875,
+  "audit_start_backups": 902,
+  "original_baseline": 866,
+  "missing_original_bytes": [],
+  "missing_audit_start_bytes": [],
+  "missing_mapped_files": [],
+  "moved_files": 51,
+  "modified_files": 9,
+  "duplicate_active_groups": 119,
+  "duplicate_active_extra_copies": 202,
+  "case_collisions": [],
+  "markdown_errors": [],
+  "excluded_from_active_but_preserved": [
+    {
+      "original": "2-src/Lab07/__pycache__/completed_policy.cpython-312.pyc",
+      "destination": "_originals_20261106/generated_cache/2-src/Lab07/__pycache__/completed_policy.cpython-312.pyc",
+      "reason": "generated .pyc, not source; retained outside active publication tree"
+    },
+    {
+      "original": "2-src/Lab07/__pycache__/completed_policy.cpython-313.pyc",
+      "destination": "_originals_20261106/generated_cache/2-src/Lab07/__pycache__/completed_policy.cpython-313.pyc",
+      "reason": "generated .pyc, not source; retained outside active publication tree"
+    },
+    {
+      "original": "2-src/Lab07/lamp_week07/__pycache__/student_policy.cpython-312.pyc",
+      "destination": "_originals_20261106/generated_cache/2-src/Lab07/lamp_week07/__pycache__/student_policy.cpython-312.pyc",
+      "reason": "generated .pyc, not source; retained outside active publication tree"
+    }
+  ],
+  "unresolved": [
+    "read_only_bus.py / calibration_readonly is absent from the supplied files; motor runtime cannot be certified",
+    "ROS2/rclpy/Pi dependencies and colcon build not tested on this Windows environment",
+    "PDF/video visual layout and frame alignment not tested"
+  ],
+  "status": "INCOMPLETE: data preserved and safe repairs verified; runtime dependency unavailable"
+}

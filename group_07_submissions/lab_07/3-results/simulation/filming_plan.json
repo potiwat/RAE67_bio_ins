@@ -1,0 +1,25 @@
+{
+  "component_trials": 6,
+  "component_seconds_per_trial": 360.0,
+  "human_trials": 6,
+  "human_seconds_per_trial": 600,
+  "total_clips": 12,
+  "total_hardware_minutes": 96.0,
+  "order": [
+    [
+      "C0",
+      "C1"
+    ],
+    [
+      "C1",
+      "C0"
+    ],
+    [
+      "C0",
+      "C1"
+    ]
+  ],
+  "physical_adapter_ready": false,
+  "physical_robot_tested": false,
+  "note": "Nominal planned recording time excludes setup, rest and invalid/repeated trials; PC-only duration validation."
+}

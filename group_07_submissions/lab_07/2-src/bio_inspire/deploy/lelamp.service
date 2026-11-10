@@ -1,0 +1,13 @@
+# Retired motor-boot unit: viewer autostart is handled by XDG desktop only.
+# This no-op intentionally contains no motor command, even if enabled by mistake.
+[Unit]
+Description=LeLamp legacy boot motion disabled
+After=local-fs.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/true
+Restart=no
+
+[Install]
+WantedBy=multi-user.target

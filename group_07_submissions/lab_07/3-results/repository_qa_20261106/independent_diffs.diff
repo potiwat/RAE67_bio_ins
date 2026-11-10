@@ -1,0 +1,454 @@
+--- .gitignore
++++ .gitignore
+@@ -14,3 +14,6 @@
+ 2-src/results/new_*/
+ 
+ _originals_20261106/
++
++*.MOV
++*.MP4
+--- 1-docs/checks/file_mapping.json
++++ 1-docs/checks/file_mapping.json
+@@ -315,7 +315,7 @@
+     "original": "02_Source/bio_inspire/hardware/cpg_breathing_analysis_20261101.json",
+     "bytes": 1381,
+     "sha256": "c771411c3757b34c709e7c82c58216795f619dec918ce3fb3f7fa3ce834c45d1",
+-    "destination": "2-src/bio_inspire/hardware/cpg_breathing_analysis_20261101.json"
++    "destination": "3-results/hardware_characterization/bio_inspire/cpg_breathing_analysis_20261101.json"
+   },
+   {
+     "original": "02_Source/bio_inspire/hardware/gaze_motion_pending.json",
+@@ -1011,7 +1011,7 @@
+     "original": "02_Source/Lab07/__pycache__/completed_policy.cpython-312.pyc",
+     "bytes": 1048,
+     "sha256": "676852ac5b000502c3b76a3a5f3fee5a0b7c45a8dfefb6853b53c45f358e72fa",
+-    "destination": "2-src/Lab07/__pycache__/completed_policy.cpython-312.pyc"
++    "destination": "_originals_20261106/generated_cache/2-src/Lab07/__pycache__/completed_policy.cpython-312.pyc"
+   },
+   {
+     "original": "02_Source/Lab07/check_proposal.py",
+@@ -1053,7 +1053,7 @@
+     "original": "02_Source/Lab07/lamp_week07/__pycache__/student_policy.cpython-312.pyc",
+     "bytes": 910,
+     "sha256": "41478dff82bae7b4b67e2857f59e7bff9a8d71f62419c343afa0fd599d768587",
+-    "destination": "2-src/Lab07/lamp_week07/__pycache__/student_policy.cpython-312.pyc"
++    "destination": "_originals_20261106/generated_cache/2-src/Lab07/lamp_week07/__pycache__/student_policy.cpython-312.pyc"
+   },
+   {
+     "original": "02_Source/Lab07/lamp_week07/bridge.py",
+@@ -1185,43 +1185,43 @@
+     "original": "02_Source/shared/hardware/angry_face_range_reference_20261104.json",
+     "bytes": 766,
+     "sha256": "47a1a08ccedc997b1c0549af1cc8b230bea32603821cd8ac289749cc76c76b59",
+-    "destination": "2-src/shared/hardware/angry_face_range_reference_20261104.json"
++    "destination": "3-results/hardware_characterization/shared/angry_face_range_reference_20261104.json"
+   },
+   {
+     "original": "02_Source/shared/hardware/arm_stick_analysis_20261103.json",
+     "bytes": 4609,
+     "sha256": "ad00a7eb141950676f4c58479a2a6c85f401de1429e41b82d79dc2d53fbae36f",
+-    "destination": "2-src/shared/hardware/arm_stick_analysis_20261103.json"
++    "destination": "3-results/hardware_characterization/shared/arm_stick_analysis_20261103.json"
+   },
+   {
+     "original": "02_Source/shared/hardware/body_local_sensitivity_20261102.json",
+     "bytes": 1376,
+     "sha256": "a24ac8ee37c24ba74f393c20c43c43b1107f22e0e25ff3cddcb0b40b01ec01be",
+-    "destination": "2-src/shared/hardware/body_local_sensitivity_20261102.json"
++    "destination": "3-results/hardware_characterization/shared/body_local_sensitivity_20261102.json"
+   },
+   {
+     "original": "02_Source/shared/hardware/body_pitch_follow_trial_20261102T134119Z.json",
+     "bytes": 24694,
+     "sha256": "dc46b58fc54a4b5b81ff0a2b8d42209a04f446eb0628e28c1b23a6d87155a88f",
+-    "destination": "2-src/shared/hardware/body_pitch_follow_trial_20261102T134119Z.json"
++    "destination": "3-results/hardware_characterization/shared/body_pitch_follow_trial_20261102T134119Z.json"
+   },
+   {
+     "original": "02_Source/shared/hardware/body_pitch_follow_trial_20261102T135432Z.json",
+     "bytes": 14176,
+     "sha256": "71b567fe1b89e15f930373b7e8e01bb9e41b72b6a6bafaf7e81044d339ba7d61",
+-    "destination": "2-src/shared/hardware/body_pitch_follow_trial_20261102T135432Z.json"
++    "destination": "3-results/hardware_characterization/shared/body_pitch_follow_trial_20261102T135432Z.json"
+   },
+   {
+     "original": "02_Source/shared/hardware/body_pitch_follow_trial_20261102T140050Z.json",
+     "bytes": 33619,
+     "sha256": "ba01ca1ab44aa1099633d679dc7fd42f93576dedd1b66bd84b9e66491e998b54",
+-    "destination": "2-src/shared/hardware/body_pitch_follow_trial_20261102T140050Z.json"
++    "destination": "3-results/hardware_characterization/shared/body_pitch_follow_trial_20261102T140050Z.json"
+   },
+   {
+     "original": "02_Source/shared/hardware/body_probe_observations_20261102T131403Z.json",
+     "bytes": 16309,
+     "sha256": "e762d9542a3333a89afed3f812aedf02fdf253a1aa6d6b3f1664f59a285f4540",
+-    "destination": "2-src/shared/hardware/body_probe_observations_20261102T131403Z.json"
++    "destination": "3-results/hardware_characterization/shared/body_probe_observations_20261102T131403Z.json"
+   },
+   {
+     "original": "02_Source/shared/hardware/button_look_observation.json",
+@@ -1233,85 +1233,85 @@
+     "original": "02_Source/shared/hardware/happy750_analysis_20261103.json",
+     "bytes": 362,
+     "sha256": "609462595167c74bb67a3eb523ee49f379e76b76fbf001aa359ab9688a002d3c",
+-    "destination": "2-src/shared/hardware/happy750_analysis_20261103.json"
++    "destination": "3-results/hardware_characterization/shared/happy750_analysis_20261103.json"
+   },
+   {
+     "original": "02_Source/shared/hardware/happy750_trace_20261102T175401Z.json",
+     "bytes": 642773,
+     "sha256": "14a3793d2363aaf769ec32961618511cf42b91a2afc867048b423b6956abe70a",
+-    "destination": "2-src/shared/hardware/happy750_trace_20261102T175401Z.json"
++    "destination": "3-results/hardware_characterization/shared/happy750_trace_20261102T175401Z.json"
+   },
+   {
+     "original": "02_Source/shared/hardware/happy750_trajectory_feasibility_20261103.json",
+     "bytes": 452,
+     "sha256": "390d95c1cf238c398df940c4b11286e509b6f6d86c1188e7d6920a45953a1a67",
+-    "destination": "2-src/shared/hardware/happy750_trajectory_feasibility_20261103.json"
++    "destination": "3-results/hardware_characterization/shared/happy750_trajectory_feasibility_20261103.json"
+   },
+   {
+     "original": "02_Source/shared/hardware/happy_continuous_smooth_trace_20261102T172602Z.json",
+     "bytes": 748635,
+     "sha256": "dec99047b06411358973b1221de17427db3a7a887423f3e8f4ee760f2053d83c",
+-    "destination": "2-src/shared/hardware/happy_continuous_smooth_trace_20261102T172602Z.json"
++    "destination": "3-results/hardware_characterization/shared/happy_continuous_smooth_trace_20261102T172602Z.json"
+   },
+   {
+     "original": "02_Source/shared/hardware/happy_extended_feedback_analysis_20261103.json",
+     "bytes": 849,
+     "sha256": "bf90fc19d88ac61237b3cfc36992a3b2b751226c4ef2952a0b9c6d36e31936c9",
+-    "destination": "2-src/shared/hardware/happy_extended_feedback_analysis_20261103.json"
++    "destination": "3-results/hardware_characterization/shared/happy_extended_feedback_analysis_20261103.json"
+   },
+   {
+     "original": "02_Source/shared/hardware/happy_extended_feedback_trace_20261102T174124Z.json",
+     "bytes": 658310,
+     "sha256": "2de9c36f2a6e1784f8c931dd66b2f06b37fc22c0c32646cbd8b6cff921dc16f5",
+-    "destination": "2-src/shared/hardware/happy_extended_feedback_trace_20261102T174124Z.json"
++    "destination": "3-results/hardware_characterization/shared/happy_extended_feedback_trace_20261102T174124Z.json"
+   },
+   {
+     "original": "02_Source/shared/hardware/happy_search_analysis_20261102.json",
+     "bytes": 27770,
+     "sha256": "a4e73041fbe3b6ae90254c6ed0580c83e676bad971d2749038d6ee78dfb71bde",
+-    "destination": "2-src/shared/hardware/happy_search_analysis_20261102.json"
++    "destination": "3-results/hardware_characterization/shared/happy_search_analysis_20261102.json"
+   },
+   {
+     "original": "02_Source/shared/hardware/happy_search_trace_20261102T155523Z.json",
+     "bytes": 550739,
+     "sha256": "596f05ee8798ccaeae32a669b12490649be32fa9c703027659814b9ce6725586",
+-    "destination": "2-src/shared/hardware/happy_search_trace_20261102T155523Z.json"
++    "destination": "3-results/hardware_characterization/shared/happy_search_trace_20261102T155523Z.json"
+   },
+   {
+     "original": "02_Source/shared/hardware/head4_local_sensitivity_20261102.json",
+     "bytes": 1306,
+     "sha256": "7430bd2bce058be6d8e5d9d69a7c02ef0097afa162690d58a6cc6007705983d8",
+-    "destination": "2-src/shared/hardware/head4_local_sensitivity_20261102.json"
++    "destination": "3-results/hardware_characterization/shared/head4_local_sensitivity_20261102.json"
+   },
+   {
+     "original": "02_Source/shared/hardware/head4_probe_capture_20261102T114924Z.json",
+     "bytes": 629766,
+     "sha256": "84d1ea6c2e973c4a8e070606521202ab354b7010c9b0167489fc8cbae40a0548",
+-    "destination": "2-src/shared/hardware/head4_probe_capture_20261102T114924Z.json"
++    "destination": "3-results/hardware_characterization/shared/head4_probe_capture_20261102T114924Z.json"
+   },
+   {
+     "original": "02_Source/shared/hardware/head4_settled_observations_20261102T122405Z.json",
+     "bytes": 12544,
+     "sha256": "b435ca89690f2e7e869ab5eb7e9c8b086c1cea7f1f9aadb838ee68590aeee802",
+-    "destination": "2-src/shared/hardware/head4_settled_observations_20261102T122405Z.json"
++    "destination": "3-results/hardware_characterization/shared/head4_settled_observations_20261102T122405Z.json"
+   },
+   {
+     "original": "02_Source/shared/hardware/head5_local_sensitivity_20261102.json",
+     "bytes": 1006,
+     "sha256": "7e1e41cd14cd4fdd095e3c4b3dad0931e443f6482506ce000bd9501d8710a531",
+-    "destination": "2-src/shared/hardware/head5_local_sensitivity_20261102.json"
++    "destination": "3-results/hardware_characterization/shared/head5_local_sensitivity_20261102.json"
+   },
+   {
+     "original": "02_Source/shared/hardware/head5_settled_observations_20261102T125000Z.json",
+     "bytes": 8273,
+     "sha256": "64f06f375571e594fcfbfc92eb729824e6dc1da0be8a297cc06f32936aff290b",
+-    "destination": "2-src/shared/hardware/head5_settled_observations_20261102T125000Z.json"
++    "destination": "3-results/hardware_characterization/shared/head5_settled_observations_20261102T125000Z.json"
+   },
+   {
+     "original": "02_Source/shared/hardware/id2_pid_selected_P32_I1_D16.json",
+     "bytes": 34872,
+     "sha256": "4991ceb9f67bf4b474b991dfffd2ac66834b4694b6c2a3a85f610971b3b8ba8f",
+-    "destination": "2-src/shared/hardware/id2_pid_selected_P32_I1_D16.json"
++    "destination": "3-results/hardware_characterization/shared/id2_pid_selected_P32_I1_D16.json"
+   },
+   {
+     "original": "02_Source/shared/hardware/joint_pid_favorites.json",
+@@ -1329,25 +1329,25 @@
+     "original": "02_Source/shared/hardware/small_happy_motion_analysis_20261102.json",
+     "bytes": 2185,
+     "sha256": "0d943b10aa971f1104d00b8155f1713c8336d4f551b2acd5249cf95fb5dd0443",
+-    "destination": "2-src/shared/hardware/small_happy_motion_analysis_20261102.json"
++    "destination": "3-results/hardware_characterization/shared/small_happy_motion_analysis_20261102.json"
+   },
+   {
+     "original": "02_Source/shared/hardware/small_happy_motion_trace_20261102T151056Z.json",
+     "bytes": 542136,
+     "sha256": "a4b5d055d4c43c7c2510c6b7f034928a71fa8f35f2779f1ad327efda67876a15",
+-    "destination": "2-src/shared/hardware/small_happy_motion_trace_20261102T151056Z.json"
++    "destination": "3-results/hardware_characterization/shared/small_happy_motion_trace_20261102T151056Z.json"
+   },
+   {
+     "original": "02_Source/shared/hardware/small_happy_sync_analysis_20261102.json",
+     "bytes": 31592,
+     "sha256": "9e3e2780b7623dffad639177c4d6cabfbb6d6ff6b97e91ee487e159678fc1ed4",
+-    "destination": "2-src/shared/hardware/small_happy_sync_analysis_20261102.json"
++    "destination": "3-results/hardware_characterization/shared/small_happy_sync_analysis_20261102.json"
+   },
+   {
+     "original": "02_Source/shared/hardware/small_happy_sync_trace_20261102T153425Z.json",
+     "bytes": 528857,
+     "sha256": "ded2113388cb40393e197208171e603c37b8b0153f38f478bd43eb664123b314",
+-    "destination": "2-src/shared/hardware/small_happy_sync_trace_20261102T153425Z.json"
++    "destination": "3-results/hardware_characterization/shared/small_happy_sync_trace_20261102T153425Z.json"
+   },
+   {
+     "original": "02_Source/shared/runtime/acceleration_restore.py",
+@@ -1773,19 +1773,19 @@
+     "original": "03_Results/course_bridge_verified_20261026_27/CSV_GUIDE_TH.md",
+     "bytes": 3638,
+     "sha256": "2e6f6b961ec7bd796ab44db6e3359d89fe1dabe8c7ad2abd1dfd42ed0b8eb217",
+-    "destination": "3-results/course_bridge_verified_20261026_27/CSV_GUIDE_TH.md"
++    "destination": "1-docs/markdown/csv_guide_th.md"
+   },
+   {
+     "original": "03_Results/course_bridge_verified_20261026_27/GRAPH_AND_CONTRACT_TH.md",
+     "bytes": 4189,
+     "sha256": "644165e27847edf174d8cae9fe699252cbbc9295d482e55f4375f25a20b611e9",
+-    "destination": "3-results/course_bridge_verified_20261026_27/GRAPH_AND_CONTRACT_TH.md"
++    "destination": "1-docs/markdown/graph_and_contract_th.md"
+   },
+   {
+     "original": "03_Results/course_bridge_verified_20261026_27/PROTOCOL_BEFORE_RUN_TH.md",
+     "bytes": 3305,
+     "sha256": "4a2613d297f9f9087cd8faf5b37b9ae0e7e255d4ce3e78deee9d7b160156e961",
+-    "destination": "3-results/course_bridge_verified_20261026_27/PROTOCOL_BEFORE_RUN_TH.md"
++    "destination": "1-docs/markdown/protocol_before_run_th.md"
+   },
+   {
+     "original": "03_Results/course_bridge_verified_20261026_27/RECOVERY_AUDIT.json",
+@@ -2403,7 +2403,7 @@
+     "original": "03_Results/course_bridge_verified_20261026_27/ros2_ws/ROS_RESULTS_TH.md",
+     "bytes": 5430,
+     "sha256": "b9349d757d73eb41c8676608551ef6b169b0f609d7f90329f1a5f5036f9f742c",
+-    "destination": "3-results/course_bridge_verified_20261026_27/ros2_ws/ROS_RESULTS_TH.md"
++    "destination": "1-docs/markdown/ros_results_th.md"
+   },
+   {
+     "original": "03_Results/course_bridge_verified_20261026_27/ros2_ws/ROS_VERIFICATION.json",
+@@ -3219,7 +3219,7 @@
+     "original": "03_Results/normal_controlled_pilot_20261104/README_TH.md",
+     "bytes": 7825,
+     "sha256": "965354ee5a37743a01fb0befda13445df3af16c3d4ff66925a30f0da65ab71cd",
+-    "destination": "3-results/normal_controlled_pilot_20261104/README_TH.md"
++    "destination": "1-docs/markdown/normal_controlled_pilot_report_th.md"
+   },
+   {
+     "original": "03_Results/normal_controlled_pilot_20261104/reproduction_code/build_canva_normal_pilot.py",
+@@ -3249,7 +3249,7 @@
+     "original": "03_Results/normal_controlled_pilot_20261104/SLIDE_NOTES_EN.md",
+     "bytes": 1915,
+     "sha256": "6c0a5bf613c388408f17ef7ce29518dcb1f2d07eda4d54912a6291fd858a7871",
+-    "destination": "3-results/normal_controlled_pilot_20261104/SLIDE_NOTES_EN.md"
++    "destination": "1-docs/markdown/slide_notes_en.md"
+   },
+   {
+     "original": "03_Results/normal_controlled_pilot_20261104/SOURCE_AUDIT.json",
+@@ -3321,7 +3321,7 @@
+     "original": "03_Results/real_robot_final/SIX_TRIAL_REPORT_TH.md",
+     "bytes": 3557,
+     "sha256": "12a72c16f3a961238afb0e13bb0a55e49291f152b2b47720022eae34f36f2506",
+-    "destination": "3-results/real_robot_final/SIX_TRIAL_REPORT_TH.md"
++    "destination": "1-docs/markdown/six_trial_report_th.md"
+   },
+   {
+     "original": "03_Results/real_robot_final/SIX_TRIAL_SUMMARY.csv",
+@@ -3717,7 +3717,7 @@
+     "original": "03_Results/real_robot_pilot/BUTTON_START_PROTOCOL_TH.md",
+     "bytes": 6185,
+     "sha256": "dd3f4148c57116bd041c0a1cc5181421f3a063e075a7ee56be768e2375acd7f9",
+-    "destination": "3-results/real_robot_pilot/BUTTON_START_PROTOCOL_TH.md"
++    "destination": "1-docs/markdown/button_start_protocol_th.md"
+   },
+   {
+     "original": "03_Results/real_robot_pilot/C0_bag_db0023c1/bag/bag_0.db3",
+@@ -3915,13 +3915,13 @@
+     "original": "03_Results/real_robot_pilot/PAIR_P2_BUTTON_START_REPORT_TH.md",
+     "bytes": 7795,
+     "sha256": "6d76b3912017da2a1d74b8ef63d1144b8f6323b00f95b90b8ccd46f30bb9c5d9",
+-    "destination": "3-results/real_robot_pilot/PAIR_P2_BUTTON_START_REPORT_TH.md"
++    "destination": "1-docs/markdown/pair_p2_button_start_report_th.md"
+   },
+   {
+     "original": "03_Results/real_robot_pilot/PAIR_P2_S_H_PHI.pdf",
+     "bytes": 24798,
+     "sha256": "a8bf4260ea6e285cc5ce50af814281dff5e7e4b727fb19ad206fbc85a0b3f8be",
+-    "destination": "1-docs/lab_documents/pair_p2_s_h_phi.pdf"
++    "destination": "3-results/real_robot_pilot/PAIR_P2_S_H_PHI.pdf"
+   },
+   {
+     "original": "03_Results/real_robot_pilot/PAIR_P2_S_H_PHI.png",
+@@ -4659,7 +4659,7 @@
+     "original": "03_Results/simulation/REPORT_TH.md",
+     "bytes": 8254,
+     "sha256": "af29b381db00b14e6b61b7896767f09ff63d5a64b2ee7a543364033e43917ac4",
+-    "destination": "3-results/simulation/REPORT_TH.md"
++    "destination": "1-docs/markdown/simulation_report_th.md"
+   },
+   {
+     "original": "03_Results/simulation/source_hashes.json",
+@@ -4755,7 +4755,7 @@
+     "original": "03_Results/software_checks/REPORT_TH.md",
+     "bytes": 3999,
+     "sha256": "2633405da95cdc7608151c2c8ee47c10906d9137316280bb2a43244512b2d25f",
+-    "destination": "3-results/software_checks/REPORT_TH.md"
++    "destination": "1-docs/markdown/software_checks_report_th.md"
+   },
+   {
+     "original": "03_Results/software_checks/reproduction_red.log",
+@@ -4845,7 +4845,7 @@
+     "original": "04_Design/GRAPH_CONTENT_AUDIT.json",
+     "bytes": 1693,
+     "sha256": "aee238077e7028b4abedb125b4390467abcb2346b34725c4ece80bb1bd7d91c1",
+-    "destination": "4-figures/graph_content_audit.json"
++    "destination": "3-results/repository_maintenance_history/graph_content_audit.json"
+   },
+   {
+     "original": "04_Design/GRAPH_EVIDENCE_NOTES_TH.md",
+@@ -4899,7 +4899,7 @@
+     "original": "04_Design/TOPIC_CONTRACT_13.json",
+     "bytes": 2778,
+     "sha256": "4b771d47022b51b6b1193103f6a075b762ab1c702e23a7061963d8e1b08431b5",
+-    "destination": "4-figures/topic_contract_13.json"
++    "destination": "2-src/Lab07/config/topic_contract_13.json"
+   },
+   {
+     "original": "05_Worksheet/member_source.json",
+@@ -5109,13 +5109,13 @@
+     "original": "DOCUMENT_QA.json",
+     "bytes": 485,
+     "sha256": "2b722f928b350a8b4db32a518729493a49991ed9318bc55cc2cd55c04efba31f",
+-    "destination": "1-docs/checks/document_qa.json"
++    "destination": "3-results/repository_maintenance_history/document_qa.json"
+   },
+   {
+     "original": "DOCUMENT_QA_FINAL.json",
+     "bytes": 953,
+     "sha256": "79b541c72b6805a638ffda5d3cd3a53fea48ad3d354bba059c956004820e28a4",
+-    "destination": "1-docs/checks/document_qa_final.json"
++    "destination": "3-results/repository_maintenance_history/document_qa_final.json"
+   },
+   {
+     "original": "FILE_LOCATIONS_TH.md",
+--- 1-docs/checks/organization_report_th.md
++++ 1-docs/checks/organization_report_th.md
+@@ -9,7 +9,7 @@
+ - 03_Results/final_summary/Week07_Results_Summary_20261105.docx → 1-docs/lab_documents/Lab07_Report_Group7.docx
+ - 05_Worksheet/Week07_Worksheet_FINAL_RESULTS_20261105.docx → 1-docs/lab_documents/Lab07_Student_Worksheet_TH.docx
+ - 05_Worksheet/worksheet.md → 1-docs/markdown/worksheet.md
+-- 03_Results/real_robot_pilot/PAIR_P2_S_H_PHI.pdf → 1-docs/lab_documents/pair_p2_s_h_phi.pdf
++- 03_Results/real_robot_pilot/PAIR_P2_S_H_PHI.pdf → 3-results/real_robot_pilot/PAIR_P2_S_H_PHI.pdf
+ - เอกสาร references, คู่มือ Markdown จาก design และบันทึกเอกสาร root รวมเข้า 1-docs
+ - 02_Source → 2-src, 03_Results → 3-results, 04_Design → 4-figures, 07_Evidence → 3-results/evidence
+ 
+--- 1-docs/markdown/worksheet.md
++++ 1-docs/markdown/worksheet.md
+@@ -36,7 +36,7 @@
+ | `/lamp/diagnostics` | `diagnostic_msgs/msg/DiagnosticArray` | status / V / °C / ages |
+ | `/lamp/trace` | `std_msgs/msg/String` | JSON source / state / goals |
+ 
+-ครบ 13 topics ตาม `4-figures/topic_contract_13.json`.
++ครบ 13 topics ตาม `2-src/Lab07/config/topic_contract_13.json`.
+ 
+ ทุก topic ใน live/replay: `lelamp_session_observer → rosbag2_recorder`; ตั้ง RELIABLE / KEEP_LAST depth 10 / VOLATILE ตาม `qos.yaml`. Graph introspection รายงาน history/depth เป็น UNKNOWN/0 จึงไม่ใช้ค่านั้นรับรองค่า QoS.
+ 
+--- 1-docs/README.md
++++ 1-docs/README.md
+@@ -5,7 +5,7 @@
+ - [รายงานผล](lab_documents/Lab07_Report_Group7.docx)
+ - [ข้อเสนอโครงงาน Word](lab_documents/Lab07_Proposal_Group7.docx) / [PDF](lab_documents/Lab07_Proposal_Group7.pdf)
+ - [ใบงาน Word](lab_documents/Lab07_Student_Worksheet_TH.docx)
+-- [กราฟประกอบ pilot](lab_documents/pair_p2_s_h_phi.pdf)
++- [กราฟประกอบ pilot](../3-results/real_robot_pilot/PAIR_P2_S_H_PHI.pdf)
+ 
+ ## Markdown และเอกสารสนับสนุน
+ 
+@@ -13,6 +13,6 @@
+ - [ใบงาน Markdown](markdown/worksheet.md)
+ - `references/` — เอกสารรายวิชาต้นทาง การนำงานเดิมมาใช้ และ attribution; ไม่ใช่ source code
+ - `metadata/` — ข้อมูลที่มาของใบงาน สมาชิก และสถานะ package
+-- `checks/` — รายการตรวจ ผลทดสอบ และ mapping ไฟล์; ไม่ใช่รายงานผลแล็ป
++- `checks/` — รายงานตรวจที่มนุษย์อ่านและ mapping; logs/ผลตรวจ JSON อยู่ `../3-results/repository_qa_20261106/`
+ 
+ Source code อยู่ `../2-src/` ผลทดลองอยู่ `../3-results/` รูปอยู่ `../4-figures/`
+--- 2-src/Lab07/export_review_csv.py
++++ 2-src/Lab07/export_review_csv.py
+@@ -10,7 +10,7 @@
+ import json
+ from pathlib import Path
+ 
+-ROOT = Path(__file__).resolve().parent
++ROOT = Path(__file__).resolve().parents[2]
+ TOPICS = ('/lamp/input/button', '/lamp/input/touch', '/lamp/input/distance',
+           '/lamp/interaction', '/lamp/emotion', '/lamp/servo_command', '/lamp/rgb_command')
+ 
+--- 2-src/Lab07/verify_evidence.py
++++ 2-src/Lab07/verify_evidence.py
+@@ -5,7 +5,7 @@
+ import math
+ from pathlib import Path
+ 
+-ROOT = Path(__file__).resolve().parent
++ROOT = Path(__file__).resolve().parents[2] / '3-results/course_bridge_verified_20261026_27'
+ RUN = ROOT / 'results/group07_offline_20261026'
+ REPLAY = ROOT / 'results/group07_replay_seed42_20261026'
+ EXPECTED = {'button_01', 'touch_01', 'approach_01', 'clear_01', 'near_01', 'clear_02', 'button_02'}
+@@ -98,7 +98,7 @@
+                    'byte_identical_replay_sha256': replay_hashes,
+                    'policy_sha256': sha(ROOT / 'completed_policy.py'),
+                    'scope': 'Evidence integrity/model bounds/derived CSV only. ROS and hardware untested.'})
+-    (ROOT / 'verification.json').write_text(json.dumps(checks, indent=2), encoding='utf-8')
++    # Read-only audit: print results without replacing the recorded verification.json.
+     print(json.dumps(checks, indent=2))
+ 
+ 
+--- README.md
++++ README.md
+@@ -12,11 +12,11 @@
+ 
+ ## ข้อมูลที่แนบ
+ 
+-- [AHM real6trials](3-results/real_robot_final/SIX_TRIAL_REPORT_TH.md) และ [simulation6trials](3-results/simulation_final/summary.json)
++- [AHM real6trials](1-docs/markdown/six_trial_report_th.md) และ [simulation6trials](3-results/simulation_final/summary.json)
+ - [Teacher completedpolicy/transport/ROS3roles](3-results/course_bridge_verified_20261026_27/RECOVERY_AUDIT.json)
+ - [LivePi→WSL60s934rows](3-results/live_wsl_20261106/TECHNICAL_STATUS.json)
+ - [คลิปเล่นและCSV](3-results/evidence/VIDEO_INDEX.md)
+-- [13topiccontract](4-figures/topic_contract_13.json), [Draw.io](4-figures/lelamp_architecture.drawio), [sourceกราฟ3roles](4-figures/course_three_roles_source.json)
++- [13topiccontract](2-src/Lab07/config/topic_contract_13.json), [Draw.io](4-figures/lelamp_architecture.drawio), [sourceกราฟ3roles](4-figures/course_three_roles_source.json)
+ 
+ แยก C0/C1 transport ideal/delaydrop จาก AHM R=S/H และNormalpilotคนละรุ่น ผลCPGo1ไม่ใช่หลักฐานphysicalsmoothness มีN/A/hold/ordereffectตามจริง ROSอยู่WSLเชื่อมPiแบบlive; PiคุมUARTเอง Pi 5 ควบคุมโคมโดยตรง ส่วน WSL รับข้อมูลผ่าน SSH ไม่มี MCU แยกหรือ micro-ROS Agent
+ 
+--- verify_package.py
++++ verify_package.py
+@@ -6,7 +6,7 @@
+ for name,expected in manifest.items():
+     p=root/name
+     if not p.is_file() or hashlib.sha256(p.read_bytes()).hexdigest()!=expected:errors.append('hash: '+name)
+-contract=json.loads((root/'4-figures/topic_contract_13.json').read_text(encoding='utf8'))
++contract=json.loads((root/'2-src/Lab07/config/topic_contract_13.json').read_text(encoding='utf8'))
+ if len(contract['topics'])!=13:errors.append('topic contract !=13')
+ raw=root/'3-results/real_robot_pilot'
+ for condition,suffix in [('C0','db0023c1'),('C1','86706a5d')]:

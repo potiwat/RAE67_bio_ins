@@ -1,0 +1,5 @@
+--- a/src/lamp_week07/lamp_week07/ros_nodes.py
++++ b/src/lamp_week07/lamp_week07/ros_nodes.py
+@@ -92,1 +92,1 @@
+-        for name,msg,payload in (('interaction',interaction,interaction.data),('emotion',emotion,emotion.data),('servo_command',servo,servo.data),('rgb_command',rgb,[rgb.r,rgb.g,rgb.b,rgb.a])):
++        for name,msg,payload in (('interaction',interaction,interaction.data),('emotion',emotion,emotion.data),('servo_command',servo,list(servo.data)),('rgb_command',rgb,[rgb.r,rgb.g,rgb.b,rgb.a])):

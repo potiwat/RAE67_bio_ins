@@ -1,0 +1,11 @@
+{
+  "proposal_pages": 3,
+  "worksheet_pages": 14,
+  "docx_render_attempt": "Bundled render_docx.py attempted; LibreOffice not available",
+  "fallback": "Microsoft Word COM PDF export and bundled pypdfium2 page rasterization",
+  "visual_review": "Proposal all3pages inspected; worksheet all14page layouts inspected, latest red amendment inspected individually",
+  "package_pc_tests": 119,
+  "package_pc_tests_passed": true,
+  "pi_program_changed": false,
+  "uploaded": false
+}

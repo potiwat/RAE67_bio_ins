@@ -1,0 +1,231 @@
+{
+  "status": "paired pilot recordings verified",
+  "nominal_input_identical": true,
+  "raw_source_sha256": "982bfe603cd9e3be844cab7108fd2fa077eb4fc5c678a52930264689dba969d4",
+  "common_oscillator_initial": true,
+  "actual_encoder_initial_identical": false,
+  "actual_applied_timing_identical": false,
+  "conditions": {
+    "C0": {
+      "condition": "C0",
+      "trace_count": 652,
+      "last_elapsed_s": 50.05618245400001,
+      "max_phi_step": 0.03,
+      "phi_range": [
+        0.1,
+        0.13
+      ],
+      "cpg_o1_metrics": {
+        "period_count": 7,
+        "frequency_hz": 0.15531068927683878,
+        "delta_t_count": 6,
+        "delta_t_mean_s": 0.42848204434425713,
+        "delta_t_max_s": 1.1093188803195595
+      },
+      "cpg_periods": [
+        {
+          "start_s": 3.3548081827632226,
+          "end_s": 10.160859809481389,
+          "period_s": 6.806051626718166,
+          "midpoint_s": 6.757833996122306,
+          "frequency_hz": 0.14692806561653918
+        },
+        {
+          "start_s": 10.160859809481389,
+          "end_s": 16.964945785554622,
+          "period_s": 6.8040859760732335,
+          "midpoint_s": 13.562902797518007,
+          "frequency_hz": 0.14697051205944914
+        },
+        {
+          "start_s": 16.964945785554622,
+          "end_s": 23.593829414152378,
+          "period_s": 6.628883628597755,
+          "midpoint_s": 20.2793875998535,
+          "frequency_hz": 0.15085496382616925
+        },
+        {
+          "start_s": 23.593829414152378,
+          "end_s": 29.113394162430573,
+          "period_s": 5.519564748278196,
+          "midpoint_s": 26.353611788291474,
+          "frequency_hz": 0.1811737058274288
+        },
+        {
+          "start_s": 29.113394162430573,
+          "end_s": 34.81782645957067,
+          "period_s": 5.7044322971400945,
+          "midpoint_s": 31.96561031100062,
+          "frequency_hz": 0.17530228213968777
+        },
+        {
+          "start_s": 34.81782645957067,
+          "end_s": 41.62178604531057,
+          "period_s": 6.803959585739904,
+          "midpoint_s": 38.21980625244062,
+          "frequency_hz": 0.14697324218325056
+        },
+        {
+          "start_s": 41.62178604531057,
+          "end_s": 48.42575618121434,
+          "period_s": 6.803970135903768,
+          "midpoint_s": 45.023771113262455,
+          "frequency_hz": 0.14697301428810144
+        }
+      ],
+      "logged_unique_cpg_nodes": 486,
+      "unlogged_cpg_nodes": 15,
+      "skipped_nominal_parameter_indices": 359,
+      "median_record_interval_s": 0.08686239700000442,
+      "initial_feedback_raw": {
+        "1": 2020,
+        "2": 2846,
+        "3": 2762,
+        "4": 1993,
+        "5": 2697
+      },
+      "joints": {
+        "2": {
+          "actual_range_ticks": [
+            2848,
+            2856
+          ],
+          "actual_peak_to_peak_deg": 0.703125,
+          "command_range_ticks": [
+            2824,
+            2850
+          ],
+          "command_peak_to_peak_deg": 2.28515625
+        },
+        "3": {
+          "actual_range_ticks": [
+            2753,
+            2764
+          ],
+          "actual_peak_to_peak_deg": 0.966796875,
+          "command_range_ticks": [
+            2733,
+            2759
+          ],
+          "command_peak_to_peak_deg": 2.28515625
+        }
+      },
+      "physical_frequency_measured": false,
+      "physical_jerk_measured": false,
+      "metric_clock": "o1 state at updates*dt/time_scale; linear rising zero crossings"
+    },
+    "C1": {
+      "condition": "C1",
+      "trace_count": 659,
+      "last_elapsed_s": 50.03220566999971,
+      "max_phi_step": 0.0025532458333081404,
+      "phi_range": [
+        0.1,
+        0.12991046034733203
+      ],
+      "cpg_o1_metrics": {
+        "period_count": 7,
+        "frequency_hz": 0.15542851304087557,
+        "delta_t_count": 6,
+        "delta_t_mean_s": 0.4609940994501874,
+        "delta_t_max_s": 1.3256577978892068
+      },
+      "cpg_periods": [
+        {
+          "start_s": 3.3567865996256914,
+          "end_s": 10.160859809481389,
+          "period_s": 6.804073209855698,
+          "midpoint_s": 6.75882320455354,
+          "frequency_hz": 0.1469707878144962
+        },
+        {
+          "start_s": 10.160859809481389,
+          "end_s": 16.964945785554622,
+          "period_s": 6.8040859760732335,
+          "midpoint_s": 13.562902797518007,
+          "frequency_hz": 0.14697051205944914
+        },
+        {
+          "start_s": 16.964945785554622,
+          "end_s": 23.714531126751908,
+          "period_s": 6.749585341197285,
+          "midpoint_s": 20.339738456153263,
+          "frequency_hz": 0.14815724958632992
+        },
+        {
+          "start_s": 23.714531126751908,
+          "end_s": 29.42190497616521,
+          "period_s": 5.707373849413301,
+          "midpoint_s": 26.568218051458558,
+          "frequency_hz": 0.17521193220990713
+        },
+        {
+          "start_s": 29.42190497616521,
+          "end_s": 34.842939875011815,
+          "period_s": 5.421034898846607,
+          "midpoint_s": 32.132422425588516,
+          "frequency_hz": 0.18446662282376425
+        },
+        {
+          "start_s": 34.842939875011815,
+          "end_s": 41.58963257174763,
+          "period_s": 6.746692696735813,
+          "midpoint_s": 38.216286223379726,
+          "frequency_hz": 0.14822077200638178
+        },
+        {
+          "start_s": 41.58963257174763,
+          "end_s": 48.3935682238512,
+          "period_s": 6.8039356521035685,
+          "midpoint_s": 44.99160039779942,
+          "frequency_hz": 0.14697375917875277
+        }
+      ],
+      "logged_unique_cpg_nodes": 491,
+      "unlogged_cpg_nodes": 10,
+      "skipped_nominal_parameter_indices": 359,
+      "median_record_interval_s": 0.08429110999986733,
+      "initial_feedback_raw": {
+        "1": 2016,
+        "2": 2852,
+        "3": 2759,
+        "4": 1994,
+        "5": 2697
+      },
+      "joints": {
+        "2": {
+          "actual_range_ticks": [
+            2846,
+            2856
+          ],
+          "actual_peak_to_peak_deg": 0.87890625,
+          "command_range_ticks": [
+            2824,
+            2850
+          ],
+          "command_peak_to_peak_deg": 2.28515625
+        },
+        "3": {
+          "actual_range_ticks": [
+            2755,
+            2764
+          ],
+          "actual_peak_to_peak_deg": 0.791015625,
+          "command_range_ticks": [
+            2733,
+            2759
+          ],
+          "command_peak_to_peak_deg": 2.28515625
+        }
+      },
+      "physical_frequency_measured": false,
+      "physical_jerk_measured": false,
+      "metric_clock": "o1 state at updates*dt/time_scale; linear rising zero crossings"
+    }
+  },
+  "phi_step_reduction_percent": 91.48918055563952,
+  "independent_pairs": 1,
+  "claim": "C1 phi steps smaller; no improvement in controller DeltaT in this pair; physical smoothness unproven",
+  "physical_frequency_measured": false,
+  "physical_jerk_measured": false
+}

@@ -1,0 +1,20 @@
+{
+  "rename": {
+    "old": "2-src/Lab07",
+    "new": "2-src/ros2_package"
+  },
+  "package_files": 29,
+  "missing": [],
+  "changed_package_text": [],
+  "references_updated": [
+    "README.md",
+    "verify_package.py",
+    "1-docs/markdown/worksheet.md",
+    "1-docs/references/third_party_notices.md",
+    "2-src/bio_inspire/experiments/ahm_cpg_compare.py",
+    "2-src/bio_inspire/experiments/run_ahm_cpg_compare.py",
+    "1-docs/checks/file_mapping.json"
+  ],
+  "original_copy": "original_files/rename_package_before/package",
+  "ros_package_name_unchanged": "lamp_week07"
+}

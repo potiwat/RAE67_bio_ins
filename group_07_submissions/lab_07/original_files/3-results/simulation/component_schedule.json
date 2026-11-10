@@ -1,0 +1,62 @@
+{
+  "origin": "PC_schedule_not_deployed",
+  "start": "M then fifth physical button release, same existing gate",
+  "slots": [
+    {
+      "state": "normal",
+      "slot_start_s": 0.0,
+      "settling_end_s": 15.0,
+      "slot_end_s": 60.0,
+      "S_on_s": 30.0,
+      "S_off_s": 45.0,
+      "hardware_policy": "Must reach approved pose before measure; abort/mark invalid on timeout or real safety override, never force or relabel samples"
+    },
+    {
+      "state": "interested",
+      "slot_start_s": 60.0,
+      "settling_end_s": 75.0,
+      "slot_end_s": 120.0,
+      "S_on_s": 90.0,
+      "S_off_s": 105.0,
+      "hardware_policy": "Must reach approved pose before measure; abort/mark invalid on timeout or real safety override, never force or relabel samples"
+    },
+    {
+      "state": "happy",
+      "slot_start_s": 120.0,
+      "settling_end_s": 135.0,
+      "slot_end_s": 180.0,
+      "S_on_s": 150.0,
+      "S_off_s": 165.0,
+      "hardware_policy": "Must reach approved pose before measure; abort/mark invalid on timeout or real safety override, never force or relabel samples"
+    },
+    {
+      "state": "angry",
+      "slot_start_s": 180.0,
+      "settling_end_s": 195.0,
+      "slot_end_s": 240.0,
+      "S_on_s": 210.0,
+      "S_off_s": 225.0,
+      "hardware_policy": "Must reach approved pose before measure; abort/mark invalid on timeout or real safety override, never force or relabel samples"
+    },
+    {
+      "state": "afraid",
+      "slot_start_s": 240.0,
+      "settling_end_s": 255.0,
+      "slot_end_s": 300.0,
+      "S_on_s": 270.0,
+      "S_off_s": 285.0,
+      "hardware_policy": "Must reach approved pose before measure; abort/mark invalid on timeout or real safety override, never force or relabel samples"
+    },
+    {
+      "state": "sleepy",
+      "slot_start_s": 300.0,
+      "settling_end_s": 315.0,
+      "slot_end_s": 360.0,
+      "S_on_s": 330.0,
+      "S_off_s": 345.0,
+      "hardware_policy": "Must reach approved pose before measure; abort/mark invalid on timeout or real safety override, never force or relabel samples"
+    }
+  ],
+  "live_safety": "Real ToF/STOP/camera/bus/angle guards must override scripted inputs in future hardware adapter",
+  "resets": "Independent per-state components; only reinitialize paused zero-envelope bank, never reset a moving rhythm"
+}

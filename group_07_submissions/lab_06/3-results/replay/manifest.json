@@ -1,0 +1,15 @@
+{
+  "config.json": "12039c725fbab7fe78e31b89ee905a4da5acd82dafadfb54b1fd4d579beccbd5",
+  "events_C1_r01.csv": "1942cd3bc6addcf205261671f6fc5d21955f0260503b56893135f301fef53994",
+  "inputs_r01.csv": "ab0184fc3eda9273d8409bb862a87ec8d631f144010e8d085c8e1875e0d6aaee",
+  "metrics.csv": "e38b56340685d4a53635ce5bf3d5061848d0a59c1154c5230bb54af1e54ceb56",
+  "metrics.json": "4e46431d7ab2df74ace495b8e819462549afbfe2dfb2c3e6ef735e772e05ee44",
+  "raw_C1_r01.csv": "3cbe847c7a4826b94263c88caeb6a7751b306f56f9eb8caae0d6dcdbeab41ff4",
+  "report.html": "ccae1d4f6c14275246d2fa46ff3e01db6f9baadb60b76f6fd45781f967cbe498",
+  "source_inputs_r01.csv": "45c998298f1606c3fbb8f50a15005ac598a499cde4e35dbf5e78d3234c45f094",
+  "source_snapshot/course_model.py": "55ced08d6453c3db30d3c971397c27fb92b20324e611afd7aef9017fc428ec30",
+  "source_snapshot/interface_contract.json": "0be76d670516fa1ae877aaf3ba92f2eb368014e767a29d27c0068aa4d6c9ab3a",
+  "source_snapshot/lab06.py": "8c4b40f4e79c1bfb1c72b3e279f31b5331b345351d664aac5dd0dcfc1aa15723",
+  "source_snapshot/student_policy.py": "8eee6ce5d009f2231b614d2fa4cdaa26b022372ac5ca0f1f272670e7c8f0e8d1",
+  "trace_C1_r01.svg": "190da86526573a3f6b7c63f1d28dc9fa1a8df54d6549865ae7189cfd25f92592"
+}

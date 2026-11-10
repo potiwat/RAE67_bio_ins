@@ -1,0 +1,24 @@
+{
+  "original_count": 866,
+  "backup_integrity": "PASS",
+  "active_files_accounted_for": 866,
+  "changed_text_files": [
+    ".gitignore",
+    "2-src/Lab07/proposal.json",
+    "4-figures/course_three_roles_source.json",
+    "4-figures/graph_content_audit.json",
+    "1-docs/worksheet.md",
+    "1-docs/document_qa_final.json",
+    "1-docs/file_locations_th.md",
+    "1-docs/github_upload_th.md",
+    "1-docs/package_build.json",
+    "README.md",
+    "run_pc_checks.py",
+    "1-docs/submission_audit_20261106_th.md",
+    "1-docs/submission_checklist_th.md",
+    "1-docs/third_party_notices.md",
+    "verify_package.py",
+    "1-docs/video_not_included_th.md",
+    "1-docs/word_files_index_th.md"
+  ]
+}

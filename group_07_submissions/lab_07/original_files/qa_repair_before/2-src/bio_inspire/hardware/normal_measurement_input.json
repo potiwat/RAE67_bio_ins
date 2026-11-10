@@ -1,0 +1,5010 @@
+{
+  "dt_s": 0.05,
+  "stimulus_policy": "near_only_v2",
+  "raw_source": "bio_inspire/results/real_input_ros_20261104/input_normal_tof_20261104_r08.jsonl",
+  "raw_sha256": "982bfe603cd9e3be844cab7108fd2fa077eb4fc5c678a52930264689dba969d4",
+  "source_start_s": 80.0,
+  "source_end_s": 130.0,
+  "samples": [
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01600",
+      "source_s": 80.00010206299999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01601",
+      "source_s": 80.05009926999992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01602",
+      "source_s": 80.10009827299996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01603",
+      "source_s": 80.15009821799993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01604",
+      "source_s": 80.20008078799992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01605",
+      "source_s": 80.2501044139999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01606",
+      "source_s": 80.30011050199994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01607",
+      "source_s": 80.35010383199995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01608",
+      "source_s": 80.40012169799991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01609",
+      "source_s": 80.45011056499993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01610",
+      "source_s": 80.50010115299995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01611",
+      "source_s": 80.55009720499993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01612",
+      "source_s": 80.60010071900001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01613",
+      "source_s": 80.65009880799994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01614",
+      "source_s": 80.700098378
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01615",
+      "source_s": 80.75009855899998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01616",
+      "source_s": 80.80009909299997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01617",
+      "source_s": 80.85009769999999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01618",
+      "source_s": 80.90007128899992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01619",
+      "source_s": 80.95009922899999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01620",
+      "source_s": 81.00010172499992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01621",
+      "source_s": 81.05009879499994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01622",
+      "source_s": 81.10006653199991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01623",
+      "source_s": 81.15009919199997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01624",
+      "source_s": 81.20009860599998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01625",
+      "source_s": 81.25010002099998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01626",
+      "source_s": 81.30010019499991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01627",
+      "source_s": 81.35009857199998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01628",
+      "source_s": 81.40010126499999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01629",
+      "source_s": 81.45010560499998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01630",
+      "source_s": 81.50009902
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01631",
+      "source_s": 81.55009878599992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01632",
+      "source_s": 81.60009814599994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01633",
+      "source_s": 81.6500971339999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01634",
+      "source_s": 81.70009725299997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01635",
+      "source_s": 81.75009709299991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01636",
+      "source_s": 81.80009884099991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01637",
+      "source_s": 81.85009894099994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01638",
+      "source_s": 81.90009663299998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01639",
+      "source_s": 81.95009938099997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01640",
+      "source_s": 82.00010249999991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01641",
+      "source_s": 82.050098951
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01642",
+      "source_s": 82.10009806999994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01643",
+      "source_s": 82.15009877799992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01644",
+      "source_s": 82.20009733299992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01645",
+      "source_s": 82.25009785199995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01646",
+      "source_s": 82.30009992599992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01647",
+      "source_s": 82.35009844399997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01648",
+      "source_s": 82.40009711099992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01649",
+      "source_s": 82.45009777799999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01650",
+      "source_s": 82.50007592599991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01651",
+      "source_s": 82.55010261099994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01652",
+      "source_s": 82.60009916599995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01653",
+      "source_s": 82.65009936999991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01654",
+      "source_s": 82.70009809199996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01655",
+      "source_s": 82.75009872199996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01656",
+      "source_s": 82.80009892499993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01657",
+      "source_s": 82.85009855499993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01658",
+      "source_s": 82.90009781399999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01659",
+      "source_s": 82.95009870299998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01660",
+      "source_s": 83.00009988799991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01661",
+      "source_s": 83.05009873999995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01662",
+      "source_s": 83.10009748099992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01663",
+      "source_s": 83.15009897799996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01664",
+      "source_s": 83.20009926699993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01665",
+      "source_s": 83.25009833399997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01666",
+      "source_s": 83.30010101099992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01667",
+      "source_s": 83.35010037500001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01668",
+      "source_s": 83.40010001499991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01669",
+      "source_s": 83.45010013799993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01670",
+      "source_s": 83.50010000099996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01671",
+      "source_s": 83.55009934599991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01672",
+      "source_s": 83.60009833799995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01673",
+      "source_s": 83.6500984239999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01674",
+      "source_s": 83.70009839799991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01675",
+      "source_s": 83.75009837199991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01676",
+      "source_s": 83.80009751299997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01677",
+      "source_s": 83.85009889499997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01678",
+      "source_s": 83.90010099799997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01679",
+      "source_s": 83.95010774999992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01680",
+      "source_s": 84.00010453899995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01681",
+      "source_s": 84.05009997699995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01682",
+      "source_s": 84.10007345099996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01683",
+      "source_s": 84.15010166299999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01684",
+      "source_s": 84.20009940799991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01685",
+      "source_s": 84.25009794899995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01686",
+      "source_s": 84.30009785999994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01687",
+      "source_s": 84.35009864199992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01688",
+      "source_s": 84.40009796099991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01689",
+      "source_s": 84.45009737299995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01690",
+      "source_s": 84.50009835799995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01691",
+      "source_s": 84.55009963999998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01692",
+      "source_s": 84.60009819999993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01693",
+      "source_s": 84.65009694499997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01694",
+      "source_s": 84.70009717099992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01695",
+      "source_s": 84.7500976199999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01696",
+      "source_s": 84.80009723499995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01697",
+      "source_s": 84.8500987939999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01698",
+      "source_s": 84.90009931700001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01699",
+      "source_s": 84.95009891399991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01700",
+      "source_s": 85.00010043599991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01701",
+      "source_s": 85.05009819999998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01702",
+      "source_s": 85.10009801899992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01703",
+      "source_s": 85.150097835
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01704",
+      "source_s": 85.20009716499999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01705",
+      "source_s": 85.25009738400001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01706",
+      "source_s": 85.30010013999993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01707",
+      "source_s": 85.35009921099993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01708",
+      "source_s": 85.40009748599994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01709",
+      "source_s": 85.45009874199991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01710",
+      "source_s": 85.50008423999998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01711",
+      "source_s": 85.55010479199996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01712",
+      "source_s": 85.60010288199999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01713",
+      "source_s": 85.65010226699997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01714",
+      "source_s": 85.70010067199996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01715",
+      "source_s": 85.750101632
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01716",
+      "source_s": 85.80010085099991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01717",
+      "source_s": 85.85010860699992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01718",
+      "source_s": 85.90010414099993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01719",
+      "source_s": 85.950103657
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01720",
+      "source_s": 86.00010489499994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01721",
+      "source_s": 86.05010277999997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01722",
+      "source_s": 86.10009964799997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01723",
+      "source_s": 86.15009960499992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01724",
+      "source_s": 86.20009829899993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01725",
+      "source_s": 86.25009765899995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01726",
+      "source_s": 86.30009940799994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01727",
+      "source_s": 86.35009717599996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01728",
+      "source_s": 86.40009899899997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01729",
+      "source_s": 86.450112322
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01730",
+      "source_s": 86.50010883099992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01731",
+      "source_s": 86.55010098699995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01732",
+      "source_s": 86.60009968099996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01733",
+      "source_s": 86.65010013400001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01734",
+      "source_s": 86.70009938299995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01735",
+      "source_s": 86.75009744699992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01736",
+      "source_s": 86.80009862199995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01737",
+      "source_s": 86.85009709399992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01738",
+      "source_s": 86.90009967599997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01739",
+      "source_s": 86.95011664699996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01740",
+      "source_s": 87.00010517499993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01741",
+      "source_s": 87.05009934999998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01742",
+      "source_s": 87.10009919200002
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01743",
+      "source_s": 87.150098308
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01744",
+      "source_s": 87.20009869899991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01745",
+      "source_s": 87.25009806999992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01746",
+      "source_s": 87.30010051599993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01747",
+      "source_s": 87.35009887000001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01748",
+      "source_s": 87.40010018599992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01749",
+      "source_s": 87.45011111299993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01750",
+      "source_s": 87.50010837399998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01751",
+      "source_s": 87.55010111599995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01752",
+      "source_s": 87.60010002499996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01753",
+      "source_s": 87.65009882300001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01754",
+      "source_s": 87.70009928699994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01755",
+      "source_s": 87.75009801099998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01756",
+      "source_s": 87.80009917899997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01757",
+      "source_s": 87.850098903
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01758",
+      "source_s": 87.900097534
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01759",
+      "source_s": 87.95010977599998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01760",
+      "source_s": 88.00010477699993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01761",
+      "source_s": 88.05010044599999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01762",
+      "source_s": 88.10009859499996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01763",
+      "source_s": 88.1500987789999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01764",
+      "source_s": 88.20009838499993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01765",
+      "source_s": 88.25009947199999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01766",
+      "source_s": 88.30010322599992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01767",
+      "source_s": 88.35010242399994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01768",
+      "source_s": 88.40010301099994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01769",
+      "source_s": 88.45010835699998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01770",
+      "source_s": 88.50010763
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01771",
+      "source_s": 88.55010358699997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01772",
+      "source_s": 88.60010261899993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01773",
+      "source_s": 88.650100909
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01774",
+      "source_s": 88.70010175599998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01775",
+      "source_s": 88.75010202800001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01776",
+      "source_s": 88.80010215199991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01777",
+      "source_s": 88.85010286900001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01778",
+      "source_s": 88.90010078899991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01779",
+      "source_s": 88.95011050599999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01780",
+      "source_s": 89.00010335299999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01781",
+      "source_s": 89.05010112499997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01782",
+      "source_s": 89.10009826800001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01783",
+      "source_s": 89.15009912999994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01784",
+      "source_s": 89.200097562
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01785",
+      "source_s": 89.25009945699992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01786",
+      "source_s": 89.30009916699998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01787",
+      "source_s": 89.35009909899998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01788",
+      "source_s": 89.400097975
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01789",
+      "source_s": 89.45011229599993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01790",
+      "source_s": 89.500109469
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01791",
+      "source_s": 89.55010125299998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01792",
+      "source_s": 89.60009874100001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01793",
+      "source_s": 89.65009911699997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01794",
+      "source_s": 89.70009777099995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01795",
+      "source_s": 89.75009790699994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01796",
+      "source_s": 89.80009826499997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01797",
+      "source_s": 89.85009847499998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01798",
+      "source_s": 89.90009825899995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01799",
+      "source_s": 89.95010778400001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01800",
+      "source_s": 90.00010401199995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01801",
+      "source_s": 90.05009977700001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01802",
+      "source_s": 90.10009867199994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01803",
+      "source_s": 90.15009795399999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01804",
+      "source_s": 90.200098712
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01805",
+      "source_s": 90.25009834100001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01806",
+      "source_s": 90.30009959999995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01807",
+      "source_s": 90.35009872899991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01808",
+      "source_s": 90.400098598
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01809",
+      "source_s": 90.4501003009999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01810",
+      "source_s": 90.50011826299999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01811",
+      "source_s": 90.55009974399991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01812",
+      "source_s": 90.600098892
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01813",
+      "source_s": 90.65009920599994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01814",
+      "source_s": 90.700098465
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01815",
+      "source_s": 90.75009972299995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01816",
+      "source_s": 90.80009816699999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01817",
+      "source_s": 90.850098463
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01818",
+      "source_s": 90.90009823999992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01819",
+      "source_s": 90.95009972100002
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01820",
+      "source_s": 91.00010103499994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01821",
+      "source_s": 91.05010066399996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01822",
+      "source_s": 91.10009805199991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01823",
+      "source_s": 91.15009906699993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01824",
+      "source_s": 91.20009857799994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01825",
+      "source_s": 91.25009910699998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01826",
+      "source_s": 91.30010011899992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01827",
+      "source_s": 91.35009942599993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01828",
+      "source_s": 91.40009806699993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01829",
+      "source_s": 91.4501103
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01830",
+      "source_s": 91.50010810699996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01831",
+      "source_s": 91.55010241499997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01832",
+      "source_s": 91.60009907400001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01833",
+      "source_s": 91.65009932599992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01834",
+      "source_s": 91.70009809599992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01835",
+      "source_s": 91.750099718
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01836",
+      "source_s": 91.80009791399993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01837",
+      "source_s": 91.85009899900001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01838",
+      "source_s": 91.90010002899999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01839",
+      "source_s": 91.95010959599995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01840",
+      "source_s": 92.00010497699998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01841",
+      "source_s": 92.05010050699991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01842",
+      "source_s": 92.10009903599996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01843",
+      "source_s": 92.15009891499994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01844",
+      "source_s": 92.20009804899996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01845",
+      "source_s": 92.2500986089999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01846",
+      "source_s": 92.30010046500001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01847",
+      "source_s": 92.35009807999995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01848",
+      "source_s": 92.40009839999993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01849",
+      "source_s": 92.45010868199995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01850",
+      "source_s": 92.50010827799997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01851",
+      "source_s": 92.550102079
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01852",
+      "source_s": 92.60010071299996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01853",
+      "source_s": 92.6500990689999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01854",
+      "source_s": 92.70009909199996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01855",
+      "source_s": 92.75009867099993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01856",
+      "source_s": 92.80009895299997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01857",
+      "source_s": 92.85009860499997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01858",
+      "source_s": 92.90009884999995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01859",
+      "source_s": 92.95010787299998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01860",
+      "source_s": 93.00010495099991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01861",
+      "source_s": 93.05010130799997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01862",
+      "source_s": 93.10009955299995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01863",
+      "source_s": 93.15009953599997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01864",
+      "source_s": 93.20009910800002
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01865",
+      "source_s": 93.25009882699999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01866",
+      "source_s": 93.30010021399994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01867",
+      "source_s": 93.35009860100001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01868",
+      "source_s": 93.40009909799994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01869",
+      "source_s": 93.45011126199995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01870",
+      "source_s": 93.50010948199997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01871",
+      "source_s": 93.55010196199999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01872",
+      "source_s": 93.60009981099995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01873",
+      "source_s": 93.65009823499997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01874",
+      "source_s": 93.70009908399993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01875",
+      "source_s": 93.75009976699994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01876",
+      "source_s": 93.80009931999996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01877",
+      "source_s": 93.85009916999991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01878",
+      "source_s": 93.90009761199997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01879",
+      "source_s": 93.95010881299993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01880",
+      "source_s": 94.00010458899999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01881",
+      "source_s": 94.050102531
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01882",
+      "source_s": 94.10009945399997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01883",
+      "source_s": 94.15009931999998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01884",
+      "source_s": 94.20009834799998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01885",
+      "source_s": 94.25009893099991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01886",
+      "source_s": 94.30009931099994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01887",
+      "source_s": 94.35009887599995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01888",
+      "source_s": 94.40009784899996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01889",
+      "source_s": 94.45011269199995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01890",
+      "source_s": 94.50010823799994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01891",
+      "source_s": 94.550102896
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01892",
+      "source_s": 94.60009927599992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01893",
+      "source_s": 94.65009948900001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01894",
+      "source_s": 94.700097777
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01895",
+      "source_s": 94.75009898999997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01896",
+      "source_s": 94.80009768499997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01897",
+      "source_s": 94.85009882399993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01898",
+      "source_s": 94.90010844400001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01899",
+      "source_s": 94.95010963899995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01900",
+      "source_s": 95.00010216699991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01901",
+      "source_s": 95.05009982499996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01902",
+      "source_s": 95.10009800099999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01903",
+      "source_s": 95.15009943399991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01904",
+      "source_s": 95.200109344
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01905",
+      "source_s": 95.25010351399999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01906",
+      "source_s": 95.30010055399998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01907",
+      "source_s": 95.35010011199995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01908",
+      "source_s": 95.40009935599994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01909",
+      "source_s": 95.45009985899992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01910",
+      "source_s": 95.50009947299998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01911",
+      "source_s": 95.55010004999997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01912",
+      "source_s": 95.60009916399997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01913",
+      "source_s": 95.65010077900001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01914",
+      "source_s": 95.70009866999999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01915",
+      "source_s": 95.75009908099992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01916",
+      "source_s": 95.80009799099992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01917",
+      "source_s": 95.85009934599998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01918",
+      "source_s": 95.90009805299997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01919",
+      "source_s": 95.950099852
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01920",
+      "source_s": 96.000101707
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01921",
+      "source_s": 96.05010006199996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01922",
+      "source_s": 96.10009941599992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01923",
+      "source_s": 96.15009954599998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01924",
+      "source_s": 96.20009828399998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01925",
+      "source_s": 96.25010002099998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01926",
+      "source_s": 96.30010746199991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01927",
+      "source_s": 96.35010244
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01928",
+      "source_s": 96.40010036199999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01929",
+      "source_s": 96.45009954399995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01930",
+      "source_s": 96.50009948499996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01931",
+      "source_s": 96.550099907
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01932",
+      "source_s": 96.60009838499991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01933",
+      "source_s": 96.65010102999997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01934",
+      "source_s": 96.70010228499996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01935",
+      "source_s": 96.75010009699997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01936",
+      "source_s": 96.80009929699997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01937",
+      "source_s": 96.85009949699997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01938",
+      "source_s": 96.900098716
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01939",
+      "source_s": 96.950100582
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01940",
+      "source_s": 97.00010152300001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01941",
+      "source_s": 97.05010050099997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01942",
+      "source_s": 97.10009866399992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01943",
+      "source_s": 97.15010286199993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01944",
+      "source_s": 97.20009931499999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01945",
+      "source_s": 97.25010004599994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01946",
+      "source_s": 97.30009873899996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01947",
+      "source_s": 97.35009963699997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01948",
+      "source_s": 97.40009858999997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01949",
+      "source_s": 97.45010081999999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01950",
+      "source_s": 97.50012664299993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01951",
+      "source_s": 97.55010535600002
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01952",
+      "source_s": 97.600079865
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01953",
+      "source_s": 97.65010322499995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01954",
+      "source_s": 97.70010014100001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01955",
+      "source_s": 97.75009927899998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01956",
+      "source_s": 97.80009843599998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01957",
+      "source_s": 97.85009748099992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01958",
+      "source_s": 97.900098082
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01959",
+      "source_s": 97.9501076649999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01960",
+      "source_s": 98.00010454400001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01961",
+      "source_s": 98.05010077399993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01962",
+      "source_s": 98.10009874599996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01963",
+      "source_s": 98.15009986299992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01964",
+      "source_s": 98.20009951299994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01965",
+      "source_s": 98.25009844099998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01966",
+      "source_s": 98.300100499
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01967",
+      "source_s": 98.35009827900001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01968",
+      "source_s": 98.40009842899997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01969",
+      "source_s": 98.45011154199995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01970",
+      "source_s": 98.50010896999993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01971",
+      "source_s": 98.55010106499992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01972",
+      "source_s": 98.60009993699998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01973",
+      "source_s": 98.65009897599998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01974",
+      "source_s": 98.700118256
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01975",
+      "source_s": 98.75009910999995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01976",
+      "source_s": 98.800099316
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01977",
+      "source_s": 98.850103633
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01978",
+      "source_s": 98.90010254200001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01979",
+      "source_s": 98.95012898899995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01980",
+      "source_s": 99.00010491699993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01981",
+      "source_s": 99.05010325199999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01982",
+      "source_s": 99.10010238399991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01983",
+      "source_s": 99.15010208699994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01984",
+      "source_s": 99.20010321299992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01985",
+      "source_s": 99.25010004199999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01986",
+      "source_s": 99.30009974099994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01987",
+      "source_s": 99.350102311
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01988",
+      "source_s": 99.40010060299994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01989",
+      "source_s": 99.45010974699994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01990",
+      "source_s": 99.5001076499999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01991",
+      "source_s": 99.55010318299992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01992",
+      "source_s": 99.60010219699996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01993",
+      "source_s": 99.65010171099993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01994",
+      "source_s": 99.70010298499994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01995",
+      "source_s": 99.75010333199998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01996",
+      "source_s": 99.80010330999994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01997",
+      "source_s": 99.85010137899997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01998",
+      "source_s": 99.90010239399999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_01999",
+      "source_s": 99.95010774100001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02000",
+      "source_s": 100.000105996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02001",
+      "source_s": 100.05010176999997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02002",
+      "source_s": 100.10009861699996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02003",
+      "source_s": 100.15009948099998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02004",
+      "source_s": 100.200098378
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02005",
+      "source_s": 100.25010146
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02006",
+      "source_s": 100.30010196799992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02007",
+      "source_s": 100.35010925299991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02008",
+      "source_s": 100.40010085400002
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02009",
+      "source_s": 100.45011526899998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02010",
+      "source_s": 100.50010664699994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02011",
+      "source_s": 100.55010934099994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02012",
+      "source_s": 100.60009890399999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02013",
+      "source_s": 100.65010518999998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02014",
+      "source_s": 100.70013154899993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02015",
+      "source_s": 100.75010861299995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02016",
+      "source_s": 100.80009867699994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02017",
+      "source_s": 100.8501036099999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02018",
+      "source_s": 100.90009802599991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02019",
+      "source_s": 100.95010282999999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02020",
+      "source_s": 101.00010131900001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02021",
+      "source_s": 101.050098327
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02022",
+      "source_s": 101.10009770599993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02023",
+      "source_s": 101.15009776699992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02024",
+      "source_s": 101.200096583
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02025",
+      "source_s": 101.25009799199995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02026",
+      "source_s": 101.30009825299999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02027",
+      "source_s": 101.35009762499999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02028",
+      "source_s": 101.40009814500002
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02029",
+      "source_s": 101.45009938800001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02030",
+      "source_s": 101.50011155599998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02031",
+      "source_s": 101.55010166900001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02032",
+      "source_s": 101.60009852199994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02033",
+      "source_s": 101.65009641299991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02034",
+      "source_s": 101.70009785899992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02035",
+      "source_s": 101.75009847199999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02036",
+      "source_s": 101.8000981209999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02037",
+      "source_s": 101.85009714199998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02038",
+      "source_s": 101.90009862499994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02039",
+      "source_s": 101.95009701499998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02040",
+      "source_s": 102.00010149799994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02041",
+      "source_s": 102.05009901899996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02042",
+      "source_s": 102.10009798299996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02043",
+      "source_s": 102.15009805599993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02044",
+      "source_s": 102.20009692199994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02045",
+      "source_s": 102.25009941799999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02046",
+      "source_s": 102.30009900599998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02047",
+      "source_s": 102.350097538
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02048",
+      "source_s": 102.40009923699995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02049",
+      "source_s": 102.45009889899995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02050",
+      "source_s": 102.50011202399992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02051",
+      "source_s": 102.55010124199998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02052",
+      "source_s": 102.60009871900002
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02053",
+      "source_s": 102.65009788099997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02054",
+      "source_s": 102.70009767299996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02055",
+      "source_s": 102.75009911299992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02056",
+      "source_s": 102.80009894199998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02057",
+      "source_s": 102.850110363
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02058",
+      "source_s": 102.90010095100001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02059",
+      "source_s": 102.95009814999992
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02060",
+      "source_s": 103.000100997
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02061",
+      "source_s": 103.05009754899993
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02062",
+      "source_s": 103.10009863699997
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02063",
+      "source_s": 103.15009733299996
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02064",
+      "source_s": 103.20009759999994
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02065",
+      "source_s": 103.25009670099996
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02066",
+      "source_s": 103.30009955999992
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02067",
+      "source_s": 103.35009723499991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02068",
+      "source_s": 103.40009807599995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02069",
+      "source_s": 103.4500967319999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02070",
+      "source_s": 103.50012196099999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02071",
+      "source_s": 103.55010330300001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02072",
+      "source_s": 103.60009899599993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02073",
+      "source_s": 103.65009772600001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02074",
+      "source_s": 103.70009843699995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02075",
+      "source_s": 103.75009750099991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02076",
+      "source_s": 103.80009935999999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02077",
+      "source_s": 103.85009773899992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02078",
+      "source_s": 103.900097394
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02079",
+      "source_s": 103.95009786499998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02080",
+      "source_s": 104.000101299
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02081",
+      "source_s": 104.05009886199991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02082",
+      "source_s": 104.10009818499998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02083",
+      "source_s": 104.15009767200002
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02084",
+      "source_s": 104.20009670999991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02085",
+      "source_s": 104.25009756399993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02086",
+      "source_s": 104.30009849099997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02087",
+      "source_s": 104.35009782599991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02088",
+      "source_s": 104.40009717999999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02089",
+      "source_s": 104.45009790400002
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02090",
+      "source_s": 104.50010625699997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02091",
+      "source_s": 104.55009985200002
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02092",
+      "source_s": 104.600098205
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02093",
+      "source_s": 104.65009785500001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02094",
+      "source_s": 104.70009841199999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02095",
+      "source_s": 104.75009711799999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02096",
+      "source_s": 104.80009893399995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02097",
+      "source_s": 104.85009728799992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02098",
+      "source_s": 104.900097104
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02099",
+      "source_s": 104.950097476
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02100",
+      "source_s": 105.00010473700002
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02101",
+      "source_s": 105.05010047899998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02102",
+      "source_s": 105.10009827699992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02103",
+      "source_s": 105.15009720199998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02104",
+      "source_s": 105.20009755000001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02105",
+      "source_s": 105.25009721200001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02106",
+      "source_s": 105.30009792999999
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02107",
+      "source_s": 105.35009866600001
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02108",
+      "source_s": 105.40009827299991
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02109",
+      "source_s": 105.45009800899993
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02110",
+      "source_s": 105.500109468
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02111",
+      "source_s": 105.55010175999996
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02112",
+      "source_s": 105.60009875499998
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02113",
+      "source_s": 105.65009732499993
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02114",
+      "source_s": 105.70009767199997
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02115",
+      "source_s": 105.75009744599993
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02116",
+      "source_s": 105.800098682
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02117",
+      "source_s": 105.85009947399999
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02118",
+      "source_s": 105.90009876599993
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02119",
+      "source_s": 105.95009664999998
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02120",
+      "source_s": 106.00010262699993
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02121",
+      "source_s": 106.05009801199992
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02122",
+      "source_s": 106.10009854499992
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02123",
+      "source_s": 106.1500967039999
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02124",
+      "source_s": 106.200098379
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02125",
+      "source_s": 106.25009662799994
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02126",
+      "source_s": 106.30009857999994
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02127",
+      "source_s": 106.35009805199991
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02128",
+      "source_s": 106.40009881899994
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02129",
+      "source_s": 106.450097271
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02130",
+      "source_s": 106.50010720499995
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02131",
+      "source_s": 106.55010634299992
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02132",
+      "source_s": 106.60010096199994
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02133",
+      "source_s": 106.65009771099994
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02134",
+      "source_s": 106.70009847799997
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02135",
+      "source_s": 106.75009776399997
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02136",
+      "source_s": 106.80009836499994
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02137",
+      "source_s": 106.85009831799994
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02138",
+      "source_s": 106.90009773299994
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02139",
+      "source_s": 106.95009675999995
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02140",
+      "source_s": 107.00010041600001
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02141",
+      "source_s": 107.05009764599993
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02142",
+      "source_s": 107.10009811700002
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02143",
+      "source_s": 107.15009715999997
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02144",
+      "source_s": 107.20009771799994
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02145",
+      "source_s": 107.25009734899993
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02146",
+      "source_s": 107.30009851799991
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02147",
+      "source_s": 107.35009696499992
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02148",
+      "source_s": 107.40009870699998
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02149",
+      "source_s": 107.45009754299997
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02150",
+      "source_s": 107.50010924899993
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02151",
+      "source_s": 107.55010147299993
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02152",
+      "source_s": 107.6000995679999
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02153",
+      "source_s": 107.65009908799993
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02154",
+      "source_s": 107.70009821999997
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02155",
+      "source_s": 107.75009803699993
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02156",
+      "source_s": 107.80009711299999
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02157",
+      "source_s": 107.85010628199996
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02158",
+      "source_s": 107.90010096899994
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02159",
+      "source_s": 107.95009876799998
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02160",
+      "source_s": 108.00010112199993
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02161",
+      "source_s": 108.050098327
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02162",
+      "source_s": 108.10009782899999
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02163",
+      "source_s": 108.15009734799992
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02164",
+      "source_s": 108.200097788
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02165",
+      "source_s": 108.250097321
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02166",
+      "source_s": 108.300097725
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02167",
+      "source_s": 108.35009768399993
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02168",
+      "source_s": 108.40009964299998
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02169",
+      "source_s": 108.45009856499996
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02170",
+      "source_s": 108.500106673
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02171",
+      "source_s": 108.55010089099994
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02172",
+      "source_s": 108.60009846100002
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02173",
+      "source_s": 108.65009740199991
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02174",
+      "source_s": 108.70009797199998
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02175",
+      "source_s": 108.75009717199998
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02176",
+      "source_s": 108.80009735299996
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02177",
+      "source_s": 108.85009779399991
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02178",
+      "source_s": 108.90009854899995
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02179",
+      "source_s": 108.95009763799999
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02180",
+      "source_s": 109.00010052300001
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02181",
+      "source_s": 109.05009768599996
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02182",
+      "source_s": 109.10009857099999
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02183",
+      "source_s": 109.15009680599996
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02184",
+      "source_s": 109.20009727699994
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02185",
+      "source_s": 109.25009723099993
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02186",
+      "source_s": 109.30009860999996
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02187",
+      "source_s": 109.35009698900001
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02188",
+      "source_s": 109.400097405
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02189",
+      "source_s": 109.450099099
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02190",
+      "source_s": 109.50013873699993
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02191",
+      "source_s": 109.55010831999994
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02192",
+      "source_s": 109.60010219999992
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02193",
+      "source_s": 109.65009794899993
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02194",
+      "source_s": 109.70009858799995
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02195",
+      "source_s": 109.75009657800001
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02196",
+      "source_s": 109.80009749399994
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02197",
+      "source_s": 109.85009726199996
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02198",
+      "source_s": 109.90009906699993
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02199",
+      "source_s": 109.95009850199995
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02200",
+      "source_s": 110.00010228899998
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02201",
+      "source_s": 110.05009829699998
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02202",
+      "source_s": 110.10009810199995
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02203",
+      "source_s": 110.15009712699998
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02204",
+      "source_s": 110.20009781599992
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02205",
+      "source_s": 110.25009728099997
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02206",
+      "source_s": 110.30009911799993
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02207",
+      "source_s": 110.35009710199995
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02208",
+      "source_s": 110.40009825300001
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02209",
+      "source_s": 110.45010005299991
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02210",
+      "source_s": 110.50010679599995
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02211",
+      "source_s": 110.55010144699997
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02212",
+      "source_s": 110.60010087599994
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02213",
+      "source_s": 110.65009767499998
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02214",
+      "source_s": 110.70009804899996
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02215",
+      "source_s": 110.75009703299997
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02216",
+      "source_s": 110.80009738799993
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02217",
+      "source_s": 110.85009642799992
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02218",
+      "source_s": 110.90009770899997
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02219",
+      "source_s": 110.95009882299996
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02220",
+      "source_s": 111.000103233
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02221",
+      "source_s": 111.050099273
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02222",
+      "source_s": 111.10009803499997
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02223",
+      "source_s": 111.15009792499995
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02224",
+      "source_s": 111.20009773699996
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02225",
+      "source_s": 111.250097364
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02226",
+      "source_s": 111.30009823099999
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02227",
+      "source_s": 111.35009771
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02228",
+      "source_s": 111.40009746599992
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02229",
+      "source_s": 111.45013255599997
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02230",
+      "source_s": 111.50011531199993
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02231",
+      "source_s": 111.55010145799997
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02232",
+      "source_s": 111.60009819599998
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02233",
+      "source_s": 111.65009893399997
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02234",
+      "source_s": 111.70009850499991
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02235",
+      "source_s": 111.750097761
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02236",
+      "source_s": 111.80009810999991
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02237",
+      "source_s": 111.85009869999999
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02238",
+      "source_s": 111.90009840099992
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02239",
+      "source_s": 111.95009771299999
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02240",
+      "source_s": 112.00010215399993
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02241",
+      "source_s": 112.05011487399997
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02242",
+      "source_s": 112.10010674099999
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02243",
+      "source_s": 112.15010445799999
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02244",
+      "source_s": 112.2001023759999
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02245",
+      "source_s": 112.25010216299995
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02246",
+      "source_s": 112.300101896
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02247",
+      "source_s": 112.35010227599992
+    },
+    {
+      "stimulus": 1.0,
+      "source_id": "pi_input_761538_02248",
+      "source_s": 112.4001024339999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02249",
+      "source_s": 112.4501036659999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02250",
+      "source_s": 112.50010762
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02251",
+      "source_s": 112.55010261199993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02252",
+      "source_s": 112.6001036959999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02253",
+      "source_s": 112.65009989099997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02254",
+      "source_s": 112.70010584499994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02255",
+      "source_s": 112.75010109599998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02256",
+      "source_s": 112.80009947600001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02257",
+      "source_s": 112.85009913399995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02258",
+      "source_s": 112.90010238499997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02259",
+      "source_s": 112.95009911699992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02260",
+      "source_s": 113.00010331199996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02261",
+      "source_s": 113.050108637
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02262",
+      "source_s": 113.10010020300001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02263",
+      "source_s": 113.15009941400001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02264",
+      "source_s": 113.20009958499998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02265",
+      "source_s": 113.25009842199995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02266",
+      "source_s": 113.300099316
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02267",
+      "source_s": 113.35009783800001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02268",
+      "source_s": 113.40009873099996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02269",
+      "source_s": 113.45009829100002
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02270",
+      "source_s": 113.50010940599998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02271",
+      "source_s": 113.55010203999996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02272",
+      "source_s": 113.60010061899993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02273",
+      "source_s": 113.65009928999996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02274",
+      "source_s": 113.70009962699999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02275",
+      "source_s": 113.75009861299998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02276",
+      "source_s": 113.80009937599993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02277",
+      "source_s": 113.85009952899998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02278",
+      "source_s": 113.90009868099992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02279",
+      "source_s": 113.950098648
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02280",
+      "source_s": 114.00010152300001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02281",
+      "source_s": 114.05009985999993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02282",
+      "source_s": 114.10010012399994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02283",
+      "source_s": 114.15009884799997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02284",
+      "source_s": 114.200098421
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02285",
+      "source_s": 114.25009851199991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02286",
+      "source_s": 114.300099381
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02287",
+      "source_s": 114.35009837899997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02288",
+      "source_s": 114.40009832199996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02289",
+      "source_s": 114.450098895
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02290",
+      "source_s": 114.50010918999999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02291",
+      "source_s": 114.55010603999995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02292",
+      "source_s": 114.60010111299994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02293",
+      "source_s": 114.65013333299999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02294",
+      "source_s": 114.70009929499997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02295",
+      "source_s": 114.75009816399995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02296",
+      "source_s": 114.800098144
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02297",
+      "source_s": 114.85009767999998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02298",
+      "source_s": 114.90009760399994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02299",
+      "source_s": 114.95009717699998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02300",
+      "source_s": 115.00010147199998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02301",
+      "source_s": 115.05010074799998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02302",
+      "source_s": 115.10010007999995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02303",
+      "source_s": 115.150099039
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02304",
+      "source_s": 115.20009884699994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02305",
+      "source_s": 115.25009878399999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02306",
+      "source_s": 115.30009924000001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02307",
+      "source_s": 115.35010721499998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02308",
+      "source_s": 115.40009935599994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02309",
+      "source_s": 115.45009877500001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02310",
+      "source_s": 115.50012393399993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02311",
+      "source_s": 115.550106131
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02312",
+      "source_s": 115.60010153099995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02313",
+      "source_s": 115.65010028299992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02314",
+      "source_s": 115.70010035099995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02315",
+      "source_s": 115.75009852899996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02316",
+      "source_s": 115.80009948499992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02317",
+      "source_s": 115.85009849599999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02318",
+      "source_s": 115.90009930399992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02319",
+      "source_s": 115.95009835199994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02320",
+      "source_s": 116.00010175299997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02321",
+      "source_s": 116.05009924599995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02322",
+      "source_s": 116.10010112700002
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02323",
+      "source_s": 116.15010009999992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02324",
+      "source_s": 116.20009953099998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02325",
+      "source_s": 116.250098074
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02326",
+      "source_s": 116.30009911699995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02327",
+      "source_s": 116.35009856799991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02328",
+      "source_s": 116.40009927699998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02329",
+      "source_s": 116.45009843100001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02330",
+      "source_s": 116.50010784400001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02331",
+      "source_s": 116.550101628
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02332",
+      "source_s": 116.600100634
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02333",
+      "source_s": 116.65010234399995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02334",
+      "source_s": 116.70010205299991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02335",
+      "source_s": 116.75010265200001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02336",
+      "source_s": 116.80010100999993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02337",
+      "source_s": 116.85010149699997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02338",
+      "source_s": 116.90010161399994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02339",
+      "source_s": 116.95011015699993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02340",
+      "source_s": 117.00010649599994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02341",
+      "source_s": 117.05010137199997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02342",
+      "source_s": 117.10010350799996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02343",
+      "source_s": 117.15010228899996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02344",
+      "source_s": 117.20010077099994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02345",
+      "source_s": 117.25010114199995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02346",
+      "source_s": 117.30010171599997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02347",
+      "source_s": 117.35010158699993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02348",
+      "source_s": 117.40010149499994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02349",
+      "source_s": 117.450108032
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02350",
+      "source_s": 117.50011080999991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02351",
+      "source_s": 117.55010438499994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02352",
+      "source_s": 117.600102848
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02353",
+      "source_s": 117.65010405199996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02354",
+      "source_s": 117.70010029299999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02355",
+      "source_s": 117.75009942299994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02356",
+      "source_s": 117.80009868299999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02357",
+      "source_s": 117.85009910899998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02358",
+      "source_s": 117.90009890599993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02359",
+      "source_s": 117.95010985099998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02360",
+      "source_s": 118.00010336899993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02361",
+      "source_s": 118.05010112899993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02362",
+      "source_s": 118.10009890699996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02363",
+      "source_s": 118.15010270199991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02364",
+      "source_s": 118.20010064099995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02365",
+      "source_s": 118.25009956199995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02366",
+      "source_s": 118.30010027899993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02367",
+      "source_s": 118.35010379199991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02368",
+      "source_s": 118.40010302799999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02369",
+      "source_s": 118.450108967
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02370",
+      "source_s": 118.50010368400001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02371",
+      "source_s": 118.55010397499996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02372",
+      "source_s": 118.60010254399992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02373",
+      "source_s": 118.65010216899998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02374",
+      "source_s": 118.70010297900001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02375",
+      "source_s": 118.75010206599995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02376",
+      "source_s": 118.80010222800001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02377",
+      "source_s": 118.850101204
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02378",
+      "source_s": 118.90010005099998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02379",
+      "source_s": 118.95010971199997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02380",
+      "source_s": 119.00010404099999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02381",
+      "source_s": 119.05010244300001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02382",
+      "source_s": 119.10010158599994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02383",
+      "source_s": 119.15010217099996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02384",
+      "source_s": 119.200103012
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02385",
+      "source_s": 119.25010235399998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02386",
+      "source_s": 119.30010256499997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02387",
+      "source_s": 119.35010194400002
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02388",
+      "source_s": 119.40010167399998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02389",
+      "source_s": 119.45010990399999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02390",
+      "source_s": 119.500104319
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02391",
+      "source_s": 119.55012238299992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02392",
+      "source_s": 119.60010198299994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02393",
+      "source_s": 119.65009915799999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02394",
+      "source_s": 119.70009940699993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02395",
+      "source_s": 119.75009756299994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02396",
+      "source_s": 119.80009757099992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02397",
+      "source_s": 119.85009702299999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02398",
+      "source_s": 119.90009769799997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02399",
+      "source_s": 119.95009677999997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02400",
+      "source_s": 120.00010006599996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02401",
+      "source_s": 120.05009753699994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02402",
+      "source_s": 120.10009773000002
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02403",
+      "source_s": 120.15009714299993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02404",
+      "source_s": 120.200100701
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02405",
+      "source_s": 120.25009775899991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02406",
+      "source_s": 120.30009887299991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02407",
+      "source_s": 120.35009741199997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02408",
+      "source_s": 120.400097415
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02409",
+      "source_s": 120.45009773200002
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02410",
+      "source_s": 120.50010667899994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02411",
+      "source_s": 120.55010307099997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02412",
+      "source_s": 120.60010148099991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02413",
+      "source_s": 120.65009994599995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02414",
+      "source_s": 120.70009974499999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02415",
+      "source_s": 120.75009974799991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02416",
+      "source_s": 120.80009911999991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02417",
+      "source_s": 120.85009893799997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02418",
+      "source_s": 120.90009864399997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02419",
+      "source_s": 120.95009857299999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02420",
+      "source_s": 121.00010270500002
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02421",
+      "source_s": 121.05009972599998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02422",
+      "source_s": 121.10009958
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02423",
+      "source_s": 121.15009819199997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02424",
+      "source_s": 121.20009939299996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02425",
+      "source_s": 121.25009776000002
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02426",
+      "source_s": 121.30009899799995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02427",
+      "source_s": 121.35009877300001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02428",
+      "source_s": 121.40009845499992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02429",
+      "source_s": 121.45009884199999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02430",
+      "source_s": 121.50012669
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02431",
+      "source_s": 121.55010348399992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02432",
+      "source_s": 121.60010027800001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02433",
+      "source_s": 121.65009958999997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02434",
+      "source_s": 121.70010021600001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02435",
+      "source_s": 121.75009921399999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02436",
+      "source_s": 121.80009961799999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02437",
+      "source_s": 121.85009896700001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02438",
+      "source_s": 121.90009953799995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02439",
+      "source_s": 121.95009912799992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02440",
+      "source_s": 122.00010353300001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02441",
+      "source_s": 122.05009934499992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02442",
+      "source_s": 122.10009967499991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02443",
+      "source_s": 122.150099652
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02444",
+      "source_s": 122.20010014399998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02445",
+      "source_s": 122.25009993200001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02446",
+      "source_s": 122.30010073899996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02447",
+      "source_s": 122.35009884199997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02448",
+      "source_s": 122.400098834
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02449",
+      "source_s": 122.45009934399991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02450",
+      "source_s": 122.50009979899994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02451",
+      "source_s": 122.550098865
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02452",
+      "source_s": 122.60009974499997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02453",
+      "source_s": 122.650098867
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02454",
+      "source_s": 122.70009926599994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02455",
+      "source_s": 122.75009988799991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02456",
+      "source_s": 122.80010076899998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02457",
+      "source_s": 122.85011138999994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02458",
+      "source_s": 122.90010410399998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02459",
+      "source_s": 122.95010000299999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02460",
+      "source_s": 123.00010384699999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02461",
+      "source_s": 123.05009995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02462",
+      "source_s": 123.10009942399995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02463",
+      "source_s": 123.15009815399992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02464",
+      "source_s": 123.20009917799996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02465",
+      "source_s": 123.25009981199992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02466",
+      "source_s": 123.300099929
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02467",
+      "source_s": 123.35009971199997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02468",
+      "source_s": 123.40010054999993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02469",
+      "source_s": 123.45009975899995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02470",
+      "source_s": 123.500098375
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02471",
+      "source_s": 123.55009889899998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02472",
+      "source_s": 123.60009805199991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02473",
+      "source_s": 123.6500989829999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02474",
+      "source_s": 123.70009724699992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02475",
+      "source_s": 123.750099697
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02476",
+      "source_s": 123.800097295
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02477",
+      "source_s": 123.85009907799997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02478",
+      "source_s": 123.90009769400001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02479",
+      "source_s": 123.95009856899992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02480",
+      "source_s": 124.000099278
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02481",
+      "source_s": 124.05009922799991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02482",
+      "source_s": 124.10009839899999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02483",
+      "source_s": 124.15009895799994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02484",
+      "source_s": 124.200098347
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02485",
+      "source_s": 124.25009951300001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02486",
+      "source_s": 124.30009871699997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02487",
+      "source_s": 124.35010001299997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02488",
+      "source_s": 124.40010047599992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02489",
+      "source_s": 124.45009855
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02490",
+      "source_s": 124.50010808699994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02491",
+      "source_s": 124.55010301300001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02492",
+      "source_s": 124.60009951299992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02493",
+      "source_s": 124.65009960499992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02494",
+      "source_s": 124.70009865999998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02495",
+      "source_s": 124.750099568
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02496",
+      "source_s": 124.80009973400001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02497",
+      "source_s": 124.85009949300002
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02498",
+      "source_s": 124.90009862299996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02499",
+      "source_s": 124.95010984499993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02500",
+      "source_s": 125.000105308
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02501",
+      "source_s": 125.05010134499992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02502",
+      "source_s": 125.100099419
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02503",
+      "source_s": 125.15009986099994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02504",
+      "source_s": 125.20009944799995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02505",
+      "source_s": 125.25009881299991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02506",
+      "source_s": 125.30010127100002
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02507",
+      "source_s": 125.35010033999993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02508",
+      "source_s": 125.40009907499996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02509",
+      "source_s": 125.45010005099994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02510",
+      "source_s": 125.50011143500001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02511",
+      "source_s": 125.55010259599999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02512",
+      "source_s": 125.60010062799995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02513",
+      "source_s": 125.65009860399994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02514",
+      "source_s": 125.70009861799997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02515",
+      "source_s": 125.75009779699997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02516",
+      "source_s": 125.80010008799991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02517",
+      "source_s": 125.850099065
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02518",
+      "source_s": 125.90009902199995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02519",
+      "source_s": 125.95009714699995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02520",
+      "source_s": 126.00010215999998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02521",
+      "source_s": 126.05009891399993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02522",
+      "source_s": 126.10009883399994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02523",
+      "source_s": 126.15009790099998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02524",
+      "source_s": 126.20009924199996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02525",
+      "source_s": 126.25009784299993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02526",
+      "source_s": 126.30009883299999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02527",
+      "source_s": 126.35009880399991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02528",
+      "source_s": 126.40009990399994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02529",
+      "source_s": 126.45009844899994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02530",
+      "source_s": 126.50009956899999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02531",
+      "source_s": 126.55009827999993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02532",
+      "source_s": 126.60009889899993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02533",
+      "source_s": 126.65009794499997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02534",
+      "source_s": 126.70009893399993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02535",
+      "source_s": 126.75009710899997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02536",
+      "source_s": 126.80009783899993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02537",
+      "source_s": 126.85009977300001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02538",
+      "source_s": 126.90009820699993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02539",
+      "source_s": 126.95009984499995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02540",
+      "source_s": 127.00010203799991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02541",
+      "source_s": 127.05010025000001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02542",
+      "source_s": 127.10009901699993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02543",
+      "source_s": 127.15009894899993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02544",
+      "source_s": 127.20009869299997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02545",
+      "source_s": 127.25009852899996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02546",
+      "source_s": 127.30009919899999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02547",
+      "source_s": 127.35009990499998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02548",
+      "source_s": 127.40009931599991
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02549",
+      "source_s": 127.45010057799993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02550",
+      "source_s": 127.50014889499994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02551",
+      "source_s": 127.55011236099995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02552",
+      "source_s": 127.60010180899997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02553",
+      "source_s": 127.65010014500001
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02554",
+      "source_s": 127.700099389
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02555",
+      "source_s": 127.75009942899999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02556",
+      "source_s": 127.80009900599998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02557",
+      "source_s": 127.85010036099993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02558",
+      "source_s": 127.90009921499995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02559",
+      "source_s": 127.95009868099999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02560",
+      "source_s": 128.00010246199997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02561",
+      "source_s": 128.05010011299998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02562",
+      "source_s": 128.10009880099994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02563",
+      "source_s": 128.15009891299997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02564",
+      "source_s": 128.200099282
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02565",
+      "source_s": 128.250099353
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02566",
+      "source_s": 128.30009920299995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02567",
+      "source_s": 128.35010095999996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02568",
+      "source_s": 128.40010021699993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02569",
+      "source_s": 128.45010038199996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02570",
+      "source_s": 128.50009919499996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02571",
+      "source_s": 128.55009745199993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02572",
+      "source_s": 128.6001001159999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02573",
+      "source_s": 128.65010081799994
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02574",
+      "source_s": 128.70009961199992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02575",
+      "source_s": 128.75009996199992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02576",
+      "source_s": 128.80010092299995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02577",
+      "source_s": 128.850099087
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02578",
+      "source_s": 128.90010021499995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02579",
+      "source_s": 128.9500993979999
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02580",
+      "source_s": 129.00010204399996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02581",
+      "source_s": 129.05009955999992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02582",
+      "source_s": 129.100098688
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02583",
+      "source_s": 129.15009925799995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02584",
+      "source_s": 129.20009884299998
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02585",
+      "source_s": 129.250099299
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02586",
+      "source_s": 129.300098273
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02587",
+      "source_s": 129.35009859899992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02588",
+      "source_s": 129.40009820299997
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02589",
+      "source_s": 129.45009976999995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02590",
+      "source_s": 129.500108059
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02591",
+      "source_s": 129.55010199699996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02592",
+      "source_s": 129.60010417499996
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02593",
+      "source_s": 129.65010566699993
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02594",
+      "source_s": 129.70010358599995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02595",
+      "source_s": 129.75010059800002
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02596",
+      "source_s": 129.80010164599992
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02597",
+      "source_s": 129.850101343
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02598",
+      "source_s": 129.90010655799995
+    },
+    {
+      "stimulus": 0.0,
+      "source_id": "pi_input_761538_02599",
+      "source_s": 129.95010066199995
+    }
+  ]
+}

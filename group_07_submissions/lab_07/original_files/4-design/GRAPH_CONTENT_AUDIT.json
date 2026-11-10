@@ -1,0 +1,24 @@
+{
+  "screenshot_original_unchanged": true,
+  "screenshot_sha256": "22a8b49049edb585637a811dcf4f7340eb16a9c22a2fe1a949b66a892cf885a4",
+  "word_inline_images": 3,
+  "markdown_topics": 13,
+  "source_md_images_copied": true,
+  "hardware_actions": false,
+  "references": {
+    "02_Source/bio_inspire/runtime/camera_motor.py": "df37adccfcaab1f43fede5cb68e70a7960256add4271a700de8bbb80c9e2c462",
+    "02_Source/bio_inspire/runtime/angry_fsm.py": "f9f01f567dfa43c797f157f37b1a73789e6596368303c55d9155ca7f24e37083",
+    "02_Source/bio_inspire/runtime/normal_ahm.py": "6ba3063a4091f9fecdb9a07bc822e79434b07d1b4493305605fd59b94796ce6c",
+    "02_Source/bio_inspire/runtime/automatic_trial.py": "17e9236a3fba66fa18968631d61d804138d5ad6ca5e036b855e58b59fe0904bc",
+    "02_Source/bio_inspire/runtime/body_rhythm.py": "ab57a8c273e9041802e4786fbebb2664aa69c096c170f39618ea269d6a371db5",
+    "02_Source/bio_inspire/runtime/state_rhythms.py": "6f422165188368ac3823d6e2e26d1d8bb94e52ebab7242abcedfc1a61a6d8af4",
+    "02_Source/bio_inspire/runtime/session_recording.py": "10344c10f5e04d240ee8f983131f15fa3f1a785e311a7f269a90d02f8170d8e6",
+    "02_Source/bio_inspire/experiments/scripted_batch.py": "3dafeffeb24d8fdc3024a467294f238152084e05e96e45f4072f9b5c1a570150",
+    "02_Source/bio_inspire/experiments/ros13.py": "60ae13d88c47128a067405784a882fd13a64ce21dd6af39193d40bdc748c11b0",
+    "02_Source/bio_inspire/experiments/ros13_record.py": "87aca3c2ac823dc006a0ae8aae75689e4ea82b5a75f6734b5b99bab30a97e0d6"
+  },
+  "generated_architecture_removed": true,
+  "new_drawio_not_in_submission": false,
+  "architecture_pending_user_insertion": false,
+  "new_drawio_user_approved_inserted": true
+}

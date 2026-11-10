@@ -1,0 +1,13 @@
+{
+  "files": {
+    "published_counts.json": "91c70b4be72924395e397b1d3658880ce2f6a740faea486332a837330477b7f5",
+    "publisher_ledger.jsonl": "513952e8b6fad238d3c1a9d46e9375d7bfb214f8ae2759eeee84e3d70a0026b6",
+    "qos.yaml": "5cfbbb387384f444b08f89883d11e7da7347c9c9c59ce7a6bcb9668e9091c423",
+    "rosbag_record.log": "b5a44eb9163f221f485aca68c1c316208746d7b87abd0a29ca0d4c77d002faea",
+    "ros_graph_qos.json": "607c9b2eccdab855f70323ed7716caf3e0fff23a86c171cf2ad255d6295faac4",
+    "source_metadata.json": "4b1ae3f6bfa278d39a6bb5cccd78985a334d477e698b0c0f0c863d3cfc987c10",
+    "verification.json": "641d22335a44d15a3bcd42ece94c86f4e993f3bd0fd439e08b37dd9e6716d807",
+    "bag/bag_0.db3": "3dc58344b7733fa7d35863c49d009fec2a545c5095792da7ff6b4600113482dd",
+    "bag/metadata.yaml": "bfa52dcd811109570e34fdc62f25de2e3f74b93d476c09f05cbc2f9a8d2bf563"
+  }
+}

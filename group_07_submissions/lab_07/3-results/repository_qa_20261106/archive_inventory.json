@@ -1,0 +1,1370 @@
+[
+  {
+    "path": "3-results/real_robot_final/P1_C0_data.zip",
+    "issues": [],
+    "members": [
+      {
+        "name": "AUDIT.json",
+        "bytes": 4098,
+        "sha256": "e3237ef9d8334da813e0df12355462fda5d3fc98b901e61cf114314d367e5df4",
+        "crc32": "418c55b7"
+      },
+      {
+        "name": "CSV_EXPORT_AUDIT.json",
+        "bytes": 1072,
+        "sha256": "f94d03b185aad360d550d2a51633310b8bb88b8a84b0735c5e272bf47734f468",
+        "crc32": "f8c90938"
+      },
+      {
+        "name": "metadata.json",
+        "bytes": 36418,
+        "sha256": "62d7b62893f8a9c0119e42655602b2648edd8af786e3d7c8b379632468ff0f1e",
+        "crc32": "1331b854"
+      },
+      {
+        "name": "OBSERVED_O1_METRICS.json",
+        "bytes": 1464,
+        "sha256": "e56229024e34f4f457bbbc4fe0dce9384fd1476a364df591b785500b142d3a9c",
+        "crc32": "47a3ac8f"
+      },
+      {
+        "name": "ROS13_MESSAGES.csv",
+        "bytes": 105706155,
+        "sha256": "54dc1e866073506a448ee3221968ff5424098c476f72b81c470c6b8e69398eba",
+        "crc32": "e1392a8f"
+      },
+      {
+        "name": "summary.json",
+        "bytes": 37828,
+        "sha256": "dde562a4d7c0db88d52af8a5d1ef449a1545fdd4cc94036cbf4159f31fc8dd99",
+        "crc32": "6ade944b"
+      },
+      {
+        "name": "TOPIC_COUNTS.csv",
+        "bytes": 634,
+        "sha256": "34c39de966441398c1c93e55dca6c5424c74e16a984cd54978ca5089b2e28d3c",
+        "crc32": "a468396d"
+      },
+      {
+        "name": "trace.jsonl",
+        "bytes": 71735130,
+        "sha256": "e83a545a2e524106c0a0e7bff972fecded96b6951cf5bf3e41e449731e6b84e6",
+        "crc32": "94c43415"
+      },
+      {
+        "name": "rosbag_replay/bag/bag_0.db3",
+        "bytes": 107634688,
+        "sha256": "4923007c284a0dd676c6e062fb0f145eb2276a14f8a6141e6490637b07d2bf5c",
+        "crc32": "92910c52"
+      },
+      {
+        "name": "rosbag_replay/bag/metadata.yaml",
+        "bytes": 10276,
+        "sha256": "5326048cc1073e558c7df120c5b92873e652a20508acb92dcf5d64da8d7e02f7",
+        "crc32": "50da0625"
+      },
+      {
+        "name": "rosbag_replay/manifest.json",
+        "bytes": 857,
+        "sha256": "1691e9482d8e5299f5075592d209e40c7f513ae428b062482fb18cfa854a1e2a",
+        "crc32": "fe452f7a"
+      },
+      {
+        "name": "rosbag_replay/published_counts.json",
+        "bytes": 1895,
+        "sha256": "1aa88074fcbd44f30c5a87cd4bbbc5070a447172587680bba5646bd41ed05f82",
+        "crc32": "2ff5c9b0"
+      },
+      {
+        "name": "rosbag_replay/publisher_ledger.jsonl",
+        "bytes": 2408517,
+        "sha256": "7df48a9b396502debe88bccb6ca2774794deb859e0b71d5f5f990a332094e7de",
+        "crc32": "d0c744ec"
+      },
+      {
+        "name": "rosbag_replay/qos.yaml",
+        "bytes": 1296,
+        "sha256": "5cfbbb387384f444b08f89883d11e7da7347c9c9c59ce7a6bcb9668e9091c423",
+        "crc32": "7f15a7a1"
+      },
+      {
+        "name": "rosbag_replay/ros_graph_qos.json",
+        "bytes": 3959,
+        "sha256": "607c9b2eccdab855f70323ed7716caf3e0fff23a86c171cf2ad255d6295faac4",
+        "crc32": "0f0a5b9c"
+      },
+      {
+        "name": "rosbag_replay/rosbag_record.log",
+        "bytes": 3842,
+        "sha256": "d930dca7cdb20cbe5a6aa187ec8fa1358d54ff4eb51da644219c6e46082c255b",
+        "crc32": "8d31d5f7"
+      },
+      {
+        "name": "rosbag_replay/source_metadata.json",
+        "bytes": 36401,
+        "sha256": "afc6a699c833247477734816f80afd636c27517870a7e23b4edc9eba476ee526",
+        "crc32": "06aa7954"
+      },
+      {
+        "name": "rosbag_replay/verification.json",
+        "bytes": 41271,
+        "sha256": "a93ee4c764f9337272c5d1180a240ae67c98c2d32be733e6c0cfeba198b537a9",
+        "crc32": "bb4c2683"
+      }
+    ]
+  },
+  {
+    "path": "3-results/real_robot_final/P1_C1_data.zip",
+    "issues": [],
+    "members": [
+      {
+        "name": "AUDIT.json",
+        "bytes": 5344,
+        "sha256": "c8a3803fda8d5e04af7261983dc6e0878ac20a4b76fce11dd8e069172726c2e3",
+        "crc32": "6c24d608"
+      },
+      {
+        "name": "CSV_EXPORT_AUDIT.json",
+        "bytes": 1072,
+        "sha256": "2c8f5d1204b38f160bb0736904c740ee06781ae56a21a92f1da85c445c180908",
+        "crc32": "fc8d201c"
+      },
+      {
+        "name": "metadata.json",
+        "bytes": 36418,
+        "sha256": "c834b20de4c85acc2b33cf10ad262f99f15576a4904e540fceb84175f3883d39",
+        "crc32": "543cc0b5"
+      },
+      {
+        "name": "OBSERVED_O1_METRICS.json",
+        "bytes": 1465,
+        "sha256": "d47a05dc0c3db41e6269995db341f5f13a2f8af997c5194f7d07f3490bde30be",
+        "crc32": "03d086e1"
+      },
+      {
+        "name": "ROS13_MESSAGES.csv",
+        "bytes": 108311572,
+        "sha256": "c0fa88d65e03d1129fea088bf333a025958690f738538b966fdd19b17d6046ff",
+        "crc32": "fe4c2c5c"
+      },
+      {
+        "name": "summary.json",
+        "bytes": 37828,
+        "sha256": "9143dcd2477b602922afc4b8c12e580d58ecccbb008c581019bae20bac5c69e8",
+        "crc32": "39bfc26b"
+      },
+      {
+        "name": "TOPIC_COUNTS.csv",
+        "bytes": 634,
+        "sha256": "0c2c9ea4951c7321c3e1a8aef768983c3916da2aa41019326d6f8f5a30c81efa",
+        "crc32": "49174492"
+      },
+      {
+        "name": "trace.jsonl",
+        "bytes": 73980586,
+        "sha256": "5ef5e1540bf8132f258952d1d8908b08ad2331d93af8a2732b7d5396b69232d4",
+        "crc32": "ca3fd218"
+      },
+      {
+        "name": "rosbag_replay/bag/bag_0.db3",
+        "bytes": 118947840,
+        "sha256": "81f4804be3f37c11dbfafc7a8699721d0e4b1702875a821abc64d7c9e5344457",
+        "crc32": "e9eda75d"
+      },
+      {
+        "name": "rosbag_replay/bag/metadata.yaml",
+        "bytes": 10276,
+        "sha256": "4c5602ceb94e20aac136154e4500f8435fee35ac5c86ceea69eb7d2c077a926b",
+        "crc32": "6f31c606"
+      },
+      {
+        "name": "rosbag_replay/manifest.json",
+        "bytes": 857,
+        "sha256": "30bab1a0a2828aa80004773fb323bfe9e6bf4fc545207badbf60c0126f77892d",
+        "crc32": "aecb7228"
+      },
+      {
+        "name": "rosbag_replay/published_counts.json",
+        "bytes": 1895,
+        "sha256": "f8fbaf18d527aed73c0108ae33a676c743f957567ba8c683a89763419ee295f3",
+        "crc32": "c4f88f29"
+      },
+      {
+        "name": "rosbag_replay/publisher_ledger.jsonl",
+        "bytes": 2429055,
+        "sha256": "6d1a221a1cd71e35e47bcd95179c84930e22d7e3c174fe7d0de9304d914486e4",
+        "crc32": "19fef488"
+      },
+      {
+        "name": "rosbag_replay/qos.yaml",
+        "bytes": 1296,
+        "sha256": "5cfbbb387384f444b08f89883d11e7da7347c9c9c59ce7a6bcb9668e9091c423",
+        "crc32": "7f15a7a1"
+      },
+      {
+        "name": "rosbag_replay/ros_graph_qos.json",
+        "bytes": 3959,
+        "sha256": "607c9b2eccdab855f70323ed7716caf3e0fff23a86c171cf2ad255d6295faac4",
+        "crc32": "0f0a5b9c"
+      },
+      {
+        "name": "rosbag_replay/rosbag_record.log",
+        "bytes": 3842,
+        "sha256": "e4a98708c3ed777294fc15d79b2124d63be490a90c250f45fdf0c10434113f2e",
+        "crc32": "af79cee6"
+      },
+      {
+        "name": "rosbag_replay/source_metadata.json",
+        "bytes": 36401,
+        "sha256": "5e873c0fa50e6bffc13e8743b6ac1e4ea9d55ea64991681cc07e30134127ac7a",
+        "crc32": "348e260f"
+      },
+      {
+        "name": "rosbag_replay/verification.json",
+        "bytes": 41264,
+        "sha256": "d3677ec81840d7c4b4ff8e173ed0cc766e37f8eef1b0d9cd442787f47868408e",
+        "crc32": "c72bed99"
+      }
+    ]
+  },
+  {
+    "path": "3-results/real_robot_final/P2_C0_data.zip",
+    "issues": [],
+    "members": [
+      {
+        "name": "AUDIT.json",
+        "bytes": 5343,
+        "sha256": "8c8437dd8adf88736901158941350974fd47d97ad5df4d52b4d0774cffbf097c",
+        "crc32": "e1e2595c"
+      },
+      {
+        "name": "CSV_EXPORT_AUDIT.json",
+        "bytes": 1072,
+        "sha256": "4642e819cde0bbab6e1d991051a2d706fc2e53bba6ed259b59bf326f0d109619",
+        "crc32": "ddabfa34"
+      },
+      {
+        "name": "metadata.json",
+        "bytes": 36418,
+        "sha256": "f1e84260706a98e035851d7b911751aa390dc42fb63280b03f6590ad267ff8e9",
+        "crc32": "0df43b5b"
+      },
+      {
+        "name": "OBSERVED_O1_METRICS.json",
+        "bytes": 1461,
+        "sha256": "af63073aaa5cb1bc35a2b8d4dbafdf7d93a06d28986705c7526e92f3c5b9cd07",
+        "crc32": "e48ed33c"
+      },
+      {
+        "name": "ROS13_MESSAGES.csv",
+        "bytes": 105788158,
+        "sha256": "34ae70c30fb4dbc06f1bf464381f5ace13b59c81efc2d905ce8aa776532fd719",
+        "crc32": "1d44ac59"
+      },
+      {
+        "name": "summary.json",
+        "bytes": 37828,
+        "sha256": "72b2a1771fc7fe663cd06707cb61215b72af9e9ae48813471337f4f98b2ddb71",
+        "crc32": "0f88adf3"
+      },
+      {
+        "name": "TOPIC_COUNTS.csv",
+        "bytes": 634,
+        "sha256": "9c462d2d6119c340d4e9705d9e96792e3f300df707ef2f3fd9bdb1d03edb8b0e",
+        "crc32": "c92bc5a4"
+      },
+      {
+        "name": "trace.jsonl",
+        "bytes": 71763475,
+        "sha256": "8877517399db390b38ebf00dfaa2ed765436087fbfa00c8d27feaef6afd21b2d",
+        "crc32": "89f503ba"
+      },
+      {
+        "name": "rosbag_replay/bag/bag_0.db3",
+        "bytes": 106033152,
+        "sha256": "a52ed1a9f24098b3980a15fad1c5da7c3ff17d70014044373fa8d8d78d35b6f9",
+        "crc32": "3d9ad5dd"
+      },
+      {
+        "name": "rosbag_replay/bag/metadata.yaml",
+        "bytes": 10276,
+        "sha256": "b9fc50015d8b797121b8299612b82d45f99c3c1f45347da64a7653d80059f6bf",
+        "crc32": "dd019e46"
+      },
+      {
+        "name": "rosbag_replay/manifest.json",
+        "bytes": 857,
+        "sha256": "ed417a2f310d674f38a1f8889343063e1bbbe58376cbf7960022a41f18ea7ad6",
+        "crc32": "5be6edfb"
+      },
+      {
+        "name": "rosbag_replay/published_counts.json",
+        "bytes": 1895,
+        "sha256": "8a03661ab1795b6291f08f932d5b87b6064d667a704d871ee7e388971b696890",
+        "crc32": "1a7b421e"
+      },
+      {
+        "name": "rosbag_replay/publisher_ledger.jsonl",
+        "bytes": 2407581,
+        "sha256": "8e63f6b710dd5ec8f44189cc658b89114e3fbdc940f243afbcc9ae8279ef055c",
+        "crc32": "25b4a4b6"
+      },
+      {
+        "name": "rosbag_replay/qos.yaml",
+        "bytes": 1296,
+        "sha256": "5cfbbb387384f444b08f89883d11e7da7347c9c9c59ce7a6bcb9668e9091c423",
+        "crc32": "7f15a7a1"
+      },
+      {
+        "name": "rosbag_replay/ros_graph_qos.json",
+        "bytes": 3959,
+        "sha256": "607c9b2eccdab855f70323ed7716caf3e0fff23a86c171cf2ad255d6295faac4",
+        "crc32": "0f0a5b9c"
+      },
+      {
+        "name": "rosbag_replay/rosbag_record.log",
+        "bytes": 3842,
+        "sha256": "e8f603028576f9eb94c26fd36666b0fab81aa4053564e24d74a7c39d28f56c16",
+        "crc32": "50ca3826"
+      },
+      {
+        "name": "rosbag_replay/source_metadata.json",
+        "bytes": 36401,
+        "sha256": "1dfc86e937c59fc3daeff947d7f09adda082b3fb0f3f99a9eb1f691170386721",
+        "crc32": "82e53b8e"
+      },
+      {
+        "name": "rosbag_replay/verification.json",
+        "bytes": 41264,
+        "sha256": "145a42e095ca699a22e09f669d3d3412744ab9b45b8ac6ddb90115d2c8e9b6f4",
+        "crc32": "9e46186d"
+      }
+    ]
+  },
+  {
+    "path": "3-results/real_robot_final/P2_C1_data.zip",
+    "issues": [],
+    "members": [
+      {
+        "name": "AUDIT.json",
+        "bytes": 5792,
+        "sha256": "b5cf6355db46294212ac4f0c154cd23123ec707401697ef4c63931731efc31d4",
+        "crc32": "afd9ba46"
+      },
+      {
+        "name": "CSV_EXPORT_AUDIT.json",
+        "bytes": 1072,
+        "sha256": "1228b6310c49163febd40a95390e0823d1f27d545f08f30b0a096db8ef9976dc",
+        "crc32": "34d9ec41"
+      },
+      {
+        "name": "metadata.json",
+        "bytes": 36418,
+        "sha256": "ea3ac226c881441e649ea6445fcb00f08e84b7a53cebe89485a77260b6ab6a3d",
+        "crc32": "563e903c"
+      },
+      {
+        "name": "OBSERVED_O1_METRICS.json",
+        "bytes": 1463,
+        "sha256": "d4c7092b860ac608a11cf0012b9d0f8bcf20f7a86f487029428643726b25998d",
+        "crc32": "fc641fb0"
+      },
+      {
+        "name": "ROS13_MESSAGES.csv",
+        "bytes": 108441721,
+        "sha256": "664f4ec51209b4391a5fcad40063c2a062a4e3090fc219f9e007ea12a10ca65f",
+        "crc32": "1eb739c4"
+      },
+      {
+        "name": "summary.json",
+        "bytes": 37828,
+        "sha256": "02414f41ce4a3faee01e58cc2478197321feb3822155ceb4cd2ffecd1fefda39",
+        "crc32": "3d7f6891"
+      },
+      {
+        "name": "TOPIC_COUNTS.csv",
+        "bytes": 634,
+        "sha256": "54bbb40fbaf49868be1554f010a1a98c3c60ef431c72a61e23db24c93bcfd7f8",
+        "crc32": "ee9075e4"
+      },
+      {
+        "name": "trace.jsonl",
+        "bytes": 73854566,
+        "sha256": "fe9682c3d106f07fd1d9eda0c658bb7c879a05b331e78390504c1aa11bfe8d55",
+        "crc32": "2ef8870f"
+      },
+      {
+        "name": "rosbag_replay/bag/bag_0.db3",
+        "bytes": 120881152,
+        "sha256": "b4b75dc4462bd86660b737459999309dd2bc4f267e2caa5dad6800eb40feee0f",
+        "crc32": "a5f18d65"
+      },
+      {
+        "name": "rosbag_replay/bag/metadata.yaml",
+        "bytes": 10276,
+        "sha256": "0a3ca1f390ac39e32bbef0de78517de0a1a5e95e6eb0b75d51a106713fb40fb1",
+        "crc32": "983e59de"
+      },
+      {
+        "name": "rosbag_replay/manifest.json",
+        "bytes": 857,
+        "sha256": "ef8b95f5214d51ba6f58565ffde875170300a1e0f566d040c70f6f6d14901ff1",
+        "crc32": "21323621"
+      },
+      {
+        "name": "rosbag_replay/published_counts.json",
+        "bytes": 1895,
+        "sha256": "052ffa7691642508ecd4e30be844d180e7b9ef7a9aedfb8bad4c56dd0e9c4424",
+        "crc32": "65ee5a55"
+      },
+      {
+        "name": "rosbag_replay/publisher_ledger.jsonl",
+        "bytes": 2407942,
+        "sha256": "b44856ded569a1f9cefc7f7a2e3d919e285caf710922cd0880b83631c6fed4fa",
+        "crc32": "4c9b612a"
+      },
+      {
+        "name": "rosbag_replay/qos.yaml",
+        "bytes": 1296,
+        "sha256": "5cfbbb387384f444b08f89883d11e7da7347c9c9c59ce7a6bcb9668e9091c423",
+        "crc32": "7f15a7a1"
+      },
+      {
+        "name": "rosbag_replay/ros_graph_qos.json",
+        "bytes": 3959,
+        "sha256": "607c9b2eccdab855f70323ed7716caf3e0fff23a86c171cf2ad255d6295faac4",
+        "crc32": "0f0a5b9c"
+      },
+      {
+        "name": "rosbag_replay/rosbag_record.log",
+        "bytes": 3842,
+        "sha256": "10fb51f5623ea579a179f83ea13d8a4a7413c83e5cec957764f992ef07b861d3",
+        "crc32": "1f2e5531"
+      },
+      {
+        "name": "rosbag_replay/source_metadata.json",
+        "bytes": 36401,
+        "sha256": "a0ad80f4b16f582458677d238a81478b445cc429d6a03e037d9b39e7b740fc38",
+        "crc32": "6b605eff"
+      },
+      {
+        "name": "rosbag_replay/verification.json",
+        "bytes": 41271,
+        "sha256": "e65ab174523da8081bdb4ff33aa7a679c63abd15d5cdae5faf1d6caf550b022a",
+        "crc32": "d93aee96"
+      }
+    ]
+  },
+  {
+    "path": "3-results/real_robot_final/P3_C0_data.zip",
+    "issues": [],
+    "members": [
+      {
+        "name": "AUDIT.json",
+        "bytes": 5344,
+        "sha256": "dea308c694f323fb962cded22d967ef1d0bf2876d151965d99b3419cd25d42f1",
+        "crc32": "cda57f69"
+      },
+      {
+        "name": "CSV_EXPORT_AUDIT.json",
+        "bytes": 1072,
+        "sha256": "894b4564eab6e83638ad7c09781634cf131379505abaaf4f2ff5f1f62ebab0f0",
+        "crc32": "e00c51cf"
+      },
+      {
+        "name": "metadata.json",
+        "bytes": 36418,
+        "sha256": "3d48e15ccf535ad35ade7e8635b5706c6c85e8c02619ee6457bc9665246e0722",
+        "crc32": "6421d4c7"
+      },
+      {
+        "name": "OBSERVED_O1_METRICS.json",
+        "bytes": 1463,
+        "sha256": "25ea6d6f4e468863c4c92eb12a9b1fb6b9d592b1190a810a46b1e8641b5c3064",
+        "crc32": "5a396f1b"
+      },
+      {
+        "name": "ROS13_MESSAGES.csv",
+        "bytes": 105775980,
+        "sha256": "5c4c686fc90b09cd1adb013cf67a7f3820dc3357557dd0c5cec7dda6186815f5",
+        "crc32": "ec9047e4"
+      },
+      {
+        "name": "summary.json",
+        "bytes": 37828,
+        "sha256": "49662b22e07cf23dda53d17c4830235b8aaa5144c17866e350f3458ec5384d5f",
+        "crc32": "30d51ba8"
+      },
+      {
+        "name": "TOPIC_COUNTS.csv",
+        "bytes": 634,
+        "sha256": "1e0d751f3f78f3f63529a7bdc10a4aa3a449f9206e09ecb2f990a2e28f26f89f",
+        "crc32": "41e4e4e5"
+      },
+      {
+        "name": "trace.jsonl",
+        "bytes": 71674790,
+        "sha256": "4240a57282f777c79fd202d8cbeb89e5051bd2dfbf2b2a62b13861d973bc9b98",
+        "crc32": "430e3da7"
+      },
+      {
+        "name": "rosbag_replay/bag/bag_0.db3",
+        "bytes": 105897984,
+        "sha256": "12a8c858ee54f6e98ede8ab5e8b729bb37aa823ded0415cc581fd0e5da45d61d",
+        "crc32": "3e55698e"
+      },
+      {
+        "name": "rosbag_replay/bag/metadata.yaml",
+        "bytes": 10276,
+        "sha256": "f88366dfa60739ac4b8d4e5a4b769ed42f1cf4c27cd502829fc8534635198d16",
+        "crc32": "49991ff7"
+      },
+      {
+        "name": "rosbag_replay/manifest.json",
+        "bytes": 857,
+        "sha256": "9f09668dc948c85209b1f43ba1271118aa64ef1633f314b95c38dce97f5b934a",
+        "crc32": "8aa038c4"
+      },
+      {
+        "name": "rosbag_replay/published_counts.json",
+        "bytes": 1895,
+        "sha256": "99c7134049ee8b1e2bbcc13d083ade34d56e8438b0ada056b5895e19e52a05cc",
+        "crc32": "06c8cd99"
+      },
+      {
+        "name": "rosbag_replay/publisher_ledger.jsonl",
+        "bytes": 2410303,
+        "sha256": "e59fae51a0823ca1e08e13b6656a1da430bb17dd56b545e66586ab71e38ced3e",
+        "crc32": "da1476e0"
+      },
+      {
+        "name": "rosbag_replay/qos.yaml",
+        "bytes": 1296,
+        "sha256": "5cfbbb387384f444b08f89883d11e7da7347c9c9c59ce7a6bcb9668e9091c423",
+        "crc32": "7f15a7a1"
+      },
+      {
+        "name": "rosbag_replay/ros_graph_qos.json",
+        "bytes": 3959,
+        "sha256": "607c9b2eccdab855f70323ed7716caf3e0fff23a86c171cf2ad255d6295faac4",
+        "crc32": "0f0a5b9c"
+      },
+      {
+        "name": "rosbag_replay/rosbag_record.log",
+        "bytes": 3842,
+        "sha256": "9ca3a1d40efa98b3bbd77aa47a479aef6d1e7a357c54f24128a3fd1c68ebcfd8",
+        "crc32": "45e12d38"
+      },
+      {
+        "name": "rosbag_replay/source_metadata.json",
+        "bytes": 36401,
+        "sha256": "0bf92a5126ea9b99f1937f4de9f2cb297f202ae5c30ddc0e0e52b7e0ba4ce102",
+        "crc32": "eee67fcd"
+      },
+      {
+        "name": "rosbag_replay/verification.json",
+        "bytes": 41264,
+        "sha256": "e52e28d5391b4b3a273eaebfafb95f9eb9406f30a99474efccbf28ec5b732909",
+        "crc32": "a9348b3b"
+      }
+    ]
+  },
+  {
+    "path": "3-results/real_robot_final/P3_C1_data.zip",
+    "issues": [],
+    "members": [
+      {
+        "name": "AUDIT.json",
+        "bytes": 5527,
+        "sha256": "a90960b323159c88a8d5337508db2cf7b88eedff5125d994f078825a5917b815",
+        "crc32": "a88580e8"
+      },
+      {
+        "name": "CSV_EXPORT_AUDIT.json",
+        "bytes": 1072,
+        "sha256": "6f19f0cbb3538129ec1dfc1308df124f6f905df21b1fe4729919727221d5863a",
+        "crc32": "296ab01b"
+      },
+      {
+        "name": "metadata.json",
+        "bytes": 36418,
+        "sha256": "21ac6f841712b5be749005ef523918655ad581668c72b0a246dea929f03cf3df",
+        "crc32": "65e88b49"
+      },
+      {
+        "name": "OBSERVED_O1_METRICS.json",
+        "bytes": 1463,
+        "sha256": "dfd1adb73c7282c07643067208c62c8c48d354c577a02b394bad2b7340afc19c",
+        "crc32": "08148895"
+      },
+      {
+        "name": "ROS13_MESSAGES.csv",
+        "bytes": 109388456,
+        "sha256": "e14ad7ebf0af881044d472698f007b16aef0b524a87dc021bcf2860a0570cae0",
+        "crc32": "4e6b03b8"
+      },
+      {
+        "name": "summary.json",
+        "bytes": 37828,
+        "sha256": "610a73c4aaa4d86da35c76c704d72140210a7ac6921a3d67c91e34abad6e0825",
+        "crc32": "6d16aa3c"
+      },
+      {
+        "name": "TOPIC_COUNTS.csv",
+        "bytes": 634,
+        "sha256": "4c6eb49c0d533268b99d1e3613b4186e7f22156a645b8a004d629623618c806e",
+        "crc32": "602e9835"
+      },
+      {
+        "name": "trace.jsonl",
+        "bytes": 74403112,
+        "sha256": "96e898ec26d8b7f64f3979342d3197f120c24709ea2bdf628e4331b7078351ea",
+        "crc32": "1e324477"
+      },
+      {
+        "name": "rosbag_replay/bag/bag_0.db3",
+        "bytes": 123715584,
+        "sha256": "ad7a862fc75bca85f8854f3f245b56a9c9c68c257f7a7522f5bb788643819740",
+        "crc32": "19a34c9d"
+      },
+      {
+        "name": "rosbag_replay/bag/metadata.yaml",
+        "bytes": 10276,
+        "sha256": "a124e995b4fbec797482064a546f00fdf8ab0a269019ec18b9282c376656fdae",
+        "crc32": "a9c6a1dd"
+      },
+      {
+        "name": "rosbag_replay/manifest.json",
+        "bytes": 857,
+        "sha256": "e36b218f0fc8c791712b6b373f8cf2525d3a55454163cedc98689f2813fbd23d",
+        "crc32": "77b2a72b"
+      },
+      {
+        "name": "rosbag_replay/published_counts.json",
+        "bytes": 1895,
+        "sha256": "424ef898a46f98df44ee6a5198a523002da6d3f80c46178340d1b682790d762c",
+        "crc32": "ed82bd7a"
+      },
+      {
+        "name": "rosbag_replay/publisher_ledger.jsonl",
+        "bytes": 2426283,
+        "sha256": "fa968c47b9bea704d50d2ef66a1a112cc401e5ddbaaafba97348933e7cabbd61",
+        "crc32": "cc2c1f2e"
+      },
+      {
+        "name": "rosbag_replay/qos.yaml",
+        "bytes": 1296,
+        "sha256": "5cfbbb387384f444b08f89883d11e7da7347c9c9c59ce7a6bcb9668e9091c423",
+        "crc32": "7f15a7a1"
+      },
+      {
+        "name": "rosbag_replay/ros_graph_qos.json",
+        "bytes": 3959,
+        "sha256": "607c9b2eccdab855f70323ed7716caf3e0fff23a86c171cf2ad255d6295faac4",
+        "crc32": "0f0a5b9c"
+      },
+      {
+        "name": "rosbag_replay/rosbag_record.log",
+        "bytes": 3842,
+        "sha256": "5881377c96d83f81ff6f31b1942dac95f482897a26e4a2fa163a653da56e8e7d",
+        "crc32": "1294f5c5"
+      },
+      {
+        "name": "rosbag_replay/source_metadata.json",
+        "bytes": 36401,
+        "sha256": "58fd5edb13a9c7c594cfdfc6ecf65d311420be3a8701853ae6af7fbe4442257b",
+        "crc32": "c8961aa8"
+      },
+      {
+        "name": "rosbag_replay/verification.json",
+        "bytes": 41271,
+        "sha256": "8fa74ca437648f5c8f19e840ae8e4bc5f033ef5ef0482b7458d1f68b8602211b",
+        "crc32": "a0e727d3"
+      }
+    ]
+  },
+  {
+    "path": "_originals_20261106/03_Results/real_robot_final/P1_C0_data.zip",
+    "issues": [],
+    "members": [
+      {
+        "name": "AUDIT.json",
+        "bytes": 4098,
+        "sha256": "e3237ef9d8334da813e0df12355462fda5d3fc98b901e61cf114314d367e5df4",
+        "crc32": "418c55b7"
+      },
+      {
+        "name": "CSV_EXPORT_AUDIT.json",
+        "bytes": 1072,
+        "sha256": "f94d03b185aad360d550d2a51633310b8bb88b8a84b0735c5e272bf47734f468",
+        "crc32": "f8c90938"
+      },
+      {
+        "name": "metadata.json",
+        "bytes": 36418,
+        "sha256": "62d7b62893f8a9c0119e42655602b2648edd8af786e3d7c8b379632468ff0f1e",
+        "crc32": "1331b854"
+      },
+      {
+        "name": "OBSERVED_O1_METRICS.json",
+        "bytes": 1464,
+        "sha256": "e56229024e34f4f457bbbc4fe0dce9384fd1476a364df591b785500b142d3a9c",
+        "crc32": "47a3ac8f"
+      },
+      {
+        "name": "ROS13_MESSAGES.csv",
+        "bytes": 105706155,
+        "sha256": "54dc1e866073506a448ee3221968ff5424098c476f72b81c470c6b8e69398eba",
+        "crc32": "e1392a8f"
+      },
+      {
+        "name": "summary.json",
+        "bytes": 37828,
+        "sha256": "dde562a4d7c0db88d52af8a5d1ef449a1545fdd4cc94036cbf4159f31fc8dd99",
+        "crc32": "6ade944b"
+      },
+      {
+        "name": "TOPIC_COUNTS.csv",
+        "bytes": 634,
+        "sha256": "34c39de966441398c1c93e55dca6c5424c74e16a984cd54978ca5089b2e28d3c",
+        "crc32": "a468396d"
+      },
+      {
+        "name": "trace.jsonl",
+        "bytes": 71735130,
+        "sha256": "e83a545a2e524106c0a0e7bff972fecded96b6951cf5bf3e41e449731e6b84e6",
+        "crc32": "94c43415"
+      },
+      {
+        "name": "rosbag_replay/bag/bag_0.db3",
+        "bytes": 107634688,
+        "sha256": "4923007c284a0dd676c6e062fb0f145eb2276a14f8a6141e6490637b07d2bf5c",
+        "crc32": "92910c52"
+      },
+      {
+        "name": "rosbag_replay/bag/metadata.yaml",
+        "bytes": 10276,
+        "sha256": "5326048cc1073e558c7df120c5b92873e652a20508acb92dcf5d64da8d7e02f7",
+        "crc32": "50da0625"
+      },
+      {
+        "name": "rosbag_replay/manifest.json",
+        "bytes": 857,
+        "sha256": "1691e9482d8e5299f5075592d209e40c7f513ae428b062482fb18cfa854a1e2a",
+        "crc32": "fe452f7a"
+      },
+      {
+        "name": "rosbag_replay/published_counts.json",
+        "bytes": 1895,
+        "sha256": "1aa88074fcbd44f30c5a87cd4bbbc5070a447172587680bba5646bd41ed05f82",
+        "crc32": "2ff5c9b0"
+      },
+      {
+        "name": "rosbag_replay/publisher_ledger.jsonl",
+        "bytes": 2408517,
+        "sha256": "7df48a9b396502debe88bccb6ca2774794deb859e0b71d5f5f990a332094e7de",
+        "crc32": "d0c744ec"
+      },
+      {
+        "name": "rosbag_replay/qos.yaml",
+        "bytes": 1296,
+        "sha256": "5cfbbb387384f444b08f89883d11e7da7347c9c9c59ce7a6bcb9668e9091c423",
+        "crc32": "7f15a7a1"
+      },
+      {
+        "name": "rosbag_replay/ros_graph_qos.json",
+        "bytes": 3959,
+        "sha256": "607c9b2eccdab855f70323ed7716caf3e0fff23a86c171cf2ad255d6295faac4",
+        "crc32": "0f0a5b9c"
+      },
+      {
+        "name": "rosbag_replay/rosbag_record.log",
+        "bytes": 3842,
+        "sha256": "d930dca7cdb20cbe5a6aa187ec8fa1358d54ff4eb51da644219c6e46082c255b",
+        "crc32": "8d31d5f7"
+      },
+      {
+        "name": "rosbag_replay/source_metadata.json",
+        "bytes": 36401,
+        "sha256": "afc6a699c833247477734816f80afd636c27517870a7e23b4edc9eba476ee526",
+        "crc32": "06aa7954"
+      },
+      {
+        "name": "rosbag_replay/verification.json",
+        "bytes": 41271,
+        "sha256": "a93ee4c764f9337272c5d1180a240ae67c98c2d32be733e6c0cfeba198b537a9",
+        "crc32": "bb4c2683"
+      }
+    ]
+  },
+  {
+    "path": "_originals_20261106/03_Results/real_robot_final/P1_C1_data.zip",
+    "issues": [],
+    "members": [
+      {
+        "name": "AUDIT.json",
+        "bytes": 5344,
+        "sha256": "c8a3803fda8d5e04af7261983dc6e0878ac20a4b76fce11dd8e069172726c2e3",
+        "crc32": "6c24d608"
+      },
+      {
+        "name": "CSV_EXPORT_AUDIT.json",
+        "bytes": 1072,
+        "sha256": "2c8f5d1204b38f160bb0736904c740ee06781ae56a21a92f1da85c445c180908",
+        "crc32": "fc8d201c"
+      },
+      {
+        "name": "metadata.json",
+        "bytes": 36418,
+        "sha256": "c834b20de4c85acc2b33cf10ad262f99f15576a4904e540fceb84175f3883d39",
+        "crc32": "543cc0b5"
+      },
+      {
+        "name": "OBSERVED_O1_METRICS.json",
+        "bytes": 1465,
+        "sha256": "d47a05dc0c3db41e6269995db341f5f13a2f8af997c5194f7d07f3490bde30be",
+        "crc32": "03d086e1"
+      },
+      {
+        "name": "ROS13_MESSAGES.csv",
+        "bytes": 108311572,
+        "sha256": "c0fa88d65e03d1129fea088bf333a025958690f738538b966fdd19b17d6046ff",
+        "crc32": "fe4c2c5c"
+      },
+      {
+        "name": "summary.json",
+        "bytes": 37828,
+        "sha256": "9143dcd2477b602922afc4b8c12e580d58ecccbb008c581019bae20bac5c69e8",
+        "crc32": "39bfc26b"
+      },
+      {
+        "name": "TOPIC_COUNTS.csv",
+        "bytes": 634,
+        "sha256": "0c2c9ea4951c7321c3e1a8aef768983c3916da2aa41019326d6f8f5a30c81efa",
+        "crc32": "49174492"
+      },
+      {
+        "name": "trace.jsonl",
+        "bytes": 73980586,
+        "sha256": "5ef5e1540bf8132f258952d1d8908b08ad2331d93af8a2732b7d5396b69232d4",
+        "crc32": "ca3fd218"
+      },
+      {
+        "name": "rosbag_replay/bag/bag_0.db3",
+        "bytes": 118947840,
+        "sha256": "81f4804be3f37c11dbfafc7a8699721d0e4b1702875a821abc64d7c9e5344457",
+        "crc32": "e9eda75d"
+      },
+      {
+        "name": "rosbag_replay/bag/metadata.yaml",
+        "bytes": 10276,
+        "sha256": "4c5602ceb94e20aac136154e4500f8435fee35ac5c86ceea69eb7d2c077a926b",
+        "crc32": "6f31c606"
+      },
+      {
+        "name": "rosbag_replay/manifest.json",
+        "bytes": 857,
+        "sha256": "30bab1a0a2828aa80004773fb323bfe9e6bf4fc545207badbf60c0126f77892d",
+        "crc32": "aecb7228"
+      },
+      {
+        "name": "rosbag_replay/published_counts.json",
+        "bytes": 1895,
+        "sha256": "f8fbaf18d527aed73c0108ae33a676c743f957567ba8c683a89763419ee295f3",
+        "crc32": "c4f88f29"
+      },
+      {
+        "name": "rosbag_replay/publisher_ledger.jsonl",
+        "bytes": 2429055,
+        "sha256": "6d1a221a1cd71e35e47bcd95179c84930e22d7e3c174fe7d0de9304d914486e4",
+        "crc32": "19fef488"
+      },
+      {
+        "name": "rosbag_replay/qos.yaml",
+        "bytes": 1296,
+        "sha256": "5cfbbb387384f444b08f89883d11e7da7347c9c9c59ce7a6bcb9668e9091c423",
+        "crc32": "7f15a7a1"
+      },
+      {
+        "name": "rosbag_replay/ros_graph_qos.json",
+        "bytes": 3959,
+        "sha256": "607c9b2eccdab855f70323ed7716caf3e0fff23a86c171cf2ad255d6295faac4",
+        "crc32": "0f0a5b9c"
+      },
+      {
+        "name": "rosbag_replay/rosbag_record.log",
+        "bytes": 3842,
+        "sha256": "e4a98708c3ed777294fc15d79b2124d63be490a90c250f45fdf0c10434113f2e",
+        "crc32": "af79cee6"
+      },
+      {
+        "name": "rosbag_replay/source_metadata.json",
+        "bytes": 36401,
+        "sha256": "5e873c0fa50e6bffc13e8743b6ac1e4ea9d55ea64991681cc07e30134127ac7a",
+        "crc32": "348e260f"
+      },
+      {
+        "name": "rosbag_replay/verification.json",
+        "bytes": 41264,
+        "sha256": "d3677ec81840d7c4b4ff8e173ed0cc766e37f8eef1b0d9cd442787f47868408e",
+        "crc32": "c72bed99"
+      }
+    ]
+  },
+  {
+    "path": "_originals_20261106/03_Results/real_robot_final/P2_C0_data.zip",
+    "issues": [],
+    "members": [
+      {
+        "name": "AUDIT.json",
+        "bytes": 5343,
+        "sha256": "8c8437dd8adf88736901158941350974fd47d97ad5df4d52b4d0774cffbf097c",
+        "crc32": "e1e2595c"
+      },
+      {
+        "name": "CSV_EXPORT_AUDIT.json",
+        "bytes": 1072,
+        "sha256": "4642e819cde0bbab6e1d991051a2d706fc2e53bba6ed259b59bf326f0d109619",
+        "crc32": "ddabfa34"
+      },
+      {
+        "name": "metadata.json",
+        "bytes": 36418,
+        "sha256": "f1e84260706a98e035851d7b911751aa390dc42fb63280b03f6590ad267ff8e9",
+        "crc32": "0df43b5b"
+      },
+      {
+        "name": "OBSERVED_O1_METRICS.json",
+        "bytes": 1461,
+        "sha256": "af63073aaa5cb1bc35a2b8d4dbafdf7d93a06d28986705c7526e92f3c5b9cd07",
+        "crc32": "e48ed33c"
+      },
+      {
+        "name": "ROS13_MESSAGES.csv",
+        "bytes": 105788158,
+        "sha256": "34ae70c30fb4dbc06f1bf464381f5ace13b59c81efc2d905ce8aa776532fd719",
+        "crc32": "1d44ac59"
+      },
+      {
+        "name": "summary.json",
+        "bytes": 37828,
+        "sha256": "72b2a1771fc7fe663cd06707cb61215b72af9e9ae48813471337f4f98b2ddb71",
+        "crc32": "0f88adf3"
+      },
+      {
+        "name": "TOPIC_COUNTS.csv",
+        "bytes": 634,
+        "sha256": "9c462d2d6119c340d4e9705d9e96792e3f300df707ef2f3fd9bdb1d03edb8b0e",
+        "crc32": "c92bc5a4"
+      },
+      {
+        "name": "trace.jsonl",
+        "bytes": 71763475,
+        "sha256": "8877517399db390b38ebf00dfaa2ed765436087fbfa00c8d27feaef6afd21b2d",
+        "crc32": "89f503ba"
+      },
+      {
+        "name": "rosbag_replay/bag/bag_0.db3",
+        "bytes": 106033152,
+        "sha256": "a52ed1a9f24098b3980a15fad1c5da7c3ff17d70014044373fa8d8d78d35b6f9",
+        "crc32": "3d9ad5dd"
+      },
+      {
+        "name": "rosbag_replay/bag/metadata.yaml",
+        "bytes": 10276,
+        "sha256": "b9fc50015d8b797121b8299612b82d45f99c3c1f45347da64a7653d80059f6bf",
+        "crc32": "dd019e46"
+      },
+      {
+        "name": "rosbag_replay/manifest.json",
+        "bytes": 857,
+        "sha256": "ed417a2f310d674f38a1f8889343063e1bbbe58376cbf7960022a41f18ea7ad6",
+        "crc32": "5be6edfb"
+      },
+      {
+        "name": "rosbag_replay/published_counts.json",
+        "bytes": 1895,
+        "sha256": "8a03661ab1795b6291f08f932d5b87b6064d667a704d871ee7e388971b696890",
+        "crc32": "1a7b421e"
+      },
+      {
+        "name": "rosbag_replay/publisher_ledger.jsonl",
+        "bytes": 2407581,
+        "sha256": "8e63f6b710dd5ec8f44189cc658b89114e3fbdc940f243afbcc9ae8279ef055c",
+        "crc32": "25b4a4b6"
+      },
+      {
+        "name": "rosbag_replay/qos.yaml",
+        "bytes": 1296,
+        "sha256": "5cfbbb387384f444b08f89883d11e7da7347c9c9c59ce7a6bcb9668e9091c423",
+        "crc32": "7f15a7a1"
+      },
+      {
+        "name": "rosbag_replay/ros_graph_qos.json",
+        "bytes": 3959,
+        "sha256": "607c9b2eccdab855f70323ed7716caf3e0fff23a86c171cf2ad255d6295faac4",
+        "crc32": "0f0a5b9c"
+      },
+      {
+        "name": "rosbag_replay/rosbag_record.log",
+        "bytes": 3842,
+        "sha256": "e8f603028576f9eb94c26fd36666b0fab81aa4053564e24d74a7c39d28f56c16",
+        "crc32": "50ca3826"
+      },
+      {
+        "name": "rosbag_replay/source_metadata.json",
+        "bytes": 36401,
+        "sha256": "1dfc86e937c59fc3daeff947d7f09adda082b3fb0f3f99a9eb1f691170386721",
+        "crc32": "82e53b8e"
+      },
+      {
+        "name": "rosbag_replay/verification.json",
+        "bytes": 41264,
+        "sha256": "145a42e095ca699a22e09f669d3d3412744ab9b45b8ac6ddb90115d2c8e9b6f4",
+        "crc32": "9e46186d"
+      }
+    ]
+  },
+  {
+    "path": "_originals_20261106/03_Results/real_robot_final/P2_C1_data.zip",
+    "issues": [],
+    "members": [
+      {
+        "name": "AUDIT.json",
+        "bytes": 5792,
+        "sha256": "b5cf6355db46294212ac4f0c154cd23123ec707401697ef4c63931731efc31d4",
+        "crc32": "afd9ba46"
+      },
+      {
+        "name": "CSV_EXPORT_AUDIT.json",
+        "bytes": 1072,
+        "sha256": "1228b6310c49163febd40a95390e0823d1f27d545f08f30b0a096db8ef9976dc",
+        "crc32": "34d9ec41"
+      },
+      {
+        "name": "metadata.json",
+        "bytes": 36418,
+        "sha256": "ea3ac226c881441e649ea6445fcb00f08e84b7a53cebe89485a77260b6ab6a3d",
+        "crc32": "563e903c"
+      },
+      {
+        "name": "OBSERVED_O1_METRICS.json",
+        "bytes": 1463,
+        "sha256": "d4c7092b860ac608a11cf0012b9d0f8bcf20f7a86f487029428643726b25998d",
+        "crc32": "fc641fb0"
+      },
+      {
+        "name": "ROS13_MESSAGES.csv",
+        "bytes": 108441721,
+        "sha256": "664f4ec51209b4391a5fcad40063c2a062a4e3090fc219f9e007ea12a10ca65f",
+        "crc32": "1eb739c4"
+      },
+      {
+        "name": "summary.json",
+        "bytes": 37828,
+        "sha256": "02414f41ce4a3faee01e58cc2478197321feb3822155ceb4cd2ffecd1fefda39",
+        "crc32": "3d7f6891"
+      },
+      {
+        "name": "TOPIC_COUNTS.csv",
+        "bytes": 634,
+        "sha256": "54bbb40fbaf49868be1554f010a1a98c3c60ef431c72a61e23db24c93bcfd7f8",
+        "crc32": "ee9075e4"
+      },
+      {
+        "name": "trace.jsonl",
+        "bytes": 73854566,
+        "sha256": "fe9682c3d106f07fd1d9eda0c658bb7c879a05b331e78390504c1aa11bfe8d55",
+        "crc32": "2ef8870f"
+      },
+      {
+        "name": "rosbag_replay/bag/bag_0.db3",
+        "bytes": 120881152,
+        "sha256": "b4b75dc4462bd86660b737459999309dd2bc4f267e2caa5dad6800eb40feee0f",
+        "crc32": "a5f18d65"
+      },
+      {
+        "name": "rosbag_replay/bag/metadata.yaml",
+        "bytes": 10276,
+        "sha256": "0a3ca1f390ac39e32bbef0de78517de0a1a5e95e6eb0b75d51a106713fb40fb1",
+        "crc32": "983e59de"
+      },
+      {
+        "name": "rosbag_replay/manifest.json",
+        "bytes": 857,
+        "sha256": "ef8b95f5214d51ba6f58565ffde875170300a1e0f566d040c70f6f6d14901ff1",
+        "crc32": "21323621"
+      },
+      {
+        "name": "rosbag_replay/published_counts.json",
+        "bytes": 1895,
+        "sha256": "052ffa7691642508ecd4e30be844d180e7b9ef7a9aedfb8bad4c56dd0e9c4424",
+        "crc32": "65ee5a55"
+      },
+      {
+        "name": "rosbag_replay/publisher_ledger.jsonl",
+        "bytes": 2407942,
+        "sha256": "b44856ded569a1f9cefc7f7a2e3d919e285caf710922cd0880b83631c6fed4fa",
+        "crc32": "4c9b612a"
+      },
+      {
+        "name": "rosbag_replay/qos.yaml",
+        "bytes": 1296,
+        "sha256": "5cfbbb387384f444b08f89883d11e7da7347c9c9c59ce7a6bcb9668e9091c423",
+        "crc32": "7f15a7a1"
+      },
+      {
+        "name": "rosbag_replay/ros_graph_qos.json",
+        "bytes": 3959,
+        "sha256": "607c9b2eccdab855f70323ed7716caf3e0fff23a86c171cf2ad255d6295faac4",
+        "crc32": "0f0a5b9c"
+      },
+      {
+        "name": "rosbag_replay/rosbag_record.log",
+        "bytes": 3842,
+        "sha256": "10fb51f5623ea579a179f83ea13d8a4a7413c83e5cec957764f992ef07b861d3",
+        "crc32": "1f2e5531"
+      },
+      {
+        "name": "rosbag_replay/source_metadata.json",
+        "bytes": 36401,
+        "sha256": "a0ad80f4b16f582458677d238a81478b445cc429d6a03e037d9b39e7b740fc38",
+        "crc32": "6b605eff"
+      },
+      {
+        "name": "rosbag_replay/verification.json",
+        "bytes": 41271,
+        "sha256": "e65ab174523da8081bdb4ff33aa7a679c63abd15d5cdae5faf1d6caf550b022a",
+        "crc32": "d93aee96"
+      }
+    ]
+  },
+  {
+    "path": "_originals_20261106/03_Results/real_robot_final/P3_C0_data.zip",
+    "issues": [],
+    "members": [
+      {
+        "name": "AUDIT.json",
+        "bytes": 5344,
+        "sha256": "dea308c694f323fb962cded22d967ef1d0bf2876d151965d99b3419cd25d42f1",
+        "crc32": "cda57f69"
+      },
+      {
+        "name": "CSV_EXPORT_AUDIT.json",
+        "bytes": 1072,
+        "sha256": "894b4564eab6e83638ad7c09781634cf131379505abaaf4f2ff5f1f62ebab0f0",
+        "crc32": "e00c51cf"
+      },
+      {
+        "name": "metadata.json",
+        "bytes": 36418,
+        "sha256": "3d48e15ccf535ad35ade7e8635b5706c6c85e8c02619ee6457bc9665246e0722",
+        "crc32": "6421d4c7"
+      },
+      {
+        "name": "OBSERVED_O1_METRICS.json",
+        "bytes": 1463,
+        "sha256": "25ea6d6f4e468863c4c92eb12a9b1fb6b9d592b1190a810a46b1e8641b5c3064",
+        "crc32": "5a396f1b"
+      },
+      {
+        "name": "ROS13_MESSAGES.csv",
+        "bytes": 105775980,
+        "sha256": "5c4c686fc90b09cd1adb013cf67a7f3820dc3357557dd0c5cec7dda6186815f5",
+        "crc32": "ec9047e4"
+      },
+      {
+        "name": "summary.json",
+        "bytes": 37828,
+        "sha256": "49662b22e07cf23dda53d17c4830235b8aaa5144c17866e350f3458ec5384d5f",
+        "crc32": "30d51ba8"
+      },
+      {
+        "name": "TOPIC_COUNTS.csv",
+        "bytes": 634,
+        "sha256": "1e0d751f3f78f3f63529a7bdc10a4aa3a449f9206e09ecb2f990a2e28f26f89f",
+        "crc32": "41e4e4e5"
+      },
+      {
+        "name": "trace.jsonl",
+        "bytes": 71674790,
+        "sha256": "4240a57282f777c79fd202d8cbeb89e5051bd2dfbf2b2a62b13861d973bc9b98",
+        "crc32": "430e3da7"
+      },
+      {
+        "name": "rosbag_replay/bag/bag_0.db3",
+        "bytes": 105897984,
+        "sha256": "12a8c858ee54f6e98ede8ab5e8b729bb37aa823ded0415cc581fd0e5da45d61d",
+        "crc32": "3e55698e"
+      },
+      {
+        "name": "rosbag_replay/bag/metadata.yaml",
+        "bytes": 10276,
+        "sha256": "f88366dfa60739ac4b8d4e5a4b769ed42f1cf4c27cd502829fc8534635198d16",
+        "crc32": "49991ff7"
+      },
+      {
+        "name": "rosbag_replay/manifest.json",
+        "bytes": 857,
+        "sha256": "9f09668dc948c85209b1f43ba1271118aa64ef1633f314b95c38dce97f5b934a",
+        "crc32": "8aa038c4"
+      },
+      {
+        "name": "rosbag_replay/published_counts.json",
+        "bytes": 1895,
+        "sha256": "99c7134049ee8b1e2bbcc13d083ade34d56e8438b0ada056b5895e19e52a05cc",
+        "crc32": "06c8cd99"
+      },
+      {
+        "name": "rosbag_replay/publisher_ledger.jsonl",
+        "bytes": 2410303,
+        "sha256": "e59fae51a0823ca1e08e13b6656a1da430bb17dd56b545e66586ab71e38ced3e",
+        "crc32": "da1476e0"
+      },
+      {
+        "name": "rosbag_replay/qos.yaml",
+        "bytes": 1296,
+        "sha256": "5cfbbb387384f444b08f89883d11e7da7347c9c9c59ce7a6bcb9668e9091c423",
+        "crc32": "7f15a7a1"
+      },
+      {
+        "name": "rosbag_replay/ros_graph_qos.json",
+        "bytes": 3959,
+        "sha256": "607c9b2eccdab855f70323ed7716caf3e0fff23a86c171cf2ad255d6295faac4",
+        "crc32": "0f0a5b9c"
+      },
+      {
+        "name": "rosbag_replay/rosbag_record.log",
+        "bytes": 3842,
+        "sha256": "9ca3a1d40efa98b3bbd77aa47a479aef6d1e7a357c54f24128a3fd1c68ebcfd8",
+        "crc32": "45e12d38"
+      },
+      {
+        "name": "rosbag_replay/source_metadata.json",
+        "bytes": 36401,
+        "sha256": "0bf92a5126ea9b99f1937f4de9f2cb297f202ae5c30ddc0e0e52b7e0ba4ce102",
+        "crc32": "eee67fcd"
+      },
+      {
+        "name": "rosbag_replay/verification.json",
+        "bytes": 41264,
+        "sha256": "e52e28d5391b4b3a273eaebfafb95f9eb9406f30a99474efccbf28ec5b732909",
+        "crc32": "a9348b3b"
+      }
+    ]
+  },
+  {
+    "path": "_originals_20261106/03_Results/real_robot_final/P3_C1_data.zip",
+    "issues": [],
+    "members": [
+      {
+        "name": "AUDIT.json",
+        "bytes": 5527,
+        "sha256": "a90960b323159c88a8d5337508db2cf7b88eedff5125d994f078825a5917b815",
+        "crc32": "a88580e8"
+      },
+      {
+        "name": "CSV_EXPORT_AUDIT.json",
+        "bytes": 1072,
+        "sha256": "6f19f0cbb3538129ec1dfc1308df124f6f905df21b1fe4729919727221d5863a",
+        "crc32": "296ab01b"
+      },
+      {
+        "name": "metadata.json",
+        "bytes": 36418,
+        "sha256": "21ac6f841712b5be749005ef523918655ad581668c72b0a246dea929f03cf3df",
+        "crc32": "65e88b49"
+      },
+      {
+        "name": "OBSERVED_O1_METRICS.json",
+        "bytes": 1463,
+        "sha256": "dfd1adb73c7282c07643067208c62c8c48d354c577a02b394bad2b7340afc19c",
+        "crc32": "08148895"
+      },
+      {
+        "name": "ROS13_MESSAGES.csv",
+        "bytes": 109388456,
+        "sha256": "e14ad7ebf0af881044d472698f007b16aef0b524a87dc021bcf2860a0570cae0",
+        "crc32": "4e6b03b8"
+      },
+      {
+        "name": "summary.json",
+        "bytes": 37828,
+        "sha256": "610a73c4aaa4d86da35c76c704d72140210a7ac6921a3d67c91e34abad6e0825",
+        "crc32": "6d16aa3c"
+      },
+      {
+        "name": "TOPIC_COUNTS.csv",
+        "bytes": 634,
+        "sha256": "4c6eb49c0d533268b99d1e3613b4186e7f22156a645b8a004d629623618c806e",
+        "crc32": "602e9835"
+      },
+      {
+        "name": "trace.jsonl",
+        "bytes": 74403112,
+        "sha256": "96e898ec26d8b7f64f3979342d3197f120c24709ea2bdf628e4331b7078351ea",
+        "crc32": "1e324477"
+      },
+      {
+        "name": "rosbag_replay/bag/bag_0.db3",
+        "bytes": 123715584,
+        "sha256": "ad7a862fc75bca85f8854f3f245b56a9c9c68c257f7a7522f5bb788643819740",
+        "crc32": "19a34c9d"
+      },
+      {
+        "name": "rosbag_replay/bag/metadata.yaml",
+        "bytes": 10276,
+        "sha256": "a124e995b4fbec797482064a546f00fdf8ab0a269019ec18b9282c376656fdae",
+        "crc32": "a9c6a1dd"
+      },
+      {
+        "name": "rosbag_replay/manifest.json",
+        "bytes": 857,
+        "sha256": "e36b218f0fc8c791712b6b373f8cf2525d3a55454163cedc98689f2813fbd23d",
+        "crc32": "77b2a72b"
+      },
+      {
+        "name": "rosbag_replay/published_counts.json",
+        "bytes": 1895,
+        "sha256": "424ef898a46f98df44ee6a5198a523002da6d3f80c46178340d1b682790d762c",
+        "crc32": "ed82bd7a"
+      },
+      {
+        "name": "rosbag_replay/publisher_ledger.jsonl",
+        "bytes": 2426283,
+        "sha256": "fa968c47b9bea704d50d2ef66a1a112cc401e5ddbaaafba97348933e7cabbd61",
+        "crc32": "cc2c1f2e"
+      },
+      {
+        "name": "rosbag_replay/qos.yaml",
+        "bytes": 1296,
+        "sha256": "5cfbbb387384f444b08f89883d11e7da7347c9c9c59ce7a6bcb9668e9091c423",
+        "crc32": "7f15a7a1"
+      },
+      {
+        "name": "rosbag_replay/ros_graph_qos.json",
+        "bytes": 3959,
+        "sha256": "607c9b2eccdab855f70323ed7716caf3e0fff23a86c171cf2ad255d6295faac4",
+        "crc32": "0f0a5b9c"
+      },
+      {
+        "name": "rosbag_replay/rosbag_record.log",
+        "bytes": 3842,
+        "sha256": "5881377c96d83f81ff6f31b1942dac95f482897a26e4a2fa163a653da56e8e7d",
+        "crc32": "1294f5c5"
+      },
+      {
+        "name": "rosbag_replay/source_metadata.json",
+        "bytes": 36401,
+        "sha256": "58fd5edb13a9c7c594cfdfc6ecf65d311420be3a8701853ae6af7fbe4442257b",
+        "crc32": "c8961aa8"
+      },
+      {
+        "name": "rosbag_replay/verification.json",
+        "bytes": 41271,
+        "sha256": "8fa74ca437648f5c8f19e840ae8e4bc5f033ef5ef0482b7458d1f68b8602211b",
+        "crc32": "a0e727d3"
+      }
+    ]
+  }
+]

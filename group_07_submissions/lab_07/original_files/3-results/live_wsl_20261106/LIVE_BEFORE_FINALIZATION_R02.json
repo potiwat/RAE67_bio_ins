@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "scope": "Live SSH+ROS indices increased while source recording was unfinished; not physical latency",
+  "observations": [
+    {
+      "observed_local_wall_s": 1793902810.6340084,
+      "source_rows": 50,
+      "published_rows": 27,
+      "last_source_s": 2185.320105931,
+      "source_finalized": false
+    },
+    {
+      "observed_local_wall_s": 1793902812.728262,
+      "source_rows": 78,
+      "published_rows": 54,
+      "last_source_s": 2187.360137344,
+      "source_finalized": false
+    }
+  ]
+}

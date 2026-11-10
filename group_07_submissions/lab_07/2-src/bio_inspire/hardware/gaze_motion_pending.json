@@ -1,0 +1,20 @@
+{
+  "status": "pending_daylight_hardware_validation",
+  "motor_output_enabled": false,
+  "camera_on_lamp_head": true,
+  "horizontal_servo_ids": null,
+  "vertical_servo_ids": null,
+  "image_error_to_joint_sign": null,
+  "verified_tracking_bounds_raw": null,
+  "tracking_gain": null,
+  "image_deadband": null,
+  "low_pass_beta": null,
+  "speed_raw": null,
+  "acceleration_raw": null,
+  "search_bounds_raw": null,
+  "search_speed": null,
+  "sleepy_droop_limit": null,
+  "frame_max_age_s": 0.5,
+  "note": "No physical motion adapter is enabled by this file. A/B observations are not global safe limits.",
+  "frame_max_age_scope": "User-approved camera preview trial only, 2026-10-29; not a physical motor watchdog"
+}

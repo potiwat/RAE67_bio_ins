@@ -1,0 +1,32 @@
+[
+  {
+    "file": "P1_C0_data.zip",
+    "bytes": 16428696,
+    "sha256": "a87410e3f5ed865a1aaf129e1d3d64039d4200bc6857a7e25d52313344fb9d6f"
+  },
+  {
+    "file": "P1_C1_data.zip",
+    "bytes": 17401060,
+    "sha256": "561bb05b4cad8bc5313617f816e0d2219085d4e206a6edf38ce66b1ac4cf77f3"
+  },
+  {
+    "file": "P2_C0_data.zip",
+    "bytes": 16504450,
+    "sha256": "7cbafc88816a11569071acbbe139adcae00717d35191633cf8781cfaa28eafd4"
+  },
+  {
+    "file": "P2_C1_data.zip",
+    "bytes": 17372224,
+    "sha256": "e0e3f528e52709b275753a43a62e3ef93a435df159e959f1e6cd51a016b14b5d"
+  },
+  {
+    "file": "P3_C0_data.zip",
+    "bytes": 16413204,
+    "sha256": "322d02d90d19d3149549c4f2244f8604a02c98d7b6f53b18be1a44d8be495064"
+  },
+  {
+    "file": "P3_C1_data.zip",
+    "bytes": 17379453,
+    "sha256": "f7a4615029292e75c235699e7c8afaea0bf9f8233140d7a754513eef4ab85ce0"
+  }
+]

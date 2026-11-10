@@ -1,0 +1,38 @@
+digraph course {
+rankdir=LR; bgcolor="white"; nodesep=0.22; ranksep=0.32;
+node [fontname="Arial",fontsize=16,color="black",style="filled",fillcolor="white"];
+edge [color="black",arrowsize=0.7];
+graph [fontname="Arial",fontsize=14,labelloc=b,label="Observed WSL / Jazzy graph — lecturer synthetic inputs, seed 41 (not motor control)"];
+"rosbag2_recorder" [shape=ellipse];
+"week07_inputs" [shape=ellipse];
+"week07_interaction" [shape=ellipse];
+"week07_output_collector" [shape=ellipse];
+"/lamp/input/button" [shape=box,label="/lamp/input/button\nBool  [bool]"];
+"week07_inputs" -> "/lamp/input/button";
+"/lamp/input/button" -> "rosbag2_recorder";
+"/lamp/input/button" -> "week07_interaction";
+"/lamp/input/touch" [shape=box,label="/lamp/input/touch\nBool  [bool]"];
+"week07_inputs" -> "/lamp/input/touch";
+"/lamp/input/touch" -> "rosbag2_recorder";
+"/lamp/input/touch" -> "week07_interaction";
+"/lamp/input/distance" [shape=box,label="/lamp/input/distance\nFloat32  [m]"];
+"week07_inputs" -> "/lamp/input/distance";
+"/lamp/input/distance" -> "rosbag2_recorder";
+"/lamp/input/distance" -> "week07_interaction";
+"/lamp/interaction" [shape=box,label="/lamp/interaction\nString  [event name]"];
+"week07_interaction" -> "/lamp/interaction";
+"/lamp/interaction" -> "rosbag2_recorder";
+"/lamp/interaction" -> "week07_output_collector";
+"/lamp/emotion" [shape=box,label="/lamp/emotion\nString  [state name]"];
+"week07_interaction" -> "/lamp/emotion";
+"/lamp/emotion" -> "rosbag2_recorder";
+"/lamp/emotion" -> "week07_output_collector";
+"/lamp/servo_command" [shape=box,label="/lamp/servo_command\nFloat32MultiArray  [rad]"];
+"week07_interaction" -> "/lamp/servo_command";
+"/lamp/servo_command" -> "rosbag2_recorder";
+"/lamp/servo_command" -> "week07_output_collector";
+"/lamp/rgb_command" [shape=box,label="/lamp/rgb_command\nColorRGBA  [normalized0..1]"];
+"week07_interaction" -> "/lamp/rgb_command";
+"/lamp/rgb_command" -> "rosbag2_recorder";
+"/lamp/rgb_command" -> "week07_output_collector";
+}

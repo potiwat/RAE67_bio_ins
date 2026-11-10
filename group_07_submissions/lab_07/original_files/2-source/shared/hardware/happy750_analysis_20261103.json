@@ -1,0 +1,11 @@
+{
+  "raw": "shared\\hardware\\happy750_trace_20261102T175401Z.json",
+  "duration_s": 9.411818157999733,
+  "samples": 180,
+  "output_modes": {
+    "paused_no_recent_face": 168,
+    "running": 12
+  },
+  "speed750_confirmed_all_samples": true,
+  "warning": "Final trace dominated by face-loss pauses; not a steady-dance physical smoothness measurement."
+}

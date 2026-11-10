@@ -1,0 +1,123 @@
+{
+  "question": "เมื่อใช้สิ่งเร้าและ FSM เดียวกัน การปรับ phi ของ SO(2) CPG ผ่านฮอร์โมน H ทำให้ความถี่และการเปลี่ยนคาบแตกต่างจากการปรับตรงจาก S อย่างไร",
+  "hypothesis": "C1 ทำให้ phi เปลี่ยนค่อยเป็นค่อยไปและคงผลหลังสิ่งเร้าหาย คาดว่า Delta T ลดลงในช่วงที่มีคาบเพียงพอ แต่ไม่ตั้งสมมติฐานว่า motor smoothness ดีขึ้นทุกอารมณ์",
+  "biological_inspiration_source": "ความจำของสิ่งเร้าจากการผลิต/สลายฮอร์โมนและ neural rhythmic CPG; อ้าง course Lab03 SO(2), Lab04 student_hormone และ Lab05 course_model ตาม TEACHER_LAB_REUSE_MAP_TH และ source hashes ที่แนบ ไม่ใช่การวัดฮอร์โมนชีวภาพ",
+  "AHM_equation": "H[k+1]=clip(H[k]+0.05*(0.8*S[k]-0.6*H[k]-0.2*H[k]),0,1). ใช้ H เก่า; C0 R=S และ C1 R=H[k]. S=0 แล้ว H ค่อยลด ไม่ reset ข้ามอารมณ์",
+  "SO2_CPG_equation": "o1_new=tanh(alpha*(cos(phi)*o1_old+sin(phi)*o2_old)); o2_new=tanh(alpha*(-sin(phi)*o1_old+cos(phi)*o2_old)). alpha=1.10, dt=0.05s, update จากคู่ค่าเก่าเดียวกัน; phi เป็น rad/update ไม่ใช่ Hz",
+  "integration_description": "S จาก Button/Touch/Near -> H หรือ S ตาม condition -> phi=clip(0.10+0.03*R,0.10,0.13) -> SO(2) bank -> accepted motion decoder. FSM 6 อารมณ์และ Pi single UART owner คงเดิม. ROS2 บน WSL รับ session สดผ่าน SSH และบันทึก13topics; ไม่สั่งมอเตอร์ผ่าน ROS",
+  "independent_variable": "เส้นทางปรับ phi: C0 direct S เทียบ C1 hormonal H เท่านั้น ในการทดลอง AHM",
+  "conditions": [
+    {
+      "name": "C0",
+      "baseline": true,
+      "change": "R=S ปรับ phi จากสิ่งเร้าตาม scripted grid โดยตรง",
+      "repeats": 3
+    },
+    {
+      "name": "C1",
+      "baseline": false,
+      "change": "R=H ใช้ฮอร์โมนสะสม/สลายจาก S ตารางเดียวกับ C0; ค่าอื่นคงเดิม",
+      "repeats": 3
+    }
+  ],
+  "metrics": [
+    {
+      "name": "M1 CPG frequency",
+      "unit": "Hz (CPG logical output clock)",
+      "measurement": "1/mean(T) จาก rising zero crossings ของ o1 แยก state/episode ต่อเนื่อง; crossing ใช้ linear interpolation ระหว่างจุดจริง",
+      "missing_rule": "ไม่มี complete period ให้ null/N/A พร้อมจำนวนคาบ ไม่วัด physical motor frequency"
+    },
+    {
+      "name": "M2 cycle-to-cycle period change",
+      "unit": "s (CPG logical output clock)",
+      "measurement": "mean(abs(T[n]-T[n-1])) ภายใน episode เดียว; ไม่ต่อข้าม state/mask/gap/reset",
+      "missing_rule": "ต้องมีอย่างน้อย2คาบในepisodeเดียว; ไม่พอให้null/N/A ไม่แทน0และรายงานจำนวนคู่คาบ"
+    }
+  ],
+  "controls": [
+    "คง scripted stimulus grid version lab07_scripted_natural_fsm_v2_balanced และ source schedule hash เดียวกันในคู่",
+    "เริ่ม H=0 และ o1=-0.026965330782974153,o2=-0.5608626776309884 ตรวจค่าเริ่มจากlog",
+    "คง alpha/dt/state time scales, FSM, poses, PID, motor Speed/ACC, bounds และ decoder ระหว่าง C0/C1",
+    "ใช้โคมและผู้ใช้งานเดิม จัดที่นั่ง/แสงให้ใกล้เคียง และเก็บ live safety overrides/gaps ไม่ลบทิ้ง"
+  ],
+  "parameters": [
+    {
+      "name": "alpha",
+      "value": 1.1,
+      "unit": "dimensionless",
+      "provenance": "Lab03/Lab05 SO(2), project body_rhythm.py"
+    },
+    {
+      "name": "dt",
+      "value": 0.05,
+      "unit": "s/model update",
+      "provenance": "Lab05 course model; runtime automatic_trial.py"
+    },
+    {
+      "name": "hormone production",
+      "value": 0.8,
+      "unit": "1/s for normalized S",
+      "provenance": "course Lab04-05 applied model, ScriptAHM"
+    },
+    {
+      "name": "hormone decay",
+      "value": 0.6,
+      "unit": "1/s",
+      "provenance": "course Lab04-05 applied model, ScriptAHM"
+    },
+    {
+      "name": "hormone leak",
+      "value": 0.2,
+      "unit": "1/s",
+      "provenance": "course Lab04-05 applied model, ScriptAHM"
+    },
+    {
+      "name": "phi bounds",
+      "value": [
+        0.1,
+        0.13
+      ],
+      "unit": "rad/update",
+      "provenance": "operator-approved project mapping, hardware trials4-5Nov"
+    },
+    {
+      "name": "trial duration",
+      "value": 600,
+      "unit": "s",
+      "provenance": "Week07 scenario requirement and actual six AHM trials"
+    },
+    {
+      "name": "Near/Clear",
+      "value": [
+        20,
+        28
+      ],
+      "unit": "cm ToF",
+      "provenance": "accepted Pi profiles; current native safety/FSM"
+    }
+  ],
+  "simulation_plan": "ทำแล้ว: P1-P3 แต่ละคู่ C0/C1,600s logical time, gridเดียวกัน ใช้ logical FSM และ SO(2) bank ไม่จำลอง camera, motor dynamics หรือ motion entry. เป็น deterministic replay checks ไม่ใช่ผู้ทดลองอิสระ6คน",
+  "real_robot_plan": "ทำแล้ว: Pi5+STS3215x5,Button/Touch/ToF/camera, native single UART owner. AHM3คู่600sด้วย scripted interactions ขณะผู้ใช้นั่งหน้ากล้อง; physical inputs/STOP/ToF guard แยกบันทึก. Normal/ทิศ/ขอบและท่ารวมตรวจโดยผู้ใช้. เพิ่ม live SSH->WSL ROS13 verification60s934rowsวันที่6Nov; ไม่ใช้แทนresearch600s",
+  "clock_correlation_plan": "Owner/input: Pi CLOCK_BOOTTIME; per-joint feedback: CLOCK_MONOTONIC; ROSbag: WSL receipt clock. เชื่อม run/source/event IDs และเก็บ source timestamps; ไม่หักเวลาต่างclockเป็นsource-to-physical latency ไม่มีphysical onset/error boundจึงN/A. M1/M2ใช้CPGlogicalclock",
+  "safety_stop_plan": "ผู้ใช้ดูสาย/โครงและเข้าถึง Stop/H/สวิตช์ตัดไฟ. Native ownerบังคับขอบและหยุดประคองเมื่อfault; ToF staleรอคืนได้ตามguard0.5sและบันทึกhold. SSH/ROS observationไม่มีสิทธิ์สั่งมอเตอร์หรือเปิดUARTแข่ง; ไม่ปิดguardเพื่อให้trialผ่าน",
+  "order_counterbalancing": "ลำดับที่ทำจริง P1 C0->C1, P2 C0->C1, P3 C0->C1. ไม่ได้ counterbalance; รายงาน order effect เป็นข้อจำกัด ไม่แก้metadataให้ดูเหมือนสลับลำดับ",
+  "paired_seed_or_participant_plan": "AHMใช้gridจับคู่ P1-P3 กับคน/โคมเดิม ไม่ใช้randomseedหรืออ้าง3participantsอิสระ. แยกteacher transport experiment seeds41/42/43 (C0 ideal vs C1delay/drop) ออกจาก AHM R=S/H. คลิปเป็นผู้ใช้เล่นที่อนุญาตให้แนบ; ไม่อ้างethics approvalหรือparticipant study",
+  "expected_input_ids_before_run": "AHM: 5blocks120s, Button8-9s, Touch30-42s, burst52/52.4/52.8s, Near80-92s, idleถึง120s. รวม5Button,20Touch,5Near/Clear pairsและ5derivedbursts; IDsจริงคงในraw. M1/M2denominator=คาบ/คู่คาบ. Teacher bridge ใช้7 IDsประกาศในPROTOCOL_BEFORE_RUN_TH.md: button_01,touch_01,approach_01,clear_01,near_01,clear_02,button_02 ไม่เปลี่ยนsubsetตามผล",
+  "human_scenario_duration_s": 600,
+  "timeline": "26Oct2026: completed5-statepolicy/offline6transporttrials;27Oct:3ROSsyntheticprocessruns;4Nov:Normalpilot/AHM;5Nov:6-stateAHMsimulation6trials+real6trials600s;6Nov:liveSSH/ROS13verification,analysis/proposal closeout. ผู้รับผิดชอบตามแผน:สมาชิกกลุ่ม7ร่วมกันตามรายชื่อในใบงาน;ไม่อ้างสัดส่วนผลงานรายคน",
+  "evidence_paths": {
+    "ahm_real": "03_Results/real_robot_final",
+    "ahm_simulation": "03_Results/simulation_final",
+    "course_bridge": "03_Results/course_bridge_verified_20261026_27",
+    "live_ros": "03_Results/live_wsl_20261106"
+  },
+  "revision_scope": "Final plan/result reconciliation after data collection; not a new preregistration or a claim of instructor approval",
+  "system_architecture": {
+    "description": "Pi 5 อ่าน Button/Touch/ToF/กล้อง และควบคุม STS3215/LED โดยตรง ส่วน ROS 2 Jazzy บน WSL รับข้อมูลผ่าน SSH แล้ว publish 13 topics เข้า rosbag ไม่มี MCU แยกหรือ micro-ROS Agent และไม่สั่งมอเตอร์ผ่าน ROS",
+    "hardware_owner": "Pi 5 native runtime; single UART owner",
+    "ros_host": "WSL Ubuntu 24.04 / ROS 2 Jazzy",
+    "telemetry_transport": "SSH live / recorded session",
+    "mcu_agent_in_scope": false,
+    "physical_actuation_via_ros": false
+  }
+}

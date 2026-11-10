@@ -1,0 +1,311 @@
+{
+  "recorded_utc": "20261102T125000Z",
+  "source": "bio_inspire/hardware/last_camera_status.json",
+  "samples": [
+    {
+      "request": {
+        "time_s": 4253.416116047,
+        "joint_id": 5,
+        "target_raw": 2710,
+        "base_raw": 2710,
+        "observation": {
+          "status": "TRACKING",
+          "box": [
+            0.3,
+            0.3277777777777778,
+            0.2125,
+            0.37777777777777777
+          ],
+          "error_xy": [
+            -0.1875,
+            0.033333333333333215
+          ],
+          "captured_s": 4253.146327,
+          "processed_s": 4253.204246864,
+          "source_id": 3248
+        }
+      },
+      "joint_id": 5,
+      "valid_observation": false,
+      "calibration_valid": false,
+      "reason": "superseded_before_settled_observation",
+      "source_id_kind": "frame_sequence_not_player_identity",
+      "clock_domains": {
+        "request": "CLOCK_BOOTTIME",
+        "observation": "CLOCK_BOOTTIME",
+        "servo_sample": "CLOCK_MONOTONIC"
+      }
+    },
+    {
+      "request": {
+        "time_s": 4255.600637188,
+        "joint_id": 5,
+        "target_raw": 2744,
+        "base_raw": 2710,
+        "observation": {
+          "status": "TRACKING",
+          "box": [
+            0.290625,
+            0.3055555555555556,
+            0.221875,
+            0.39444444444444443
+          ],
+          "error_xy": [
+            -0.1968749999999999,
+            0.005555555555555536
+          ],
+          "captured_s": 4255.478892,
+          "processed_s": 4255.535060765,
+          "source_id": 3318
+        }
+      },
+      "joint_id": 5,
+      "valid_observation": true,
+      "calibration_valid": false,
+      "reason": "settled_fresh_observation",
+      "source_id_kind": "frame_sequence_not_player_identity",
+      "clock_domains": {
+        "request": "CLOCK_BOOTTIME",
+        "observation": "CLOCK_BOOTTIME",
+        "servo_sample": "CLOCK_MONOTONIC"
+      },
+      "observed_s": 4257.828209827,
+      "settled_since_boottime_s": 4257.732222558,
+      "actual_raw": 2743,
+      "rows": [
+        {
+          "id": 1,
+          "sampled_monotonic_s": 4257.788047031,
+          "mode": 0,
+          "goal_raw": 2029,
+          "target_speed_raw": 400,
+          "acceleration_raw": 1,
+          "torque_raw": 1,
+          "position_raw": 2029,
+          "speed_raw": 0,
+          "load_raw": 0,
+          "voltage_V": 6.9,
+          "temperature_C": 42,
+          "status_raw": 0,
+          "moving_raw": 0
+        },
+        {
+          "id": 2,
+          "sampled_monotonic_s": 4257.796112187,
+          "mode": 0,
+          "goal_raw": 2837,
+          "target_speed_raw": 400,
+          "acceleration_raw": 1,
+          "torque_raw": 1,
+          "position_raw": 2857,
+          "speed_raw": 0,
+          "load_raw": 168,
+          "voltage_V": 6.8,
+          "temperature_C": 41,
+          "status_raw": 0,
+          "moving_raw": 0
+        },
+        {
+          "id": 3,
+          "sampled_monotonic_s": 4257.808160994,
+          "mode": 0,
+          "goal_raw": 2746,
+          "target_speed_raw": 400,
+          "acceleration_raw": 1,
+          "torque_raw": 1,
+          "position_raw": 2766,
+          "speed_raw": 0,
+          "load_raw": 130,
+          "voltage_V": 6.9,
+          "temperature_C": 37,
+          "status_raw": 0,
+          "moving_raw": 0
+        },
+        {
+          "id": 4,
+          "sampled_monotonic_s": 4257.820089763,
+          "mode": 0,
+          "goal_raw": 1997,
+          "target_speed_raw": 400,
+          "acceleration_raw": 1,
+          "torque_raw": 1,
+          "position_raw": 2000,
+          "speed_raw": 0,
+          "load_raw": 18,
+          "voltage_V": 6.9,
+          "temperature_C": 31,
+          "status_raw": 0,
+          "moving_raw": 0
+        },
+        {
+          "id": 5,
+          "sampled_monotonic_s": 4257.828096418,
+          "mode": 0,
+          "goal_raw": 2744,
+          "target_speed_raw": 400,
+          "acceleration_raw": 1,
+          "torque_raw": 1,
+          "position_raw": 2743,
+          "speed_raw": 0,
+          "load_raw": 0,
+          "voltage_V": 6.9,
+          "temperature_C": 30,
+          "status_raw": 0,
+          "moving_raw": 0
+        }
+      ],
+      "observation": {
+        "status": "TRACKING",
+        "box": [
+          0.284375,
+          0.22777777777777777,
+          0.225,
+          0.4
+        ],
+        "error_xy": [
+          -0.20625000000000004,
+          -0.14444444444444438
+        ],
+        "captured_s": 4257.744811,
+        "processed_s": 4257.799877225,
+        "source_id": 3386
+      }
+    },
+    {
+      "request": {
+        "time_s": 4261.956028932,
+        "joint_id": 5,
+        "target_raw": 2710,
+        "base_raw": 2710,
+        "observation": {
+          "status": "TRACKING",
+          "box": [
+            0.28125,
+            0.2222222222222222,
+            0.23125,
+            0.4111111111111111
+          ],
+          "error_xy": [
+            -0.20625000000000004,
+            -0.1444444444444445
+          ],
+          "captured_s": 4261.810138,
+          "processed_s": 4261.868508749,
+          "source_id": 3508
+        }
+      },
+      "joint_id": 5,
+      "valid_observation": true,
+      "calibration_valid": false,
+      "reason": "settled_fresh_observation",
+      "source_id_kind": "frame_sequence_not_player_identity",
+      "clock_domains": {
+        "request": "CLOCK_BOOTTIME",
+        "observation": "CLOCK_BOOTTIME",
+        "servo_sample": "CLOCK_MONOTONIC"
+      },
+      "observed_s": 4264.164222538,
+      "settled_since_boottime_s": 4264.065026625,
+      "actual_raw": 2723,
+      "rows": [
+        {
+          "id": 1,
+          "sampled_monotonic_s": 4264.13323452,
+          "mode": 0,
+          "goal_raw": 2029,
+          "target_speed_raw": 400,
+          "acceleration_raw": 1,
+          "torque_raw": 1,
+          "position_raw": 2029,
+          "speed_raw": 0,
+          "load_raw": 0,
+          "voltage_V": 6.9,
+          "temperature_C": 42,
+          "status_raw": 0,
+          "moving_raw": 0
+        },
+        {
+          "id": 2,
+          "sampled_monotonic_s": 4264.140233776,
+          "mode": 0,
+          "goal_raw": 2837,
+          "target_speed_raw": 400,
+          "acceleration_raw": 1,
+          "torque_raw": 1,
+          "position_raw": 2857,
+          "speed_raw": 0,
+          "load_raw": 168,
+          "voltage_V": 6.8,
+          "temperature_C": 41,
+          "status_raw": 0,
+          "moving_raw": 0
+        },
+        {
+          "id": 3,
+          "sampled_monotonic_s": 4264.14808556,
+          "mode": 0,
+          "goal_raw": 2746,
+          "target_speed_raw": 400,
+          "acceleration_raw": 1,
+          "torque_raw": 1,
+          "position_raw": 2766,
+          "speed_raw": 0,
+          "load_raw": 130,
+          "voltage_V": 6.9,
+          "temperature_C": 37,
+          "status_raw": 0,
+          "moving_raw": 0
+        },
+        {
+          "id": 4,
+          "sampled_monotonic_s": 4264.156030696,
+          "mode": 0,
+          "goal_raw": 1997,
+          "target_speed_raw": 400,
+          "acceleration_raw": 1,
+          "torque_raw": 1,
+          "position_raw": 2000,
+          "speed_raw": 0,
+          "load_raw": 18,
+          "voltage_V": 6.9,
+          "temperature_C": 31,
+          "status_raw": 0,
+          "moving_raw": 0
+        },
+        {
+          "id": 5,
+          "sampled_monotonic_s": 4264.164110666,
+          "mode": 0,
+          "goal_raw": 2710,
+          "target_speed_raw": 400,
+          "acceleration_raw": 1,
+          "torque_raw": 1,
+          "position_raw": 2723,
+          "speed_raw": 0,
+          "load_raw": 37,
+          "voltage_V": 6.9,
+          "temperature_C": 30,
+          "status_raw": 0,
+          "moving_raw": 0
+        }
+      ],
+      "observation": {
+        "status": "TRACKING",
+        "box": [
+          0.284375,
+          0.2777777777777778,
+          0.225,
+          0.4
+        ],
+        "error_xy": [
+          -0.20625000000000004,
+          -0.0444444444444444
+        ],
+        "captured_s": 4264.076058,
+        "processed_s": 4264.133383022,
+        "source_id": 3576
+      }
+    }
+  ],
+  "scope": "Normal stance; two qualified positive/return observations, initial O superseded, no full Jacobian claimed"
+}

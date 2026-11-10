@@ -1,0 +1,76 @@
+[
+  {
+    "original": ".gitignore",
+    "destination": ".gitignore",
+    "original_bytes_preserved_at": [
+      "_originals_20261106/qa_repair_before/.gitignore"
+    ],
+    "reason": "manifest regenerated, current location references/mapping repaired; compare preserved pre-change copy"
+  },
+  {
+    "original": "1-docs/checks/file_mapping.json",
+    "destination": "1-docs/checks/file_mapping.json",
+    "original_bytes_preserved_at": [
+      "_originals_20261106/qa_repair_before/1-docs/checks/file_mapping.json"
+    ],
+    "reason": "manifest regenerated, current location references/mapping repaired; compare preserved pre-change copy"
+  },
+  {
+    "original": "1-docs/checks/organization_report_th.md",
+    "destination": "1-docs/checks/organization_report_th.md",
+    "original_bytes_preserved_at": [
+      "_originals_20261106/qa_repair_before/1-docs/checks/organization_report_th.md"
+    ],
+    "reason": "manifest regenerated, current location references/mapping repaired; compare preserved pre-change copy"
+  },
+  {
+    "original": "1-docs/markdown/worksheet.md",
+    "destination": "1-docs/markdown/worksheet.md",
+    "original_bytes_preserved_at": [
+      "_originals_20261106/qa_repair_before/1-docs/markdown/worksheet.md"
+    ],
+    "reason": "manifest regenerated, current location references/mapping repaired; compare preserved pre-change copy"
+  },
+  {
+    "original": "1-docs/README.md",
+    "destination": "1-docs/README.md",
+    "original_bytes_preserved_at": [
+      "_originals_20261106/qa_repair_before/1-docs/README.md"
+    ],
+    "reason": "manifest regenerated, current location references/mapping repaired; compare preserved pre-change copy"
+  },
+  {
+    "original": "2-src/Lab07/export_review_csv.py",
+    "destination": "2-src/Lab07/export_review_csv.py",
+    "original_bytes_preserved_at": [
+      "_originals_20261106/02_Source/Lab07/export_review_csv.py",
+      "_originals_20261106/qa_repair_before/2-src/Lab07/export_review_csv.py"
+    ],
+    "reason": "manifest regenerated, current location references/mapping repaired; compare preserved pre-change copy"
+  },
+  {
+    "original": "2-src/Lab07/verify_evidence.py",
+    "destination": "2-src/Lab07/verify_evidence.py",
+    "original_bytes_preserved_at": [
+      "_originals_20261106/02_Source/Lab07/verify_evidence.py",
+      "_originals_20261106/qa_repair_before/2-src/Lab07/verify_evidence.py"
+    ],
+    "reason": "manifest regenerated, current location references/mapping repaired; compare preserved pre-change copy"
+  },
+  {
+    "original": "README.md",
+    "destination": "README.md",
+    "original_bytes_preserved_at": [
+      "_originals_20261106/qa_repair_before/README.md"
+    ],
+    "reason": "manifest regenerated, current location references/mapping repaired; compare preserved pre-change copy"
+  },
+  {
+    "original": "verify_package.py",
+    "destination": "verify_package.py",
+    "original_bytes_preserved_at": [
+      "_originals_20261106/qa_repair_before/verify_package.py"
+    ],
+    "reason": "manifest regenerated, current location references/mapping repaired; compare preserved pre-change copy"
+  }
+]

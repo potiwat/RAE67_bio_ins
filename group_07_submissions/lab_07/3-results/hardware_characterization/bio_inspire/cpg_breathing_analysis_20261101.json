@@ -1,0 +1,42 @@
+{
+  "scope": "Offline SO2 decoder analysis only; not physical measurements or approved new runtime settings",
+  "alpha": 1.1,
+  "rows": [
+    {
+      "phi_rad_per_update": 0.1,
+      "model_dt_s": 0.05,
+      "period_s": 3.401612903225807,
+      "decoder_gain_deg": 1.9,
+      "command_peak_deg": 1.0782524463783008,
+      "command_max_speed_deg_s": 2.5755315104748853,
+      "command_max_acceleration_deg_s2": 7.762634056051265
+    },
+    {
+      "phi_rad_per_update": 0.125,
+      "model_dt_s": 0.05,
+      "period_s": 2.6425000000000005,
+      "decoder_gain_deg": 1.9,
+      "command_peak_deg": 1.0803459573289103,
+      "command_max_speed_deg_s": 3.091283769216784,
+      "command_max_acceleration_deg_s2": 10.494006751098839
+    },
+    {
+      "phi_rad_per_update": 0.15,
+      "model_dt_s": 0.05,
+      "period_s": 2.166326530612245,
+      "decoder_gain_deg": 1.9,
+      "command_peak_deg": 1.0815072093443212,
+      "command_max_speed_deg_s": 3.622302822264197,
+      "command_max_acceleration_deg_s2": 13.665859408544012
+    },
+    {
+      "phi_rad_per_update": 0.2,
+      "model_dt_s": 0.05,
+      "period_s": 1.600735294117647,
+      "decoder_gain_deg": 1.9,
+      "command_peak_deg": 1.0826673264034243,
+      "command_max_speed_deg_s": 4.705436523719011,
+      "command_max_acceleration_deg_s2": 21.210320795682946
+    }
+  ]
+}

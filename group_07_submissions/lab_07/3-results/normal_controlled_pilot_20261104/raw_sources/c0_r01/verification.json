@@ -1,0 +1,19 @@
+{
+  "condition": "C0",
+  "completed": true,
+  "trace_count": 652,
+  "duration_last_row_s": 50.05618245400001,
+  "input_fixture_identical": true,
+  "controller_states": {
+    "READY": 652
+  },
+  "phi_range": [
+    0.1,
+    0.13
+  ],
+  "median_record_interval_s": 0.08686239700000442,
+  "skipped_nominal_parameter_indices": 359,
+  "cleanup_confirmed": true,
+  "paired_result": "pending C1",
+  "physical_smoothness": "not yet assessed"
+}

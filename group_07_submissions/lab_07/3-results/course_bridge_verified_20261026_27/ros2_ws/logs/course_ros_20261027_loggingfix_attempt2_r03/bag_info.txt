@@ -1,0 +1,18 @@
+
+Files:             course_ros_20261027_loggingfix_attempt2_r03_0.mcap
+Bag size:          581.7 KiB
+Storage id:        mcap
+ROS Distro:        jazzy
+Duration:          26.743160824s
+Start:             Oct 27 2026 01:12:06.347456258 (1793038326.347456258)
+End:               Oct 27 2026 01:12:33.090617082 (1793038353.090617082)
+Messages:          8527
+Topic information: Topic: /lamp/emotion | Type: std_msgs/msg/String | Count: 1310 | Serialization Format: cdr
+                   Topic: /lamp/input/button | Type: std_msgs/msg/Bool | Count: 1096 | Serialization Format: cdr
+                   Topic: /lamp/input/distance | Type: std_msgs/msg/Float32 | Count: 1095 | Serialization Format: cdr
+                   Topic: /lamp/input/touch | Type: std_msgs/msg/Bool | Count: 1094 | Serialization Format: cdr
+                   Topic: /lamp/interaction | Type: std_msgs/msg/String | Count: 1314 | Serialization Format: cdr
+                   Topic: /lamp/rgb_command | Type: std_msgs/msg/ColorRGBA | Count: 1310 | Serialization Format: cdr
+                   Topic: /lamp/servo_command | Type: std_msgs/msg/Float32MultiArray | Count: 1308 | Serialization Format: cdr
+Service:           0
+Service information: 

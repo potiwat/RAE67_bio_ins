@@ -1,0 +1,14 @@
+[
+  {
+    "command": "python -B check_submission.py --policy-file completed_policy.py --contract group",
+    "exit_code": 0,
+    "stdout": "Checked 40 transition pairs; contract=group; failures=0\nPASS: transition contract complete",
+    "stderr": ""
+  },
+  {
+    "command": "python -B check_proposal.py proposal.json",
+    "exit_code": 0,
+    "stdout": "PASS: fields complete; lecturer must review scientific validity",
+    "stderr": ""
+  }
+]

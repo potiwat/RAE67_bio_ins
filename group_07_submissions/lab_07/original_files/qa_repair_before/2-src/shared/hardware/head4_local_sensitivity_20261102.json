@@ -1,0 +1,40 @@
+{
+  "status": "local_experimental_observation_not_enabled_for_control",
+  "source": "head4_settled_observations_20261102T122405Z.json",
+  "source_sha256": "b435ca89690f2e7e869ab5eb7e9c8b086c1cea7f1f9aadb838ee68590aeee802",
+  "calibration_valid": false,
+  "scope": "Normal only; one ID4 positive/return sequence; operator held face still; identity not independently verified",
+  "actual_ticks": [
+    2000,
+    2029,
+    2000
+  ],
+  "encoder_excursion_deg": 2.548828125,
+  "nonprobe_joint_spread_ticks": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "5": 0
+  },
+  "face_delta_error_xy": [
+    -0.07656250000000009,
+    -0.002777777777777768
+  ],
+  "face_delta_pixels_320x180": [
+    -12.250000000000014,
+    -0.2499999999999991
+  ],
+  "return_difference_pixels": [
+    -0.5000000000000071,
+    -0.4999999999999982
+  ],
+  "approx_horizontal_pixels_per_encoder_degree": -4.806130268199239,
+  "vertical_response": "unresolved: smaller than before/after return difference",
+  "interpretation": "ID4 affects horizontal face centering in this stance; image-roll component not quantified; not globally pure pan/roll",
+  "not_claimed": [
+    "full head Jacobian",
+    "raw/model zero and signs",
+    "calibrated Cartesian Happy path",
+    "same applicability in other poses"
+  ]
+}

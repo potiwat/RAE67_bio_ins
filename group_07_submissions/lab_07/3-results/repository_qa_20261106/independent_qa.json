@@ -1,0 +1,188 @@
+{
+  "checks": [
+    {
+      "name": "mock",
+      "exit_code": 0,
+      "tail": " 0, 5: 0}\nNORMAL_READY residual_raw {1: 0, 2: 0, 3: 0, 4: 0, 5: 0}\nNORMAL_READY residual_raw {1: 0, 2: 0, 3: 0, 4: 0, 5: 0}\nNORMAL_READY residual_raw {1: 0, 2: 0, 3: 0, 4: 0, 5: 0}\n.......................................................................................................................\n----------------------------------------------------------------------\nRan 119 tests in 1.234s\n\nOK\n"
+    },
+    {
+      "name": "policy",
+      "exit_code": 0,
+      "tail": "Checked 40 transition pairs; contract=group; failures=0\nPASS: transition contract complete\n"
+    },
+    {
+      "name": "proposal",
+      "exit_code": 0,
+      "tail": "PASS: fields complete; lecturer must review scientific validity\n"
+    },
+    {
+      "name": "recorded_evidence",
+      "exit_code": 0,
+      "tail": "0259920861f5c75289623c11a06b7a45878\",\n    \"command_trace.csv\": \"95706888882f4cf1cf2d7aac7ed3d5c65e8a2ea9661ecc5c7c6aed46de0f54b2\",\n    \"events.csv\": \"52041baedac19711d654078306c5d281b9d8058ff749e2540044392623d1569d\"\n  },\n  \"policy_sha256\": \"2a7d07a3cf685a248becc075cb23c06e8bbe7af41631ccf6cb23d8e8cc16159c\",\n  \"scope\": \"Evidence integrity/model bounds/derived CSV only. ROS and hardware untested.\"\n}\n"
+    }
+  ],
+  "python_files": 365,
+  "syntax_errors": [],
+  "pdfs": [
+    {
+      "path": "1-docs/lab_documents/Lab07_Proposal_Group7.pdf",
+      "pages": 3,
+      "text_characters": 5259,
+      "summary": "ข้อเสนอโครงงาน LeLamp AHM และ CPG \nชื่อกลุ่ม กลุ่ม 7  \nสมาชิก 1.นางสาวธมนันท์ ลิ้มอิ่ม  รหัสนักศึกษา 6652500248 \n2.นาย    ธนวัฒน์ อ่อนดำ รหัสนักศึกษา 6652500256 \nวันที่ทดลอง 06/11/2569 \n1. คำถามและแรงบันดาลใจ \n1. การปรับ φ ผ่าน H เปลี่ยนความถี่และ ΔT ของ CPG อย่างไร เมื่อเทียบกับการปรับตรงจาก S? สมมติฐาน: C1 \nคงผลสิ่งเร้าและเปลี่ยน φ ค่อยเป็นค่อยไปกว่า C0 โดยไม่อ้างว่าหุ่นมีอารมณ์ชีวภาพจริง \nตอบ: แรงบันดาลใจคือการผลิตและสลายฮอร์โมนซึ่งสร้างความจำของสิ่งเร้า ร่วมกับวงจรประสาทสร้างจังหวะ \nCPG ใช้แบบจำลองรายวิชา Lab03–05; H เป็นค่าคำนวณ ไม่ใช่ฮอร์โมนที่วัดจากร่างกาย \n2. ระบบและสมการ \nPi 5 อ่าน Bu",
+      "visual_layout": "NOT TESTED"
+    },
+    {
+      "path": "1-docs/lab_documents/pair_p2_s_h_phi.pdf",
+      "pages": 1,
+      "text_characters": 374,
+      "summary": "0.0\n0.2\n0.4\n0.6\n0.8\n1.0S (GPIO edges + sampled Near)\nC0 C1\n0.0\n0.2\n0.4\n0.6\n0.8\n1.0H (model state)\nC0 C1\n0 20 40 60 80\nSeconds after fifth-button-release recognition\n0.100\n0.105\n0.110\n0.115\n0.120\n0.125\n0.130phi (rad / model step)\nC0 C1\nLeLamp C0/C1 hardware pilot: logged S, H and phi\nMatched initial H/CPG; different actual human input timing. Not a motor-smoothness result.",
+      "visual_layout": "NOT TESTED"
+    }
+  ],
+  "yaml": [
+    {
+      "path": "3-results/real_robot_pilot/C0_bag_db0023c1/qos.yaml",
+      "status": "parsed",
+      "type": "dict"
+    },
+    {
+      "path": "3-results/real_robot_pilot/C1_bag_86706a5d/qos.yaml",
+      "status": "parsed",
+      "type": "dict"
+    },
+    {
+      "path": "3-results/real_robot_pilot/C1_bag_86706a5d/bag/metadata.yaml",
+      "status": "parsed",
+      "type": "dict"
+    },
+    {
+      "path": "3-results/real_robot_pilot/C0_bag_db0023c1/bag/metadata.yaml",
+      "status": "parsed",
+      "type": "dict"
+    },
+    {
+      "path": "3-results/live_wsl_20261106/ros_r01/qos.yaml",
+      "status": "parsed",
+      "type": "dict"
+    },
+    {
+      "path": "3-results/live_wsl_20261106/ros_r01_recovered_replay/qos.yaml",
+      "status": "parsed",
+      "type": "dict"
+    },
+    {
+      "path": "3-results/live_wsl_20261106/ros_r02/qos.yaml",
+      "status": "parsed",
+      "type": "dict"
+    },
+    {
+      "path": "3-results/live_wsl_20261106/ros_r02/bag/metadata.yaml",
+      "status": "parsed",
+      "type": "dict"
+    },
+    {
+      "path": "3-results/live_wsl_20261106/ros_r01_recovered_replay/bag/metadata.yaml",
+      "status": "parsed",
+      "type": "dict"
+    },
+    {
+      "path": "3-results/live_wsl_20261106/ros_r01/bag/metadata.yaml",
+      "status": "parsed",
+      "type": "dict"
+    },
+    {
+      "path": "3-results/course_bridge_verified_20261026_27/ros2_ws/bags/course_ros_20261027_loggingfix_attempt2_r01/metadata.yaml",
+      "status": "parsed",
+      "type": "dict"
+    },
+    {
+      "path": "3-results/course_bridge_verified_20261026_27/ros2_ws/bags/course_ros_20261027_loggingfix_attempt2_r02/metadata.yaml",
+      "status": "parsed",
+      "type": "dict"
+    },
+    {
+      "path": "3-results/course_bridge_verified_20261026_27/ros2_ws/bags/course_ros_20261027_loggingfix_attempt2_r03/metadata.yaml",
+      "status": "parsed",
+      "type": "dict"
+    }
+  ],
+  "external_imports": [
+    {
+      "module": "adafruit_vl53l1x",
+      "available": false
+    },
+    {
+      "module": "board",
+      "available": false
+    },
+    {
+      "module": "busio",
+      "available": false
+    },
+    {
+      "module": "cv2",
+      "available": false
+    },
+    {
+      "module": "diagnostic_msgs",
+      "available": false
+    },
+    {
+      "module": "gpiozero",
+      "available": false
+    },
+    {
+      "module": "matplotlib",
+      "available": true
+    },
+    {
+      "module": "neopixel_spi",
+      "available": false
+    },
+    {
+      "module": "picamera2",
+      "available": false
+    },
+    {
+      "module": "rclpy",
+      "available": false
+    },
+    {
+      "module": "read_only_bus",
+      "available": false
+    },
+    {
+      "module": "rosbag2_py",
+      "available": false
+    },
+    {
+      "module": "rosidl_runtime_py",
+      "available": false
+    },
+    {
+      "module": "setuptools",
+      "available": false
+    },
+    {
+      "module": "std_msgs",
+      "available": false
+    }
+  ],
+  "ros_packages": [
+    {
+      "path": "2-src/Lab07/package.xml",
+      "name": "lamp_week07",
+      "xml": "PASS",
+      "resource_marker_exists": true,
+      "setup_exists": true,
+      "dependencies": [
+        "ament_python",
+        "rclpy",
+        "std_msgs"
+      ]
+    }
+  ],
+  "ros_build": "NOT TESTED",
+  "hardware": "NOT TESTED",
+  "markdown_findings": []
+}

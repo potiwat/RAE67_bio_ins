@@ -1,0 +1,273 @@
+{
+  "moves": [
+    {
+      "original": "1-docs/checks/docs_reorganization.json",
+      "destination": "3-results/repository_maintenance_history/docs_reorganization.json",
+      "reason": "content records generated checks; should be in 3-results; entire JSON parsed; keys: moved_files, mapping, modified_markdown, integrity_errors, main_link_errors"
+    },
+    {
+      "original": "1-docs/checks/document_qa.json",
+      "destination": "3-results/repository_maintenance_history/document_qa.json",
+      "reason": "content records generated checks; should be in 3-results; entire JSON parsed; keys: proposal_pages, worksheet_pages, docx_render_attempt, fallback, visual_review, package_pc_tests, package_pc_tests_passed, pi_program_changed, uploaded"
+    },
+    {
+      "original": "1-docs/checks/document_qa_final.json",
+      "destination": "3-results/repository_maintenance_history/document_qa_final.json",
+      "reason": "content records generated checks; should be in 3-results; entire JSON parsed; keys: status, word_source, byte_identical_to_user_files, content_rewritten, formatting_changed, scope, proposal_pages, worksheet_pages, summary_pages, deliverables"
+    },
+    {
+      "original": "1-docs/checks/organization_checks.json",
+      "destination": "3-results/repository_maintenance_history/organization_checks.json",
+      "reason": "content records generated checks; should be in 3-results; entire JSON parsed; keys: checks, syntax_count, syntax_errors, main_document_missing_links"
+    },
+    {
+      "original": "1-docs/checks/organization_mock.log",
+      "destination": "3-results/repository_maintenance_history/organization_mock.log",
+      "reason": "content records generated checks; should be in 3-results; UTF-8 decoded full file; inspected content prefix: NORMAL_READY residual_raw {1: 0, 2: 0, 3: 0, 4: 0, 5: 0} NORMAL_READY residual_raw {1: 0, 2: 0, 3: 0, 4: 0, 5: 0} POSE_ROUTE_GOAL look force_normal False {1: 20"
+    },
+    {
+      "original": "1-docs/checks/organization_policy.log",
+      "destination": "3-results/repository_maintenance_history/organization_policy.log",
+      "reason": "content records generated checks; should be in 3-results; UTF-8 decoded full file; inspected content prefix: Checked 40 transition pairs; contract=group; failures=0 PASS: transition contract complete "
+    },
+    {
+      "original": "1-docs/checks/organization_validation.json",
+      "destination": "3-results/repository_maintenance_history/organization_validation.json",
+      "reason": "content records generated checks; should be in 3-results; entire JSON parsed; keys: original_count, backup_integrity, active_files_accounted_for, changed_text_files"
+    },
+    {
+      "original": "2-src/bio_inspire/hardware/cpg_breathing_analysis_20261101.json",
+      "destination": "3-results/hardware_characterization/bio_inspire/cpg_breathing_analysis_20261101.json",
+      "reason": "parsed record/analysis content, no basename references in scanned active source/docs; requires review; entire JSON parsed; keys: scope, alpha, rows"
+    },
+    {
+      "original": "2-src/shared/hardware/angry_face_range_reference_20261104.json",
+      "destination": "3-results/hardware_characterization/shared/angry_face_range_reference_20261104.json",
+      "reason": "AST/module, configuration or runtime-support file; keys: operator_front_gap_cm, reference, sensor_median_cm, sensor_observed_span_cm, fresh_status_samples, face_tracking_samples, face_lost_samples, pose, raw_pro; entire JSON parsed; keys: operator_front_gap_cm, reference, sensor_median_cm, sensor_observed_span_cm, fresh_status_samples, face_tracking_samples, face_lost_samples, pose, raw_provenance_pi, latest_user_target_front_gap_cm, target_is_approximate, additional_measurement_declined, local_offset_estimate_cm, estimated_target_sensor_cm, brake_guard_sensor_cm, verified_20cm, face_specific_depth_guarantee, ik_calibrated"
+    },
+    {
+      "original": "2-src/shared/hardware/arm_stick_analysis_20261103.json",
+      "destination": "3-results/hardware_characterization/shared/arm_stick_analysis_20261103.json",
+      "reason": "parsed record/analysis content, no basename references in scanned active source/docs; requires review; entire JSON parsed; keys: raw_source, duration_s, samples, median_owner_interval_ms, joints"
+    },
+    {
+      "original": "2-src/shared/hardware/body_local_sensitivity_20261102.json",
+      "destination": "3-results/hardware_characterization/shared/body_local_sensitivity_20261102.json",
+      "reason": "AST/module, configuration or runtime-support file; keys: status, calibration_valid, source, source_sha256, results, limits, next_trial; entire JSON parsed; keys: status, calibration_valid, source, source_sha256, results, limits, next_trial"
+    },
+    {
+      "original": "2-src/shared/hardware/body_pitch_follow_trial_20261102T134119Z.json",
+      "destination": "3-results/hardware_characterization/shared/body_pitch_follow_trial_20261102T134119Z.json",
+      "reason": "AST/module, configuration or runtime-support file; keys: recorded_utc, source, status, user_report, claim; entire JSON parsed; keys: recorded_utc, source, status, user_report, claim"
+    },
+    {
+      "original": "2-src/shared/hardware/body_pitch_follow_trial_20261102T135432Z.json",
+      "destination": "3-results/hardware_characterization/shared/body_pitch_follow_trial_20261102T135432Z.json",
+      "reason": "AST/module, configuration or runtime-support file; keys: recorded_utc, source, status, user_report, claim; entire JSON parsed; keys: recorded_utc, source, status, user_report, claim"
+    },
+    {
+      "original": "2-src/shared/hardware/body_pitch_follow_trial_20261102T140050Z.json",
+      "destination": "3-results/hardware_characterization/shared/body_pitch_follow_trial_20261102T140050Z.json",
+      "reason": "AST/module, configuration or runtime-support file; keys: user_report, status; entire JSON parsed; keys: user_report, status"
+    },
+    {
+      "original": "2-src/shared/hardware/body_probe_observations_20261102T131403Z.json",
+      "destination": "3-results/hardware_characterization/shared/body_probe_observations_20261102T131403Z.json",
+      "reason": "parsed record/analysis content, no basename references in scanned active source/docs; requires review; entire JSON parsed; keys: recorded_utc, source, status_state, samples, scope"
+    },
+    {
+      "original": "2-src/shared/hardware/happy750_analysis_20261103.json",
+      "destination": "3-results/hardware_characterization/shared/happy750_analysis_20261103.json",
+      "reason": "parsed record/analysis content, no basename references in scanned active source/docs; requires review; entire JSON parsed; keys: raw, duration_s, samples, output_modes, speed750_confirmed_all_samples, warning"
+    },
+    {
+      "original": "2-src/shared/hardware/happy750_trace_20261102T175401Z.json",
+      "destination": "3-results/hardware_characterization/shared/happy750_trace_20261102T175401Z.json",
+      "reason": "parsed record/analysis content, no basename references in scanned active source/docs; requires review; entire JSON parsed; keys: trace, cleanup_confirmed"
+    },
+    {
+      "original": "2-src/shared/hardware/happy750_trajectory_feasibility_20261103.json",
+      "destination": "3-results/hardware_characterization/shared/happy750_trajectory_feasibility_20261103.json",
+      "reason": "AST/module, configuration or runtime-support file; keys: offline_only, requested_period_s_approx, body_requested_peak_speed_deg_s, body_requested_peak_acc_deg_s2, host_body_acc_limit_deg_s2, body_requested_range; entire JSON parsed; keys: offline_only, requested_period_s_approx, body_requested_peak_speed_deg_s, body_requested_peak_acc_deg_s2, host_body_acc_limit_deg_s2, body_requested_range_ticks, body_limited_command_range_ticks, max_command_lag_ticks"
+    },
+    {
+      "original": "2-src/shared/hardware/happy_continuous_smooth_trace_20261102T172602Z.json",
+      "destination": "3-results/hardware_characterization/shared/happy_continuous_smooth_trace_20261102T172602Z.json",
+      "reason": "parsed record/analysis content, no basename references in scanned active source/docs; requires review; entire JSON parsed; keys: trace, cleanup_confirmed"
+    },
+    {
+      "original": "2-src/shared/hardware/happy_extended_feedback_analysis_20261103.json",
+      "destination": "3-results/hardware_characterization/shared/happy_extended_feedback_analysis_20261103.json",
+      "reason": "parsed record/analysis content, no basename references in scanned active source/docs; requires review; entire JSON parsed; keys: raw, samples, duration_s, modes, joints"
+    },
+    {
+      "original": "2-src/shared/hardware/happy_extended_feedback_trace_20261102T174124Z.json",
+      "destination": "3-results/hardware_characterization/shared/happy_extended_feedback_trace_20261102T174124Z.json",
+      "reason": "parsed record/analysis content, no basename references in scanned active source/docs; requires review; entire JSON parsed; keys: trace, cleanup_confirmed"
+    },
+    {
+      "original": "2-src/shared/hardware/happy_search_analysis_20261102.json",
+      "destination": "3-results/hardware_characterization/shared/happy_search_analysis_20261102.json",
+      "reason": "parsed record/analysis content, no basename references in scanned active source/docs; requires review; entire JSON parsed; keys: raw, episodes"
+    },
+    {
+      "original": "2-src/shared/hardware/happy_search_trace_20261102T155523Z.json",
+      "destination": "3-results/hardware_characterization/shared/happy_search_trace_20261102T155523Z.json",
+      "reason": "parsed record/analysis content, no basename references in scanned active source/docs; requires review; entire JSON parsed; keys: trace, cleanup_confirmed"
+    },
+    {
+      "original": "2-src/shared/hardware/head4_local_sensitivity_20261102.json",
+      "destination": "3-results/hardware_characterization/shared/head4_local_sensitivity_20261102.json",
+      "reason": "AST/module, configuration or runtime-support file; keys: status, source, source_sha256, calibration_valid, scope, actual_ticks, encoder_excursion_deg, nonprobe_joint_spread_ticks, face_delta_error_xy, face_delta; entire JSON parsed; keys: status, source, source_sha256, calibration_valid, scope, actual_ticks, encoder_excursion_deg, nonprobe_joint_spread_ticks, face_delta_error_xy, face_delta_pixels_320x180, return_difference_pixels, approx_horizontal_pixels_per_encoder_degree, vertical_response, interpretation, not_claimed"
+    },
+    {
+      "original": "2-src/shared/hardware/head4_probe_capture_20261102T114924Z.json",
+      "destination": "3-results/hardware_characterization/shared/head4_probe_capture_20261102T114924Z.json",
+      "reason": "AST/module, configuration or runtime-support file; keys: source, recorded_utc, clock_domains, physical_claim, records; entire JSON parsed; keys: source, recorded_utc, clock_domains, physical_claim, records"
+    },
+    {
+      "original": "2-src/shared/hardware/head4_settled_observations_20261102T122405Z.json",
+      "destination": "3-results/hardware_characterization/shared/head4_settled_observations_20261102T122405Z.json",
+      "reason": "parsed record/analysis content, no basename references in scanned active source/docs; requires review; entire JSON parsed; keys: recorded_utc, source, samples, user_observation"
+    },
+    {
+      "original": "2-src/shared/hardware/head5_local_sensitivity_20261102.json",
+      "destination": "3-results/hardware_characterization/shared/head5_local_sensitivity_20261102.json",
+      "reason": "AST/module, configuration or runtime-support file; keys: status, source, source_sha256, calibration_valid, scope, actual_ticks, commanded_ticks, encoder_excursion_deg, face_delta_pixels_320x180, nonprobe_joint_s; entire JSON parsed; keys: status, source, source_sha256, calibration_valid, scope, actual_ticks, commanded_ticks, encoder_excursion_deg, face_delta_pixels_320x180, nonprobe_joint_spread_ticks, approx_vertical_pixels_per_encoder_degree, return_goal_offset_ticks, combined_head_jacobian, interpretation"
+    },
+    {
+      "original": "2-src/shared/hardware/head5_settled_observations_20261102T125000Z.json",
+      "destination": "3-results/hardware_characterization/shared/head5_settled_observations_20261102T125000Z.json",
+      "reason": "parsed record/analysis content, no basename references in scanned active source/docs; requires review; entire JSON parsed; keys: recorded_utc, source, samples, scope"
+    },
+    {
+      "original": "2-src/shared/hardware/id2_pid_selected_P32_I1_D16.json",
+      "destination": "3-results/hardware_characterization/shared/id2_pid_selected_P32_I1_D16.json",
+      "reason": "AST/module, configuration or runtime-support file; keys: history; entire JSON parsed; keys: history"
+    },
+    {
+      "original": "2-src/shared/hardware/small_happy_motion_analysis_20261102.json",
+      "destination": "3-results/hardware_characterization/shared/small_happy_motion_analysis_20261102.json",
+      "reason": "parsed record/analysis content, no basename references in scanned active source/docs; requires review; entire JSON parsed; keys: source, kind, samples, duration_s, controller_states, control_interval_ms, snapshot_ms, face_status_counts, joints, voltage_range_V"
+    },
+    {
+      "original": "2-src/shared/hardware/small_happy_motion_trace_20261102T151056Z.json",
+      "destination": "3-results/hardware_characterization/shared/small_happy_motion_trace_20261102T151056Z.json",
+      "reason": "parsed record/analysis content, no basename references in scanned active source/docs; requires review; entire JSON parsed; keys: trace, cleanup_confirmed"
+    },
+    {
+      "original": "2-src/shared/hardware/small_happy_sync_analysis_20261102.json",
+      "destination": "3-results/hardware_characterization/shared/small_happy_sync_analysis_20261102.json",
+      "reason": "parsed record/analysis content, no basename references in scanned active source/docs; requires review; entire JSON parsed; keys: median_ms, max_ms, face_counts, episodes"
+    },
+    {
+      "original": "2-src/shared/hardware/small_happy_sync_trace_20261102T153425Z.json",
+      "destination": "3-results/hardware_characterization/shared/small_happy_sync_trace_20261102T153425Z.json",
+      "reason": "parsed record/analysis content, no basename references in scanned active source/docs; requires review; entire JSON parsed; keys: trace, cleanup_confirmed"
+    },
+    {
+      "original": "3-results/course_bridge_verified_20261026_27/CSV_GUIDE_TH.md",
+      "destination": "1-docs/markdown/csv_guide_th.md",
+      "reason": "read content: guide/protocol/slide notes, not generated measurements; UTF-8 decoded full file; inspected content prefix: # วิธีอ่าน CSV สำหรับตรวจงาน  CSV ต้นฉบับอาจารย์อยู่ใน results/group07_offline_20261026/<condition>_r<repeat> ไม่แก้ไฟล์ผลเดิม  - input_trace.csv: source/sample"
+    },
+    {
+      "original": "3-results/course_bridge_verified_20261026_27/GRAPH_AND_CONTRACT_TH.md",
+      "destination": "1-docs/markdown/graph_and_contract_th.md",
+      "reason": "read content: guide/protocol/slide notes, not generated measurements; UTF-8 decoded full file; inspected content prefix: # Graph และ interface — กลุ่ม 7  ## ส่วนที่รันแล้ว: offline ใน process เดียว  ```mermaid flowchart LR     S[\"Synthetic button / touch / distance\"] --> T[\"Ideal "
+    },
+    {
+      "original": "3-results/course_bridge_verified_20261026_27/PROTOCOL_BEFORE_RUN_TH.md",
+      "destination": "1-docs/markdown/protocol_before_run_th.md",
+      "reason": "read content: guide/protocol/slide notes, not generated measurements; UTF-8 decoded full file; inspected content prefix: # Protocol ที่ประกาศก่อนรัน Lab07 offline  วันที่: 26 ตุลาคม 2026; ยังไม่อ่านผล Lab07 เมื่อเขียน protocol นี้  คำถาม: composite delay/drop profile ของ Lab07 ส่ง"
+    },
+    {
+      "original": "3-results/normal_controlled_pilot_20261104/SLIDE_NOTES_EN.md",
+      "destination": "1-docs/markdown/slide_notes_en.md",
+      "reason": "read content: guide/protocol/slide notes, not generated measurements; UTF-8 decoded full file; inspected content prefix: # Slide-ready notes  **Dataset:** Normal controlled hardware pilot, comparison_r01, recorded on 4 November 2026. One paired 50 s C0/C1 trial; same recorded-inpu"
+    },
+    {
+      "original": "3-results/real_robot_pilot/BUTTON_START_PROTOCOL_TH.md",
+      "destination": "1-docs/markdown/button_start_protocol_th.md",
+      "reason": "read content: guide/protocol/slide notes, not generated measurements; UTF-8 decoded full file; inspected content prefix: # เริ่มเก็บที่โคมด้วยปุ่มฐาน5ครั้ง  คำขอผู้ใช้: Mตั้งNormalก่อน แล้วใช้ปุ่มฐาน5ครั้งเป็นเส้นStart ไม่ให้เวลาเดินจากคอมกินช่วงบันทึก Implementเฉพาะprofileใหม่ la"
+    },
+    {
+      "original": "4-figures/graph_content_audit.json",
+      "destination": "3-results/repository_maintenance_history/graph_content_audit.json",
+      "reason": "JSON contains screenshot/hash/check results, not a figure; entire JSON parsed; keys: screenshot_original_unchanged, screenshot_sha256, word_inline_images, markdown_topics, source_md_images_copied, hardware_actions, references, generated_architecture_removed, new_drawio_not_in_submission, architecture_pending_user_insertion, new_drawio_user_approved_inserted"
+    },
+    {
+      "original": "4-figures/topic_contract_13.json",
+      "destination": "2-src/Lab07/config/topic_contract_13.json",
+      "reason": "JSON topics/type/meaning/flow schema; consumed by verifier, not figure; entire JSON parsed; keys: topics, qos, servo_mapping, transport"
+    },
+    {
+      "original": "2-src/Lab07/__pycache__/completed_policy.cpython-312.pyc",
+      "destination": "_originals_20261106/generated_cache/2-src/Lab07/__pycache__/completed_policy.cpython-312.pyc",
+      "reason": "generated .pyc, not source; retained outside active publication tree"
+    },
+    {
+      "original": "2-src/Lab07/__pycache__/completed_policy.cpython-313.pyc",
+      "destination": "_originals_20261106/generated_cache/2-src/Lab07/__pycache__/completed_policy.cpython-313.pyc",
+      "reason": "generated .pyc, not source; retained outside active publication tree"
+    },
+    {
+      "original": "2-src/Lab07/lamp_week07/__pycache__/student_policy.cpython-312.pyc",
+      "destination": "_originals_20261106/generated_cache/2-src/Lab07/lamp_week07/__pycache__/student_policy.cpython-312.pyc",
+      "reason": "generated .pyc, not source; retained outside active publication tree"
+    },
+    {
+      "original": "MANIFEST_SHA256.json",
+      "destination": "manifest_sha256.json",
+      "reason": "match actual lowercase verifier path on Linux"
+    },
+    {
+      "original": "3-results/real_robot_final/SIX_TRIAL_REPORT_TH.md",
+      "destination": "1-docs/markdown/six_trial_report_th.md",
+      "reason": "human-written technical/report narrative, no matching report writer in source"
+    },
+    {
+      "original": "3-results/real_robot_pilot/PAIR_P2_BUTTON_START_REPORT_TH.md",
+      "destination": "1-docs/markdown/pair_p2_button_start_report_th.md",
+      "reason": "human-written technical/report narrative, no matching report writer in source"
+    },
+    {
+      "original": "3-results/software_checks/REPORT_TH.md",
+      "destination": "1-docs/markdown/software_checks_report_th.md",
+      "reason": "human-written technical/report narrative, no matching report writer in source"
+    },
+    {
+      "original": "3-results/normal_controlled_pilot_20261104/README_TH.md",
+      "destination": "1-docs/markdown/normal_controlled_pilot_report_th.md",
+      "reason": "human-written technical/report narrative, no matching report writer in source"
+    },
+    {
+      "original": "3-results/course_bridge_verified_20261026_27/ros2_ws/ROS_RESULTS_TH.md",
+      "destination": "1-docs/markdown/ros_results_th.md",
+      "reason": "human-written technical/report narrative, no matching report writer in source"
+    },
+    {
+      "original": "3-results/simulation/REPORT_TH.md",
+      "destination": "1-docs/markdown/simulation_report_th.md",
+      "reason": "human-written technical/report narrative, no matching report writer in source"
+    },
+    {
+      "original": "1-docs/lab_documents/pair_p2_s_h_phi.pdf",
+      "destination": "3-results/real_robot_pilot/PAIR_P2_S_H_PHI.pdf",
+      "reason": "PDF extracted text contains S/H/phi axes and pilot plot, not a lab report"
+    }
+  ],
+  "modified_text": [
+    "README.md",
+    "verify_package.py",
+    "1-docs/markdown/worksheet.md",
+    "1-docs/checks/file_mapping.json",
+    "2-src/Lab07/verify_evidence.py",
+    "2-src/Lab07/export_review_csv.py",
+    "1-docs/README.md",
+    ".gitignore"
+  ],
+  "added": [
+    "2-src/Lab07/resource/lamp_week07"
+  ],
+  "backup": "_originals_20261106/qa_repair_before"
+}

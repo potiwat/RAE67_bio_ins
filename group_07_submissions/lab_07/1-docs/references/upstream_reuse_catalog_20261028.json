@@ -1,0 +1,90 @@
+{
+  "checked_date": "2026-10-28",
+  "priority": "Bio-Inspire first; mathematical robotics second",
+  "sources": [
+    {
+      "id": "lelamp_hardware",
+      "repo": "humancomputerlab/LeLamp",
+      "commit": "4a0ef2c7fedc1ddf8a1d48dc1dedb184938f2dac",
+      "license": "GPL-3.0",
+      "use": "Nominal URDF/model and original construction; verify base rooting, axes, dimensions and hardware mapping",
+      "category": "shared_model"
+    },
+    {
+      "id": "lelamp_runtime",
+      "repo": "humancomputerlab/lelamp_runtime",
+      "commit": "ee23699075fc3d3154da86a71c38a024545b6785",
+      "license": "README License section cross-references LeLamp GPL-3.0; no repository-wide LICENSE file; follower file explicitly Apache-2.0",
+      "use": "Architecture/gesture reference; preserve README license reference and per-file notices if adapted; no wholesale runtime install or replay of uncalibrated CSV",
+      "category": "bio_reference"
+    },
+    {
+      "id": "ruckig",
+      "repo": "pantor/ruckig",
+      "commit": "99751e6ebc7c963bb80e99fbbe66f2c279d1db57",
+      "license": "MIT",
+      "use": "Candidate local state-to-state trajectory generation; not Pro Tracking or cloud waypoints; physical adaptation untested",
+      "category": "shared_motion"
+    },
+    {
+      "id": "picamera2_examples",
+      "repo": "raspberrypi/picamera2-examples",
+      "commit": "d25baef2f4aedd8159ceafd5d8299918aaf9eeee",
+      "license": "BSD-2-Clause",
+      "use": "CSI camera capture and face boxes; no robot controller; package availability unverified on current Pi",
+      "category": "shared_vision"
+    },
+    {
+      "id": "yunet",
+      "repo": "opencv/opencv_zoo",
+      "commit": "48b10fa505aeb51fbd127fc60a5c660040e823b7",
+      "license": "MIT for models/face_detection_yunet; root repository Apache-2.0",
+      "use": "Optional face detector compatible model/version selection required; weights not downloaded",
+      "category": "shared_vision"
+    },
+    {
+      "id": "robotics_toolbox",
+      "repo": "petercorke/robotics-toolbox-python",
+      "commit": "9f282d8ff952a6ca95d340ae6a62b04e545a302f",
+      "license": "MIT",
+      "use": "Later FK/Jacobian/DH/URDF and quintic/jtraj examples; not a robot-specific calibrated model",
+      "category": "mathematical_robotics"
+    },
+    {
+      "id": "ikpy",
+      "repo": "Phylliade/ikpy",
+      "license": "Apache-2.0 per repository metadata; no source vendored",
+      "use": "Optional alternative URDF/FK/IK; do not install two solvers by default",
+      "category": "mathematical_robotics"
+    },
+    {
+      "id": "cornell_pixar",
+      "url": "https://courses.ece.cornell.edu/ece5990/ECE5725_Fall2019_Projects/Dec_04_Demo/Pixar_Lamp/Website/index.html",
+      "license": "Not verified; reference only",
+      "use": "Similar face-tracking lamp workflow; old PiCamera API and different serial protocol, not drop-in code",
+      "category": "bio_reference"
+    },
+    {
+      "id": "apple_elegnt",
+      "url": "https://machinelearning.apple.com/research/elegnt-expressive-functional-movement",
+      "license": "Research reference; no implementation license established",
+      "use": "Expressive movement primitives, gaze/posture and interaction storyboards; does not supply our AHM/CPG",
+      "category": "bio_reference"
+    },
+    {
+      "id": "iahm_paper",
+      "url": "https://www.manoonpong.com/paper/2018/SAB2018_paper_34.pdf",
+      "license": "Research reference only",
+      "use": "AHM/CPG conceptual attribution; paper model/parameters differ from approved course model",
+      "category": "bio_reference"
+    }
+  ],
+  "installed": false,
+  "hardware_executed": false,
+  "user_decision": {
+    "date": "2026-10-28",
+    "decision": "Keep selected upstream work as guidance for continued development",
+    "priority": "Bio-Inspire first; Mathematical Robotics references separate",
+    "source_review_status": "Guidance accepted; runtime compatibility and hardware behavior still require verification"
+  }
+}

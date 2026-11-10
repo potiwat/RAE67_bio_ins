@@ -1,0 +1,55 @@
+{
+  "5": {
+    "values": {
+      "p": 7,
+      "i": 0,
+      "d": 3,
+      "speed": 1
+    },
+    "assessment": "operator_selected_smooth",
+    "time_utc": "2026-10-30T15:08:21.729343+00:00"
+  },
+  "4": {
+    "values": {
+      "p": 5,
+      "i": 0,
+      "d": 0,
+      "speed": 1
+    },
+    "assessment": "operator_selected_smooth",
+    "time_utc": "2026-10-30T15:17:50.340905+00:00"
+  },
+  "2": {
+    "values": {
+      "p": 32,
+      "i": 0,
+      "d": 16,
+      "speed": 1
+    },
+    "assessment": "operator_selected_smooth",
+    "time_utc": "2026-10-30T17:03:25.303487+00:00",
+    "evidence": "Operator explicitly selected P32/I0/D16 on 2026-10-31 for Bio work. I1 earlier caused delayed hold corrections; I0 held stable during 25s capture. Manual +/-3deg speed1acc1; no automatic boot Apply.",
+    "summary": "PID_SELECTED_TH.md"
+  },
+  "3": {
+    "values": {
+      "p": 20,
+      "d": 22,
+      "i": 1,
+      "speed": 1
+    },
+    "assessment": "operator_selected_smooth",
+    "time_utc": "2026-10-30T16:35:35.375005+00:00",
+    "evidence": "Operator accepted; last_joint_tuning readback matched. Manual +/-3deg speed1acc1; no automatic boot Apply."
+  },
+  "1": {
+    "values": {
+      "p": 8,
+      "i": 1,
+      "d": 16,
+      "speed": 100
+    },
+    "assessment": "operator_selected_smooth",
+    "evidence": "User selected yaw tracking P8/I1/D16 speed100, confirmed in PID_SELECTED_TH.md; raw100 now approved all-joint startup. Other favorite speed1 entries retain manual trial provenance; motion_speed_raw100 controls current startup."
+  }
+}

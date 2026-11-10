@@ -1,0 +1,14 @@
+﻿topic,type,count
+/lamp/input/button,std_msgs/msg/Bool,7098
+/lamp/input/touch,std_msgs/msg/Bool,7098
+/lamp/input/distance,std_msgs/msg/Float32,6861
+/lamp/interaction,std_msgs/msg/String,93
+/lamp/emotion,std_msgs/msg/String,7098
+/lamp/servo_command,std_msgs/msg/Float32MultiArray,7098
+/lamp/rgb_command,std_msgs/msg/ColorRGBA,7098
+/lamp/input/status,std_msgs/msg/String,7098
+/lamp/ahm_cpg/diagnostic,std_msgs/msg/String,7098
+/lamp/joint_states,sensor_msgs/msg/JointState,7098
+/lamp/perception/face,std_msgs/msg/String,7098
+/lamp/diagnostics,diagnostic_msgs/msg/DiagnosticArray,7098
+/lamp/trace,std_msgs/msg/String,7098

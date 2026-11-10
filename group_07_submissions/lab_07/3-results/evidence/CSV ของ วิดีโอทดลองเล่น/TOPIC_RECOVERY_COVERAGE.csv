@@ -1,0 +1,14 @@
+﻿topic,recovery_status,evidence_and_limitations
+/lamp/input/button,missing,Only button candidates; physical Bool level unavailable
+/lamp/input/touch,missing,Physical Bool level unavailable
+/lamp/input/distance,recovered_snapshot,distance fields; valid range cm converted to m
+/lamp/interaction,missing,No accepted interaction stream; candidates are not accepted events
+/lamp/emotion,partial,behavior/state_ahm.state snapshots; no original FSM publication stream
+/lamp/servo_command,partial,Goal register raw readback and diagnostic targets; not exact published semantic command
+/lamp/rgb_command,missing,No LED command history; cannot infer actual writes from behavior
+/lamp/input/status,partial,ToF quality and button candidate only; no complete GPIO history
+/lamp/ahm_cpg/diagnostic,recovered_snapshot,breathing_rhythm includes S H R phi o1 o2 when present
+/lamp/joint_states,recovered_snapshot,Five joint encoder raw values; no calibrated rad/effort conversion added
+/lamp/perception/face,recovered_snapshot,image_observation includes selected box/status/time
+/lamp/diagnostics,partial,Motor readback V temperature status and controller state; no ROS message envelope
+/lamp/trace,recovered_snapshot,"Original owner diagnostic snapshots, not original ROS stream"

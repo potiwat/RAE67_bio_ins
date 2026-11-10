@@ -1,0 +1,188 @@
+{
+  "captured_trials": 6,
+  "pairs": [
+    {
+      "pair": "P1",
+      "same_script_and_initial_models": true,
+      "clean_pair": false
+    },
+    {
+      "pair": "P2",
+      "same_script_and_initial_models": true,
+      "clean_pair": false
+    },
+    {
+      "pair": "P3",
+      "same_script_and_initial_models": true,
+      "clean_pair": false
+    }
+  ],
+  "total_source_rows": 46053,
+  "total_duration_s": 3602.238427133999,
+  "all_raw_capture_complete": true,
+  "all_13_topics_each_run": true,
+  "clean_trials": 3,
+  "total_ToF_pauses": 5,
+  "total_ToF_pause_s": 0.45635535399833316,
+  "results": [
+    {
+      "pair": "P1",
+      "condition": "C0",
+      "folder": "P1_C0_5c5e5f13",
+      "run_id": "20261105T144444Z_5c5e5f13",
+      "duration_s": 600.3814841570002,
+      "rows": 7642,
+      "all_13_topics": true,
+      "raw_hash_verified": true,
+      "capture_complete": true,
+      "clean_complete": false,
+      "dropped": 0,
+      "ToF_pause_count": 1,
+      "ToF_pause_total_s": 0.09845094999946014,
+      "observed_clock_gaps_over_0_5_s": 21,
+      "ahm_samples_checked": 7641,
+      "stimulus_phi_mismatches": 0,
+      "max_h_error": 0.0
+    },
+    {
+      "pair": "P1",
+      "condition": "C1",
+      "folder": "P1_C1_81970289",
+      "run_id": "20261105T145715Z_81970289",
+      "duration_s": 600.4166492940003,
+      "rows": 7716,
+      "all_13_topics": true,
+      "raw_hash_verified": true,
+      "capture_complete": true,
+      "clean_complete": true,
+      "dropped": 0,
+      "ToF_pause_count": 0,
+      "ToF_pause_total_s": 0,
+      "observed_clock_gaps_over_0_5_s": 19,
+      "ahm_samples_checked": 7715,
+      "stimulus_phi_mismatches": 0,
+      "max_h_error": 0.0
+    },
+    {
+      "pair": "P2",
+      "condition": "C0",
+      "folder": "P2_C0_4f15ad2e",
+      "run_id": "20261105T150922Z_4f15ad2e",
+      "duration_s": 600.3239801989994,
+      "rows": 7659,
+      "all_13_topics": true,
+      "raw_hash_verified": true,
+      "capture_complete": true,
+      "clean_complete": true,
+      "dropped": 0,
+      "ToF_pause_count": 0,
+      "ToF_pause_total_s": 0,
+      "observed_clock_gaps_over_0_5_s": 19,
+      "ahm_samples_checked": 7658,
+      "stimulus_phi_mismatches": 0,
+      "max_h_error": 0.0
+    },
+    {
+      "pair": "P2",
+      "condition": "C1",
+      "folder": "P2_C1_62d1c510",
+      "run_id": "20261105T152315Z_62d1c510",
+      "duration_s": 600.3536424049998,
+      "rows": 7652,
+      "all_13_topics": true,
+      "raw_hash_verified": true,
+      "capture_complete": true,
+      "clean_complete": false,
+      "dropped": 0,
+      "ToF_pause_count": 3,
+      "ToF_pause_total_s": 0.26716847499847063,
+      "observed_clock_gaps_over_0_5_s": 17,
+      "ahm_samples_checked": 7651,
+      "stimulus_phi_mismatches": 0,
+      "max_h_error": 0.0
+    },
+    {
+      "pair": "P3",
+      "condition": "C0",
+      "folder": "P3_C0_2a58af89",
+      "run_id": "20261105T153445Z_2a58af89",
+      "duration_s": 600.3802406109999,
+      "rows": 7667,
+      "all_13_topics": true,
+      "raw_hash_verified": true,
+      "capture_complete": true,
+      "clean_complete": true,
+      "dropped": 0,
+      "ToF_pause_count": 0,
+      "ToF_pause_total_s": 0,
+      "observed_clock_gaps_over_0_5_s": 22,
+      "ahm_samples_checked": 7666,
+      "stimulus_phi_mismatches": 0,
+      "max_h_error": 0.0
+    },
+    {
+      "pair": "P3",
+      "condition": "C1",
+      "folder": "P3_C1_78053431",
+      "run_id": "20261105T154600Z_78053431",
+      "duration_s": 600.3824304679993,
+      "rows": 7717,
+      "all_13_topics": true,
+      "raw_hash_verified": true,
+      "capture_complete": true,
+      "clean_complete": false,
+      "dropped": 0,
+      "ToF_pause_count": 1,
+      "ToF_pause_total_s": 0.0907359290004024,
+      "observed_clock_gaps_over_0_5_s": 23,
+      "ahm_samples_checked": 7716,
+      "stimulus_phi_mismatches": 0,
+      "max_h_error": 0.0
+    }
+  ],
+  "limits": [
+    "Scripted input on real robot, not human GPIO task performance",
+    "Matched S grid does not imply equal UART/vision timings",
+    "CPG o1 frequency/DeltaT is not measured mechanical smoothness",
+    "No periods stitched across states, masks, pauses or clock gaps; absent metrics remain N/A",
+    "A full capture with a recorded hold is distinct from clean_complete"
+  ],
+  "raw_and_csv_hashes": {
+    "P1_C0_5c5e5f13": {
+      "trace.jsonl": "e83a545a2e524106c0a0e7bff972fecded96b6951cf5bf3e41e449731e6b84e6",
+      "metadata.json": "62d7b62893f8a9c0119e42655602b2648edd8af786e3d7c8b379632468ff0f1e",
+      "summary.json": "dde562a4d7c0db88d52af8a5d1ef449a1545fdd4cc94036cbf4159f31fc8dd99",
+      "ROS13_MESSAGES.csv": "54dc1e866073506a448ee3221968ff5424098c476f72b81c470c6b8e69398eba"
+    },
+    "P1_C1_81970289": {
+      "trace.jsonl": "5ef5e1540bf8132f258952d1d8908b08ad2331d93af8a2732b7d5396b69232d4",
+      "metadata.json": "c834b20de4c85acc2b33cf10ad262f99f15576a4904e540fceb84175f3883d39",
+      "summary.json": "9143dcd2477b602922afc4b8c12e580d58ecccbb008c581019bae20bac5c69e8",
+      "ROS13_MESSAGES.csv": "c0fa88d65e03d1129fea088bf333a025958690f738538b966fdd19b17d6046ff"
+    },
+    "P2_C0_4f15ad2e": {
+      "trace.jsonl": "8877517399db390b38ebf00dfaa2ed765436087fbfa00c8d27feaef6afd21b2d",
+      "metadata.json": "f1e84260706a98e035851d7b911751aa390dc42fb63280b03f6590ad267ff8e9",
+      "summary.json": "72b2a1771fc7fe663cd06707cb61215b72af9e9ae48813471337f4f98b2ddb71",
+      "ROS13_MESSAGES.csv": "34ae70c30fb4dbc06f1bf464381f5ace13b59c81efc2d905ce8aa776532fd719"
+    },
+    "P2_C1_62d1c510": {
+      "trace.jsonl": "fe9682c3d106f07fd1d9eda0c658bb7c879a05b331e78390504c1aa11bfe8d55",
+      "metadata.json": "ea3ac226c881441e649ea6445fcb00f08e84b7a53cebe89485a77260b6ab6a3d",
+      "summary.json": "02414f41ce4a3faee01e58cc2478197321feb3822155ceb4cd2ffecd1fefda39",
+      "ROS13_MESSAGES.csv": "664f4ec51209b4391a5fcad40063c2a062a4e3090fc219f9e007ea12a10ca65f"
+    },
+    "P3_C0_2a58af89": {
+      "trace.jsonl": "4240a57282f777c79fd202d8cbeb89e5051bd2dfbf2b2a62b13861d973bc9b98",
+      "metadata.json": "3d48e15ccf535ad35ade7e8635b5706c6c85e8c02619ee6457bc9665246e0722",
+      "summary.json": "49662b22e07cf23dda53d17c4830235b8aaa5144c17866e350f3458ec5384d5f",
+      "ROS13_MESSAGES.csv": "5c4c686fc90b09cd1adb013cf67a7f3820dc3357557dd0c5cec7dda6186815f5"
+    },
+    "P3_C1_78053431": {
+      "trace.jsonl": "96e898ec26d8b7f64f3979342d3197f120c24709ea2bdf628e4331b7078351ea",
+      "metadata.json": "21ac6f841712b5be749005ef523918655ad581668c72b0a246dea929f03cf3df",
+      "summary.json": "610a73c4aaa4d86da35c76c704d72140210a7ac6921a3d67c91e34abad6e0825",
+      "ROS13_MESSAGES.csv": "e14ad7ebf0af881044d472698f007b16aef0b524a87dc021bcf2860a0570cae0"
+    }
+  }
+}

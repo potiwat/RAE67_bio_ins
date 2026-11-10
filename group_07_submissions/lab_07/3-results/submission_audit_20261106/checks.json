@@ -1,0 +1,10 @@
+{
+  "starter_policy": {
+    "exit_code": 1,
+    "output": "Checked 40 transition pairs; contract=group; failures=8\n  normal + touch: returned None; group positive input must enter interested or happy\n  interested + touch: returned None; group positive input must enter interested or happy\n  happy + touch: returned None; group positive input must enter interested or happy\n  sleepy + touch: returned None; group positive input must enter interested or happy\n  interested + timeout: returned None; transition does not satisfy the group worksheet contract\n  happy + timeout: returned None; transition does not satisfy the group worksheet contract\n  normal + idle: returned None; transition does not satisfy the group worksheet contract\n  normal + reachability: returned ['afraid', 'interested', 'normal']; all five states must be reachable from normal\nFAIL: complete TODOs in student_policy.py, then check again\n"
+  },
+  "proposal": {
+    "exit_code": 1,
+    "output": "FAIL: proposal fields incomplete or invalid\n - question requires a concrete explanation/source\n - hypothesis requires a concrete explanation/source\n - biological_inspiration_source requires a concrete explanation/source\n - independent_variable requires a concrete explanation/source\n - AHM_equation requires a concrete explanation/source\n - SO2_CPG_equation requires a concrete explanation/source\n - integration_description requires a concrete explanation/source\n - eachcondition needs change and>=3repeats\n - eachcondition needs change and>=3repeats\n - at least2 distinct metrics with complete names\n - everymetric needs name/unit/measurement/missingrule\n - everymetric needs name/unit/measurement/missingrule\n - atleast3concretecontrols\n - simulation_plan must be specified\n - real_robot_plan must be specified\n - clock_correlation_plan must be specified\n - safety_stop_plan must be specified\n - order_counterbalancing must be specified\n - paired_seed_or_participant_plan must be specified\n - expected_input_ids_before_run must be specified\n - timeline must be specified\n - parameter name/value/unit/provenance incomplete; numeric values must be finite\n"
+  }
+}

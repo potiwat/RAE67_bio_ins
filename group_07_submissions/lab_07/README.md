@@ -1,13 +1,21 @@
+## วิดีโอหลักฐานการทดลอง Lab07 — สถานะ GitHub ปัจจุบัน
+
+ไฟล์วิดีโอจริงทั้งสองอยู่ใน [GitHub Releases](https://github.com/Tonkao1725/BioInspired-Robotics-Labs-Fork-/releases/tag/lab07-video-evidence) ไม่ได้แนบอยู่ใน Git Tree ของ `3-results/evidence` ดาวน์โหลด [คลิปทดลองเล่น — default.mp4](https://github.com/Tonkao1725/BioInspired-Robotics-Labs-Fork-/releases/download/lab07-video-evidence/default.mp4) และ [คลิปเล่นกับคน 10 นาที — _10._C1.MOV](https://github.com/Tonkao1725/BioInspired-Robotics-Labs-Fork-/releases/download/lab07-video-evidence/_10._C1.MOV) ได้โดยตรง
+
+CSV และข้อมูลการทดลองอยู่ใน [3-results/evidence](3-results/evidence/) ตามเดิม ชื่อไฟล์บน Release ต่างจากชื่อไฟล์ต้นฉบับ แต่ SHA-256 ตรงกับค่าต้นฉบับที่ระบุไว้ ดู [ดัชนีวิดีโอพร้อมลิงก์ CSV ขนาด และ SHA-256](3-results/evidence/VIDEO_INDEX.md)
+
+วิดีโอทั้งสองเป็นหลักฐานการทดลองคนละรอบ ยังไม่ได้ยืนยันการ Synchronize Frame กับ CSV แบบ Frame-by-frame และไม่ถือว่าเฟรมแรกตรงกับเวลา 0 ของ CSV โดยอัตโนมัติ ข้อความสถานะชุด local/ZIP เดิมด้านล่างเป็นประวัติการเตรียมชุดงาน
+
 > ผลตรวจล่าสุด: เพิ่ม `2-src/calibration_readonly/read_only_bus.py` จากไฟล์ที่ผู้ใช้ส่งแล้ว ตรวจ syntax และ mock transport/baseline ผ่าน 25 tests; ยังไม่ได้ build ROS2/Pi หรือรันฮาร์ดแวร์จริง ดู [รายงาน QA](1-docs/checks/qa_report_th.md)
 
-> ชุด local นี้เก็บวิดีโอต้นฉบับไว้ใน `3-results/evidence/`; ยังไม่ได้อัปโหลด GitHub
+> ประวัติชุด local: เคยเก็บวิดีโอต้นฉบับใน `3-results/evidence/` และยังไม่ได้อัปโหลด ณ เวลาจัดชุดนั้น ปัจจุบันดาวน์โหลดวิดีโอจริงจาก GitHub Releases ตามหัวข้อด้านบน
 
 # Week07 LeLamp ชุดส่งงานฉบับ 6 พฤศจิกายน 2026
 
 เปิด3ไฟล์หลัก — ใช้ Word ฉบับที่ผู้ใช้แก้ไขและส่งล่าสุดจาก Desktop คัดลอกตรงต้นฉบับโดยไม่แก้เนื้อหา/ฟอนต์/รูปแบบ:
 
 1. [ใบงาน Word](1-docs/lab_documents/Lab07_Student_Worksheet_TH.docx) หรือ [Markdown](1-docs/markdown/worksheet.md)
-2. [Proposal Word](1-docs/lab_documents/Lab07_Proposal_Group7.docx) และ [PDF](1-docs/lab_documents/Lab07_Proposal_Group7.pdf)
+2. [Proposal Word](1-docs/lab_documents/Lab07_Proposal_Group7.docx) (ไม่มีฉบับ PDF ใน Git Tree ของชุดนี้)
 3. [รายงานผลฉบับผู้ใช้แก้ไขล่าสุด](1-docs/lab_documents/Lab07_Report_Group7.docx)
 
 [ตรวจตามข้อกำหนดLab07](1-docs/checks/submission_audit_20261106_th.md) • [ผลsoftwarechecks](3-results/final_submission_checks_20261106/results.json) • [รายการWordทุกไฟล์](1-docs/markdown/word_files_index_th.md)
@@ -26,16 +34,16 @@
 
 ตรวจไฟล์ด้วย `python verify_package.py` และทดสอบแบบmockด้วย `python run_pc_checks.py` ไม่เปิดฮาร์ดแวร์ ใช้completedpolicyผ่าน `python check_submission.py --policy-file completed_policy.py --contract group` ใน2-src/ros2_package; student_policy.pyเก็บเป็นstarterต้นฉบับ
 
-ยังไม่ได้อัปGitHub/ส่งให้อาจารย์ ไฟล์ในเครื่องเป็นชุดพร้อมนำส่ง ไม่ใช่การรับรองคะแนนหรือการอนุมัติโดยผู้สอน
+ประวัติสถานะก่อนเผยแพร่: ชุดในเครื่องเคยระบุว่ายังไม่ได้อัป GitHub/ส่งให้อาจารย์ ปัจจุบันสำเนางานอยู่ใน Fork และวิดีโออยู่ใน Releases แล้ว การเผยแพร่นี้ไม่ใช่การรับรองคะแนน การอนุมัติโดยผู้สอน หรือหลักฐานยืนยันเวลาส่งถึงผู้สอน
 
 
 ## หลักฐานเพิ่มเติม: เล่นกับคน10นาที
 
-[CSVของคลิปเล่นกับคน10นาที C1](3-results/evidence/CSV_คลิปเล่นกับคน_10นาที_C1_20261106/README_TH.md) เก็บจริง600.02s/7,098snapshots ครบ13topics แยกจากcontrolled C0/C1เดิม; แนบวิดีโอรอบนี้แล้วในโฟลเดอร์เดียวกับCSV ยังไม่ตรวจframe synchronization ไม่เปลี่ยนWordทั้ง3ไฟล์
+[CSVของคลิปเล่นกับคน10นาที C1](3-results/evidence/CSV_คลิปเล่นกับคน_10นาที_C1_20261106/README_TH.md) เก็บจริง600.02s/7,098snapshots ครบ13topics แยกจากcontrolled C0/C1เดิม; วิดีโอรอบนี้เผยแพร่ใน GitHub Releases ส่วน CSV อยู่ในโฟลเดอร์หลักฐานตามเดิม ยังไม่ตรวจframe synchronization ไม่เปลี่ยนWordทั้ง3ไฟล์
 
 ## ตำแหน่งรูปวงจร วิดีโอ และ CSV
 
-เปิด [รายการตำแหน่งไฟล์](1-docs/markdown/file_locations_th.md) เพื่อหารูปวงจรใน `4-figures` และวิดีโอพร้อม CSV ใน `3-results/evidence` รูปคัดลอกตรงต้นฉบับ ไม่แก้Wordทั้ง3ไฟล์
+เปิด [รายการตำแหน่งไฟล์](1-docs/markdown/file_locations_th.md) เพื่อหารูปวงจรใน `4-figures` และ CSV ใน `3-results/evidence` ส่วนไฟล์วิดีโอจริงอยู่ใน GitHub Releases รูปคัดลอกตรงต้นฉบับ ไม่แก้Wordทั้ง3ไฟล์
 
 ## การจัดหมวดเอกสารตาม repository
 

@@ -1,3 +1,5 @@
+> **วิดีโอประกอบบน GitHub:** ดาวน์โหลด [default.mp4](https://github.com/Tonkao1725/BioInspired-Robotics-Labs-Fork-/releases/download/lab07-video-evidence/default.mp4) (ชื่อเดิม `คลิปทดลองเล่น.mp4`, 167.05 วินาที, 39,881,620 bytes, SHA-256: `c073c06bc7729733ee3b3f7e5865bbf451a057d65eda2beb3f08d110b8bc67fd`) จาก [Releases](https://github.com/Tonkao1725/BioInspired-Robotics-Labs-Fork-/releases/tag/lab07-video-evidence) ไม่ได้แนบวิดีโอใน Git Tree ของโฟลเดอร์นี้ digest จาก Release API ตรงกับค่าต้นฉบับที่ระบุ ส่วน CSV/JSON ด้านล่างคงเดิม ข้อความ “ยังไม่ได้ตรวจไฟล์วิดีโอ” ในบันทึกเดิมเป็นประวัติ ณ เวลาจัดข้อมูล วิดีโอทั้งสองเป็นหลักฐานการทดลองคนละรอบ ยังไม่ได้ยืนยันการ Synchronize Frame กับ CSV แบบ Frame-by-frame และไม่ถือว่าเฟรมแรกตรงกับเวลา 0 ของ CSV โดยอัตโนมัติ
+
 # ข้อมูลกู้คืนจากการเล่น C1 ประมาณ 3 นาที
 
 กู้จาก diagnostic log บน Pi ไม่ได้สร้างข้อมูลทดลองขึ้นใหม่ ไม่สั่งมอเตอร์ และไม่เปิดโปรแกรมซ้อน

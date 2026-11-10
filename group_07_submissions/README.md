@@ -1,5 +1,16 @@
 # งานส่งรายวิชา Bio-Inspired Robotics — กลุ่ม 7
 
+## วิดีโอหลักฐานการทดลอง Lab07
+
+วิดีโอทั้งสองไฟล์เผยแพร่ผ่าน [GitHub Releases](https://github.com/Tonkao1725/BioInspired-Robotics-Labs-Fork-/releases/tag/lab07-video-evidence) เนื่องจากไฟล์วิดีโอขนาดใหญ่ต้องจัดเก็บแยกจาก Source Code และข้อมูลการทดลองใน Repository ขอความกรุณาผู้สอนดาวน์โหลดจากลิงก์ Release โดยตรง ข้อมูล CSV, JSON, ROS bag และรายงานการทดลองยังอยู่ในโฟลเดอร์ Lab07 ตามเดิม
+
+| ชื่อคลิปต้นฉบับ | ระยะเวลา | วัตถุประสงค์ | ดาวน์โหลดวิดีโอ | ข้อมูล CSV ที่เกี่ยวข้อง |
+|---|---|---|---|---|
+| คลิปทดลองเล่น.mp4 | 167.05 วินาที (2:47.05) | หลักฐานประกอบรอบเล่นกับโคม C1 และข้อมูล diagnostic ที่กู้คืน | [default.mp4](https://github.com/Tonkao1725/BioInspired-Robotics-Labs-Fork-/releases/download/lab07-video-evidence/default.mp4) | [CSV รอบทดลองเล่น](<lab_07/3-results/evidence/CSV ของ วิดีโอทดลองเล่น/CSV ของ วิดีโอทดลองเล่น.csv>) |
+| คลิปเล่นกับคน_10นาที_C1.MOV | 610.947 วินาที (10:10.947) | หลักฐานรอบเล่นกับคน C1 เพิ่มเติม แยกจากชุด controlled C0/C1 | [_10._C1.MOV](https://github.com/Tonkao1725/BioInspired-Robotics-Labs-Fork-/releases/download/lab07-video-evidence/_10._C1.MOV) | [CSV รอบเล่นกับคน 10 นาที](<lab_07/3-results/evidence/CSV_คลิปเล่นกับคน_10นาที_C1_20261106/CSV_คลิปเล่นกับคน_10นาที.csv>) |
+
+วิดีโอทั้งสองเป็นหลักฐานการทดลองคนละรอบ ยังไม่ได้ยืนยันการ Synchronize Frame กับ CSV แบบ Frame-by-frame และไม่ถือว่าเฟรมแรกตรงกับเวลา 0 ของ CSV โดยอัตโนมัติ รายละเอียดชื่อไฟล์บน Release ที่แตกต่างจากต้นฉบับ พร้อมขนาดและ SHA-256 ที่ตรงกัน อยู่ใน [VIDEO_INDEX.md](lab_07/3-results/evidence/VIDEO_INDEX.md)
+
 นักศึกษาได้ทำ Lab02–Lab07 และบันทึกงานผ่าน GitHub Repository ส่วนตัวตามลำดับสัปดาห์ ก่อนทราบข้อกำหนดว่าต้อง Fork Repository ของผู้สอนโดยตรง จึงได้ย้ายสำเนางานทั้งหมดมายัง Fork นี้ เพื่อให้ผู้สอนสามารถเข้าตรวจสอบงานได้สะดวกและเป็นไปตามข้อกำหนด
 
 **พื้นที่ตรวจงานของกลุ่ม 7: [group_07_submissions](./)**

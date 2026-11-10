@@ -1,3 +1,5 @@
+> **วิดีโอประกอบบน GitHub:** ดาวน์โหลด [_10._C1.MOV](https://github.com/Tonkao1725/BioInspired-Robotics-Labs-Fork-/releases/download/lab07-video-evidence/_10._C1.MOV) (ชื่อเดิม `คลิปเล่นกับคน_10นาที_C1.MOV`, 610.947 วินาที, 616,429,505 bytes, SHA-256: `8e1796da36ef4d04ce3d4bd068975b2a616cec8666674f47958584d3fd60380a`) จาก [Releases](https://github.com/Tonkao1725/BioInspired-Robotics-Labs-Fork-/releases/tag/lab07-video-evidence) ไม่ได้แนบวิดีโอใน Git Tree ของโฟลเดอร์นี้ digest จาก Release API ตรงกับค่าต้นฉบับที่ระบุ CSV และข้อมูลดิบยังอยู่ที่เดิม วิดีโอทั้งสองเป็นหลักฐานการทดลองคนละรอบ ยังไม่ได้ยืนยันการ Synchronize Frame กับ CSV แบบ Frame-by-frame และไม่ถือว่าเฟรมแรกตรงกับเวลา 0 ของ CSV โดยอัตโนมัติ
+
 # CSV ของคลิปเล่นกับคน 10 นาที — C1
 
 รอบจริงบนโคม: `20261106T044600Z_6ba96b37` / pair `human_play_C1_20261106_r01`
@@ -32,4 +34,4 @@ servo_command เป็นradเทียบNormal [ID4,ID2,ID5] ส่วนJOI
 
 CSV13topicsนี้แปลงจากsessionที่บันทึกจริง ไม่ใช่หลักฐานว่ารันROSbagliveระหว่างคลิป และไม่ใช่ROSสั่งมอเตอร์ เป็นรอบC1คนเล่นเพิ่มเติม แยกจากcontrolled C0/C1หกรอบเดิม ไม่ใช้แทนหรือรวมเพิ่มเป็นpaired trial
 
-แนบวิดีโอ `คลิปเล่นกับคน_10นาที_C1.MOV` แล้ว ความยาวตามMOV metadata 610.947s (10นาที10.95วินาที) ตรวจSHA256ตรงต้นฉบับ IMG_5749.MOV ทุกbyte วิดีโอยาวกว่าCSV600.020s ยังไม่ตรวจframe synchronization จึงไม่อ้างว่าframeแรกตรงเวลา0ของCSV คลิป167.05sเดิมในโฟลเดอร์แม่เป็นคนละรอบ
+ประวัติชุด local: เคยแนบวิดีโอ `คลิปเล่นกับคน_10นาที_C1.MOV` ไว้ในชุดส่งเดิม ปัจจุบันไฟล์บน GitHub เผยแพร่ผ่าน Releases ตามลิงก์ด้านบน ความยาวตามMOV metadata 610.947s (10นาที10.95วินาที) ตรวจSHA256ตรงต้นฉบับ IMG_5749.MOV ทุกbyte วิดีโอยาวกว่าCSV600.020s ยังไม่ตรวจframe synchronization จึงไม่อ้างว่าframeแรกตรงเวลา0ของCSV คลิป167.05sเดิมในโฟลเดอร์แม่เป็นคนละรอบ

@@ -1,8 +1,4 @@
-"""Student template for Lab 03.
-
-Complete TODO 1-3. Keep function names and return structures unchanged so the
-grader and experiment runner can load this file.
-"""
+"""Student Lab 03 implementation of the SO(2) CPG and bounded mapping."""
 
 from __future__ import annotations
 
@@ -19,15 +15,23 @@ def clamp(value: float, low: float, high: float) -> float:
 
 def so2_step(o1: float, o2: float, alpha: float, phi: float) -> tuple[float, float]:
     """Return o1(t+1), o2(t+1) using a simultaneous update."""
-    # TODO 1: implement the SO(2) equations from lec5.pptx slide 18.
-    raise NotImplementedError("TODO 1: implement so2_step")
+    c, s = math.cos(phi), math.sin(phi)
+    a1 = alpha * (c * o1 + s * o2)
+    a2 = alpha * (-s * o1 + c * o2)
+    return math.tanh(a1), math.tanh(a2)
 
 
 def decode_tripod(o1: float, o2: float, stride_half: float,
                    lift_height: float) -> dict[str, dict[str, float | bool]]:
     """Return x_rel, lift, and contact for all six legs."""
-    # TODO 2: Tripod B must use the opposite phase sign from Tripod A.
-    raise NotImplementedError("TODO 2: implement decode_tripod")
+    return {
+        leg: {
+            "x_rel": stride_half * sign * o1,
+            "lift": lift_height * max(0.0, sign * o2),
+            "contact": sign * o2 <= 0.0,
+        }
+        for leg, sign in TRIPOD_SIGN.items()
+    }
 
 
 def bounded_modulation(m: float, phi0: float = 0.20,
@@ -38,5 +42,6 @@ def bounded_modulation(m: float, phi0: float = 0.20,
                        stride_bounds: tuple[float, float] = (0.040, 0.070),
                        ) -> tuple[float, float]:
     """Map slow input m to bounded phi and stride commands."""
-    # TODO 3: calculate both commands and clamp each to its own bounds.
-    raise NotImplementedError("TODO 3: implement bounded_modulation")
+    phi = clamp(phi0 + phi_gain * m, *phi_bounds)
+    stride = clamp(stride0 + stride_gain * m, *stride_bounds)
+    return phi, stride

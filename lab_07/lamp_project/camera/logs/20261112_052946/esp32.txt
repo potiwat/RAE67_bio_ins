@@ -1,0 +1,266 @@
+83,emotion -> happy
+83,emotion -> happy
+83,emotion -> happy
+83,emotion -> happy
+83,emotion -> happy
+83,emotion -> happy
+83,emotion -> happy
+83,emotion -> happy
+83,emotion -> happy
+83,emotion -> happy
+83,emotion -> happy
+83,emotion -> happy
+83,emotion -> happy
+83,ets Jul 29 2019 12:21:46
+84,rst:ets Jul 29 2019 12:21:46
+84,rst:ets Jul 29 2019 12:21:46
+84,rst:ets Jul 29 2019 12:21:46
+84,rst:ets Jul 29 2019 12:21:46
+84,rst:ets Jul 29 2019 12:21:46
+84,rst:ets Jul 29 2019 12:21:46
+84,rst:ets Jul 29 2019 12:21:46
+84,rst:ets Jul 29 2019 12:21:46
+85,rst:ets Jul 29 2019 12:21:46
+85,rst:ets Jul 29 2019 12:21:46
+85,rst:ets Jul 29 2019 12:21:46
+85,rst:ets Jul 29 2019 12:21:46
+85,rst:ets Jul 29 2019 12:21:46
+85,rst:ets Jul 29 2019 12:21:46
+85,rst:ets Jul 29 2019 12:21:46
+85,rst:ets Jul 29 2019 12:21:46
+99,rst:ets Jul 29 2019 12:21:46
+99,rst:ets Jul 29 2019 12:21:46
+99,rst:ets Jul 29 2019 12:21:46
+99,rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+99,configsip: 0, SPIWP:0xee
+99,clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+200,mode:DIO, clock div:2
+200,load:0x3fff0030,len:4640
+200,load:0x40078000,len:15632
+200,load:0x40080400,len:3164
+200,entry 0x4008059c
+798,Lamp_Robot (CPG + hormones) - reset reason 1
+1196,hormone self-test: H1 0.0400 (0.0400)  H2 0.0784 (0.0784)  PASS
+1298,tune alpha 1.1 amp 1 speed 45 object.enter 20 object.exit 25 object.tin 0.5 object.tout 2 afraid.enter 30 afraid.exit 35 afraid.tin 0.2 afraid.tout 1 jolt.enter 10 jolt.exit 14 jolt.tin 0 jolt.tout 1 person.enter 80 person.exit 95 person.tin 1.5 person.tout 3 cam.person_out 10 afraid.calm 3 track.speed 25 track.start 10 track.stop 4 sleep.after 90 saved
+1399,ToF base (SDA 21 SCL 22): OK
+1478,ToF head (SDA 32 SCL 33): NOT CONNECTED (keeps retrying quietly; 's near <cm>' simulates it)
+1478,#  name      type id   min      max      (normal range)    target   cmd      ok  temp
+1497,0  base      MG   14     -90.0    +90.0  ( -90.0.. +90.0)     +0.0     +0.0  y  0
+1497,1  shoulder  STS  1      -58.3    +74.1  ( -58.3.. +74.1)     +0.0     -0.3  y  0
+1497,2  elbow     STS  2     -114.3    +93.3  (-114.3.. +93.3)     +0.0     -1.1  y  0
+1600,3  pitch     STS  3      -70.8    +33.1  ( -70.8.. +33.1)     +0.0     +0.7  y  0
+1600,4  yaw       STS  4      -70.8    +64.4  ( -70.8.. +64.4)     +0.0     -0.1  y  0
+1600,gliding to origin, then WAITING (auto off) - press AUTO in the GUI or type 'auto on' to start
+4416,camera CONNECTED (camera decides person / object)
+4641,E,t_ms,trial_s,cond,kind,what,input_id,latency_s
+4660,data log on (every 1 tick)
+4682,tune alpha 1.1 amp 1 speed 45 object.enter 20 object.exit 25 object.tin 0.5 object.tout 2 afraid.enter 30 afraid.exit 35 afraid.tin 0.2 afraid.tout 1 jolt.enter 10 jolt.exit 14 jolt.tin 0 jolt.tout 1 person.enter 80 person.exit 95 person.tin 1.5 person.tout 3 cam.person_out 10 afraid.calm 3 track.speed 25 track.start 10 track.stop 4 sleep.after 90 saved
+5022,E,4713,-1.00,C1,outcome,superseded,in_001,
+5022,E,4713,-1.00,C1,input,cam_person_on,in_002,0.250
+5044,emotion -> excited
+5044,E,4717,-1.00,C1,emotion,normal->excited,in_002,0.254
+5044,E,4718,-1.00,C1,rgb_set,excited,in_002,0.255
+5475,E,5163,-1.00,C1,input,cam_object_on,in_003,0.250
+5475,E,5164,-1.00,C1,outcome,superseded,in_003,
+5524,E,5164,-1.00,C1,input,obj_jump_hold_on,in_004,0.000
+6155,E,t_ms,trial_s,cond,kind,what,input_id,latency_s
+6178,data log on (every 1 tick)
+6222,tune alpha 1.1 amp 1 speed 45 object.enter 20 object.exit 25 object.tin 0.5 object.tout 2 afraid.enter 30 afraid.exit 35 afraid.tin 0.2 afraid.tout 1 jolt.enter 10 jolt.exit 14 jolt.tin 0 jolt.tout 1 person.enter 80 person.exit 95 person.tin 1.5 person.tout 3 cam.person_out 10 afraid.calm 3 track.speed 25 track.start 10 track.stop 4 sleep.after 90 saved
+6596,ToF head (SDA 32 SCL 33): OK
+6596,loop: 20 ticks/s, worst 99306 us, overruns 1
+8033,emotion -> happy
+8033,E,7718,-1.00,C1,emotion,excited->happy,in_004,2.554
+8033,E,7719,-1.00,C1,outcome,preempted,in_002,
+8033,E,7719,-1.00,C1,rgb_set,happy,in_004,2.555
+13032,E,12720,-1.00,C1,outcome,no_motion,in_004,
+17422,E,17024,-1.00,C1,input,cam_wave_on,in_005,0.000
+17422,wave seen (x 0.39) -> waving back
+20385,E,20070,-1.00,C1,outcome,no_state_change,in_005,
+21948,auto on
+21988,emotion back to automatic
+21988,emotion -> excited
+21988,E,21669,-1.00,C1,emotion,happy->excited,,
+21988,E,21669,-1.00,C1,rgb_set,excited,,
+21988,E,21674,-1.00,C1,motion_onset,excited,,
+23225,E,22914,-1.00,C1,input,cam_object_off,in_006,0.950
+23626,E,23314,-1.00,C1,outcome,superseded,in_006,
+23626,E,23314,-1.00,C1,input,cam_object_on,in_007,0.250
+23626,E,23315,-1.00,C1,outcome,superseded,in_007,
+23672,E,23315,-1.00,C1,input,obj_jump_hold_on,in_008,0.000
+24676,E,24364,-1.00,C1,outcome,superseded,in_008,
+24676,E,24364,-1.00,C1,input,cam_object_off,in_009,0.950
+24988,emotion -> happy
+24988,E,24669,-1.00,C1,emotion,excited->happy,in_009,1.254
+24988,E,24669,-1.00,C1,rgb_set,happy,in_009,1.255
+24988,E,24674,-1.00,C1,motion_onset,happy,in_009,1.260
+25983,E,25654,-1.00,C1,input,cam_wave_on,in_010,0.000
+25983,wave seen (x -0.22) -> waving back
+26179,E,25864,-1.00,C1,outcome,superseded,in_010,
+26179,E,25864,-1.00,C1,input,cam_object_on,in_011,0.250
+26179,E,25865,-1.00,C1,outcome,superseded,in_011,
+26227,E,25865,-1.00,C1,input,obj_jump_hold_on,in_012,0.000
+27381,E,27064,-1.00,C1,outcome,superseded,in_012,
+27381,E,27064,-1.00,C1,input,cam_object_off,in_013,0.950
+30384,E,30064,-1.00,C1,outcome,superseded,in_013,
+30384,E,30064,-1.00,C1,input,cam_object_on,in_014,0.250
+30384,E,30065,-1.00,C1,outcome,superseded,in_014,
+30384,E,30065,-1.00,C1,input,obj_jump_hold_on,in_015,0.000
+33386,E,33070,-1.00,C1,outcome,no_state_change,in_015,
+36573,E,36264,-1.00,C1,input,cam_object_off,in_016,0.950
+37668,E,37364,-1.00,C1,outcome,superseded,in_016,
+37690,E,37364,-1.00,C1,input,cam_object_on,in_017,0.250
+37690,E,37365,-1.00,C1,outcome,superseded,in_017,
+37690,E,37365,-1.00,C1,input,obj_jump_hold_on,in_018,0.000
+37979,WARN elbow warm 66 C: rhythm fading out
+37979,HOT elbow 66 C: torque OFF to cool (back on at 55 C)
+38180,elbow cooled to 32 C: torque back on
+40680,E,40372,-1.00,C1,outcome,no_state_change,in_018,
+41137,E,40808,-1.00,C1,input,cam_wave_on,in_019,0.000
+41137,wave seen (x -0.56) -> waving back
+41281,E,40964,-1.00,C1,outcome,superseded,in_019,
+41281,E,40964,-1.00,C1,input,cam_object_off,in_020,0.950
+44325,E,43970,-1.00,C1,outcome,no_state_change,in_020,
+52636,E,52309,-1.00,C1,input,cam_wave_on,in_021,0.000
+52636,wave seen (x 0.53) -> waving back
+55630,E,55320,-1.00,C1,outcome,no_state_change,in_021,
+75878,����������������������������������������������������������������,103.8,105.1,1,0,1,0,0,1.000,1.000,0.000,0.000,0.000,0.000,0.000,0.000,0.002,0.002,0.080,0.355,-0.528,0.0,6.3,0.0,8.0,28.3,,29,32,30,31,0,1
+94729,E,94418,-1.00,C1,input,person_on,in_022,1.500
+97775,E,97421,-1.00,C1,outcome,no_state_change,in_022,
+100184,E,99868,-1.00,C1,input,object_on,in_023,0.450
+100184,E,99869,-1.00,C1,outcome,superseded,in_023,
+100184,E,99870,-1.00,C1,input,object_new_on,in_024,0.001
+100184,emotion -> interested
+100206,E,99871,-1.00,C1,emotion,happy->interested,in_024,0.002
+100206,E,99871,-1.00,C1,rgb_set,interested,in_024,0.002
+100206,E,99876,-1.00,C1,motion_onset,interested,in_024,0.007
+102787,E,102468,-1.00,C1,input,afraid_on,in_025,0.150
+103273,E,102964,-1.00,C1,outcome,superseded,in_025,
+103273,E,102964,-1.00,C1,input,cam_object_on,in_026,0.250
+103296,E,102965,-1.00,C1,outcome,superseded,in_026,
+103296,E,102965,-1.00,C1,input,obj_jump_hold_on,in_027,0.000
+103296,E,102970,-1.00,C1,outcome,superseded,in_027,
+103296,E,102970,-1.00,C1,input,object_new_on,in_028,0.000
+104122,E,103818,-1.00,C1,outcome,superseded,in_028,
+104175,E,103819,-1.00,C1,input,object_off,in_029,2.001
+107128,E,106823,-1.00,C1,outcome,no_state_change,in_029,
+112027,E,111714,-1.00,C1,input,cam_person_off,in_030,9.950
+115031,E,114721,-1.00,C1,outcome,no_state_change,in_030,
+115429,E,115114,-1.00,C1,input,cam_person_on,in_031,0.250
+115429,emotion -> excited
+115429,E,115120,-1.00,C1,emotion,interested->excited,in_031,0.256
+115449,E,115120,-1.00,C1,rgb_set,excited,in_031,0.256
+115449,E,115125,-1.00,C1,motion_onset,excited,in_031,0.261
+115728,E,115364,-1.00,C1,input,obj_jump_hold_on,in_032,0.000
+116727,E,116414,-1.00,C1,outcome,superseded,in_032,
+116727,E,116414,-1.00,C1,input,cam_object_off,in_033,0.950
+116727,emotion -> afraid
+116748,E,116420,-1.00,C1,emotion,excited->afraid,in_033,0.956
+116748,E,116421,-1.00,C1,rgb_set,afraid,in_033,0.957
+116748,E,116426,-1.00,C1,motion_onset,afraid,in_033,0.961
+117384,E,117068,-1.00,C1,input,afraid_off,in_034,0.950
+118273,emotion -> normal
+118325,E,117969,-1.00,C1,emotion,afraid->normal,in_034,1.851
+118325,E,117969,-1.00,C1,rgb_set,normal,in_034,1.851
+120731,E,120418,-1.00,C1,input,afraid_on,in_035,0.150
+120731,emotion -> afraid
+120731,E,120420,-1.00,C1,emotion,normal->afraid,in_035,0.152
+120753,E,120420,-1.00,C1,outcome,preempted,in_034,
+120753,E,120420,-1.00,C1,rgb_set,afraid,in_035,0.152
+120753,E,120425,-1.00,C1,motion_onset,afraid,in_035,0.157
+122225,E,121918,-1.00,C1,input,startle_on,in_036,0.000
+122281,jolt!
+123581,E,123268,-1.00,C1,outcome,superseded,in_036,
+123581,E,123269,-1.00,C1,input,startle_off,in_037,0.951
+125384,E,125068,-1.00,C1,outcome,superseded,in_037,
+125384,E,125069,-1.00,C1,input,afraid_off,in_038,0.951
+125384,emotion -> normal
+125405,E,125070,-1.00,C1,emotion,afraid->normal,in_038,0.952
+125405,E,125070,-1.00,C1,rgb_set,normal,in_038,0.952
+125405,E,125075,-1.00,C1,motion_onset,normal,in_038,0.957
+128428,emotion -> happy
+128428,E,128119,-1.00,C1,emotion,normal->happy,,
+128428,E,128119,-1.00,C1,rgb_set,happy,,
+128476,E,128124,-1.00,C1,motion_onset,happy,,
+139638,E,139314,-1.00,C1,input,cam_object_on,in_039,0.250
+139638,E,139314,-1.00,C1,outcome,superseded,in_039,
+139638,E,139315,-1.00,C1,input,obj_jump_hold_on,in_040,0.001
+140078,E,139768,-1.00,C1,outcome,superseded,in_040,
+140078,E,139769,-1.00,C1,input,person_off,in_041,3.001
+143080,E,142772,-1.00,C1,outcome,no_state_change,in_041,
+165828,emotion    base  shoulder elbow  pitch  yaw
+165828,normal      +0.0   +0.0   +0.0   +0.0   +0.0
+165828,sleepy      +0.0  +43.2 -114.3   -0.1   -0.4
+165828,excited     +0.0   +5.0   -5.0   +5.0   +0.0
+165828,happy       +0.0   +5.0   +0.0   +8.0   +0.0
+165850,interested   +0.0   +0.3  -77.7  -18.7   -0.4
+165850,bored       +0.0  -15.0  -25.0  -35.0   +0.0
+165850,afraid      +0.0  +20.0   +0.0  +10.0   +0.0
+165850,tired       +0.0  +43.2 -114.3   -0.1   -0.4
+182585,E,182268,-1.00,C1,input,person_on,in_042,1.500
+182722,E,182414,-1.00,C1,outcome,superseded,in_042,
+182781,E,182414,-1.00,C1,input,cam_object_off,in_043,0.950
+185731,E,185420,-1.00,C1,outcome,no_state_change,in_043,
+186377,E,186064,-1.00,C1,input,cam_object_on,in_044,0.250
+186377,E,186065,-1.00,C1,outcome,superseded,in_044,
+186428,E,186065,-1.00,C1,input,obj_jump_hold_on,in_045,0.000
+187737,E,187418,-1.00,C1,outcome,superseded,in_045,
+187737,E,187419,-1.00,C1,input,person_off,in_046,3.001
+190733,E,190422,-1.00,C1,outcome,no_state_change,in_046,
+193987,E,193664,-1.00,C1,input,cam_object_off,in_047,0.950
+194875,E,194564,-1.00,C1,outcome,superseded,in_047,
+194875,E,194564,-1.00,C1,input,cam_object_on,in_048,0.250
+197924,E,197572,-1.00,C1,outcome,no_state_change,in_048,
+198939,WARN shoulder warm 59 C: rhythm fading out
+202827,E,202464,-1.00,C1,input,cam_object_off,in_049,0.950
+204933,E,204614,-1.00,C1,outcome,superseded,in_049,
+204933,E,204614,-1.00,C1,input,cam_object_on,in_050,0.250
+204933,E,204615,-1.00,C1,outcome,superseded,in_050,
+204933,E,204615,-1.00,C1,input,obj_jump_hold_on,in_051,0.000
+207534,WARN shoulder warm 57 C: rhythm fading out
+207976,E,207619,-1.00,C1,outcome,no_state_change,in_051,
+208421,auto on
+208421,emotion sleepy
+208443,emotion -> sleepy
+208443,E,208119,-1.00,C1,emotion,happy->sleepy,,
+208443,E,208119,-1.00,C1,rgb_set,sleepy,,
+208443,E,208124,-1.00,C1,motion_onset,sleepy,,
+209289,E,208964,-1.00,C1,input,obj_jump_hold_on,in_052,0.000
+211675,E,211364,-1.00,C1,outcome,superseded,in_052,
+211675,E,211364,-1.00,C1,input,cam_object_off,in_053,0.950
+213732,E,213418,-1.00,C1,outcome,superseded,in_053,
+213732,E,213419,-1.00,C1,input,afraid_on,in_054,0.151
+213984,E,213668,-1.00,C1,outcome,superseded,in_054,
+213984,E,213669,-1.00,C1,input,person_on,in_055,1.501
+214127,sleeping: motors off
+217036,E,216719,-1.00,C1,outcome,no_state_change,in_055,
+222627,E,222264,-1.00,C1,input,cam_person_off,in_056,9.950
+225589,E,225269,-1.00,C1,outcome,no_state_change,in_056,
+246776,E,246418,-1.00,C1,input,person_off,in_057,3.000
+247571,auto on
+247571,emotion normal
+247593,emotion -> normal
+247593,E,247269,-1.00,C1,emotion,sleepy->normal,in_057,3.850
+247593,E,247269,-1.00,C1,rgb_set,normal,in_057,3.851
+247593,waking up: motors on
+247593,E,247279,-1.00,C1,motion_onset,normal,in_057,3.861
+250577,E,250218,-1.00,C1,input,afraid_off,in_058,0.950
+250777,E,250464,-1.00,C1,outcome,superseded,in_058,
+250777,E,250464,-1.00,C1,input,cam_person_on,in_059,0.250
+253781,E,253472,-1.00,C1,outcome,no_state_change,in_059,
+254189,WARN elbow warm 56 C: rhythm fading out
+258184,WARN elbow warm 58 C: rhythm fading out
+273235,E,272918,-1.00,C1,input,person_on,in_060,1.500
+276274,E,275922,-1.00,C1,outcome,no_state_change,in_060,
+282883,E,282564,-1.00,C1,input,cam_object_on,in_061,0.250
+282883,E,282565,-1.00,C1,outcome,superseded,in_061,
+282883,E,282565,-1.00,C1,input,obj_jump_hold_on,in_062,0.000
+285926,E,285570,-1.00,C1,outcome,no_state_change,in_062,
+288224,E,287868,-1.00,C1,input,person_off,in_063,3.000
+291188,E,290870,-1.00,C1,outcome,no_state_change,in_063,
+299424,E,299064,-1.00,C1,input,cam_person_off,in_064,9.950
+302387,E,302072,-1.00,C1,outcome,no_state_change,in_064,
+308380,E,308064,-1.00,C1,input,cam_person_on,in_065,0.250
+311429,E,311072,-1.00,C1,outcome,no_state_change,in_065,
+317387,WARN elbow warm 65 C: rhythm fading out
+330691,E,330364,-1.00,C1,input,cam_person_off,in_066,9.950
+333685,E,333370,-1.00,C1,outcome,no_state_change,in_066,

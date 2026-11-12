@@ -1,0 +1,21 @@
+# PlatformIO
+.pio/
+.vscode/.browse.c_cpp.db*
+.vscode/c_cpp_properties.json
+.vscode/launch.json
+.vscode/ipch
+
+# Python (camera program)
+camera/.venv/
+__pycache__/
+*.pyc
+
+# local settings: settings.json holds the iPad PIN (re-made at first start)
+# camera/logs/ IS kept in git: the teacher wants the recorded CSV (data.csv / events.csv / camera.csv / trials.csv)
+camera/settings.json
+
+# macOS
+.DS_Store
+
+# camera/logs/ IS submitted: override lab_07/.gitignore which ignores logs/
+!camera/logs/

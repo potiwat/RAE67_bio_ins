@@ -1,0 +1,39 @@
+48,ets Jul 29 2019 12:21:46
+48,
+48,rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+48,configsip: 0, SPIWP:0xee
+48,clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+48,mode:DIO, clock div:2
+48,load:0x3fff0030,len:4640
+149,load:0x40078000,len:15632
+149,load:0x40080400,len:3164
+149,entry 0x4008059c
+461,
+461,[cam_test] started (reset reason 1) - waiting for CAM lines. 's' = status
+461,emotion -> normal
+3188,[cam_test] camera CONNECTED
+3503,[cam_test] CONNECTED | 4 lines/s, lost 0, bad 0 | raw P1 O0 id0 | FILTERED person 0 object 0 id 0 | x 0.51 y -0.30 | waves 0 | C1
+4237,[cam_test] PERSON arrived
+6516,[cam_test] CONNECTED | 11 lines/s, lost 1, bad 0 | raw P1 O0 id0 | FILTERED person 1 object 0 id 0 | x -0.05 y -0.49 | waves 0 | C1
+9519,[cam_test] CONNECTED | 11 lines/s, lost 1, bad 0 | raw P1 O0 id0 | FILTERED person 1 object 0 id 0 | x -0.10 y -0.49 | waves 0 | C1
+12516,[cam_test] CONNECTED | 12 lines/s, lost 1, bad 0 | raw P1 O0 id0 | FILTERED person 1 object 0 id 0 | x -0.15 y -0.49 | waves 0 | C1
+15441,[cam_test] CONNECTED | 12 lines/s, lost 1, bad 0 | raw P1 O0 id0 | FILTERED person 1 object 0 id 0 | x 0.24 y -0.49 | waves 0 | C1
+18445,[cam_test] CONNECTED | 11 lines/s, lost 1, bad 0 | raw P1 O0 id0 | FILTERED person 1 object 0 id 0 | x 0.43 y -0.49 | waves 0 | C1
+21467,[cam_test] CONNECTED | 12 lines/s, lost 2, bad 0 | raw P1 O0 id0 | FILTERED person 1 object 0 id 0 | x 0.00 y -0.50 | waves 0 | C1
+24468,[cam_test] CONNECTED | 11 lines/s, lost 2, bad 0 | raw P1 O0 id0 | FILTERED person 1 object 0 id 0 | x -0.01 y -0.50 | waves 0 | C1
+27485,[cam_test] CONNECTED | 11 lines/s, lost 2, bad 0 | raw P1 O0 id0 | FILTERED person 1 object 0 id 0 | x -0.02 y -0.49 | waves 0 | C1
+28418,[cam_test] OBJECT there
+28418,[cam_test] object id 0 -> 2
+30497,[cam_test] CONNECTED | 12 lines/s, lost 3, bad 0 | raw P1 O1 id2 | FILTERED person 1 object 1 id 2 | x -0.07 y 0.05 | waves 0 | C1
+33504,[cam_test] CONNECTED | 12 lines/s, lost 3, bad 0 | raw P1 O1 id2 | FILTERED person 1 object 1 id 2 | x -0.04 y 0.07 | waves 0 | C1
+36516,[cam_test] CONNECTED | 11 lines/s, lost 4, bad 0 | raw P1 O0 id0 | FILTERED person 1 object 1 id 2 | x -0.18 y -0.48 | waves 0 | C1
+37338,[cam_test] OBJECT gone
+39514,[cam_test] CONNECTED | 11 lines/s, lost 4, bad 0 | raw P1 O0 id0 | FILTERED person 1 object 0 id 0 | x -0.13 y -0.48 | waves 0 | C1
+41173,[cam_test] OBJECT there
+41173,[cam_test] object id 0 -> 2
+42518,[cam_test] CONNECTED | 12 lines/s, lost 4, bad 0 | raw P1 O1 id2 | FILTERED person 1 object 1 id 2 | x 0.38 y 0.06 | waves 0 | C1
+45531,[cam_test] CONNECTED | 12 lines/s, lost 4, bad 0 | raw P1 O1 id2 | FILTERED person 1 object 1 id 2 | x 0.61 y 0.09 | waves 0 | C1
+48315,[cam_test] OBJECT gone
+48519,[cam_test] CONNECTED | 11 lines/s, lost 5, bad 0 | raw P1 O0 id0 | FILTERED person 1 object 0 id 0 | x -0.06 y -0.47 | waves 0 | C1
+49866,[cam_test] PERSON gone
+51506,[cam_test] CONNECTED | 11 lines/s, lost 6, bad 0 | raw P0 O0 id0 | FILTERED person 0 object 0 id 0 | x 0.00 y 0.00 | waves 0 | C1

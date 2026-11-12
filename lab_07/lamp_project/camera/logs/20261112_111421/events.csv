@@ -1,0 +1,9 @@
+pc_ms,t_ms,trial_s,cond,kind,what,input_id,latency_s
+5584,5261,-1.00,C1,outcome,superseded,in_001,
+5584,5261,-1.00,C1,input,cam_person_on,in_002,0.250
+5584,5262,-1.00,C1,emotion,normal->excited,in_002,0.251
+5584,5263,-1.00,C1,rgb_set,excited,in_002,0.252
+8587,8280,-1.00,C1,emotion,excited->happy,,
+8646,8280,-1.00,C1,outcome,preempted,in_002,
+8646,8281,-1.00,C1,rgb_set,happy,,
+13623,13308,-1.00,C1,outcome,no_motion,,

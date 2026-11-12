@@ -1,0 +1,93 @@
+83,1
+83,1
+83,1
+83,1
+83,1
+83,1
+83,1
+83,1
+83,1
+83,1
+83,1
+83,1
+83,1
+83,1
+83,1
+84,1
+84,ets Jul 29 2019 12:21:46
+84,
+84,rst:ets Jul 29 2019 12:21:46
+84,
+84,rst:ets Jul 29 2019 12:21:46
+84,
+84,rst:ets Jul 29 2019 12:21:46
+84,
+84,rst:ets Jul 29 2019 12:21:46
+84,
+84,rst:ets Jul 29 2019 12:21:46
+84,
+84,rst:ets Jul 29 2019 12:21:46
+84,
+85,rst:ets Jul 29 2019 12:21:46
+85,
+85,rst:ets Jul 29 2019 12:21:46
+85,
+85,rst:ets Jul 29 2019 12:21:46
+85,
+85,rst:ets Jul 29 2019 12:21:46
+85,
+85,rst:ets Jul 29 2019 12:21:46
+85,
+85,rst:ets Jul 29 2019 12:21:46
+85,
+85,rst:ets Jul 29 2019 12:21:46
+85,
+85,rst:ets Jul 29 2019 12:21:46
+85,
+94,rst:ets Jul 29 2019 12:21:46
+94,
+94,rst:ets Jul 29 2019 12:21:46
+94,
+94,rst:ets Jul 29 2019 12:21:46
+94,
+94,rst:ets Jul 29 2019 12:21:46
+94,
+94,rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+94,configsip: 0, SPIWP:0xee
+195,clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+195,mode:DIO, clock div:2
+195,load:0x3fff0030,len:4640
+195,load:0x40078000,len:15632
+195,load:0x40080400,len:3164
+195,entry 0x4008059c
+501,
+501,[cam_test] started (reset reason 1) - waiting for CAM lines. 's' = status
+501,emotion -> normal
+3107,[cam_test] camera CONNECTED
+3624,[cam_test] PERSON arrived
+3624,[cam_test] CONNECTED | 7 lines/s, lost 0, bad 0 | raw P1 O0 id0 | FILTERED person 1 object 0 id 0 | x -0.03 y -0.50 | waves 0 | C1
+6632,[cam_test] CONNECTED | 12 lines/s, lost 0, bad 0 | raw P1 O0 id0 | FILTERED person 1 object 0 id 0 | x 0.00 y -0.49 | waves 0 | C1
+8486,[cam_test] PERSON gone
+9637,[cam_test] CONNECTED | 11 lines/s, lost 0, bad 0 | raw P0 O0 id0 | FILTERED person 0 object 0 id 0 | x 0.00 y 0.00 | waves 0 | C1
+12339,[cam_test] PERSON arrived
+12644,[cam_test] CONNECTED | 11 lines/s, lost 0, bad 0 | raw P0 O0 id0 | FILTERED person 1 object 0 id 0 | x 0.00 y 0.00 | waves 0 | C1
+15624,[cam_test] CONNECTED | 11 lines/s, lost 0, bad 0 | raw P1 O0 id0 | FILTERED person 1 object 0 id 0 | x 0.29 y -0.49 | waves 0 | C1
+18619,[cam_test] CONNECTED | 12 lines/s, lost 0, bad 0 | raw P1 O0 id0 | FILTERED person 1 object 0 id 0 | x 0.03 y -0.42 | waves 0 | C1
+21629,[cam_test] CONNECTED | 11 lines/s, lost 0, bad 0 | raw P1 O0 id0 | FILTERED person 1 object 0 id 0 | x -0.01 y -0.49 | waves 0 | C1
+24624,[cam_test] CONNECTED | 11 lines/s, lost 0, bad 0 | raw P1 O0 id0 | FILTERED person 1 object 0 id 0 | x -0.38 y -0.48 | waves 0 | C1
+25144,[cam_test] WAVE received (x 0.16) -> the robot would wave back
+27619,[cam_test] CONNECTED | 12 lines/s, lost 0, bad 0 | raw P1 O0 id0 | FILTERED person 1 object 0 id 0 | x 0.00 y -0.50 | waves 1 | C1
+29160,[cam_test] WAVE received (x 0.28) -> the robot would wave back
+30606,[cam_test] CONNECTED | 11 lines/s, lost 1, bad 0 | raw P1 O0 id0 | FILTERED person 1 object 0 id 0 | x 0.00 y -0.50 | waves 2 | C1
+33606,[cam_test] CONNECTED | 11 lines/s, lost 2, bad 0 | raw P1 O0 id0 | FILTERED person 1 object 0 id 0 | x 0.00 y -0.51 | waves 2 | C1
+34016,[cam_test] OBJECT there
+34016,[cam_test] object id 0 -> 2
+35878,[cam_test] object id 2 -> 8
+36603,[cam_test] CONNECTED | 11 lines/s, lost 2, bad 0 | raw P1 O1 id8 | FILTERED person 1 object 1 id 8 | x 0.03 y -0.17 | waves 2 | C1
+39593,[cam_test] CONNECTED | 11 lines/s, lost 2, bad 0 | raw P1 O0 id0 | FILTERED person 1 object 1 id 8 | x -0.31 y -0.48 | waves 2 | C1
+42574,[cam_test] CONNECTED | 12 lines/s, lost 2, bad 0 | raw P1 O1 id8 | FILTERED person 1 object 1 id 8 | x 0.23 y 0.25 | waves 2 | C1
+45559,[cam_test] CONNECTED | 12 lines/s, lost 2, bad 0 | raw P1 O0 id0 | FILTERED person 1 object 1 id 8 | x -0.45 y -0.48 | waves 2 | C1
+48575,[cam_test] CONNECTED | 11 lines/s, lost 2, bad 0 | raw P1 O0 id0 | FILTERED person 1 object 1 id 8 | x -0.40 y -0.48 | waves 2 | C1
+51577,[cam_test] CONNECTED | 12 lines/s, lost 2, bad 0 | raw P1 O0 id0 | FILTERED person 1 object 1 id 8 | x -0.06 y -0.50 | waves 2 | C1
+52414,[cam_test] OBJECT gone
+54595,[cam_test] CONNECTED | 11 lines/s, lost 10, bad 0 | raw P1 O0 id0 | FILTERED person 1 object 0 id 0 | x -0.11 y -0.50 | waves 2 | C1

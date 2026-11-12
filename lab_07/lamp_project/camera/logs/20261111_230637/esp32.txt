@@ -1,0 +1,424 @@
+89,, overruns 1
+89,, overruns 1
+89,, overruns 1
+89,, overruns 1
+89,, overruns 1
+89,, overruns 1
+89,, overruns 1
+89,, overruns 1
+89,, overruns 1
+89,, overruns 1
+89,, overruns 1
+89,, overruns 1
+89,, overruns 1
+89,, overruns 1
+89,ets Jul 29 2019 12:21:46
+191,rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+191,configsip: 0, SPIWP:0xee
+191,clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+191,mode:DIO, clock div:2
+191,load:0x3fff0030,len:4640
+191,load:0x40078000,len:15632
+191,load:0x40080400,len:3164
+191,entry 0x4008059c
+847,Lamp_Robot (CPG + hormones) - reset reason 1
+1156,hormone self-test: H1 0.0400 (0.0400)  H2 0.0784 (0.0784)  PASS
+1297,tune alpha 1.1 amp 1 speed 45 object.enter 20 object.exit 25 object.tin 0.5 object.tout 2 afraid.enter 30 afraid.exit 35 afraid.tin 0.2 afraid.tout 1 jolt.enter 10 jolt.exit 14 jolt.tin 0 jolt.tout 1 person.enter 80 person.exit 95 person.tin 1.5 person.tout 3 cam.person_out 10 afraid.calm 3 track.speed 25 track.start 10 track.stop 4 saved
+1398,ToF base (SDA 21 SCL 22): NOT CONNECTED (keeps retrying quietly; 's base <cm>' simulates it)
+1398,ToF head (SDA 32 SCL 33): NOT CONNECTED (keeps retrying quietly; 's near <cm>' simulates it)
+1417,#  name      type id   min      max      (normal range)    target   cmd      ok  temp
+1417,0  base      MG   14     -90.0    +90.0  ( -90.0.. +90.0)     +0.0     +0.0  y  0
+1417,1  shoulder  STS  1      -58.3    +74.1  ( -58.3.. +74.1)     +0.0     +0.4  y  0
+1439,2  elbow     STS  2     -114.3    +93.3  (-114.3.. +93.3)     +0.0     +0.6  y  0
+1439,3  pitch     STS  3      -70.8    +33.1  ( -70.8.. +33.1)     +0.0     -0.7  y  0
+1439,4  yaw       STS  4      -70.8    +64.4  ( -70.8.. +64.4)     +0.0     +0.1  y  0
+1542,gliding to origin, then WAITING (auto off) - press AUTO in the GUI or type 'auto on' to start
+5300,camera CONNECTED (camera decides person / object)
+5400,E,t_ms,trial_s,cond,kind,what,input_id,latency_s
+5445,data log on (every 1 tick)
+5466,tune alpha 1.1 amp 1 speed 45 object.enter 20 object.exit 25 object.tin 0.5 object.tout 2 afraid.enter 30 afraid.exit 35 afraid.tin 0.2 afraid.tout 1 jolt.enter 10 jolt.exit 14 jolt.tin 0 jolt.tout 1 person.enter 80 person.exit 95 person.tin 1.5 person.tout 3 cam.person_out 10 afraid.calm 3 track.speed 25 track.start 10 track.stop 4 saved
+6556,loop: 20 ticks/s, worst 95505 us, overruns 1
+6921,E,t_ms,trial_s,cond,kind,what,input_id,latency_s
+6943,data log on (every 1 tick)
+6993,tune alpha 1.1 amp 1 speed 45 object.enter 20 object.exit 25 object.tin 0.5 object.tout 2 afraid.enter 30 afraid.exit 35 afraid.tin 0.2 afraid.tout 1 jolt.enter 10 jolt.exit 14 jolt.tin 0 jolt.tout 1 person.enter 80 person.exit 95 person.tin 1.5 person.tout 3 cam.person_out 10 afraid.calm 3 track.speed 25 track.start 10 track.stop 4 saved
+8138,E,7787,-1.00,C1,outcome,no_state_change,in_001,
+8590,auto on
+8590,emotion normal
+11602,ToF base (SDA 21 SCL 22): OK
+11602,WARN no reply: pitch (ID 3)
+11624,loop: 20 ticks/s, worst 111244 us, overruns 1
+11764,OK   pitch (ID 3)
+12001,auto on
+12001,emotion bored
+12001,emotion -> bored
+12022,E,11699,-1.00,C1,emotion,normal->bored,,
+12022,E,11699,-1.00,C1,rgb_set,bored,,
+12022,E,11704,-1.00,C1,motion_onset,bored,,
+12613,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+14314,E,13997,-1.00,C1,input,cam_person_on,in_002,0.250
+16733,ToF base (SDA 21 SCL 22): OK
+16733,WARN no reply: yaw (ID 4)
+16775,loop: 19 ticks/s, worst 111606 us, overruns 1
+16922,OK   yaw (ID 4)
+17367,E,17015,-1.00,C1,outcome,no_state_change,in_002,
+17723,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+19422,ToF base (SDA 21 SCL 22): OK
+19422,ToF ON
+19422,WARN no reply: shoulder (ID 1)
+19653,OK   shoulder (ID 1)
+20401,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+24510,ToF base (SDA 21 SCL 22): OK
+24510,WARN no reply: shoulder (ID 1)
+24674,OK   shoulder (ID 1)
+24971,loop: 19 ticks/s, worst 111573 us, overruns 1
+25514,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+29633,ToF base (SDA 21 SCL 22): OK
+29633,WARN no reply: elbow (ID 2)
+29772,OK   elbow (ID 2)
+30125,loop: 19 ticks/s, worst 107978 us, overruns 1
+30634,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+34753,ToF base (SDA 21 SCL 22): OK
+34753,WARN no reply: pitch (ID 3)
+34885,OK   pitch (ID 3)
+35238,loop: 19 ticks/s, worst 111976 us, overruns 1
+35741,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+39855,ToF base (SDA 21 SCL 22): OK
+39855,WARN no reply: yaw (ID 4)
+39997,OK   yaw (ID 4)
+40407,loop: 19 ticks/s, worst 110982 us, overruns 1
+40856,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+44959,ToF base (SDA 21 SCL 22): OK
+44959,WARN no reply: shoulder (ID 1)
+45159,OK   shoulder (ID 1)
+45608,loop: 19 ticks/s, worst 109790 us, overruns 1
+45964,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+50093,ToF base (SDA 21 SCL 22): OK
+50093,WARN no reply: elbow (ID 2)
+50221,OK   elbow (ID 2)
+50780,loop: 19 ticks/s, worst 111902 us, overruns 1
+51080,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+54520,(auto off - emotions no longer move the pose; 'auto on' to return)
+54520,base pose +4.0 deg
+55193,ToF base (SDA 21 SCL 22): OK
+55193,WARN no reply: pitch (ID 3)
+55333,OK   pitch (ID 3)
+55836,loop: 19 ticks/s, worst 109978 us, overruns 1
+56192,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+60286,ToF base (SDA 21 SCL 22): OK
+60286,WARN no reply: yaw (ID 4)
+60451,OK   yaw (ID 4)
+61049,loop: 19 ticks/s, worst 112014 us, overruns 1
+61345,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+65431,ToF base (SDA 21 SCL 22): NOT CONNECTED (keeps retrying quietly; 's base <cm>' simulates it)
+66204,loop: 19 ticks/s, worst 104521 us, overruns 1
+70532,ToF base (SDA 21 SCL 22): OK
+70532,WARN no reply: elbow (ID 2)
+70670,OK   elbow (ID 2)
+71418,loop: 19 ticks/s, worst 116200 us, overruns 1
+71529,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+75671,ToF base (SDA 21 SCL 22): NOT CONNECTED (keeps retrying quietly; 's base <cm>' simulates it)
+76447,loop: 19 ticks/s, worst 123011 us, overruns 1
+81554,loop: 18 ticks/s, worst 151535 us, overruns 1
+85952,ToF base (SDA 21 SCL 22): OK
+85990,ToF head (SDA 32 SCL 33): OK
+85990,WARN no reply: shoulder (ID 1)
+86136,OK   shoulder (ID 1)
+86694,loop: 18 ticks/s, worst 186480 us, overruns 1
+86986,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+87037,WARN ToF head stopped answering (model id 0xEE: chip answers but gives no data)
+91049,ToF base (SDA 21 SCL 22): OK
+91049,ToF head (SDA 32 SCL 33): NOT CONNECTED (keeps retrying quietly; 's near <cm>' simulates it)
+91049,WARN no reply: shoulder (ID 1)
+91248,OK   shoulder (ID 1)
+91850,loop: 19 ticks/s, worst 113427 us, overruns 1
+92054,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+96173,ToF base (SDA 21 SCL 22): OK
+96173,WARN no reply: elbow (ID 2)
+96314,OK   elbow (ID 2)
+97062,loop: 19 ticks/s, worst 113601 us, overruns 1
+97176,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+99915,E,99557,-1.00,C1,input,cam_person_off,in_003,10.079
+101288,ToF base (SDA 21 SCL 22): OK
+101288,WARN no reply: pitch (ID 3)
+101336,loop: 21 ticks/s, worst 114572 us, overruns 1
+101481,OK   pitch (ID 3)
+101835,E,101523,-1.00,C1,outcome,superseded,in_003,
+101835,E,101523,-1.00,C1,input,cam_person_on,in_004,0.250
+102329,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+104843,E,104525,-1.00,C1,outcome,no_state_change,in_004,
+106408,ToF base (SDA 21 SCL 22): OK
+106408,WARN no reply: yaw (ID 4)
+106456,loop: 19 ticks/s, worst 116353 us, overruns 1
+106600,OK   yaw (ID 4)
+107406,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+111519,ToF base (SDA 21 SCL 22): OK
+111519,WARN no reply: shoulder (ID 1)
+111564,loop: 19 ticks/s, worst 113340 us, overruns 1
+111715,OK   shoulder (ID 1)
+112523,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+116633,ToF base (SDA 21 SCL 22): OK
+116633,WARN no reply: elbow (ID 2)
+116680,loop: 19 ticks/s, worst 113308 us, overruns 1
+116828,OK   elbow (ID 2)
+117654,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+121751,ToF base (SDA 21 SCL 22): OK
+121751,WARN no reply: pitch (ID 3)
+121850,loop: 19 ticks/s, worst 113592 us, overruns 1
+121941,OK   pitch (ID 3)
+122758,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+126873,ToF base (SDA 21 SCL 22): OK
+126873,WARN no reply: yaw (ID 4)
+127012,OK   yaw (ID 4)
+127066,loop: 19 ticks/s, worst 120853 us, overruns 1
+127874,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+131991,ToF base (SDA 21 SCL 22): OK
+131991,WARN no reply: shoulder (ID 1)
+132125,OK   shoulder (ID 1)
+132176,loop: 19 ticks/s, worst 111617 us, overruns 1
+132985,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+137081,ToF base (SDA 21 SCL 22): OK
+137081,WARN no reply: elbow (ID 2)
+137246,OK   elbow (ID 2)
+137393,loop: 19 ticks/s, worst 113607 us, overruns 1
+138105,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+142215,ToF base (SDA 21 SCL 22): OK
+142215,WARN no reply: pitch (ID 3)
+142357,OK   pitch (ID 3)
+142559,loop: 19 ticks/s, worst 113478 us, overruns 1
+143218,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+147333,ToF base (SDA 21 SCL 22): OK
+147333,WARN no reply: yaw (ID 4)
+147470,OK   yaw (ID 4)
+147673,loop: 19 ticks/s, worst 112542 us, overruns 1
+148329,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+150127,E,149812,-1.00,C1,input,cam_person_off,in_005,10.079
+152280,E,151962,-1.00,C1,outcome,superseded,in_005,
+152280,E,151962,-1.00,C1,input,cam_person_on,in_006,0.250
+152451,ToF base (SDA 21 SCL 22): OK
+152451,WARN no reply: shoulder (ID 1)
+152581,OK   shoulder (ID 1)
+152784,loop: 19 ticks/s, worst 112270 us, overruns 1
+153445,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+155292,E,154978,-1.00,C1,outcome,no_state_change,in_006,
+157553,ToF base (SDA 21 SCL 22): OK
+157553,WARN no reply: elbow (ID 2)
+157696,OK   elbow (ID 2)
+157899,loop: 19 ticks/s, worst 111304 us, overruns 1
+158160,auto on
+158160,emotion tired
+158160,emotion -> tired
+158160,E,157840,-1.00,C1,emotion,bored->tired,,
+158160,E,157840,-1.00,C1,rgb_set,tired,,
+158160,E,157845,-1.00,C1,motion_onset,tired,,
+158592,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+162671,ToF base (SDA 21 SCL 22): NOT CONNECTED (keeps retrying quietly; 's base <cm>' simulates it)
+162905,loop: 19 ticks/s, worst 104188 us, overruns 1
+163946,sleeping: motors off
+168050,loop: 19 ticks/s, worst 102730 us, overruns 1
+168999,auto on
+168999,emotion normal
+169020,emotion -> normal
+169020,E,168697,-1.00,C1,emotion,tired->normal,,
+169020,E,168698,-1.00,C1,rgb_set,normal,,
+169020,waking up: motors on
+169020,E,168707,-1.00,C1,motion_onset,normal,,
+170803,E,170447,-1.00,C1,input,cam_person_off,in_007,10.059
+172869,ToF base (SDA 21 SCL 22): OK
+173084,loop: 20 ticks/s, worst 98741 us, overruns 1
+173756,E,173451,-1.00,C1,outcome,no_state_change,in_007,
+173864,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+174909,E,174547,-1.00,C1,input,cam_person_on,in_008,0.250
+177009,auto on
+177009,emotion interested
+177009,emotion -> interested
+177009,E,176698,-1.00,C1,emotion,normal->interested,in_008,2.401
+177054,E,176699,-1.00,C1,rgb_set,interested,in_008,2.402
+177054,E,176703,-1.00,C1,motion_onset,interested,in_008,2.406
+177979,ToF base (SDA 21 SCL 22): OK
+177979,WARN no reply: pitch (ID 3)
+178170,loop: 19 ticks/s, worst 114108 us, overruns 1
+178170,OK   pitch (ID 3)
+178982,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+183087,ToF base (SDA 21 SCL 22): OK
+183182,loop: 19 ticks/s, worst 102798 us, overruns 1
+184086,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+187976,E,187666,-1.00,C1,input,cam_person_off,in_009,10.004
+188196,ToF base (SDA 21 SCL 22): OK
+188385,loop: 19 ticks/s, worst 106811 us, overruns 1
+189197,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+190986,E,190678,-1.00,C1,outcome,no_state_change,in_009,
+191145,auto on
+191145,emotion normal
+191145,emotion -> normal
+191145,E,190824,-1.00,C1,emotion,interested->normal,,
+191145,E,190825,-1.00,C1,rgb_set,normal,,
+191145,E,190829,-1.00,C1,motion_onset,normal,,
+193292,ToF base (SDA 21 SCL 22): OK
+193481,loop: 19 ticks/s, worst 103428 us, overruns 1
+193481,auto on
+193481,emotion excited
+193503,emotion -> excited
+193503,E,193180,-1.00,C1,emotion,normal->excited,,
+193503,E,193180,-1.00,C1,rgb_set,excited,,
+193503,E,193185,-1.00,C1,motion_onset,excited,,
+194298,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+198094,auto on
+198094,emotion afraid
+198094,emotion -> afraid
+198094,E,197778,-1.00,C1,emotion,excited->afraid,,
+198094,E,197779,-1.00,C1,rgb_set,afraid,,
+198094,E,197784,-1.00,C1,motion_onset,afraid,,
+198412,ToF base (SDA 21 SCL 22): NOT CONNECTED (keeps retrying quietly; 's base <cm>' simulates it)
+198591,loop: 19 ticks/s, worst 102540 us, overruns 1
+203516,ToF base (SDA 21 SCL 22): OK
+203644,loop: 19 ticks/s, worst 105505 us, overruns 1
+204508,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+204893,auto on
+204893,emotion happy
+204893,emotion -> happy
+204913,E,204588,-1.00,C1,emotion,afraid->happy,,
+204913,E,204589,-1.00,C1,rgb_set,happy,,
+204913,E,204593,-1.00,C1,motion_onset,happy,,
+206295,����������������������������������������������������������������,nan,nan,0,0,0,0,0,0.045,0.045,0.000,0.000,0.000,0.000,0.000,0.000,0.001,0.001,0.080,0.286,-0.560,0.0,6.0,0.0,8.0,0.0,,29,31,30,31,0,1
+208606,ToF base (SDA 21 SCL 22): OK
+208712,loop: 19 ticks/s, worst 104164 us, overruns 1
+209610,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+210753,auto on
+210753,emotion excited
+210753,emotion -> excited
+210753,E,210444,-1.00,C1,emotion,happy->excited,,
+210798,E,210444,-1.00,C1,rgb_set,excited,,
+210798,E,210449,-1.00,C1,motion_onset,excited,,
+213732,ToF base (SDA 21 SCL 22): NOT CONNECTED (keeps retrying quietly; 's base <cm>' simulates it)
+213771,loop: 18 ticks/s, worst 113363 us, overruns 1
+215109,auto on
+215109,emotion sleepy
+215131,emotion -> sleepy
+215131,E,214807,-1.00,C1,emotion,excited->sleepy,,
+215131,E,214808,-1.00,C1,rgb_set,sleepy,,
+215131,E,214812,-1.00,C1,motion_onset,sleepy,,
+218835,loop: 19 ticks/s, worst 101015 us, overruns 1
+220627,sleeping: motors off
+223929,loop: 19 ticks/s, worst 101062 us, overruns 1
+225367,auto on
+225367,emotion normal
+225367,emotion -> normal
+225388,E,225062,-1.00,C1,emotion,sleepy->normal,,
+225389,E,225063,-1.00,C1,rgb_set,normal,,
+225389,waking up: motors on
+225389,E,225072,-1.00,C1,motion_onset,normal,,
+229094,loop: 19 ticks/s, worst 102195 us, overruns 1
+231084,E,230765,-1.00,C1,input,cam_person_on,in_010,0.250
+234155,E,233814,-1.00,C1,outcome,no_state_change,in_010,
+234199,loop: 19 ticks/s, worst 102623 us, overruns 1
+236334,(auto off - emotions no longer move the pose; 'auto on' to return)
+236334,base pose +4.0 deg
+239398,loop: 19 ticks/s, worst 121062 us, overruns 1
+242704,E,242391,-1.00,C1,input,cam_person_off,in_011,10.076
+244376,ToF base (SDA 21 SCL 22): OK
+244376,base pose +90.0 deg
+244469,loop: 19 ticks/s, worst 106785 us, overruns 1
+245369,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+245722,E,245403,-1.00,C1,outcome,no_state_change,in_011,
+245958,E,245601,-1.00,C1,input,cam_person_on,in_012,0.250
+247928,E,247601,-1.00,C1,outcome,superseded,in_012,
+247928,E,247601,-1.00,C1,input,cam_object_on,in_013,0.250
+247928,E,247602,-1.00,C1,outcome,superseded,in_013,
+247928,E,247602,-1.00,C1,input,obj_jump_hold_on,in_014,0.000
+247928,E,247603,-1.00,C1,outcome,superseded,in_014,
+247961,E,247603,-1.00,C1,input,object_new_on,in_015,0.000
+249496,ToF base (SDA 21 SCL 22): OK
+249615,loop: 19 ticks/s, worst 105490 us, overruns 1
+250478,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+250923,E,250609,-1.00,C1,outcome,no_state_change,in_015,
+252720,base pose +0.0 deg
+253165,E,252857,-1.00,C1,input,cam_object_off,in_016,0.950
+254595,ToF base (SDA 21 SCL 22): OK
+254595,WARN no reply: elbow (ID 2)
+254691,loop: 19 ticks/s, worst 115097 us, overruns 1
+254787,OK   elbow (ID 2)
+255591,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+256186,E,255875,-1.00,C1,outcome,no_state_change,in_016,
+259711,ToF base (SDA 21 SCL 22): NOT CONNECTED (keeps retrying quietly; 's base <cm>' simulates it)
+259888,loop: 19 ticks/s, worst 105421 us, overruns 1
+264860,E,264530,-1.00,C1,input,cam_person_off,in_017,10.057
+264990,loop: 19 ticks/s, worst 100203 us, overruns 1
+267851,E,267534,-1.00,C1,outcome,no_state_change,in_017,
+270102,loop: 19 ticks/s, worst 103181 us, overruns 1
+275195,loop: 19 ticks/s, worst 102266 us, overruns 1
+280309,loop: 19 ticks/s, worst 103266 us, overruns 1
+285212,ToF base (SDA 21 SCL 22): OK
+285212,WARN no reply: yaw (ID 4)
+285413,OK   yaw (ID 4)
+285464,loop: 19 ticks/s, worst 113181 us, overruns 1
+286265,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+290324,ToF base (SDA 21 SCL 22): OK
+290324,WARN no reply: shoulder (ID 1)
+290490,OK   shoulder (ID 1)
+290635,loop: 19 ticks/s, worst 111846 us, overruns 1
+291378,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+295436,ToF base (SDA 21 SCL 22): OK
+295436,WARN no reply: elbow (ID 2)
+295602,OK   elbow (ID 2)
+295842,loop: 19 ticks/s, worst 114109 us, overruns 1
+296489,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+296543,E,296183,-1.00,C1,input,cam_person_on,in_018,0.250
+299495,E,299187,-1.00,C1,outcome,no_state_change,in_018,
+300575,ToF base (SDA 21 SCL 22): OK
+300575,WARN no reply: pitch (ID 3)
+300706,OK   pitch (ID 3)
+300909,loop: 19 ticks/s, worst 113451 us, overruns 1
+301565,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+305680,ToF base (SDA 21 SCL 22): OK
+305680,WARN no reply: yaw (ID 4)
+305824,OK   yaw (ID 4)
+306027,loop: 19 ticks/s, worst 115581 us, overruns 1
+306681,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+310796,ToF base (SDA 21 SCL 22): OK
+310796,WARN no reply: shoulder (ID 1)
+310940,OK   shoulder (ID 1)
+311138,loop: 19 ticks/s, worst 115526 us, overruns 1
+311797,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+315914,ToF base (SDA 21 SCL 22): OK
+315914,WARN no reply: elbow (ID 2)
+316056,OK   elbow (ID 2)
+316261,loop: 19 ticks/s, worst 117565 us, overruns 1
+316915,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+321037,ToF base (SDA 21 SCL 22): OK
+321037,WARN no reply: pitch (ID 3)
+321178,OK   pitch (ID 3)
+321379,loop: 19 ticks/s, worst 118599 us, overruns 1
+322035,WARN ToF base stopped answering (model id 0xEE: chip answers but gives no data)
+323784,WARN no reply: elbow (ID 2)
+323784,WARN no reply: pitch (ID 3)
+323841,WARN no reply: yaw (ID 4)
+323897,WARN no reply: shoulder (ID 1)
+326187,ToF base (SDA 21 SCL 22): NOT CONNECTED (keeps retrying quietly; 's base <cm>' simulates it)
+326400,loop: 18 ticks/s, worst 161746 us, overruns 1
+327800,E,327430,-1.00,C1,input,cam_person_off,in_019,10.133
+330750,E,330444,-1.00,C1,outcome,no_state_change,in_019,
+331461,loop: 18 ticks/s, worst 156831 us, overruns 1
+406186,ets Jul 29 2019 12:21:46
+406186,rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+406186,configsip: 0, SPIWP:0xee
+406186,clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+406186,mode:DIO, clock div:2
+406186,load:0x3fff0030,len:4640
+406292,load:0x40078000,len:15632
+406292,load:0x40080400,len:3164
+406292,entry 0x4008059c
+406810,Lamp_Robot (CPG + hormones) - reset reason 1
+407271,hormone self-test: H1 0.0400 (0.0400)  H2 0.0784 (0.0784)  PASS
+407375,tune alpha 1.1 amp 1 speed 45 object.enter 20 object.exit 25 object.tin 0.5 object.tout 2 afraid.enter 30 afraid.exit 35 afraid.tin 0.2 afraid.tout 1 jolt.enter 10 jolt.exit 14 jolt.tin 0 jolt.tout 1 person.enter 80 person.exit 95 person.tin 1.5 person.tout 3 cam.person_out 10 afraid.calm 3 track.speed 25 track.start 10 track.stop 4 saved
+407431,ToF base (SDA 21 SCL 22): OK
+407431,ToF head (SDA 32 SCL 33): NOT CONNECTED (keeps retrying quietly; 's near <cm>' simulates it)
+407431,#  name      type id   min      max      (normal range)    target   cmd      ok  temp
+407454,0  base      MG   14     -90.0    +90.0  ( -90.0.. +90.0)     +0.0     +0.0  y  0
+407454,1  shoulder  STS  1      -58.3    +74.1  ( -58.3.. +74.1)     +0.0    -24.0  y  0
+407454,2  elbow     STS  2     -114.3    +93.3  (-114.3.. +93.3)     +0.0     +0.0  y  0
+407475,3  pitch     STS  3      -70.8    +33.1  ( -70.8.. +33.1)     +0.0    +14.0  y  0
+407475,4  yaw       STS  4      -70.8    +64.4  ( -70.8.. +64.4)     +0.0     -0.5  y  0
+407475,gliding to origin, then WAITING (auto off) - press AUTO in the GUI or type 'auto on' to start
+407497,E,t_ms,trial_s,cond,kind,what,input_id,latency_s
+407520,data log on (every 1 tick)
+407541,tune alpha 1.1 amp 1 speed 45 object.enter 20 object.exit 25 object.tin 0.5 object.tout 2 afraid.enter 30 afraid.exit 35 afraid.tin 0.2 afraid.tout 1 jolt.enter 10 jolt.exit 14 jolt.tin 0 jolt.tout 1 person.enter 80 person.exit 95 person.tin 1.5 person.tout 3 cam.person_out 10 afraid.calm 3 track.speed 25 track.start 10 track.stop 4 saved

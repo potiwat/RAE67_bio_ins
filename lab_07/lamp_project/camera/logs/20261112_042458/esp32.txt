@@ -1,0 +1,651 @@
+84,����||`�p����||`�p����||`�p����||`�p����||`�p����||`�p����||`�p����||`�p����||`�p����||`�p����||`�p����||`�p����||`�p����||`�p����||`�pets Jul 29 2019 12:21:46
+84,rst:ets Jul 29 2019 12:21:46
+85,rst:ets Jul 29 2019 12:21:46
+85,rst:ets Jul 29 2019 12:21:46
+85,rst:ets Jul 29 2019 12:21:46
+85,rst:ets Jul 29 2019 12:21:46
+85,rst:ets Jul 29 2019 12:21:46
+85,rst:ets Jul 29 2019 12:21:46
+85,rst:ets Jul 29 2019 12:21:46
+85,rst:ets Jul 29 2019 12:21:46
+86,rst:ets Jul 29 2019 12:21:46
+86,rst:ets Jul 29 2019 12:21:46
+86,rst:ets Jul 29 2019 12:21:46
+86,rst:ets Jul 29 2019 12:21:46
+86,rst:ets Jul 29 2019 12:21:46
+86,rst:ets Jul 29 2019 12:21:46
+86,rst:ets Jul 29 2019 12:21:46
+86,rst:ets Jul 29 2019 12:21:46
+87,rst:ets Jul 29 2019 12:21:46
+87,rst:ets Jul 29 2019 12:21:46
+89,rst:0x1 (POWERON_RESET),boot:0x13 (S0x1 (POWERON_RESET),boot:0x13 (S0x1 (POWERON_RESET),boot:0x13 (S0x1 (POWERON_RESET),boot:0x13 (S0x1 (POWERON_RESET),boot:0x13 (S0x1 (POWERON_RESET),boot:0x13 (S0x1 (POWERON_RESET),boot:0x13 (S0x1 (POWERON_RESET),boot:0x13 (S0x1 (POWERON_RESET),boot:0x13 (S0x1 (POWERON_RESET),boot:0x13 (S0x1 (POWERON_RESET),boot:0x13 (S0x1 (POWERON_RESET),boot:0x13 (S0x1 (POWERON_RESET),boot:0x13 (S0x1 (POWERON_RESET),boot:0x13 (S0x1 (POWERON_RESET),boot:0x13 (S0x1 (POWERON_RESET),boot:0x13 (S0x1 (POWERON_RESET),boot:0x13 (S0x1 (POWERON_RESET),boot:0x13 (S0x1 (POWERON_RESET),boot:0x13 (S0x1 (POWERON_RESET),boot:0x13 (S0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+192,configsip: 0, SPIWP:0xee
+192,clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+192,mode:DIO, clock div:2
+192,load:0x3fff0030,len:4640
+192,load:0x40078000,len:15632
+192,load:0x40080400,len:3164
+192,entry 0x4008059c
+837,Lamp_Robot (CPG + hormones) - reset reason 1
+1212,hormone self-test: H1 0.0400 (0.0400)  H2 0.0784 (0.0784)  PASS
+1316,tune alpha 1.1 amp 1 speed 45 object.enter 20 object.exit 25 object.tin 0.5 object.tout 2 afraid.enter 30 afraid.exit 35 afraid.tin 0.2 afraid.tout 1 jolt.enter 10 jolt.exit 14 jolt.tin 0 jolt.tout 1 person.enter 80 person.exit 95 person.tin 1.5 person.tout 3 cam.person_out 10 afraid.calm 3 track.speed 25 track.start 10 track.stop 4 saved
+1419,ToF base (SDA 21 SCL 22): OK
+1453,ToF head (SDA 32 SCL 33): OK
+1454,#  name      type id   min      max      (normal range)    target   cmd      ok  temp
+1454,0  base      MG   14     -90.0    +90.0  ( -90.0.. +90.0)     +0.0     +0.0  y  0
+1475,1  shoulder  STS  1      -58.3    +74.1  ( -58.3.. +74.1)     +0.0     -0.8  y  0
+1476,2  elbow     STS  2     -114.3    +93.3  (-114.3.. +93.3)     +0.0     -0.3  y  0
+1476,3  pitch     STS  3      -70.8    +33.1  ( -70.8.. +33.1)     +0.0     +0.0  y  0
+1581,4  yaw       STS  4      -70.8    +64.4  ( -70.8.. +64.4)     +0.0     -0.3  y  0
+1581,gliding to origin, then WAITING (auto off) - press AUTO in the GUI or type 'auto on' to start
+5246,camera CONNECTED (camera decides person / object)
+5372,E,t_ms,trial_s,cond,kind,what,input_id,latency_s
+5392,data log on (every 1 tick)
+5415,tune alpha 1.1 amp 1 speed 45 object.enter 20 object.exit 25 object.tin 0.5 object.tout 2 afraid.enter 30 afraid.exit 35 afraid.tin 0.2 afraid.tout 1 jolt.enter 10 jolt.exit 14 jolt.tin 0 jolt.tout 1 person.enter 80 person.exit 95 person.tin 1.5 person.tout 3 cam.person_out 10 afraid.calm 3 track.speed 25 track.start 10 track.stop 4 saved
+5810,E,5489,-1.00,C1,outcome,superseded,in_001,
+5810,E,5489,-1.00,C1,input,cam_person_on,in_002,0.250
+6047,emotion -> excited
+6099,E,5743,-1.00,C1,emotion,normal->excited,in_002,0.504
+6099,E,5744,-1.00,C1,rgb_set,excited,in_002,0.505
+6262,E,5939,-1.00,C1,input,cam_object_on,in_003,0.250
+6262,E,5940,-1.00,C1,outcome,superseded,in_003,
+6262,E,5940,-1.00,C1,input,obj_jump_hold_on,in_004,0.000
+6262,E,5945,-1.00,C1,outcome,superseded,in_004,
+6262,E,5945,-1.00,C1,input,object_new_on,in_005,0.000
+6874,E,t_ms,trial_s,cond,kind,what,input_id,latency_s
+6918,data log on (every 1 tick)
+6940,tune alpha 1.1 amp 1 speed 45 object.enter 20 object.exit 25 object.tin 0.5 object.tout 2 afraid.enter 30 afraid.exit 35 afraid.tin 0.2 afraid.tout 1 jolt.enter 10 jolt.exit 14 jolt.tin 0 jolt.tout 1 person.enter 80 person.exit 95 person.tin 1.5 person.tout 3 cam.person_out 10 afraid.calm 3 track.speed 25 track.start 10 track.stop 4 saved
+7597,emotion -> interested
+7619,E,7293,-1.00,C1,emotion,excited->interested,in_005,1.348
+7619,E,7294,-1.00,C1,outcome,preempted,in_002,
+7619,E,7294,-1.00,C1,rgb_set,interested,in_005,1.349
+11353,E,11043,-1.00,C1,input,person_on,in_006,1.500
+12600,E,12295,-1.00,C1,outcome,no_motion,in_005,
+14350,E,14045,-1.00,C1,outcome,no_state_change,in_006,
+14605,E,14293,-1.00,C1,input,person_off,in_007,3.000
+14747,E,14393,-1.00,C1,outcome,superseded,in_007,
+14747,E,14394,-1.00,C1,input,afraid_on,in_008,0.151
+16611,E,16293,-1.00,C1,outcome,superseded,in_008,
+16611,E,16294,-1.00,C1,input,afraid_off,in_009,0.951
+16753,E,16443,-1.00,C1,outcome,superseded,in_009,
+16753,E,16444,-1.00,C1,input,object_on,in_010,0.450
+19306,E,18993,-1.00,C1,outcome,superseded,in_010,
+19306,E,18994,-1.00,C1,input,object_off,in_011,2.001
+21410,E,21089,-1.00,C1,outcome,superseded,in_011,
+21410,E,21089,-1.00,C1,input,cam_person_off,in_012,9.950
+21635,auto on
+21705,emotion back to automatic
+22960,E,22639,-1.00,C1,outcome,superseded,in_012,
+22960,E,22639,-1.00,C1,input,cam_object_off,in_013,0.950
+22960,emotion -> happy
+22960,E,22645,-1.00,C1,emotion,interested->happy,in_013,0.956
+22960,E,22646,-1.00,C1,rgb_set,happy,in_013,0.957
+23000,E,22650,-1.00,C1,motion_onset,happy,in_013,0.961
+24404,E,24089,-1.00,C1,input,cam_object_on,in_014,0.250
+24404,E,24090,-1.00,C1,outcome,superseded,in_014,
+24404,E,24090,-1.00,C1,input,obj_jump_hold_on,in_015,0.000
+24450,E,24095,-1.00,C1,outcome,superseded,in_015,
+24450,E,24095,-1.00,C1,input,object_new_on,in_016,0.000
+24503,emotion -> interested
+24503,E,24194,-1.00,C1,emotion,happy->interested,in_016,0.098
+24549,E,24194,-1.00,C1,rgb_set,interested,in_016,0.099
+24549,E,24199,-1.00,C1,motion_onset,interested,in_016,0.104
+25901,E,25589,-1.00,C1,input,cam_object_off,in_017,0.950
+26005,E,25689,-1.00,C1,outcome,superseded,in_017,
+26005,E,25689,-1.00,C1,input,cam_person_on,in_018,0.250
+26005,emotion -> excited
+26030,E,25694,-1.00,C1,emotion,interested->excited,in_018,0.255
+26030,E,25695,-1.00,C1,rgb_set,excited,in_018,0.256
+26030,E,25700,-1.00,C1,motion_onset,excited,in_018,0.261
+28362,E,28039,-1.00,C1,input,cam_object_on,in_019,0.250
+28362,E,28039,-1.00,C1,outcome,superseded,in_019,
+28362,E,28040,-1.00,C1,input,obj_jump_hold_on,in_020,0.001
+28362,E,28044,-1.00,C1,outcome,superseded,in_020,
+28362,E,28045,-1.00,C1,input,object_new_on,in_021,0.001
+28362,emotion -> interested
+28384,E,28046,-1.00,C1,emotion,excited->interested,in_021,0.002
+28384,E,28046,-1.00,C1,rgb_set,interested,in_021,0.002
+28384,E,28051,-1.00,C1,motion_onset,interested,in_021,0.007
+29854,E,29539,-1.00,C1,input,cam_object_off,in_022,0.950
+29906,emotion -> excited
+29906,E,29594,-1.00,C1,emotion,interested->excited,in_022,1.004
+29906,E,29594,-1.00,C1,rgb_set,excited,in_022,1.005
+29950,E,29599,-1.00,C1,motion_onset,excited,in_022,1.010
+31467,emotion -> happy
+31467,E,31143,-1.00,C1,emotion,excited->happy,,
+31467,E,31144,-1.00,C1,rgb_set,happy,,
+31467,E,31148,-1.00,C1,motion_onset,happy,,
+31660,E,31339,-1.00,C1,input,cam_object_on,in_023,0.250
+31660,E,31340,-1.00,C1,outcome,superseded,in_023,
+31660,E,31340,-1.00,C1,input,obj_jump_hold_on,in_024,0.000
+31660,E,31345,-1.00,C1,outcome,superseded,in_024,
+31703,E,31345,-1.00,C1,input,object_new_on,in_025,0.001
+32997,emotion -> interested
+33019,E,32693,-1.00,C1,emotion,happy->interested,in_025,1.349
+33019,E,32694,-1.00,C1,rgb_set,interested,in_025,1.350
+33019,E,32699,-1.00,C1,motion_onset,interested,in_025,1.355
+34305,E,33939,-1.00,C1,input,cam_object_off,in_026,0.950
+34561,emotion -> happy
+34561,E,34243,-1.00,C1,emotion,interested->happy,in_026,1.254
+34561,E,34244,-1.00,C1,rgb_set,happy,in_026,1.255
+34561,E,34249,-1.00,C1,motion_onset,happy,in_026,1.260
+36010,E,35689,-1.00,C1,input,cam_object_on,in_027,0.250
+36010,E,35690,-1.00,C1,outcome,superseded,in_027,
+36010,E,35690,-1.00,C1,input,obj_jump_hold_on,in_028,0.000
+36010,object 2 seen recently (boredom 0.26) -> not interested
+36047,E,35695,-1.00,C1,outcome,superseded,in_028,
+36047,E,35696,-1.00,C1,input,object_familiar_on,in_029,0.001
+36100,emotion -> bored
+36100,E,35794,-1.00,C1,emotion,happy->bored,in_029,0.098
+36148,E,35794,-1.00,C1,rgb_set,bored,in_029,0.099
+36148,E,35799,-1.00,C1,motion_onset,bored,in_029,0.104
+37600,E,37239,-1.00,C1,input,cam_object_off,in_030,0.950
+37655,emotion -> happy
+37655,E,37342,-1.00,C1,emotion,bored->happy,in_030,1.053
+37655,E,37343,-1.00,C1,rgb_set,happy,in_030,1.054
+37700,E,37348,-1.00,C1,motion_onset,happy,in_030,1.059
+39101,E,38789,-1.00,C1,input,cam_object_on,in_031,0.250
+39101,E,38789,-1.00,C1,outcome,superseded,in_031,
+39101,E,38790,-1.00,C1,input,obj_jump_hold_on,in_032,0.001
+39123,object 2 seen recently (boredom 0.27) -> not interested
+39123,E,38795,-1.00,C1,outcome,superseded,in_032,
+39123,E,38795,-1.00,C1,input,object_familiar_on,in_033,0.000
+39159,emotion -> bored
+39159,E,38844,-1.00,C1,emotion,happy->bored,in_033,0.049
+39159,E,38845,-1.00,C1,rgb_set,bored,in_033,0.050
+39159,E,38849,-1.00,C1,motion_onset,bored,in_033,0.054
+40550,E,40189,-1.00,C1,input,cam_object_off,in_034,0.950
+40695,emotion -> happy
+40717,E,40394,-1.00,C1,emotion,bored->happy,in_034,1.154
+40717,E,40394,-1.00,C1,rgb_set,happy,in_034,1.155
+40717,E,40399,-1.00,C1,motion_onset,happy,in_034,1.160
+42215,E,41889,-1.00,C1,input,cam_object_on,in_035,0.250
+42215,E,41889,-1.00,C1,outcome,superseded,in_035,
+42215,E,41890,-1.00,C1,input,obj_jump_hold_on,in_036,0.001
+42215,object 2 seen recently (boredom 0.28) -> not interested
+42215,E,41895,-1.00,C1,outcome,superseded,in_036,
+42237,E,41895,-1.00,C1,input,object_familiar_on,in_037,0.000
+42237,emotion -> bored
+42237,E,41896,-1.00,C1,emotion,happy->bored,in_037,0.001
+42237,E,41897,-1.00,C1,rgb_set,bored,in_037,0.002
+42237,E,41901,-1.00,C1,motion_onset,bored,in_037,0.006
+43351,E,43039,-1.00,C1,input,cam_object_off,in_038,0.950
+43758,emotion -> happy
+43758,E,43443,-1.00,C1,emotion,bored->happy,in_038,1.354
+43758,E,43444,-1.00,C1,rgb_set,happy,in_038,1.355
+43758,E,43449,-1.00,C1,motion_onset,happy,in_038,1.360
+47301,E,46989,-1.00,C1,input,cam_object_on,in_039,0.250
+47301,E,46989,-1.00,C1,outcome,superseded,in_039,
+47323,E,46990,-1.00,C1,input,obj_jump_hold_on,in_040,0.001
+47323,object 2 seen recently (boredom 0.28) -> not interested
+47324,E,46995,-1.00,C1,outcome,superseded,in_040,
+47324,E,46995,-1.00,C1,input,object_familiar_on,in_041,0.000
+47324,emotion -> bored
+47324,E,46996,-1.00,C1,emotion,happy->bored,in_041,0.001
+47343,E,46997,-1.00,C1,rgb_set,bored,in_041,0.002
+47343,E,47001,-1.00,C1,motion_onset,bored,in_041,0.006
+48652,E,48339,-1.00,C1,input,cam_object_off,in_042,0.950
+48853,emotion -> happy
+48853,E,48544,-1.00,C1,emotion,bored->happy,in_042,1.154
+48853,E,48544,-1.00,C1,rgb_set,happy,in_042,1.155
+48900,E,48549,-1.00,C1,motion_onset,happy,in_042,1.160
+54193,E,53889,-1.00,C1,input,cam_object_on,in_043,0.250
+54215,E,53889,-1.00,C1,outcome,superseded,in_043,
+54215,E,53890,-1.00,C1,input,obj_jump_hold_on,in_044,0.001
+54215,object 2 seen recently (boredom 0.27) -> not interested
+54215,E,53895,-1.00,C1,outcome,superseded,in_044,
+54215,E,53896,-1.00,C1,input,object_familiar_on,in_045,0.001
+54237,emotion -> bored
+54237,E,53896,-1.00,C1,emotion,happy->bored,in_045,0.001
+54237,E,53897,-1.00,C1,rgb_set,bored,in_045,0.002
+54237,E,53902,-1.00,C1,motion_onset,bored,in_045,0.007
+55560,E,55239,-1.00,C1,input,cam_object_off,in_046,0.950
+55761,emotion -> happy
+55761,E,55443,-1.00,C1,emotion,bored->happy,in_046,1.154
+55761,E,55444,-1.00,C1,rgb_set,happy,in_046,1.155
+55761,E,55450,-1.00,C1,motion_onset,happy,in_046,1.161
+57354,E,57039,-1.00,C1,input,cam_object_on,in_047,0.250
+57354,E,57040,-1.00,C1,outcome,superseded,in_047,
+57354,E,57040,-1.00,C1,input,obj_jump_hold_on,in_048,0.000
+57376,object 2 seen recently (boredom 0.28) -> not interested
+57376,E,57045,-1.00,C1,outcome,superseded,in_048,
+57376,E,57046,-1.00,C1,input,object_familiar_on,in_049,0.001
+57376,emotion -> bored
+57376,E,57047,-1.00,C1,emotion,happy->bored,in_049,0.001
+57376,E,57047,-1.00,C1,rgb_set,bored,in_049,0.002
+57400,E,57052,-1.00,C1,motion_onset,bored,in_049,0.007
+58652,E,58339,-1.00,C1,input,cam_object_off,in_050,0.950
+58909,emotion -> happy
+58909,E,58593,-1.00,C1,emotion,bored->happy,in_050,1.204
+58909,E,58594,-1.00,C1,rgb_set,happy,in_050,1.205
+58909,E,58599,-1.00,C1,motion_onset,happy,in_050,1.210
+62715,E,62389,-1.00,C1,input,cam_object_on,in_051,0.250
+62715,E,62389,-1.00,C1,outcome,superseded,in_051,
+62715,E,62390,-1.00,C1,input,obj_jump_hold_on,in_052,0.001
+62715,object 2 seen recently (boredom 0.27) -> not interested
+62715,E,62395,-1.00,C1,outcome,superseded,in_052,
+62737,E,62396,-1.00,C1,input,object_familiar_on,in_053,0.000
+62737,emotion -> bored
+62737,E,62396,-1.00,C1,emotion,happy->bored,in_053,0.001
+62737,E,62397,-1.00,C1,rgb_set,bored,in_053,0.002
+62737,E,62401,-1.00,C1,motion_onset,bored,in_053,0.006
+62999,!!! STOP: STS torque off, MG pulses off. 'resume' to continue
+64102,E,63739,-1.00,C1,input,cam_object_off,in_054,0.950
+64250,emotion -> happy
+64295,E,63943,-1.00,C1,emotion,bored->happy,in_054,1.154
+64295,E,63944,-1.00,C1,rgb_set,happy,in_054,1.155
+64295,auto on
+64295,emotion happy
+64350,E,63993,-1.00,C1,input,afraid_on,in_055,0.150
+64911,E,64593,-1.00,C1,outcome,superseded,in_055,
+64911,E,64594,-1.00,C1,input,object_on,in_056,0.451
+67109,E,66793,-1.00,C1,outcome,superseded,in_056,
+67109,E,66794,-1.00,C1,input,afraid_off,in_057,0.951
+68000,E,67693,-1.00,C1,outcome,superseded,in_057,
+68049,E,67694,-1.00,C1,input,person_on,in_058,1.501
+68550,E,68193,-1.00,C1,outcome,superseded,in_058,
+68550,E,68194,-1.00,C1,input,object_off,in_059,2.001
+69343,E,68994,-1.00,C1,outcome,no_motion,in_054,
+69343,E,69039,-1.00,C1,outcome,superseded,in_059,
+69365,E,69039,-1.00,C1,input,cam_object_on,in_060,0.250
+69365,E,69040,-1.00,C1,outcome,superseded,in_060,
+69365,E,69040,-1.00,C1,input,obj_jump_hold_on,in_061,0.000
+69365,object 2 seen recently (boredom 0.26) -> not interested
+69365,E,69044,-1.00,C1,outcome,superseded,in_061,
+69400,E,69045,-1.00,C1,input,object_familiar_on,in_062,0.001
+70289,auto on
+70314,emotion normal
+70314,emotion -> normal
+70314,E,69994,-1.00,C1,emotion,happy->normal,in_062,0.949
+70314,E,69994,-1.00,C1,rgb_set,normal,in_062,0.950
+71353,E,71043,-1.00,C1,input,person_off,in_063,3.000
+72721,shoulder held at  +22.9 deg
+72721,elbow    held at  -30.4 deg
+72721,pitch    held at   +0.9 deg
+72721,yaw      held at   -0.7 deg
+72765,resumed: HOLDING this pose (auto off). 'save <emotion>' to store it, 'auto on' to continue
+72765,E,72449,-1.00,C1,motion_onset,normal,in_062,3.405
+74361,E,74045,-1.00,C1,outcome,no_state_change,in_063,
+75212,auto on
+75212,emotion excited
+75212,emotion -> excited
+75212,E,74894,-1.00,C1,emotion,normal->excited,,
+75212,E,74894,-1.00,C1,rgb_set,excited,,
+75212,E,74899,-1.00,C1,motion_onset,excited,,
+77164,auto on
+77164,emotion normal
+77164,emotion -> normal
+77164,E,76844,-1.00,C1,emotion,excited->normal,,
+77164,E,76844,-1.00,C1,rgb_set,normal,,
+77164,E,76849,-1.00,C1,motion_onset,normal,,
+80362,auto on
+80362,emotion interested
+80362,emotion -> interested
+80362,E,80044,-1.00,C1,emotion,normal->interested,,
+80362,E,80044,-1.00,C1,rgb_set,interested,,
+80362,E,80049,-1.00,C1,motion_onset,interested,,
+81703,E,81339,-1.00,C1,input,cam_object_off,in_064,0.950
+82366,E,82043,-1.00,C1,outcome,superseded,in_064,
+82366,E,82044,-1.00,C1,input,afraid_on,in_065,0.151
+84145,auto on
+84145,emotion bored
+84145,emotion -> bored
+84167,E,83844,-1.00,C1,emotion,interested->bored,in_065,1.950
+84167,E,83844,-1.00,C1,rgb_set,bored,in_065,1.951
+84167,E,83849,-1.00,C1,motion_onset,bored,in_065,1.956
+91506,E,91139,-1.00,C1,input,cam_person_off,in_066,9.950
+94466,E,94147,-1.00,C1,outcome,no_state_change,in_066,
+99201,auto on
+99201,emotion normal
+99201,emotion -> normal
+99201,E,98894,-1.00,C1,emotion,bored->normal,,
+99250,E,98894,-1.00,C1,rgb_set,normal,,
+99250,E,98899,-1.00,C1,motion_onset,normal,,
+101007,E,100693,-1.00,C1,input,afraid_off,in_067,0.950
+101952,E,101639,-1.00,C1,outcome,superseded,in_067,
+101952,E,101639,-1.00,C1,input,cam_object_on,in_068,0.250
+101974,E,101640,-1.00,C1,outcome,superseded,in_068,
+101974,E,101640,-1.00,C1,input,obj_jump_hold_on,in_069,0.000
+101974,object 2 seen recently (boredom 0.29) -> not interested
+101974,E,101645,-1.00,C1,outcome,superseded,in_069,
+101974,E,101646,-1.00,C1,input,object_familiar_on,in_070,0.001
+102209,auto on
+102209,emotion afraid
+102209,emotion -> afraid
+102209,E,101894,-1.00,C1,emotion,normal->afraid,in_070,0.248
+102209,E,101895,-1.00,C1,rgb_set,afraid,in_070,0.250
+102652,WARN shoulder warm 56 C: rhythm fading out
+102853,E,102489,-1.00,C1,input,cam_person_on,in_071,0.250
+103453,E,103147,-1.00,C1,motion_onset,afraid,in_070,1.502
+103559,E,103243,-1.00,C1,outcome,superseded,in_071,
+103559,E,103244,-1.00,C1,input,afraid_on,in_072,0.151
+104800,E,104439,-1.00,C1,outcome,superseded,in_072,
+104800,E,104439,-1.00,C1,input,cam_object_off,in_073,0.950
+106462,E,106143,-1.00,C1,outcome,superseded,in_073,
+106462,E,106144,-1.00,C1,input,afraid_off,in_074,0.951
+107259,E,106943,-1.00,C1,outcome,superseded,in_074,
+107259,E,106944,-1.00,C1,input,object_on,in_075,0.451
+107605,E,107289,-1.00,C1,outcome,superseded,in_075,
+107605,E,107289,-1.00,C1,input,cam_object_on,in_076,0.250
+107605,E,107290,-1.00,C1,outcome,superseded,in_076,
+107627,E,107290,-1.00,C1,input,obj_jump_hold_on,in_077,0.000
+107627,object 2 seen recently (boredom 0.30) -> not interested
+107627,E,107295,-1.00,C1,outcome,superseded,in_077,
+107627,E,107296,-1.00,C1,input,object_familiar_on,in_078,0.001
+110115,E,109793,-1.00,C1,outcome,superseded,in_078,
+110115,E,109794,-1.00,C1,input,object_off,in_079,2.001
+113114,E,112797,-1.00,C1,outcome,no_state_change,in_079,
+115301,auto on
+115301,emotion sleepy
+115301,emotion -> sleepy
+115301,E,114994,-1.00,C1,emotion,afraid->sleepy,,
+115349,E,114994,-1.00,C1,rgb_set,sleepy,,
+115349,E,114999,-1.00,C1,motion_onset,sleepy,,
+118849,E,118489,-1.00,C1,input,cam_object_off,in_080,0.950
+120616,E,120293,-1.00,C1,outcome,superseded,in_080,
+120616,E,120294,-1.00,C1,input,afraid_on,in_081,0.151
+120999,sleeping: motors off
+123653,E,123344,-1.00,C1,outcome,no_state_change,in_081,
+126110,WARN no reply: elbow (ID 2)
+126169,WARN no reply: pitch (ID 3)
+126226,WARN no reply: yaw (ID 4)
+126310,WARN no reply: shoulder (ID 1)
+129606,loop: 13 ticks/s, worst 272080 us, overruns 3
+129707,E,129290,-1.00,C1,input,cam_person_off,in_082,10.501
+130740,loop: 2 ticks/s, worst 518970 us, overruns 2
+131763,loop: 2 ticks/s, worst 518925 us, overruns 2
+132748,E,132426,-1.00,C1,outcome,no_state_change,in_082,
+132851,loop: 2 ticks/s, worst 519274 us, overruns 2
+133877,loop: 2 ticks/s, worst 518921 us, overruns 2
+134904,loop: 2 ticks/s, worst 518935 us, overruns 2
+135936,loop: 2 ticks/s, worst 518909 us, overruns 2
+136937,E,136606,-1.00,C1,input,afraid_off,in_083,8.163
+137040,loop: 2 ticks/s, worst 519633 us, overruns 2
+138077,loop: 2 ticks/s, worst 518932 us, overruns 2
+139115,loop: 2 ticks/s, worst 518909 us, overruns 2
+140084,E,139762,-1.00,C1,outcome,no_state_change,in_083,
+140188,loop: 2 ticks/s, worst 519286 us, overruns 2
+141213,loop: 2 ticks/s, worst 518909 us, overruns 2
+142248,loop: 2 ticks/s, worst 518920 us, overruns 2
+143281,loop: 2 ticks/s, worst 518912 us, overruns 2
+144290,loop: 2 ticks/s, worst 518918 us, overruns 2
+145381,loop: 2 ticks/s, worst 518805 us, overruns 2
+146408,loop: 2 ticks/s, worst 518929 us, overruns 2
+147440,loop: 2 ticks/s, worst 518937 us, overruns 2
+148463,loop: 2 ticks/s, worst 520992 us, overruns 2
+149599,loop: 2 ticks/s, worst 518894 us, overruns 2
+150642,loop: 2 ticks/s, worst 518902 us, overruns 2
+151673,loop: 2 ticks/s, worst 518905 us, overruns 2
+152712,loop: 2 ticks/s, worst 518920 us, overruns 2
+153747,loop: 2 ticks/s, worst 518923 us, overruns 2
+154779,loop: 2 ticks/s, worst 518919 us, overruns 2
+155808,loop: 2 ticks/s, worst 518914 us, overruns 2
+156939,loop: 2 ticks/s, worst 518912 us, overruns 2
+157971,loop: 2 ticks/s, worst 518907 us, overruns 2
+159011,loop: 2 ticks/s, worst 518903 us, overruns 2
+160040,loop: 2 ticks/s, worst 518915 us, overruns 2
+161077,loop: 2 ticks/s, worst 518907 us, overruns 2
+162112,loop: 2 ticks/s, worst 518906 us, overruns 2
+163138,loop: 2 ticks/s, worst 518912 us, overruns 2
+164277,loop: 2 ticks/s, worst 518937 us, overruns 2
+165312,loop: 2 ticks/s, worst 518922 us, overruns 2
+166349,loop: 2 ticks/s, worst 518854 us, overruns 2
+167387,loop: 2 ticks/s, worst 518909 us, overruns 2
+168416,loop: 2 ticks/s, worst 518923 us, overruns 2
+169454,loop: 2 ticks/s, worst 518921 us, overruns 2
+170495,loop: 2 ticks/s, worst 518933 us, overruns 2
+171523,loop: 2 ticks/s, worst 518939 us, overruns 2
+172653,loop: 2 ticks/s, worst 518938 us, overruns 2
+173691,loop: 2 ticks/s, worst 518903 us, overruns 2
+174720,loop: 2 ticks/s, worst 518909 us, overruns 2
+175758,loop: 2 ticks/s, worst 518908 us, overruns 2
+176792,loop: 2 ticks/s, worst 518912 us, overruns 2
+177819,loop: 2 ticks/s, worst 518917 us, overruns 2
+178944,loop: 2 ticks/s, worst 518907 us, overruns 2
+179979,loop: 2 ticks/s, worst 518903 us, overruns 2
+181006,loop: 2 ticks/s, worst 518586 us, overruns 2
+182037,loop: 2 ticks/s, worst 518922 us, overruns 2
+183079,loop: 2 ticks/s, worst 520914 us, overruns 2
+184112,loop: 2 ticks/s, worst 518916 us, overruns 2
+185149,loop: 2 ticks/s, worst 518908 us, overruns 2
+186277,loop: 2 ticks/s, worst 518928 us, overruns 2
+187315,loop: 2 ticks/s, worst 518931 us, overruns 2
+188333,loop: 2 ticks/s, worst 518928 us, overruns 2
+189366,loop: 2 ticks/s, worst 518923 us, overruns 2
+190405,loop: 2 ticks/s, worst 518905 us, overruns 2
+191436,loop: 2 ticks/s, worst 518915 us, overruns 2
+192565,loop: 2 ticks/s, worst 518909 us, overruns 2
+193599,loop: 2 ticks/s, worst 518828 us, overruns 2
+194631,loop: 2 ticks/s, worst 518888 us, overruns 2
+195669,loop: 2 ticks/s, worst 518993 us, overruns 2
+196704,loop: 2 ticks/s, worst 518899 us, overruns 2
+197739,loop: 2 ticks/s, worst 518915 us, overruns 2
+198777,loop: 2 ticks/s, worst 518912 us, overruns 2
+199817,loop: 2 ticks/s, worst 518908 us, overruns 2
+200946,loop: 2 ticks/s, worst 518908 us, overruns 2
+201971,loop: 2 ticks/s, worst 518920 us, overruns 2
+203011,loop: 2 ticks/s, worst 518937 us, overruns 2
+204043,loop: 2 ticks/s, worst 518927 us, overruns 2
+205075,loop: 2 ticks/s, worst 518930 us, overruns 2
+206203,loop: 2 ticks/s, worst 518924 us, overruns 2
+207236,loop: 2 ticks/s, worst 518916 us, overruns 2
+208261,loop: 2 ticks/s, worst 518928 us, overruns 2
+209293,loop: 2 ticks/s, worst 518924 us, overruns 2
+210316,loop: 2 ticks/s, worst 518917 us, overruns 2
+211346,loop: 2 ticks/s, worst 518838 us, overruns 2
+212477,loop: 2 ticks/s, worst 518931 us, overruns 2
+213510,loop: 2 ticks/s, worst 518932 us, overruns 2
+214545,loop: 2 ticks/s, worst 518913 us, overruns 2
+215576,loop: 2 ticks/s, worst 518912 us, overruns 2
+216602,loop: 2 ticks/s, worst 518927 us, overruns 2
+217735,loop: 2 ticks/s, worst 518927 us, overruns 2
+218772,loop: 2 ticks/s, worst 520926 us, overruns 2
+219803,loop: 2 ticks/s, worst 518932 us, overruns 2
+220837,loop: 2 ticks/s, worst 518612 us, overruns 2
+221867,loop: 2 ticks/s, worst 518909 us, overruns 2
+222907,loop: 2 ticks/s, worst 518909 us, overruns 2
+223939,loop: 2 ticks/s, worst 518909 us, overruns 2
+224976,loop: 2 ticks/s, worst 518848 us, overruns 2
+226104,loop: 2 ticks/s, worst 518939 us, overruns 2
+227126,loop: 2 ticks/s, worst 518919 us, overruns 2
+228165,loop: 2 ticks/s, worst 518938 us, overruns 2
+229197,loop: 2 ticks/s, worst 518931 us, overruns 2
+230232,loop: 2 ticks/s, worst 518932 us, overruns 2
+231360,loop: 2 ticks/s, worst 518922 us, overruns 2
+232392,loop: 2 ticks/s, worst 518909 us, overruns 2
+233424,loop: 2 ticks/s, worst 518921 us, overruns 2
+234440,loop: 2 ticks/s, worst 518909 us, overruns 2
+235475,loop: 2 ticks/s, worst 518906 us, overruns 2
+236497,loop: 2 ticks/s, worst 518927 us, overruns 2
+237629,loop: 2 ticks/s, worst 518932 us, overruns 2
+238664,loop: 2 ticks/s, worst 518927 us, overruns 2
+239699,loop: 2 ticks/s, worst 518852 us, overruns 2
+240730,loop: 2 ticks/s, worst 518830 us, overruns 2
+241764,loop: 2 ticks/s, worst 518923 us, overruns 2
+242793,loop: 2 ticks/s, worst 518901 us, overruns 2
+243934,loop: 2 ticks/s, worst 519001 us, overruns 2
+244969,loop: 2 ticks/s, worst 518926 us, overruns 2
+246005,loop: 2 ticks/s, worst 518908 us, overruns 2
+247045,loop: 2 ticks/s, worst 518911 us, overruns 2
+248077,loop: 2 ticks/s, worst 518924 us, overruns 2
+249101,loop: 2 ticks/s, worst 518895 us, overruns 2
+250163,loop: 2 ticks/s, worst 518912 us, overruns 2
+251192,loop: 2 ticks/s, worst 518908 us, overruns 2
+252324,loop: 2 ticks/s, worst 518911 us, overruns 2
+253363,loop: 2 ticks/s, worst 521042 us, overruns 2
+254393,loop: 2 ticks/s, worst 518907 us, overruns 2
+255432,loop: 2 ticks/s, worst 518899 us, overruns 2
+256467,loop: 2 ticks/s, worst 518891 us, overruns 2
+257501,loop: 2 ticks/s, worst 518890 us, overruns 2
+258544,loop: 2 ticks/s, worst 518900 us, overruns 2
+259571,loop: 2 ticks/s, worst 518893 us, overruns 2
+260693,loop: 2 ticks/s, worst 518921 us, overruns 2
+261728,loop: 2 ticks/s, worst 518921 us, overruns 2
+262763,loop: 2 ticks/s, worst 518929 us, overruns 2
+263787,loop: 2 ticks/s, worst 518903 us, overruns 2
+264816,loop: 2 ticks/s, worst 518899 us, overruns 2
+265846,loop: 2 ticks/s, worst 518903 us, overruns 2
+266979,loop: 2 ticks/s, worst 518925 us, overruns 2
+268005,loop: 2 ticks/s, worst 518837 us, overruns 2
+269041,loop: 2 ticks/s, worst 518925 us, overruns 2
+270072,loop: 2 ticks/s, worst 518897 us, overruns 2
+271107,loop: 2 ticks/s, worst 518903 us, overruns 2
+272144,loop: 2 ticks/s, worst 518917 us, overruns 2
+273276,loop: 2 ticks/s, worst 518911 us, overruns 2
+274301,loop: 2 ticks/s, worst 518921 us, overruns 2
+275344,loop: 2 ticks/s, worst 518924 us, overruns 2
+276376,loop: 2 ticks/s, worst 518919 us, overruns 2
+277413,loop: 2 ticks/s, worst 518920 us, overruns 2
+278444,loop: 2 ticks/s, worst 518929 us, overruns 2
+279474,loop: 2 ticks/s, worst 518695 us, overruns 2
+280600,loop: 2 ticks/s, worst 518929 us, overruns 2
+281640,loop: 2 ticks/s, worst 518907 us, overruns 2
+282675,loop: 2 ticks/s, worst 518904 us, overruns 2
+283707,loop: 2 ticks/s, worst 518919 us, overruns 2
+284752,loop: 2 ticks/s, worst 518930 us, overruns 2
+285790,loop: 2 ticks/s, worst 518928 us, overruns 2
+286827,loop: 2 ticks/s, worst 518920 us, overruns 2
+287949,loop: 2 ticks/s, worst 521023 us, overruns 2
+288987,loop: 2 ticks/s, worst 518904 us, overruns 2
+290022,loop: 2 ticks/s, worst 518923 us, overruns 2
+291053,loop: 2 ticks/s, worst 518833 us, overruns 2
+292094,loop: 2 ticks/s, worst 518924 us, overruns 2
+293131,loop: 2 ticks/s, worst 518945 us, overruns 2
+294168,loop: 2 ticks/s, worst 518925 us, overruns 2
+295200,loop: 2 ticks/s, worst 518914 us, overruns 2
+296333,loop: 2 ticks/s, worst 518900 us, overruns 2
+297365,loop: 2 ticks/s, worst 518898 us, overruns 2
+298398,loop: 2 ticks/s, worst 518874 us, overruns 2
+299433,loop: 2 ticks/s, worst 518820 us, overruns 2
+300473,loop: 2 ticks/s, worst 518908 us, overruns 2
+301503,loop: 2 ticks/s, worst 518820 us, overruns 2
+302535,loop: 2 ticks/s, worst 518818 us, overruns 2
+303667,loop: 2 ticks/s, worst 518843 us, overruns 2
+304691,loop: 2 ticks/s, worst 518923 us, overruns 2
+305731,loop: 2 ticks/s, worst 518910 us, overruns 2
+306771,loop: 2 ticks/s, worst 518882 us, overruns 2
+307803,loop: 2 ticks/s, worst 518903 us, overruns 2
+308843,loop: 2 ticks/s, worst 518892 us, overruns 2
+309864,loop: 2 ticks/s, worst 518882 us, overruns 2
+310995,loop: 2 ticks/s, worst 518898 us, overruns 2
+312037,loop: 2 ticks/s, worst 518905 us, overruns 2
+313070,loop: 2 ticks/s, worst 518908 us, overruns 2
+314101,loop: 2 ticks/s, worst 518908 us, overruns 2
+315125,loop: 2 ticks/s, worst 518898 us, overruns 2
+316168,loop: 2 ticks/s, worst 518909 us, overruns 2
+317200,loop: 2 ticks/s, worst 518890 us, overruns 2
+318336,loop: 2 ticks/s, worst 518908 us, overruns 2
+319377,loop: 2 ticks/s, worst 518907 us, overruns 2
+320408,loop: 2 ticks/s, worst 518936 us, overruns 2
+321448,loop: 2 ticks/s, worst 518911 us, overruns 2
+322488,loop: 2 ticks/s, worst 518925 us, overruns 2
+323526,loop: 2 ticks/s, worst 520945 us, overruns 2
+324550,loop: 2 ticks/s, worst 518925 us, overruns 2
+325672,loop: 2 ticks/s, worst 518935 us, overruns 2
+326696,loop: 2 ticks/s, worst 518933 us, overruns 2
+327730,loop: 2 ticks/s, worst 518935 us, overruns 2
+328755,loop: 2 ticks/s, worst 518816 us, overruns 2
+329784,loop: 2 ticks/s, worst 518910 us, overruns 2
+330918,loop: 2 ticks/s, worst 518910 us, overruns 2
+331950,loop: 2 ticks/s, worst 518915 us, overruns 2
+332982,loop: 2 ticks/s, worst 518923 us, overruns 2
+334011,loop: 2 ticks/s, worst 518935 us, overruns 2
+335040,loop: 2 ticks/s, worst 518933 us, overruns 2
+336070,loop: 2 ticks/s, worst 518939 us, overruns 2
+337198,loop: 2 ticks/s, worst 518935 us, overruns 2
+338232,loop: 2 ticks/s, worst 518909 us, overruns 2
+339262,loop: 2 ticks/s, worst 518908 us, overruns 2
+340294,loop: 2 ticks/s, worst 518910 us, overruns 2
+341331,loop: 2 ticks/s, worst 518922 us, overruns 2
+342355,loop: 2 ticks/s, worst 518905 us, overruns 2
+343491,loop: 2 ticks/s, worst 518831 us, overruns 2
+344523,loop: 2 ticks/s, worst 518936 us, overruns 2
+345555,loop: 2 ticks/s, worst 518937 us, overruns 2
+346584,loop: 2 ticks/s, worst 518914 us, overruns 2
+347624,loop: 2 ticks/s, worst 518898 us, overruns 2
+348656,loop: 2 ticks/s, worst 518911 us, overruns 2
+349787,loop: 2 ticks/s, worst 518906 us, overruns 2
+350819,loop: 2 ticks/s, worst 518925 us, overruns 2
+351855,loop: 2 ticks/s, worst 518915 us, overruns 2
+352888,loop: 2 ticks/s, worst 518924 us, overruns 2
+353923,loop: 2 ticks/s, worst 518895 us, overruns 2
+354969,loop: 2 ticks/s, worst 518910 us, overruns 2
+356006,loop: 2 ticks/s, worst 518898 us, overruns 2
+357046,loop: 2 ticks/s, worst 518596 us, overruns 2
+358085,loop: 2 ticks/s, worst 520897 us, overruns 2
+359217,loop: 2 ticks/s, worst 518929 us, overruns 2
+360252,loop: 2 ticks/s, worst 518921 us, overruns 2
+361286,loop: 2 ticks/s, worst 518907 us, overruns 2
+362323,loop: 2 ticks/s, worst 518898 us, overruns 2
+363355,loop: 2 ticks/s, worst 518887 us, overruns 2
+364387,loop: 2 ticks/s, worst 518891 us, overruns 2
+365414,loop: 2 ticks/s, worst 518902 us, overruns 2
+366543,loop: 2 ticks/s, worst 518893 us, overruns 2
+367569,loop: 2 ticks/s, worst 518886 us, overruns 2
+368598,loop: 2 ticks/s, worst 518913 us, overruns 2
+369638,loop: 2 ticks/s, worst 518911 us, overruns 2
+370673,loop: 2 ticks/s, worst 518901 us, overruns 2
+371706,loop: 2 ticks/s, worst 518886 us, overruns 2
+372838,loop: 2 ticks/s, worst 518921 us, overruns 2
+373870,loop: 2 ticks/s, worst 518913 us, overruns 2
+374907,loop: 2 ticks/s, worst 518855 us, overruns 2
+375939,loop: 2 ticks/s, worst 518938 us, overruns 2
+376966,loop: 2 ticks/s, worst 518937 us, overruns 2
+378016,loop: 2 ticks/s, worst 518911 us, overruns 2
+379046,loop: 2 ticks/s, worst 518902 us, overruns 2
+380168,loop: 2 ticks/s, worst 518911 us, overruns 2
+381206,loop: 2 ticks/s, worst 518921 us, overruns 2
+382238,loop: 2 ticks/s, worst 518925 us, overruns 2
+383270,loop: 2 ticks/s, worst 518917 us, overruns 2
+384302,loop: 2 ticks/s, worst 518982 us, overruns 2
+385319,loop: 2 ticks/s, worst 518940 us, overruns 2
+386451,loop: 2 ticks/s, worst 518940 us, overruns 2
+387478,loop: 2 ticks/s, worst 518925 us, overruns 2
+388504,loop: 2 ticks/s, worst 518910 us, overruns 2
+389528,loop: 2 ticks/s, worst 518914 us, overruns 2
+390560,loop: 2 ticks/s, worst 518910 us, overruns 2
+391683,loop: 2 ticks/s, worst 518914 us, overruns 2
+392712,loop: 2 ticks/s, worst 521049 us, overruns 2
+393739,loop: 2 ticks/s, worst 518907 us, overruns 2
+394760,loop: 2 ticks/s, worst 518846 us, overruns 2
+395891,loop: 2 ticks/s, worst 518844 us, overruns 2
+396926,loop: 2 ticks/s, worst 518924 us, overruns 2
+397958,loop: 2 ticks/s, worst 518921 us, overruns 2
+398992,loop: 2 ticks/s, worst 518917 us, overruns 2
+400029,loop: 2 ticks/s, worst 518929 us, overruns 2
+401062,loop: 2 ticks/s, worst 518924 us, overruns 2
+402190,loop: 2 ticks/s, worst 518901 us, overruns 2
+403214,loop: 2 ticks/s, worst 518901 us, overruns 2
+404248,loop: 2 ticks/s, worst 518907 us, overruns 2
+405280,loop: 2 ticks/s, worst 518901 us, overruns 2
+406310,loop: 2 ticks/s, worst 518926 us, overruns 2
+407350,loop: 2 ticks/s, worst 518911 us, overruns 2
+408479,loop: 2 ticks/s, worst 518925 us, overruns 2
+409504,loop: 2 ticks/s, worst 518926 us, overruns 2
+410528,loop: 2 ticks/s, worst 518910 us, overruns 2
+411571,loop: 2 ticks/s, worst 518905 us, overruns 2
+412593,loop: 2 ticks/s, worst 518909 us, overruns 2
+413618,loop: 2 ticks/s, worst 518910 us, overruns 2
+414747,loop: 2 ticks/s, worst 518903 us, overruns 2
+415788,loop: 2 ticks/s, worst 518846 us, overruns 2
+416824,loop: 2 ticks/s, worst 518836 us, overruns 2
+417864,loop: 2 ticks/s, worst 518915 us, overruns 2
+418899,loop: 2 ticks/s, worst 518910 us, overruns 2
+419942,loop: 2 ticks/s, worst 518898 us, overruns 2
+420971,loop: 2 ticks/s, worst 518913 us, overruns 2
+422103,loop: 2 ticks/s, worst 518902 us, overruns 2
+423137,loop: 2 ticks/s, worst 518910 us, overruns 2
+424179,loop: 2 ticks/s, worst 518898 us, overruns 2
+425218,loop: 2 ticks/s, worst 518907 us, overruns 2
+426252,loop: 2 ticks/s, worst 518911 us, overruns 2
+427296,loop: 2 ticks/s, worst 518907 us, overruns 2
+428334,loop: 2 ticks/s, worst 520899 us, overruns 2
+429379,loop: 2 ticks/s, worst 518907 us, overruns 2
+430416,loop: 2 ticks/s, worst 518930 us, overruns 2
+431454,loop: 2 ticks/s, worst 519059 us, overruns 2
+432491,loop: 2 ticks/s, worst 518909 us, overruns 2
+433621,loop: 2 ticks/s, worst 518910 us, overruns 2
+434654,loop: 2 ticks/s, worst 518914 us, overruns 2
+435686,ets Jul 29 2019 12:21:46
+435686,rst:0x1 (POWERON_RESET),boot:0x3 (DOWNLOAD_BOOT(UART0/UART1/SDIO_REI_REO_V2))
+435686,waiting for download

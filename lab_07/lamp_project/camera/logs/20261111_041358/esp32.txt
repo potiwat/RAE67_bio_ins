@@ -1,0 +1,309 @@
+37,ets Jul 29 2019 12:21:46
+37,rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+37,configsip: 0, SPIWP:0xee
+37,clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+37,mode:DIO, clock div:2
+37,load:0x3fff0030,len:4640
+138,load:0x40078000,len:15632
+138,load:0x40080400,len:3164
+138,entry 0x4008059c
+745,Lamp_Robot (CPG + hormones) - reset reason 1
+1158,DISABLED shoulder (ID 1): limits -1..-1 not taught -> run 'teach 1'
+1158,DISABLED elbow (ID 2): limits -1..-1 not taught -> run 'teach 2'
+1158,DISABLED pitch (ID 3): limits -1..-1 not taught -> run 'teach 3'
+1187,DISABLED yaw (ID 4): limits -1..-1 not taught -> run 'teach 4'
+1187,hormone self-test: H1 0.0400 (0.0400)  H2 0.0784 (0.0784)  PASS
+1288,tune alpha 1.1 amp 1 speed 45 object.enter 20 object.exit 25 object.tin 0.5 object.tout 2 afraid.enter 30 afraid.exit 35 afraid.tin 0.2 afraid.tout 1 jolt.enter 10 jolt.exit 14 jolt.tin 0 jolt.tout 1 person.enter 80 person.exit 95 person.tin 1.5 person.tout 3 track.speed 25 track.start 10 track.stop 4 saved
+1390,ToF base (SDA 21 SCL 22): OK
+1491,ToF head (SDA 32 SCL 33): OK
+1491,#  name      type id   min      max      (normal range)    target   cmd      ok  temp
+1491,0  base      MG   14     -90.0    +90.0  ( -90.0.. +90.0)     +0.0     +0.0  y  0
+1512,1  shoulder  STS  1      -58.3    +74.1  ( -58.3.. +74.1)     +0.0     +0.0  y  0  DISABLED
+1512,2  elbow     STS  2      -46.7     +2.3  ( -46.7..  +2.3)     +0.0     +0.0  y  0  DISABLED
+1512,3  pitch     STS  3      -70.8    +33.1  ( -70.8.. +33.1)     +0.0     +0.0  y  0  DISABLED
+1593,4  yaw       STS  4      -70.8    +64.4  ( -70.8.. +64.4)     +0.0     +0.0  y  0  DISABLED
+1593,gliding to origin, then WAITING (auto off) - press AUTO in the GUI or type 'auto on' to start
+1593,WARN no reply: shoulder (ID 1)
+1593,WARN no reply: elbow (ID 2)
+1697,WARN no reply: pitch (ID 3)
+1697,WARN no reply: yaw (ID 4)
+3253,emotion -> excited
+5315,camera CONNECTED (camera decides person / object)
+5315,emotion -> happy
+5417,E,t_ms,trial_s,cond,kind,what,input_id,latency_s
+5458,data log on (every 1 tick)
+5495,tune alpha 1.1 amp 1 speed 45 object.enter 20 object.exit 25 object.tin 0.5 object.tout 2 afraid.enter 30 afraid.exit 35 afraid.tin 0.2 afraid.tout 1 jolt.enter 10 jolt.exit 14 jolt.tin 0 jolt.tout 1 person.enter 80 person.exit 95 person.tin 1.5 person.tout 3 track.speed 25 track.start 10 track.stop 4 saved
+6934,E,t_ms,trial_s,cond,kind,what,input_id,latency_s
+6956,data log on (every 1 tick)
+7000,tune alpha 1.1 amp 1 speed 45 object.enter 20 object.exit 25 object.tin 0.5 object.tout 2 afraid.enter 30 afraid.exit 35 afraid.tin 0.2 afraid.tout 1 jolt.enter 10 jolt.exit 14 jolt.tin 0 jolt.tout 1 person.enter 80 person.exit 95 person.tin 1.5 person.tout 3 track.speed 25 track.start 10 track.stop 4 saved
+9184,emotion -> normal
+9246,E,8947,-1.00,C1,emotion,happy->normal,,
+9246,E,8948,-1.00,C1,outcome,preempted,in_002,
+9246,E,8948,-1.00,C1,rgb_set,normal,,
+11896,E,11643,-1.00,C1,input,cam_object_on,in_003,0.250
+11896,E,11644,-1.00,C1,outcome,superseded,in_003,
+11896,E,11644,-1.00,C1,input,obj_jump_hold_on,in_004,0.000
+11896,E,11649,-1.00,C1,outcome,superseded,in_004,
+11919,E,11649,-1.00,C1,input,object_new_on,in_005,0.000
+11919,emotion -> interested
+11919,E,11650,-1.00,C1,emotion,normal->interested,in_005,0.001
+11919,E,11650,-1.00,C1,outcome,preempted,,
+11919,E,11651,-1.00,C1,rgb_set,interested,in_005,0.002
+14395,E,14143,-1.00,C1,input,cam_person_on,in_006,0.250
+14491,E,14243,-1.00,C1,outcome,superseded,in_006,
+14491,E,14243,-1.00,C1,input,cam_object_off,in_007,0.950
+14491,emotion -> excited
+14491,E,14249,-1.00,C1,emotion,interested->excited,in_007,0.956
+14544,E,14249,-1.00,C1,outcome,preempted,in_005,
+14544,E,14250,-1.00,C1,rgb_set,excited,in_007,0.957
+16752,emotion -> happy
+16752,E,16497,-1.00,C1,emotion,excited->happy,,
+16752,E,16498,-1.00,C1,outcome,preempted,in_007,
+16752,E,16498,-1.00,C1,rgb_set,happy,,
+18547,E,18293,-1.00,C1,input,cam_person_off,in_008,3.000
+18905,����������������������������������������������������������������1,nan,100.8,0,0,0,0,0,0.942,0.942,0.099,0.099,0.000,0.000,0.000,0.000,0.000,0.000,0.120,-0.246,-0.496,0.0,0.0,0.0,0.0,0.0,,,,,,0,0
+19683,E,19443,-1.00,C1,outcome,superseded,in_008,
+19705,E,19443,-1.00,C1,input,cam_object_on,in_009,0.250
+19705,E,19444,-1.00,C1,outcome,superseded,in_009,
+19705,E,19444,-1.00,C1,input,obj_jump_hold_on,in_010,0.000
+19705,E,19449,-1.00,C1,outcome,superseded,in_010,
+19705,E,19450,-1.00,C1,input,object_new_on,in_011,0.001
+19705,emotion -> interested
+19727,E,19450,-1.00,C1,emotion,happy->interested,in_011,0.001
+19727,E,19451,-1.00,C1,outcome,preempted,,
+19727,E,19451,-1.00,C1,rgb_set,interested,in_011,0.002
+20096,auto on
+20096,emotion normal
+21241,emotion -> normal
+21241,E,20997,-1.00,C1,emotion,interested->normal,,
+21241,E,20998,-1.00,C1,outcome,preempted,in_011,
+21301,E,20998,-1.00,C1,rgb_set,normal,,
+22052,E,21793,-1.00,C1,input,cam_object_off,in_012,0.950
+23338,E,23093,-1.00,C1,outcome,superseded,in_012,
+23338,E,23093,-1.00,C1,input,cam_object_on,in_013,0.250
+23360,E,23094,-1.00,C1,outcome,superseded,in_013,
+23360,E,23094,-1.00,C1,input,obj_jump_hold_on,in_014,0.000
+23360,E,23099,-1.00,C1,outcome,superseded,in_014,
+23360,E,23100,-1.00,C1,input,object_new_on,in_015,0.001
+26259,E,26011,-1.00,C1,outcome,no_motion,,
+26348,E,26111,-1.00,C1,outcome,no_state_change,in_015,
+29699,resumed: HOLDING this pose (auto off). 'save <emotion>' to store it, 'auto on' to continue
+31301,auto on
+31301,emotion normal
+36852,E,36593,-1.00,C1,input,cam_object_off,in_016,0.950
+37909,auto on
+37959,emotion excited
+37959,emotion -> excited
+37959,E,37697,-1.00,C1,emotion,normal->excited,in_016,2.054
+37959,E,37698,-1.00,C1,rgb_set,excited,in_016,2.055
+38938,E,38693,-1.00,C1,input,cam_object_on,in_017,0.250
+38938,E,38698,-1.00,C1,outcome,superseded,in_017,
+38997,E,38699,-1.00,C1,input,object_new_on,in_018,0.001
+40951,E,40693,-1.00,C1,outcome,superseded,in_018,
+40951,E,40693,-1.00,C1,input,cam_object_off,in_019,0.950
+42782,auto on
+42782,emotion happy
+42782,emotion -> happy
+42807,E,42548,-1.00,C1,emotion,excited->happy,in_019,2.804
+42807,E,42548,-1.00,C1,outcome,preempted,in_016,
+42807,E,42549,-1.00,C1,rgb_set,happy,in_019,2.806
+45437,auto on
+45437,emotion interested
+45437,emotion -> interested
+45437,E,45198,-1.00,C1,emotion,happy->interested,,
+45495,E,45198,-1.00,C1,outcome,preempted,in_019,
+45495,E,45198,-1.00,C1,rgb_set,interested,,
+50444,E,50201,-1.00,C1,outcome,no_motion,,
+125708,����������������������������������������������������������������,51.1,1,86.4,86.4,1,0,0,0,0,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.120,-0.563,-0.229,0.0,-26.5,-46.7,-0.1,-12.8,,,,,,0,1
+175354,����������������������������������������������������������������,48.7,1,nan,94.5,0,0,0,0,0,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.120,-0.521,-0.333,0.0,-26.5,-46.7,-0.1,-12.8,,,,,,0,1
+193953,E,193643,-1.00,C1,input,cam_person_on,in_020,0.250
+195897,E,195597,-1.00,C1,outcome,superseded,in_020,
+195897,E,195598,-1.00,C1,input,afraid_on,in_021,0.151
+198259,E,197997,-1.00,C1,outcome,superseded,in_021,
+198259,E,197998,-1.00,C1,input,afraid_off,in_022,0.951
+198947,E,198693,-1.00,C1,outcome,superseded,in_022,
+198947,E,198693,-1.00,C1,input,cam_person_off,in_023,3.000
+200349,E,200097,-1.00,C1,outcome,superseded,in_023,
+200349,E,200098,-1.00,C1,input,person_off,in_024,3.001
+203354,E,203112,-1.00,C1,outcome,no_state_change,in_024,
+248558,E,248297,-1.00,C1,input,afraid_on,in_025,0.150
+250089,E,249847,-1.00,C1,outcome,superseded,in_025,
+250111,E,249848,-1.00,C1,input,object_on,in_026,0.451
+250111,E,249848,-1.00,C1,outcome,superseded,in_026,
+250111,E,249849,-1.00,C1,input,object_new_on,in_027,0.001
+251558,E,251293,-1.00,C1,outcome,superseded,in_027,
+251558,E,251293,-1.00,C1,input,cam_person_on,in_028,0.250
+253598,E,253297,-1.00,C1,outcome,superseded,in_028,
+253598,E,253298,-1.00,C1,input,afraid_off,in_029,0.951
+255540,E,255293,-1.00,C1,outcome,superseded,in_029,
+255540,E,255293,-1.00,C1,input,cam_person_off,in_030,3.000
+255540,E,255298,-1.00,C1,outcome,superseded,in_030,
+255599,E,255299,-1.00,C1,input,object_new_on,in_031,0.001
+256382,E,256143,-1.00,C1,outcome,superseded,in_031,
+256404,E,256143,-1.00,C1,input,cam_object_on,in_032,0.250
+256404,E,256144,-1.00,C1,outcome,superseded,in_032,
+256404,E,256144,-1.00,C1,input,obj_jump_hold_on,in_033,0.000
+256404,E,256149,-1.00,C1,outcome,superseded,in_033,
+256404,E,256150,-1.00,C1,input,object_new_on,in_034,0.001
+258001,����������������������������������������������������������������3.6,1,42.8,42.1,1,1,0,0,0,0.664,0.664,0.695,0.695,0.023,0.023,0.000,0.000,0.000,0.000,0.176,-0.424,-0.416,0.0,-26.5,-46.7,-0.1,-12.8,,,,,,0,1
+259404,E,259162,-1.00,C1,outcome,no_state_change,in_034,
+259658,E,259397,-1.00,C1,input,afraid_on,in_035,0.150
+259844,E,259593,-1.00,C1,outcome,superseded,in_035,
+259844,E,259593,-1.00,C1,input,cam_object_off,in_036,0.950
+259844,E,259598,-1.00,C1,outcome,superseded,in_036,
+259844,E,259599,-1.00,C1,input,object_new_on,in_037,0.001
+261998,E,261697,-1.00,C1,outcome,superseded,in_037,
+261998,E,261698,-1.00,C1,input,person_on,in_038,1.501
+262311,E,262047,-1.00,C1,outcome,superseded,in_038,
+262311,E,262048,-1.00,C1,input,afraid_off,in_039,0.951
+262452,E,262197,-1.00,C1,outcome,superseded,in_039,
+262452,E,262198,-1.00,C1,input,object_off,in_040,2.001
+262911,E,262643,-1.00,C1,outcome,superseded,in_040,
+262911,E,262643,-1.00,C1,input,cam_person_on,in_041,0.250
+262986,E,262747,-1.00,C1,outcome,superseded,in_041,
+263050,E,262748,-1.00,C1,input,afraid_on,in_042,0.151
+265055,E,264797,-1.00,C1,outcome,superseded,in_042,
+265055,E,264798,-1.00,C1,input,afraid_off,in_043,0.951
+268100,E,267810,-1.00,C1,outcome,no_state_change,in_043,
+268807,����������������������������������������������������������������,46.6,1,38.5,38.0,1,0,1,0,0,1.000,1.000,0.039,0.039,0.000,0.000,0.000,0.000,0.000,0.000,0.123,-0.275,0.550,2.5,-26.5,-46.7,-20.4,19.4,,,,,,0,1
+269811,E,269547,-1.00,C1,input,afraid_on,in_044,0.150
+271252,E,270997,-1.00,C1,outcome,superseded,in_044,
+271252,E,270998,-1.00,C1,input,afraid_off,in_045,0.951
+274260,E,274012,-1.00,C1,outcome,no_state_change,in_045,
+275200,E,274897,-1.00,C1,input,afraid_on,in_046,0.150
+277890,E,277647,-1.00,C1,outcome,superseded,in_046,
+277952,E,277648,-1.00,C1,input,person_off,in_047,3.001
+280913,E,280662,-1.00,C1,outcome,no_state_change,in_047,
+288150,����������������������������������������������������������������47.1,0,26.0,26.1,1,0,1,1,0,1.000,1.000,0.000,0.000,0.000,0.000,0.196,0.196,0.000,0.000,0.179,-0.555,0.049,2.5,-26.5,-46.7,-20.4,19.4,,,,,,0,1
+297703,E,297447,-1.00,C1,input,afraid_off,in_048,0.950
+298162,E,297897,-1.00,C1,outcome,superseded,in_048,
+298162,E,297898,-1.00,C1,input,afraid_on,in_049,0.151
+300913,E,300643,-1.00,C1,outcome,superseded,in_049,
+300913,E,300643,-1.00,C1,input,cam_person_off,in_050,3.000
+302301,E,302047,-1.00,C1,outcome,superseded,in_050,
+302301,E,302048,-1.00,C1,input,afraid_off,in_051,0.951
+305306,E,305061,-1.00,C1,outcome,no_state_change,in_051,
+316508,E,316247,-1.00,C1,input,person_on,in_052,1.500
+319507,E,319262,-1.00,C1,outcome,no_state_change,in_052,
+333042,E,332797,-1.00,C1,input,person_off,in_053,3.000
+333101,����������������������������������������������������������������44.8,0,nan,90.6,0,0,0,0,0,0.004,0.004,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.120,-0.196,0.567,2.5,-26.5,-46.7,-20.4,19.4,,,,,,0,1
+334690,E,334447,-1.00,C1,outcome,superseded,in_053,
+334755,E,334448,-1.00,C1,input,person_on,in_054,1.501
+337750,E,337462,-1.00,C1,outcome,no_state_change,in_054,
+362851,E,362597,-1.00,C1,input,person_off,in_055,3.000
+365857,E,365611,-1.00,C1,outcome,no_state_change,in_055,
+376548,E,376297,-1.00,C1,input,object_on,in_056,0.450
+376548,E,376298,-1.00,C1,outcome,superseded,in_056,
+376548,E,376298,-1.00,C1,input,object_new_on,in_057,0.000
+379557,E,379311,-1.00,C1,outcome,no_state_change,in_057,
+401644,E,401393,-1.00,C1,input,cam_object_on,in_058,0.250
+401644,E,401393,-1.00,C1,outcome,superseded,in_058,
+401644,E,401394,-1.00,C1,input,obj_jump_hold_on,in_059,0.001
+401665,E,401398,-1.00,C1,outcome,superseded,in_059,
+401665,E,401399,-1.00,C1,input,object_new_on,in_060,0.001
+402250,E,401947,-1.00,C1,outcome,superseded,in_060,
+402250,E,401948,-1.00,C1,input,person_on,in_061,1.501
+402702,E,402443,-1.00,C1,outcome,superseded,in_061,
+402702,E,402443,-1.00,C1,input,cam_person_on,in_062,0.250
+402702,E,402448,-1.00,C1,outcome,superseded,in_062,
+402702,E,402449,-1.00,C1,input,object_off,in_063,2.002
+405716,E,405462,-1.00,C1,outcome,no_state_change,in_063,
+425623,��� p` p|�| p��|�p`�� ��`p��`|p ��� p` p|�| p��|�p`�� ��`p��`|p ��� p` p|�| p��|�p`�� ��`p��`|p ��� p` p|�| p��|�p`�� ��`p��`|p ��� p` p|�| p��|�p`�� ��`p��`|p ��� p` p|�| p��|�p`�� ��`p��`|p ��� p` p|�| p��|�p`�� ��`p��`|p ��� p` p|�| p��|�p`�� ��`p��`|p ��� p` p|�| p��|�p`�� ��`p��`|p ��� p` p|�| p��|�p`�� ��`p��`|p ��� p` p|�| p��|�p`�� ��`p��`|p ��� p` p|�| p��|�p`�� ��`p��`|p ��� p` p|�| p��|�p`�� ��`p��`|p ��� p` p|�| p��|�p`�� ��`p��`|p ��� p` p|�| p��|�p`�� ��`p��`|p ��� p` p|�| p��|�p`�� ��`p��`|p ets Jul 29 2019 12:21:46
+425624,rst:ets Jul 29 2019 12:21:46
+425624,rst:ets Jul 29 2019 12:21:46
+425624,rst:ets Jul 29 2019 12:21:46
+425624,rst:ets Jul 29 2019 12:21:46
+425624,rst:ets Jul 29 2019 12:21:46
+425624,rst:ets Jul 29 2019 12:21:46
+425624,rst:ets Jul 29 2019 12:21:46
+425624,rst:ets Jul 29 2019 12:21:46
+425625,rst:ets Jul 29 2019 12:21:46
+425625,rst:ets Jul 29 2019 12:21:46
+425625,rst:ets Jul 29 2019 12:21:46
+425625,rst:ets Jul 29 2019 12:21:46
+425625,rst:ets Jul 29 2019 12:21:46
+425625,rst:ets Jul 29 2019 12:21:46
+425625,rst:ets Jul 29 2019 12:21:46
+425625,rst:ets Jul 29 2019 12:21:46
+425626,rst:ets Jul 29 2019 12:21:46
+425626,rst:ets Jul 29 2019 12:21:46
+425626,rst:ets Jul 29 2019 12:21:46
+425626,rst:ets Jul 29 2019 12:21:46
+425626,rst:ets Jul 29 2019 12:21:46
+425626,rst:ets Jul 29 2019 12:21:46
+425626,rst:ets Jul 29 2019 12:21:46
+425647,rst:0x1 (POWERON_RESET),boot:0x13 (S0x1 (POWERON_RESET),boot:0x13 (S0x1 (POWERON_RESET),boot:0x13 (S0x1 (POWERON_RESET),boot:0x13 (S0x1 (POWERON_RESET),boot:0x13 (S0x1 (POWERON_RESET),boot:0x13 (S0x1 (POWERON_RESET),boot:0x13 (S0x1 (POWERON_RESET),boot:0x13 (S0x1 (POWERON_RESET),boot:0x13 (S0x1 (POWERON_RESET),boot:0x13 (S0x1 (POWERON_RESET),boot:0x13 (S0x1 (POWERON_RESET),boot:0x13 (S0x1 (POWERON_RESET),boot:0x13 (S0x1 (POWERON_RESET),boot:0x13 (S0x1 (POWERON_RESET),boot:0x13 (S0x1 (POWERON_RESET),boot:0x13 (S0x1 (POWERON_RESET),boot:0x13 (S0x1 (POWERON_RESET),boot:0x13 (S0x1 (ST_FLASH_BOOT)
+425647,configsip: 0, SPIWP:0xee
+425647,clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+425647,mode:DIO, clock div:2
+425647,load:0x3fff0030,len:4640
+425647,load:0x40078000,len:15632
+425647,load:0x40080400,len:3164
+425647,entry 0x4008059c
+426285,Lamp_Robot (CPG + hormones) - reset reason 1
+426776,DISABLED shoulder (ID 1): limits -1..-1 not taught -> run 'teach 1'
+426776,DISABLED elbow (ID 2): limits -1..-1 not taught -> run 'teach 2'
+426776,DISABLED pitch (ID 3): limits -1..-1 not taught -> run 'teach 3'
+426798,DISABLED yaw (ID 4): limits -1..-1 not taught -> run 'teach 4'
+426798,hormone self-test: H1 0.0400 (0.0400)  H2 0.0784 (0.0784)  PASS
+426906,tune alpha 1.1 amp 1 speed 45 object.enter 20 object.exit 25 object.tin 0.5 object.tout 2 afraid.enter 30 afraid.exit 35 afraid.tin 0.2 afraid.tout 1 jolt.enter 10 jolt.exit 14 jolt.tin 0 jolt.tout 1 person.enter 80 person.exit 95 person.tin 1.5 person.tout 3 track.speed 25 track.start 10 track.stop 4 saved
+427012,ToF base (SDA 21 SCL 22): OK
+427092,ToF head (SDA 32 SCL 33): OK
+427093,#  name      type id   min      max      (normal range)    target   cmd      ok  temp
+427093,0  base      MG   14     -90.0    +90.0  ( -90.0.. +90.0)     +0.0     +0.0  y  0
+427115,1  shoulder  STS  1      -58.3    +74.1  ( -58.3.. +74.1)     +0.0     +0.0  y  0  DISABLED
+427115,2  elbow     STS  2      -46.7     +2.3  ( -46.7..  +2.3)     +0.0     +0.0  y  0  DISABLED
+427115,3  pitch     STS  3      -70.8    +33.1  ( -70.8.. +33.1)     +0.0     +0.0  y  0  DISABLED
+427142,4  yaw       STS  4      -70.8    +64.4  ( -70.8.. +64.4)     +0.0     +0.0  y  0  DISABLED
+427142,gliding to origin, then WAITING (auto off) - press AUTO in the GUI or type 'auto on' to start
+427142,camera CONNECTED (camera decides person / object)
+427142,WARN no reply: shoulder (ID 1)
+427242,WARN no reply: elbow (ID 2)
+427242,WARN no reply: pitch (ID 3)
+427242,WARN no reply: yaw (ID 4)
+427654,emotion -> excited
+427833,E,t_ms,trial_s,cond,kind,what,input_id,latency_s
+427855,data log on (every 1 tick)
+427877,tune alpha 1.1 amp 1 speed 45 object.enter 20 object.exit 25 object.tin 0.5 object.tout 2 afraid.enter 30 afraid.exit 35 afraid.tin 0.2 afraid.tout 1 jolt.enter 10 jolt.exit 14 jolt.tin 0 jolt.tout 1 person.enter 80 person.exit 95 person.tin 1.5 person.tout 3 track.speed 25 track.start 10 track.stop 4 saved
+429708,emotion -> happy
+429708,E,3842,-1.00,C1,emotion,excited->happy,,
+429708,E,3842,-1.00,C1,outcome,preempted,in_002,
+429708,E,3843,-1.00,C1,rgb_set,happy,,
+434698,E,8853,-1.00,C1,outcome,no_motion,,
+443555,camera LOST -> ToF only
+443555,E,17687,-1.00,C1,input,camera_off,in_003,0.000
+446598,E,20703,-1.00,C1,outcome,no_state_change,in_003,
+449631,emotion -> normal
+449693,E,23791,-1.00,C1,emotion,happy->normal,,
+449693,E,23792,-1.00,C1,rgb_set,normal,,
+451945,E,26091,-1.00,C1,input,object_on,in_004,0.450
+451945,E,26092,-1.00,C1,outcome,superseded,in_004,
+451945,E,26092,-1.00,C1,input,object_new_on,in_005,0.000
+451945,emotion -> interested
+451967,E,26093,-1.00,C1,emotion,normal->interested,in_005,0.001
+451967,E,26093,-1.00,C1,outcome,preempted,,
+451967,E,26093,-1.00,C1,rgb_set,interested,in_005,0.001
+456954,E,31103,-1.00,C1,outcome,no_motion,in_005,
+469092,E,43241,-1.00,C1,input,person_on,in_006,1.500
+469092,emotion -> normal
+469092,E,43242,-1.00,C1,emotion,interested->normal,in_006,1.501
+469146,E,43243,-1.00,C1,rgb_set,normal,in_006,1.502
+469597,E,43741,-1.00,C1,input,object_off,in_007,2.000
+470647,emotion -> excited
+470647,E,44791,-1.00,C1,emotion,normal->excited,in_007,3.050
+470647,E,44792,-1.00,C1,outcome,preempted,in_006,
+470647,E,44792,-1.00,C1,rgb_set,excited,in_007,3.051
+472205,emotion -> happy
+472206,E,46341,-1.00,C1,emotion,excited->happy,,
+472206,E,46342,-1.00,C1,outcome,preempted,in_007,
+472206,E,46342,-1.00,C1,rgb_set,happy,,
+477207,E,51353,-1.00,C1,outcome,no_motion,,
+483740,E,57891,-1.00,C1,input,afraid_on,in_008,0.150
+483740,emotion -> afraid
+483740,E,57892,-1.00,C1,emotion,happy->afraid,in_008,0.151
+483796,E,57893,-1.00,C1,rgb_set,afraid,in_008,0.152
+487253,E,61391,-1.00,C1,input,afraid_off,in_009,0.950
+487253,emotion -> happy
+487254,E,61392,-1.00,C1,emotion,afraid->happy,in_009,0.951
+487254,E,61393,-1.00,C1,outcome,preempted,in_008,
+487254,E,61393,-1.00,C1,rgb_set,happy,in_009,0.952

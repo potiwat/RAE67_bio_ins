@@ -14,6 +14,8 @@
 โคมไฟหุ่นยนต์ที่แสดงอารมณ์ด้วยท่าทางและแสง RGB (แนวเดียวกับ Apple ELEGNT) งานวิชา Bio-Inspired Robotics
 การเคลื่อนไหวมาจาก **SO(2) CPG** และอารมณ์มาจาก **ระบบฮอร์โมนเทียม** 5 ตัว (social, novelty, boredom, stress, fatigue)
 
+คลิปวิดีโอ: [clip.md](clip.md)
+
 ## ฮาร์ดแวร์
 
 | ส่วน | อุปกรณ์ | ต่อที่ ESP32 (node32s) |

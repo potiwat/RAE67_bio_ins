@@ -17,5 +17,3 @@ camera/settings.json
 # macOS
 .DS_Store
 
-# camera/logs/ IS submitted: override lab_07/.gitignore which ignores logs/
-!camera/logs/

@@ -1,0 +1,113 @@
+61,ets Jul 29 2019 12:21:46
+61,rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+61,configsip: 0, SPIWP:0xee
+61,clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+61,mode:DIO, clock div:2
+61,load:0x3fff0030,len:4640
+162,load:0x40078000,len:15632
+162,load:0x40080400,len:3164
+162,entry 0x4008059c
+807,Lamp_Robot (CPG + hormones) - reset reason 1
+1174,hormone self-test: H1 0.0400 (0.0400)  H2 0.0784 (0.0784)  PASS
+1277,tune alpha 1.1 amp 1 speed 45 object.enter 20 object.exit 25 object.tin 0.5 object.tout 2 afraid.enter 30 afraid.exit 35 afraid.tin 0.2 afraid.tout 1 jolt.enter 10 jolt.exit 14 jolt.tin 0 jolt.tout 1 person.enter 80 person.exit 95 person.tin 1.5 person.tout 3 cam.person_out 10 afraid.calm 3 track.speed 25 track.start 10 track.stop 4 sleep.after 90 saved
+1378,ToF base (SDA 21 SCL 22): OK
+1405,ToF head (SDA 32 SCL 33): OK
+1405,#  name      type id   min      max      (normal range)    target   cmd      ok  temp
+1405,0  base      MG   14     -90.0    +90.0  ( -90.0.. +90.0)     +0.0     +0.0  y  0
+1427,1  shoulder  STS  1      -58.3    +74.1  ( -58.3.. +74.1)     +0.0     +5.4  y  0
+1427,2  elbow     STS  2     -114.3    +93.3  (-114.3.. +93.3)     +0.0     -1.1  y  0
+1427,3  pitch     STS  3      -70.8    +33.1  ( -70.8.. +33.1)     +0.0     +1.0  y  0
+1530,4  yaw       STS  4      -70.8    +64.4  ( -70.8.. +64.4)     +0.0     -0.4  y  0
+1530,gliding to origin, then WAITING (auto off) - press AUTO in the GUI or type 'auto on' to start
+4609,camera CONNECTED (camera decides person / object)
+4696,E,t_ms,trial_s,cond,kind,what,input_id,latency_s
+4714,data log on (every 1 tick)
+4737,tune alpha 1.1 amp 1 speed 45 object.enter 20 object.exit 25 object.tin 0.5 object.tout 2 afraid.enter 30 afraid.exit 35 afraid.tin 0.2 afraid.tout 1 jolt.enter 10 jolt.exit 14 jolt.tin 0 jolt.tout 1 person.enter 80 person.exit 95 person.tin 1.5 person.tout 3 cam.person_out 10 afraid.calm 3 track.speed 25 track.start 10 track.stop 4 sleep.after 90 saved
+5618,E,5334,-1.00,C1,outcome,superseded,in_001,
+5618,E,5334,-1.00,C1,input,cam_object_on,in_002,0.250
+5618,E,5335,-1.00,C1,outcome,superseded,in_002,
+5618,E,5335,-1.00,C1,input,obj_jump_hold_on,in_003,0.000
+6197,E,t_ms,trial_s,cond,kind,what,input_id,latency_s
+6241,data log on (every 1 tick)
+6264,tune alpha 1.1 amp 1 speed 45 object.enter 20 object.exit 25 object.tin 0.5 object.tout 2 afraid.enter 30 afraid.exit 35 afraid.tin 0.2 afraid.tout 1 jolt.enter 10 jolt.exit 14 jolt.tin 0 jolt.tout 1 person.enter 80 person.exit 95 person.tin 1.5 person.tout 3 cam.person_out 10 afraid.calm 3 track.speed 25 track.start 10 track.stop 4 sleep.after 90 saved
+8307,E,8034,-1.00,C1,outcome,superseded,in_003,
+8307,E,8034,-1.00,C1,input,cam_person_on,in_004,0.250
+8307,emotion -> excited
+8307,E,8040,-1.00,C1,emotion,normal->excited,in_004,0.256
+8354,E,8040,-1.00,C1,rgb_set,excited,in_004,0.256
+11367,emotion -> happy
+11367,E,11088,-1.00,C1,emotion,excited->happy,,
+11367,E,11089,-1.00,C1,outcome,preempted,in_004,
+11367,E,11089,-1.00,C1,rgb_set,happy,,
+16403,E,16090,-1.00,C1,outcome,no_motion,,
+16846,E,16584,-1.00,C1,input,cam_object_off,in_005,0.950
+17802,E,17534,-1.00,C1,outcome,superseded,in_005,
+17802,E,17534,-1.00,C1,input,cam_object_on,in_006,0.250
+17822,E,17535,-1.00,C1,outcome,superseded,in_006,
+17822,E,17535,-1.00,C1,input,obj_jump_hold_on,in_007,0.000
+20856,E,20540,-1.00,C1,outcome,no_state_change,in_007,
+21951,E,21624,-1.00,C1,input,cam_wave_on,in_008,0.000
+21951,wave seen (x 0.40) -> waving back
+24954,E,24640,-1.00,C1,outcome,no_state_change,in_008,
+28203,E,27888,-1.00,C1,input,person_on,in_009,1.500
+28648,auto on
+28648,emotion back to automatic
+28648,emotion -> excited
+28670,E,28389,-1.00,C1,emotion,happy->excited,in_009,2.000
+28670,E,28389,-1.00,C1,rgb_set,excited,in_009,2.001
+28670,E,28394,-1.00,C1,motion_onset,excited,in_009,2.006
+30053,E,29734,-1.00,C1,input,cam_object_off,in_010,0.950
+31667,emotion -> happy
+31667,E,31388,-1.00,C1,emotion,excited->happy,in_010,2.604
+31667,E,31389,-1.00,C1,rgb_set,happy,in_010,2.605
+31667,E,31394,-1.00,C1,motion_onset,happy,in_010,2.610
+32851,E,32588,-1.00,C1,input,person_off,in_011,3.000
+35866,E,35592,-1.00,C1,outcome,no_state_change,in_011,
+37864,WARN elbow warm 71 C: rhythm fading out
+37864,HOT elbow 71 C: torque OFF to cool (back on at 55 C)
+38062,elbow cooled to 33 C: torque back on
+40210,WARN shoulder warm 62 C: rhythm fading out
+54124,auto on
+54207,emotion back to automatic
+60912,E,60634,-1.00,C1,input,cam_person_off,in_012,9.950
+62051,auto on
+62051,emotion normal
+62051,emotion -> normal
+62073,E,61789,-1.00,C1,emotion,happy->normal,in_012,11.104
+62073,E,61789,-1.00,C1,rgb_set,normal,in_012,11.105
+62073,E,61794,-1.00,C1,motion_onset,normal,in_012,11.110
+62958,E,62684,-1.00,C1,input,cam_person_on,in_013,0.250
+65559,auto on
+65559,emotion sleepy
+65559,emotion -> sleepy
+65559,E,65289,-1.00,C1,emotion,normal->sleepy,in_013,2.854
+65559,E,65289,-1.00,C1,rgb_set,sleepy,in_013,2.855
+65604,E,65294,-1.00,C1,motion_onset,sleepy,in_013,2.860
+67409,auto on
+67409,emotion normal
+67409,emotion -> normal
+67409,E,67138,-1.00,C1,emotion,sleepy->normal,,
+67409,E,67139,-1.00,C1,rgb_set,normal,,
+67409,E,67144,-1.00,C1,motion_onset,normal,,
+72363,!!! STOP: STS torque off, MG pulses off. 'resume' to continue
+78202,E,77934,-1.00,C1,input,cam_object_on,in_014,0.250
+78202,E,77935,-1.00,C1,outcome,superseded,in_014,
+78252,E,77935,-1.00,C1,input,obj_jump_hold_on,in_015,0.000
+80507,shoulder held at   -0.4 deg
+80507,elbow    held at   -1.0 deg
+80507,pitch    held at   -5.4 deg
+80507,yaw      held at   -0.4 deg
+80507,resumed: HOLDING this pose (auto off). 'save <emotion>' to store it, 'auto on' to continue
+81217,E,80940,-1.00,C1,outcome,no_state_change,in_015,
+82853,light off
+91954,E,91688,-1.00,C1,input,afraid_on,in_016,0.150
+93107,E,92838,-1.00,C1,outcome,superseded,in_016,
+93107,E,92839,-1.00,C1,input,afraid_off,in_017,0.951
+96107,E,95840,-1.00,C1,outcome,no_state_change,in_017,
+102607,E,102338,-1.00,C1,input,person_on,in_018,1.500
+105603,light on
+105654,E,105342,-1.00,C1,outcome,no_state_change,in_018,
+107757,E,107438,-1.00,C1,input,person_off,in_019,3.000
+110751,E,110440,-1.00,C1,outcome,no_state_change,in_019,
+123307,E,122984,-1.00,C1,input,cam_person_off,in_020,9.950
+126306,E,125990,-1.00,C1,outcome,no_state_change,in_020,

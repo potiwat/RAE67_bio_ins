@@ -1,0 +1,39 @@
+86,�����||p�p�����||p�p�����||p�p�����||p�p�����||p�p�����||p�p�����||p�p�����||p�p�����||p�p�����||p�p�����||p�p�����||p�p�����||p�pets Jul 29 2019 12:21:46
+107,rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+107,configsip: 0, SPIWP:0xee
+107,clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+107,mode:DIO, clock div:2
+107,load:0x3fff0030,len:4640
+107,load:0x40078000,len:15632
+107,load:0x40080400,len:3164
+107,entry 0x4008059c
+860,Lamp_Robot (CPG + hormones) - reset reason 1
+1275,WAIT shoulder (ID 1): no answer (motor power off?) - it is enabled by itself when it answers
+1376,WAIT elbow (ID 2): no answer (motor power off?) - it is enabled by itself when it answers
+1580,WAIT pitch (ID 3): no answer (motor power off?) - it is enabled by itself when it answers
+1599,WAIT yaw (ID 4): no answer (motor power off?) - it is enabled by itself when it answers
+1599,hormone self-test: H1 0.0400 (0.0400)  H2 0.0784 (0.0784)  PASS
+1721,tune alpha 1.1 amp 1 speed 45 object.enter 20 object.exit 25 object.tin 0.5 object.tout 2 afraid.enter 30 afraid.exit 35 afraid.tin 0.2 afraid.tout 1 jolt.enter 10 jolt.exit 14 jolt.tin 0 jolt.tout 1 person.enter 80 person.exit 95 person.tin 1.5 person.tout 3 cam.person_out 10 afraid.calm 3 track.speed 25 track.start 10 track.stop 4 sleep.after 90 head.up -20 saved
+1721,ToF base (SDA 21 SCL 22): NOT CONNECTED (keeps retrying quietly; 's base <cm>' simulates it)
+1721,ToF head (SDA 32 SCL 33): NOT CONNECTED (keeps retrying quietly; 's near <cm>' simulates it)
+1756,#  name      type id   min      max      (normal range)    target   cmd      ok  temp
+1756,0  base      MG   14     -90.0    +90.0  ( -90.0.. +90.0)     +0.0     +0.0  y  0
+1756,1  shoulder  STS  1      -58.3    +74.1  ( -58.3.. +74.1)     +0.0     +0.0  y  0  DISABLED
+1785,2  elbow     STS  2      -46.7     +2.3  ( -46.7..  +2.3)     +0.0     +0.0  y  0  DISABLED
+1785,3  pitch     STS  3      -70.8    +33.1  ( -70.8.. +33.1)     +0.0     +0.0  y  0  DISABLED
+1785,4  yaw       STS  4      -70.8    +64.4  ( -70.8.. +64.4)     +0.0     +0.0  y  0  DISABLED
+1887,gliding to origin, then WAITING (auto off) - press AUTO in the GUI or type 'auto on' to start
+1887,WARN no reply: shoulder (ID 1)
+1887,WARN no reply: elbow (ID 2)
+1887,WARN no reply: pitch (ID 3)
+1887,WARN no reply: yaw (ID 4)
+5327,camera CONNECTED (camera decides person / object)
+5455,E,t_ms,trial_s,cond,kind,what,input_id,latency_s
+5479,data log on (every 1 tick)
+5530,tune alpha 1.1 amp 1 speed 45 object.enter 20 object.exit 25 object.tin 0.5 object.tout 2 afraid.enter 30 afraid.exit 35 afraid.tin 0.2 afraid.tout 1 jolt.enter 10 jolt.exit 14 jolt.tin 0 jolt.tout 1 person.enter 80 person.exit 95 person.tin 1.5 person.tout 3 cam.person_out 10 afraid.calm 3 track.speed 25 track.start 10 track.stop 4 sleep.after 90 head.up -20 saved
+6851,loop: 20 ticks/s, worst 115128 us, overruns 1
+6961,E,t_ms,trial_s,cond,kind,what,input_id,latency_s
+7005,data log on (every 1 tick)
+7027,tune alpha 1.1 amp 1 speed 45 object.enter 20 object.exit 25 object.tin 0.5 object.tout 2 afraid.enter 30 afraid.exit 35 afraid.tin 0.2 afraid.tout 1 jolt.enter 10 jolt.exit 14 jolt.tin 0 jolt.tout 1 person.enter 80 person.exit 95 person.tin 1.5 person.tout 3 cam.person_out 10 afraid.calm 3 track.speed 25 track.start 10 track.stop 4 sleep.after 90 head.up -20 saved
+8194,E,7840,-1.00,C1,outcome,no_state_change,in_001,
+12019,loop: 19 ticks/s, worst 115136 us, overruns 1

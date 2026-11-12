@@ -1,0 +1,314 @@
+103,��������������ets Jul 29 2019 12:21:46
+103,rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+103,configsip: 0, SPIWP:0xee
+103,clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+103,mode:DIO, clock div:2
+103,load:0x3fff0030,len:4640
+205,load:0x40078000,len:15632
+205,load:0x40080400,len:3164
+205,entry 0x4008059c
+741,Lamp_Robot (CPG + hormones) - reset reason 1
+1177,WAIT shoulder (ID 1): no answer (motor power off?) - it is enabled by itself when it answers
+1177,WAIT elbow (ID 2): no answer (motor power off?) - it is enabled by itself when it answers
+1217,WAIT pitch (ID 3): no answer (motor power off?) - it is enabled by itself when it answers
+1218,WAIT yaw (ID 4): no answer (motor power off?) - it is enabled by itself when it answers
+1218,hormone self-test: H1 0.0400 (0.0400)  H2 0.0784 (0.0784)  PASS
+1267,tune alpha 1.1 amp 1 speed 45 object.enter 20 object.exit 25 object.tin 0.5 object.tout 2 afraid.enter 30 afraid.exit 35 afraid.tin 0.2 afraid.tout 1 jolt.enter 10 jolt.exit 14 jolt.tin 0 jolt.tout 1 person.enter 80 person.exit 95 person.tin 1.5 person.tout 3 cam.person_out 10 afraid.calm 3 track.speed 25 track.start 10 track.stop 4 saved
+1307,ToF base (SDA 21 SCL 22): NOT CONNECTED (keeps retrying quietly; 's base <cm>' simulates it)
+1307,ToF head (SDA 32 SCL 33): NOT CONNECTED (keeps retrying quietly; 's near <cm>' simulates it)
+1336,#  name      type id   min      max      (normal range)    target   cmd      ok  temp
+1336,0  base      MG   14     -90.0    +90.0  ( -90.0.. +90.0)     +0.0     +0.0  y  0
+1336,1  shoulder  STS  1      -58.3    +74.1  ( -58.3.. +74.1)     +0.0     +0.0  y  0  DISABLED
+1358,2  elbow     STS  2      -46.7     +2.3  ( -46.7..  +2.3)     +0.0     +0.0  y  0  DISABLED
+1358,3  pitch     STS  3      -70.8    +33.1  ( -70.8.. +33.1)     +0.0     +0.0  y  0  DISABLED
+1358,4  yaw       STS  4      -70.8    +64.4  ( -70.8.. +64.4)     +0.0     +0.0  y  0  DISABLED
+1464,gliding to origin, then WAITING (auto off) - press AUTO in the GUI or type 'auto on' to start
+1464,WARN no reply: shoulder (ID 1)
+1464,WARN no reply: elbow (ID 2)
+1464,WARN no reply: pitch (ID 3)
+1464,WARN no reply: yaw (ID 4)
+4780,camera CONNECTED (camera decides person / object)
+4802,E,t_ms,trial_s,cond,kind,what,input_id,latency_s
+4824,data log on (every 1 tick)
+4846,tune alpha 1.1 amp 1 speed 45 object.enter 20 object.exit 25 object.tin 0.5 object.tout 2 afraid.enter 30 afraid.exit 35 afraid.tin 0.2 afraid.tout 1 jolt.enter 10 jolt.exit 14 jolt.tin 0 jolt.tout 1 person.enter 80 person.exit 95 person.tin 1.5 person.tout 3 cam.person_out 10 afraid.calm 3 track.speed 25 track.start 10 track.stop 4 saved
+6017,E,5714,-1.00,C1,outcome,superseded,in_001,
+6085,E,5714,-1.00,C1,input,cam_person_on,in_002,0.250
+6285,emotion -> excited
+6285,E,5966,-1.00,C1,emotion,normal->excited,in_002,0.502
+6285,E,5967,-1.00,C1,rgb_set,excited,in_002,0.503
+6307,E,t_ms,trial_s,cond,kind,what,input_id,latency_s
+6329,data log on (every 1 tick)
+6383,tune alpha 1.1 amp 1 speed 45 object.enter 20 object.exit 25 object.tin 0.5 object.tout 2 afraid.enter 30 afraid.exit 35 afraid.tin 0.2 afraid.tout 1 jolt.enter 10 jolt.exit 14 jolt.tin 0 jolt.tout 1 person.enter 80 person.exit 95 person.tin 1.5 person.tout 3 cam.person_out 10 afraid.calm 3 track.speed 25 track.start 10 track.stop 4 saved
+8364,emotion -> happy
+8392,E,8064,-1.00,C1,emotion,excited->happy,,
+8392,E,8065,-1.00,C1,outcome,preempted,in_002,
+8392,E,8065,-1.00,C1,rgb_set,happy,,
+13387,E,13073,-1.00,C1,outcome,no_motion,,
+33687,E,33364,-1.00,C1,input,cam_object_on,in_003,0.250
+33687,E,33365,-1.00,C1,outcome,superseded,in_003,
+33687,E,33365,-1.00,C1,input,obj_jump_hold_on,in_004,0.000
+33687,E,33366,-1.00,C1,outcome,superseded,in_004,
+33687,E,33366,-1.00,C1,input,object_new_on,in_005,0.000
+33708,emotion -> interested
+33708,E,33367,-1.00,C1,emotion,happy->interested,in_005,0.001
+33708,E,33367,-1.00,C1,rgb_set,interested,in_005,0.001
+34623,E,34314,-1.00,C1,input,obj_jump_hold_on,in_006,0.000
+36719,OK   elbow (ID 2)
+36770,OK  elbow (ID 2) answered: limits -114.3..+93.3 loaded, enabled at +0.3 deg
+36770,OK   pitch (ID 3)
+36819,OK  pitch (ID 3) answered: limits -70.8..+33.1 loaded, enabled at -0.2 deg
+36819,OK   yaw (ID 4)
+36870,OK  yaw (ID 4) answered: limits -70.8..+64.4 loaded, enabled at -0.1 deg
+36870,OK   shoulder (ID 1)
+36917,OK  shoulder (ID 1) answered: limits -58.3..+74.1 loaded, enabled at +0.0 deg
+37123,WARN no reply: shoulder (ID 1)
+37123,WARN no reply: elbow (ID 2)
+37178,WARN no reply: pitch (ID 3)
+37267,WARN no reply: yaw (ID 4)
+37417,OK   pitch (ID 3)
+37472,OK   yaw (ID 4)
+37472,OK   shoulder (ID 1)
+37528,OK   elbow (ID 2)
+37617,WARN no reply: pitch (ID 3)
+37667,WARN no reply: yaw (ID 4)
+37667,E,37317,-1.00,C1,outcome,no_state_change,in_006,
+37722,WARN no reply: shoulder (ID 1)
+37723,WARN no reply: elbow (ID 2)
+37776,E,37464,-1.00,C1,input,obj_jump_hold_on,in_007,0.000
+38017,OK   pitch (ID 3)
+38017,OK   yaw (ID 4)
+38072,OK   shoulder (ID 1)
+38128,OK   elbow (ID 2)
+38370,WARN no reply: pitch (ID 3)
+38423,WARN no reply: yaw (ID 4)
+38478,WARN no reply: shoulder (ID 1)
+38568,WARN no reply: elbow (ID 2)
+38626,OK   yaw (ID 4)
+38691,E,38377,-1.00,C1,outcome,no_motion,in_005,
+38839,WARN no reply: yaw (ID 4)
+39073,OK   shoulder (ID 1)
+39128,OK   elbow (ID 2)
+39181,E,38864,-1.00,C1,outcome,superseded,in_007,
+39181,E,38864,-1.00,C1,input,obj_jump_hold_on,in_008,0.000
+39181,OK   pitch (ID 3)
+39231,OK   yaw (ID 4)
+39320,WARN no reply: shoulder (ID 1)
+39320,WARN no reply: elbow (ID 2)
+39375,WARN no reply: pitch (ID 3)
+39431,WARN no reply: yaw (ID 4)
+39767,OK   elbow (ID 2)
+39822,OK   pitch (ID 3)
+39822,OK   yaw (ID 4)
+39878,OK   shoulder (ID 1)
+41186,E,40864,-1.00,C1,outcome,superseded,in_008,
+41186,E,40864,-1.00,C1,input,obj_jump_hold_on,in_009,0.000
+41935,loop: 19 ticks/s, worst 107772 us, overruns 1
+42541,WARN no reply: shoulder (ID 1)
+42601,WARN no reply: elbow (ID 2)
+42686,WARN no reply: pitch (ID 3)
+42686,WARN no reply: yaw (ID 4)
+43793,E,43473,-1.00,C1,outcome,superseded,in_009,
+43793,E,43473,-1.00,C1,input,cam_object_off,in_010,0.950
+43793,emotion -> happy
+43793,E,43474,-1.00,C1,emotion,interested->happy,in_010,0.951
+43793,E,43475,-1.00,C1,rgb_set,happy,in_010,0.952
+48882,E,48525,-1.00,C1,outcome,no_motion,in_010,
+53443,ToF ON
+79349,auto on
+79349,emotion normal
+79349,emotion -> normal
+79349,E,79023,-1.00,C1,emotion,happy->normal,,
+79349,E,79024,-1.00,C1,rgb_set,normal,,
+84389,E,84038,-1.00,C1,outcome,no_motion,,
+88585,E,88273,-1.00,C1,input,cam_object_on,in_011,0.250
+88585,E,88274,-1.00,C1,outcome,superseded,in_011,
+88607,E,88274,-1.00,C1,input,obj_jump_hold_on,in_012,0.000
+88607,E,88275,-1.00,C1,outcome,superseded,in_012,
+88607,E,88275,-1.00,C1,input,object_new_on,in_013,0.000
+91641,E,91286,-1.00,C1,outcome,no_state_change,in_013,
+93850,E,93523,-1.00,C1,input,cam_object_off,in_014,0.950
+96890,E,96535,-1.00,C1,outcome,no_state_change,in_014,
+101743,auto on
+101743,emotion happy
+101743,emotion -> happy
+101743,E,101423,-1.00,C1,emotion,normal->happy,,
+101743,E,101424,-1.00,C1,rgb_set,happy,,
+101800,E,101441,-1.00,C1,motion_onset,happy,,
+103777,E,103473,-1.00,C1,input,cam_object_on,in_015,0.250
+103799,E,103474,-1.00,C1,outcome,superseded,in_015,
+103799,E,103474,-1.00,C1,input,obj_jump_hold_on,in_016,0.001
+103799,E,103475,-1.00,C1,outcome,superseded,in_016,
+103799,E,103475,-1.00,C1,input,object_new_on,in_017,0.000
+106424,auto on
+106424,emotion normal
+106453,emotion -> normal
+106453,E,106123,-1.00,C1,emotion,happy->normal,in_017,2.648
+106453,E,106124,-1.00,C1,rgb_set,normal,in_017,2.649
+106453,E,106140,-1.00,C1,motion_onset,normal,in_017,2.665
+115487,E,115173,-1.00,C1,input,cam_object_off,in_018,0.950
+118497,E,118184,-1.00,C1,outcome,no_state_change,in_018,
+127027,auto on
+127027,emotion sleepy
+127027,emotion -> sleepy
+127027,E,126723,-1.00,C1,emotion,normal->sleepy,,
+127090,E,126724,-1.00,C1,rgb_set,sleepy,,
+127090,E,126738,-1.00,C1,motion_onset,sleepy,,
+129743,auto on
+129743,emotion normal
+129743,emotion -> normal
+129743,E,129423,-1.00,C1,emotion,sleepy->normal,,
+129743,E,129424,-1.00,C1,rgb_set,normal,,
+129795,E,129438,-1.00,C1,motion_onset,normal,,
+140848,auto on
+140848,emotion sleepy
+140901,emotion -> sleepy
+140901,E,140573,-1.00,C1,emotion,normal->sleepy,,
+140901,E,140574,-1.00,C1,rgb_set,sleepy,,
+140901,E,140587,-1.00,C1,motion_onset,sleepy,,
+143349,auto on
+143401,emotion tired
+143401,emotion -> tired
+143401,E,143073,-1.00,C1,emotion,sleepy->tired,,
+143401,E,143074,-1.00,C1,rgb_set,tired,,
+143401,E,143088,-1.00,C1,motion_onset,tired,,
+145996,auto on
+145996,emotion normal
+145996,emotion -> normal
+145996,E,145673,-1.00,C1,emotion,tired->normal,,
+145996,E,145674,-1.00,C1,rgb_set,normal,,
+145996,E,145688,-1.00,C1,motion_onset,normal,,
+192393,OK   elbow (ID 2)
+192479,OK   pitch (ID 3)
+192534,OK   yaw (ID 4)
+192535,OK   shoulder (ID 1)
+194899,ToF base (SDA 21 SCL 22): OK
+195643,loop: 20 ticks/s, worst 94887 us, overruns 1
+199191,E,198873,-1.00,C1,input,cam_person_off,in_019,9.950
+200256,WARN no reply: pitch (ID 3)
+200483,OK   pitch (ID 3)
+202194,E,201878,-1.00,C1,outcome,no_state_change,in_019,
+256642,E,256325,-1.00,C1,input,object_on,in_020,0.450
+256642,E,256326,-1.00,C1,outcome,superseded,in_020,
+256642,E,256327,-1.00,C1,input,object_new_on,in_021,0.001
+259239,E,258925,-1.00,C1,outcome,superseded,in_021,
+259239,E,258926,-1.00,C1,input,object_off,in_022,2.001
+262238,E,261929,-1.00,C1,outcome,no_state_change,in_022,
+285837,E,285525,-1.00,C1,input,object_on,in_023,0.450
+285837,E,285526,-1.00,C1,outcome,superseded,in_023,
+285886,E,285527,-1.00,C1,input,object_new_on,in_024,0.001
+288889,E,288529,-1.00,C1,outcome,no_state_change,in_024,
+289937,E,289625,-1.00,C1,input,object_off,in_025,2.000
+292937,E,292628,-1.00,C1,outcome,no_state_change,in_025,
+294640,E,294325,-1.00,C1,input,person_on,in_026,1.500
+297686,E,297328,-1.00,C1,outcome,no_state_change,in_026,
+299984,E,299675,-1.00,C1,input,person_off,in_027,3.000
+302988,E,302679,-1.00,C1,outcome,no_state_change,in_027,
+304498,E,304175,-1.00,C1,input,object_on,in_028,0.450
+304498,E,304176,-1.00,C1,outcome,superseded,in_028,
+304498,E,304177,-1.00,C1,input,object_new_on,in_029,0.001
+307298,E,306975,-1.00,C1,outcome,superseded,in_029,
+307298,E,306976,-1.00,C1,input,person_on,in_030,1.501
+307798,E,307475,-1.00,C1,outcome,superseded,in_030,
+307798,E,307476,-1.00,C1,input,object_off,in_031,2.001
+310784,E,310478,-1.00,C1,outcome,no_state_change,in_031,
+314883,E,314525,-1.00,C1,input,person_off,in_032,3.000
+317850,E,317529,-1.00,C1,outcome,no_state_change,in_032,
+327634,E,327325,-1.00,C1,input,object_on,in_033,0.450
+327684,E,327326,-1.00,C1,outcome,superseded,in_033,
+327684,E,327327,-1.00,C1,input,object_new_on,in_034,0.001
+330682,E,330329,-1.00,C1,outcome,no_state_change,in_034,
+333083,E,332725,-1.00,C1,input,object_off,in_035,2.000
+336039,E,335729,-1.00,C1,outcome,no_state_change,in_035,
+361597,auto on
+361687,emotion normal
+368040,E,367723,-1.00,C1,input,cam_person_on,in_036,0.250
+368898,auto on
+368898,emotion sleepy
+368898,emotion -> sleepy
+368898,E,368576,-1.00,C1,emotion,normal->sleepy,in_036,1.103
+368898,E,368577,-1.00,C1,rgb_set,sleepy,in_036,1.104
+368898,E,368582,-1.00,C1,motion_onset,sleepy,in_036,1.109
+370132,E,369775,-1.00,C1,input,object_on,in_037,0.450
+373132,E,372778,-1.00,C1,outcome,no_state_change,in_037,
+374584,sleeping: motors off
+376893,auto on
+376893,emotion normal
+376893,emotion -> normal
+376893,E,376576,-1.00,C1,emotion,sleepy->normal,,
+376893,E,376576,-1.00,C1,rgb_set,normal,,
+376893,waking up: motors on
+376893,E,376585,-1.00,C1,motion_onset,normal,,
+381699,E,381323,-1.00,C1,input,cam_object_on,in_038,0.250
+381699,E,381324,-1.00,C1,outcome,superseded,in_038,
+381699,E,381324,-1.00,C1,input,obj_jump_hold_on,in_039,0.000
+381754,ToF head (SDA 32 SCL 33): OK
+381754,E,381416,-1.00,C1,outcome,superseded,in_039,
+381754,E,381416,-1.00,C1,input,object_new_on,in_040,0.000
+382544,loop: 20 ticks/s, worst 99094 us, overruns 1
+384743,E,384431,-1.00,C1,outcome,no_state_change,in_040,
+388497,E,388173,-1.00,C1,input,obj_jump_hold_on,in_041,0.000
+389834,E,389473,-1.00,C1,outcome,superseded,in_041,
+389834,E,389473,-1.00,C1,input,cam_object_off,in_042,0.950
+390636,E,390327,-1.00,C1,outcome,superseded,in_042,
+390691,E,390328,-1.00,C1,input,person_on,in_043,1.501
+391134,E,390827,-1.00,C1,outcome,superseded,in_043,
+391188,E,390828,-1.00,C1,input,object_off,in_044,2.001
+394146,E,393831,-1.00,C1,outcome,no_state_change,in_044,
+396343,E,396023,-1.00,C1,input,cam_object_on,in_045,0.250
+396343,E,396024,-1.00,C1,outcome,superseded,in_045,
+396343,E,396024,-1.00,C1,input,obj_jump_hold_on,in_046,0.000
+396343,E,396029,-1.00,C1,outcome,superseded,in_046,
+396388,E,396029,-1.00,C1,input,object_new_on,in_047,0.000
+399436,E,399079,-1.00,C1,outcome,no_state_change,in_047,
+408994,E,408673,-1.00,C1,input,cam_object_off,in_048,0.950
+409846,E,409523,-1.00,C1,outcome,superseded,in_048,
+409846,E,409523,-1.00,C1,input,cam_object_on,in_049,0.250
+409846,object 2 seen recently (boredom 0.26) -> not interested
+409846,E,409528,-1.00,C1,outcome,superseded,in_049,
+409889,E,409528,-1.00,C1,input,object_familiar_on,in_050,0.000
+412852,E,412531,-1.00,C1,outcome,no_state_change,in_050,
+412937,E,412623,-1.00,C1,input,obj_jump_hold_on,in_051,0.000
+414592,E,414273,-1.00,C1,outcome,superseded,in_051,
+414592,E,414273,-1.00,C1,input,obj_jump_hold_on,in_052,0.000
+417636,E,417281,-1.00,C1,outcome,no_state_change,in_052,
+417692,E,417373,-1.00,C1,input,obj_jump_hold_on,in_053,0.000
+419687,E,419373,-1.00,C1,outcome,superseded,in_053,
+419687,E,419373,-1.00,C1,input,obj_jump_hold_on,in_054,0.000
+420690,E,420373,-1.00,C1,outcome,superseded,in_054,
+420690,E,420373,-1.00,C1,input,obj_jump_hold_on,in_055,0.000
+423132,E,422823,-1.00,C1,outcome,superseded,in_055,
+423186,E,422823,-1.00,C1,input,obj_jump_hold_on,in_056,0.000
+424792,E,424473,-1.00,C1,outcome,superseded,in_056,
+424792,E,424473,-1.00,C1,input,obj_jump_hold_on,in_057,0.000
+427834,E,427479,-1.00,C1,outcome,no_state_change,in_057,
+431149,E,430823,-1.00,C1,input,obj_jump_hold_on,in_058,0.000
+432243,E,431923,-1.00,C1,outcome,superseded,in_058,
+432243,E,431923,-1.00,C1,input,cam_object_off,in_059,0.950
+434332,E,434023,-1.00,C1,outcome,superseded,in_059,
+434355,E,434023,-1.00,C1,input,cam_object_on,in_060,0.250
+434355,E,434024,-1.00,C1,outcome,superseded,in_060,
+434355,E,434024,-1.00,C1,input,obj_jump_hold_on,in_061,0.000
+434355,object 2 seen recently (boredom 0.46) -> not interested
+434355,E,434029,-1.00,C1,outcome,superseded,in_061,
+434386,E,434029,-1.00,C1,input,object_familiar_on,in_062,0.000
+435637,E,435323,-1.00,C1,outcome,superseded,in_062,
+435637,E,435323,-1.00,C1,input,cam_object_off,in_063,0.950
+438536,E,438226,-1.00,C1,outcome,superseded,in_063,
+438589,E,438227,-1.00,C1,input,person_off,in_064,3.001
+440239,E,439926,-1.00,C1,outcome,superseded,in_064,
+440239,E,439927,-1.00,C1,input,object_on,in_065,0.451
+443289,E,442931,-1.00,C1,outcome,no_state_change,in_065,
+461047,E,460726,-1.00,C1,input,person_on,in_066,1.500
+461550,E,461226,-1.00,C1,outcome,superseded,in_066,
+461550,E,461227,-1.00,C1,input,object_off,in_067,2.001
+464589,E,464231,-1.00,C1,outcome,no_state_change,in_067,
+473589,E,473226,-1.00,C1,input,object_on,in_068,0.450
+476037,E,475726,-1.00,C1,outcome,superseded,in_068,
+476089,E,475727,-1.00,C1,input,object_off,in_069,2.001
+479045,E,478729,-1.00,C1,outcome,no_state_change,in_069,
+497600,WARN no reply: pitch (ID 3)
+497806,WARN no reply: yaw (ID 4)
+497907,WARN no reply: shoulder (ID 1)
+497907,loop: 11 ticks/s, worst 278062 us, overruns 2
+498112,WARN no reply: elbow (ID 2)
+499032,loop: 4 ticks/s, worst 314019 us, overruns 4

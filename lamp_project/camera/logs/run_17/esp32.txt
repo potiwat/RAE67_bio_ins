@@ -1,0 +1,118 @@
+49,ets Jul 29 2019 12:21:46
+49,rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+49,configsip: 0, SPIWP:0xee
+49,clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+49,mode:DIO, clock div:2
+49,load:0x3fff0030,len:4640
+150,load:0x40078000,len:15632
+150,load:0x40080400,len:3164
+150,entry 0x4008059c
+738,Lamp_Robot (CPG + hormones) - reset reason 1
+1134,hormone self-test: H1 0.0400 (0.0400)  H2 0.0784 (0.0784)  PASS
+1238,tune alpha 1.1 amp 1 speed 45 object.enter 20 object.exit 25 object.tin 0.5 object.tout 2 afraid.enter 30 afraid.exit 35 afraid.tin 0.2 afraid.tout 1 jolt.enter 10 jolt.exit 14 jolt.tin 0 jolt.tout 1 person.enter 80 person.exit 95 person.tin 1.5 person.tout 3 track.speed 25 track.start 10 track.stop 4 saved
+1239,DISABLED shoulder: now at +98.1 deg, far outside -58.3..+74.1 -> re-teach
+1298,ToF base (SDA 21 SCL 22): OK
+1298,ToF head (SDA 32 SCL 33): NOT CONNECTED (keeps retrying quietly; 's near <cm>' simulates it)
+1298,#  name      type id   min      max      (normal range)    target   cmd      ok  temp
+1320,0  base      MG   14     -90.0    +90.0  ( -90.0.. +90.0)     +0.0     +0.0  y  0
+1320,1  shoulder  STS  1      -58.3    +74.1  ( -58.3.. +74.1)     +0.0     +0.0  y  0  DISABLED
+1320,2  elbow     STS  2     -114.3    +93.3  (-114.3.. +93.3)     +0.0     +0.4  y  0
+1425,3  pitch     STS  3      -70.8    +33.1  ( -70.8.. +33.1)     +0.0     -0.7  y  0
+1425,4  yaw       STS  4      -70.8    +64.4  ( -70.8.. +64.4)     +0.0     +0.5  y  0
+1425,gliding to origin, then WAITING (auto off) - press AUTO in the GUI or type 'auto on' to start
+2350,WARN ToF base stopped answering
+5107,camera CONNECTED (camera decides person / object)
+5228,E,t_ms,trial_s,cond,kind,what,input_id,latency_s
+5250,data log on (every 1 tick)
+5272,tune alpha 1.1 amp 1 speed 45 object.enter 20 object.exit 25 object.tin 0.5 object.tout 2 afraid.enter 30 afraid.exit 35 afraid.tin 0.2 afraid.tout 1 jolt.enter 10 jolt.exit 14 jolt.tin 0 jolt.tout 1 person.enter 80 person.exit 95 person.tin 1.5 person.tout 3 track.speed 25 track.start 10 track.stop 4 saved
+6419,ToF base (SDA 21 SCL 22): OK
+6419,WARN no reply: shoulder (ID 1)
+6461,loop: 19 ticks/s, worst 108544 us, overruns 1
+6605,OK   shoulder (ID 1)
+6724,E,t_ms,trial_s,cond,kind,what,input_id,latency_s
+6768,data log on (every 1 tick)
+6790,tune alpha 1.1 amp 1 speed 45 object.enter 20 object.exit 25 object.tin 0.5 object.tout 2 afraid.enter 30 afraid.exit 35 afraid.tin 0.2 afraid.tout 1 jolt.enter 10 jolt.exit 14 jolt.tin 0 jolt.tout 1 person.enter 80 person.exit 95 person.tin 1.5 person.tout 3 track.speed 25 track.start 10 track.stop 4 saved
+6848,E,6599,-1.00,C1,outcome,superseded,in_001,
+6902,E,6599,-1.00,C1,input,cam_person_on,in_002,0.250
+7108,emotion -> excited
+7108,E,6851,-1.00,C1,emotion,normal->excited,in_002,0.501
+7108,E,6851,-1.00,C1,rgb_set,excited,in_002,0.502
+7400,WARN ToF base stopped answering
+7663,WARN pitch warm 55 C: rhythm fading out
+8895,auto on
+8895,emotion normal
+8896,emotion -> normal
+8918,E,8649,-1.00,C1,emotion,excited->normal,,
+8918,E,8650,-1.00,C1,outcome,preempted,in_002,
+8918,E,8650,-1.00,C1,rgb_set,normal,,
+11539,ToF base (SDA 21 SCL 22): OK
+11539,WARN no reply: elbow (ID 2)
+11581,loop: 18 ticks/s, worst 114117 us, overruns 1
+11720,OK   elbow (ID 2)
+12529,WARN ToF base stopped answering
+13766,E,13514,-1.00,C1,input,cam_person_off,in_003,3.065
+13918,E,13668,-1.00,C1,outcome,no_motion,,
+14265,E,13964,-1.00,C1,outcome,superseded,in_003,
+14265,E,13964,-1.00,C1,input,cam_person_on,in_004,0.250
+16638,ToF base (SDA 21 SCL 22): OK
+16686,loop: 19 ticks/s, worst 103778 us, overruns 1
+17277,E,16974,-1.00,C1,outcome,no_state_change,in_004,
+17631,WARN ToF base stopped answering
+21731,ToF base (SDA 21 SCL 22): OK
+21731,WARN no reply: yaw (ID 4)
+21751,loop: 18 ticks/s, worst 114050 us, overruns 1
+21892,OK   yaw (ID 4)
+22791,WARN ToF base stopped answering
+25444,E,25184,-1.00,C1,input,cam_person_off,in_005,3.000
+26849,ToF base (SDA 21 SCL 22): OK
+26849,WARN no reply: shoulder (ID 1)
+26872,loop: 19 ticks/s, worst 111623 us, overruns 1
+27011,OK   shoulder (ID 1)
+27853,WARN ToF base stopped answering
+28456,E,28201,-1.00,C1,outcome,no_state_change,in_005,
+28899,E,28647,-1.00,C1,input,cam_person_on,in_006,0.250
+31979,ToF base (SDA 21 SCL 22): OK
+31979,WARN no reply: elbow (ID 2)
+31979,E,31704,-1.00,C1,outcome,no_state_change,in_006,
+32016,loop: 19 ticks/s, worst 110530 us, overruns 1
+32162,OK   elbow (ID 2)
+32968,WARN ToF base stopped answering
+34503,auto on
+34525,emotion afraid
+34525,emotion -> afraid
+34525,E,34259,-1.00,C1,emotion,normal->afraid,,
+34525,E,34260,-1.00,C1,rgb_set,afraid,,
+37078,ToF base (SDA 21 SCL 22): OK
+37078,loop: 19 ticks/s, worst 103970 us, overruns 1
+38116,WARN ToF base stopped answering
+38472,auto on
+38472,emotion tired
+38472,emotion -> tired
+38472,E,38214,-1.00,C1,emotion,afraid->tired,,
+38472,E,38215,-1.00,C1,outcome,preempted,,
+38472,E,38215,-1.00,C1,rgb_set,tired,,
+38516,E,38220,-1.00,C1,motion_onset,tired,,
+41766,auto on
+41766,emotion afraid
+41766,emotion -> afraid
+41766,E,41514,-1.00,C1,emotion,tired->afraid,,
+41818,E,41515,-1.00,C1,rgb_set,afraid,,
+41818,E,41519,-1.00,C1,motion_onset,afraid,,
+42199,ToF base (SDA 21 SCL 22): OK
+42199,WARN no reply: yaw (ID 4)
+42243,loop: 19 ticks/s, worst 112725 us, overruns 1
+42386,OK   yaw (ID 4)
+43188,WARN ToF base stopped answering
+47299,ToF base (SDA 21 SCL 22): OK
+47299,WARN no reply: shoulder (ID 1)
+47343,loop: 20 ticks/s, worst 105388 us, overruns 1
+47343,WARN pitch warm 55 C: rhythm fading out
+47488,OK   shoulder (ID 1)
+48299,WARN ToF base stopped answering
+52416,ToF base (SDA 21 SCL 22): NOT CONNECTED (keeps retrying quietly; 's base <cm>' simulates it)
+52459,loop: 19 ticks/s, worst 96989 us, overruns 1
+57519,ToF base (SDA 21 SCL 22): OK
+57519,WARN no reply: yaw (ID 4)
+57563,loop: 18 ticks/s, worst 116393 us, overruns 1
+57711,OK   yaw (ID 4)
+58516,WARN ToF base stopped answering

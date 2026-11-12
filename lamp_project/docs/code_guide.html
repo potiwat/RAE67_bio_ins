@@ -1,0 +1,1096 @@
+<meta charset="utf-8">
+<title>Lamp_Robot Code Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* layout: sticky contents rail on the left (stacks on phones), one reading column with full-width code panels */
+:root {
+  --bg:#f5f7f9; --panel:#ffffff; --fg:#18212b; --muted:#5b6774; --line:#d9e0e6;
+  --accent:#0a6c8f; --accent2:#a35f00; --code:#eef2f5; --codefg:#1d2a36; --cmt:#6a7d8c;
+  --ok:#1f7a45; --okbg:#e3f3e9; --part:#8a5a00; --partbg:#fbefd7; --no:#a33a2b; --nobg:#f8e2de; --diff:#4b5bb0; --diffbg:#e6e9f8;
+  --f-display:"Chakra Petch","IBM Plex Sans Thai",system-ui,sans-serif; --f-body:"IBM Plex Sans Thai",system-ui,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg:#0f1418; --panel:#161d23; --fg:#e3e9ee; --muted:#93a1ad; --line:#26313a;
+  --accent:#5cc3e6; --accent2:#f0b04d; --code:#111a20; --codefg:#d6e2ea; --cmt:#7f95a5;
+  --ok:#7fd6a0; --okbg:#173225; --part:#f0c06a; --partbg:#3a2c12; --no:#f29a8c; --nobg:#3c1f1a; --diff:#a9b4f2; --diffbg:#232849; color-scheme:dark; } }
+:root[data-theme="dark"] {
+  --bg:#0f1418; --panel:#161d23; --fg:#e3e9ee; --muted:#93a1ad; --line:#26313a;
+  --accent:#5cc3e6; --accent2:#f0b04d; --code:#111a20; --codefg:#d6e2ea; --cmt:#7f95a5;
+  --ok:#7fd6a0; --okbg:#173225; --part:#f0c06a; --partbg:#3a2c12; --no:#f29a8c; --nobg:#3c1f1a; --diff:#a9b4f2; --diffbg:#232849; color-scheme:dark; }
+* { box-sizing:border-box }
+body { background:var(--bg); color:var(--fg); font:16px/1.75 var(--f-body); }
+.wrap { display:grid; grid-template-columns:260px minmax(0,1fr); gap:40px; max-width:1240px; margin:0 auto;
+        padding-block:32px 80px; padding-left:max(16px, env(safe-area-inset-left, 0px)); padding-right:max(16px, env(safe-area-inset-right, 0px)); }
+nav { position:sticky; top:calc(env(safe-area-inset-top, 0px) + 16px); align-self:start; max-height:calc(100vh - 32px); overflow:auto;
+      font-size:14px; line-height:1.5; border-right:1px solid var(--line); padding-right:16px; }
+nav .tg { font:600 11px/1.4 var(--f-display); letter-spacing:.08em; text-transform:uppercase; color:var(--accent2); margin:18px 0 6px; }
+nav a { display:block; color:var(--muted); text-decoration:none; padding:3px 0; }
+nav a:hover, nav a:focus-visible { color:var(--accent); outline:none; }
+header h1 { font:600 clamp(28px,4vw,40px)/1.15 var(--f-display); margin:0 0 8px; text-wrap:balance; }
+header p { color:var(--muted); margin:0; max-width:70ch; }
+.chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
+.chips span { font:500 12px/1 var(--f-mono); padding:6px 9px; border:1px solid var(--line); border-radius:4px; color:var(--muted); background:var(--panel); }
+main { min-width:0; }
+section { border-top:1px solid var(--line); margin-top:48px; padding-top:28px; }
+.eyebrow { font:600 11px/1.4 var(--f-display); letter-spacing:.1em; text-transform:uppercase; color:var(--accent2); margin:0 0 4px; }
+h2 { font:600 26px/1.3 var(--f-display); margin:0 0 14px; text-wrap:balance; }
+h3 { font:600 18px/1.4 var(--f-body); margin:30px 0 8px; color:var(--accent); }
+p, li { max-width:72ch; }
+code { font:13.5px var(--f-mono); background:var(--code); color:var(--codefg); padding:1px 5px; border-radius:3px; }
+code.ref { color:var(--accent); background:transparent; border:1px solid var(--line); white-space:nowrap; }
+kbd { font:12px var(--f-mono); border:1px solid var(--line); border-bottom-width:2px; padding:1px 5px; border-radius:4px; }
+figure.code { margin:14px 0 18px; border:1px solid var(--line); border-radius:6px; overflow:hidden; background:var(--code); }
+figure.code figcaption { font:12px/1.4 var(--f-mono); color:var(--muted); padding:8px 12px; border-bottom:1px solid var(--line); background:var(--panel); }
+figure.code figcaption b { color:var(--fg); font-weight:500; }
+pre { margin:0; padding:10px 0; overflow-x:auto; font:12.5px/1.6 var(--f-mono); color:var(--codefg); }
+pre .ln { display:inline-block; width:3.6em; padding-right:1em; text-align:right; color:var(--cmt); opacity:.7; user-select:none; font-variant-numeric:tabular-nums; }
+pre .c { color:var(--cmt); font-style:italic; }
+.tw { overflow-x:auto; margin:12px 0 18px; }
+table { border-collapse:collapse; width:100%; font-size:14.5px; line-height:1.55; background:var(--panel); }
+th { text-align:left; font:600 12px/1.4 var(--f-display); letter-spacing:.05em; text-transform:uppercase; color:var(--muted); border-bottom:2px solid var(--line); padding:8px 10px; }
+td { border-bottom:1px solid var(--line); padding:8px 10px; vertical-align:top; }
+table.map td:first-child { font:13px var(--f-mono); color:var(--muted); width:5em; font-variant-numeric:tabular-nums; }
+.st { font:600 12px/1 var(--f-body); padding:4px 8px; border-radius:999px; white-space:nowrap; }
+.st.ok { color:var(--ok); background:var(--okbg); } .st.part { color:var(--part); background:var(--partbg); }
+.st.no { color:var(--no); background:var(--nobg); } .st.diff { color:var(--diff); background:var(--diffbg); }
+table.ex td:first-child { white-space:nowrap; }
+.ex table { font-size:14px; }
+.note { border-left:3px solid var(--accent2); padding:6px 0 6px 14px; color:var(--muted); }
+@media (max-width: 860px) {
+  .wrap { grid-template-columns:minmax(0,1fr); gap:20px; }
+  nav { position:static; max-height:none; border-right:0; border-bottom:1px solid var(--line); padding:0 0 16px; columns:2; column-gap:20px; }
+  nav .tg { break-after:avoid; }
+}
+@media (max-width: 480px) { nav { columns:1; } }
+</style>
+<div class="wrap">
+<nav aria-label="สารบัญ"><p class="tg">เริ่มต้น</p><a href="#start">อ่านหน้านี้ยังไง</a><p class="tg">ส่วนที่ 1 · Week 1–4</p><a href="#w1">Week 1 · ภาพรวมระบบ, embodiment, วงจรรับรู้</a><a href="#w2">Week 2 · Sensing: contract, low-pass, hysteresis</a><a href="#w3">Week 3 · CPG SO(2)</a><a href="#w4">Week 4 · Artificial Hormone</a><p class="tg">ส่วนที่ 2 · Lab 05–07</p><a href="#lab5">Lab 05 · Hormone → CPG → การเคลื่อนไหว</a><a href="#lab6">Lab 06 · Lamp emotion FSM</a><a href="#lab7">Lab 07 · ROS2 bridge + การทดลอง</a><p class="tg">ส่วนที่ 3 · นอกวิชา</p><a href="#cam">กล้อง (camera/lamp_camera.py)</a><a href="#esp-cam">ESP32 รับข้อมูลกล้อง (sensors.cpp)</a><a href="#behav">พฤติกรรม: อารมณ์ → ท่าทาง (brain.cpp ส่วน 6)</a><a href="#motors">มอเตอร์และความปลอดภัย (motors.cpp)</a><a href="#gui">GUI, ค่าจูน, log, คำสั่ง</a><p class="tg">ส่วนที่ 4 · refactor + แผนที่</p><a href="#refactor">Refactor รอบนี้ (12 พ.ย.) เปลี่ยนอะไร</a><a href="#map">แผนที่ไฟล์: ฟังก์ชันอยู่บรรทัดไหน</a><a href="#todo">สิ่งที่ยังขาด</a></nav>
+<main>
+<header>
+<p class="eyebrow">ESP32 node32s · STS3215 ×4 · MG996R · VL53L0X ×2 · WS2812 ×32 · USB webcam</p>
+<h1>Lamp_Robot: โค้ดทั้งหมด ตาม Week</h1>
+<p>อธิบายทุกส่วนของโค้ดหลัง refactor ทุกกล่องโค้ดตัดจากไฟล์จริงพร้อมเลขบรรทัด สร้างจากโค้ด ณ 12 พ.ย. 2026</p>
+<div class="chips"><span>dt 0.05 s · 20 Hz</span><span>CPG α 1.1</span><span>ฮอร์โมน 5 ตัว</span><span>อารมณ์ 8 แบบ</span><span>C0 / C1</span></div>
+</header>
+<section id="start"><p class="eyebrow">เริ่มต้น</p><h2>อ่านหน้านี้ยังไง</h2>
+<p>หน้านี้อธิบายโค้ดทั้งหมดของ Lamp_Robot หลัง refactor วันที่ 12 พ.ย. 2026 ทุกกล่องโค้ดตัดมาจากไฟล์จริง
+เลขทางซ้ายคือเลขบรรทัดในไฟล์ เปิดไฟล์ใน VS Code แล้วกด <kbd>⌃G</kbd> พิมพ์เลขบรรทัดเพื่อกระโดดไปดูได้เลย</p>
+<p>ลำดับในหน้า: <b>ส่วนที่ 1</b> Week 1–4 ตามสไลด์ · <b>ส่วนที่ 2</b> Lab 05–07 · <b>ส่วนที่ 3</b> สิ่งที่ไม่อยู่ในวิชา
+(กล้อง, พฤติกรรม, มอเตอร์, ไฟ, GUI, คำสั่ง) · <b>ส่วนที่ 4</b> refactor รอบนี้เปลี่ยนอะไร + แผนที่ไฟล์</p>
+<div class="tw"><table class=""><thead><tr><th>ไฟล์</th><th>หน้าที่</th><th>Week</th></tr></thead><tbody><tr><td><code>src/lamp.h</code></td><td>ชนิดข้อมูลกลาง (Joint, CPG, Hormone, Hyst, Dwell) และรายชื่อตัวแปร/ฟังก์ชันที่ทุกไฟล์ใช้ร่วมกัน</td><td>2, 3, 4</td></tr><tr><td><code>src/lamp_main.cpp</code></td><td>ค่าจูนทั้งหมด (ด้านบนสุด), tune สดจาก GUI, setup(), loop() 20 Hz, คำสั่งที่พิมพ์</td><td>1</td></tr><tr><td><code>src/sensors.cpp</code></td><td>ToF: contract → low-pass → hysteresis + dwell, รับบรรทัด CAM/WAVE จากกล้อง</td><td>2</td></tr><tr><td><code>src/brain.cpp</code></td><td>CPG SO(2), ฮอร์โมน 5 ตัว, ตารางอารมณ์, เลือกอารมณ์, อารมณ์ → ท่าทาง</td><td>3, 4</td></tr><tr><td><code>src/motors.cpp</code></td><td>ข้อต่อ, clamp, slew, ส่งไป servo, ความร้อน, STOP/resume, teach, save ท่า, ไฟ RGB</td><td>1, 3</td></tr><tr><td><code>src/experiment.cpp</code></td><td>log แถว D/E/S, C0/C1, trial, scenario จำลอง</td><td>2, Lab 06–07</td></tr><tr><td><code>camera/lamp_camera.py</code></td><td>กล้องบนแล็ปท็อป: YOLO, โหวต/ล็อก, มือ, โบก, ส่ง CAM/WAVE, log</td><td>นอกวิชา</td></tr><tr><td><code>camera/gui.py</code>, <code>web.py</code></td><td>GUI บนคอม (Tk) และหน้า iPad (เว็บ)</td><td>นอกวิชา</td></tr></tbody></table></div></section><section id="w1"><p class="eyebrow">ส่วนที่ 1 · Week 1–4</p><h2>Week 1 · ภาพรวมระบบ, embodiment, วงจรรับรู้</h2>
+<p>Week 1 ไม่มีสมการ เป็นเรื่องการออกแบบ จึงไม่มีฟังก์ชันชื่อ week1 แต่หลักของ Week 1 กำหนดโครงทั้งโปรแกรม</p>
+<h3>1.1 แยกส่วนระบบ (สไลด์ 26)</h3>
+<div class="tw"><table class=""><thead><tr><th>ส่วน</th><th>ของหุ่นเรา</th><th>อยู่ในโค้ด</th></tr></thead><tbody><tr><td>Body</td><td>ฐานหมุน MG996R, ไหล่ ID1, ศอก ID2, หัวก้ม-เงย ID3, หัวหัน ID4</td><td>ตาราง <code>J[]</code> <code class="ref">motors.cpp:17</code>, <code>struct Joint</code> <code class="ref">lamp.h:65</code></td></tr><tr><td>Sensor</td><td>ToF ฐาน, ToF หัว, กล้อง USB บนหัว, ตำแหน่ง + อุณหภูมิ STS</td><td><code>tofStep</code> <code class="ref">sensors.cpp:84</code>, <code>cameraLine</code> <code class="ref">sensors.cpp:135</code>, <code>healthStep</code> <code class="ref">motors.cpp:198</code></td></tr><tr><td>Controller</td><td>ESP32 ตัวเดียว (แล็ปท็อปแค่ประมวลผลภาพแล้วส่งผล)</td><td><code>loop()</code> <code class="ref">lamp_main.cpp:197</code>, ทั้งไฟล์ brain.cpp</td></tr><tr><td>Actuator</td><td>STS3215 ×4, MG996R ×1, วงแหวน RGB 32 ดวง</td><td><code>sendOutputs</code> <code class="ref">motors.cpp:177</code>, <code>lightsStep</code> <code class="ref">motors.cpp:459</code></td></tr><tr><td>Environment</td><td>คนตรงหน้า, ของบนโต๊ะ, มือที่ยื่นเข้าหาหัว</td><td>กลายเป็นสิ่งเร้า S ของฮอร์โมนใน <code>sensesToStimuli</code> <code class="ref">brain.cpp:253</code></td></tr></tbody></table></div>
+<h3>1.2 วงจรรับรู้ → ควบคุม → สั่งงาน → ปฏิสัมพันธ์ → รับกลับ (สไลด์ 27)</h3>
+<p>ทั้ง 5 ขั้นคือ 1 รอบของ <code>loop()</code> ซึ่งวนทุก 50 ms (20 ครั้งต่อวินาที) บรรทัดบนสุดของ loop กันไม่ให้รอบเร็วหรือช้าเกิน:
+ถ้ายังไม่ถึงเวลาก็ออกไปก่อน ถ้าช้าไปเกินหนึ่งรอบก็ไม่วิ่งไล่ตาม</p>
+<figure class="code"><figcaption><b>src/lamp_main.cpp</b> · บรรทัด 197–223</figcaption><pre><span class="ln">197</span>void loop() {
+<span class="ln">198</span>  static uint32_t next = millis(), lastStat = millis();
+<span class="ln">199</span>  static uint32_t ticks = 0, overruns = 0, worstUs = 0;
+<span class="ln">200</span>  static bool autoBreath = false;
+<span class="ln">201</span>  if (!autoBreath &amp;&amp; millis() &gt; 3000) {             <span class="c">// always alive: the CPG runs by itself after boot</span>
+<span class="ln">202</span>    autoBreath = true;
+<span class="ln">203</span>    if (!estop &amp;&amp; autoMode) { cpg.on = true; Serial.println(&quot;cpg on&quot;); }   <span class="c">// waiting (auto off): stay still</span>
+<span class="ln">204</span>  }
+<span class="ln">205</span> 
+<span class="ln">206</span>  readSerial();                                     <span class="c">// between ticks: never blocks</span>
+<span class="ln">207</span> 
+<span class="ln">208</span>  uint32_t now = millis();
+<span class="ln">209</span>  if ((int32_t)(now - next) &lt; 0) return;
+<span class="ln">210</span>  if ((int32_t)(now - next) &gt; (int32_t)PERIOD_MS) next = now;   <span class="c">// fell behind: don&#x27;t burst-catch-up</span>
+<span class="ln">211</span>  next += PERIOD_MS;
+<span class="ln">212</span> 
+<span class="ln">213</span>  uint32_t t0 = micros();
+<span class="ln">214</span>  <span class="c">// ---- one 50 ms tick: senses -&gt; hormones -&gt; emotion -&gt; CPG -&gt; setTarget -&gt; motors ----</span>
+<span class="ln">215</span>  scenarioStep();       <span class="c">// &#x27;scen&#x27;: scripted synthetic stimuli (replaces the raw ToF samples)</span>
+<span class="ln">216</span>  sensorsStep();        <span class="c">// real ToF -&gt; sense.baseCm / sense.headCm</span>
+<span class="ln">217</span>  emotionStep();
+<span class="ln">218</span>  cpgStep();            <span class="c">// runs always (so it is warmed up); joints only feel it when &#x27;cpg on&#x27;</span>
+<span class="ln">219</span>  if (!estop) composeTargets();
+<span class="ln">220</span>  sendOutputs();
+<span class="ln">221</span>  lightsStep();         <span class="c">// RGB ring: emotion colour, breathing with the CPG</span>
+<span class="ln">222</span>  healthStep();
+<span class="ln">223</span>  experimentStep();     <span class="c">// logs, motion-onset detection, RGB keep-alive</span></pre></figure>
+<div class="ex"><div class="tw"><table class="ex"><thead><tr><th>ตรงไหน</th><th>ทำอะไร</th><th>ทำไม / ตัวอย่าง</th></tr></thead><tbody><tr><td><code class="ref">lamp_main.cpp:201</code></td><td>3 วินาทีหลังบูต เปิด CPG ให้หายใจเอง (เฉพาะตอน Auto เปิด)</td><td>หุ่นดูมีชีวิตตลอด แต่ถ้า Auto ปิด (ค่าเริ่มต้น) ให้นิ่งรอ</td></tr><tr><td><code class="ref">lamp_main.cpp:206</code></td><td>อ่านคำสั่งและบรรทัด CAM ที่เข้ามาทาง USB ทุกครั้งที่วน ไม่รอ</td><td>กล้องส่งมา 12 บรรทัด/วินาที ต้องอ่านทันไม่ให้ค้างในบัฟเฟอร์</td></tr><tr><td><code class="ref">lamp_main.cpp:209</code></td><td>ยังไม่ถึง 50 ms ออกไปก่อน</td><td>ทำให้ 1 tick = 0.05 s พอดี เท่ากับ dt ในสูตร CPG และฮอร์โมน</td></tr><tr><td><code class="ref">lamp_main.cpp:210</code></td><td>ถ้าช้าไปเกินหนึ่งรอบ (เช่นตอน teach) ไม่วิ่งไล่ทำหลายรอบติด</td><td>ไม่อย่างนั้นหุ่นจะกระตุกเร็วผิดปกติหลังค้าง</td></tr><tr><td><code class="ref">lamp_main.cpp:215</code></td><td>ถ้ากำลังรัน scen ใส่ระยะจำลองแทนค่า ToF จริง</td><td>ต้องทำก่อน sensorsStep เพื่อให้ค่าจำลองผ่าน filter เหมือนของจริง</td></tr><tr><td><code class="ref">lamp_main.cpp:216</code></td><td>ขั้น 1 รับรู้: ToF + กล้อง → sense</td><td>Week 2</td></tr><tr><td><code class="ref">lamp_main.cpp:217</code></td><td>ขั้น 2 ควบคุม: สิ่งเร้า → ฮอร์โมน → อารมณ์ → ท่า/φ</td><td>Week 4</td></tr><tr><td><code class="ref">lamp_main.cpp:218</code></td><td>ขั้น 2 ควบคุม: จังหวะ 1 step</td><td>Week 3 · รันตลอดแม้ไม่ได้ใช้ เพื่อให้คลื่นพร้อมเสมอ</td></tr><tr><td><code class="ref">lamp_main.cpp:219</code></td><td>ขั้น 3: มุมเป้าหมาย = ท่า + จังหวะ (clamp)</td><td>ตอน STOP ไม่คำนวณ</td></tr><tr><td><code class="ref">lamp_main.cpp:220</code></td><td>ขั้น 3: ส่งไป servo แบบจำกัดความเร็ว</td><td>สูงสุด 45 °/s</td></tr><tr><td><code class="ref">lamp_main.cpp:222</code></td><td>อ่านอุณหภูมิ/ตรวจว่า servo ตอบ (ข้อมูลกลับจากร่างกาย)</td><td>1 ตัวต่อ tick ไม่ให้บัสช้า</td></tr><tr><td><code class="ref">lamp_main.cpp:223</code></td><td>บันทึก log แถว D/E และจับเวลาเริ่มขยับ</td><td>ใช้วัดผล C0/C1</td></tr><tr><td><code class="ref">lamp_main.cpp:228</code></td><td>นับรอบที่ใช้เวลาเกิน 50 ms</td><td>คำสั่ง stat ดูได้ ถ้ามีบ่อยแปลว่ามีอะไรทำให้ loop ช้า (เช่น ToF init)</td></tr></tbody></table></div></div>
+<p>ตัวอย่างวงที่เห็นได้ชัด: ตอน interested หัวค่อยๆ ยื่นเข้าหาของ ToF หัวจึงวัดได้ใกล้ขึ้น พอถึง 15 cm ก็หยุดยื่น
+(<code class="ref">brain.cpp:356</code>) หรือตอนหันหาคน หัวหมุนจนคนอยู่กลางภาพแล้วหยุด</p>
+<h3>1.3 Embodiment: ร่างกายมีผลต่อพฤติกรรม (สไลด์ 16–17)</h3>
+<div class="tw"><table class=""><thead><tr><th>เจอบนหุ่นจริง</th><th>แก้ในโค้ด</th></tr></thead><tbody><tr><td>แขนยาว หัวหนัก → ไหล่ร้อนเร็ว</td><td>แรงบิดจำกัด 50% <code>TORQUE_LIMIT</code> <code class="ref">lamp_main.cpp:51</code> · จังหวะ CPG ลดลงเมื่อร้อน <code class="ref">motors.cpp:46</code> · ฮอร์โมน fatigue พาไปงีบ <code class="ref">brain.cpp:275</code></td></tr><tr><td>กล้องกับ ToF อยู่บนหัว หัวขยับเร็วภาพสั่น</td><td>φ ช้ากว่าสไลด์ <code>EMO_PHI</code> <code class="ref">brain.cpp:132</code> · happy หายใจที่ไหล่ หัวนิ่ง <code class="ref">brain.cpp:122</code></td></tr><tr><td>ก้มหัวลงนอน ToF หัวเห็นโต๊ะเป็นของใกล้</td><td>ตอนหลับไม่ใช้ ToF หัว <code>headBlind()</code> <code class="ref">brain.cpp:203</code></td></tr><tr><td>MG996R ไม่มี feedback กระโดดไปกลางตอนเปิดไฟ</td><td>บูตแล้วค่อยๆ ไป origin <code>startPose</code> <code class="ref">motors.cpp:146</code></td></tr></tbody></table></div>
+<h3>1.4 ขอบเขตการออกแบบ (สไลด์ 30)</h3>
+<p>ทุกคำสั่งมุมต้องผ่าน <code>setTarget()</code> ซึ่ง clamp ให้อยู่ในช่วงเสมอ ไม่มีทางอื่นที่จะตั้งเป้าหมายได้:</p>
+<figure class="code"><figcaption><b>src/motors.cpp</b> · บรรทัด 33–37</figcaption><pre><span class="ln">33</span>bool useHardRange = false;                          <span class="c">// true while sleepy, or while holding a hand pose (resume)</span>
+<span class="ln">34</span>void setTarget(int i, float deg) {                 <span class="c">// the ONLY way to set a target -&gt; always clamped</span>
+<span class="ln">35</span>  if (i &lt; 0 || i &gt;= NJ) return;
+<span class="ln">36</span>  float lo = useHardRange ? J[i].loDeg : J[i].softLo, hi = useHardRange ? J[i].hiDeg : J[i].softHi;
+<span class="ln">37</span>  J[i].target = constrain(deg, lo, hi);</pre></figure>
+<p>มีช่วงมุม 2 ชั้น: <b>ช่วงแข็ง</b> (<code>loDeg</code>..<code>hiDeg</code>) = ที่สอนไว้ใน EEPROM ของ servo ห้ามเกินเด็ดขาด
+และ <b>ช่วงอ่อน</b> (<code>softLo</code>..<code>softHi</code>) = ช่วงที่ทุกอารมณ์ใช้ ตั้งให้แคบกว่าได้ด้วย <code>soft &lt;joint&gt; &lt;min&gt; &lt;max&gt;</code>
+มีแค่ท่าพัก (sleepy/tired) และตอน resume ที่ใช้ช่วงแข็งได้เต็ม (<code>useHardRange</code>) เช่น ให้ศอกพับลึกตอนนอน
+ตัวอย่าง: ศอกช่วงแข็ง −46.7..+2.3° ถ้าอารมณ์ขอ −60° ค่าจะถูกตัดเป็น −46.7° เสมอ</p>
+<p>ความเร็วสูงสุด <code>MAX_DEG_S = 45</code> °/s (<code class="ref">lamp_main.cpp:60</code>) = 0.79 rad/s ตามเพดาน 0.8 rad/s ของวิชา ใช้ตอนส่งคำสั่งใน
+<code>sendOutputs</code> (<code class="ref">motors.cpp:183</code>)</p>
+<h3>1.5 สมมติฐานและสิ่งที่วัด (สไลด์ 14, 28, 33)</h3>
+<p>สมมติฐาน: <b>C1</b> (hysteresis + dwell) ทำให้อารมณ์สลับน้อยกว่า <b>C0</b> (threshold เดียว) โดยยังตอบสนองทัน สลับด้วยคำสั่ง <code>cond 0|1</code>
+(<code class="ref">experiment.cpp:8</code>) วัดผลด้วย trial (<code class="ref">experiment.cpp:123</code>) ผลจริงที่บันทึกไว้แล้ว: C0 60 s สลับ 38 ครั้ง/นาที, C1 60 s สลับ 4 ครั้ง/นาที</p>
+</section><section id="w2"><p class="eyebrow">ส่วนที่ 1 · Week 1–4</p><h2>Week 2 · Sensing: contract, low-pass, hysteresis</h2>
+<h3>2.1 ข้อมูล 3 ประเภท (สไลด์ 5)</h3>
+<div class="tw"><table class=""><thead><tr><th>ประเภท</th><th>หุ่นเรา</th><th>โค้ด</th></tr></thead><tbody><tr><td>Exteroception (ภายนอก)</td><td>ToF ฐาน/หัว, กล้อง (คน, ของ, มือโบก)</td><td><code class="ref">sensors.cpp:84</code>, <code class="ref">sensors.cpp:135</code></td></tr><tr><td>Proprioception (ท่าตัวเอง)</td><td>อ่านตำแหน่ง STS ตอนบูต, ตอนตื่น, ตอน resume</td><td><code class="ref">motors.cpp:146</code>, <code class="ref">brain.cpp:400</code>, <code class="ref">motors.cpp:248</code></td></tr><tr><td>Interoception (ภายใน)</td><td>อุณหภูมิมอเตอร์ → ฮอร์โมน fatigue → tired</td><td><code class="ref">motors.cpp:203</code>, <code class="ref">brain.cpp:271</code></td></tr></tbody></table></div>
+<h3>2.2 ToF หนึ่งตัวต่อหนึ่ง tick: อ่าน → contract → low-pass (สไลด์ 10, 14)</h3>
+<figure class="code"><figcaption><b>src/sensors.cpp</b> · บรรทัด 84–108</figcaption><pre><span class="ln">84</span>void tofStep(Tof &amp;t) {
+<span class="ln">85</span>  bool fresh = false;
+<span class="ln">86</span>  if (!isnan(t.simCm)) { t.raw = t.simCm; t.lastSample = millis(); fresh = true; }
+<span class="ln">87</span>  else if (!tofEnabled) { /* real sensors switched off (&<span class="c">#x27;tof on&#x27; to start) */ }</span>
+<span class="ln">88</span>  else if (t.ok) {
+<span class="ln">89</span>    if ((t.dev.readReg(VL53L0X::RESULT_INTERRUPT_STATUS) &amp; 0x07) != 0) {   <span class="c">// new measurement ready</span>
+<span class="ln">90</span>      uint16_t mm = t.dev.readReg16Bit(VL53L0X::RESULT_RANGE_STATUS + 10);
+<span class="ln">91</span>      t.dev.writeReg(VL53L0X::SYSTEM_INTERRUPT_CLEAR, 0x01);
+<span class="ln">92</span>      t.raw = (mm == 0 || mm &gt;= 8000) ? NAN : mm / 10.0f;   <span class="c">// 0 / 8190 = no target -&gt; not a number</span>
+<span class="ln">93</span>      t.lastSample = millis(); fresh = true;
+<span class="ln">94</span>    } else if (millis() - t.lastSample &gt; 1000) {           <span class="c">// silent for 1 s -&gt; sensor lost</span>
+<span class="ln">95</span>      uint8_t id = t.dev.readReg(0xC0);                    <span class="c">// model id: 0xEE when the chip still answers on I2C</span>
+<span class="ln">96</span>      t.ok = false;
+<span class="ln">97</span>      Serial.printf(&quot;WARN ToF %s stopped answering (model id 0x%02X: %s)\n&quot;, t.name, id,
+<span class="ln">98</span>                    id == 0xEE ? &quot;chip answers but gives no data&quot; : &quot;no I2C answer - check wires / 3V3&quot;);
+<span class="ln">99</span>    }
+<span class="ln">100</span>  } else if (millis() - t.lastTry &gt; 5000) tofInit(t);       <span class="c">// not connected: retry every 5 s</span>
+<span class="ln">101</span> 
+<span class="ln">102</span>  <span class="c">// 1) sensor contract (slides p.10): fresh? finite and in range?</span>
+<span class="ln">103</span>  bool stale = millis() - t.lastSample &gt; TOF_STALE_MS;
+<span class="ln">104</span>  bool inRange = isfinite(t.raw) &amp;&amp; t.raw &gt;= TOF_MIN_CM &amp;&amp; t.raw &lt;= TOF_MAX_CM;
+<span class="ln">105</span>  t.valid = !stale &amp;&amp; inRange;
+<span class="ln">106</span>  if (!t.valid) { if (fresh) t.invalidCount++; return; }     <span class="c">// keep the last filtered value, no event</span>
+<span class="ln">107</span>  <span class="c">// 2) low-pass filter (slides p.14)</span>
+<span class="ln">108</span>  t.filt = isnan(t.filt) ? t.raw : TOF_BETA * t.raw + (1 - TOF_BETA) * t.filt;</pre></figure>
+<div class="tw"><table class=""><thead><tr><th>บรรทัด</th><th>ทำอะไร</th></tr></thead><tbody><tr><td><code class="ref">sensors.cpp:86</code></td><td>ถ้าสั่งจำลองไว้ (<code>s near</code>, <code>s base</code>, scen) ใช้ค่าจำลองแทนค่าจริง แต่ยังผ่าน contract และ filter เหมือนของจริง</td></tr><tr><td><code class="ref">sensors.cpp:89</code></td><td>อ่านแบบไม่รอ: มีค่าใหม่ค่อยอ่าน ไม่มีก็ไปต่อ loop ไม่ติด</td></tr><tr><td><code class="ref">sensors.cpp:92</code></td><td>0 หรือ 8190 แปลว่าไม่เจอเป้า แปลงเป็น NaN (saturation ในสไลด์ 9)</td></tr><tr><td><code class="ref">sensors.cpp:103</code></td><td><b>sensor contract</b>: เก่ากว่า 120 ms = stale</td></tr><tr><td><code class="ref">sensors.cpp:104</code></td><td>ต้องเป็นตัวเลขจริง และอยู่ใน 3–120 cm</td></tr><tr><td><code class="ref">sensors.cpp:106</code></td><td>ไม่ผ่าน = INVALID: นับไว้ แล้วไม่สร้าง event ใดๆ</td></tr><tr><td><code class="ref">sensors.cpp:108</code></td><td><b>low-pass</b> d_f = β·d_raw + (1−β)·d_f, β = <code>TOF_BETA</code> 0.25</td></tr></tbody></table></div>
+<p>ตัวอย่างตัวเลข: d_f เดิม 40 cm มือเข้ามาวัดได้ 20 cm → 0.25×20 + 0.75×40 = <b>35 cm</b> รอบต่อไป 0.25×20 + 0.75×35 = <b>31.25 cm</b>
+ค่าจึงเปลี่ยนนุ่มๆ ไม่กระตุกตาม noise</p>
+<p>ค่าที่ใช้ทั้งหมดอยู่บนสุดของ lamp_main.cpp:</p>
+<figure class="code"><figcaption><b>src/lamp_main.cpp</b> · บรรทัด 16–27</figcaption><pre><span class="ln">16</span>extern const float TOF_BETA       = 0.25f;   <span class="c">// low-pass weight of a new sample (Week 02: 0.25)</span>
+<span class="ln">17</span>extern const float TOF_MIN_CM     = 3;       <span class="c">// sensor contract: valid range</span>
+<span class="ln">18</span>extern const float TOF_MAX_CM     = 120;
+<span class="ln">19</span>extern const uint32_t TOF_STALE_MS = 120;    <span class="c">// sample older than this = INVALID</span>
+<span class="ln">20</span><span class="c">//                                     T_enter              T_exit                    t_enter                 t_exit</span>
+<span class="ln">21</span>extern const float OBJ_ENTER_CM     = 20, OBJ_EXIT_CM     = 25, OBJ_T_IN     = 0.5f, OBJ_T_OUT     = 2.0f;  <span class="c">// BASE: object</span>
+<span class="ln">22</span>extern const bool OBJ_NEED_BASE = true;   <span class="c">// interested only STARTS when the BASE ToF sees the object (&lt; OBJ_ENTER_CM);</span>
+<span class="ln">23</span>                                          <span class="c">// the camera alone cannot start it (false = old rule: camera alone is enough)</span>
+<span class="ln">24</span>extern const float AFRAID_ENTER_CM    = 30, AFRAID_EXIT_CM    = 35, AFRAID_T_IN    = 0.2f, AFRAID_T_OUT    = 1.0f;  <span class="c">// HEAD: afraid</span>
+<span class="ln">25</span>extern const float STARTLE_ENTER_CM = 10, STARTLE_EXIT_CM = 14, STARTLE_T_IN = 0.0f, STARTLE_T_OUT = 1.0f;  <span class="c">// HEAD: afraid JOLT (&lt; 10 cm)</span>
+<span class="ln">26</span><span class="c">// PERSON from the BASE ToF wakes the robot to look; it counts as a person only while no camera is connected</span>
+<span class="ln">27</span>extern const float PERSON_LO_CM = 25, PERSON_ENTER_CM = 80, PERSON_EXIT_CM = 95, PERSON_T_IN = 1.5f, PERSON_T_OUT = 3.0f;</pre></figure>
+<h3>2.3 Hysteresis + dwell = C1, threshold เดียว = C0 (สไลด์ 11–13)</h3>
+<figure class="code"><figcaption><b>src/lamp.h</b> · บรรทัด 170–185</figcaption><pre><span class="ln">170</span>struct Hyst {
+<span class="ln">171</span>  const char *name;
+<span class="ln">172</span>  float lo, enterCm, exitCm;   <span class="c">// inside = lo &lt;= d &lt;= enter (to switch on) / lo &lt;= d &lt;= exit (to stay on)</span>
+<span class="ln">173</span>  float tEnter, tExit;         <span class="c">// dwell times [s]</span>
+<span class="ln">174</span>  bool on = false;
+<span class="ln">175</span>  float timer = 0;             <span class="c">// how long the candidate state has been different</span>
+<span class="ln">176</span>  uint32_t srcMs = 0;          <span class="c">// when the candidate first differed = SOURCE time of the event (before dwell)</span>
+<span class="ln">177</span>  bool changed = false;        <span class="c">// set when &#x27;on&#x27; flips; sensorsStep() logs it as an input and clears it</span>
+<span class="ln">178</span>  <span class="c">// C1 (cond 1): exit threshold wider than enter (hysteresis) + dwell times.</span>
+<span class="ln">179</span>  <span class="c">// C0 (cond 0): ONE threshold (enterCm) both ways, switch at once - the Lab06 baseline.</span>
+<span class="ln">180</span>  void update(bool valid, float d) {
+<span class="ln">181</span>    bool cand = valid &amp;&amp; d &gt;= lo &amp;&amp; d &lt;= ((on &amp;&amp; cond == 1) ? exitCm : enterCm);
+<span class="ln">182</span>    if (cand == on) { timer = 0; return; }
+<span class="ln">183</span>    if (timer == 0) srcMs = millis();
+<span class="ln">184</span>    timer += DT;
+<span class="ln">185</span>    if (cond == 0 || timer &gt;= (cand ? tEnter : tExit)) { on = cand; timer = 0; changed = true; }</pre></figure>
+<div class="ex"><div class="tw"><table class="ex"><thead><tr><th>ตรงไหน</th><th>ทำอะไร</th><th>ทำไม / ตัวอย่าง</th></tr></thead><tbody><tr><td><code>lo, enterCm, exitCm</code></td><td>ช่วงระยะที่นับว่า 'มี' คือ lo ≤ d ≤ enter (ตอนจะเข้า) หรือ lo ≤ d ≤ exit (ตอนอยู่แล้ว)</td><td>lo ใช้กับ person (25 cm) ไม่ให้ของที่ใกล้มากนับเป็นคน</td></tr><tr><td><code>bool cand = ...</code></td><td>รอบนี้ค่าอยากให้เป็น ON ไหม ถ้า ON อยู่แล้วและเป็น C1 ใช้ exitCm</td><td>exit กว้างกว่า enter = hysteresis ค่าที่แกว่งรอบเส้นไม่ทำให้สลับ</td></tr><tr><td><code>if (cand == on) { timer = 0; return; }</code></td><td>ค่าตรงกับสถานะเดิม รีเซ็ตตัวจับเวลา</td><td>ต้องต่างต่อเนื่องเท่านั้นถึงจะนับ</td></tr><tr><td><code>if (timer == 0) srcMs = millis();</code></td><td>จำเวลาแรกที่ค่าเริ่มต่าง</td><td>ใช้วัด latency: source → recognized</td></tr><tr><td><code>timer += DT;</code></td><td>นับเวลาที่ต่างต่อเนื่อง ทีละ 0.05 s</td><td>dwell</td></tr><tr><td><code>if (cond == 0 || timer >= ...)</code></td><td>C0 เปลี่ยนทันที / C1 ต้องรอครบ tEnter หรือ tExit</td><td>ตัวแปร cond มาจากคำสั่ง cond 0|1</td></tr></tbody></table></div></div>
+<ul>
+<li><b>cand</b> = รอบนี้ "อยากเป็น ON ไหม" ถ้า ON อยู่แล้วและเป็น C1 ใช้ขอบ <code>exitCm</code> (ไกลกว่า) ถ้าไม่ใช่ใช้ <code>enterCm</code> นี่คือ hysteresis</li>
+<li><b>timer</b> นับว่า cand ต่างจากสถานะจริงมานานเท่าไร ต้องถึง <code>tEnter</code>/<code>tExit</code> ถึงเปลี่ยน นี่คือ dwell (ส่วนที่เราเพิ่มเอง แบบ debounce ของ Lab06)</li>
+<li><b>C0</b> (<code>cond == 0</code>): ใช้ขอบเดียว เปลี่ยนทันที noise รอบเส้นจึงทำให้สลับไปมา (chattering)</li>
+<li><b>srcMs</b> จำเวลาที่ค่าเริ่มต่าง (ก่อน dwell) ไว้วัด latency ใน log</li>
+</ul>
+<p>ตัวอย่าง afraid (enter 30 / exit 35 cm, 0.2 s / 1 s): มือมาที่ 29 cm ต้องค้าง 0.2 s ถึงกลัว ถ้ามือถอยไป 32 cm ยังกลัวอยู่ (ยังไม่เกิน 35)
+ต้องเกิน 35 cm นาน 1 s ถึงหายกลัว ใน C0 มือที่สั่นระหว่าง 29–31 cm จะทำให้กลัว/หายกลัวสลับทุกรอบ</p>
+<p>สวิตช์ทั้ง 4 ตัวสร้างที่ <code class="ref">sensors.cpp:36</code> และอัปเดตทุก tick:</p>
+<figure class="code"><figcaption><b>src/sensors.cpp</b> · บรรทัด 207–219</figcaption><pre><span class="ln">207</span>void sensorsStep() {
+<span class="ln">208</span>  cameraStep();
+<span class="ln">209</span>  tofStep(tofBase);
+<span class="ln">210</span>  tofStep(tofHead);
+<span class="ln">211</span>  <span class="c">// 3) hysteresis + dwell (slides p.13)</span>
+<span class="ln">212</span>  hObject.update(tofBase.valid, tofBase.filt);
+<span class="ln">213</span>  hPerson.update(tofBase.valid, tofBase.filt);
+<span class="ln">214</span>  hAfraid.update(tofHead.valid, tofHead.filt);
+<span class="ln">215</span>  hStartle.update(tofHead.valid, tofHead.filt);
+<span class="ln">216</span>  for (Hyst *h : {&amp;hObject, &amp;hPerson, &amp;hAfraid, &amp;hStartle})        <span class="c">// every switch = one logged input</span>
+<span class="ln">217</span>    if (h-&gt;changed) { h-&gt;changed = false; noteInput(h-&gt;name, h-&gt;on, h-&gt;srcMs); }
+<span class="ln">218</span>  sense.baseCm = tofCm(tofBase);
+<span class="ln">219</span>  sense.headCm = tofCm(tofHead);</pre></figure>
+<p>ลำดับในหนึ่ง tick: กล้องก่อน (<code>cameraStep</code>) → อ่าน ToF ฐานและหัว → อัปเดตสวิตช์ 4 ตัว → สวิตช์ไหนเปลี่ยนก็ส่งไปบันทึกเป็น input (<code>noteInput</code>)
+เพื่อวัดว่า input นั้นทำให้อารมณ์เปลี่ยนไหมและเร็วแค่ไหน → สุดท้ายเก็บระยะที่ใช้ได้ลง <code>sense.baseCm</code> / <code>sense.headCm</code> ให้สมองใช้
+ToF ฐานป้อนสวิตช์ object (≤ 20 cm) และ person (25–80 cm) ToF หัวป้อน afraid (≤ 30 cm) และ startle/jolt (≤ 10 cm)</p>
+<p>กล้องใช้ <code>struct Dwell</code> (<code class="ref">lamp.h:153</code>) แบบเดียวกันแต่ไม่มีระยะ (เห็น/ไม่เห็น) C0 ก็เปลี่ยนทันทีเหมือนกัน</p>
+<h3>2.4 จาก ToF เป็นคำถามที่สมองใช้</h3>
+<figure class="code"><figcaption><b>src/sensors.cpp</b> · บรรทัด 22–27 · มีของให้ดูไหม</figcaption><pre><span class="ln">22</span>static bool objLatch = false;
+<span class="ln">23</span>bool thingThere() {
+<span class="ln">24</span>  bool baseStart = baseNear() &amp;&amp; (cameraConnected || !personThere());
+<span class="ln">25</span>  if (!OBJ_NEED_BASE) return sense.object || baseStart;
+<span class="ln">26</span>  objLatch = baseStart || (objLatch &amp;&amp; (baseNear() || sense.object));
+<span class="ln">27</span>  return objLatch;</pre></figure>
+<p><b>OBJ_NEED_BASE</b> (แก้ 12 พ.ย.): interested เริ่มได้เฉพาะเมื่อ <b>ToF ฐาน</b> เห็นของ ≤ 20 cm กล้องเห็นขวดไกลๆ อย่างเดียวไม่ทำให้ก้มแล้ว
+พอเริ่มแล้วอยู่ต่อได้ถ้า ToF ฐาน <i>หรือ</i> กล้องยังเห็น (ยกของขึ้นหัวก็ยังตาม)</p>
+<figure class="code"><figcaption><b>src/sensors.cpp</b> · บรรทัด 111–119</figcaption><pre><span class="ln">111</span>float tofCm(const Tof &amp;t) { return t.valid ? t.filt : 999; }   <span class="c">// 999 = nothing usable</span>
+<span class="ln">112</span>bool baseNear() { return hObject.on; }
+<span class="ln">113</span><span class="c">// PERSON rule (2026-11-09): the camera is trusted whenever it sees someone (even if the base ToF does not).</span>
+<span class="ln">114</span><span class="c">// The base ToF seeing someone only WAKES the robot to look; it counts as a person only while no camera exists.</span>
+<span class="ln">115</span><span class="c">// SLEEPY (also while bowing down to sleep): the CAMERA is ignored - the bowed head camera would see the user</span>
+<span class="ln">116</span><span class="c">// sitting there and wake it at once (2026-11-12 user). Only the BASE ToF wakes it (object or someone near the base,</span>
+<span class="ln">117</span><span class="c">// see lastActivityMs in brain.cpp); once awake the camera counts again (person still there -&gt; excited greeting).</span>
+<span class="ln">118</span>bool personThere() { return (sense.person &amp;&amp; emo != SLEEPY) || (!cameraConnected &amp;&amp; hPerson.on); }
+<span class="ln">119</span>bool someoneMaybe() { return hPerson.on &amp;&amp; !personThere(); }   <span class="c">// base ToF says &quot;someone?&quot; -&gt; wake up and look</span></pre></figure>
+<div class="ex"><div class="tw"><table class="ex"><thead><tr><th>ตรงไหน</th><th>ทำอะไร</th><th>ทำไม / ตัวอย่าง</th></tr></thead><tbody><tr><td><code>tofCm()</code></td><td>ระยะที่ผ่าน filter หรือ 999 ถ้า INVALID</td><td>ค่าเสียจึงแปลว่าไม่มีอะไร ปลอดภัย (Lab06 fault → normal)</td></tr><tr><td><code>baseNear()</code></td><td>สวิตช์ object ของ ToF ฐาน ON ไหม</td><td>ใช้เริ่ม interested</td></tr><tr><td><code>personThere()</code></td><td>มีคนไหม: กล้องเห็นคน (ยกเว้นตอน sleepy) หรือไม่มีกล้องแล้ว ToF ฐานเห็นคน</td><td>ไม่มีกล้องยังเล่นได้ด้วย ToF อย่างเดียว</td></tr><tr><td><code>someoneMaybe()</code></td><td>ToF ฐานเห็นอะไรระยะคน แต่กล้องยังไม่ยืนยัน</td><td>หุ่นจะเงยหัวมอง 'ใครมา?' เป็น feedforward</td></tr></tbody></table></div></div>
+<p><code>tofCm()</code> คืน 999 เมื่อ INVALID แปลว่า "ไม่มีอะไร" จึงไม่มีทางที่ค่าเสียทำให้หุ่นกลัว · <code>personThere()</code> ตอน sleepy ไม่นับกล้อง (ก้มหัวนอนแล้วกล้องเห็นคนจะตื่นทันที)</p>
+<h3>2.5 Metrics (สไลด์ 20)</h3>
+<div class="tw"><table class=""><thead><tr><th>Metric ในสไลด์</th><th>ของเรา</th><th>โค้ด</th></tr></thead><tbody><tr><td>Response latency</td><td>input → ตัดสินอารมณ์ และ input → เริ่มขยับจริง (mean/max ในแถว S)</td><td><code class="ref">experiment.cpp:83</code>, <code class="ref">experiment.cpp:96</code></td></tr><tr><td>Switching count</td><td>จำนวนครั้งที่อารมณ์เปลี่ยน + ต่อนาที</td><td><code class="ref">experiment.cpp:142</code></td></tr><tr><td>False trigger</td><td>input ที่ไม่ทำให้อารมณ์เปลี่ยน (no_state_change) / ถูกแทน (superseded)</td><td><code class="ref">experiment.cpp:66</code></td></tr><tr><td>Invalid samples</td><td>ค่า ToF ที่ INVALID ระหว่าง trial</td><td><code class="ref">experiment.cpp:144</code></td></tr><tr><td>N/A ต้องว่าง ไม่ใช่ 0</td><td>ช่องว่างใน CSV</td><td><code class="ref">experiment.cpp:135</code></td></tr></tbody></table></div>
+<p class="note">ชื่อ condition ไม่ตรงกับ Lab02: C0 ของเรา = C1 ในสไลด์ (single threshold), C1 ของเรา = C2 ในสไลด์ (filter + hysteresis) และ C0 ของเรายังผ่าน low-pass อยู่ ต้องเขียนบอกในรายงาน</p>
+</section><section id="w3"><p class="eyebrow">ส่วนที่ 1 · Week 1–4</p><h2>Week 3 · CPG SO(2)</h2>
+<h3>3.1 ข้อมูลของ CPG</h3>
+<figure class="code"><figcaption><b>src/lamp.h</b> · บรรทัด 102–112</figcaption><pre><span class="ln">102</span>struct CPG {
+<span class="ln">103</span>  float a1 = 0.1f, a2 = 0.0f;      <span class="c">// a(0) = [0.1, 0] as in the slides</span>
+<span class="ln">104</span>  float o1 = 0, o2 = 0;
+<span class="ln">105</span>  float alpha = 1.1f;              <span class="c">// course baseline</span>
+<span class="ln">106</span>  float phi = 0.12f;               <span class="c">// normal breathing ~2.7 s per breath (slides baseline 0.2 = 1.6 s)</span>
+<span class="ln">107</span>  float peak = 0.1f;               <span class="c">// running |o| amplitude estimate (for normalisation)</span>
+<span class="ln">108</span>  float period = 0;                <span class="c">// measured from o1 upward zero crossings [s]</span>
+<span class="ln">109</span>  uint32_t lastCross = 0;
+<span class="ln">110</span>  bool on = false;
+<span class="ln">111</span>  float gain = 0;                  <span class="c">// 0..1 fade so start/stop never jumps</span>
+<span class="ln">112</span>  bool csv = false;</pre></figure>
+<div class="ex"><div class="tw"><table class="ex"><thead><tr><th>ตรงไหน</th><th>ทำอะไร</th><th>ทำไม / ตัวอย่าง</th></tr></thead><tbody><tr><td><code>a1, a2</code></td><td>ค่า activation ของนิวรอนสองตัว เริ่มที่ [0.1, 0]</td><td>สไลด์ 19 ถ้าเริ่ม [0, 0] จะไม่แกว่งเลย</td></tr><tr><td><code>o1, o2</code></td><td>output = tanh(a) อยู่ใน −1..1</td><td>o2 ตามหลัง o1 เป็นมุม φ ใช้ทำท่าหายใจที่ไหล่กับหัวต่างจังหวะ</td></tr><tr><td><code>alpha</code></td><td>ขนาด/รูปคลื่น > 1 ถึงจะแกว่งต่อเนื่อง</td><td>1.1 = ค่าพื้นฐานของวิชา</td></tr><tr><td><code>phi</code></td><td>ความเร็วจังหวะ (rad ต่อ step)</td><td>ฮอร์โมนเป็นคนตั้งทุก tick เมื่อ Auto เปิด</td></tr><tr><td><code>peak, period</code></td><td>ความสูงคลื่นและคาบที่วัดได้</td><td>ใช้ normalise และแสดงผล (คำสั่ง cpg)</td></tr><tr><td><code>on, gain</code></td><td>เปิด/ปิดจังหวะแบบค่อยๆ</td><td>gain 0 → 1 ใน ~1 s</td></tr></tbody></table></div></div>
+<h3>3.2 หนึ่งรอบของ CPG (สไลด์ 14–18)</h3>
+<figure class="code"><figcaption><b>src/brain.cpp</b> · บรรทัด 16–40</figcaption><pre><span class="ln">16</span>void cpgStep() {
+<span class="ln">17</span>  <span class="c">// W(alpha, phi) = alpha [[cos phi, sin phi], [-sin phi, cos phi]]</span>
+<span class="ln">18</span>  float w11 = cpg.alpha * cosf(cpg.phi), w12 = cpg.alpha * sinf(cpg.phi);
+<span class="ln">19</span>  float w21 = -w12, w22 = w11;
+<span class="ln">20</span>  <span class="c">// simultaneous update: BOTH new activations are computed from the OLD outputs</span>
+<span class="ln">21</span>  float s1 = tanhf(cpg.a1), s2 = tanhf(cpg.a2);          <span class="c">// sigma(a) = tanh(a)  (Lab convention)</span>
+<span class="ln">22</span>  float n1 = w11 * s1 + w12 * s2;
+<span class="ln">23</span>  float n2 = w21 * s1 + w22 * s2;
+<span class="ln">24</span>  float prev1 = cpg.o1;
+<span class="ln">25</span>  cpg.a1 = n1; cpg.a2 = n2;
+<span class="ln">26</span>  cpg.o1 = tanhf(cpg.a1); cpg.o2 = tanhf(cpg.a2);
+<span class="ln">27</span> 
+<span class="ln">28</span>  <span class="c">// amplitude estimate (for normalising o to -1..1): follows peaks quickly, decays slowly</span>
+<span class="ln">29</span>  float m = fmaxf(fabsf(cpg.o1), fabsf(cpg.o2));
+<span class="ln">30</span>  cpg.peak = (m &gt; cpg.peak) ? m : cpg.peak * 0.995f + m * 0.005f;
+<span class="ln">31</span>  if (cpg.peak &lt; 0.05f) cpg.peak = 0.05f;
+<span class="ln">32</span>  <span class="c">// period: time between upward zero crossings of o1</span>
+<span class="ln">33</span>  if (prev1 &lt; 0 &amp;&amp; cpg.o1 &gt;= 0) {
+<span class="ln">34</span>    uint32_t now = millis();
+<span class="ln">35</span>    if (cpg.lastCross) cpg.period = (now - cpg.lastCross) / 1000.0f;
+<span class="ln">36</span>    cpg.lastCross = now;
+<span class="ln">37</span>  }
+<span class="ln">38</span>  <span class="c">// gain fades 0 &lt;-&gt; 1 in ~1 s, so switching the rhythm on / off never jumps</span>
+<span class="ln">39</span>  float g = cpg.on ? 1.0f : 0.0f;
+<span class="ln">40</span>  cpg.gain += constrain(g - cpg.gain, -DT, DT);</pre></figure>
+<div class="tw"><table class=""><thead><tr><th>บรรทัด</th><th>โค้ด</th><th>สไลด์</th></tr></thead><tbody><tr><td><code class="ref">brain.cpp:18</code></td><td>w11 = α cos φ, w12 = α sin φ, w21 = −w12, w22 = w11</td><td>15–16 เมทริกซ์ W(α, φ)</td></tr><tr><td><code class="ref">brain.cpp:21</code></td><td>σ(a) = tanh(a)</td><td>17</td></tr><tr><td><code class="ref">brain.cpp:22</code></td><td>a(t+1) = W·tanh(a(t))</td><td>14</td></tr><tr><td><code class="ref">brain.cpp:25</code></td><td>เขียนค่าใหม่หลังคำนวณครบทั้งคู่ = simultaneous update</td><td>18</td></tr><tr><td><code class="ref">brain.cpp:26</code></td><td>o = tanh(a)</td><td>14</td></tr><tr><td><code class="ref">brain.cpp:30</code></td><td>วัดความสูงคลื่นไว้หาร ให้ output อยู่ −1..1 (เราเพิ่ม)</td><td>—</td></tr><tr><td><code class="ref">brain.cpp:33</code></td><td>วัดคาบจาก o₁ ตัดศูนย์ขาขึ้น</td><td>25</td></tr><tr><td><code class="ref">brain.cpp:40</code></td><td>gain ค่อยๆ ไป 0 หรือ 1 ใน ~1 s เปิด/ปิดจังหวะไม่กระตุก (เราเพิ่ม)</td><td>—</td></tr></tbody></table></div>
+<p><b>ตัวอย่างตัวเลข (สไลด์ 19)</b>: α = 1.1, φ = 0.2, a(0) = [0.1, 0]<br>
+w11 = 1.1·cos 0.2 = 1.0781, w12 = 1.1·sin 0.2 = 0.2185 · tanh(0.1) = 0.0997, tanh(0) = 0<br>
+a1(1) = 1.0781×0.0997 + 0.2185×0 = <b>0.1075</b> · a2(1) = −0.2185×0.0997 + 1.0781×0 = <b>−0.0218</b> ตรงกับสไลด์<br>
+ความถี่ที่วัดจากโค้ดจริงตรงกับตารางสไลด์ 35: φ 0.2 → 0.625 Hz, φ 0.4 → 1.27 Hz, α 1.3 → 0.544 Hz</p>
+<h3>3.3 output ไหนไปข้อต่อไหน</h3>
+<figure class="code"><figcaption><b>src/brain.cpp</b> · บรรทัด 46–56</figcaption><pre><span class="ln">46</span>float cpgOut(int src) {                       <span class="c">// CPG output for one joint, normalised -1..1</span>
+<span class="ln">47</span>  float o = (abs(src) == 1) ? cpg.o1 : (abs(src) == 2) ? cpg.o2 : 0;
+<span class="ln">48</span>  return (src &lt; 0 ? -o : o) / cpg.peak;
+<span class="ln">49</span>}
+<span class="ln">50</span> 
+<span class="ln">51</span>void cpgDefaults() {                          <span class="c">// which CPG output drives which joint</span>
+<span class="ln">52</span>  for (int i = 0; i &lt; NJ; i++) { J[i].pose = 0; J[i].src = 0; J[i].amp = 0; }
+<span class="ln">53</span>  J[1].src = 1;  J[1].amp = 4;     <span class="c">// shoulder   &lt;- o1</span>
+<span class="ln">54</span>  J[2].src = 1;                    <span class="c">// elbow      &lt;- o1 (amp set per emotion)</span>
+<span class="ln">55</span>  J[3].src = 2;  J[3].amp = 3;     <span class="c">// head pitch &lt;- o2 (lags o1 -&gt; looks like breathing)</span>
+<span class="ln">56</span>  J[4].src = 1;                    <span class="c">// head yaw   &lt;- o1 (bored: look left / right, waving back)</span></pre></figure>
+<p><code>cpgOut(src)</code> คืน o1 หรือ o2 หารด้วยความสูงคลื่นที่วัดได้ ทำให้ได้ −1..1 เสมอไม่ว่า α เป็นเท่าไร
+แล้ว amp ของแต่ละข้อ (องศา) คูณเข้าไปตรงๆ เช่น amp 2° = แกว่ง ±2° · src เป็นลบ = กลับเฟส · <code>cpgDefaults()</code> กำหนดว่าข้อไหนใช้ output ไหน:
+ไหล่ ศอก หัวหัน ใช้ o1 ส่วนหัวก้ม-เงยใช้ o2 (ช้ากว่า o1 เล็กน้อย จึงดูเป็นการหายใจ ไม่ใช่ขยับพร้อมกันแข็งๆ)</p>
+<h3>3.4 Joint mapping q = q_mid + A·o (สไลด์ 31)</h3>
+<figure class="code"><figcaption><b>src/motors.cpp</b> · บรรทัด 43–49</figcaption><pre><span class="ln">43</span>void composeTargets() {
+<span class="ln">44</span>  for (int i = 0; i &lt; NJ; i++) {
+<span class="ln">45</span>    <span class="c">// hot joint: rhythm fades out between TEMP_EASE_C and TEMP_STILL_C (less work, it only holds)</span>
+<span class="ln">46</span>    float heat = constrain((TEMP_STILL_C - J[i].temp) / (float)(TEMP_STILL_C - TEMP_EASE_C), 0.0f, 1.0f);
+<span class="ln">47</span>    float want = J[i].pose + cpg.gain * ampScale * ampGain * heat * J[i].amp * cpgOut(J[i].src);
+<span class="ln">48</span>    setTarget(i, want);
+<span class="ln">49</span>    if (J[i].target != want) clampTicks++;</pre></figure>
+<p><b>ตัวอย่าง</b> happy: ไหล่ pose +5°, amp 2°, gain 1, ampScale 1.1 (novelty นิดหน่อย), ampGain 1, heat 1, cpgOut = 0.5 →
+want = 5 + 1×1.1×1×1×2×0.5 = <b>6.1°</b> · ถ้าไหล่ร้อน 58.5 °C: heat = (62 − 58.5)/(62 − 55) = 0.5 → แกว่งเหลือครึ่งเดียว
+· <code>clampTicks</code> นับว่าชนขอบบ่อยแค่ไหน (คำสั่ง cpg แสดง "limit hits")</p>
+<p>q_mid = <code>J[i].pose</code> (ท่าของอารมณ์), A = <code>J[i].amp</code> (จากตาราง EMO_AMP), o = <code>cpgOut()</code> ตัวคูณอื่น:
+<code>cpg.gain</code> (fade), <code>ampScale</code> (ฮอร์โมน), <code>ampGain</code> (GUI), <code>heat</code> (ลดเมื่อร้อน) แล้ว <code>setTarget</code> clamp ให้อยู่ในช่วง</p>
+<figure class="code"><figcaption><b>src/brain.cpp</b> · บรรทัด 118–127 · A ของแต่ละอารมณ์ (องศา)</figcaption><pre><span class="ln">118</span>const float EMO_AMP[NEMO][5] = {
+<span class="ln">119</span>  {0, 0, 0, 0,  0},   <span class="c">// normal     STILL</span>
+<span class="ln">120</span>  {0, 0, 0, 0,  0},   <span class="c">// sleepy     goes to its pose, then torque OFF (motors rest)</span>
+<span class="ln">121</span>  {0, 0, 0, 3,  0},   <span class="c">// excited    small nod (pitch) - kept small so the head camera stays steady</span>
+<span class="ln">122</span>  {0, 2, 0, 0,  0},   <span class="c">// happy      gentle breathing on the SHOULDER only - head still (camera watches for a wave)</span>
+<span class="ln">123</span>  {0, 0, 0, 0,  0},   <span class="c">// interested still - the head TRACKS the object instead</span>
+<span class="ln">124</span>  {0, 0, 0, 0, 25},   <span class="c">// bored      SLOWLY look left / right (yaw), ~10 deg/s peak</span>
+<span class="ln">125</span>  {0, 0, 0, 0,  0},   <span class="c">// afraid     still, backing off</span>
+<span class="ln">126</span>  {0, 0, 0, 0,  0},   <span class="c">// tired      goes to the rest pose, then torque OFF to cool down</span>
+<span class="ln">127</span>};</pre></figure>
+<figure class="code"><figcaption><b>src/brain.cpp</b> · บรรทัด 129–132 · φ พื้นฐานของแต่ละอารมณ์</figcaption><pre><span class="ln">129</span><span class="c">// CPG speed phi [rad] per emotion; the hormones add on top (novelty / stress -&gt; faster), see mapToCpg().</span>
+<span class="ln">130</span><span class="c">// Period of the SO(2) CPG (alpha 1.1): phi 0.04 = 16.5 s, 0.06 = 6.7 s, 0.08 = 4.5 s, 0.12 = 2.8 s, 0.15 = 2.2 s</span>
+<span class="ln">131</span><span class="c">//                          normal  sleepy excited happy  interested bored  afraid tired</span>
+<span class="ln">132</span>const float EMO_PHI[NEMO] = {0.08f, 0.06f, 0.15f,  0.08f, 0.12f,    0.04f, 0.12f, 0.06f};   <span class="c">// slow: camera on the head</span></pre></figure>
+<h3>3.5 Week 3 → Week 4 (สไลด์ 36–37)</h3>
+<p>สไลด์: m(t) → bounded mapping → φ_cmd ใน Week 4 ให้ receptor R มาแทน m(t) ของเราคือ R ของ novelty กับ stress เข้า <code>mapToCpg()</code> (ดู 4.5)
+ส่วน modulatory input M·I (สไลด์ 28) เราไม่ได้ใช้ · ปรับ α และ amp สดได้จาก GUI (<code>tune alpha</code>, <code>tune amp</code>)</p>
+</section><section id="w4"><p class="eyebrow">ส่วนที่ 1 · Week 1–4</p><h2>Week 4 · Artificial Hormone</h2>
+<h3>4.1 ข้อมูลและฮอร์โมน 5 ตัว</h3>
+<figure class="code"><figcaption><b>src/lamp.h</b> · บรรทัด 116–121</figcaption><pre><span class="ln">116</span>struct Hormone {
+<span class="ln">117</span>  const char *name;
+<span class="ln">118</span>  float kp, kc, kb;        <span class="c">// production / clearance / binding [1/s]</span>
+<span class="ln">119</span>  float H, R, S;
+<span class="ln">120</span>};
+<span class="ln">121</span>enum { H_SOCIAL, H_NOVELTY, H_BOREDOM, H_STRESS, H_FATIGUE, NH };</pre></figure>
+<p>ฮอร์โมนแต่ละตัวมีค่าคงที่ 3 ตัว: <b>kp</b> (ผลิต: S มากผลิตเร็ว), <b>kc</b> (กำจัด: H มากหายเร็ว), <b>kb</b> (จับกับ receptor: R มากใช้ไปมาก)
+และสถานะ 3 ตัว: <b>S</b> สิ่งเร้า 0..1, <b>H</b> ความเข้มข้น 0..1, <b>R</b> ค่าที่ receptor รับได้ 0..1</p>
+<figure class="code"><figcaption><b>src/brain.cpp</b> · บรรทัด 62–69</figcaption><pre><span class="ln">62</span>Hormone HM[] = {
+<span class="ln">63</span>  <span class="c">//  name       kp       kc       kb      tuned so that:</span>
+<span class="ln">64</span>  {&quot;social&quot;,   0.40f,   0.12f,   0.05f,   0, 0, 0},   <span class="c">// rises in ~5 s with a person, fades in ~10 s</span>
+<span class="ln">65</span>  {&quot;novelty&quot;,  1.60f,   0.45f,   0.20f,   0, 0, 0},   <span class="c">// spikes on something NEW, fades in ~4 s</span>
+<span class="ln">66</span>  {&quot;boredom&quot;,  0.0153f, 0.0123f, 0.0030f, 0, 0, 0},   <span class="c">// tau ~65 s: same object ~60 s -&gt; R 0.6 -&gt; bored</span>
+<span class="ln">67</span>  {&quot;stress&quot;,   2.00f,   1.60f,   0.40f,   0, 0, 0},   <span class="c">// kp = kc + kb -&gt; H follows S (steady H = S), ~0.5 s</span>
+<span class="ln">68</span>  {&quot;fatigue&quot;,  0.10f,   0.08f,   0.02f,   0, 0, 0},   <span class="c">// S = motor heat; kp = kc + kb -&gt; H follows S in ~10 s</span>
+<span class="ln">69</span>};</pre></figure>
+<p><b>อ่านค่า k ยังไง</b>: ถ้า S ค้างที่ 1 นานๆ H จะไปหยุดที่ kp/(kc + kb) (เพราะ R = H) และใช้เวลาประมาณ 1/(kc + kb) วินาทีในการขึ้น
+· social: 0.40/(0.12 + 0.05) = 2.35 → ชน 1 ขึ้นเร็ว ~5 s คนออกไปหายใน ~10 s
+· boredom: 0.0153/(0.0123 + 0.0030) = 1.0, เวลา 1/0.0153 ≈ 65 s → ดูของชิ้นเดิมราว 60 s จน R ถึง 0.6 = เบื่อ
+· stress: kp = kc + kb → H ตาม S ภายใน ~0.5 s (มือถอยแล้วหายกลัวเร็ว)</p>
+<p>social → happy · novelty → excited · boredom → bored · stress → afraid · fatigue → tired (งีบให้มอเตอร์เย็น)</p>
+<h3>4.2 สูตร (สไลด์ 10, 17, 18)</h3>
+<figure class="code"><figcaption><b>src/brain.cpp</b> · บรรทัด 72–79</figcaption><pre><span class="ln">72</span>float receptor(float h) { return constrain((h - 0.0f) / (1.0f - 0.0f), 0.0f, 1.0f); }
+<span class="ln">73</span> 
+<span class="ln">74</span>void hormoneStep(Hormone &amp;h) {
+<span class="ln">75</span>  float H_old = h.H, R_old = h.R;
+<span class="ln">76</span>  float P = h.kp * h.S, C = h.kc * H_old, B = h.kb * R_old;   <span class="c">// production, clearance, binding</span>
+<span class="ln">77</span>  float raw = H_old + DT * (P - C - B);                       <span class="c">// H_raw</span>
+<span class="ln">78</span>  h.H = constrain(raw, 0.0f, 1.0f);                           <span class="c">// H = clamp(H_raw, 0, 1)</span>
+<span class="ln">79</span>  h.R = receptor(h.H);</pre></figure>
+<p>ลำดับตามสไลด์: ใช้ H และ R <b>ของรอบก่อน</b> คำนวณ P, C, B ทั้งหมด แล้วค่อยเขียน H ใหม่ · R = clamp((H − 0)/(1 − 0), 0, 1)</p>
+<p><b>ตัวอย่าง (สไลด์ 19–20)</b>: k_prod 0.8, k_clear 0.6, k_bind 0.2, S = 1, H0 = R0 = 0<br>
+รอบ 1: P = 0.8, C = 0, B = 0 → H1 = 0 + 0.05×0.8 = <b>0.0400</b><br>
+รอบ 2: P = 0.8, C = 0.6×0.04 = 0.024, B = 0.2×0.04 = 0.008 → H2 = 0.04 + 0.05×0.768 = <b>0.0784</b><br>
+บูตทุกครั้งหุ่นตรวจตัวเลขนี้เอง:</p>
+<figure class="code"><figcaption><b>src/brain.cpp</b> · บรรทัด 83–87</figcaption><pre><span class="ln">83</span>void hormoneSelfTest() {
+<span class="ln">84</span>  Hormone t = {&quot;test&quot;, 0.8f, 0.6f, 0.2f, 0, 0, 1};
+<span class="ln">85</span>  hormoneStep(t); float h1 = t.H; hormoneStep(t); float h2 = t.H;
+<span class="ln">86</span>  Serial.printf(&quot;hormone self-test: H1 %.4f (0.0400)  H2 %.4f (0.0784)  %s\n&quot;, h1, h2,
+<span class="ln">87</span>                (fabsf(h1 - 0.04f) &lt; 1e-4f &amp;&amp; fabsf(h2 - 0.0784f) &lt; 1e-4f) ? &quot;PASS&quot; : &quot;FAIL&quot;);</pre></figure>
+<h3>4.3 สิ่งเร้า S มาจากไหน (สไลด์ 9: Stimulus → Gland)</h3>
+<figure class="code"><figcaption><b>src/brain.cpp</b> · บรรทัด 253–271</figcaption><pre><span class="ln">253</span>static void sensesToStimuli() {
+<span class="ln">254</span>  bool there = thingThere();
+<span class="ln">255</span>  objectMemoryStep(there, sense.object ? constrain(sense.color, 0, 9) : 0);
+<span class="ln">256</span>  if (personThere() &amp;&amp; !lastPerson) { noveltyPulse = 1.0f; greetMs = millis(); }   <span class="c">// a person arriving is new too</span>
+<span class="ln">257</span>  lastPerson = personThere(); lastThere = there;
+<span class="ln">258</span>  <span class="c">// anything seen keeps it awake (asleep: the camera does not count - personThere() - and the head ToF is blind)</span>
+<span class="ln">259</span>  if (personThere() || there || (hAfraid.on &amp;&amp; !headBlind()) || hPerson.on) lastActivityMs = millis();
+<span class="ln">260</span> 
+<span class="ln">261</span>  HM[H_SOCIAL].S  = personThere() ? 1.0f : 0.0f;
+<span class="ln">262</span>  HM[H_NOVELTY].S = noveltyPulse &gt; 0 ? 1.0f : 0.0f;
+<span class="ln">263</span>  noveltyPulse = fmaxf(0, noveltyPulse - DT);
+<span class="ln">264</span>  HM[H_BOREDOM].S = there ? 1.0f : 0.0f;                        <span class="c">// looking at the same object -&gt; slowly bored</span>
+<span class="ln">265</span>  <span class="c">// stress = HEAD ToF only: 30 cm -&gt; 0 ... 10 cm -&gt; 1. While looking at an object the head goes close on purpose,</span>
+<span class="ln">266</span>  <span class="c">// so then only a shove (&lt; SHOVE_CM) counts. Asleep: head bowed over the table -&gt; ignored.</span>
+<span class="ln">267</span>  if (headBlind()) HM[H_STRESS].S = 0;
+<span class="ln">268</span>  else if (there)  HM[H_STRESS].S = sense.headCm &lt; SHOVE_CM ? 1.0f : 0.0f;
+<span class="ln">269</span>  else             HM[H_STRESS].S = constrain((30.0f - sense.headCm) / (30.0f - 10.0f), 0.0f, 1.0f);
+<span class="ln">270</span>  <span class="c">// fatigue = the hottest servo: FATIGUE_T0_C -&gt; 0 ... FATIGUE_T1_C -&gt; 1</span>
+<span class="ln">271</span>  HM[H_FATIGUE].S = constrain((hottestStsC() - FATIGUE_T0_C) / (FATIGUE_T1_C - FATIGUE_T0_C), 0.0f, 1.0f);</pre></figure>
+<div class="ex"><div class="tw"><table class="ex"><thead><tr><th>ตรงไหน</th><th>ทำอะไร</th><th>ทำไม / ตัวอย่าง</th></tr></thead><tbody><tr><td><code class="ref">brain.cpp:255</code></td><td>เช็คว่ามีของใหม่ ของเปลี่ยน หรือของออกไป (ดู 4.6)</td><td>ของใหม่ = พัลส์ novelty</td></tr><tr><td><code class="ref">brain.cpp:256</code></td><td>คนเพิ่งมา: พัลส์ novelty + จำเวลา greetMs</td><td>ใช้ทำ excited 3 s (ทักทาย)</td></tr><tr><td><code class="ref">brain.cpp:259</code></td><td>มีอะไรเกิดขึ้น รีเซ็ตเวลาที่จะง่วง</td><td>ตอนหลับ กล้องและ ToF หัวไม่ปลุก มีแต่ ToF ฐาน</td></tr><tr><td><code class="ref">brain.cpp:263</code></td><td>พัลส์ novelty ลดลง 0.05 ทุก tick = นาน 1 s</td><td>S novelty เป็น 1 แค่ 1 วินาที แต่ H ค้างอยู่นานกว่านั้นเพราะฮอร์โมนลดช้า</td></tr><tr><td><code class="ref">brain.cpp:269</code></td><td>stress ตามระยะหัว 30 → 10 cm</td><td>ตัวอย่าง มือที่ 20 cm: S = (30 − 20)/20 = 0.5</td></tr><tr><td><code class="ref">brain.cpp:271</code></td><td>อุณหภูมิ 50 → 62 °C เป็น 0 → 1</td><td>ตัวอย่าง 56 °C: S = 6/12 = 0.5</td></tr></tbody></table></div></div>
+<div class="tw"><table class=""><thead><tr><th>S</th><th>ค่า</th><th>ความหมาย</th></tr></thead><tbody><tr><td>social</td><td>มีคน ? 1 : 0</td><td>ตอนหลับไม่นับกล้อง</td></tr><tr><td>novelty</td><td>1 นาน 1 s หลังเจอของใหม่ / คนมา / โบกมือ (<code>noveltyPulse</code>)</td><td>พัลส์สั้นๆ</td></tr><tr><td>boredom</td><td>มีของอยู่ ? 1 : 0</td><td>k เล็กมาก ใช้ ~60 s ถึงเบื่อ</td></tr><tr><td>stress</td><td>clamp((30 − ระยะหัว)/(30 − 10), 0, 1)</td><td>30 cm → 0, 10 cm → 1 · ดูของอยู่นับแค่ &lt; 8 cm · หลับอยู่ = 0</td></tr><tr><td>fatigue</td><td>clamp((T_สูงสุด − 50)/(62 − 50), 0, 1)</td><td>อุณหภูมิมอเตอร์ตัวที่ร้อนสุด</td></tr></tbody></table></div>
+<h3>4.4 Receptor → อารมณ์ (ออกแบบเอง)</h3>
+<figure class="code"><figcaption><b>src/brain.cpp</b> · บรรทัด 284–307</figcaption><pre><span class="ln">284</span>Emotion chooseEmotion() {
+<span class="ln">285</span>  float soc = HM[H_SOCIAL].R, nov = HM[H_NOVELTY].R, bor = HM[H_BOREDOM].R, str = HM[H_STRESS].R;
+<span class="ln">286</span>  <span class="c">// a) AFRAID - HEAD ToF only: &lt; 30 cm afraid (backs off with closeness), &lt; 10 cm afraid + jolt.</span>
+<span class="ln">287</span>  <span class="c">//    Looking at an object the head goes close on purpose -&gt; only a shove (&lt; SHOVE_CM) is scary.</span>
+<span class="ln">288</span>  bool blind  = headBlind();
+<span class="ln">289</span>  bool close  = !blind &amp;&amp; (thingThere() ? (sense.headCm &lt; SHOVE_CM) : hStartle.on);
+<span class="ln">290</span>  bool afraid = !blind &amp;&amp; (thingThere() ? false : hAfraid.on);
+<span class="ln">291</span>  if (close || afraid || (!blind &amp;&amp; str &gt; STRESS_AFRAID_R)) return AFRAID;     <span class="c">// stress lingers a moment</span>
+<span class="ln">292</span>  <span class="c">// b) someone waved -&gt; happy + wave back (even right after a fright)</span>
+<span class="ln">293</span>  if (millis() &lt; waveUntil) return HAPPY;
+<span class="ln">294</span>  <span class="c">// c) after a fright: calm down first (Lab06: clear -&gt; normal)</span>
+<span class="ln">295</span>  if (emo == AFRAID || millis() - afraidEndMs &lt; (uint32_t)(AFRAID_CALM_S * 1000)) return NORMAL;
+<span class="ln">296</span>  <span class="c">// d) motors hot: nap BEFORE the thermal cut-off (only the fear reflex above may interrupt it)</span>
+<span class="ln">297</span>  if (napping) return TIRED;
+<span class="ln">298</span>  <span class="c">// e) a person JUST arrived -&gt; excited first, even with an object in front (looked at afterwards)</span>
+<span class="ln">299</span>  if (personThere() &amp;&amp; millis() - greetMs &lt; EXCITED_GREET_MS) return EXCITED;
+<span class="ln">300</span>  <span class="c">// f) something at the base -&gt; interested; the SAME object for ~60 s (or seen recently) -&gt; bored</span>
+<span class="ln">301</span>  if (thingThere()) return (bor &gt; BOREDOM_BORED_R || objFamiliar) ? BORED : INTERESTED;
+<span class="ln">302</span>  <span class="c">// g) the rest follows the receptors</span>
+<span class="ln">303</span>  if (nov &gt; NOVELTY_EXCITED_R &amp;&amp; personThere()) return EXCITED;
+<span class="ln">304</span>  if (bor &gt; BOREDOM_BORED_R) return BORED;
+<span class="ln">305</span>  if (soc &gt; SOCIAL_HAPPY_R) return HAPPY;
+<span class="ln">306</span>  if (millis() - lastActivityMs &gt; (uint32_t)(SLEEP_AFTER_S * 1000)) return SLEEPY;   <span class="c">// nothing seen for long</span>
+<span class="ln">307</span>  return NORMAL;</pre></figure>
+<div class="ex"><div class="tw"><table class="ex"><thead><tr><th>ตรงไหน</th><th>ทำอะไร</th><th>ทำไม / ตัวอย่าง</th></tr></thead><tbody><tr><td>a) afraid</td><td>ToF หัว ≤ 30 cm (สวิตช์ afraid) หรือ ≤ 10 cm (startle) หรือ R_stress > 0.10</td><td>ปลอดภัยมาก่อนทุกอย่าง (Lab06 near) · ตอนหลับไม่ใช้ ToF หัว · ตอนดูของนับแค่ &lt; 8 cm เพราะหัวยื่นเข้าไปเอง</td></tr><tr><td>b) happy (โบก)</td><td>3 s หลังกล้องเห็นโบกมือ</td><td>ทักทายตอบก่อน แม้เพิ่งตกใจ</td></tr><tr><td>c) normal (สงบ)</td><td>ยังกลัวอยู่ หรือหายกลัวไม่ถึง 3 s</td><td>Lab06 clear → normal ไม่กระโดดไป happy ทันที</td></tr><tr><td>d) tired</td><td>ฮอร์โมน fatigue สั่งงีบ</td><td>พักมอเตอร์ก่อนถึง 66 °C</td></tr><tr><td>e) excited (ทัก)</td><td>คนเพิ่งมาไม่เกิน 3 s</td><td>ทักคนก่อนสนใจของ</td></tr><tr><td>f) interested / bored</td><td>มีของที่ฐาน · เบื่อ (R > 0.6) หรือเคยเห็นเมื่อกี้ = bored</td><td>habituation</td></tr><tr><td>g) excited</td><td>novelty R > 0.40 และมีคน</td><td>ตื่นเต้นต่อจากการทัก ตราบที่ novelty ยังสูง</td></tr><tr><td>g) bored</td><td>boredom R > 0.6 (ของเพิ่งไป ความเบื่อยังค้าง)</td><td></td></tr><tr><td>g) happy</td><td>social R > 0.35 (มีคนอยู่ ~1 s)</td><td></td></tr><tr><td>g) sleepy</td><td>ไม่มีอะไรเลยเกิน sleep.after (90 s)</td><td>Lab06 idle</td></tr><tr><td>ไม่เข้าข้อไหน</td><td>normal</td><td></td></tr></tbody></table></div></div>
+<p>อ่านจากบนลงล่าง กฎแรกที่ตรงชนะ ค่าเกณฑ์ทั้งหมดอยู่บนสุดของ lamp_main.cpp:</p>
+<figure class="code"><figcaption><b>src/lamp_main.cpp</b> · บรรทัด 41–46</figcaption><pre><span class="ln">41</span><span class="c">// ---- emotion rules (brain.cpp chooseEmotion): receptor R thresholds ----</span>
+<span class="ln">42</span>extern const float STRESS_AFRAID_R   = 0.10f;      <span class="c">// stress R above this -&gt; afraid (lingers after the hand left)</span>
+<span class="ln">43</span>extern const float NOVELTY_EXCITED_R = 0.40f;      <span class="c">// novelty R above this + a person -&gt; excited</span>
+<span class="ln">44</span>extern const float BOREDOM_BORED_R   = 0.60f;      <span class="c">// boredom R above this -&gt; bored (~60 s on the same object)</span>
+<span class="ln">45</span>extern const float SOCIAL_HAPPY_R    = 0.35f;      <span class="c">// social R above this -&gt; happy (person there ~1 s)</span>
+<span class="ln">46</span>extern const uint32_t EMO_HOLD_MS    = 1500;       <span class="c">// an emotion is held this long before another (afraid: at once)</span></pre></figure>
+<p>เปลี่ยนอารมณ์ได้เมื่ออารมณ์เดิมค้างครบ 1.5 s ยกเว้น afraid ที่เปลี่ยนทันที:</p>
+<figure class="code"><figcaption><b>src/brain.cpp</b> · บรรทัด 311–321</figcaption><pre><span class="ln">311</span>static void switchEmotion() {
+<span class="ln">312</span>  Emotion e = (emoForced != NEMO) ? emoForced : chooseEmotion();
+<span class="ln">313</span>  bool urgent = (e == AFRAID);
+<span class="ln">314</span>  if (e == emo || !(urgent || millis() - emoSince &gt; EMO_HOLD_MS)) return;
+<span class="ln">315</span>  Emotion from = emo;
+<span class="ln">316</span>  if (from == AFRAID) afraidEndMs = millis();                  <span class="c">// starts the calm-down period</span>
+<span class="ln">317</span>  if (bowedEmo(from) &amp;&amp; !bowedEmo(e)) restEndMs = millis();   <span class="c">// head lifting: head ToF still ignored a moment</span>
+<span class="ln">318</span>  emo = e; emoSince = millis();
+<span class="ln">319</span>  if (emo == INTERESTED) { lean = 0; trackYaw = trackPitch = trackBase = 0; trackingX = trackingY = false; }
+<span class="ln">320</span>  Serial.printf(&quot;emotion -&gt; %s\n&quot;, EMO_NAME[emo]);
+<span class="ln">321</span>  onEmotionChange(from, emo);                                  <span class="c">// event log (the ring takes the new colour this tick)</span></pre></figure>
+<p>ถ้ากดปุ่มอารมณ์ใน GUI (<code>emoForced</code>) ใช้อารมณ์นั้นแทนการเลือก · ต้องค้างอารมณ์เดิม 1.5 s (กันกระพริบ) ยกเว้น afraid
+· เปลี่ยนแล้วจำเวลาที่ใช้กับกฎอื่น: หายกลัว → นับ 3 s สงบ, ตื่นจากหลับ → ยังไม่ใช้ ToF หัว 3 s · เข้า interested ใหม่ → เริ่มก้มจาก 0
+· แล้วบอก <code>onEmotionChange</code> เพื่อบันทึกแถว E (latency จาก input ถึงการตัดสิน)</p>
+<h3>4.5 Bounded mapping (สไลด์ 29)</h3>
+<figure class="code"><figcaption><b>src/brain.cpp</b> · บรรทัด 328–331</figcaption><pre><span class="ln">328</span>static void mapToCpg() {
+<span class="ln">329</span>  float nov = HM[H_NOVELTY].R, str = HM[H_STRESS].R;
+<span class="ln">330</span>  cpg.phi  = constrain(EMO_PHI[emo] + PHI_NOV_GAIN * nov + PHI_STR_GAIN * str, PHI_MIN, PHI_MAX);
+<span class="ln">331</span>  ampScale = constrain(1.0f + AMP_NOV_GAIN * nov + AMP_STR_GAIN * str, AMP_MIN, AMP_MAX);</pre></figure>
+<p><b>ตัวอย่าง</b> afraid (φ พื้นฐาน 0.12) มือที่ 15 cm: R_stress ≈ 0.75, R_novelty 0 → φ = 0.12 + 0.30×0.75 = 0.345 (อยู่ในช่วง 0.04–0.40)
+จังหวะเร็วขึ้นเกือบ 3 เท่า · ampScale = 1 + 0.30×0.75 = 1.225 · คนเพิ่งมา (excited φ 0.15, R_novelty 0.8) → φ = 0.15 + 0.064 = 0.214</p>
+<figure class="code"><figcaption><b>src/lamp_main.cpp</b> · บรรทัด 47–49</figcaption><pre><span class="ln">47</span><span class="c">// ---- bounded mapping receptor -&gt; CPG (brain.cpp mapToCpg) ----</span>
+<span class="ln">48</span>extern const float PHI_NOV_GAIN = 0.08f, PHI_STR_GAIN = 0.30f, PHI_MIN = 0.04f, PHI_MAX = 0.40f;  <span class="c">// phi = EMO_PHI + ...</span>
+<span class="ln">49</span>extern const float AMP_NOV_GAIN = 0.25f, AMP_STR_GAIN = 0.30f, AMP_MIN = 0.5f,  AMP_MAX = 1.5f;   <span class="c">// ampScale = 1 + ...</span></pre></figure>
+<p>สไลด์: φ_cmd = clamp(0.20 + 0.20R, 0.10, 0.45) ของเรา: φ = clamp(φ_อารมณ์ + 0.08·R_novelty + 0.30·R_stress, 0.04, 0.40)
+และ ampScale = clamp(1 + 0.25·R_novelty + 0.30·R_stress, 0.5, 1.5) (เทียบได้กับ stride_cmd)</p>
+<h3>4.6 ใช้สมการเดียวกันต่อยอด</h3>
+<ul>
+<li><b>งีบ (tired)</b>: hysteresis บน R ของ fatigue เข้าที่ 0.65 ออกที่ 0.25 (<code class="ref">brain.cpp:275</code>)</li>
+<li><b>ความจำวัตถุ</b>: ความเบื่อแยกตาม id ของ ตอนของไม่อยู่ลดด้วยสมการเดิมโดย S = 0 กลับมาภายใน ~1 นาทียังเบื่ออยู่:</li>
+</ul>
+<figure class="code"><figcaption><b>src/brain.cpp</b> · บรรทัด 221–249</figcaption><pre><span class="ln">221</span>static void objectMemoryStep(bool there, int id) {
+<span class="ln">222</span>  Hormone &amp;bh = HM[H_BOREDOM];
+<span class="ln">223</span>  <span class="c">// the SAME thing while it stays in front (base ToF latch): the camera often loses / finds it again, which made the</span>
+<span class="ln">224</span>  <span class="c">// id jump 9 -&gt; 0 -&gt; 9 ... = &quot;a new object&quot; every time -&gt; novelty spikes and boredom reset, it never got bored</span>
+<span class="ln">225</span>  <span class="c">// (log 2026-11-12 08:34). Camera lost it -&gt; keep the id. Base-only thing (id 0) now recognised -&gt; just relabel.</span>
+<span class="ln">226</span>  if (there &amp;&amp; lastThere &amp;&amp; id != curObj) {
+<span class="ln">227</span>    if (id == 0) id = curObj;
+<span class="ln">228</span>    else if (curObj == 0) {
+<span class="ln">229</span>      objMemH[id] = fmaxf(objMemH[id], bh.H);
+<span class="ln">230</span>      curObj = id; bh.H = objMemH[id]; bh.R = receptor(bh.H);
+<span class="ln">231</span>      if (bh.R &gt; RECALL_R) objFamiliar = true;
+<span class="ln">232</span>    }
+<span class="ln">233</span>  }
+<span class="ln">234</span>  for (int k = 0; k &lt; 10; k++) {                                <span class="c">// remembered boredom of objects NOT in front fades</span>
+<span class="ln">235</span>    if (there &amp;&amp; k == curObj) continue;
+<span class="ln">236</span>    float h = objMemH[k];
+<span class="ln">237</span>    objMemH[k] = constrain(h - DT * (bh.kc * h + bh.kb * receptor(h)), 0.0f, 1.0f);   <span class="c">// hormone eq. with S = 0</span>
+<span class="ln">238</span>  }
+<span class="ln">239</span>  if (there &amp;&amp; (!lastThere || id != curObj)) {                  <span class="c">// a thing appeared, or a DIFFERENT one</span>
+<span class="ln">240</span>    if (lastThere &amp;&amp; curObj &gt;= 0) objMemH[curObj] = bh.H;     <span class="c">// remember how boring the previous one was</span>
+<span class="ln">241</span>    curObj = id;
+<span class="ln">242</span>    bh.H = objMemH[id]; bh.R = receptor(bh.H);                <span class="c">// continue from what we remember about this one</span>
+<span class="ln">243</span>    objFamiliar = bh.R &gt; RECALL_R;
+<span class="ln">244</span>    if (objFamiliar) Serial.printf(&quot;object %d seen recently (boredom %.2f) -&gt; not interested\n&quot;, id, bh.R);
+<span class="ln">245</span>    else noveltyPulse = 1.0f;                                  <span class="c">// really new (or forgotten) -&gt; novelty</span>
+<span class="ln">246</span>    noteInput(objFamiliar ? &quot;object_familiar&quot; : &quot;object_new&quot;, true, millis());
+<span class="ln">247</span>  } else if (!there &amp;&amp; lastThere) {                            <span class="c">// the thing went away: keep it in memory</span>
+<span class="ln">248</span>    if (curObj &gt;= 0) objMemH[curObj] = bh.H;
+<span class="ln">249</span>    bh.H = bh.R = 0; curObj = -1; objFamiliar = false;</pre></figure>
+<p><b>ตัวอย่าง</b>: วางขวด (id 2) 60 s → boredom R ≈ 0.6 เบื่อ · ยกออก ค่า 0.6 ถูกจำไว้ใน <code>objMemH[2]</code> แล้วค่อยๆ ลด
+· วางขวดกลับหลัง 20 s: ค่าที่จำ ~0.45 > RECALL_R 0.25 → "seen recently" ไม่ตื่นเต้น ยังเบื่อ · วางแก้ว (id 1) แทน: ไม่เคยเห็น → novelty → interested ใหม่</p>
+<h3>4.7 ทั้งหมดใน 1 tick</h3>
+<figure class="code"><figcaption><b>src/brain.cpp</b> · บรรทัด 448–453</figcaption><pre><span class="ln">448</span>void emotionStep() {
+<span class="ln">449</span>  sensesToStimuli();
+<span class="ln">450</span>  for (int i = 0; i &lt; NH; i++) hormoneStep(HM[i]);
+<span class="ln">451</span>  napStep();
+<span class="ln">452</span>  switchEmotion();
+<span class="ln">453</span>  if (autoMode) emotionToBody();                    <span class="c">// auto off (waiting / manual): emotions do not move the robot</span></pre></figure>
+<p>นี่คือ Week 4 ทั้งหมดใน 5 บรรทัด: สิ่งเร้า → ฮอร์โมนทุกตัวขยับ 1 step → เช็คงีบ → เลือกและเปลี่ยนอารมณ์ → (ถ้า Auto เปิด) แปลงอารมณ์เป็นท่าและจังหวะ
+ตอน Auto ปิด อารมณ์และฮอร์โมนยังคำนวณอยู่ (เห็นใน GUI) แต่หุ่นไม่ขยับ</p>
+<h3>4.8 log ตาม causal chain (สไลด์ 30)</h3>
+<p>แถว D ทุก tick มี S (ระยะ, object, person, afraid), H และ R ทุกตัว, phi, o1, o2, มุมที่สั่ง, อุณหภูมิ (<code class="ref">experiment.cpp:39</code>)
+<b>ยังไม่มี</b>: P, C, B, H_raw (สไลด์ 30, 32) และกติกา S ผิด (NaN → H = R = 0, สไลด์ 34)</p>
+</section><section id="lab5"><p class="eyebrow">ส่วนที่ 2 · Lab 05–07</p><h2>Lab 05 · Hormone → CPG → การเคลื่อนไหว</h2>
+<div class="tw"><table class=""><thead><tr><th>Lab05</th><th>หุ่นเรา</th><th>สถานะ</th></tr></thead><tbody><tr><td>อ่าน S; invalid ใช้ fault fallback</td><td>ToF/กล้อง → S ใน <code>sensesToStimuli</code> <code class="ref">brain.cpp:253</code> (S ถูก clamp 0..1 เสมอ แต่ไม่มี reset H/R เมื่อ fault)</td><td><span class="st part">บางส่วน</span></td></tr><tr><td>ใช้ R ของ state t_k สั่ง command</td><td>เราอัปเดตฮอร์โมนก่อน แล้วใช้ R ใหม่ทันที (<code class="ref">brain.cpp:450</code>) command นำหน้า Lab 1 step (0.05 s)</td><td><span class="st diff">ต่าง</span></td></tr><tr><td>φ / stride command</td><td><code>mapToCpg()</code> <code class="ref">brain.cpp:328</code></td><td><span class="st ok">มีแล้ว</span></td></tr><tr><td>CPG update → decode → เคลื่อน</td><td>cpgStep → composeTargets → sendOutputs (<code class="ref">lamp_main.cpp:218</code>)</td><td><span class="st ok">มีแล้ว</span></td></tr><tr><td>B0 fixed / B1 direct / B2 hormone / B3 binding ablation</td><td>มีแค่ B2 (ปกติ) · auto off ใกล้เคียง B0 · ไม่มีโหมด B1, B3</td><td><span class="st part">บางส่วน</span></td></tr><tr><td>Metrics: TV ของ φ, latency, rise, recovery, AUC</td><td>ข้อมูลอยู่ในแถว D ครบ (phi, H, R ทุก tick) ยังไม่มีสคริปต์คำนวณ</td><td><span class="st part">บางส่วน</span></td></tr><tr><td>clamp fraction ของ H_raw</td><td>ยังไม่ log H_raw</td><td><span class="st no">ยังไม่มี</span></td></tr></tbody></table></div></section><section id="lab6"><p class="eyebrow">ส่วนที่ 2 · Lab 05–07</p><h2>Lab 06 · Lamp emotion FSM</h2>
+<h3>State: Lab06 มี 5 ตัว ของเรามี 8 ตัว</h3>
+<figure class="code"><figcaption><b>src/brain.cpp</b> · บรรทัด 105–114</figcaption><pre><span class="ln">105</span>const float EMO_POSE_DEF[NEMO][5] = {
+<span class="ln">106</span>  {0,   0,   0,   0, 0},   <span class="c">// normal     (+ HEAD_UP_DEG on the pitch, see poseFor)</span>
+<span class="ln">107</span>  {0, -12, -15, -20, 0},   <span class="c">// sleepy     droop (set by hand: save sleepy)</span>
+<span class="ln">108</span>  {0,   5,  -5,   5, 0},   <span class="c">// excited    a little up, NODS the head (CPG on pitch)</span>
+<span class="ln">109</span>  {0,   5,   0,   8, 0},   <span class="c">// happy      a little up, gentle breathing</span>
+<span class="ln">110</span>  {0, -15, -25, -35, 0},   <span class="c">// interested BOW DOWN to look at the object at the base (scaled by &#x27;lean&#x27;)</span>
+<span class="ln">111</span>  {0, -15, -25, -35, 0},   <span class="c">// bored      (unused - stays in the interested pose and looks left / right slowly)</span>
+<span class="ln">112</span>  {0,  20,   0,  10, 0},   <span class="c">// afraid     FULL recoil = BACK (shoulder +), head up; blended from normal by closeness</span>
+<span class="ln">113</span>  {0, -12, -15, -20, 0},   <span class="c">// tired      = the sleepy pose (copied from a hand-saved sleepy pose unless &#x27;save tired&#x27;)</span>
+<span class="ln">114</span>};</pre></figure>
+<figure class="code"><figcaption><b>src/brain.cpp</b> · บรรทัด 136–145</figcaption><pre><span class="ln">136</span>const uint8_t EMO_RGB[NEMO][3] = {
+<span class="ln">137</span>  {  0, 255,   0},   <span class="c">// normal     green</span>
+<span class="ln">138</span>  {100,   0, 255},   <span class="c">// sleepy     purple (dim: rest emotions are shown at 25 %)</span>
+<span class="ln">139</span>  {255,   0, 255},   <span class="c">// excited    magenta, blinks 2 Hz</span>
+<span class="ln">140</span>  {255, 130,   0},   <span class="c">// happy      yellow</span>
+<span class="ln">141</span>  {255, 255, 255},   <span class="c">// interested white</span>
+<span class="ln">142</span>  {  0,   0, 255},   <span class="c">// bored      blue</span>
+<span class="ln">143</span>  {255,   0,   0},   <span class="c">// afraid     PURE red - flashes 4 Hz in the jolt</span>
+<span class="ln">144</span>  {255,  60,   0},   <span class="c">// tired      orange (dim: motors hot -&gt; nap)</span>
+<span class="ln">145</span>};</pre></figure>
+<p>ท่าเป็นองศาของข้อต่อจริง 5 ตัว จัดเองด้วยมือได้ (<code>stop</code> → จัด → <code>resume</code> → <code>save &lt;emotion&gt;</code>) ต่างจาก Lab06 ที่ใช้ 3 แกน หน่วย rad
+· สีเปลี่ยนตามที่ผู้ใช้ขอ (12 พ.ย.) ไม่ตรงสี Lab06 แล้ว</p>
+<h3>Event และลำดับความสำคัญ</h3>
+<p>Lab06: fault &gt; near &gt; clear &gt; touch &gt; button &gt; approach &gt; timeout &gt; idle ของเราใน <code>chooseEmotion()</code>:
+afraid (near) &gt; โบก &gt; สงบหลังกลัว (clear) &gt; tired &gt; ทักคนมาใหม่ &gt; interested/bored &gt; excited &gt; bored &gt; happy &gt; sleepy (idle) &gt; normal</p>
+<div class="tw"><table class=""><thead><tr><th>Lab06</th><th>ของเรา</th><th>โค้ด</th></tr></thead><tbody><tr><td>fault → normal</td><td>ToF INVALID = 999 (ไม่มีอะไร), กล้องเงียบ 1 s = หลุด ใช้ ToF อย่างเดียว</td><td><code class="ref">sensors.cpp:111</code>, <code class="ref">sensors.cpp:155</code></td></tr><tr><td>near ≤ 0.20 m → afraid</td><td>ToF หัว ≤ 30 cm → afraid (เช็คก่อนอย่างอื่น)</td><td><code class="ref">brain.cpp:291</code></td></tr><tr><td>clear ≥ 0.28 m → normal</td><td>เกิน 35 cm + 1 s → normal อีก 3 s (<code>afraid.calm</code>)</td><td><code class="ref">brain.cpp:295</code></td></tr><tr><td>touch → happy</td><td>ไม่มีเซนเซอร์สัมผัส ใช้โบกมือแทน</td><td><code class="ref">brain.cpp:293</code></td></tr><tr><td>approach ≤ 0.80 m</td><td>ToF ฐาน 25–80 cm → ตื่นแล้วเงยมอง; กล้องเห็นคน → excited → happy</td><td><code class="ref">brain.cpp:391</code></td></tr><tr><td>idle 6 s → sleepy</td><td>ไม่เห็นอะไร 90 s → sleepy (ปรับได้ <code>sleep.after</code>)</td><td><code class="ref">brain.cpp:306</code></td></tr></tbody></table></div>
+<h3>Protocol: ค่าที่เทียบได้</h3>
+<div class="tw"><table class=""><thead><tr><th>ค่า</th><th>Lab06</th><th>ของเรา</th></tr></thead><tbody><tr><td>dt</td><td>0.02 s</td><td>0.05 s (<code>PERIOD_MS</code>)</td></tr><tr><td>near C1</td><td>≤ 0.20 / ≥ 0.28 m</td><td>30 / 35 cm (ToF หัว)</td></tr><tr><td>approach C1</td><td>≤ 0.80 / ≥ 0.95 m</td><td>80 / 95 cm ✅</td></tr><tr><td>stale</td><td>&gt; 0.12 s</td><td>&gt; 120 ms ✅</td></tr><tr><td>slew</td><td>≤ 0.8 rad/s</td><td>45 °/s = 0.79 rad/s ✅</td></tr><tr><td>seeds</td><td>41, 42, 43</td><td><code>scen 41/42/43</code> ✅</td></tr></tbody></table></div>
+<h3>Scenario จำลอง</h3>
+<figure class="code"><figcaption><b>src/experiment.cpp</b> · บรรทัด 180–193</figcaption><pre><span class="ln">180</span>static const Seg SCEN[] = {
+<span class="ln">181</span>  <span class="c">//  t [s]  source id        base   head   noise</span>
+<span class="ln">182</span>  {  0, &quot;quiet_01&quot;,          999,   999,   0 },
+<span class="ln">183</span>  {  3, &quot;approach_01&quot;,        60,   999,   3 },   <span class="c">// person walks up to the base (no camera -&gt; base ToF = person)</span>
+<span class="ln">184</span>  { 15, &quot;clear_01&quot;,          999,   999,   0 },
+<span class="ln">185</span>  { 18, &quot;object_01&quot;,        19.5,   999,   4 },   <span class="c">// object right at the 20 cm threshold + noise</span>
+<span class="ln">186</span>  { 32, &quot;clear_02&quot;,          999,   999,   0 },
+<span class="ln">187</span>  { 35, &quot;near_01&quot;,           999,  29.5,   4 },   <span class="c">// hand right at the 30 cm afraid threshold + noise</span>
+<span class="ln">188</span>  { 43, &quot;startle_01&quot;,        999,     8, 0.5 },   <span class="c">// very close to the face</span>
+<span class="ln">189</span>  { 45, &quot;clear_03&quot;,          999,   999,   0 },
+<span class="ln">190</span>  { 48, &quot;invalid_01&quot;,        999,     2,   0 },   <span class="c">// out-of-range sample -&gt; INVALID -&gt; must cause nothing</span>
+<span class="ln">191</span>  { 50, &quot;quiet_02&quot;,          999,   999,   0 },
+<span class="ln">192</span>  { 60, &quot;end&quot;,               999,   999,   0 },
+<span class="ln">193</span>};</pre></figure>
+<p>ระยะ (cm) แทนค่าดิบของ ToF แล้วผ่าน contract → low-pass → hysteresis เหมือนของจริง ตั้งค่าให้ noise อยู่ตรงขอบ threshold พอดี C0 จึงควรสลับมากกว่า C1
+ตอนรัน scen กล้องถูกปิดไม่ให้รบกวน (<code class="ref">sensors.cpp:158</code>)</p>
+<h3>การวัดเวลา</h3>
+<div class="tw"><table class=""><thead><tr><th>Lab06</th><th>ของเรา (แถว E)</th><th>สถานะ</th></tr></thead><tbody><tr><td>source_time</td><td><code>srcMs</code> = เวลาที่ค่าเริ่มต่าง ก่อน dwell</td><td><span class="st ok">มีแล้ว</span></td></tr><tr><td>recognized / decision / first_rgb / first_motion</td><td>E,input / E,emotion / E,rgb_set / E,motion_onset พร้อม latency (<code class="ref">experiment.cpp:74</code>)</td><td><span class="st ok">มีแล้ว</span></td></tr><tr><td>no_state_change / preempted / censored_end</td><td>มีครบ + superseded, no_motion</td><td><span class="st ok">มีแล้ว</span></td></tr><tr><td>นับ pass ≤ 1 s / missing, both_latency</td><td>ยังไม่ได้นับแยก</td><td><span class="st no">ยังไม่มี</span></td></tr></tbody></table></div></section><section id="lab7"><p class="eyebrow">ส่วนที่ 2 · Lab 05–07</p><h2>Lab 07 · ROS2 bridge + การทดลอง</h2>
+<p>Lab07 ใช้ ROS2 7 topics ของเราใช้ <b>USB serial</b> บรรทัดข้อความระหว่างแล็ปท็อปกับ ESP32 แทน (ต้องถามอาจารย์ว่ารับได้ไหม) <span class="st diff">ต่าง</span></p>
+<div class="tw"><table class=""><thead><tr><th>Topic Lab07</th><th>ของเรา</th></tr></thead><tbody><tr><td>/lamp/input/distance</td><td>ToF ต่อ ESP32 ตรง + บรรทัด <code>CAM,seq,person,object,id,x,y</code></td></tr><tr><td>/lamp/input/button, touch</td><td>ไม่มี ใช้ <code>WAVE,seq,x</code> และคำสั่ง <code>emo</code></td></tr><tr><td>/lamp/interaction</td><td>แถว <code>E,…,input,&lt;name&gt;_on/off</code></td></tr><tr><td>/lamp/emotion</td><td>คอลัมน์ emotion ในแถว D + บรรทัด <code>emotion -&gt; x</code></td></tr><tr><td>/lamp/servo_command</td><td>คอลัมน์ base_cmd … yaw_cmd (องศาจาก origin)</td></tr><tr><td>/lamp/rgb_command</td><td>แถว <code>E,rgb_set,&lt;emotion&gt;</code></td></tr></tbody></table></div>
+<p><b>นาฬิกา</b>: latency ทุกตัวในแถว E วัดด้วย <code>millis()</code> ของ ESP32 ตัวเดียว จึงลบกันได้ ส่วน <code>pc_ms</code> เป็นนาฬิกาแล็ปท็อป ห้ามลบกับ <code>t_ms</code> ตรงๆ</p>
+<h3>เช็คลิสต์ proposal</h3>
+<div class="tw"><table class=""><thead><tr><th>ข้อกำหนด</th><th>ของเรา</th><th>สถานะ</th></tr></thead><tbody><tr><td>AHM ≥ 1</td><td>5 ตัว</td><td><span class="st ok">มีแล้ว</span></td></tr><tr><td>SO(2) CPG</td><td>cpgStep</td><td><span class="st ok">มีแล้ว</span></td></tr><tr><td>เชื่อม AHM–CPG / AHM–emotion</td><td>มีทั้ง R → φ/amp และ R → อารมณ์</td><td><span class="st ok">มีแล้ว</span></td></tr><tr><td>Baseline + ≥ 2 conditions</td><td>C0 / C1</td><td><span class="st ok">มีแล้ว</span></td></tr><tr><td>≥ 2 metrics</td><td>transitions/min, latency, no_state_change, invalid, % เวลาแต่ละอารมณ์, อุณหภูมิสูงสุด</td><td><span class="st ok">มีแล้ว</span></td></tr><tr><td>≥ 3 repeats ต่อ condition</td><td>scen 41/42/43 + trial กับคน 600 s ×3</td><td><span class="st part">บางส่วน</span></td></tr><tr><td>Simulation และ real robot</td><td>scen (จำลอง ToF บนหุ่นจริง) + trial กับคน</td><td><span class="st part">บางส่วน</span></td></tr></tbody></table></div></section><section id="cam"><p class="eyebrow">ส่วนที่ 3 · นอกวิชา</p><h2>กล้อง (camera/lamp_camera.py)</h2>
+<p>กล้อง USB บนหัวต่อเข้าแล็ปท็อป Python ประมวลผลภาพแล้วส่งข้อความสั้นๆ ไป ESP32 ทางสาย USB ESP32 ยังเป็นตัวตัดสินใจคนเดียว</p>
+<figure class="code"><figcaption><b>camera/lamp_camera.py</b> · บรรทัด 30 · ห้ามลบ: ไม่มีบรรทัดนี้ CPU 700%</figcaption><pre><span class="ln">30</span>os.environ.setdefault(&quot;OMP_NUM_THREADS&quot;, &quot;1&quot;)</pre></figure>
+<h3>หากล้องตัวนอกเอง</h3>
+<figure class="code"><figcaption><b>camera/lamp_camera.py</b> · บรรทัด 395–417</figcaption><pre><span class="ln">395</span>def find_camera():
+<span class="ln">396</span>    &quot;&quot;&quot;camera number of the external USB camera: try 0..3, ask each for 1280x720, keep the one that stays small&quot;&quot;&quot;
+<span class="ln">397</span>    if args.cam &gt;= 0:
+<span class="ln">398</span>        return args.cam
+<span class="ln">399</span>    found = []
+<span class="ln">400</span>    for i in range(4):
+<span class="ln">401</span>        c = cv2.VideoCapture(i)
+<span class="ln">402</span>        if not c.isOpened():
+<span class="ln">403</span>            c.release(); continue
+<span class="ln">404</span>        c.set(cv2.CAP_PROP_FRAME_WIDTH, 1280); c.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
+<span class="ln">405</span>        ok, f = False, None
+<span class="ln">406</span>        for _ in range(5):                     <span class="c"># the first frames can be empty while the camera starts</span>
+<span class="ln">407</span>            ok, f = c.read()
+<span class="ln">408</span>            if ok: break
+<span class="ln">409</span>            time.sleep(0.1)
+<span class="ln">410</span>        c.release()
+<span class="ln">411</span>        if ok:
+<span class="ln">412</span>            found.append((i, f.shape[1], f.shape[0]))
+<span class="ln">413</span>    print(&quot;cameras:&quot;, &quot;, &quot;.join(f&quot;{i}: {w}x{h}&quot; for i, w, h in found) or &quot;none&quot;)
+<span class="ln">414</span>    for i, w, h in found:
+<span class="ln">415</span>        if w &lt;= CAM_MAX_W:
+<span class="ln">416</span>            print(f&quot;-&gt; using camera {i} (the external USB camera, max {w}x{h})&quot;)
+<span class="ln">417</span>            return i</pre></figure>
+
+<p>ขอภาพ 1280×720 จากกล้องเลข 0–3 กล้อง USB ของเราให้ได้แค่ 640×480 ตัวแรกที่กว้างไม่เกิน 640 จึงเป็นกล้องเรา</p>
+<h3>YOLO + โหวตแล้วล็อกชนิดของ</h3>
+<figure class="code"><figcaption><b>camera/lamp_camera.py</b> · บรรทัด 492–525</figcaption><pre><span class="ln">492</span>        res = yolo.track(frame, persist=True, tracker=&quot;bytetrack.yaml&quot;, imgsz=YOLO_IMGSZ,
+<span class="ln">493</span>                         conf=min(p_conf_min, o_conf_min), classes=KEEP, device=DEVICE, verbose=False)[0]
+<span class="ln">494</span>        t_b = time.perf_counter()
+<span class="ln">495</span>        person_box, obj_box, obj_name, p_conf, o_conf = None, None, &quot;&quot;, None, None
+<span class="ln">496</span>        boxes = []
+<span class="ln">497</span>        for b in res.boxes:
+<span class="ln">498</span>            name, conf = res.names[int(b.cls)], float(b.conf)
+<span class="ln">499</span>            if name == &quot;person&quot;:
+<span class="ln">500</span>                boxes.append((name, conf, b.xyxy[0], int(b.id) if b.id is not None else None)); continue
+<span class="ln">501</span>            if b.id is None or name not in OBJECT_IDS:
+<span class="ln">502</span>                continue                                   <span class="c"># untracked object box: not confirmed -&gt; ignored</span>
+<span class="ln">503</span>            tid = int(b.id)
+<span class="ln">504</span>            x1, y1, x2, y2 = map(float, b.xyxy[0]); cx = (x1 + x2) / 2 / WIDTH
+<span class="ln">505</span>            L = locks.get(tid)
+<span class="ln">506</span>            if L is None:                                  <span class="c"># new track: re-found an object that was just lost nearby?</span>
+<span class="ln">507</span>                L = {&quot;votes&quot;: Counter(), &quot;n&quot;: 0, &quot;name&quot;: None, &quot;seen&quot;: t, &quot;cx&quot;: cx}
+<span class="ln">508</span>                for old in locks.values():
+<span class="ln">509</span>                    if old[&quot;name&quot;] and 0.2 &lt; t - old[&quot;seen&quot;] &lt; TRACK_FORGET_S and abs(old[&quot;cx&quot;] - cx) &lt; REFIND_DIST:
+<span class="ln">510</span>                        L[&quot;name&quot;] = old[&quot;name&quot;]; break     <span class="c"># same thing again -&gt; same locked class</span>
+<span class="ln">511</span>                locks[tid] = L
+<span class="ln">512</span>            L[&quot;seen&quot;], L[&quot;cx&quot;] = t, cx
+<span class="ln">513</span>            raw_names.setdefault(tid, Counter())[name] += 1
+<span class="ln">514</span>            if L[&quot;name&quot;] is None:                          <span class="c"># still confirming: vote</span>
+<span class="ln">515</span>                L[&quot;votes&quot;][name] += conf; L[&quot;n&quot;] += 1
+<span class="ln">516</span>                if L[&quot;n&quot;] &gt;= LOCK_FRAMES:
+<span class="ln">517</span>                    L[&quot;name&quot;] = max(L[&quot;votes&quot;], key=L[&quot;votes&quot;].get)
+<span class="ln">518</span>                    print(f&quot;object track {tid} LOCKED as &<span class="c">#x27;{L[&#x27;name&#x27;]}&#x27; (id {OBJECT_IDS[L[&#x27;name&#x27;]]}) &quot;</span>
+<span class="ln">519</span>                          f&quot;votes {dict((k, round(v, 1)) for k, v in L[&<span class="c">#x27;votes&#x27;].items())}&quot;)</span>
+<span class="ln">520</span>                else:
+<span class="ln">521</span>                    cv2.rectangle(frame, (int(x1), int(y1)), (int(x2), int(y2)), (150, 150, 150), 1)
+<span class="ln">522</span>                    cv2.putText(frame, f&quot;confirming {L[&<span class="c">#x27;n&#x27;]}/{LOCK_FRAMES}&quot;, (int(x1), int(y1) - 5),</span>
+<span class="ln">523</span>                                cv2.FONT_HERSHEY_SIMPLEX, 0.5, (150, 150, 150), 1)
+<span class="ln">524</span>                    continue
+<span class="ln">525</span>            boxes.append((L[&quot;name&quot;], conf, b.xyxy[0], tid))</pre></figure>
+<div class="ex"><div class="tw"><table class="ex"><thead><tr><th>ตรงไหน</th><th>ทำอะไร</th><th>ทำไม / ตัวอย่าง</th></tr></thead><tbody><tr><td><code>yolo.track(..., persist=True, tracker=&quot;bytetrack.yaml&quot;)</code></td><td>YOLO11n หาคนและของ ByteTrack ให้เลข track id ที่คงที่ข้ามภาพ</td><td>id เดิม = ของชิ้นเดิม ใช้โหวต</td></tr><tr><td><code>classes=KEEP</code></td><td>หาแค่ person และของในรายการ</td><td>เร็วขึ้น ไม่เสียเวลากับ 70 ชนิดที่ไม่ใช้</td></tr><tr><td><code>if b.id is None ...: continue</code></td><td>กล่องที่ไม่มี track id = ยังไม่แน่ใจ ข้าม</td><td>กันของที่โผล่แวบเดียว</td></tr><tr><td><code>for old in locks.values(): ...</code></td><td>track ใหม่แต่ใกล้ของที่เพิ่งหาย (0.2–3 s, ≤ 25% ภาพ) = ชิ้นเดิม</td><td>บังมือแป๊บเดียวไม่กลายเป็นของใหม่</td></tr><tr><td><code>L[&quot;votes&quot;][name] += conf</code></td><td>โหวตชนิด คะแนน = ความมั่นใจ</td><td>6 ภาพ (~0.7 s) แล้วล็อก</td></tr><tr><td><code>boxes.append(...)</code></td><td>ใส่กล่องที่ล็อกแล้วเท่านั้น</td><td>กล่องที่ยังโหวตไม่ครบไม่ส่งไป ESP32</td></tr></tbody></table></div></div>
+<p>YOLO มักทายของชิ้นเดิมสลับชนิด (ขวด ↔ รีโมท) ถ้าส่งตรง ESP32 จะคิดว่าของใหม่ตลอด ไม่มีวันเบื่อ จึง <b>โหวต 6 ภาพ</b> (คะแนน = ความมั่นใจ) แล้ว <b>ล็อก</b>
+ของที่หายไปไม่เกิน 3 s แล้วโผล่ใกล้ที่เดิม (ไม่เกิน 25% ความกว้างภาพ) ได้ชนิดเดิมทันที</p>
+<h3>ดูของทีละชิ้น และคนทีละคน</h3>
+<figure class="code"><figcaption><b>camera/lamp_camera.py</b> · บรรทัด 528–536</figcaption><pre><span class="ln">528</span>        <span class="c"># ONE object at a time: keep the one already in focus while it is visible, otherwise take the CLEAREST</span>
+<span class="ln">529</span>        <span class="c"># (highest confidence) confirmed object. Every other object is ignored.</span>
+<span class="ln">530</span>        objs = [bx for bx in boxes if bx[0] != &quot;person&quot; and bx[1] &gt;= o_conf_min]
+<span class="ln">531</span>        chosen = next((bx for bx in objs if bx[3] == focus_tid), None)
+<span class="ln">532</span>        if chosen is None and objs:
+<span class="ln">533</span>            chosen = max(objs, key=lambda bx: bx[1])
+<span class="ln">534</span>            if chosen[3] != focus_tid:
+<span class="ln">535</span>                print(f&quot;focus on object track {chosen[3]} &<span class="c">#x27;{chosen[0]}&#x27; (conf {chosen[1]:.2f})&quot;)</span>
+<span class="ln">536</span>            focus_tid = chosen[3]</pre></figure>
+<figure class="code"><figcaption><b>camera/lamp_camera.py</b> · บรรทัด 537–555</figcaption><pre><span class="ln">537</span>        <span class="c"># ONE person at a time too: keep the person already in focus (same track id) while visible. Lost for a</span>
+<span class="ln">538</span>        <span class="c"># moment (track id changed) -&gt; take the person nearest to where the focused one was (within REFIND_DIST,</span>
+<span class="ln">539</span>        <span class="c"># for TRACK_FORGET_S). Nobody in focus -&gt; the BIGGEST (nearest) person. Everyone else is ignored</span>
+<span class="ln">540</span>        <span class="c"># (also for the wave: only the focused person&#x27;s hand counts).</span>
+<span class="ln">541</span>        def pcx(bx): return float(bx[2][0] + bx[2][2]) / 2 / WIDTH
+<span class="ln">542</span>        def parea(bx): return float((bx[2][2] - bx[2][0]) * (bx[2][3] - bx[2][1]))
+<span class="ln">543</span>        people = [bx for bx in boxes if bx[0] == &quot;person&quot; and bx[1] &gt;= p_conf_min]
+<span class="ln">544</span>        pf = person_focus
+<span class="ln">545</span>        pchosen = next((bx for bx in people if pf[&quot;tid&quot;] is not None and bx[3] == pf[&quot;tid&quot;]), None)
+<span class="ln">546</span>        if pchosen is None and people:
+<span class="ln">547</span>            near = [bx for bx in people if abs(pcx(bx) - pf[&quot;cx&quot;]) &lt; REFIND_DIST]
+<span class="ln">548</span>            if near and t - pf[&quot;seen&quot;] &lt; TRACK_FORGET_S:
+<span class="ln">549</span>                pchosen = min(near, key=lambda bx: abs(pcx(bx) - pf[&quot;cx&quot;]))
+<span class="ln">550</span>            else:
+<span class="ln">551</span>                pchosen = max(people, key=parea)
+<span class="ln">552</span>            if pchosen[3] != pf[&quot;tid&quot;]:
+<span class="ln">553</span>                print(f&quot;focus on person track {pchosen[3]}&quot;)
+<span class="ln">554</span>        if pchosen is not None:
+<span class="ln">555</span>            pf[&quot;tid&quot;], pf[&quot;cx&quot;], pf[&quot;seen&quot;] = pchosen[3], pcx(pchosen), t</pre></figure>
+<p>คนแรกที่โฟกัสจะถูกตามจนหายไป ถ้า track id เปลี่ยน (หลุดแป๊บเดียว) เลือกคนที่อยู่ใกล้ตำแหน่งเดิม คนอื่นขึ้น "ignored" (เพิ่ม 12 พ.ย.)</p>
+<h3>มือเปิด + กันมือปลอม</h3>
+<figure class="code"><figcaption><b>camera/lamp_camera.py</b> · บรรทัด 584–602</figcaption><pre><span class="ln">584</span>        for lm in hr.hand_landmarks:
+<span class="ln">585</span>            pts = np.array([(p.x * WIDTH, p.y * HEIGHT) for p in lm], float)
+<span class="ln">586</span>            wrist = pts[0]
+<span class="ln">587</span>            <span class="c"># a finger is straight when its tip is further from the wrist than its middle joint</span>
+<span class="ln">588</span>            straight = sum(np.linalg.norm(pts[tip] - wrist) &gt; np.linalg.norm(pts[pip] - wrist) * 1.15
+<span class="ln">589</span>                           for tip, pip in ((8, 6), (12, 10), (16, 14), (20, 18)))
+<span class="ln">590</span>            is_open = straight &gt;= OPEN_FINGERS
+<span class="ln">591</span>            <span class="c"># a waving hand belongs to a PERSON: near the person box and of a believable size (a curtain is not)</span>
+<span class="ln">592</span>            size = np.linalg.norm(pts[9] - wrist)
+<span class="ln">593</span>            why = &quot;&quot;
+<span class="ln">594</span>            if person_box is None:
+<span class="ln">595</span>                why = &quot;no person&quot;
+<span class="ln">596</span>            else:
+<span class="ln">597</span>                px1, py1, px2, py2 = person_box[:4]; pw, ph = px2 - px1, py2 - py1
+<span class="ln">598</span>                if not (px1 - HAND_NEAR_PERSON * pw &lt;= pts[9][0] &lt;= px2 + HAND_NEAR_PERSON * pw
+<span class="ln">599</span>                        and py1 - 0.3 * ph &lt;= pts[9][1] &lt;= py2):
+<span class="ln">600</span>                    why = &quot;far from person&quot;
+<span class="ln">601</span>                elif not (HAND_SIZE[0] * ph &lt;= size &lt;= HAND_SIZE[1] * ph):
+<span class="ln">602</span>                    why = &quot;wrong size&quot;</pre></figure>
+
+<p>นิ้วตรง = ปลายนิ้วห่างข้อมือมากกว่าข้อกลางนิ้ว ×1.15 · มือเปิด = นิ้วตรง ≥ 3 · ต้องมีคน มืออยู่ใกล้กรอบคน และขนาดสมเหตุสมผล (ผ้าม่านไม่ผ่าน)</p>
+<h3>ตรวจการโบก</h3>
+<figure class="code"><figcaption><b>camera/lamp_camera.py</b> · บรรทัด 172–202</figcaption><pre><span class="ln">172</span>class WaveDetector:
+<span class="ln">173</span>    &quot;&quot;&quot;counts left/right direction changes of an open hand&quot;&quot;&quot;
+<span class="ln">174</span>    def __init__(self):
+<span class="ln">175</span>        self.reset(); self.last_wave = -1e9
+<span class="ln">176</span>    def reset(self):
+<span class="ln">177</span>        self.dir, self.ext, self.flips, self.last_seen = 0, None, deque(), -1e9
+<span class="ln">178</span>    def update(self, t, hand_x):
+<span class="ln">179</span>        &quot;&quot;&quot;hand_x = x of the open hand, or None. Returns True once when a wave is recognised.&quot;&quot;&quot;
+<span class="ln">180</span>        if hand_x is None:
+<span class="ln">181</span>            if t - self.last_seen &gt; WAVE_HAND_LOST_S:
+<span class="ln">182</span>                self.reset()
+<span class="ln">183</span>            return False
+<span class="ln">184</span>        self.last_seen = t
+<span class="ln">185</span>        if self.ext is None:                               <span class="c"># first point: remember it</span>
+<span class="ln">186</span>            self.ext = hand_x
+<span class="ln">187</span>            return False
+<span class="ln">188</span>        if self.dir == 0:                                  <span class="c"># direction not known yet</span>
+<span class="ln">189</span>            if hand_x - self.ext &gt; WAVE_MIN_MOVE: self.dir, self.ext = 1, hand_x
+<span class="ln">190</span>            elif self.ext - hand_x &gt; WAVE_MIN_MOVE: self.dir, self.ext = -1, hand_x
+<span class="ln">191</span>        elif self.dir &gt; 0:
+<span class="ln">192</span>            if hand_x &gt; self.ext: self.ext = hand_x
+<span class="ln">193</span>            elif self.ext - hand_x &gt; WAVE_MIN_MOVE: self.dir, self.ext = -1, hand_x; self.flips.append(t)
+<span class="ln">194</span>        else:
+<span class="ln">195</span>            if hand_x &lt; self.ext: self.ext = hand_x
+<span class="ln">196</span>            elif hand_x - self.ext &gt; WAVE_MIN_MOVE: self.dir, self.ext = 1, hand_x; self.flips.append(t)
+<span class="ln">197</span>        while self.flips and t - self.flips[0] &gt; WAVE_WINDOW_S:
+<span class="ln">198</span>            self.flips.popleft()
+<span class="ln">199</span>        if len(self.flips) &gt;= WAVE_FLIPS and t - self.last_wave &gt; WAVE_COOLDOWN_S:
+<span class="ln">200</span>            self.last_wave = t
+<span class="ln">201</span>            self.flips.clear()
+<span class="ln">202</span>            return True</pre></figure>
+<p><b>ตัวอย่าง</b> (ภาพกว้าง = 2.0 หน่วย): มือที่ x 0.10 → 0.25 (ไปขวา) → 0.12 (ถอย 0.13 &gt; 0.06 นับ 1) → 0.30 (นับ 2) → 0.15 (นับ 3) ภายใน 2.5 s = <b>WAVE</b>
+· มือหายเกิน 0.5 s เริ่มนับใหม่ · หลังโบกต้องรอ 4 s ถึงนับครั้งใหม่</p>
+<p>นับว่ามือเปิดเปลี่ยนทิศซ้าย↔ขวา (ต้องขยับเกิน 0.06 ของภาพ) ≥ 3 ครั้งใน 2.5 s และห่างครั้งก่อน ≥ 4 s = โบก · ตรวจเฉพาะตอน normal/happy (หัวนิ่ง)</p>
+<h3>บรรทัดที่ส่งไป ESP32</h3>
+<figure class="code"><figcaption><b>camera/lamp_camera.py</b> · บรรทัด 622–633</figcaption><pre><span class="ln">622</span>        <span class="c"># ---- CAM line ----</span>
+<span class="ln">623</span>        person, obj = (1 if person_box else 0), (1 if obj_box else 0)
+<span class="ln">624</span>        oid = OBJECT_IDS[obj_name] if obj else 0
+<span class="ln">625</span>        if obj_box:
+<span class="ln">626</span>            x, y = norm((obj_box[0] + obj_box[2]) / 2, (obj_box[1] + obj_box[3]) / 2)
+<span class="ln">627</span>        elif person_box:
+<span class="ln">628</span>            x, y = norm((person_box[0] + person_box[2]) / 2, person_box[1] + 0.25 * (person_box[3] - person_box[1]))
+<span class="ln">629</span>        else:
+<span class="ln">630</span>            x, y = 0.0, 0.0
+<span class="ln">631</span>        latest[&quot;line&quot;] = f&quot;CAM,{seq},{person},{obj},{oid},{x:.2f},{y:.2f}&quot;
+<span class="ln">632</span>        if waved:
+<span class="ln">633</span>            send(f&quot;WAVE,{seq},{hand_x:.2f}&quot;)</pre></figure>
+<p>บรรทัด <code>CAM,seq,person,object,id,x,y</code> ส่งทุกภาพ: x, y = −1..+1 (ซ้าย→ขวา, บน→ล่าง) ถ้ามีของใช้จุดกลางของ ไม่มีใช้ตำแหน่งหน้าคน (¼ จากขอบบนของกรอบคน)
+· <code>WAVE,seq,x</code> ส่งครั้งเดียวตอนเห็นโบก · seq เพิ่มทีละ 1 ให้ ESP32 รู้ว่าภาพหาย</p>
+<figure class="code"><figcaption><b>camera/lamp_camera.py</b> · บรรทัด 451–456</figcaption><pre><span class="ln">451</span>def sender():
+<span class="ln">452</span>    &quot;&quot;&quot;CAM at SEND_HZ even if the camera is slower (ESP32 treats &gt; 1 s of silence as &#x27;camera lost&#x27;)&quot;&quot;&quot;
+<span class="ln">453</span>    while not stop.is_set():
+<span class="ln">454</span>        if grab.ok:
+<span class="ln">455</span>            send(latest[&quot;line&quot;])
+<span class="ln">456</span>        time.sleep(1.0 / SEND_HZ)</pre></figure>
+<p>thread แยกส่งบรรทัด CAM ล่าสุด 12 ครั้ง/วินาทีเสมอ แม้กล้องให้ภาพช้ากว่านั้น (ห้องมืดได้ ~8 fps) เพราะ ESP32 ถือว่าเงียบเกิน 1 s = กล้องหลุด</p>
+</section><section id="esp-cam"><p class="eyebrow">ส่วนที่ 3 · นอกวิชา</p><h2>ESP32 รับข้อมูลกล้อง (sensors.cpp)</h2>
+<figure class="code"><figcaption><b>src/sensors.cpp</b> · บรรทัด 135–146</figcaption><pre><span class="ln">135</span>void cameraLine(const char *line) {          <span class="c">// called by handleLine() for lines starting with &quot;cam,&quot;</span>
+<span class="ln">136</span>  int seq, p, o, id; float x, y;
+<span class="ln">137</span>  if (sscanf(line, &quot;cam,%d,%d,%d,%d,%f,%f&quot;, &amp;seq, &amp;p, &amp;o, &amp;id, &amp;x, &amp;y) != 6) return;   <span class="c">// malformed -&gt; ignored</span>
+<span class="ln">138</span>  if (!isfinite(x) || !isfinite(y) || id &lt; 0 || id &gt; 9) return;
+<span class="ln">139</span>  if (camSeq &gt;= 0 &amp;&amp; seq != camSeq) {
+<span class="ln">140</span>    int gap = (seq - camSeq + 65536) % 65536;
+<span class="ln">141</span>    if (gap &gt; 1 &amp;&amp; gap &lt; 1000) camLost += gap - 1;
+<span class="ln">142</span>  }
+<span class="ln">143</span>  camSeq = seq;
+<span class="ln">144</span>  camRawPerson = p ? 1 : 0; camRawObject = o ? 1 : 0; camRawId = camRawObject ? id : 0;
+<span class="ln">145</span>  camX = constrain(x, -1.0f, 1.0f); camY = constrain(y, -1.0f, 1.0f);
+<span class="ln">146</span>  camLastMs = millis(); camLines++;</pre></figure>
+
+<p>รูปแบบผิด, ไม่ใช่ตัวเลข หรือ id นอก 0–9 = ทิ้ง (contract ของกล้อง) · นับภาพที่หายจาก seq ที่ข้าม</p>
+<figure class="code"><figcaption><b>src/sensors.cpp</b> · บรรทัด 155–204</figcaption><pre><span class="ln">155</span>static void cameraStep() {
+<span class="ln">156</span>  <span class="c">// a scripted scenario is a pure ToF simulation (written for &quot;no camera&quot;): a real person in front of the</span>
+<span class="ln">157</span>  <span class="c">// webcam must not change its result -&gt; the camera counts as not connected while &#x27;scen&#x27; runs</span>
+<span class="ln">158</span>  bool conn = camLastMs &amp;&amp; millis() - camLastMs &lt; CAM_TIMEOUT_MS &amp;&amp; !scenarioRunning();
+<span class="ln">159</span>  if (conn != cameraConnected) {
+<span class="ln">160</span>    cameraConnected = conn;
+<span class="ln">161</span>    Serial.printf(&quot;camera %s\n&quot;, conn ? &quot;CONNECTED (camera decides person / object)&quot; : &quot;LOST -&gt; ToF only&quot;);
+<span class="ln">162</span>    noteInput(&quot;camera&quot;, conn, millis());
+<span class="ln">163</span>    if (!conn) {                             <span class="c">// forget everything the camera said</span>
+<span class="ln">164</span>      sense.person = sense.object = false; sense.color = 0;
+<span class="ln">165</span>      dCamPerson.on = dCamObject.on = false; dCamPerson.timer = dCamObject.timer = 0;
+<span class="ln">166</span>      camRawPerson = camRawObject = camRawId = 0;
+<span class="ln">167</span>    }
+<span class="ln">168</span>  }
+<span class="ln">169</span>  if (!cameraConnected) return;              <span class="c">// &#x27;s person&#x27; / &#x27;s object&#x27; simulation works while no camera</span>
+<span class="ln">170</span>  dCamPerson.update(camRawPerson);
+<span class="ln">171</span>  dCamObject.update(camRawObject);
+<span class="ln">172</span>  for (Dwell *d : {&amp;dCamPerson, &amp;dCamObject})
+<span class="ln">173</span>    if (d-&gt;changed) { d-&gt;changed = false; noteInput(d-&gt;name, d-&gt;on, d-&gt;srcMs); }
+<span class="ln">174</span>  <span class="c">// object identity: once an object is there its id is LOCKED; only a different id seen for CAM_ID_T s (2 s,</span>
+<span class="ln">175</span>  <span class="c">// a really different object) replaces it -&gt; one thing never flips id, so the boredom can build up</span>
+<span class="ln">176</span>  if (camRawObject &amp;&amp; camRawId != sense.color) {
+<span class="ln">177</span>    if (camRawId != camIdCand) { camIdCand = camRawId; camIdTimer = 0; }
+<span class="ln">178</span>    camIdTimer += DT;
+<span class="ln">179</span>    if (cond == 0 || camIdTimer &gt;= CAM_ID_T || sense.color == 0) { sense.color = camRawId; camIdTimer = 0; }
+<span class="ln">180</span>  } else camIdTimer = 0;
+<span class="ln">181</span>  sense.person = dCamPerson.on;
+<span class="ln">182</span>  sense.object = dCamObject.on;
+<span class="ln">183</span>  if (!sense.object) sense.color = 0;
+<span class="ln">184</span>  <span class="c">// CAM x,y = the object&#x27;s centre if one is seen in that frame, else the person&#x27;s face. While an object counts as</span>
+<span class="ln">185</span>  <span class="c">// there, use ONLY frames that really show it (a missed frame would make the head jump to the person and back).</span>
+<span class="ln">186</span>  bool usePos = sense.object ? camRawObject : (camRawPerson &amp;&amp; !camRawObject);
+<span class="ln">187</span>  sense.posFresh = usePos;
+<span class="ln">188</span>  <span class="c">// Slid / placed off-centre = moves SMOOTHLY -&gt; follow. Lifted / carried away = JUMPS -&gt; hold (do not chase);</span>
+<span class="ln">189</span>  <span class="c">// if it then stays at the new place for OBJ_SETTLE_S it was just moved -&gt; accept the new place and follow.</span>
+<span class="ln">190</span>  if (usePos) {
+<span class="ln">191</span>    float jump = fabsf(camX - sense.objX) + fabsf(camY - sense.objY);
+<span class="ln">192</span>    if (sense.object &amp;&amp; jump &gt; OBJ_JUMP) {
+<span class="ln">193</span>      if (!sense.posHold || fabsf(camX - holdX) + fabsf(camY - holdY) &gt; 0.15f) { holdX = camX; holdY = camY; holdT = 0; }
+<span class="ln">194</span>      if (!sense.posHold) noteInput(&quot;obj_jump_hold&quot;, true, millis());
+<span class="ln">195</span>      sense.posHold = true;
+<span class="ln">196</span>      holdT += DT;
+<span class="ln">197</span>      if (holdT &gt;= OBJ_SETTLE_S) { sense.objX = camX; sense.objY = camY; sense.posHold = false; }
+<span class="ln">198</span>    } else {                                 <span class="c">// light smoothing of the target position</span>
+<span class="ln">199</span>      sense.objX += 0.5f * (camX - sense.objX);
+<span class="ln">200</span>      sense.objY += 0.5f * (camY - sense.objY);
+<span class="ln">201</span>      sense.posHold = false; holdT = 0;
+<span class="ln">202</span>    }
+<span class="ln">203</span>  }
+<span class="ln">204</span>  if (!sense.object) { sense.posHold = false; holdT = 0; }   <span class="c">// taken away: nothing to follow</span></pre></figure>
+<div class="tw"><table class=""><thead><tr><th>ช่วง</th><th>ทำอะไร</th></tr></thead><tbody><tr><td>หลุด</td><td>ไม่มีบรรทัด CAM 1 s = LOST ล้างทุกอย่างที่กล้องบอก ใช้ ToF อย่างเดียว · ตอน scen ถือว่าหลุด</td></tr><tr><td>dwell</td><td>คน: เห็น 0.3 s ถึงมี หาย 10 s ถึงไป (<code>cam.person_out</code>) · ของ: 0.3 s / 1 s · C0 ทันที</td></tr><tr><td>ล็อก id</td><td>id ใหม่ต้องค้าง 2 s ถึงนับว่าเป็นของชิ้นใหม่ (ล็อกชั้นที่สองต่อจากแล็ปท็อป)</td></tr><tr><td>posFresh</td><td>ใช้ตำแหน่งเฉพาะภาพที่เห็นสิ่งที่ตามจริง ภาพที่พลาดไม่ทำให้หัวกระตุก</td></tr><tr><td>ยกของ</td><td>ตำแหน่งกระโดด &gt; 0.35 = ถูกยก HOLD ไม่ไล่ตาม · อยู่ที่ใหม่ 1 s = แค่ย้าย ตามต่อ · เลื่อนช้า = ตามโดยกรอง ×0.5</td></tr></tbody></table></div></section><section id="behav"><p class="eyebrow">ส่วนที่ 3 · นอกวิชา</p><h2>พฤติกรรม: อารมณ์ → ท่าทาง (brain.cpp ส่วน 6)</h2>
+<figure class="code"><figcaption><b>src/brain.cpp</b> · บรรทัด 423–442</figcaption><pre><span class="ln">423</span>static void emotionToBody() {
+<span class="ln">424</span>  useHardRange = restEmo(emo);                      <span class="c">// only the rest pose (sleepy / tired) may use the whole taught range</span>
+<span class="ln">425</span>  mapToCpg();
+<span class="ln">426</span>  joltStep();
+<span class="ln">427</span>  float spd = jolting ? MAX_DEG_S : (emo == AFRAID) ? 15 : (restEmo(emo) || emo == BORED) ? 20 : 45;
+<span class="ln">428</span>  if (emo == INTERESTED) trackObject();
+<span class="ln">429</span>  lookAtPerson();
+<span class="ln">430</span>  <span class="c">// wave back whatever the emotion (also a FORCED one) - only not while afraid or resting</span>
+<span class="ln">431</span>  bool waving = millis() &lt; waveUntil &amp;&amp; emo != AFRAID &amp;&amp; !restEmo(emo);
+<span class="ln">432</span>  if (waving) cpg.phi = WAVE_PHI;
+<span class="ln">433</span>  <span class="c">// afraid: back off gradually - the closer (30 -&gt; 10 cm), the further back; only the jolt goes all the way</span>
+<span class="ln">434</span>  float back = constrain((30.0f - sense.headCm) / 20.0f, 0.0f, 1.0f);
+<span class="ln">435</span>  back = jolting ? 1.0f : fminf(fmaxf(back, HM[H_STRESS].R), AFRAID_MAX_BACK);
+<span class="ln">436</span> 
+<span class="ln">437</span>  for (int i = 0; i &lt; NJ; i++) {
+<span class="ln">438</span>    J[i].pose = poseFor(i, back);
+<span class="ln">439</span>    J[i].amp = (waving &amp;&amp; i == 4) ? WAVE_AMP_DEG : EMO_AMP[emo][i];   <span class="c">// wave back = CPG on the head yaw</span>
+<span class="ln">440</span>    J[i].maxSpeed = spd;
+<span class="ln">441</span>  }
+<span class="ln">442</span>  sleepControl();</pre></figure>
+<div class="ex"><div class="tw"><table class="ex"><thead><tr><th>ตรงไหน</th><th>ทำอะไร</th><th>ทำไม / ตัวอย่าง</th></tr></thead><tbody><tr><td><code class="ref">brain.cpp:424</code></td><td>ท่าพักใช้ช่วงมุมเต็ม อารมณ์อื่นใช้ช่วงอ่อน</td><td>ศอกพับลึกได้ตอนนอนเท่านั้น</td></tr><tr><td><code class="ref">brain.cpp:425</code></td><td>ฮอร์โมน → φ และ ampScale</td><td>Week 4 bounded mapping</td></tr><tr><td><code class="ref">brain.cpp:427</code></td><td>ความเร็วสูงสุดตามอารมณ์: jolt 45, afraid 15, พัก/เบื่อ 20, อื่นๆ 45 °/s</td><td>กลัวถอยช้าๆ ดูเป็นธรรมชาติ สะดุ้งเร็วสุด</td></tr><tr><td><code class="ref">brain.cpp:428</code></td><td>ก้มและหันตามของ</td><td></td></tr><tr><td><code class="ref">brain.cpp:429</code></td><td>หันหาคน (happy/excited)</td><td></td></tr><tr><td><code class="ref">brain.cpp:432</code></td><td>โบกตอบ: CPG เร็ว 0.25 บนหัวหัน ±20°</td><td>ทับ φ จากฮอร์โมนช่วง 3 s</td></tr><tr><td><code class="ref">brain.cpp:434</code></td><td>afraid ถอยตามระยะ</td><td>มือที่ 20 cm: back = 0.5 → ไปครึ่งทางสู่ท่าถอยสุด</td></tr><tr><td><code class="ref">brain.cpp:438</code></td><td>ใส่ท่า, amp และความเร็วให้ทุกข้อ</td><td>composeTargets ใช้ต่อ</td></tr></tbody></table></div></div>
+<h3>ท่าของแต่ละข้อต่อ</h3>
+<figure class="code"><figcaption><b>src/brain.cpp</b> · บรรทัด 386–395</figcaption><pre><span class="ln">386</span>static float poseFor(int i, float back) {
+<span class="ln">387</span>  float p = EMO_POSE[emo][i];
+<span class="ln">388</span>  if (emo == INTERESTED) p = lean * EMO_POSE[INTERESTED][i] + (i == 4 ? trackYaw : i == 3 ? trackPitch : i == 0 ? trackBase : 0);
+<span class="ln">389</span>  if (emo == BORED)      p = lean * EMO_POSE[INTERESTED][i] + (i == 3 ? trackPitch : i == 0 ? trackBase : 0);   <span class="c">// stays where it looked</span>
+<span class="ln">390</span>  if (emo == AFRAID)     p = EMO_POSE[NORMAL][i] + back * (EMO_POSE[AFRAID][i] - EMO_POSE[NORMAL][i]);
+<span class="ln">391</span>  if (emo == NORMAL &amp;&amp; someoneMaybe()) p = (i == 3) ? 10.0f : (i == 1 ? 5.0f : 0.0f);   <span class="c">// &quot;who&#x27;s there?&quot;: head up</span>
+<span class="ln">392</span>  if (i == 4 &amp;&amp; (emo == HAPPY || emo == EXCITED)) p += lookYaw;                          <span class="c">// face the person</span>
+<span class="ln">393</span>  <span class="c">// head UP (GUI &quot;head up&quot;, tune head.up): normal / happy / excited look up so the camera sees a STANDING person</span>
+<span class="ln">394</span>  if (i == 3 &amp;&amp; (emo == NORMAL || emo == HAPPY || emo == EXCITED)) p += HEAD_UP_DEG;
+<span class="ln">395</span>  return p;</pre></figure>
+<p>ไล่ตามลำดับ: เริ่มจากท่าในตาราง → interested ใช้ lean × ท่าก้ม + มุมตามของ → bored ค้างที่ดูไว้ → afraid ผสมระหว่าง normal กับท่าถอย
+→ normal + 'ใครมา?' เงยมอง → happy/excited บวกมุมหันหาคน → normal/happy/excited บวก head up (ค่าที่ตั้งใน GUI)
+(i = 0 ฐาน, 1 ไหล่, 2 ศอก, 3 หัวก้ม-เงย, 4 หัวหัน)</p>
+<div class="tw"><table class=""><thead><tr><th>พฤติกรรม</th><th>ทำงานยังไง</th><th>ปรับได้</th></tr></thead><tbody><tr><td>interested: ก้ม + ยื่น</td><td>lean เพิ่ม 0.4/s (0 → 1 ใน 2.5 s) จน ToF หัว ≤ 15 cm · ท่า = lean × ท่า interested + มุมตามของ</td><td><code>LEAN_RATE</code>, <code>INTERESTED_STOP_CM</code></td></tr><tr><td>bored</td><td>ค้างท่าที่ดูของ แล้ว CPG หันซ้าย-ขวา 25° ช้าๆ (φ 0.04)</td><td>EMO_AMP, EMO_PHI</td></tr><tr><td>afraid: ถอย</td><td>back = (30 − ระยะ)/20 อย่างน้อยเท่า R_stress ไม่เกิน 70% · jolt = 100%</td><td><code>AFRAID_MAX_BACK</code></td></tr><tr><td>ใครมา?</td><td>normal + ToF ฐานเห็นคน (กล้องยังไม่ยืนยัน): เงยหัว 10°</td><td>person.enter/exit</td></tr><tr><td>หันหาคน</td><td>happy/excited + กล้องเห็นคน: yaw 20°/s ใช้ช่วง start/stop</td><td>track.start/stop</td></tr><tr><td>เงยหัว</td><td>normal/happy/excited บวก pitch ตาม <code>head.up</code> ให้กล้องเห็นคนยืน (แทนการเงยตามคนที่ทำงานมั่ว)</td><td>GUI <b>head up</b></td></tr><tr><td>โบกตอบ</td><td>3 s หลังเห็น WAVE: φ 0.25 + yaw ±20°</td><td>WAVE_*</td></tr></tbody></table></div>
+<h3>ตามของ (interested)</h3>
+<figure class="code"><figcaption><b>src/brain.cpp</b> · บรรทัด 346–351</figcaption><pre><span class="ln">346</span>static float trackErr(float e, bool &amp;moving) {
+<span class="ln">347</span>  float off = fabsf(e) * 50.0f;
+<span class="ln">348</span>  if (TRACK_START_PCT &lt;= 0) { moving = false; return 0; }
+<span class="ln">349</span>  if (!moving &amp;&amp; off &gt; TRACK_START_PCT) moving = true;
+<span class="ln">350</span>  else if (moving &amp;&amp; off &lt;= fminf(TRACK_STOP_PCT, TRACK_START_PCT)) moving = false;
+<span class="ln">351</span>  return moving ? e : 0;</pre></figure>
+<p><b>ตัวอย่าง</b> start 10%, stop 4%: ของอยู่ที่ x = 0.3 (เยื้อง 15%) → เกิน 10% เริ่มหัน คืน 0.3 → หัวหันจนของมาอยู่ x = 0.07 (3.5%) → ต่ำกว่า 4% หยุด คืน 0
+ระหว่าง 4–10% ถ้ากำลังหันอยู่ก็หันต่อ ถ้าหยุดอยู่ก็นิ่ง ทำให้หัวไม่ส่ายตามทุกการขยับเล็กน้อย</p>
+<figure class="code"><figcaption><b>src/brain.cpp</b> · บรรทัด 355–369</figcaption><pre><span class="ln">355</span>static void trackObject() {
+<span class="ln">356</span>  bool far = sense.headCm &gt; INTERESTED_STOP_CM;
+<span class="ln">357</span>  lean = constrain(lean + (far ? LEAN_RATE : 0.0f) * DT, 0.0f, 1.0f);
+<span class="ln">358</span>  <span class="c">// follow while it is there and not jumping (lifted); taken away -&gt; sense.object false -&gt; no follow</span>
+<span class="ln">359</span>  if (sense.object &amp;&amp; !sense.posHold &amp;&amp; sense.posFresh) {
+<span class="ln">360</span>    float ex = trackErr(sense.objX, trackingX);                    <span class="c">// 0 = close enough to the centre -&gt; still</span>
+<span class="ln">361</span>    trackYaw   = constrain(trackYaw   + TRACK_YAW_SIGN   * TRACK_DEG_S * ex * DT, -60.0f, 60.0f);
+<span class="ln">362</span>    <span class="c">// (2026-11-12 user: follow LEFT / RIGHT only - no up / down; trackPitch stays 0, the head keeps the bow pitch)</span>
+<span class="ln">363</span>    if (fabsf(trackYaw) &gt; BASE_SHARE_DEG) {                         <span class="c">// head turned far: the base takes over</span>
+<span class="ln">364</span>      float m = constrain(trackYaw - copysignf(BASE_SHARE_DEG, trackYaw), -BASE_DEG_S * DT, BASE_DEG_S * DT);
+<span class="ln">365</span>      trackBase = constrain(trackBase + TRACK_BASE_SIGN * m, -80.0f, 80.0f);
+<span class="ln">366</span>      trackYaw -= m;                                                <span class="c">// camera turns with the base</span>
+<span class="ln">367</span>    }
+<span class="ln">368</span>  }
+<span class="ln">369</span>  else if (!sense.object || sense.posHold) trackingX = false;              <span class="c">// lifted / gone: START again</span></pre></figure>
+<p><b>ตามเฉพาะซ้าย-ขวา</b> (12 พ.ย. ผู้ใช้ขอ: ไม่เงย/ก้มตามของ หัวคงมุมก้มของท่า interested) · ความเร็วหัน = 25°/s × error: ของอยู่ขอบภาพ (x = 1) หัน 25°/s อยู่ครึ่งทาง (x = 0.5) หัน 12.5°/s · หัว (yaw) หันได้ ±60° พอเกิน 30° ฐานหมุนช่วย 10°/s แล้วหัวหมุนกลับเท่ากัน
+ภาพจึงไม่เปลี่ยน แต่หัวกลับมาใกล้ตรงกลาง · lean เพิ่ม 0.4/s ก้มเต็มใน 2.5 s หยุดเมื่อ ToF หัว ≤ 15 cm (ไม่เอาหน้าชนของ)</p>
+<p>เป็น proportional + clamp (สไลด์ Week 2 หน้า 15): ความเร็วหัน ∝ error ในภาพ เริ่มหันเมื่อเยื้อง &gt; 10% หยุดเมื่อ ≤ 4% หันเกิน 30° ฐานหมุนช่วย</p>
+<h3>หันหาคน</h3>
+<figure class="code"><figcaption><b>src/brain.cpp</b> · บรรทัด 374–381</figcaption><pre><span class="ln">374</span>static void lookAtPerson() {
+<span class="ln">375</span>  bool look = (emo == HAPPY || emo == EXCITED) &amp;&amp; cameraConnected &amp;&amp; sense.person &amp;&amp; !sense.object;
+<span class="ln">376</span>  if (look) {
+<span class="ln">377</span>    if (sense.posFresh) lookYaw = constrain(lookYaw + TRACK_YAW_SIGN * LOOK_DEG_S * trackErr(sense.objX, lookingX) * DT,
+<span class="ln">378</span>                                            -60.0f, 60.0f);
+<span class="ln">379</span>  } else {
+<span class="ln">380</span>    lookingX = false;
+<span class="ln">381</span>    lookYaw += constrain(-lookYaw, -LOOK_DEG_S * DT, LOOK_DEG_S * DT);</pre></figure>
+<h3>สะดุ้ง (jolt)</h3>
+<figure class="code"><figcaption><b>src/brain.cpp</b> · บรรทัด 335–340</figcaption><pre><span class="ln">335</span>static void joltStep() {
+<span class="ln">336</span>  uint32_t now = millis();
+<span class="ln">337</span>  bool closeNow = (emo == AFRAID) &amp;&amp; (thingThere() ? sense.headCm &lt; SHOVE_CM : hStartle.on);
+<span class="ln">338</span>  if (emo != AFRAID) jolting = false;
+<span class="ln">339</span>  else if (!jolting &amp;&amp; closeNow &amp;&amp; now &gt; startleBlockUntil) { jolting = true; joltStart = now; Serial.println(&quot;jolt!&quot;); }
+<span class="ln">340</span>  else if (jolting &amp;&amp; now - joltStart &gt; STARTLE_HOLD_MS) { jolting = false; startleBlockUntil = now + STARTLE_BLOCK_MS; }</pre></figure>
+<p>เส้นเวลา: มือเข้ามา &lt; 10 cm → <b>jolt</b> ถอยสุดด้วยความเร็วเต็ม ไฟแดงกะพริบ 4 Hz → ค้าง 2.5 s → ถ้ายังใกล้ ถอยเหลือ ≤ 70% → 5 s ห้าม jolt ซ้ำ
+(ไหล่รับภาระหนักตอนถอยสุด จึงไม่ให้ค้างนาน)</p>
+<h3>หลับ / งีบ</h3>
+<figure class="code"><figcaption><b>src/brain.cpp</b> · บรรทัด 400–419</figcaption><pre><span class="ln">400</span>void sleepControl() {
+<span class="ln">401</span>  if (restEmo(emo) &amp;&amp; !sleepLimp &amp;&amp; !estop) {
+<span class="ln">402</span>    bool arrived = true;
+<span class="ln">403</span>    for (int i = 0; i &lt; NJ; i++) if (fabsf(J[i].cmd - J[i].target) &gt; 1.0f) arrived = false;
+<span class="ln">404</span>    if (arrived &amp;&amp; millis() - emoSince &gt; 3000) {
+<span class="ln">405</span>      for (int i = 0; i &lt; NJ; i++) if (J[i].type == STS) st.EnableTorque(J[i].id, 0);
+<span class="ln">406</span>      mgLimp();
+<span class="ln">407</span>      sleepLimp = true;
+<span class="ln">408</span>      Serial.println(&quot;sleeping: motors off&quot;);
+<span class="ln">409</span>    }
+<span class="ln">410</span>  } else if (!restEmo(emo) &amp;&amp; sleepLimp) {
+<span class="ln">411</span>    for (int i = 0; i &lt; NJ; i++) {
+<span class="ln">412</span>      Joint &amp;j = J[i];
+<span class="ln">413</span>      if (j.type != STS || !j.enabled || j.cooling) continue;
+<span class="ln">414</span>      int p = st.ReadPos(j.id);
+<span class="ln">415</span>      if (p &gt;= 0) j.cmd = constrain(degFromSteps(j, p), j.loDeg, j.hiDeg);
+<span class="ln">416</span>      st.EnableTorque(j.id, 1);
+<span class="ln">417</span>    }
+<span class="ln">418</span>    sleepLimp = false;
+<span class="ln">419</span>    Serial.println(&quot;waking up: motors on&quot;);</pre></figure>
+<p>ไปถึงท่าพักแล้วรอ 3 s ปิดแรงมอเตอร์ทุกตัว · ตื่น: อ่านตำแหน่งที่แขนตกอยู่แล้วเปิดแรงจากตรงนั้น (ไม่กระโดด)
+· ตอนหลับไม่ใช้กล้องและ ToF หัว ตื่นได้จาก ToF ฐานเท่านั้น:</p>
+<figure class="code"><figcaption><b>src/brain.cpp</b> · บรรทัด 203</figcaption><pre><span class="ln">203</span>static bool headBlind() {</pre></figure>
+</section><section id="motors"><p class="eyebrow">ส่วนที่ 3 · นอกวิชา</p><h2>มอเตอร์และความปลอดภัย (motors.cpp)</h2>
+<figure class="code"><figcaption><b>src/motors.cpp</b> · บรรทัด 17–24</figcaption><pre><span class="ln">17</span>Joint J[] = {
+<span class="ln">18</span>  <span class="c">//  name       type id  origin   lo      hi     tgt cmd speed ok  temp enabled</span>
+<span class="ln">19</span>  {&quot;base&quot;,     MG,  MG_PIN, 90,  -90.0f,  90.0f, 0, 0, 45, true, 0, true},
+<span class="ln">20</span>  {&quot;shoulder&quot;, STS, 1, STS_ORIGIN, -58.3f,  74.1f, 0, 0, 45, true, 0, true},
+<span class="ln">21</span>  {&quot;elbow&quot;,    STS, 2, STS_ORIGIN, -46.7f,   2.3f, 0, 0, 45, true, 0, true},   <span class="c">// origin at its top end</span>
+<span class="ln">22</span>  {&quot;pitch&quot;,    STS, 3, STS_ORIGIN, -70.8f,  33.1f, 0, 0, 45, true, 0, true},   <span class="c">// head look up/down</span>
+<span class="ln">23</span>  {&quot;yaw&quot;,      STS, 4, STS_ORIGIN, -70.8f,  64.4f, 0, 0, 45, true, 0, true},   <span class="c">// head turn left/right</span>
+<span class="ln">24</span>};</pre></figure>
+<p>คอลัมน์: ชื่อ, ชนิด (MG = MG996R ไม่มี feedback, STS = servo บัสที่อ่านตำแหน่ง/อุณหภูมิได้), id (STS) หรือขา GPIO (MG), origin, ช่วงมุม (ค่าในตารางเป็นแค่ค่าสำรอง
+ของจริงอ่านจาก EEPROM ตอนบูต), เป้าหมาย, คำสั่งล่าสุด, ความเร็ว, ok, อุณหภูมิ, enabled · มุมทุกตัวเป็น "องศาจาก origin" 0 = ท่าที่สอนไว้</p>
+<h3>ส่งคำสั่ง: slew + clamp รอบสอง</h3>
+<figure class="code"><figcaption><b>src/motors.cpp</b> · บรรทัด 177–194</figcaption><pre><span class="ln">177</span>void sendOutputs() {
+<span class="ln">178</span>  if (estop || sleepLimp) return;
+<span class="ln">179</span>  u8 ids[8]; s16 pos[8]; u16 spd[8]; u8 acc[8]; int n = 0;
+<span class="ln">180</span>  for (int i = 0; i &lt; NJ; i++) {
+<span class="ln">181</span>    Joint &amp;j = J[i];
+<span class="ln">182</span>    float vmax = fminf(fminf(j.maxSpeed, speedCap), MAX_DEG_S);
+<span class="ln">183</span>    float step = vmax * DT; <span class="c">// slew limit per tick (course: &lt;= 0.8 rad/s)</span>
+<span class="ln">184</span>    j.cmd += constrain(j.target - j.cmd, -step, step);
+<span class="ln">185</span>    j.cmd = constrain(j.cmd, j.loDeg, j.hiDeg);     <span class="c">// second safety clamp right before output</span>
+<span class="ln">186</span>    if (j.type == MG) { mgWriteDeg(j, j.cmd); continue; }
+<span class="ln">187</span>    if (!j.enabled || j.cooling || j.lost) continue;
+<span class="ln">188</span>    ids[n] = j.id;
+<span class="ln">189</span>    pos[n] = stepsFromDeg(j, j.cmd);
+<span class="ln">190</span>    spd[n] = (u16)(vmax * STEPS_PER_DEG * 1.5f);   <span class="c">// servo may move a bit faster than the setpoint ramp</span>
+<span class="ln">191</span>    acc[n] = 0;                                     <span class="c">// 0 = no extra ramp: the 20 Hz setpoints are the ramp</span>
+<span class="ln">192</span>    n++;
+<span class="ln">193</span>  }
+<span class="ln">194</span>  if (n) st.SyncWritePosEx(ids, n, pos, spd, acc);  <span class="c">// one bus packet for all STS</span></pre></figure>
+<p>ทุก tick: ความเร็วสูงสุด = ค่าน้อยสุดของ (ความเร็วอารมณ์, speed ใน GUI, 45 °/s) → ขยับ cmd เข้าหา target ได้ไม่เกิน vmax × 0.05 s
+(45 °/s = 2.25° ต่อ tick) → clamp ช่วงแข็งอีกรอบ → MG996R เขียน PWM ทันที → STS ทุกตัวรวมเป็นแพ็กเก็ตเดียว (SyncWrite) ประหยัดเวลาบัส
+· ข้อที่ไม่ enabled, กำลังเย็น หรืออ่านตำแหน่งไม่ได้ จะไม่ถูกสั่งเลย</p>
+<h3>อ่านช่วงจาก servo</h3>
+<figure class="code"><figcaption><b>src/motors.cpp</b> · บรรทัด 93–119</figcaption><pre><span class="ln">93</span>bool readLimits(Joint &amp;j, bool atBoot) {
+<span class="ln">94</span>  <span class="c">// Read until two reads in a row agree (at boot one read once gave the elbow -114..+93 instead of -46.7..+2.3)</span>
+<span class="ln">95</span>  int l = -1, h = -1;
+<span class="ln">96</span>  for (int k = 0; k &lt; 4; k++) {
+<span class="ln">97</span>    int l2 = st.readWord(j.id, SMS_STS_MIN_ANGLE_LIMIT_L), h2 = st.readWord(j.id, SMS_STS_MAX_ANGLE_LIMIT_L);
+<span class="ln">98</span>    if (l2 &gt;= 0 &amp;&amp; h2 &gt;= 0 &amp;&amp; l2 == l &amp;&amp; h2 == h) break;
+<span class="ln">99</span>    l = l2; h = h2;
+<span class="ln">100</span>    if (k == 3) l = h = -1;                                       <span class="c">// never agreed -&gt; treat as no answer, retry later</span>
+<span class="ln">101</span>    delay(5);
+<span class="ln">102</span>  }
+<span class="ln">103</span>  if (l &lt; 0 || h &lt; 0) {
+<span class="ln">104</span>    j.enabled = false; j.unread = true;
+<span class="ln">105</span>    if (atBoot) Serial.printf(&quot;WAIT %s (ID %d): no answer (motor power off?) - it is enabled by itself when it answers\n&quot;,
+<span class="ln">106</span>                              j.name, j.id);
+<span class="ln">107</span>    return false;
+<span class="ln">108</span>  }
+<span class="ln">109</span>  j.unread = false;
+<span class="ln">110</span>  <span class="c">// Valid only if: ordered, contains origin 2048 (+/- the 20-step inset), and is not the</span>
+<span class="ln">111</span>  <span class="c">// factory 0..4095 (= never taught / uncalibrated origin).</span>
+<span class="ln">112</span>  bool valid = l &lt; h &amp;&amp; l &lt;= STS_ORIGIN + 20 &amp;&amp; STS_ORIGIN - 20 &lt;= h &amp;&amp; !(l == 0 &amp;&amp; h == 4095);
+<span class="ln">113</span>  if (!valid) {
+<span class="ln">114</span>    j.enabled = false;
+<span class="ln">115</span>    Serial.printf(&quot;DISABLED %s (ID %d): limits %d..%d not taught -&gt; run &<span class="c">#x27;teach %d&#x27;\n&quot;, j.name, j.id, l, h, j.id);</span>
+<span class="ln">116</span>    return false;
+<span class="ln">117</span>  }
+<span class="ln">118</span>  j.loDeg = degFromSteps(j, l); j.hiDeg = degFromSteps(j, h);
+<span class="ln">119</span>  return true;</pre></figure>
+<p>อ่านซ้ำจนได้ค่าตรงกัน 2 ครั้ง (เคยอ่านศอกผิดตอนบูต) · origin ไม่ใช่ 2048 หรือช่วง 0..4095 = DISABLED ไม่ขยับ (ช่วงที่ข้ามจุด 4095→0 เคยทำ servo พัง 2 ตัว)</p>
+<h3>ตรวจสุขภาพ + ความร้อน</h3>
+<figure class="code"><figcaption><b>src/motors.cpp</b> · บรรทัด 198–226</figcaption><pre><span class="ln">198</span>void healthStep() {
+<span class="ln">199</span>  static int k = 0;
+<span class="ln">200</span>  static uint32_t lastTorque = 0;
+<span class="ln">201</span>  int i = 1 + (k++ % (NJ - 1));                     <span class="c">// joints 1..4 are STS</span>
+<span class="ln">202</span>  Joint &amp;j = J[i];
+<span class="ln">203</span>  int t = st.ReadTemper(j.id);
+<span class="ln">204</span>  bool ok = t &gt;= 0;
+<span class="ln">205</span>  if (ok != j.ok) Serial.printf(&quot;%s %s (ID %d)\n&quot;, ok ? &quot;OK  &quot; : &quot;WARN no reply:&quot;, j.name, j.id);
+<span class="ln">206</span>  j.ok = ok;
+<span class="ln">207</span>  if (ok &amp;&amp; j.unread) lateEnable(j);                 <span class="c">// silent at boot, answers now -&gt; use it</span>
+<span class="ln">208</span>  if (ok) {
+<span class="ln">209</span>    if (t &gt;= TEMP_EASE_C &amp;&amp; j.temp &lt; TEMP_EASE_C) Serial.printf(&quot;WARN %s warm %d C: rhythm fading out\n&quot;, j.name, t);
+<span class="ln">210</span>    j.temp = t;
+<span class="ln">211</span>    if (!j.cooling &amp;&amp; j.enabled &amp;&amp; t &gt;= TEMP_LIMP_C) {
+<span class="ln">212</span>      j.cooling = true;
+<span class="ln">213</span>      st.EnableTorque(j.id, 0);
+<span class="ln">214</span>      Serial.printf(&quot;HOT %s %d C: torque OFF to cool (back on at %d C)\n&quot;, j.name, t, TEMP_BACK_C);
+<span class="ln">215</span>    } else if (j.cooling &amp;&amp; t &lt;= TEMP_BACK_C &amp;&amp; !estop &amp;&amp; !sleepLimp) {
+<span class="ln">216</span>      int p = st.ReadPos(j.id);
+<span class="ln">217</span>      if (p &gt;= 0) j.cmd = constrain(degFromSteps(j, p), j.loDeg, j.hiDeg);   <span class="c">// resume from where it sagged to</span>
+<span class="ln">218</span>      st.EnableTorque(j.id, 1);
+<span class="ln">219</span>      j.cooling = false;
+<span class="ln">220</span>      Serial.printf(&quot;%s cooled to %d C: torque back on\n&quot;, j.name, t);
+<span class="ln">221</span>    }
+<span class="ln">222</span>  }
+<span class="ln">223</span>  if (millis() - lastTorque &gt; 5000 &amp;&amp; !estop &amp;&amp; !sleepLimp) {   <span class="c">// torque limit is RAM in the servo -&gt; refresh (docs/issues.md #17)</span>
+<span class="ln">224</span>    lastTorque = millis();
+<span class="ln">225</span>    for (int m = 0; m &lt; NJ; m++)
+<span class="ln">226</span>      if (J[m].type == STS &amp;&amp; J[m].enabled &amp;&amp; !J[m].cooling) st.writeWord(J[m].id, SMS_STS_TORQUE_LIMIT_L, TORQUE_LIMIT);</pre></figure>
+<p>ทุก tick อ่านอุณหภูมิ STS 1 ตัว (4 ตัว = ครบทุก 0.2 s) · ไม่ตอบ → ok = false (ขึ้น WARN) · ตัวที่เงียบตอนบูตแล้วตอบทีหลัง → <code>lateEnable</code> เปิดใช้จากตำแหน่งปัจจุบัน
+· ร้อน ≥ 66 °C ปิดแรงข้อนั้น เย็นถึง 55 °C เปิดคืนจากตำแหน่งที่ตก · ทุก 5 s เขียน torque limit 50% ซ้ำ เพราะค่านี้อยู่ใน RAM ของ servo หายเมื่อไฟกระพริบ</p>
+<div class="tw"><table class=""><thead><tr><th>อุณหภูมิ</th><th>ผล</th></tr></thead><tbody><tr><td>≥ 55 °C</td><td>จังหวะ CPG ค่อยๆ หาย (ข้อนั้นแค่ค้างท่า)</td></tr><tr><td>~58 °C</td><td>ฮอร์โมน fatigue พางีบ (tired) มอเตอร์ปิดทุกตัว</td></tr><tr><td>≥ 62 °C</td><td>จังหวะหายหมด</td></tr><tr><td>≥ 66 °C</td><td>ปิดแรงข้อนั้น (cooling) เปิดคืนที่ 55 °C</td></tr></tbody></table></div>
+<h3>STOP / resume / teach / save ท่า</h3>
+<p><code>stop</code> ปิดแรง STS + หยุดสัญญาณ MG (<code class="ref">motors.cpp:230</code>) · <code>resume</code> อ่านตำแหน่งแล้วค้างท่านั้น (auto off) (<code class="ref">motors.cpp:248</code>)
+· <code>teach &lt;joint&gt;</code> ตั้ง origin = 2048 ก่อนแล้วค่อย min/max (<code class="ref">motors.cpp:377</code>) · <code>save &lt;emotion&gt;</code> (<code class="ref">motors.cpp:295</code>)</p>
+<h3>ไฟ RGB</h3>
+<figure class="code"><figcaption><b>src/motors.cpp</b> · บรรทัด 459–478</figcaption><pre><span class="ln">459</span>void lightsStep() {
+<span class="ln">460</span>  float r, g, b, level;
+<span class="ln">461</span>  if (estop) { r = g = b = 255; level = 0.15f; }
+<span class="ln">462</span>  else {
+<span class="ln">463</span>    const uint8_t *c = EMO_RGB[emo];
+<span class="ln">464</span>    r = c[0]; g = c[1]; b = c[2];
+<span class="ln">465</span>    float breath = 0.5f + 0.5f * constrain(cpgOut(1), -1.0f, 1.0f);      <span class="c">// 0..1 with the rhythm</span>
+<span class="ln">466</span>    level = 1.0f - RING_BREATH * cpg.gain * (1.0f - breath);
+<span class="ln">467</span>    if (restEmo(emo)) level *= 0.25f;
+<span class="ln">468</span>    if (emo == AFRAID &amp;&amp; jolting &amp;&amp; (millis() / 125) % 2) level *= 0.2f; <span class="c">// 4 Hz flash during the jolt</span>
+<span class="ln">469</span>    if (emo == EXCITED  &amp;&amp; (millis() / 250) % 2) level *= 0.3f;          <span class="c">// 2 Hz blink (slower, playful)</span>
+<span class="ln">470</span>  }
+<span class="ln">471</span>  level *= RING_BRIGHTNESS / 255.0f;
+<span class="ln">472</span>  if (!ringOn) level = 0;
+<span class="ln">473</span>  uint32_t col = ring.Color((uint8_t)(r * level), (uint8_t)(g * level), (uint8_t)(b * level));
+<span class="ln">474</span>  static uint32_t last = 0xFFFFFFFF;
+<span class="ln">475</span>  if (col == last) return;                     <span class="c">// ring.show() takes ~1 ms for 32 LEDs: only when needed</span>
+<span class="ln">476</span>  last = col;
+<span class="ln">477</span>  ring.fill(col);
+<span class="ln">478</span>  ring.show();</pre></figure>
+<p>ความสว่าง = 1 − 0.30 × gain × (1 − breath) → หายใจตาม CPG ลึกสุด 30% · คูณ 0.25 ตอนพัก · กะพริบด้วย millis()/250 (2 Hz) หรือ /125 (4 Hz)
+· คูณ 60/255 ทั้งหมด (จำกัดกระแสด้วย) · <code>light off</code> ทำให้เป็น 0 · เขียนลงวงแหวนเฉพาะตอนสีเปลี่ยน เพราะ <code>ring.show()</code> ใช้ ~1 ms</p>
+<p>สีตามอารมณ์ × ความสว่าง 60/255 · หายใจตาม CPG 30% · sleepy/tired หรี่ 25% · excited กะพริบ 2 Hz · jolt 4 Hz · STOP ขาวหรี่ · <code>light off</code> = ดับ
+(ปุ่ม Light ON/OFF ใน GUI และ iPad)</p>
+</section><section id="gui"><p class="eyebrow">ส่วนที่ 3 · นอกวิชา</p><h2>GUI, ค่าจูน, log, คำสั่ง</h2>
+<h3>ค่าที่จูนสดได้ (tune)</h3>
+<figure class="code"><figcaption><b>src/lamp_main.cpp</b> · บรรทัด 111–125</figcaption><pre><span class="ln">111</span>TuneVar TUNE[] = {
+<span class="ln">112</span>  {&quot;alpha&quot;, &amp;cpg.alpha, 1.01f, 1.5f}, {&quot;amp&quot;, &amp;ampGain, 0, 2}, {&quot;speed&quot;, &amp;speedCap, 5, MAX_DEG_S},
+<span class="ln">113</span>  {&quot;object.enter&quot;, &amp;hObject.enterCm, 3, 120}, {&quot;object.exit&quot;, &amp;hObject.exitCm, 3, 120},
+<span class="ln">114</span>  {&quot;object.tin&quot;,   &amp;hObject.tEnter,  0, 10},  {&quot;object.tout&quot;, &amp;hObject.tExit,  0, 10},
+<span class="ln">115</span>  {&quot;afraid.enter&quot;, &amp;hAfraid.enterCm, 3, 120}, {&quot;afraid.exit&quot;, &amp;hAfraid.exitCm, 3, 120},
+<span class="ln">116</span>  {&quot;afraid.tin&quot;,   &amp;hAfraid.tEnter,  0, 10},  {&quot;afraid.tout&quot;, &amp;hAfraid.tExit,  0, 10},
+<span class="ln">117</span>  {&quot;jolt.enter&quot;,   &amp;hStartle.enterCm, 3, 120}, {&quot;jolt.exit&quot;,  &amp;hStartle.exitCm, 3, 120},
+<span class="ln">118</span>  {&quot;jolt.tin&quot;,     &amp;hStartle.tEnter,  0, 10},  {&quot;jolt.tout&quot;,  &amp;hStartle.tExit,  0, 10},
+<span class="ln">119</span>  {&quot;person.enter&quot;, &amp;hPerson.enterCm, 3, 120}, {&quot;person.exit&quot;, &amp;hPerson.exitCm, 3, 120},
+<span class="ln">120</span>  {&quot;person.tin&quot;,   &amp;hPerson.tEnter,  0, 10},  {&quot;person.tout&quot;, &amp;hPerson.tExit,  0, 10},
+<span class="ln">121</span>  {&quot;cam.person_out&quot;, &amp;dCamPerson.tExit, 0, 30}, {&quot;afraid.calm&quot;, &amp;AFRAID_CALM_S, 0, 10},
+<span class="ln">122</span>  {&quot;track.speed&quot;, &amp;TRACK_DEG_S, 0, 45},   {&quot;track.start&quot;, &amp;TRACK_START_PCT, 0, 50},
+<span class="ln">123</span>  {&quot;track.stop&quot;, &amp;TRACK_STOP_PCT, 0, 50},   {&quot;sleep.after&quot;, &amp;SLEEP_AFTER_S, 10, 600},
+<span class="ln">124</span>  {&quot;head.up&quot;, &amp;HEAD_UP_DEG, -20, 30},
+<span class="ln">125</span>};</pre></figure>
+<p>แต่ละแถว = ชื่อคีย์, ตัวแปรที่ถูกแก้, ค่าต่ำสุด, ค่าสูงสุด · ตอนบูต <code>tuneBegin()</code> จำค่าในโค้ดไว้เป็นค่าเริ่มต้น แล้วโหลดค่าที่ save ไว้ทับ
+· <code>tune &lt;key&gt; &lt;v&gt;</code> แก้ทันที (unsaved) · <code>tune save</code> เขียนลง flash · <code>tune reset</code> ลบค่าที่ save กลับไปค่าในโค้ด
+· GUI อ่านบรรทัด <code>tune … saved|unsaved</code> มาแสดงค่า "now" ของทุกช่อง</p>
+<p>ใน GUI: แก้ช่อง → <b>Enter</b> = ใช้ทันที (ชั่วคราว) · <b>Save</b> = <code>tune save</code> เก็บใน ESP32 · <b>Reset</b> = กลับค่าในโค้ด
+· แท็บ Behaviour มี person hold, afraid calm, <b>sleep after</b>, <b>head up</b> (เพิ่ม 12 พ.ย.)</p>
+<h3>อุณหภูมิมอเตอร์ในหน้า Monitor (เพิ่ม 12 พ.ย.)</h3>
+<figure class="code"><figcaption><b>camera/gui.py</b> · บรรทัด 488–501</figcaption><pre><span class="ln">488</span>        <span class="c"># motor temperatures (STS only - the MG996R base has no sensor). &gt;= 50 C yellow, &gt;= 58 C red (nap ~58 C)</span>
+<span class="ln">489</span>        t = self.card(right, &quot;Motors  ·  temperature&quot;)
+<span class="ln">490</span>        t.pack(fill=&quot;x&quot;)
+<span class="ln">491</span>        cells = tk.Frame(t, bg=CARD); cells.pack(fill=&quot;x&quot;)
+<span class="ln">492</span>        self.mtemp = {}
+<span class="ln">493</span>        for i, (title, _, name, _, _) in enumerate([j for j in JOINTS if j[2] != &quot;base&quot;]):
+<span class="ln">494</span>            cell = tk.Frame(cells, bg=CARD2, padx=10, pady=8)
+<span class="ln">495</span>            cell.grid(row=0, column=i, padx=(0 if i == 0 else 6, 0), sticky=&quot;nsew&quot;)
+<span class="ln">496</span>            cells.columnconfigure(i, weight=1)
+<span class="ln">497</span>            self.label(cell, title, fg=MUTED, bg=CARD2, font=(FAMILY, 10)).pack(anchor=&quot;w&quot;)
+<span class="ln">498</span>            v = self.label(cell, &quot;-&quot;, bg=CARD2, font=(FAMILY, 16, &quot;bold&quot;), width=7, anchor=&quot;w&quot;); v.pack(anchor=&quot;w&quot;)
+<span class="ln">499</span>            self.mtemp[name] = v
+<span class="ln">500</span>        self.mnap = self.label(t, &quot;&quot;, fg=WARN, font=(FAMILY, 12, &quot;bold&quot;))
+<span class="ln">501</span>        self.mnap.pack(anchor=&quot;w&quot;, pady=(6, 0))</pre></figure>
+
+<p>เหลือง ≥ 50 °C, แดง ≥ 58 °C · ค่าว่าง "-" = servo ไม่ตอบ (ไฟมอเตอร์ไม่เปิด) · หน้า iPad มีการ์ดเดียวกัน</p>
+<h3>แถว D / E / S</h3>
+<figure class="code"><figcaption><b>src/experiment.cpp</b> · บรรทัด 28–36</figcaption><pre><span class="ln">28</span>static void printHeaders() {
+<span class="ln">29</span>  Serial.println(&quot;E,t_ms,trial_s,cond,kind,what,input_id,latency_s&quot;);
+<span class="ln">30</span>  Serial.print(&quot;D,t_ms,trial_s,cond,emotion,base_raw,base_f,base_ok,head_raw,head_f,head_ok,&quot;
+<span class="ln">31</span>               &quot;object,person,afraid,startle&quot;);
+<span class="ln">32</span>  for (int i = 0; i &lt; NH; i++) Serial.printf(&quot;,%s_H,%s_R&quot;, HM[i].name, HM[i].name);
+<span class="ln">33</span>  Serial.print(&quot;,phi,o1,o2&quot;);
+<span class="ln">34</span>  for (int i = 0; i &lt; NJ; i++) Serial.printf(&quot;,%s_cmd&quot;, J[i].name);
+<span class="ln">35</span>  for (int i = 0; i &lt; NJ; i++) Serial.printf(&quot;,%s_temp&quot;, J[i].name);
+<span class="ln">36</span>  Serial.print(&quot;,napping,auto&quot;);</pre></figure>
+<p>หัวคอลัมน์ของแถว D พิมพ์ตอน <code>log on</code> และตอนเริ่ม trial · GUI เปิดพอร์ตแล้วสั่ง <code>log on 1</code> ทุก 3 s จนกว่าแถว D จะมา (เปิดพอร์ตไม่ได้รีเซ็ต ESP32 ทุกครั้ง)
+ช่องอุณหภูมิว่าง = servo ไม่ตอบ</p>
+<div class="tw"><table class=""><thead><tr><th>แถว</th><th>เมื่อไร</th><th>ไฟล์บนคอม</th></tr></thead><tbody><tr><td>D</td><td>ทุก tick หลัง <code>log on 1</code> (GUI สั่งเอง)</td><td>logs/&lt;เวลา&gt;/data.csv</td></tr><tr><td>E</td><td>เมื่อมีเหตุการณ์ (input, emotion, rgb_set, motion_onset, outcome)</td><td>events.csv</td></tr><tr><td>S</td><td>ตอน trial end / scen จบ</td><td>logs/trials.csv (สะสมทุกรอบ)</td></tr></tbody></table></div>
+<h3>คำสั่ง (พิมพ์ในช่อง command ของ GUI)</h3>
+<div class="tw"><table class=""><thead><tr><th>คำสั่ง</th><th>ทำอะไร</th></tr></thead><tbody><tr><td>stop / resume</td><td>หยุดฉุกเฉิน / กลับมาและค้างท่า</td></tr><tr><td>auto on|off</td><td>ให้อารมณ์ขยับหุ่นหรือไม่</td></tr><tr><td>emo &lt;name&gt; | emo auto</td><td>บังคับอารมณ์ / ให้ฮอร์โมนเลือก</td></tr><tr><td>light on|off</td><td>ไฟวงแหวน</td></tr><tr><td>save / forget &lt;emotion&gt;, poses</td><td>ท่าที่จัดเอง</td></tr><tr><td>teach &lt;joint&gt;, soft</td><td>สอนช่วงข้อต่อ</td></tr><tr><td>s person|object|base|near|far|clear|real</td><td>จำลองสิ่งที่เห็น</td></tr><tr><td>tof, tof live|scan|on|off</td><td>ToF</td></tr><tr><td>cond 0|1, trial start|end, scen &lt;seed&gt;, log on|off</td><td>การทดลอง</td></tr><tr><td>tune …</td><td>ค่าจูน</td></tr><tr><td>cpg, phi, alpha, amp, src, csv</td><td>CPG ด้วยมือ</td></tr><tr><td>t &lt;joint&gt; &lt;deg&gt;, home, v</td><td>สั่งข้อต่อเอง (auto off)</td></tr><tr><td>hm, hm log, htest, j, cam, stat, h</td><td>ดูสถานะ</td></tr></tbody></table></div>
+<p>ตัวแยกคำสั่งอยู่ที่ <code>handleLine()</code> (<code class="ref">lamp_main.cpp:377</code>) แยกเป็นกลุ่มหลัง refactor:
+<code>simCommand</code>, <code>tofCommand</code>, <code>cpgCommand</code>, <code>manualCommand</code>, <code>handleSetupCommand</code> (motors.cpp), <code>handleExperimentCommand</code> (experiment.cpp)</p>
+</section><section id="refactor"><p class="eyebrow">ส่วนที่ 4 · refactor + แผนที่</p><h2>Refactor รอบนี้ (12 พ.ย.) เปลี่ยนอะไร</h2>
+<p>หลักการ: <b>พฤติกรรมเหมือนเดิมทุกอย่าง</b> เปลี่ยนแค่การจัดโค้ดให้อ่านตาม Week ได้ ข้อความที่ GUI อ่าน (เช่น <code>emotion -&gt; x</code>, <code>tune …</code>) ไม่เปลี่ยน
+· สำรองโค้ดก่อน refactor ไว้ที่ <code>~/Documents/Lamp_Archive/backup/before_refactor_2026-11-12/</code></p>
+<div class="tw"><table class=""><thead><tr><th>ไฟล์</th><th>เปลี่ยน</th><th>ทำไม</th></tr></thead><tbody><tr><td>brain.cpp</td><td><code>emotionStep()</code> ยาว 130 บรรทัด แตกเป็น <code>sensesToStimuli</code>, <code>objectMemoryStep</code>, <code>napStep</code>, <code>switchEmotion</code>, <code>mapToCpg</code>, <code>joltStep</code>, <code>trackObject</code>, <code>lookAtPerson</code>, <code>poseFor</code>, <code>emotionToBody</code></td><td>แต่ละชิ้นตรงกับหัวข้อในสไลด์ อ่านทีละขั้นได้</td></tr><tr><td>brain.cpp</td><td>จัดเป็น 6 ส่วน: CPG → ฮอร์โมน → ตาราง → สิ่งเร้า → เลือกอารมณ์ → ท่าทาง ตัวแปรภายในเป็น <code>static</code></td><td>ไฟล์อื่นแก้ตัวแปรภายในไม่ได้โดยบังเอิญ</td></tr><tr><td>lamp_main.cpp</td><td>เลขที่ฝังในโค้ด (0.40, 0.35, 0.60, 0.10, 1500 ms, 0.08, 0.30, 8 cm, 0.7, 0.4/s) ย้ายขึ้นไปส่วน TUNING มีชื่อ</td><td>กฎของโปรเจกต์: ค่าจูนทุกตัวอยู่บนสุดของ lamp_main.cpp</td></tr><tr><td>lamp_main.cpp</td><td><code>handleLine()</code> แตกเป็น simCommand / tofCommand / cpgCommand / manualCommand · ลบ <code>#include</code> ซ้ำ</td><td>หาคำสั่งง่ายขึ้น</td></tr><tr><td>lamp.h</td><td>รายการ extern และฟังก์ชันจัดกลุ่มตามไฟล์ที่เป็นเจ้าของ · ลบคอมเมนต์ที่ผิดที่</td><td>รู้ทันทีว่าอะไรอยู่ไฟล์ไหน</td></tr><tr><td>motors.cpp</td><td>ฟังก์ชันช่วยสร้างชื่อคีย์ Preferences (<code>poseKey</code>, <code>softKeys</code>) แทน snprintf ซ้ำ 5 ที่ · หัวข้อซ้ำ · ข้อความอ้าง servo_test (ย้ายไป archive แล้ว)</td><td>ลดโค้ดซ้ำ</td></tr><tr><td>gui.py, web.py</td><td>เพิ่มการ์ดอุณหภูมิมอเตอร์ในหน้า Monitor</td><td>ผู้ใช้ขอ</td></tr></tbody></table></div>
+<p class="note">ตรวจแล้ว: build ผ่าน · เทียบ logic ทีละบรรทัดกับก่อน refactor · อัปโหลดแล้วรัน <code>scen 41</code> และ <code>scen 42</code> (C1) เทียบกับโค้ดก่อน refactor: ลำดับอารมณ์และตัวเลขในแถว S ตรงกัน · ทดสอบหลับ (กล้อง + ToF หัวไม่ปลุก), ตื่นจาก ToF ฐาน → excited, light on/off, คำสั่งผิด → ผ่าน</p></section><section id="map"><p class="eyebrow">ส่วนที่ 4 · refactor + แผนที่</p><h2>แผนที่ไฟล์: ฟังก์ชันอยู่บรรทัดไหน</h2><h3><code>src/brain.cpp</code> · Week 3 + 4 + พฤติกรรม</h3><div class="tw"><table class="map"><thead><tr><th>บรรทัด</th><th>ฟังก์ชัน</th></tr></thead><tbody><tr><td>16</td><td><code>cpgStep()</code></td></tr><tr><td>46</td><td><code>cpgOut()</code></td></tr><tr><td>51</td><td><code>cpgDefaults()</code></td></tr><tr><td>72</td><td><code>receptor()</code></td></tr><tr><td>74</td><td><code>hormoneStep()</code></td></tr><tr><td>83</td><td><code>hormoneSelfTest()</code></td></tr><tr><td>91</td><td><code>hottestStsC()</code></td></tr><tr><td>148</td><td><code>findEmotion()</code></td></tr><tr><td>196</td><td><code>regreet()</code></td></tr><tr><td>202</td><td><code>bowedEmo()</code></td></tr><tr><td>203</td><td><code>headBlind()</code></td></tr><tr><td>209</td><td><code>cameraWave()</code></td></tr><tr><td>221</td><td><code>objectMemoryStep()</code></td></tr><tr><td>253</td><td><code>sensesToStimuli()</code></td></tr><tr><td>275</td><td><code>napStep()</code></td></tr><tr><td>284</td><td><code>chooseEmotion()</code></td></tr><tr><td>311</td><td><code>switchEmotion()</code></td></tr><tr><td>328</td><td><code>mapToCpg()</code></td></tr><tr><td>335</td><td><code>joltStep()</code></td></tr><tr><td>346</td><td><code>trackErr()</code></td></tr><tr><td>355</td><td><code>trackObject()</code></td></tr><tr><td>374</td><td><code>lookAtPerson()</code></td></tr><tr><td>386</td><td><code>poseFor()</code></td></tr><tr><td>400</td><td><code>sleepControl()</code></td></tr><tr><td>423</td><td><code>emotionToBody()</code></td></tr><tr><td>448</td><td><code>emotionStep()</code></td></tr><tr><td>456</td><td><code>printHormones()</code></td></tr></tbody></table></div><h3><code>src/sensors.cpp</code> · Week 2 + กล้อง</h3><div class="tw"><table class="map"><thead><tr><th>บรรทัด</th><th>ฟังก์ชัน</th></tr></thead><tbody><tr><td>23</td><td><code>thingThere()</code></td></tr><tr><td>42</td><td><code>tofInit()</code></td></tr><tr><td>62</td><td><code>tofScan()</code></td></tr><tr><td>84</td><td><code>tofStep()</code></td></tr><tr><td>111</td><td><code>tofCm()</code></td></tr><tr><td>112</td><td><code>baseNear()</code></td></tr><tr><td>118</td><td><code>personThere()</code></td></tr><tr><td>119</td><td><code>someoneMaybe()</code></td></tr><tr><td>135</td><td><code>cameraLine()</code></td></tr><tr><td>149</td><td><code>waveLine()</code></td></tr><tr><td>155</td><td><code>cameraStep()</code></td></tr><tr><td>207</td><td><code>sensorsStep()</code></td></tr></tbody></table></div><h3><code>src/motors.cpp</code> · ร่างกาย</h3><div class="tw"><table class="map"><thead><tr><th>บรรทัด</th><th>ฟังก์ชัน</th></tr></thead><tbody><tr><td>30</td><td><code>stepsFromDeg()</code></td></tr><tr><td>31</td><td><code>degFromSteps()</code></td></tr><tr><td>34</td><td><code>setTarget()</code></td></tr><tr><td>43</td><td><code>composeTargets()</code></td></tr><tr><td>55</td><td><code>mgWriteDeg()</code></td></tr><tr><td>59</td><td><code>mgLimp()</code></td></tr><tr><td>62</td><td><code>findJoint()</code></td></tr><tr><td>68</td><td><code>printJoints()</code></td></tr><tr><td>80</td><td><code>loadLimits()</code></td></tr><tr><td>93</td><td><code>readLimits()</code></td></tr><tr><td>124</td><td><code>lateEnable()</code></td></tr><tr><td>146</td><td><code>startPose()</code></td></tr><tr><td>177</td><td><code>sendOutputs()</code></td></tr><tr><td>198</td><td><code>healthStep()</code></td></tr><tr><td>230</td><td><code>emergencyStop()</code></td></tr><tr><td>239</td><td><code>readPosRetry()</code></td></tr><tr><td>248</td><td><code>resume()</code></td></tr><tr><td>292</td><td><code>poseKey()</code></td></tr><tr><td>293</td><td><code>softKeys()</code></td></tr><tr><td>295</td><td><code>savePose()</code></td></tr><tr><td>312</td><td><code>loadPoses()</code></td></tr><tr><td>323</td><td><code>loadSoftLimits()</code></td></tr><tr><td>333</td><td><code>setSoftLimits()</code></td></tr><tr><td>344</td><td><code>forgetPose()</code></td></tr><tr><td>351</td><td><code>printPoses()</code></td></tr><tr><td>362</td><td><code>followUntilEnter()</code></td></tr><tr><td>377</td><td><code>teachJoint()</code></td></tr><tr><td>416</td><td><code>handleSetupCommand()</code></td></tr><tr><td>457</td><td><code>lightsBegin()</code></td></tr><tr><td>459</td><td><code>lightsStep()</code></td></tr></tbody></table></div><h3><code>src/lamp_main.cpp</code> · ค่าจูน + loop + คำสั่ง</h3><div class="tw"><table class="map"><thead><tr><th>บรรทัด</th><th>ฟังก์ชัน</th></tr></thead><tbody><tr><td>129</td><td><code>tuneFix()</code></td></tr><tr><td>133</td><td><code>tunePrint()</code></td></tr><tr><td>138</td><td><code>tuneBegin()</code></td></tr><tr><td>146</td><td><code>tuneCommand()</code></td></tr><tr><td>170</td><td><code>setup()</code></td></tr><tr><td>197</td><td><code>loop()</code></td></tr><tr><td>241</td><td><code>printHelp()</code></td></tr><tr><td>297</td><td><code>simCommand()</code></td></tr><tr><td>314</td><td><code>tofCommand()</code></td></tr><tr><td>331</td><td><code>cpgCommand()</code></td></tr><tr><td>356</td><td><code>manualCommand()</code></td></tr><tr><td>377</td><td><code>handleLine()</code></td></tr><tr><td>428</td><td><code>readSerial()</code></td></tr></tbody></table></div><h3><code>src/experiment.cpp</code> · วัดผล</h3><div class="tw"><table class="map"><thead><tr><th>บรรทัด</th><th>ฟังก์ชัน</th></tr></thead><tbody><tr><td>17</td><td><code>trialS()</code></td></tr><tr><td>20</td><td><code>ev()</code></td></tr><tr><td>28</td><td><code>printHeaders()</code></td></tr><tr><td>39</td><td><code>printData()</code></td></tr><tr><td>66</td><td><code>closeInput()</code></td></tr><tr><td>74</td><td><code>noteInput()</code></td></tr><tr><td>83</td><td><code>onEmotionChange()</code></td></tr><tr><td>96</td><td><code>experimentStep()</code></td></tr><tr><td>123</td><td><code>trialBegin()</code></td></tr><tr><td>135</td><td><code>blankOr()</code></td></tr><tr><td>136</td><td><code>trialEnd()</code></td></tr><tr><td>196</td><td><code>scenarioRunning()</code></td></tr><tr><td>199</td><td><code>rnd()</code></td></tr><tr><td>201</td><td><code>scenarioEnd()</code></td></tr><tr><td>208</td><td><code>scenarioStep()</code></td></tr><tr><td>222</td><td><code>handleExperimentCommand()</code></td></tr></tbody></table></div></section><section id="todo"><p class="eyebrow">ส่วนที่ 4 · refactor + แผนที่</p><h2>สิ่งที่ยังขาด</h2><div class="tw"><table class=""><thead><tr><th>#</th><th>เรื่อง</th><th>มาจาก</th></tr></thead><tbody><tr><td>1</td><td>รัน trial กับคน C0 ×3 / C1 ×3 (600 s) + scen 41–43 ทั้ง C0/C1</td><td>W6, W7, proposal</td></tr><tr><td>2</td><td>teach ข้อศอกใหม่ (EEPROM อ่านได้ −114..+93) แล้ว save ท่า sleepy / interested ใหม่</td><td>ฮาร์ดแวร์</td></tr><tr><td>3</td><td>ถามอาจารย์เรื่อง USB serial แทน ROS2</td><td>W7</td></tr><tr><td>4</td><td>S fault policy (NaN → H = R = 0 + log fault)</td><td>W4 หน้า 34, W5</td></tr><tr><td>5</td><td>log P, C, B, H_raw</td><td>W4 หน้า 30/32, W5</td></tr><tr><td>6</td><td>นับ pass ≤ 1 s / both_latency ในแถว S</td><td>W6</td></tr><tr><td>7</td><td>ตรวจทิศ <code>TRACK_PITCH_SIGN</code> บนหุ่นจริง (ยังไม่เคยวัด)</td><td>พฤติกรรม</td></tr></tbody></table></div></section>
+</main></div>

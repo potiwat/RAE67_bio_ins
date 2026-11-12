@@ -1,0 +1,4 @@
+date_time,log_dir,cond,duration_s,inputs,changed,no_state_change,superseded,transitions,transitions_per_min,motion_onsets,no_motion,preempted,lat_mean_s,lat_max_s,invalid_samples,naps,shoulder_maxC,elbow_maxC,pitch_maxC,yaw_maxC,normal_pct,sleepy_pct,excited_pct,happy_pct,interested_pct,bored_pct,afraid_pct,tired_pct
+2026-11-12 02:57:42,run_22,C1,25.1,14,8,0,6,11,26.317,11,0,0,0.851,2.656,522,0,37,56,28,37,24.3,0.0,6.2,31.7,17.3,0.0,20.3,0.0
+2026-11-12 03:00:00,run_22,C0,60.0,252,38,0,213,38,37.975,37,0,1,0.232,1.506,1680,0,41,48,41,31,10.9,0.0,31.3,33.8,6.2,0.0,17.7,0.0
+2026-11-12 03:01:04,run_22,C1,60.0,10,3,2,5,4,3.998,4,0,0,1.340,2.806,1680,0,42,54,38,46,5.0,0.0,4.7,74.5,0.0,0.0,15.7,0.0

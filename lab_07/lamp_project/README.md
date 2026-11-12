@@ -88,6 +88,8 @@ PIN สร้างเองครั้งแรก เก็บใน `camera/
 ทุกครั้งที่รัน runLAMP จะบันทึกลง `camera/logs/<วันที่_เวลา>/` (data.csv, events.csv, camera.csv, sent.csv, esp32.txt)
 และสรุป trial ลง `camera/logs/trials.csv` รายละเอียดทุกคอลัมน์: [docs/csv_data.pdf](docs/csv_data.pdf)
 
+ในชุดที่ส่ง โฟลเดอร์ log ถูกเปลี่ยนชื่อเป็น `run_01` ถึง `run_36` ตามลำดับที่รัน และคอลัมน์ `log_dir` ใน `trials.csv` ใช้ชื่อใหม่นี้แล้ว
+
 ## คำสั่งที่ใช้บ่อย (ช่อง command ใน GUI)
 
 | คำสั่ง | ทำอะไร |

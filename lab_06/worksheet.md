@@ -6,7 +6,6 @@
 2. วาด FSM ที่มี normal/interested/happy/afraid/sleepy พร้อม entry/exit guard timeout/recovery
 3. ทำตาราง5 state ×8 event (fault, near, clear, touch, button, approach, timeout, idle) โดยเขียน next state หรือ hold ในแต่ละช่อง ตรวจ priority และเหตุการณ์พร้อมกันจาก README
 4. เติม TODO ใน student_policy.py แล้วรัน checker จนผ่าน บันทึกหนึ่ง failed case ที่ช่วยแก้ logic
-
    เลือก `python3 check_submission.py` สำหรับ baseline หรือ `python3 check_submission.py --contract group` สำหรับ mapping ของกลุ่ม: positive button/touch/approach เลือก interested/happy ได้ แต่คง safety/recovery และทุกstateต้องreachable ตรวจ README ก่อนเลือก contract
 5. รัน C0/C1 ด้วย3 paired seeds เก็บ all source inputs, both onset count, no-onset count และเหตุผล ไม่คัดเฉพาะ successes
 6. ตรวจหนึ่ง event ตั้งแต่ source → debounce/filter → decision → queue → actual apply → motion/RGB onset เทียบ latency จาก CSV กับค่าที่คำนวณเอง
@@ -18,17 +17,16 @@
 
 | Condition/seed | All external inputs | Both onset | ≤1s both observed | No both onset/status | Max observed latency [s] | State transitions |
 |---|---:|---:|---:|---|---:|---:|
-| C0/41 | | | | | | |
-| C1/41 | | | | | | |
-| C0/42 | | | | | | |
-| C1/42 | | | | | | |
-| C0/43 | | | | | | |
-| C1/43 | | | | | | |
+| C0/41 | 10|7|7|discarded_priority 1, no_state_change 2 |0.240|67 |
+| C1/41 | 10|7|7|policy_held 1, no_state_change 2 |0.140	|9 |
+| C0/42 | 10|6|6|filtered_not_recognized 1, preempted_before_apply 1, no_state_change2|0.180|72 |
+| C1/42 | 10|7|7|policy_held 1, no_state_change 2 |0.140	|10|
+| C0/43 | 10|6|6|discarded_priority 1, no_state_change 3|0.040|63|
+| C1/43 | 10|7|7|policy_held 1, no_state_change 2 |0.140|9|
 
 | Input ID | Source s | Recognized s | Decision s | Actual apply s | Motion onset s | RGB onset s | Both latency s | Status/reason |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| | | | | | | | | |
-| | | | | | | | | |
+|button_02|18.0|18.06|18.06|18.10|18.10|18.10|0.10|responded|
 
 ก่อนส่งตรวจ: ทุก state/movement/input ครบ; bounds/slewไม่ถูกปิด; latencyใช้ออนเซ็ตจริงของmodel; missingไม่แทน0; ระบุ3seedsเป็นsynthetic replications; ส่งpolicy/config/raw/events/metrics; student filesไม่มีเฉลยหรือข้อมูลผู้สอน
 

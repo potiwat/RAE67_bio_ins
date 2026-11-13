@@ -1,0 +1,7 @@
+# สมองโคม (lamp/) และเว็บแดชบอร์ด ใช้แค่ Python standard library (3.10+) -- ไม่ต้องติดตั้งอะไร
+# เครื่องมือฝั่งบอร์ด (เครื่องที่ต่อ USB กับ ESP32):
+mpremote>=1.22
+pyserial>=3.5      # lamp/break_in.py (ดึงบอร์ดกลับ REPL)
+esptool>=4.7       # แฟลช MicroPython ครั้งแรก
+# ไม่จำเป็น: mpy-cross (ตรวจไฟล์บอร์ดคอมไพล์ได้), matplotlib (กราฟจาก logs)
+# หมายเหตุ: vision.py / viewer.py / host_bridge.py เป็นของยุคใช้กล้อง (เลิกใช้) ต้องใช้ opencv-python, numpy ถ้าจะเปิด

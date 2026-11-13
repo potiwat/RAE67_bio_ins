@@ -1,0 +1,59 @@
+{
+  "student_file": "D:\\RAE67_bio_ins\\lab_02\\student_controller.py",
+  "student_file_sha256": "2b0cdf01fbc34b9239563c252f84bcd69cd4b142048f15dee22e41012a334860",
+  "checks": [
+    {
+      "name": "load_submission",
+      "status": "PASS",
+      "detail": "StudentController and Parameters found"
+    },
+    {
+      "name": "filter",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "single_threshold",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "hysteresis",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "proportional_and_clamp",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "invalid_sample",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "full_trial_C0",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "full_trial_C1",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "full_trial_C2",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "full_trial_C3",
+      "status": "PASS",
+      "detail": ""
+    }
+  ],
+  "scope": "Diagnostic controller checks only; not an automatic 20-point grade.",
+  "passed": 10,
+  "failed": 0
+}

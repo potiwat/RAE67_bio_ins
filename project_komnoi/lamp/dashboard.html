@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>โคมน้อย · แดชบอร์ด</title>
+<link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F6F4FB; --card: #FFFFFF; --line: #ECE8F5; --ink: #2A2540; --muted: #6B6680; --soft: #F1EEFA; --accent: #43349A;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+         font-family: 'Mitr', 'Leelawadee UI', 'Leelawadee', 'Tahoma', 'Noto Sans Thai', sans-serif; }
+  button { font-family: inherit; cursor: pointer; }
+  .wrap { max-width: 1440px; margin: 0 auto; padding: 20px 32px 32px; }
+  header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 20px; }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .logo { width: 48px; height: 48px; border-radius: 16px; background: #FFF3D1; display: flex; align-items: center; justify-content: center; }
+  .title { font-size: 26px; font-weight: 600; line-height: 1.1; }
+  .subtitle { font-size: 14px; color: var(--muted); font-weight: 300; }
+  .pills { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .pill { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; font-size: 15px;
+          background: var(--card); border: 1px solid var(--line); color: #4A4560; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .layout { display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start; }
+  .col-left { flex: 1 1 320px; max-width: 400px; display: flex; flex-direction: column; gap: 24px; }
+  .col-mid { flex: 999 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 24px; }
+  aside { flex: 1 1 280px; max-width: 360px; display: flex; gap: 12px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 28px; padding: 24px; display: flex; flex-direction: column; gap: 14px; }
+  .h { font-size: 18px; font-weight: 500; }
+  .row { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+  /* อารมณ์ */
+  .emo { align-items: center; gap: 16px; }
+  .emo .h { align-self: flex-start; font-size: 15px; color: var(--muted); font-weight: 400; }
+  .face { width: 176px; height: 176px; border-radius: 50%; border: 8px solid #3C5A8C; background: #E3E9F3;
+          display: flex; align-items: center; justify-content: center; transition: background .4s, border-color .4s; }
+  .emo-name { font-size: 40px; font-weight: 600; line-height: 1.1; text-align: center; }
+  .emo-sub { font-size: 15px; color: var(--muted); font-weight: 300; text-align: center; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+  .chip { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: 999px; background: var(--soft); font-size: 15px; }
+  .chip[hidden] { display: none; }
+
+  /* ปุ่ม */
+  .pad { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+  .k { min-height: 64px; border: none; border-radius: 18px; font-size: 16px; display: flex; flex-direction: column;
+       align-items: center; justify-content: center; gap: 2px; transition: transform .08s, opacity .3s; }
+  .k:active { transform: scale(.95); }
+  .k small { font-size: 13px; opacity: .75; }
+  .k.good { background: #DDF4EE; color: #155E4E; }
+  .k.mid { background: #EFEDF5; color: #3E3858; }
+  .k.bad { background: #FDE6E1; color: #8A2A18; }
+  .k.muted { opacity: .35; }
+  .k.flash { outline: 3px solid var(--ink); }
+  .two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .wide { min-height: 48px; border-radius: 999px; font-size: 15px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+  .dip { border: 2px solid #C9D1A3; background: #F2F4E6; color: #4A5520; }
+  .reset { border: 2px solid var(--line); background: var(--card); color: #4A4560; }
+  .hint { font-size: 14px; color: var(--muted); text-align: center; min-height: 20px; }
+
+  /* หลอด */
+  .tubes { display: flex; flex-wrap: wrap; justify-content: space-around; gap: 16px; }
+  .tube-box { display: flex; flex-direction: column; align-items: center; gap: 8px; width: 84px; }
+  .tube { position: relative; width: 56px; height: 180px; border-radius: 28px; border: 3px solid var(--ink); background: #FBF9FF; overflow: hidden; }
+  .fill { position: absolute; left: 0; right: 0; bottom: 0; height: 0%; transition: height .4s ease; }
+  .shine { position: absolute; left: 10px; top: 14px; width: 8px; height: 40px; border-radius: 4px; background: #FFFFFF; opacity: .8; }
+  .val { font-size: 20px; font-weight: 600; }
+  .nm { font-size: 15px; line-height: 1.2; text-align: center; }
+  .bio { font-size: 13px; color: var(--muted); line-height: 1.2; text-align: center; }
+  .link-btn { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 16px; border-radius: 999px;
+              background: var(--soft); color: var(--accent); font-size: 15px; border: none; }
+
+  /* กราฟ */
+  .legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 14px; color: #4A4560; }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .legend i { width: 14px; height: 4px; border-radius: 2px; display: inline-block; }
+  .strip { display: flex; height: 26px; border-radius: 13px; overflow: hidden; font-size: 13px; background: var(--soft); }
+  .strip div { display: flex; align-items: center; justify-content: center; white-space: nowrap; overflow: hidden; }
+  .xlab { display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); }
+
+  /* คู่มือ */
+  nav.tabs { display: flex; flex-direction: column; gap: 10px; }
+  .tab { width: 56px; min-height: 56px; border-radius: 18px; border: 1px solid var(--line); background: var(--card); color: #4A4560;
+         font-size: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; }
+  .tab.on { background: var(--ink); color: #FFFFFF; border-color: var(--ink); }
+  .tab.on svg { stroke: #FFFFFF; }
+  .panel { flex: 1 1 auto; min-width: 0; }
+  .item { display: flex; align-items: center; gap: 12px; padding: 6px 8px; border-radius: 16px; }
+  .item.now { background: #FFF6DB; }
+  .sw { flex: 0 0 auto; width: 36px; height: 36px; border-radius: 50%; }
+  .t1 { font-size: 16px; font-weight: 500; }
+  .t2 { font-size: 14px; color: var(--muted); }
+  .num { flex: 0 0 auto; width: 36px; height: 36px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 600; }
+  .tip { margin-top: 6px; padding: 14px; border-radius: 18px; background: var(--soft); font-size: 14px; color: #3E3858; }
+  .zone { display: flex; height: 40px; border-radius: 14px; overflow: hidden; font-size: 13px; }
+  .zone div { display: flex; align-items: center; justify-content: center; text-align: center; }
+
+  /* รายละเอียดฮอร์โมน */
+  #detail { display: flex; flex-direction: column; gap: 24px; }
+  #detail[hidden], #home[hidden], .pill[hidden] { display: none; }
+  .flow { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px; }
+  .node { flex: 0 1 170px; padding: 16px; border-radius: 20px; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; }
+  .node b { font-size: 17px; font-weight: 500; }
+  .node span { font-size: 13px; }
+  .eq { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+  .eq span { padding: 10px 16px; border-radius: 999px; font-size: 14px; }
+  .hcards { display: flex; flex-wrap: wrap; gap: 20px; }
+  .hcard { flex: 1 1 240px; }
+  .hcard .top { display: flex; align-items: center; gap: 12px; }
+  .ico { width: 48px; height: 48px; border-radius: 16px; display: flex; align-items: center; justify-content: center; }
+  .lbl { font-size: 13px; color: var(--muted); }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; font-size: 13px; }
+  .tags span { padding: 4px 10px; border-radius: 999px; }
+  .bar { flex: 1 1 auto; height: 10px; border-radius: 5px; background: var(--soft); overflow: hidden; }
+  .bar div { height: 10px; border-radius: 5px; }
+  .live { margin-left: auto; font-size: 22px; font-weight: 600; }
+  .note { font-size: 13px; color: var(--muted); margin: 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="brand">
+      <div class="logo">
+        <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <path d="M9 14 L13 6 H23 L27 14 Z" fill="#FFB400" stroke="#2A2540" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M18 14 V24 M12 26 H24" stroke="#2A2540" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="16" cy="11" r="1.4" fill="#2A2540"/><circle cx="21" cy="11" r="1.4" fill="#2A2540"/>
+        </svg>
+      </div>
+      <div><div class="title">โคมน้อย</div><div class="subtitle">แดชบอร์ดอารมณ์</div></div>
+    </div>
+    <div class="pills">
+      <span class="pill" id="conn"><span class="dot" id="conn-dot" style="background:#B9B2D3"></span><span id="conn-text">กำลังต่อ…</span></span>
+      <span class="pill"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4A4560" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span id="clock">00:00</span></span>
+      <span class="pill" id="rec" hidden><span class="dot" style="background:#FF5A5F"></span>กำลังบันทึก</span>
+    </div>
+  </header>
+
+  <!-- ================= หน้าหลัก ================= -->
+  <div id="home" class="layout">
+    <div class="col-left">
+      <section class="card emo">
+        <span class="h">ตอนนี้รู้สึก</span>
+        <div class="face" id="face">
+          <svg width="120" height="104" viewBox="0 0 120 104" fill="none" role="img" aria-label="หน้าโคม">
+            <path id="shade" d="M18 66 L38 18 H82 L102 66 Z" fill="#3C5A8C" stroke="#2A2540" stroke-width="4" stroke-linejoin="round"/>
+            <g id="f-normal"><circle cx="47" cy="44" r="7" fill="#2A2540"/><circle cx="73" cy="44" r="7" fill="#2A2540"/><path d="M53 57 Q60 61 67 57" stroke="#2A2540" stroke-width="3.5" stroke-linecap="round"/></g>
+            <g id="f-curious"><circle cx="47" cy="43" r="8.5" fill="#2A2540"/><circle cx="73" cy="43" r="8.5" fill="#2A2540"/><circle cx="50" cy="40" r="2.6" fill="#fff"/><circle cx="76" cy="40" r="2.6" fill="#fff"/><ellipse cx="60" cy="58" rx="4" ry="4.5" fill="#2A2540"/></g>
+            <g id="f-engage"><path d="M40 47 Q47 37 54 47" stroke="#2A2540" stroke-width="4" stroke-linecap="round"/><path d="M66 47 Q73 37 80 47" stroke="#2A2540" stroke-width="4" stroke-linecap="round"/><path d="M50 55 Q60 64 70 55" stroke="#2A2540" stroke-width="4" stroke-linecap="round"/><ellipse cx="36" cy="55" rx="6" ry="3.5" fill="#FF8FA3"/><ellipse cx="84" cy="55" rx="6" ry="3.5" fill="#FF8FA3"/></g>
+            <g id="f-fear"><circle cx="47" cy="45" r="4" fill="#2A2540"/><circle cx="73" cy="45" r="4" fill="#2A2540"/><path d="M40 35 L53 39 M80 35 L67 39" stroke="#2A2540" stroke-width="3.5" stroke-linecap="round"/><path d="M50 59 Q55 55 60 59 Q65 63 70 59" stroke="#2A2540" stroke-width="3.5" stroke-linecap="round"/></g>
+            <g id="f-sick"><path d="M40 43 L54 46" stroke="#2A2540" stroke-width="4" stroke-linecap="round"/><path d="M80 43 L66 46" stroke="#2A2540" stroke-width="4" stroke-linecap="round"/><path d="M50 60 Q55 56 60 60 Q65 64 70 60" stroke="#2A2540" stroke-width="3.5" stroke-linecap="round"/><path d="M88 30 q4 7 0 9 q-4 -2 0 -9z" fill="#7FB3D5"/></g>
+            <g id="f-sleep"><path d="M40 44 Q47 50 54 44" stroke="#2A2540" stroke-width="4" stroke-linecap="round"/><path d="M66 44 Q73 50 80 44" stroke="#2A2540" stroke-width="4" stroke-linecap="round"/><path d="M56 58 H64" stroke="#2A2540" stroke-width="3.5" stroke-linecap="round"/><text x="88" y="16" font-size="16" font-weight="600" fill="#2A2540">z</text><text x="98" y="8" font-size="11" font-weight="600" fill="#2A2540">z</text></g>
+            <path id="glow" d="M44 74 L36 98 M60 74 V100 M76 74 L84 98" stroke="#3C5A8C" stroke-width="4" stroke-linecap="round" opacity="0.55"/>
+          </svg>
+        </div>
+        <div><div class="emo-name" id="emo-name">…</div><div class="emo-sub" id="emo-sub"></div></div>
+        <div class="chips">
+          <span class="chip"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5B47C9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h18M7 8l-4 4 4 4M17 8l4 4-4 4"/></svg><span id="c-dist">–</span></span>
+          <span class="chip"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5B47C9" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c3 4 6 7.5 6 11a6 6 0 0 1-12 0c0-3.5 3-7 6-11z"/></svg><span id="c-wet">–</span></span>
+          <span class="chip" id="c-key-chip" hidden><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5B47C9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 13V6a1.5 1.5 0 0 1 3 0v6M11 11V4.5a1.5 1.5 0 0 1 3 0V11M14 11V6a1.5 1.5 0 0 1 3 0v8a6 6 0 0 1-6 6h-1a6 6 0 0 1-5-2.7L3.5 14a1.5 1.5 0 0 1 2.5-1.6L8 15"/></svg><span id="c-key"></span></span>
+          <span class="chip" id="c-awake-chip"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5B47C9" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg><span id="c-awake">–</span></span>
+          <span class="chip" id="c-look-chip" hidden><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5B47C9" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><span id="c-look"></span></span>
+        </div>
+      </section>
+
+      <section class="card">
+        <span class="h">แตะโคม</span>
+        <div class="pad" id="pad">
+          <button class="k good" data-key="1"><small>1</small>ลูบหัว</button>
+          <button class="k good" data-key="2"><small>2</small>ลูบตัว</button>
+          <button class="k good" data-key="3"><small>3</small>ทักทาย</button>
+          <button class="k good" data-key="4"><small>4</small>รักษา</button>
+          <button class="k mid" data-key="5"><small>5</small>ปลุก</button>
+          <button class="k mid" data-key="6"><small>6</small>กล่อมนอน</button>
+          <button class="k bad" data-key="7"><small>7</small>ตบหัว</button>
+          <button class="k bad" data-key="8"><small>8</small>ผลัก</button>
+          <button class="k bad" data-key="9"><small>9</small>ดุ</button>
+        </div>
+        <div class="hint" id="pad-hint"></div>
+        <div class="two">
+          <button class="wide dip" id="btn-dip"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4A5520" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c3 4 6 7.5 6 11a6 6 0 0 1-12 0c0-3.5 3-7 6-11z"/></svg>จำลองจุ่มน้ำ</button>
+          <button class="wide reset" id="btn-reset"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4A4560" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.3-5.7M4 4v4h4"/></svg>รีเซ็ตฮอร์โมน</button>
+        </div>
+      </section>
+    </div>
+
+    <div class="col-mid">
+      <section class="card">
+        <div class="row">
+          <span class="h">ฮอร์โมน</span>
+          <button class="link-btn" id="to-detail">ดูรายละเอียด<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#43349A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+        </div>
+        <div class="tubes" id="tubes"></div>
+      </section>
+
+      <section class="card">
+        <div class="row">
+          <span class="h">2 นาทีล่าสุด</span>
+          <div class="legend" id="legend"></div>
+        </div>
+        <div class="strip" id="strip"></div>
+        <svg id="chart" viewBox="0 0 640 210" width="100%" height="230" preserveAspectRatio="none" role="img" aria-label="กราฟฮอร์โมน 2 นาทีล่าสุด">
+          <line x1="0" y1="20" x2="640" y2="20" stroke="#EFEBF8"/>
+          <line x1="0" y1="110" x2="640" y2="110" stroke="#EFEBF8"/>
+          <line x1="0" y1="200" x2="640" y2="200" stroke="#E2DDF0" stroke-width="1.5"/>
+          <g id="lines"></g>
+        </svg>
+        <div class="xlab"><span>2 นาทีก่อน</span><span>1 นาทีก่อน</span><span>ตอนนี้</span></div>
+      </section>
+    </div>
+
+    <aside>
+      <nav class="tabs" aria-label="คู่มือ">
+        <button class="tab on" data-tab="emo" aria-label="คู่มืออารมณ์"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A4560" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8.5 14.5a4 4 0 0 0 7 0M9 10h.01M15 10h.01"/></svg>อารมณ์</button>
+        <button class="tab" data-tab="keys" aria-label="คู่มือปุ่ม"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A4560" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="6" height="6" rx="1.5"/><rect x="14" y="4" width="6" height="6" rx="1.5"/><rect x="4" y="14" width="6" height="6" rx="1.5"/><rect x="14" y="14" width="6" height="6" rx="1.5"/></svg>ปุ่ม</button>
+        <button class="tab" data-tab="sick" aria-label="คู่มือการป่วย"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A4560" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c3 4 6 7.5 6 11a6 6 0 0 1-12 0c0-3.5 3-7 6-11z"/></svg>ป่วย</button>
+        <button class="tab" data-tab="dist" aria-label="คู่มือระยะ"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A4560" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h18M7 8l-4 4 4 4M17 8l4 4-4 4"/></svg>ระยะ</button>
+      </nav>
+      <section class="card panel">
+        <div data-panel="emo">
+          <div class="h" style="margin-bottom:10px">ทำยังไงให้รู้สึก…</div>
+          <div id="emo-list" style="display:flex;flex-direction:column;gap:8px"></div>
+          <div class="tip">ยืนตรงหน้าหัวโคม · อย่านิ่งเกิน 20 วิ</div>
+        </div>
+        <div data-panel="keys" hidden>
+          <div class="h" style="margin-bottom:10px">ปุ่มทำอะไร</div>
+          <div id="key-list" style="display:flex;flex-direction:column;gap:6px"></div>
+        </div>
+        <div data-panel="sick" hidden>
+          <div class="h" style="margin-bottom:10px">ป่วย</div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div class="item"><span class="sw" style="background:#96A55A"></span><div><div class="t1">จุ่มน้ำ ~10 วิ</div><div class="t2">ป่วยขึ้นเรื่อยๆ</div></div></div>
+            <div class="item"><span class="sw" style="background:#C9D1A3"></span><div><div class="t1">ตอนป่วย</div><div class="t2">ป่วยเกิน 45% = สถานะป่วย มาก่อนทุกอารมณ์ · หัวห้อย หนาวสั่น ไฟซีด</div></div></div>
+            <div class="item"><span class="sw" style="background:#DDF4EE"></span><div><div class="t1">หายเอง</div><div class="t2">ครึ่งหนึ่งใน 90 วิ · ลูบหัว/รักษา → 15 วิ</div></div></div>
+          </div>
+          <div class="tip">กด 4 รักษา: ป่วยลดทันที + หายเร็วขึ้น · ไม่มีน้ำ? กด “จำลองจุ่มน้ำ”</div>
+        </div>
+        <div data-panel="dist" hidden>
+          <div class="h" style="margin-bottom:10px">ระยะ</div>
+          <div class="zone">
+            <div style="flex:2;background:#FDE3E3;color:#8A1414">ประชิด<br>&lt;20</div>
+            <div style="flex:4;background:#DDF8E5;color:#155E2E">ใกล้<br>20–60</div>
+            <div style="flex:2;background:#FFF3D1;color:#6E5418">สนใจ<br>–70</div>
+            <div style="flex:4;background:#E3E9F3;color:#2C4470">ไกล<br>70 ซม.+</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-top:12px;font-size:14px">
+            <span>• เดินเข้ามาช้าๆ = สนใจ</span>
+            <span>• พุ่งเข้ามาเร็วจนใกล้ตัว = กลัว</span>
+            <span>• เดินเข้ามาปกติแล้วหยุด = ไม่กลัว</span>
+            <span>• เดินไปด้านข้าง = โคมหันตาม</span>
+            <span>• ไกลเกิน 40 วิ = ง่วง</span>
+          </div>
+          <div class="tip">ลำแสงแคบ · ยืนตรงหน้าหัวโคม</div>
+        </div>
+      </section>
+    </aside>
+  </div>
+
+  <!-- ================= รายละเอียดฮอร์โมน ================= -->
+  <div id="detail" hidden>
+    <div class="row">
+      <button class="link-btn" id="to-home"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#43349A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>กลับแดชบอร์ด</button>
+      <span class="pill">อ้างอิงโครงสร้าง Lab 04 · Homchanthanakul et al. (2019)</span>
+    </div>
+    <section class="card">
+      <span class="h">ฮอร์โมนทำงานยังไง</span>
+      <div class="flow">
+        <div class="node" style="background:#F1EEFA"><b>สิ่งเร้า S</b><span style="color:var(--muted)">ระยะ · ปุ่ม · น้ำ</span></div>
+        <svg width="34" height="20" viewBox="0 0 34 20" fill="none" stroke="#B9B2D3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 10h28M24 4l6 6-6 6"/></svg>
+        <div class="node" style="background:#E6F7EC;color:#1E6B3A"><b>สร้าง P</b><span>α · S · (1 − H)</span></div>
+        <svg width="34" height="20" viewBox="0 0 34 20" fill="none" stroke="#B9B2D3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 10h28M24 4l6 6-6 6"/></svg>
+        <div class="node" style="background:#F6F4FB"><b>ฮอร์โมน H</b><span style="color:var(--muted)">0 – 100%</span></div>
+        <svg width="34" height="20" viewBox="0 0 34 20" fill="none" stroke="#B9B2D3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 10h28M24 4l6 6-6 6"/></svg>
+        <div class="node" style="background:#FFF3D1;color:#7A4E00"><b>ตัวรับ</b><span>ฮอร์โมนคุยกัน</span></div>
+        <svg width="34" height="20" viewBox="0 0 34 20" fill="none" stroke="#B9B2D3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 10h28M24 4l6 6-6 6"/></svg>
+        <div class="node" style="background:#2A2540;color:#FFFFFF"><b>ท่าทาง · ไฟ</b><span>และอารมณ์</span></div>
+      </div>
+      <div class="eq">
+        <span style="background:#FDE6E1;color:#8A2A18">สลาย C = β · H</span>
+        <span style="background:#FDE6E1;color:#8A2A18">จับตัวรับ B = γ · H</span>
+        <span style="background:#F1EEFA;color:#43349A;font-weight:500">H ใหม่ = H + P − C − B</span>
+      </div>
+      <div class="eq" style="border-top:1px dashed #E2DDF0;padding-top:10px">
+        <span style="background:#FFFFFF;border:1px solid var(--line)">ระวังตัว กด อยากรู้ · ผูกพัน</span>
+        <span style="background:#FFFFFF;border:1px solid var(--line)">ป่วย กด อยากรู้ · เพิ่ม ง่วง · ตกใจ</span>
+      </div>
+    </section>
+    <div class="hcards" id="hcards"></div>
+    <p class="note">ชื่อฮอร์โมนจริงใช้เปรียบเทียบให้เข้าใจง่าย โคมไม่ได้จำลองเคมีในร่างกาย · สีหลอด = สีไฟของอารมณ์ที่เกี่ยวข้อง</p>
+  </div>
+</div>
+
+<script>
+const EMO = {
+  Idle:    {th: 'ปกติ',       en: 'Idle',    c: '#3C5A8C', bg: '#E3E9F3', face: 'normal'},
+  Curious: {th: 'สนใจ',       en: 'Curious', c: '#FFB400', bg: '#FFF3D1', face: 'curious'},
+  Engage:  {th: 'อบอุ่น',      en: 'Engage',  c: '#28DC50', bg: '#DDF8E5', face: 'engage'},
+  Fear:    {th: 'กลัว',        en: 'Fear',    c: '#E61E1E', bg: '#FDE3E3', face: 'fear'},
+  Sleep:   {th: 'หลับ',        en: 'Sleep',   c: '#322864', bg: '#E7E4F3', face: 'sleep'},
+  Blind:   {th: 'มองไม่เห็น',  en: 'Blind',   c: '#9A96AA', bg: '#EFEDF5', face: 'normal'},
+  Protect: {th: 'ป้องกันตัว',  en: 'Protect', c: '#9A96AA', bg: '#EFEDF5', face: 'fear'},
+  Sick:    {th: 'ป่วย',        en: 'Sick',    c: '#96A55A', bg: '#EEF1E0', face: 'sick'},
+};
+const HORM = [
+  {k: 'caution',    th: 'ระวังตัว', bio: 'อะดรีนาลีน', c: '#E61E1E', tint: '#FDE3E3', ink: '#8A1414', half: 4,
+   up: ['ตบ · ผลัก · ดุ', 'พุ่งเข้ามาใกล้ตัว (<35 ซม.)', 'ประชิดกะทันหัน'], hi: ['เกิน 40% กลัว ถอยหลบ (ชนะความสนใจ)', 'ขยับช้า เลิกมองตาม', 'กดความอยากรู้'],
+   icon: '<path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6z"/><path d="M12 8v5M12 16h.01"/>'},
+  {k: 'curiosity',  th: 'อยากรู้',  bio: 'โดพามีน', c: '#FFB400', tint: '#FFF3D1', ink: '#6E5418', half: 10,
+   up: ['คนเข้ามาใน 70 ซม.', 'ยิ่งใกล้ยิ่งมาก', 'ทักทาย'], hi: ['สนใจ โน้มเข้าหา หันตาม', 'ขยับคล่อง แกว่งมาก', 'ไฟสว่างขึ้นนิด'],
+   icon: '<path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>'},
+  {k: 'affinity',   th: 'ผูกพัน',   bio: 'ออกซิโทซิน', c: '#28DC50', tint: '#DDF8E5', ink: '#155E2E', half: 40,
+   up: ['ลูบหัว · ลูบตัว', 'อยู่ใกล้นิ่งๆ'], hi: ['เกิน 28% + อยู่ใกล้ = อบอุ่น เต้นดีใจ', 'อยู่นานไม่มีอะไรใหม่ ค่อยๆ อิ่ม', 'จำได้นาน หายช้า'],
+   icon: '<path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/>'},
+  {k: 'sleepiness', th: 'ง่วง',     bio: 'เมลาโทนิน', c: '#322864', tint: '#E7E4F3', ink: '#322864', half: 25,
+   up: ['ไม่มีใครเกิน 8 วิ', 'กล่อมนอน'], hi: ['เกิน 60% หลับ 8 นาที', 'แอบดูทุก 20 วิ', 'ปุ่ม 5 ปลุกได้'],
+   icon: '<path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/>'},
+  {k: 'sickness',   th: 'ป่วย',     bio: 'ไซโทไคน์', c: '#96A55A', tint: '#EEF1E0', ink: '#4A5520', half: 90,
+   up: ['จุ่มเซนเซอร์ลงน้ำ'], hi: ['หัวห้อย หนาวสั่น ไฟซีด', 'สนใจยาก หลับเร็ว หลับนานขึ้น (สูงสุด 16 นาที)', 'ตกใจง่าย · กด 4 รักษา'],
+   icon: '<path d="M14 14V5a2 2 0 0 0-4 0v9a4 4 0 1 0 4 0z"/><path d="M12 17h.01"/>'},
+];
+const KEYS = {
+  '1': ['ลูบหัว', 'ผูกพัน + หายป่วยเร็ว', '#DDF4EE', '#155E4E'], '2': ['ลูบตัว', 'ผูกพัน', '#DDF4EE', '#155E4E'],
+  '3': ['ทักทาย', 'อยากรู้', '#DDF4EE', '#155E4E'], '4': ['รักษา', 'ป่วยหายเร็ว', '#DDF4EE', '#155E4E'],
+  '5': ['ปลุก', 'หายง่วง (กดได้ตอนหลับ)', '#EFEDF5', '#3E3858'], '6': ['กล่อมนอน', 'ง่วง', '#EFEDF5', '#3E3858'],
+  '7': ['ตบหัว', 'กลัวทันที', '#FDE6E1', '#8A2A18'], '8': ['ผลัก', 'ระวังตัว', '#FDE6E1', '#8A2A18'],
+  '9': ['ดุ', 'ระวังตัว · ผูกพันลด', '#FDE6E1', '#8A2A18'],
+};
+const HOWTO = [
+  ['Idle', 'ไม่มีใครอยู่ใกล้'], ['Curious', 'เข้ามาใน 70 ซม. อยู่ 2 วิ'],
+  ['Engage', 'อยู่ใกล้ + ลูบหัว ~10 วิ'], ['Fear', 'ตบหัว / เข้ามาเร็วๆ'], ['Sick', 'ป่วยเกิน 45% (มาก่อนทุกอารมณ์) · กด 4 รักษา'],
+  ['Sleep', 'ไม่มีใคร 40 วิ หรือตื่นครบ 12 ชม.'],
+];
+const $ = (id) => document.getElementById(id);
+
+// ---------- สร้างส่วนที่ซ้ำกัน ----------
+$('tubes').innerHTML = HORM.map(h => `
+  <div class="tube-box">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="${h.ink}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${h.icon}</svg>
+    <div class="tube"><div class="fill" id="fill-${h.k}" style="background:${h.c}"></div><div class="shine"></div></div>
+    <span class="val" id="val-${h.k}">0%</span>
+    <span class="nm">${h.th}</span><span class="bio">${h.bio}</span>
+  </div>`).join('');
+$('legend').innerHTML = HORM.map(h => `<span><i style="background:${h.c}"></i>${h.th}</span>`).join('');
+$('lines').innerHTML = HORM.map(h => `<polyline id="ln-${h.k}" fill="none" stroke="${h.c}" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>`).join('')
+  + '<circle id="now-dot" r="6" fill="#FFB400" stroke="#fff" stroke-width="2" cx="-20" cy="-20"/>';
+$('emo-list').innerHTML = HOWTO.map(([k, how]) => `
+  <div class="item" data-emo="${k}"><span class="sw" style="background:${EMO[k].c}"></span>
+  <div><div class="t1">${EMO[k].th}</div><div class="t2">${how}</div></div></div>`).join('');
+$('key-list').innerHTML = Object.entries(KEYS).map(([k, v]) => `
+  <div class="item"><span class="num" style="background:${v[2]};color:${v[3]}">${k}</span>
+  <div><div class="t1">${v[0]}</div><div class="t2">${v[1]}</div></div></div>`).join('');
+$('hcards').innerHTML = HORM.map(h => `
+  <section class="card hcard">
+    <div class="top">
+      <div class="ico" style="background:${h.tint}"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="${h.ink}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${h.icon}</svg></div>
+      <div><div style="font-size:20px;font-weight:600">${h.th}</div><div class="lbl">≈ ${h.bio}</div></div>
+      <span class="live" id="live-${h.k}" style="color:${h.ink}">0%</span>
+    </div>
+    <div class="lbl">เพิ่มเมื่อ</div>
+    <div class="tags">${h.up.map(u => `<span style="background:${h.tint};color:${h.ink}">${u}</span>`).join('')}</div>
+    <div class="lbl">ถ้าสูง</div>
+    ${h.hi.map(x => `<span style="font-size:14px">• ${x}</span>`).join('')}
+    <div class="lbl" style="margin-top:auto">หายครึ่งหนึ่งใน</div>
+    <div style="display:flex;align-items:center;gap:10px"><div class="bar"><div style="width:${Math.max(5, h.half / 90 * 100)}%;background:${h.c}"></div></div><span style="font-size:15px;font-weight:500">${h.half} วิ</span></div>
+  </section>`).join('');
+
+// ---------- ปุ่ม ----------
+async function send(body) {
+  try { await fetch('/cmd', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(body)}); }
+  catch (e) { /* แสดงผ่านป้ายเชื่อมต่อ */ }
+}
+document.querySelectorAll('.k').forEach(b => b.addEventListener('click', () => {
+  send({cmd: 'key', key: b.dataset.key});
+  b.classList.add('flash'); setTimeout(() => b.classList.remove('flash'), 250);
+}));
+$('btn-dip').addEventListener('click', () => send({cmd: 'dip'}));
+$('btn-reset').addEventListener('click', () => send({cmd: 'reset'}));
+$('to-detail').addEventListener('click', () => { $('home').hidden = true; $('detail').hidden = false; window.scrollTo(0, 0); });
+$('to-home').addEventListener('click', () => { $('detail').hidden = true; $('home').hidden = false; });
+document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => {
+  document.querySelectorAll('.tab').forEach(x => x.classList.toggle('on', x === t));
+  document.querySelectorAll('[data-panel]').forEach(p => p.hidden = p.dataset.panel !== t.dataset.tab);
+}));
+
+// ---------- แสดงผล ----------
+const fmtTime = (s) => { s = Math.max(0, Math.floor(s)); return String(Math.floor(s / 60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0'); };
+function setConn(color, text) { $('conn-dot').style.background = color; $('conn-text').textContent = text; }
+
+function render(d) {
+  const e = EMO[d.state] || EMO.Idle;
+  $('face').style.borderColor = e.c; $('face').style.background = e.bg;
+  $('shade').setAttribute('fill', e.c); $('glow').setAttribute('stroke', e.c);
+  const face = (d.state === 'Sleep' && d.peek) ? 'curious' : e.face;
+  ['normal', 'curious', 'engage', 'fear', 'sleep', 'sick'].forEach(f => $('f-' + f).style.display = f === face ? '' : 'none');
+  $('emo-name').textContent = (d.state === 'Sleep' && d.peek) ? 'แอบดู' : e.th;
+  $('emo-sub').textContent = e.en + ' · ' + Math.floor(d.in_state || 0) + ' วินาที';
+  $('c-dist').textContent = d.dist == null ? '–' : d.dist.toFixed(2) + ' ม.';
+  $('c-wet').textContent = d.wet == null ? '–' : (d.fake_wet ? 'จำลองเปียก' : (d.wet > 0.3 ? 'เปียก' : 'แห้ง'));
+  $('c-key-chip').hidden = !d.last_key; $('c-key').textContent = d.last_key ? (KEYS[d.last_key] || [d.last_key])[0] : '';
+  const tracking = d.state === 'Curious' || d.state === 'Engage';
+  $('c-look-chip').hidden = !tracking;
+  $('c-look').textContent = tracking ? (d.searching ? 'กวาดหา' : 'หัน ' + (d.gaze_yaw >= 0 ? '+' : '') + Math.round(d.gaze_yaw || 0) + '°') : '';
+  HORM.forEach(h => {
+    const v = Math.round(100 * ((d.H || {})[h.k] || 0));
+    $('fill-' + h.k).style.height = v + '%'; $('val-' + h.k).textContent = v + '%'; $('live-' + h.k).textContent = v + '%';
+  });
+  const asleep = d.state === 'Sleep' && !d.peek;
+  document.querySelectorAll('.k').forEach(b => b.classList.toggle('muted', asleep && b.dataset.key !== '5'));
+  $('pad-hint').textContent = asleep ? 'หลับอยู่ · กด 5 เพื่อปลุก' : '';
+  document.querySelectorAll('#emo-list .item').forEach(it => it.classList.toggle('now', it.dataset.emo === d.state));
+  $('clock').textContent = fmtTime(d.t || 0);
+  if (d.awake_h != null) {
+    const mins = Math.floor(d.awake_h * 60);
+    $('c-awake').textContent = 'ตื่นมา ' + Math.floor(mins / 60) + ':' + String(mins % 60).padStart(2, '0') + ' ชม. · ' + Math.round(100 * (d.pressure || 0)) + '%';
+  }
+  $('rec').hidden = !d.logging;
+  if (d.dry) setConn('#FFB400', 'ทดลอง (ไม่ต่อโคม)');
+  else if (d.link) setConn('#2FB463', 'เชื่อมต่อแล้ว');
+  else setConn('#E61E1E', 'โคมไม่ตอบ');
+  drawHistory(d.history || [], d.t || 0);
+}
+
+function drawHistory(hist, tNow) {
+  const W = 120, x = (t) => 640 * (1 - (tNow - t) / W), y = (v) => 200 - v * 180;
+  HORM.forEach((h, i) => {
+    $('ln-' + h.k).setAttribute('points', hist.map(r => x(r[0]).toFixed(1) + ',' + y(r[2 + i]).toFixed(1)).join(' '));
+  });
+  const last = hist[hist.length - 1];
+  if (last) {
+    const top = HORM.map((h, i) => [last[2 + i], h.c]).sort((a, b) => b[0] - a[0])[0];
+    const dot = $('now-dot'); dot.setAttribute('cx', 640); dot.setAttribute('cy', y(top[0])); dot.setAttribute('fill', top[1]);
+  }
+  const segs = [];
+  hist.forEach(r => {
+    const s = segs[segs.length - 1];
+    if (s && s.state === r[1]) s.t1 = r[0]; else segs.push({state: r[1], t0: r[0], t1: r[0]});
+  });
+  const start = tNow - W;
+  const lead = hist.length ? Math.max(0, hist[0][0] - start) : W;
+  $('strip').innerHTML = (lead > 0.5 ? `<div style="flex:${lead} 1 0"></div>` : '') + segs.map((s, i) => {
+    const next = segs[i + 1] ? segs[i + 1].t0 : tNow;
+    const dur = Math.max(0.5, next - Math.max(s.t0, start));
+    const e = EMO[s.state] || EMO.Idle;
+    const dark = ['Idle', 'Fear', 'Sleep'].includes(s.state);
+    return `<div style="flex:${dur} 1 0;background:${e.c};color:${dark ? '#FFFFFF' : '#2A2540'}">${dur > 12 ? e.th : ''}</div>`;
+  }).join('');
+}
+
+async function poll() {
+  try {
+    const r = await fetch('/state', {cache: 'no-store'});
+    const d = await r.json();
+    if (d.state) render(d); else setConn('#B9B2D3', 'รอสมองเริ่ม…');
+  } catch (e) {
+    setConn('#E61E1E', 'ต่อสมองไม่ได้ (sensor_bridge ปิดอยู่?)');
+  }
+  setTimeout(poll, 300);
+}
+poll();
+</script>
+</body>
+</html>

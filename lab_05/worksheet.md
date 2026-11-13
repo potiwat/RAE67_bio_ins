@@ -2,7 +2,7 @@
 
 ฉบับพิมพ์: [Word](Lab05_Student_Worksheet_TH.docx) / [PDF](Lab05_Student_Worksheet_TH.pdf)
 
-ชื่อ/รหัส________________ กลุ่ม________ วันที่________
+ชื่อ/รหัส วทัญญู ชำนาญ (6752500096), ณัฐพงศ์ เวชยานนท์ (6752500177), นิธิวัฒน์ สุทธิ (6752500037), ปุญญพัฒน์ ปราณีชาติ (6752500355) กลุ่ม ภาคีนกอีก๋อย วันที่ 11/7/2026
 
 **ขอบเขต:** main runner เป็น proposed course model ใช้ scheduled stimulus และ kinematic body; contact demo ใช้ synthetic signals ไม่ใช่ ALCS terrain experiment ของ paper
 
@@ -19,13 +19,12 @@
 
 | command/input time | state end time | H_start | H_end | R_used | φที่ใช้ | stride_half ที่ใช้ |
 |---|---|---|---|---|---|---|
-| 10.00 | | | | | | |
-| 10.05 | | | | | | |
-| 20.00 | | | | | | |
+| 10.00 | 10.05 | 0.0000 | 0.0400 | 0.0000 | 0.2000 | 0.0550 |
+| 10.05 | 10.10 | 0.0400 | 0.0784 | 0.0400 | 0.2080 | 0.0554 |
+| 20.00 | 20.05 | 0.9997 | 0.9597 | 0.9997 | 0.3999 | 0.0650 (0.064997) |s
+อธิบายจาก CSV ว่าเหตุใด B1 command latency กับ state latency จึงต่างกัน: B1 ใช้ R_used = ทันที (command 10.00 มี R_used = 1) จึง command latency = 0 แต่ state ถูกบันทึกหลัง update ที่ 10.05 จึงช้า 0.05 s เป็นเรื่อง sampling ไม่ใช่ hardware latency
 
-อธิบายจาก CSV ว่าเหตุใด B1 command latency กับ state latency จึงต่างกัน: __________________
-
-ตรวจ warmup/initialstates ใน config: ทุก condition เริ่ม CPG เหมือนกันหรือไม่? หลักฐาน__________________
+ตรวจ warmup/initialstates ใน config: ทุก condition เริ่ม CPG เหมือนกันหรือไม่? หลักฐานเหมือนกัน config มี warmup 10 s (φ = 0.2, α = 1.1) และ initial o1 = −0.02697, o2 = −0.56086 เท่ากันทุก condition
 
 ## 3. เปรียบเทียบผลและข้อจำกัด (15 นาที)
 
@@ -33,35 +32,35 @@
 
 | condition | TV φ(rad) | maxΔφ/step(rad) | TV stride(m) | cmd latency(s) | cmd recovery(s) | on frequency(Hz) | on distance(m) |
 |---|---|---|---|---|---|---|---|
-| B0 | | | | | | | |
-| B1 | | | | | | | |
-| B2 | | | | | | | |
-| B3 | | | | | | | |
+| B0 | 0.0000 | 0.0000 | 0.0000 | N/A | N/A | 0.6249 | 0.7787 |
+| B1 | 0.4000 | 0.2000 | 0.0200 | 0.00 | 0.00 | 1.2684 | 1.8252 |
+| B2 | 0.3998 | 0.0080 | 0.0200 | 0.15 | 2.85 | 1.2028 | 1.7063 |
+| B3 | 0.3995 | 0.0080 | 0.0200 | 0.15 | 3.80 | 1.2258 | 1.7275 |
 
-1. ผลข้อใดสนับสนุน hypothesis และผลข้อใดไม่สนับสนุน? __________________
-2. การลด TV ยืนยันว่าหุ่นยนต์ไม่ล้มหรือใช้พลังงานน้อยลงหรือไม่? ขาดข้อมูลอะไร? __________________
-3. Bounds เหมือนกันทำให้ commandamplitude เท่ากันหรือไม่? ใช้ peak/trace ประกอบ __________________
-4. ทำไมไม่ใช้ frequency เฉลี่ย 30s แทน pre/on/off? __________________
+1. ผลข้อใดสนับสนุน hypothesis และผลข้อใดไม่สนับสนุน B2 (0.008) ต่ำกว่า B1 (0.2) ประมาณ 25 เท่า และ B2 มี latency 0.15 s ไม่สนับสนุน: TV ไม่ลด (0.3998 vs 0.4000 rad)
+การลด
+2. การลด TV ยืนยันว่าหุ่นยนต์ไม่ล้มหรือใช้พลังงานน้อยลงหรือไม่? ขาดข้อมูลอะไร? ขาดข้อมูลอะไร? ไม่ยืนยัน TV เป็นแค่ผลรวมการเปลี่ยน command ใน simulator ขาดข้อมูล body dynamics (แรง, CoM) และพลังงาน/torque
+3. Bounds เหมือนกันทำให้ commandamplitude เท่ากันหรือไม่? ใช้ peak/trace ประกอบ ไม่จำเป็น ขึ้นกับ peak R_used ไม่มี clamp เกิดขึ้น และ mean ช่วง on ต่างกัน
+4. ทำไมไม่ใช้ frequency เฉลี่ย 30s แทน pre/on/off? เพราะค่าเฉลี่ยผสมหลายช่วงที่ความถี่ต่างกัน และช่วง off ยังเป็น transient จึงไม่เรียก steady state
 
 ## 4. เปลี่ยนหนึ่งปัจจัยและตรวจ fault (20 นาที)
 
 เลือก phi-only หรือ stride-only ตั้ง prediction ก่อนรัน ตรวจ parameter ที่คงที่จาก intervalCSV แล้วเปรียบเทียบ B1/B2 กับ bothmapping
 
-สิ่งที่เปลี่ยน________ สิ่งที่คงที่________ metric หลัก________ prediction________
-
-ผลและข้อจำกัด causalclaim: __________________
+สิ่งที่เปลี่ยน phi-only สิ่งที่คงที่stride_half metric หลักon frequency predictionความถี่ใกล้เคียง both แต่ distance ต่ำกว่า
+ผลและข้อจำกัด causalclaim:สรุปว่า  กำหนดความถี่ และ stride เพิ่มระยะ ข้อจำกัด: run เดียว deterministic ไม่ใช่ independent trials และยังไม่ได้แยก interaction ของ φ กับ stride
 
 รัน faultprofile เปิด input15.00 แล้วบันทึก:
 
 | field | B2 value |
 |---|---|
-| fault at command15.00 | |
-| H_used / R_used | |
-| φ / stride ที่ใช้ | |
-| H state15.05 | |
-| H state15.10 | |
+| fault at command15.00 | fault = 1 (S = NaN ที่ input 15.00) |
+| H_used / R_used | 0.0 / 0.0 (H ก่อนหน้า = 0.9831) |
+| φ / stride ที่ใช้ | 0.2000 rad / 0.055 m |
+| H state15.05 | 0.0 |
+| H state15.10 | 0.04 |
 
-อธิบายว่า fallback ทำก่อนหรือหลัง command และเหตุใด policy นี้ยังไม่รับรอง hardware safety: __________________
+อธิบายว่า fallback ทำก่อนหรือหลัง command และเหตุใด policy นี้ยังไม่รับรอง hardware safety: Fallback ทำก่อน command: ที่เวลา 15.00 s เมื่อเกิด fault S=NaN ระบบรีเซ็ต h_used และ r_used เป็น 0 ทันที แม้ H ก่อนหน้าจะเท่ากับ 0.9831 ทำให้ใช้ค่า baseline varphi = 0.20rad,stride = 0.055m$ ในช่วง 5.00, 15.05 ทันที แล้วจึงเริ่มสะสม H ใหม่เป็น 0.04 ที่เวลา 15.10 s
 
 ## 5. Contact mini-lab (20 นาที)
 
@@ -69,17 +68,17 @@
 
 | case | SI ของแต่ละขาโดยทั่วไป | SIF | absoluteerror | สิ่งที่อนุมานไม่ได้ |
 |---|---|---|---|---|
-| matched | | | | |
-| gain-offset | | | | |
-| mixed-delay | | | | |
-| all-inverted | | | | |
-| constant | | | | |
+| matched | +1 ทุกขา| 0| 0.0000| ไม่ได้พิสูจน์ว่าเดินบน terrain ได้ เพราะเป็น synthetic|
+| gain-offset | +1 ทุกขา| ≈0| 0.1628| SI สูงไม่ได้แปลว่า amplitude/offset ตรงกัน|
+| mixed-delay | LF/RM/LH = +1, RF/LM/RH ≈ 0|0.5| 0.2260| ไม่ระบุได้ว่าความต่างเกิดจาก delay หรือสาเหตุอื่น|
+| all-inverted | −1 ทุกขา|≈0|0.6314| SIF=0 ไม่ได้แปลว่าไม่มีความผิดปกติ|
+| constant | N/A (variance=0)|N/A|0.0000| อนุมาน SI=0 ไม่ได้ ต้องเป็น N/A|
 
-1. ทำไม gain-offset ให้ correlation สูงแม้ error ไม่เป็น 0? __________________
-2. เมื่อทุกขา inverted ทำไม SIF จึงยังเป็น 0? release ที่ SIF0 มีค่าเท่าไร? __________________
-3. constant ควรเป็น SI0 หรือ N/A? __________________
-4. fault หนึ่ง sample มีผลต่อ rollingwindows กี่ rows ไม่นับ startup49rows? ตรวจ CSV__________________
-5. pairedPearson ของ demo มีสถานะ source/proposed ใด? ต่อ Cg/MI แล้วหรือยัง? __________________
+1. ทำไม gain-offset ให้ correlation สูงแม้ error ไม่เป็น 0? Pearson วัดเฉพาะรูปร่างความสัมพันธ์เชิงเส้น ไม่สน gain/offset จึงได้ SI = 1 แต่ expected−actuaส ยังมีค่า
+2. เมื่อทุกขา inverted ทำไม SIF จึงยังเป็น 0? release ที่ SIF0 มีค่าเท่าไร? −1 เท่ากัน SD ระหว่างขาจึงเป็น 0 release = 1
+3. constant ควรเป็น SI0 หรือ N/A?0 ทำให้ Pearson ไม่นิยาม (คำนวณไม่ได้ ไม่ใช่ไม่มี correlation)
+4. fault หนึ่ง sample มีผลต่อ rollingwindows กี่ rows ไม่นับ startup49rows? ตรวจ CSV50 rows เพราะ NaN อยู่ในทุก window ที่ครอบ sample นั้น; window แรกที่ valid คือ 2.45 s
+5. pairedPearson ของ demo มีสถานะ source/proposed ใด? ต่อ Cg/MI แล้วหรือยัง? ป็น proposed course definition ไม่ใช่ Eq.(3) ของ paper และยังไม่ได้ต่อ Cg/MI
 
 ## 6. ส่งงานและ exit ticket (10 นาที)
 

@@ -8,3 +8,6 @@ __pycache__/
 build/
 install/
 log/
+
+# group submission evidence (keep)
+!results/

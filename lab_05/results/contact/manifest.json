@@ -1,0 +1,18 @@
+{
+  "all-inverted.csv": "491366bb970637b5477acc8c9e4e6ce88f19de9bd5ec460c507c8bf23114f1ff",
+  "config.json": "3471df261828fcb9a8b2f7125fe9dd73bf28fa2cf9bfd573929117c53cceecb6",
+  "constant.csv": "631e72bbb669e66ca35cf78a5448702d85304b617fd309ddd1f2c099e69f891d",
+  "fault.csv": "b0859eaa18627fdfe20caf2752370873e4a460ddeecd03ad36f31c767db18114",
+  "gain-offset.csv": "761f3f728c178def7ca0499180d49048422d9bf1b366a1390b94c2999b10d86f",
+  "matched.csv": "5408d4844427f0f6accd2a8f4daab0ae2c4d3836f80f5d03a21ec8a4636c0e78",
+  "metrics.json": "13994168952c9bee759f6cd13b11a3b1cb23062cfc19ee3e3f6603e261960a64",
+  "mixed-delay.csv": "c348a573c9f6f068ef6e7a5e3edc1115f4b5dd7e46e750b016e550db49152040",
+  "report.html": "eecbbfe0d8308312575a99ba68bcd5bf3fcda467bcda6a8554f6d34ddf560e59",
+  "source_snapshot/SOURCES.md": "062c520732e6f5ff733c8af769963d5727981f8bdde79fd66299ab2005990931",
+  "source_snapshot/contact_demo.py": "e672fe7e28fd1e62114302ded8a4b1a7998616807a7c6e3212d38a5ed83fd42a",
+  "source_snapshot/contact_report_template.html": "c570065ba1985626729598938485aa18390c9b4ca451edc30efadfbb148a9aaf",
+  "source_snapshot/course_model.py": "88ede293fa3ac9ed2fc326ac7427a019a363b313bf8eacd8c7ee8a378f67747c",
+  "source_snapshot/handoff_contract.json": "50debd932cc9f548ba2e01fafc2b22476640d276e22c09f6b82090493b4e9fca",
+  "source_snapshot/lab05.py": "cf2477146f5e2f11a42ea9e35ad135bf59d0af841ed8aa2c5535fc9e35f5c7c4",
+  "source_snapshot/report_template.html": "8ad1e1850f6696322a80ebb3e72feadcc90a42691edecdccbd20a7b17797269d"
+}

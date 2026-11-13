@@ -1,6 +1,6 @@
 # ใบงาน Lab04 (รายงาน 1–2 หน้า)
 
-ชื่อ: นายกฤตัชญ์ติณห์ เครือทอง รหัสนักศึกษา: 6752500223 code version/hash: commit 029a6d6, student_hormone.py SHA256 cf0d7472…69eb060
+ชื่อ: นายกฤตัชญ์ติณห์ เครือทอง รหัสนักศึกษา: 6752500223 code version/hash: commit 2a70638, student_hormone.py SHA256 cf0d7472…69eb060
 
 หมายเหตุ: prediction เขียนหลังจากรันโปรแกรมแล้ว ตัวเลขทุกค่ามาจากการรันจริง (ภาพ Terminal อยู่ใน `figures/` และในใบงาน Word)
 
@@ -102,4 +102,4 @@ python3 lab04.py --controller-source student --condition C1 --profile spike --ou
 python3 lab04.py --controller-source student --condition C1 --profile fault --output-dir results/fault
 ```
 
-Checklist: ■ code ■ comparison CSV 5 files ■ extreme CSV 4 files ■ config ■ plots ■ metrics □ report ■ คำสั่งรันซ้ำ
+Checklist: ■ code ■ comparison CSV 5 files ■ extreme CSV 4 files ■ config ■ plots ■ metrics ■ report (Lab04_Report_TH.docx) ■ คำสั่งรันซ้ำ

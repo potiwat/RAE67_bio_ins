@@ -1,20 +1,20 @@
 # Lab07 student worksheet
 
-ชื่อกลุ่ม: __________ วันที่: __________ policy version/SHA: __________
+ชื่อ นายกฤตัชญ์ติณห์ เครือทอง รหัสนักศึกษา 6752500223 · policy: `lamp_week07/student_policy.py` (SHA-256 อยู่ใน `results/completed_run/manifest.json`) · ใบงาน Word: [Week07_Student_Worksheet_TH.docx](Week07_Student_Worksheet_TH.docx) · proposal: [Week07_Proposal_TH.docx](Week07_Proposal_TH.docx)
 
-1. วาด source→interaction/FSM→servo/RGB graph; แสดง MCU/Agent extension ที่ต้องทำและเจ็ด topics/types/units/QoS: __________
-2. ตรวจ rad `[tilt,extend,nod]`, normalize RGB/255, alpha1; ยกตัวอย่างคำสั่งและแผน hardware calibration: __________
-3. ประกาศ question/hypothesis, expected inputIDs, condition/control และ clock/measurement boundary ก่อนรัน: __________
-4. รันสามpairedrepeats; บันทึก command/config/trace/manifest path แบบ repository-relative และ metricdenominator: __________
+1. **Graph:** ESP32 (micro-ROS client) อ่าน button, touch และ ToF แล้ว publish `/lamp/input/button` (Bool), `/lamp/input/touch` (Bool), `/lamp/input/distance` (Float32, m) ผ่าน micro_ros_agent (serial USB 115200 bps) ไปยัง `week07_interaction` (FSM + AHM + SO(2) CPG) ซึ่ง publish `/lamp/interaction` (String), `/lamp/emotion` (String), `/lamp/servo_command` (Float32MultiArray, rad) และ `/lamp/rgb_command` (ColorRGBA, 0–1) กลับไปที่ driver บน MCU `week07_output_collector` และ ros2 bag ฟังทั้ง 7 topics ทุก topic ใช้ RELIABLE, KEEP_LAST depth 10, VOLATILE ใน simulation ใช้ `synthetic_inputs` แทน ESP32 ภาพอยู่ที่ `figures/ros_graph.png`
+2. **หน่วย:** servo_command เรียง `[tilt, extend, nod]` หน่วย rad เช่น interested = `[0.22, 0.18, 0.06]` RGB 0–255 หารด้วย 255 ก่อนส่ง เช่น interested (255, 180, 0) → (1.000, 0.706, 0.000, a = 1) แผน hardware calibration: สอบเทียบ neutral, ทิศทาง และ limit (tilt ±0.35, extend ±0.25, nod ±0.30 rad) ของ servo แต่ละตัว แล้วแปลง rad เป็น PWM ด้วยไฟล์สอบเทียบเดียวกันทุก trial
+3. **ก่อนรัน:** question/hypothesis ตาม `proposal.json` (AHM ปรับ φ ของ CPG ท่าพยักหน้า) expected input IDs: button_01, touch_01, approach_01, clear_01, near_01, clear_02, button_02 (เก็บ touch_conflict, invalid_01, stale_01 ด้วย) C0 ideal delivery กับ C1 jitter + drop ใช้ policy และ seed คู่เดียวกัน ขอบเขตการวัดคือ virtual clock ของ offline_lab ถึง applied command ไม่ใช่ physical onset
+4. **Paired repeats:** `python3 offline_lab.py --condition all --repeats 3 --output-dir results/completed_run` ไฟล์อยู่ที่ `results/completed_run/{C0,C1}_r0{1,2,3}/` (config.json, input_trace.csv, command_trace.csv, events.csv, metrics.json) และ `results/completed_run/manifest.json` metric1 = primary inputs ผ่าน ≤ 1 s (ตัวหาร 7 expected IDs) metric2 = max both latency ของ primary inputs (s)
 
 | Pair/seed | C0metric1 | C1metric1 | C0metric2 | C1metric2 | Missing/censored | Interpretation |
 |---|---|---|---|---|---|---|
-| 1/41 | | | | | | |
-| 2/42 | | | | | | |
-| 3/43 | | | | | | |
+| 1/41 | 7/7 | 6/7 | 0.14 s | 0.20 s | C1: clear_02 ไม่ถูก recognize (N/A) | drop 257 ข้อความ, fault ticks 54 ทำให้พลาด clear_02 |
+| 2/42 | 7/7 | 6/7 | 0.14 s | 0.22 s | C1: button_02 ไม่มี onset (N/A) | stale fault ซ้ำจาก jitter ทำให้สลับ sleepy/normal จนจบ trial (fault ticks 81) |
+| 3/43 | 7/7 | 7/7 | 0.14 s | 0.18 s | ไม่มี | C1 ช้ากว่าแต่ครบ (drop 300 ข้อความ, fault ticks 56) |
 
-5. แยก invalid/stale baselineprobe จาก communicationstress; อธิบายว่า composite jitter+dropยังตอบเหตุแยกแต่ละส่วนไม่ได้อย่างไร: __________
-6. อธิบายสิ่งที่ Bool/Stringไม่มี timestampทำให้สรุปไม่ได้ และเสนอ identity/clocksync/errorbound/physicalmeasurement plan: __________
-7. เขียน proposal2–3หน้าและกรอก proposal.json: AHM≥1, SO(2)CPG, integration,≥2conditions,≥2metrics,≥3repeats/condition, simulation AND realrobot, human scenario600s, safety/calibration/controls/timeline: __________
+5. **แยก invalid/stale probe กับ communication stress:** invalid_01 (11 s) และ stale_01 (12 s) เป็น probe ที่ตั้งใจใส่ใน input script เหมือนกันทั้ง C0 และ C1 จึงทำให้ C0 มี fault ticks 20 ทุก seed ส่วน fault ticks ที่เพิ่มเป็น 54–81 ใน C1 มาจาก transport stress profile C1 รวม jitter กับ drop ไว้ด้วยกัน จึงบอกไม่ได้ว่าการพลาด clear_02 และ button_02 มาจาก delay หรือ drop ต้องรัน delay-only และ drop-only แยกกัน
+6. **ไม่มี timestamp:** Bool, String และ Float32 ไม่มี Header จึงผูก source กับ output ข้าม node ด้วยเวลาไม่ได้ และเวลาใน ROS run เป็น receipt time บน host ไม่ใช่ acquisition time แผน: ESP32 ใส่ source_id และ micros() ลง serial sidecar, host บันทึก perf_counter_ns พร้อม source_id, ซิงก์ด้วยไฟกระพริบต้นและท้าย trial และ fit drift เส้นตรง error bound อย่างน้อย 1 frame (4.2 ms) บวก jitter ที่วัดได้ วัด physical onset ด้วยกล้อง 240 fps, photodiode และ IMU
+7. **Proposal:** [Week07_Proposal_TH.docx](Week07_Proposal_TH.docx) และ `proposal.json` (ผ่าน `check_proposal.py`) ครอบคลุม AHM 1 ชนิด, Dr. Poramate SO(2) CPG, AHM–CPG integration, C0/C1, metric nod_frequency_hz กับ both_latency_s, 3 repeats ต่อ condition ทั้ง simulation และ real robot, human scenario 600 s, safety/calibration/controls และ timeline 5 สัปดาห์
 
-Checklist: [ ] graph7topics [ ] units/QoS [ ] completed policy checker [ ] rawdata/config/SHA [ ] pairedprotocol [ ] misses [ ] measurementlimitations [ ] completeproposal
+Checklist: [x] graph7topics [x] units/QoS [x] completed policy checker [x] rawdata/config/SHA [x] pairedprotocol [x] misses [x] measurementlimitations [x] completeproposal

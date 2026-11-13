@@ -1,22 +1,110 @@
 {
-  "question": "TODO measurable research question",
-  "hypothesis": "TODO direction and boundary",
-  "biological_inspiration_source": "TODO source and exact mechanism",
-  "AHM_equation": "TODO source equation and at least one hormone",
-  "SO2_CPG_equation": "TODO Dr. Poramate SO(2) CPG notation",
-  "integration_description": "TODO AHM-CPG or AHM-emotion path",
-  "independent_variable": "TODO one planned factor",
-  "conditions": [{"name":"C0", "baseline":true, "change":"TODO baseline", "repeats":3}, {"name":"C1", "baseline":false, "change":"TODO one change", "repeats":3}],
-  "metrics": [{"name":"TODO metric1", "unit":"TODO", "measurement":"TODO measured boundary", "missing_rule":"TODO"}, {"name":"TODO metric2", "unit":"TODO", "measurement":"TODO measured boundary", "missing_rule":"TODO"}],
-  "controls": ["TODO policy", "TODO stimuli", "TODO hardware/configuration"],
-  "parameters": [{"name":"TODO", "value":null, "unit":"TODO", "provenance":"TODO source or proposed course model"}],
-  "simulation_plan":"TODO graph/clock/traces",
-  "real_robot_plan":"TODO sensors/mapping/calibration/actuator measurement",
-  "clock_correlation_plan":"TODO source ID/clock sync/error bound/log wrapper",
-  "safety_stop_plan":"TODO stop condition and operator",
-  "order_counterbalancing":"TODO C0/C1 order across repeats",
-  "paired_seed_or_participant_plan":"TODO paired assignment and consent handling",
-  "expected_input_ids_before_run":"TODO expected response denominator",
-  "human_scenario_duration_s":600,
-  "timeline":"TODO implementation/calibration/trials/analysis dates"
+  "question": "เมื่อผู้เล่นสัมผัสโคมไฟซ้ำ ๆ การส่ง touch ผ่าน artificial hormone (AHM) ไปปรับ φ ของ SO(2) CPG ที่สร้างจังหวะพยักหน้า (C1) เปลี่ยนความถี่การพยักหน้าแบบค่อยเป็นค่อยไปและคงอยู่หลังหยุดสัมผัสต่างจากการใช้ φ คงที่ (C0) อย่างไร",
+  "hypothesis": "ถ้าใช้ AHM (C1) แล้ว max |Δφ| ต่อ step จะน้อยกว่าการเปลี่ยนแบบขั้นบันได และความถี่การพยักหน้าจะค้างสูงกว่า baseline หลังหยุดสัมผัสเป็นเวลาหลายวินาที เพราะ H สะสมจาก production และลดลงด้วย clearance/binding; ขอบเขต: ใช้ได้เฉพาะ model และโคมไฟของกลุ่ม ไม่ได้อ้างว่าหุ่นยนต์มีอารมณ์",
+  "biological_inspiration_source": "ฮอร์โมนในสัตว์ทำหน้าที่เป็นสถานะช้าที่สะสมจาก stimulus และปรับ central pattern generator ของการเคลื่อนไหวเป็นจังหวะ อ้างอิง Homchanthanakul et al. (2019) IROS, DOI 10.1109/IROS40897.2019.8968580 (artificial hormone mechanism) และ Ngamkajornwiwat et al. (2020) IEEE Access 8, 91587–91602 (hormone modulates CPG); sensor input คือ touch, button และ distance ของโคมไฟ",
+  "AHM_equation": "source: Hc(t) = β·Hc(t−1) + Hg(t) − Hr(t), Hg = α·f(S), Hr = Σγ·Receptor (Homchanthanakul et al. 2019); proposed course model ที่ใช้: H_raw = H_old + dt(k_prod·S − k_clear·H_old − k_bind·R_old), H = clamp(H_raw, 0, 1), R = clamp((H − H_min)/(H_max − H_min), 0, 1) ใช้ hormone หนึ่งชนิดคือ touch hormone",
+  "SO2_CPG_equation": "Dr. Poramate SO(2) CPG (lec5.pptx slide 18): a1(t+1) = α[cos(φ)o1(t) + sin(φ)o2(t)], a2(t+1) = α[−sin(φ)o1(t) + cos(φ)o2(t)], o_i(t+1) = tanh(a_i(t+1)) อัปเดตพร้อมกัน, α = 1.10, initial (0.10, 0), dt = 0.05 s",
+  "integration_description": "AHM–CPG: φ_cmd = clamp(0.20 + 0.20·R, 0.10, 0.45) rad ส่งเข้า SO(2) CPG แล้ว nod = 0.30·o1 rad (clamp ±0.30, slew ≤ 0.8 rad/s) ส่งผ่าน /lamp/servo_command ส่วน FSM ของ Lab06/07 ยังกำหนด tilt, extend และ RGB ตาม state",
+  "independent_variable": "เส้นทางของ touch ไปยัง φ ของ CPG: C0 φ คงที่ 0.20 rad (ไม่มี AHM) เทียบ C1 φ จาก AHM",
+  "conditions": [
+    {
+      "name": "C0",
+      "baseline": true,
+      "change": "φ คงที่ 0.20 rad ไม่มี AHM ใช้ policy, CPG, bounds และ stimulus เดียวกัน",
+      "repeats": 3
+    },
+    {
+      "name": "C1",
+      "baseline": false,
+      "change": "touch → AHM (k_prod 0.8, k_clear 0.6, k_bind 0.2) → R → φ_cmd ของ SO(2) CPG",
+      "repeats": 3
+    }
+  ],
+  "metrics": [
+    {
+      "name": "max_phi_step",
+      "unit": "rad",
+      "measurement": "max |φ_cmd[k] − φ_cmd[k−1]| จาก command log ของ AHM/CPG node",
+      "missing_rule": "ถ้า log ไม่ครบทั้ง trial ให้รายงาน N/A พร้อมเหตุผล ไม่แทนด้วย 0"
+    },
+    {
+      "name": "nod_frequency_recovery",
+      "unit": "s",
+      "measurement": "เวลาตั้งแต่สัมผัสครั้งสุดท้ายจนความถี่พยักหน้า (จาก rising zero crossing ของ nod command; real robot ใช้ IMU หรือ encoder) กลับมาไม่เกิน 10% เหนือ baseline",
+      "missing_rule": "ถ้าไม่กลับภายในหน้าต่างสังเกต 30 s ให้เป็น censored ไม่ใส่ค่า 0"
+    },
+    {
+      "name": "touch_both_latency",
+      "unit": "s",
+      "measurement": "max(first motion onset, first RGB onset) − เวลาสัมผัสต้นทาง; real robot วัดด้วยกล้องหรือ photodiode ที่ sync clock",
+      "missing_rule": "ไม่พบ onset ใด onset หนึ่ง = missing (null) แยกจาก deadline fail > 1 s"
+    }
+  ],
+  "controls": [
+    "ใช้ completed_policy.py เวอร์ชันเดียวกันและบันทึก SHA256",
+    "ใช้ stimulus schedule และ input trace เดียวกันทุกคู่ C0/C1 (seed 41, 42, 43 ใน simulation)",
+    "ใช้ hardware, servo calibration, bounds, slew และ QoS (RELIABLE, KEEP_LAST 10, VOLATILE) เดียวกันทุก trial และ reset ทุก node ก่อนเริ่ม"
+  ],
+  "parameters": [
+    {
+      "name": "k_prod",
+      "value": 0.8,
+      "unit": "normalized H/s",
+      "provenance": "proposed course model Lab04/05"
+    },
+    {
+      "name": "k_clear",
+      "value": 0.6,
+      "unit": "1/s",
+      "provenance": "proposed course model Lab04/05"
+    },
+    {
+      "name": "k_bind",
+      "value": 0.2,
+      "unit": "normalized H/s per R",
+      "provenance": "proposed course model Lab04/05"
+    },
+    {
+      "name": "dt",
+      "value": 0.05,
+      "unit": "s",
+      "provenance": "proposed course model Lab03–05"
+    },
+    {
+      "name": "alpha",
+      "value": 1.1,
+      "unit": "dimensionless",
+      "provenance": "SO(2) CPG, course Lab03"
+    },
+    {
+      "name": "phi_bounds",
+      "value": [
+        0.1,
+        0.45
+      ],
+      "unit": "rad",
+      "provenance": "bounded mapping จาก Lab03 handoff contract"
+    },
+    {
+      "name": "nod_bound",
+      "value": 0.3,
+      "unit": "rad",
+      "provenance": "Lab06/07 output bound (proposed course model)"
+    },
+    {
+      "name": "slew_limit",
+      "value": 0.8,
+      "unit": "rad/s",
+      "provenance": "Lab06/07 output slew (proposed course model)"
+    }
+  ],
+  "simulation_plan": "ใช้ ROS 2 graph สามบทบาทของ Lab07 (synthetic_inputs, interaction, output_collector) เพิ่ม AHM/CPG node, ใช้ virtual clock dt 0.02/0.05 s, เก็บ CSV sidecar ทุก node และ ros2 bag ของ 7 /lamp topics, รัน C0/C1 อย่างละ 3 repeats แบบ paired seed",
+  "real_robot_plan": "ESP32 + micro-ROS อ่าน button, touch และระยะ (sensor ToF) สั่ง servo 3 แกนและ RGB LED; สอบเทียบ neutral, ทิศทาง, หน่วย rad→PWM และ bounds ของแต่ละ servo ก่อน; วัด onset การเคลื่อนไหวด้วย IMU/encoder หรือกล้อง และ LED ด้วย photodiode",
+  "clock_correlation_plan": "ใส่ source_id ใน log wrapper ทุกจุด, sync clock ของ host กับ MCU ด้วย ping-pong timestamp ก่อนและหลังทุก trial, รายงาน offset และ error bound, กล้อง/photodiode บันทึกพร้อม LED sync pulse",
+  "safety_stop_plan": "มีปุ่มหยุดฉุกเฉินตัดไฟ servo ที่ผู้ควบคุมเข้าถึงได้ตลอด, หยุดทันทีเมื่อ servo เกิน bound, stale input เกิน 0.12 s ให้ neutral, ผู้เล่นอยู่นอกระยะ 0.20 m จากข้อต่อ และผู้ควบคุมหนึ่งคนเฝ้าตลอด trial",
+  "order_counterbalancing": "สลับลำดับ C0/C1 ทุก repeat (repeat 1: C0→C1, repeat 2: C1→C0, repeat 3: C0→C1) และพักระหว่าง trial เพื่อ reset ฮอร์โมนและ servo",
+  "paired_seed_or_participant_plan": "simulation ใช้ seed 41, 42, 43 เดียวกันทั้ง C0/C1; real robot ใช้ผู้เล่นคนเดียวกันทำทั้งสอง condition ตาม script เดียวกัน พร้อมขอความยินยอมก่อนบันทึกวิดีโอ และไม่เก็บข้อมูลระบุตัวตน",
+  "expected_input_ids_before_run": "button_01, touch_01, approach_01, clear_01, near_01, clear_02, button_02 (baseline 7 IDs); touch_conflict และ fault probes เก็บใน all sources แต่ไม่อยู่ใน denominator",
+  "human_scenario_duration_s": 600,
+  "timeline": "สัปดาห์ที่ 1: เขียน AHM/CPG node และทดสอบ simulation; สัปดาห์ที่ 2: ต่อ ESP32/micro-ROS และสอบเทียบ servo/LED; สัปดาห์ที่ 3: ทดลอง simulation และ real robot อย่างละ 3 repeats ต่อ condition; สัปดาห์ที่ 4: วิเคราะห์และเขียนรายงาน (ทำคนเดียวทุกหน้าที่)"
 }

@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "mode": "offline_shadow",
+  "actuation_enabled": false,
+  "physically_validated": false,
+  "maximum_gap_s": 0.2,
+  "stall_window_s": 0.3,
+  "minimum_samples": 4,
+  "position_span_ticks": 2,
+  "formula": "ceil(P99 + max(P75-P25, 1)) per ID and signal",
+  "ids": {
+    "1": {
+      "fit_samples": 1268,
+      "current_limit_raw": 2,
+      "pwm_limit_raw": 72,
+      "internal_error_limit_ticks": 22,
+      "reference_position_min_ticks": 1883,
+      "reference_position_max_ticks": 2038,
+      "reference_speed_max_raw": 200
+    },
+    "2": {
+      "fit_samples": 1268,
+      "current_limit_raw": 40,
+      "pwm_limit_raw": 358,
+      "internal_error_limit_ticks": 44,
+      "reference_position_min_ticks": 2607,
+      "reference_position_max_ticks": 3160,
+      "reference_speed_max_raw": 300
+    },
+    "3": {
+      "fit_samples": 1268,
+      "current_limit_raw": 50,
+      "pwm_limit_raw": 429,
+      "internal_error_limit_ticks": 69,
+      "reference_position_min_ticks": 2755,
+      "reference_position_max_ticks": 3227,
+      "reference_speed_max_raw": 350
+    },
+    "4": {
+      "fit_samples": 1268,
+      "current_limit_raw": 4,
+      "pwm_limit_raw": 231,
+      "internal_error_limit_ticks": 173,
+      "reference_position_min_ticks": 1678,
+      "reference_position_max_ticks": 2338,
+      "reference_speed_max_raw": 800
+    },
+    "5": {
+      "fit_samples": 1268,
+      "current_limit_raw": 5,
+      "pwm_limit_raw": 162,
+      "internal_error_limit_ticks": 85,
+      "reference_position_min_ticks": 2061,
+      "reference_position_max_ticks": 3215,
+      "reference_speed_max_raw": 450
+    }
+  },
+  "calibration_scope": "all_baseline_rows; diagnostic resubstitution, not independent validation"
+}

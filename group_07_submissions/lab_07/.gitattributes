@@ -1,0 +1,4 @@
+# Preserve recorded data and document bytes.
+* -text
+*.MOV filter=lfs diff=lfs merge=lfs -text
+*.mov filter=lfs diff=lfs merge=lfs -text

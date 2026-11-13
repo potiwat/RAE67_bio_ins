@@ -1,0 +1,66 @@
+{
+  "release": "LampBio-Inpire · Lab 07 · present",
+  "experiment_date": "2026-11-12",
+  "group": 7,
+  "physical": {
+    "pairs": 3,
+    "conditions": [
+      "C0",
+      "C1"
+    ],
+    "duration_s": 180,
+    "states": [
+      "Normal",
+      "Interested",
+      "Happy",
+      "Angry",
+      "Afraid",
+      "Sleepy"
+    ],
+    "raw_samples": 21464,
+    "phi_samples_in_window": 21458,
+    "contact_ids": [
+      1,
+      2,
+      4
+    ],
+    "manifest_sha256": "c951dd23f744b9e835a4d8457be3126386ec445ffea0f5a1c0056ff96b3ae28f",
+    "native_signal_groups_with_in_window_rows_per_trial": 12,
+    "declared_topic_groups": 13,
+    "face_boxes_in_window": 0,
+    "face_boxes_before_measurement": 4,
+    "input_button_and_touch_source": "scripted levels"
+  },
+  "software_model": {
+    "pairs": 3,
+    "duration_s": 180,
+    "kind": "recorded-context replay of controller with recomputed hormones and CPG",
+    "metrics": "3-results/simulation/Worksheet_M1_M2.csv"
+  },
+  "demo": {
+    "source": "IMG_4568.MOV",
+    "movie_s": 632.18,
+    "feedback_span_s": 631.926064984,
+    "feedback_rows": 64212,
+    "youtube": "https://youtu.be/-zckfxbT9Jk?feature=shared",
+    "frame_alignment_verified": false
+  },
+  "documents": {
+    "1-docs/lab_documents/Lab07_Proposal_Group7.docx": "09bc871aefb9e39e0c40bf2a1f204798c50d9b074b9c9fe92a8c81547596a535",
+    "1-docs/lab_documents/Lab07_Report_Group7.docx": "bce4afcd7773c649cb0350e2d5f3add9ff27b39756102ef3a3e863bcce46e6b3",
+    "1-docs/lab_documents/Lab07_Student_Worksheet_TH.docx": "77d6990fbca51aae541259e5c5c553b92494ba50e9f82e7dfb381d072027dbe0"
+  },
+  "source_coverage": "2-src/hardware/manifest_coverage.json",
+  "course_check": {
+    "instructor_repo": "potiwat/RAE67_bio_ins",
+    "commit": "fa528b169f1127ee3e0e9fae3d721546bf1b82d2",
+    "audit": "1-docs/markdown/lab07_requirements_th.md",
+    "policy_combinations": 40,
+    "policy_failures": 0,
+    "ros_topics_bag": 7,
+    "cdr_messages_verified": 7425,
+    "native_topics_in_contract": 13,
+    "course_extension_design_in_scope": false,
+    "physical_controller": "Raspberry Pi 5"
+  }
+}

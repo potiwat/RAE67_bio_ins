@@ -1,0 +1,78 @@
+rosbag2_bagfile_information:
+  version: 9
+  storage_identifier: sqlite3
+  duration:
+    nanoseconds: 22721587941
+  starting_time:
+    nanoseconds_since_epoch: 1794496315071796099
+  message_count: 7425
+  topics_with_message_count:
+    - topic_metadata:
+        name: /lamp/input/touch
+        type: std_msgs/msg/Bool
+        serialization_format: cdr
+        offered_qos_profiles:
+          []
+        type_description_hash: ""
+      message_count: 959
+    - topic_metadata:
+        name: /lamp/input/distance
+        type: std_msgs/msg/Float32
+        serialization_format: cdr
+        offered_qos_profiles:
+          []
+        type_description_hash: ""
+      message_count: 959
+    - topic_metadata:
+        name: /lamp/servo_command
+        type: std_msgs/msg/Float32MultiArray
+        serialization_format: cdr
+        offered_qos_profiles:
+          []
+        type_description_hash: ""
+      message_count: 1137
+    - topic_metadata:
+        name: /lamp/rgb_command
+        type: std_msgs/msg/ColorRGBA
+        serialization_format: cdr
+        offered_qos_profiles:
+          []
+        type_description_hash: ""
+      message_count: 1137
+    - topic_metadata:
+        name: /lamp/input/button
+        type: std_msgs/msg/Bool
+        serialization_format: cdr
+        offered_qos_profiles:
+          []
+        type_description_hash: ""
+      message_count: 959
+    - topic_metadata:
+        name: /lamp/emotion
+        type: std_msgs/msg/String
+        serialization_format: cdr
+        offered_qos_profiles:
+          []
+        type_description_hash: ""
+      message_count: 1137
+    - topic_metadata:
+        name: /lamp/interaction
+        type: std_msgs/msg/String
+        serialization_format: cdr
+        offered_qos_profiles:
+          []
+        type_description_hash: ""
+      message_count: 1137
+  compression_format: ""
+  compression_mode: ""
+  relative_file_paths:
+    - bag_0.db3
+  files:
+    - path: bag_0.db3
+      starting_time:
+        nanoseconds_since_epoch: 1794496315071796099
+      duration:
+        nanoseconds: 22721587941
+      message_count: 7425
+  custom_data: ~
+  ros_distro: jazzy

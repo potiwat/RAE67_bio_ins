@@ -1,0 +1,217 @@
+[4:17:53.878199506] [3799]  INFO Camera camera_manager.cpp:340 libcamera v0.7.2+rpt20260817
+[4:17:53.886819098] [3808]  INFO RPI pisp.cpp:725 libpisp version v1.7.0 07-08-2026 (09:22:13)
+[4:17:53.895611338] [3808]  INFO IPAProxy ipa_proxy.cpp:184 Using tuning file /usr/share/libcamera/ipa/rpi/pisp/imx708.json
+[4:17:53.902898069] [3808]  INFO Camera camera_manager.cpp:223 Adding camera '/base/axi/pcie@1000120000/rp1/i2c@88000/imx708@1a' for pipeline handler rpi/pisp
+[4:17:53.902918494] [3808]  INFO RPI pisp.cpp:1186 Registered camera /base/axi/pcie@1000120000/rp1/i2c@88000/imx708@1a to CFE device /dev/media0 and ISP device /dev/media1 using PiSP variant BCM2712_D0
+[4:17:53.905320275] [3808]  WARN V4L2 v4l2_pixelformat.cpp:346 Unsupported V4L2 pixel format Nc30
+[4:17:53.905332349] [3808]  WARN V4L2 v4l2_pixelformat.cpp:346 Unsupported V4L2 pixel format Nc12
+[4:17:53.905439515] [3808]  WARN V4L2 v4l2_pixelformat.cpp:346 Unsupported V4L2 pixel format Nc30
+[4:17:53.905445422] [3808]  WARN V4L2 v4l2_pixelformat.cpp:346 Unsupported V4L2 pixel format Nc12
+[4:17:53.905996623] [3799]  INFO Camera camera.cpp:1216 configuring streams: (0) 640x360-XBGR8888/sRGB (1) 320x180-YUV420/sYCC (2) 2304x1296-BGGR_PISP_COMP1/RAW
+[4:17:53.906082696] [3808]  INFO RPI pisp.cpp:1502 Sensor: /base/axi/pcie@1000120000/rp1/i2c@88000/imx708@1a - Selected sensor format: 2304x1296-SBGGR10_1X10/RAW - Selected CFE format: 2304x1296-PC1B/RAW
+CAMERA_FULL_SENSOR_VIEW {'model': 'imx708', 'pixel_array_size': (4608, 2592), 'requested_scaler_crop': (0, 0, 4608, 2592)}
+QStandardPaths: wrong permissions on runtime directory /run/user/1000, 0770 instead of 0700
+Camera preview. q/ESC: exit, M: start/retry Normal.
+PORTRAIT_CAMERA_AUTO_START_NORMAL None
+OPERATOR_START_LIVE_POSE {1: 2044, 2: 2844, 3: 2912, 4: 1991, 5: 2969}
+PHYSICAL_BUTTON GPIO27 active-low ready
+PHYSICAL_TOUCH GPIO22 active-high ready
+START_POSTURE {'state': 'IDLE', 'ready': False, 'error': '', 'positions': None, 'behavior': None, 'route_phase': None}
+NORMAL_READY residual_raw {1: 2, 2: 8, 3: 22, 4: -6, 5: 16}
+PAIR_PROGRESS 0.1 active 
+PAIR_PROGRESS 1.1 active 
+PAIR_PROGRESS 2.1 active 
+PAIR_PROGRESS 3.1 active 
+PAIR_PROGRESS 4.1 active 
+PAIR_PROGRESS 5.1 active 
+PAIR_PROGRESS 6.1 active 
+PAIR_PROGRESS 7.1 active 
+PAIR_PROGRESS 8.1 active 
+PAIR_PROGRESS 9.1 active 
+PAIR_PROGRESS 10.1 active 
+PAIR_PROGRESS 11.1 active 
+PAIR_PROGRESS 12.1 active 
+PAIR_PROGRESS 13.1 active 
+PAIR_PROGRESS 14.1 active 
+PAIR_PROGRESS 15.1 active 
+PAIR_PROGRESS 16.0 active 
+POSE_ROUTE_GOAL look force_normal False {1: 2039, 2: 2848, 3: 2911, 4: 1991, 5: 2969}
+PAIR_PROGRESS 17.1 active 
+PAIR_PROGRESS 18.1 active 
+POSE_ROUTE_GOAL return force_normal False {1: 2026, 2: 2837, 3: 2764, 4: 1750, 5: 3212}
+PAIR_PROGRESS 19.1 active 
+PAIR_PROGRESS 20.1 active 
+POSE_ROUTE_GOAL lean force_normal False {1: 2043, 2: 2837, 3: 2746, 4: 1997, 5: 2764}
+PAIR_PROGRESS 21.0 active 
+PAIR_PROGRESS 22.1 active 
+BUTTON_LOOK returned to saved player view; gaze True
+PAIR_PROGRESS 23.0 active 
+PAIR_PROGRESS 24.1 active 
+INTERESTED_ROLL returned upright; body and gaze preserved
+PAIR_PROGRESS 25.1 active 
+POSE_ROUTE_GOAL return force_normal True {1: 2153, 2: 2748, 3: 2855, 4: 1993, 5: 2565}
+PAIR_PROGRESS 26.1 active 
+PAIR_PROGRESS 27.1 active 
+PAIR_PROGRESS 28.1 active 
+PAIR_PROGRESS 29.1 active 
+PAIR_PROGRESS 30.1 active 
+PAIR_PROGRESS 31.1 active 
+PAIR_PROGRESS 32.1 active 
+PAIR_PROGRESS 33.1 active 
+PAIR_PROGRESS 34.1 active 
+PAIR_PROGRESS 35.1 active 
+PAIR_PROGRESS 36.1 active 
+PAIR_PROGRESS 37.0 active 
+PAIR_PROGRESS 38.1 active 
+PAIR_PROGRESS 39.1 active 
+PAIR_PROGRESS 40.1 active 
+PAIR_PROGRESS 41.1 active 
+PAIR_PROGRESS 42.0 active 
+PAIR_PROGRESS 43.1 active 
+PAIR_PROGRESS 44.1 active 
+PAIR_PROGRESS 45.1 active 
+PAIR_PROGRESS 46.1 active 
+PAIR_PROGRESS 47.1 active 
+PAIR_PROGRESS 48.1 active 
+PAIR_PROGRESS 49.1 active 
+PAIR_PROGRESS 50.1 active 
+PAIR_PROGRESS 51.1 active 
+PAIR_PROGRESS 52.1 active 
+PAIR_PROGRESS 53.1 active 
+PAIR_PROGRESS 54.1 active 
+PAIR_PROGRESS 55.1 active 
+PAIR_PROGRESS 56.1 active 
+PAIR_PROGRESS 57.1 active 
+PAIR_PROGRESS 58.1 active 
+PAIR_PROGRESS 59.1 active 
+PAIR_PROGRESS 60.1 active 
+PAIR_PROGRESS 61.1 active 
+PAIR_PROGRESS 62.1 active 
+PAIR_PROGRESS 63.1 active 
+PAIR_PROGRESS 64.1 active 
+PAIR_PROGRESS 65.1 active 
+PAIR_PROGRESS 66.0 active 
+POSE_ROUTE_GOAL return force_normal True {1: 2116, 2: 2660, 3: 3111, 4: 1713, 5: 2181}
+PAIR_PROGRESS 67.1 active 
+PAIR_PROGRESS 68.1 active 
+PAIR_PROGRESS 69.1 active 
+PAIR_PROGRESS 70.0 active 
+PAIR_PROGRESS 71.1 active 
+PAIR_PROGRESS 72.1 active 
+PAIR_PROGRESS 73.1 active 
+PAIR_PROGRESS 74.1 active 
+PAIR_PROGRESS 75.1 active 
+PAIR_PROGRESS 76.1 active 
+PAIR_PROGRESS 77.1 active 
+PAIR_PROGRESS 78.0 active 
+POSE_ROUTE_GOAL return force_normal False {1: 2060, 2: 2824, 3: 2794, 4: 1971, 5: 2679}
+PAIR_PROGRESS 79.1 active 
+PAIR_PROGRESS 80.1 active 
+PAIR_PROGRESS 81.1 active 
+PAIR_PROGRESS 82.1 active 
+PAIR_PROGRESS 83.1 active 
+PAIR_PROGRESS 84.1 active 
+PAIR_PROGRESS 85.1 active 
+PAIR_PROGRESS 86.1 active 
+PAIR_PROGRESS 87.1 active 
+PAIR_PROGRESS 88.1 active 
+PAIR_PROGRESS 89.1 active 
+PAIR_PROGRESS 90.1 active 
+BUTTON_LOOK returned to saved player view; gaze True
+PAIR_PROGRESS 91.1 active 
+PAIR_PROGRESS 92.1 active 
+PAIR_PROGRESS 93.1 active 
+PAIR_PROGRESS 94.1 active 
+PAIR_PROGRESS 95.1 active 
+POSE_ROUTE_GOAL return force_normal True {1: 2060, 2: 2821, 3: 2808, 4: 1997, 5: 2677}
+PAIR_PROGRESS 96.1 active 
+PAIR_PROGRESS 97.1 active 
+PAIR_PROGRESS 98.1 active 
+PAIR_PROGRESS 99.1 active 
+PAIR_PROGRESS 100.0 active 
+PAIR_PROGRESS 101.1 active 
+PAIR_PROGRESS 102.1 active 
+PAIR_PROGRESS 103.1 active 
+PAIR_PROGRESS 104.1 active 
+PAIR_PROGRESS 105.1 active 
+PAIR_PROGRESS 106.0 active 
+PAIR_PROGRESS 107.1 active 
+PAIR_PROGRESS 108.0 active 
+PAIR_PROGRESS 109.1 active 
+PAIR_PROGRESS 110.1 active 
+PAIR_PROGRESS 111.1 active 
+PAIR_PROGRESS 112.1 active 
+PAIR_PROGRESS 113.1 active 
+PAIR_PROGRESS 114.1 active 
+PAIR_PROGRESS 115.1 active 
+PAIR_PROGRESS 116.1 active 
+PAIR_PROGRESS 117.1 active 
+PAIR_PROGRESS 118.1 active 
+PAIR_PROGRESS 119.1 active 
+PAIR_PROGRESS 120.1 active 
+PAIR_PROGRESS 121.1 active 
+PAIR_PROGRESS 122.1 active 
+PAIR_PROGRESS 123.1 active 
+PAIR_PROGRESS 124.1 active 
+PAIR_PROGRESS 125.1 active 
+PAIR_PROGRESS 126.1 active 
+PAIR_PROGRESS 127.1 active 
+PAIR_PROGRESS 128.1 active 
+PAIR_PROGRESS 129.1 active 
+PAIR_PROGRESS 130.1 active 
+PAIR_PROGRESS 131.1 active 
+PAIR_PROGRESS 132.1 active 
+PAIR_PROGRESS 133.1 active 
+PAIR_PROGRESS 134.1 active 
+PAIR_PROGRESS 135.1 active 
+POSE_ROUTE_GOAL return force_normal True {1: 2052, 2: 3162, 3: 3226, 4: 1997, 5: 2445}
+PAIR_PROGRESS 136.1 active 
+PAIR_PROGRESS 137.1 active 
+PAIR_PROGRESS 138.1 active 
+PAIR_PROGRESS 139.1 active 
+PAIR_PROGRESS 140.1 active 
+PAIR_PROGRESS 141.1 active 
+PAIR_PROGRESS 142.1 active 
+PAIR_PROGRESS 143.1 active 
+PAIR_PROGRESS 144.1 active 
+PAIR_PROGRESS 145.1 active 
+PAIR_PROGRESS 146.1 active 
+PAIR_PROGRESS 147.1 active 
+PAIR_PROGRESS 148.1 active 
+PAIR_PROGRESS 149.1 active 
+PAIR_PROGRESS 150.1 active 
+PAIR_PROGRESS 151.1 active 
+PAIR_PROGRESS 152.1 active 
+PAIR_PROGRESS 153.1 active 
+PAIR_PROGRESS 154.1 active 
+PAIR_PROGRESS 155.1 active 
+PAIR_PROGRESS 156.1 active 
+PAIR_PROGRESS 157.1 active 
+PAIR_PROGRESS 158.1 active 
+PAIR_PROGRESS 159.1 active 
+PAIR_PROGRESS 160.1 active 
+PAIR_PROGRESS 161.1 active 
+PAIR_PROGRESS 162.1 active 
+PAIR_PROGRESS 163.1 active 
+PAIR_PROGRESS 164.1 active 
+PAIR_PROGRESS 165.1 active 
+PAIR_PROGRESS 166.1 active 
+PAIR_PROGRESS 167.1 active 
+PAIR_PROGRESS 168.1 active 
+PAIR_PROGRESS 169.1 active 
+PAIR_PROGRESS 170.1 active 
+PAIR_PROGRESS 171.1 active 
+PAIR_PROGRESS 172.1 active 
+PAIR_PROGRESS 173.1 active 
+PAIR_PROGRESS 174.1 active 
+PAIR_PROGRESS 175.1 active 
+PAIR_PROGRESS 176.1 active 
+PAIR_PROGRESS 177.1 active 
+PAIR_PROGRESS 178.1 active 
+PAIR_PROGRESS 179.1 active 
+TOF_MODE_TRIAL_RESTORED_SHORT_MODE
+PAIR_PROGRESS 180.0 complete 
+PAIR_PROGRESS 180.0 complete 
+PREVIEW_STATS {"frames": 5520, "elapsed_s": 186.632, "fps": 29.58, "last_detector_ms": 33.53}
+PAIR_PROGRESS 180.0 complete 
+SLEEPY_MATCHED_CLEANUP {"restored": true, "changes": [], "no_pid_or_goal_writes": true}

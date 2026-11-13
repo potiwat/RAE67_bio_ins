@@ -1,0 +1,7 @@
+P1 C0: 3574 snapshots, 15 events, 1856 ToF frames / 1854 valid, 0 pre-start face records
+P1 C1: 3575 snapshots, 15 events, 1856 ToF frames / 1853 valid, 0 pre-start face records
+P2 C0: 3577 snapshots, 15 events, 1855 ToF frames / 1849 valid, 1 pre-start face records
+P2 C1: 3577 snapshots, 15 events, 1856 ToF frames / 1853 valid, 1 pre-start face records
+P3 C0: 3578 snapshots, 15 events, 1854 ToF frames / 1848 valid, 1 pre-start face records
+P3 C1: 3577 snapshots, 15 events, 1855 ToF frames / 1853 valid, 1 pre-start face records
+Verified six native CSVs, 78 per-run coverage rows and 13 topic crosswalk rows.

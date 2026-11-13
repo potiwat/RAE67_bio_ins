@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Present Safety
+Comment=ID1/2/4 recovery; press base button 5 times to start
+Exec=/home/menulis/lamp-test-venv/bin/python -B /home/menulis/projects/lelamp/camera_tracking/shared/experiments/presentation_safety_play_20261110/present_safety_start.py
+Path=/home/menulis/projects/lelamp/camera_tracking
+Icon=applications-science
+Terminal=false
+StartupNotify=false
+Categories=Education;Robotics;

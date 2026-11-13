@@ -1,0 +1,43 @@
+Traceback (most recent call last):
+  File "/tmp/lab07-course-20261112-xyCcBw/install/lamp_week07/lib/lamp_week07/interaction", line 33, in <module>
+    sys.exit(load_entry_point('lamp-week07', 'console_scripts', 'interaction')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/lab07-course-20261112-xyCcBw/build/lamp_week07/lamp_week07/ros_nodes.py", line 118, in interaction_main
+    def interaction_main(args=None): spin(Interaction,args)
+                                     ^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/lab07-course-20261112-xyCcBw/build/lamp_week07/lamp_week07/ros_nodes.py", line 111, in spin
+    try: rclpy.spin(node)
+         ^^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/__init__.py", line 247, in spin
+    executor.spin_once()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 926, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 918, in _spin_once_impl
+    raise handler.exception()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/task.py", line 286, in _execute_coroutine_step
+    result = coro.send(None)
+             ^^^^^^^^^^^^^^^
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 592, in handler
+    await call_coroutine()
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 454, in _execute
+    await await_or_execute(tmr.callback)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rclpy/executors.py", line 115, in await_or_execute
+    return callback(*args)
+           ^^^^^^^^^^^^^^^
+  File "/tmp/lab07-course-20261112-xyCcBw/build/lamp_week07/lamp_week07/ros_nodes.py", line 96, in tick
+    self.record('publish','/lamp/'+name,{'data':payload,'fault_channels':row['fault_channels'],'receipt_freshness_only':True},duration)
+  File "/tmp/lab07-course-20261112-xyCcBw/build/lamp_week07/lamp_week07/ros_nodes.py", line 38, in record
+    'duration_ns':duration,'payload':json.dumps(payload),'source_latency_s':''})
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type array is not JSON serializable

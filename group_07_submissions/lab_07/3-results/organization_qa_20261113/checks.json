@@ -1,0 +1,12 @@
+[
+  {
+    "name": "delivery",
+    "exit_code": 0,
+    "output": "PASS | 567 file hashes | 3 Word documents | 6 real runs | 21,464 trace rows | 21,458 parameter samples | 64,212 demonstration rows over 631.926 s | official proposal and group policy checks | 7 ROS topics | 13 native coverage entries.\n"
+  },
+  {
+    "name": "native_export",
+    "exit_code": 0,
+    "output": "P1 C0: 3574 snapshots, 15 events, 1856 ToF frames / 1854 valid, 0 pre-start face records\nP1 C1: 3575 snapshots, 15 events, 1856 ToF frames / 1853 valid, 0 pre-start face records\nP2 C0: 3577 snapshots, 15 events, 1855 ToF frames / 1849 valid, 1 pre-start face records\nP2 C1: 3577 snapshots, 15 events, 1856 ToF frames / 1853 valid, 1 pre-start face records\nP3 C0: 3578 snapshots, 15 events, 1854 ToF frames / 1848 valid, 1 pre-start face records\nP3 C1: 3577 snapshots, 15 events, 1855 ToF frames / 1853 valid, 1 pre-start face records\nVerified six native CSVs, 78 per-run coverage rows and 13 topic crosswalk rows.\n"
+  }
+]

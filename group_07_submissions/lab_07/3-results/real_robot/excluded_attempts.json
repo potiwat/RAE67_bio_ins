@@ -1,0 +1,110 @@
+[
+  {
+    "pair": 1,
+    "condition": "C1",
+    "reason": "controller interruption",
+    "trace_sha256": "52a347914c504cb89882844febc3aa3ec0eea40df01cedebdfafe64b937fba60",
+    "protocol": "conditioned_tof_v2",
+    "run": "C1_10011.450395518",
+    "duration_s": 119.17255729499993,
+    "rows": 2358,
+    "interruption": "Present Safety intervention STOPPING",
+    "model_input_problems": [],
+    "operator_observation": null
+  },
+  {
+    "pair": 2,
+    "condition": "C0",
+    "reason": "controller interruption",
+    "trace_sha256": "b97788b45eee97c03e5bad0407641353802b3248e46ba919ae9f163226d3f553",
+    "protocol": "conditioned_tof_v2",
+    "run": "C0_11902.068540739",
+    "duration_s": 84.97090782000123,
+    "rows": 1674,
+    "interruption": "controller FAULT",
+    "model_input_problems": [],
+    "operator_observation": null
+  },
+  {
+    "pair": 2,
+    "condition": "C0",
+    "reason": "no measurement",
+    "trace_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "protocol": "conditioned_tof_v2",
+    "run": "C0_None",
+    "duration_s": null,
+    "rows": 0,
+    "interruption": null,
+    "model_input_problems": [],
+    "operator_observation": null
+  },
+  {
+    "pair": 2,
+    "condition": "C1",
+    "reason": "unmatched camera target",
+    "trace_sha256": "f1e1a26e5b98fd2b6bc31dfcfd20b64f8f2918b8fb66546077aba5a50a8be5d7",
+    "protocol": "conditioned_tof_v2",
+    "run": "C1",
+    "duration_s": 180.0388141020012,
+    "rows": 3573,
+    "interruption": null,
+    "model_input_problems": [
+      "input_history_overflow"
+    ],
+    "operator_observation": null
+  },
+  {
+    "pair": 2,
+    "condition": "C1",
+    "reason": "controller interruption",
+    "trace_sha256": "855a291022d66cb577430915e97d81979dc0f8e663fcea342b9b7b66cf53ab9e",
+    "protocol": "conditioned_tof_v2_portrait",
+    "run": "C1_14297.244167425",
+    "duration_s": 111.51194902899988,
+    "rows": 2205,
+    "interruption": "Present Safety intervention STOPPING",
+    "model_input_problems": [],
+    "operator_observation": "Lamp contacted the rear electrical cable during Afraid"
+  },
+  {
+    "pair": 2,
+    "condition": "C1",
+    "reason": "in-window model input fault",
+    "trace_sha256": "7fb9e916bc3477806a3bfa0d29dbae81d9c071efd4cceedfcab21336f7e8672a",
+    "protocol": "conditioned_tof_v2_portrait",
+    "run": "C1_14662.920728371",
+    "duration_s": 180.00988920999953,
+    "rows": 3578,
+    "interruption": null,
+    "model_input_problems": [
+      "input_history_overflow"
+    ],
+    "operator_observation": null
+  },
+  {
+    "pair": 2,
+    "condition": "C1",
+    "reason": "no measurement",
+    "trace_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "protocol": "conditioned_tof_v2_portrait",
+    "run": "C1_5ad6045b73e675c9",
+    "duration_s": null,
+    "rows": 0,
+    "interruption": "Normal startup exceeded prior 120s limit",
+    "model_input_problems": [],
+    "operator_observation": null
+  },
+  {
+    "pair": 2,
+    "condition": "C1",
+    "reason": "no measurement",
+    "trace_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "protocol": "conditioned_tof_v2_portrait",
+    "run": "C1_ef9892ded1683595",
+    "duration_s": null,
+    "rows": 0,
+    "interruption": "No recent stable face from the real camera before trial",
+    "model_input_problems": [],
+    "operator_observation": null
+  }
+]

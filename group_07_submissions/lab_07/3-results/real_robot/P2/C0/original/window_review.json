@@ -1,0 +1,11 @@
+{
+  "eligible": true,
+  "trace_sha256": "7a535ecfaa5d43b0051f74c6e00d97d103f440a04ae38614a3bb4e61f0a0833e",
+  "original_model_input_problems": [],
+  "analysis_window_s": [
+    0,
+    180
+  ],
+  "boundary_handoff_s": null,
+  "native_cleanup_confirmed": true
+}

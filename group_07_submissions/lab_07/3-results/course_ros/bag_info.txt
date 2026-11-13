@@ -1,0 +1,18 @@
+
+Files:             bag_0.db3
+Bag size:          446.1 KiB
+Storage id:        sqlite3
+ROS Distro:        jazzy
+Duration:          22.721587941s
+Start:             Nov 12 2026 22:11:55.071796099 (1794496315.071796099)
+End:               Nov 12 2026 22:12:17.793384040 (1794496337.793384040)
+Messages:          7425
+Topic information: Topic: /lamp/emotion | Type: std_msgs/msg/String | Count: 1137 | Serialization Format: cdr
+                   Topic: /lamp/input/button | Type: std_msgs/msg/Bool | Count: 959 | Serialization Format: cdr
+                   Topic: /lamp/input/distance | Type: std_msgs/msg/Float32 | Count: 959 | Serialization Format: cdr
+                   Topic: /lamp/input/touch | Type: std_msgs/msg/Bool | Count: 959 | Serialization Format: cdr
+                   Topic: /lamp/interaction | Type: std_msgs/msg/String | Count: 1137 | Serialization Format: cdr
+                   Topic: /lamp/rgb_command | Type: std_msgs/msg/ColorRGBA | Count: 1137 | Serialization Format: cdr
+                   Topic: /lamp/servo_command | Type: std_msgs/msg/Float32MultiArray | Count: 1137 | Serialization Format: cdr
+Service:           0
+Service information: 

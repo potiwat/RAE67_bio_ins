@@ -1,0 +1,182 @@
+{
+  "condition": "C1",
+  "protocol": "conditioned_tof_v2_portrait",
+  "started_s": 15038.632962486,
+  "last_elapsed_s": 180.02114314899882,
+  "complete": true,
+  "aborted": null,
+  "writer_error": null,
+  "dropped": 0,
+  "written": 3578,
+  "states": [
+    "afraid",
+    "angry",
+    "happy",
+    "interested",
+    "normal",
+    "sleepy"
+  ],
+  "behaviors": [
+    "afraid",
+    "angry",
+    "angry_transition",
+    "button_look",
+    "happy",
+    "interested",
+    "normal",
+    "normal_transition",
+    "sleepy",
+    "sleepy_transition"
+  ],
+  "interruptions": [],
+  "physical_stimulus_outside_script": false,
+  "physical_coinput": false,
+  "suppressed_approach_candidates": 0,
+  "model_input_problems": [],
+  "tof_published_frames": 1856,
+  "tof_frames_sha256": "765c4ca79b01f2a404ea63e00f1b228f1557ad8b3e2a8cadf3b01260f18d6fc9",
+  "actual_launch_flags": [
+    "--experimental-contact",
+    "--auto-contact-recovery",
+    "--tof-mode2-trial",
+    "--isolate-tof",
+    "--id1-effort-trial",
+    "--id2-contact-recovery",
+    "--id2-effort-trial",
+    "--id4-effort-trial",
+    "--accepted-coordination",
+    "--contact-ids",
+    "1,2,4"
+  ],
+  "seed_at_start": {
+    "h": 0.0,
+    "r_condition": "C1",
+    "native_log_dir": "/dev/shm/lab07_present_safety_pair1_20261112_C1_1794490677223737267/native/run_1794490679344809016",
+    "banks": {
+      "body": [
+        0.5265808882268393,
+        0.33882482813491055,
+        43,
+        0.7659802520001904
+      ],
+      "happy": [
+        -0.5462947820088069,
+        -0.30392218034599505,
+        78,
+        0.0
+      ],
+      "afraid": [
+        0.5265808882268393,
+        0.33882482813491055,
+        43,
+        0.0
+      ]
+    },
+    "route": "MatchedSleepy",
+    "driver": "AcceptedRhythms",
+    "happy_phase_divisor": 0.889679715302491,
+    "enabled_ids": [
+      1,
+      2,
+      4
+    ]
+  },
+  "trace_sha256": "f3d279b2f2c42c69cdfab802973b668e1bdbdd8cab2e63660c9ab7001651bb36",
+  "native_archive": "/home/menulis/projects/lelamp/camera_tracking/shared/hardware/lab07_present_safety_pair1_20261112/conditioned_tof_v2_portrait/P2/C1_1794490677223737267/native/run_1794490679344809016",
+  "max_observed_ui_poll_gap_s": 0.04400843099938356,
+  "in_memory_observer_max_ms": 4.078369998751441,
+  "native_trace_builder_max_ms": 0.09623999903851654,
+  "slow_diagnostic_calls": [],
+  "protected_identity_after": {
+    "desktop_exec": [
+      "/home/menulis/lamp-test-venv/bin/python",
+      "-B",
+      "/home/menulis/projects/lelamp/camera_tracking/shared/experiments/presentation_safety_play_20261110/present_safety_start.py"
+    ],
+    "desktop_sha256": "18943ac684bb769fdd8a55423ae49db04f0750d839b3a1f793a4cd20fc8f2950",
+    "entry_sha256": "b14df0a6557526f1a66212fe1a33d80a297ac73f341d696acbcfee3bd9166854",
+    "launcher_sha256": "e9177ba4269b979d15749f460e18c58e4b835af8dbeb9f732e847e7c10d2aff1",
+    "config_sha256": "31796f2871e23977dd375fec84796b2707a645b16169ccbace5b1aaa24b00f10",
+    "profile_sha256": "4430452e363d775ab3005ffaec920dc4d5163b00c393c97ebbc044771dfd62da",
+    "manifest_sha256": "c951dd23f744b9e835a4d8457be3126386ec445ffea0f5a1c0056ff96b3ae28f",
+    "verified_groups": {
+      "own_sha256": 95,
+      "protected_sha256": 132,
+      "dependency_sha256": 13
+    },
+    "profile_condition": "C1",
+    "start_gate": "single authorized Normal startup on live video; stable real face in Normal starts acquisition",
+    "PID": {
+      "1": {
+        "p": 8,
+        "i": 0,
+        "d": 16
+      },
+      "2": {
+        "p": 32,
+        "i": 0,
+        "d": 20
+      },
+      "3": {
+        "p": 24,
+        "i": 0,
+        "d": 26
+      },
+      "4": {
+        "p": 5,
+        "i": 0,
+        "d": 0
+      },
+      "5": {
+        "p": 7,
+        "i": 0,
+        "d": 3
+      }
+    },
+    "normal_raw": {
+      "1": 2019,
+      "2": 2837,
+      "3": 2746,
+      "4": 1997,
+      "5": 2696
+    },
+    "script": {
+      "button": [
+        [
+          16.0,
+          24.0
+        ]
+      ],
+      "touch": [
+        [
+          42.0,
+          59.0
+        ],
+        [
+          78.0,
+          78.2
+        ],
+        [
+          78.4,
+          78.6
+        ],
+        [
+          78.8,
+          79.0
+        ]
+      ],
+      "near": [
+        [
+          108.0,
+          136.0
+        ]
+      ]
+    },
+    "script_sha256": "85c3a0256d5c54c18056971feb9ee4e78db01e75d92466d04bbcda80a2a99bd3",
+    "desktop_default_start_gate": "five_fresh_base_press_releases_no_Start_M",
+    "vision_target": "fixed displayed portrait; production camera and detector",
+    "end_gate": "native Q, then verify motor cleanup",
+    "portrait_sha256": "835233385cce454665f09fd2d5a989ef548573dcf9a4c373d03f3824026fd76e"
+  },
+  "script_is_not_physical_contact": true
+}

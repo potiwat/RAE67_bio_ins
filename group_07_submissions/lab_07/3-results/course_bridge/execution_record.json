@@ -1,0 +1,69 @@
+{
+  "python": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+  "clock": "timestamps in local ISO-8601 with offset; experimental traces have a separate virtual clock",
+  "all_result_directories_were_absent_before_run": true,
+  "predeclaration_sha256": "84a1bf45504317cfa758bb571578162f77291375bea89b592cb2217e02b8038a",
+  "steps": [
+    {
+      "step": "group_policy_checker",
+      "local_started": "2026-11-12T22:06:26.653006+07:00",
+      "local_finished": "2026-11-12T22:06:26.821540+07:00",
+      "command": [
+        "python",
+        "-B",
+        "runtime/check_submission.py",
+        "--policy-file",
+        "runtime/completed_policy.py",
+        "--contract",
+        "group"
+      ],
+      "returncode": 0,
+      "stdout": "Checked 40 transition pairs; contract=group; failures=0\nPASS: transition contract complete\n",
+      "stderr": ""
+    },
+    {
+      "step": "new_matched_transport_experiment",
+      "local_started": "2026-11-12T22:06:26.821575+07:00",
+      "local_finished": "2026-11-12T22:06:27.664380+07:00",
+      "command": [
+        "python",
+        "-B",
+        "runtime/offline_lab.py",
+        "--policy-file",
+        "runtime/completed_policy.py",
+        "--condition",
+        "all",
+        "--repeats",
+        "3",
+        "--output-dir",
+        "runs_20261112"
+      ],
+      "returncode": 0,
+      "stdout": "Wrote 6 virtual trials to runs_20261112; physical and ROS latency: N/A\n",
+      "stderr": ""
+    },
+    {
+      "step": "recorded_input_replay",
+      "local_started": "2026-11-12T22:06:27.664416+07:00",
+      "local_finished": "2026-11-12T22:06:27.934745+07:00",
+      "command": [
+        "python",
+        "-B",
+        "runtime/offline_lab.py",
+        "--policy-file",
+        "runtime/completed_policy.py",
+        "--condition",
+        "C1",
+        "--repeats",
+        "1",
+        "--replay",
+        "runs_20261112/C1_r02/input_trace.csv",
+        "--output-dir",
+        "replay_seed42_20261112"
+      ],
+      "returncode": 0,
+      "stdout": "Wrote 1 virtual trials to replay_seed42_20261112; physical and ROS latency: N/A\n",
+      "stderr": ""
+    }
+  ]
+}

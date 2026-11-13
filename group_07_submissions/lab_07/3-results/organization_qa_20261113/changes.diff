@@ -1,0 +1,705 @@
+--- LAB07_REQUIREMENTS_TH.md
++++ 1-docs/markdown/lab07_requirements_th.md
+@@ -4,25 +4,25 @@
+ 
+ | รายการตามโจทย์ | ผลตรวจของกลุ่ม | เปิดหลักฐาน |
+ |---|---|---|
+-| 1. ผังสามบทบาท หัวข้อ ชนิด หน่วย QoS และขอบเขตเวลา | มีผังสามโหนดของแบบฝึกพร้อมหลักฐานค้นพบจริง และมีผังแยกสำหรับ Raspberry Pi 5 ที่ใช้กับหุ่นจริง **ข้อที่ต่างจากโจทย์คือส่วนขยายที่ระบุในข้อ 1** กลุ่มเลือกส่งสถาปัตยกรรม Pi 5 ที่สร้างจริงและไม่มีแผนเพิ่มฮาร์ดแวร์ส่วนนั้น การรับงานรูปแบบนี้ขึ้นกับอาจารย์ | [ผัง Pi 5](04_Design/Lamp_data_flow.png) · [สามโหนดของแบบฝึก](04_Design/ROS_bridge_roles.png) · [สัญญาเจ็ดหัวข้อ](04_Design/interface_contract.json) · [รายการ endpoints ที่พบ](03_Results/course_ros/observed_endpoints.csv) |
+-| 2. นโยบายของกลุ่มผ่าน bridge สองเงื่อนไข เงื่อนไขละสามครั้ง เก็บ config, traces, ผลและ misses | ใช้ตัวตรวจ group ของอาจารย์ผ่าน 40/40 คู่สถานะ–เหตุการณ์ รัน bridge ใหม่หกรอบที่ seeds 41/42/43 ด้วยนโยบายเดียวกัน เจ็ดอินพุตหลักต่อ seed รวม 21 ต่อเงื่อนไข ideal พบคำสั่งเคลื่อนและสีภายในหนึ่งวินาที 21/21 ส่วน stressed พบ 19/21 คงสองรายการที่ขาดไว้ในตัวหาร Replay seed 42 ได้ไฟล์ input, command และ events ตรงกันทุกไบต์ | [วิธีรัน](03_Results/course_bridge/README_TH.md) · [ผลรายคู่](03_Results/course_bridge/transport_summary.csv) · [ผลรายอินพุต](03_Results/course_bridge/primary_outcomes.csv) · [ผลการตรวจ](03_Results/course_bridge/verification.json) |
+-| 3. proposal.json และ Proposal 2–3 หน้า มีแรงบันดาลใจ AHM–SO(2) CPG, baseline, metrics, repeats, simulation, หุ่นจริง, การสาธิต, controls, calibration, safety และ timeline | Proposal ฉบับจัดหน้าล่าสุดมี 4 หน้า เกินข้อกำหนด 2–3 หน้าอยู่ 1 หน้า ส่วน JSON ผ่านตัวตรวจอย่างเป็นทางการ แบบจำลองตัวควบคุมและหุ่นจริงใช้ C0/C1 สามคู่ เงื่อนไขละ 180 วินาที ตัวชี้วัดหลัก M1/M2 แสดงจำนวนคาบที่ใช้ได้จริง คลิปเล่นกับผู้ใช้ยาว 632.180 วินาที ข้อมูลมอเตอร์ครอบคลุม 631.926 วินาที | [Proposal PDF](01_Proposal/Week07_Proposal_Current_TH.pdf) · [proposal.json](01_Proposal/proposal.json) · [ผลตรวจ](01_Proposal/PROPOSAL_CHECK.txt) · [ใบงาน](05_Worksheet/Week07_Worksheet_TH.docx) · [ผลจำลอง](03_Results/simulation/README_TH.md) · [หกรอบหุ่นจริง](03_Results/real_robot/summary/Run_index.csv) · [คลิป](07_Evidence/present/README_TH.md) |
+-| 4. แสดงขอบเขตของแบบฝึก 22 วินาทีและแยกหลักฐานโครงงาน | แบบฝึก 22 วินาทีเปรียบเทียบการส่งข้อมูลในเวลาเสมือน ส่วนงานวิจัย 180 วินาทีเปรียบเทียบ R=S กับ R=H การเล่นสาธิตมีคลิปและ CSV ของตนเอง | [ผลการทดลองและดัชนี](03_Results/README_TH.md) · [CSV รอบสาธิต](07_Evidence/present/present_feedback.csv) |
++| 1. ผังสามบทบาท หัวข้อ ชนิด หน่วย QoS และขอบเขตเวลา | มีผังสามโหนดของแบบฝึกพร้อมหลักฐานค้นพบจริง และมีผังแยกสำหรับ Raspberry Pi 5 ที่ใช้กับหุ่นจริง **ข้อที่ต่างจากโจทย์คือส่วนขยายที่ระบุในข้อ 1** กลุ่มเลือกส่งสถาปัตยกรรม Pi 5 ที่สร้างจริงและไม่มีแผนเพิ่มฮาร์ดแวร์ส่วนนั้น การรับงานรูปแบบนี้ขึ้นกับอาจารย์ | [ผัง Pi 5](../../4-figures/lamp_data_flow.png) · [สามโหนดของแบบฝึก](../../4-figures/ros_bridge_roles.png) · [สัญญาเจ็ดหัวข้อ](../../2-src/config/interface_contract.json) · [รายการ endpoints ที่พบ](../../3-results/course_ros/observed_endpoints.csv) |
++| 2. นโยบายของกลุ่มผ่าน bridge สองเงื่อนไข เงื่อนไขละสามครั้ง เก็บ config, traces, ผลและ misses | ใช้ตัวตรวจ group ของอาจารย์ผ่าน 40/40 คู่สถานะ–เหตุการณ์ รัน bridge ใหม่หกรอบที่ seeds 41/42/43 ด้วยนโยบายเดียวกัน เจ็ดอินพุตหลักต่อ seed รวม 21 ต่อเงื่อนไข ideal พบคำสั่งเคลื่อนและสีภายในหนึ่งวินาที 21/21 ส่วน stressed พบ 19/21 คงสองรายการที่ขาดไว้ในตัวหาร Replay seed 42 ได้ไฟล์ input, command และ events ตรงกันทุกไบต์ | [วิธีรัน](course_bridge_th.md) · [ผลรายคู่](../../3-results/course_bridge/transport_summary.csv) · [ผลรายอินพุต](../../3-results/course_bridge/primary_outcomes.csv) · [ผลการตรวจ](../../3-results/course_bridge/verification.json) |
++| 3. proposal.json และ Proposal 2–3 หน้า มีแรงบันดาลใจ AHM–SO(2) CPG, baseline, metrics, repeats, simulation, หุ่นจริง, การสาธิต, controls, calibration, safety และ timeline | Proposal ฉบับจัดหน้าล่าสุดมี 4 หน้า เกินข้อกำหนด 2–3 หน้าอยู่ 1 หน้า ส่วน JSON ผ่านตัวตรวจอย่างเป็นทางการ แบบจำลองตัวควบคุมและหุ่นจริงใช้ C0/C1 สามคู่ เงื่อนไขละ 180 วินาที ตัวชี้วัดหลัก M1/M2 แสดงจำนวนคาบที่ใช้ได้จริง คลิปเล่นกับผู้ใช้ยาว 632.180 วินาที ข้อมูลมอเตอร์ครอบคลุม 631.926 วินาที | [Proposal PDF](../lab_documents/Lab07_Proposal_Group7.pdf) · [proposal.json](../../2-src/proposal/proposal.json) · [ผลตรวจ](../../3-results/software_checks/proposal_check.txt) · [ใบงาน](../lab_documents/Lab07_Student_Worksheet_TH.docx) · [ผลจำลอง](simulation_th.md) · [หกรอบหุ่นจริง](../../3-results/real_robot/summary/Run_index.csv) · [คลิป](evidence_present_th.md) |
++| 4. แสดงขอบเขตของแบบฝึก 22 วินาทีและแยกหลักฐานโครงงาน | แบบฝึก 22 วินาทีเปรียบเทียบการส่งข้อมูลในเวลาเสมือน ส่วนงานวิจัย 180 วินาทีเปรียบเทียบ R=S กับ R=H การเล่นสาธิตมีคลิปและ CSV ของตนเอง | [ผลการทดลองและดัชนี](results_guide_th.md) · [CSV รอบสาธิต](../../3-results/evidence/present/present_feedback.csv) |
+ 
+ ## ขอบเขตของหลักฐานเกี่ยวกับเวลาและ topics
+ 
+-แบบฝึก ROS 2 รันในเครื่องคอมพิวเตอร์ เก็บ rosbag จริงได้ **7 หัวข้อ 7,425 ข้อความ** และอ่านข้อความ CDR กลับครบทุกข้อความ จำนวนที่ผู้ส่งบันทึก ผู้รับเห็น และ bag เก็บได้ต่างกัน จึงแสดงยอดแยกสามจุด อธิบายการแก้เฉพาะการเขียนอาร์เรย์ลง CSV ของตัวอย่าง Jazzy ไว้ในชุดหลักฐาน [ยอดข้อความจริง](03_Results/course_ros/message_counts.csv) · [รายละเอียดการรัน ROS 2](03_Results/course_ros/README_TH.md)
++แบบฝึก ROS 2 รันในเครื่องคอมพิวเตอร์ เก็บ rosbag จริงได้ **7 หัวข้อ 7,425 ข้อความ** และอ่านข้อความ CDR กลับครบทุกข้อความ จำนวนที่ผู้ส่งบันทึก ผู้รับเห็น และ bag เก็บได้ต่างกัน จึงแสดงยอดแยกสามจุด อธิบายการแก้เฉพาะการเขียนอาร์เรย์ลง CSV ของตัวอย่าง Jazzy ไว้ในชุดหลักฐาน [ยอดข้อความจริง](../../3-results/course_ros/message_counts.csv) · [รายละเอียดการรัน ROS 2](course_ros_th.md)
+ 
+-กลุ่มออกแบบสัญญาของโคม **13 หัวข้อ** โดยเพิ่มสถานะอินพุต, AHM/CPG, ข้อต่อ, การติดตามหน้า, การวินิจฉัย และ trace หุ่นจริงบันทึกไฟล์ native โดยตรง สามารถจัดกลุ่มค่าหลายส่วนลง CSV ย้อนหลังได้ ในหกรอบไม่มีลำดับกรอบหน้ารายเฟรมตลอดช่วงวัด และข้อมูลปุ่ม/สัมผัสทางกายภาพมีขอบเขตต่างจากระดับสิ่งเร้าตามตาราง จึงไม่ระบุว่าเก็บ rosbag 13 หัวข้อครบในหกรอบนั้น [สัญญา 13 หัวข้อ](04_Design/TOPIC_CONTRACT_13.json) · [หลักฐานที่มีจริงรายหัวข้อ](04_Design/TOPIC_COVERAGE.csv)
++กลุ่มออกแบบสัญญาของโคม **13 หัวข้อ** โดยเพิ่มสถานะอินพุต, AHM/CPG, ข้อต่อ, การติดตามหน้า, การวินิจฉัย และ trace หุ่นจริงบันทึกไฟล์ native โดยตรง สามารถจัดกลุ่มค่าหลายส่วนลง CSV ย้อนหลังได้ ในหกรอบไม่มีลำดับกรอบหน้ารายเฟรมตลอดช่วงวัด และข้อมูลปุ่ม/สัมผัสทางกายภาพมีขอบเขตต่างจากระดับสิ่งเร้าตามตาราง จึงไม่ระบุว่าเก็บ rosbag 13 หัวข้อครบในหกรอบนั้น [สัญญา 13 หัวข้อ](../../2-src/config/topic_contract_13.json) · [หลักฐานที่มีจริงรายหัวข้อ](../../3-results/coverage/topic_coverage.csv)
+ 
+ คาบการส่ายฐานใช้ encoder ส่วนเวลาเคลื่อนไหวและสีในแบบฝึกอ้างอิงคำสั่งบนเวลาเสมือน เวลาเฟรมแรกของคลิปกับเวลาแรกของ feedback ยังไม่มีการซิงก์ระดับเฟรม เกณฑ์ความหน่วงถึงการขยับจริงและแสงจริงจึงต้องมีหลักฐานเพิ่มเติมหากนำไปอ้าง
+ 
+ เรียกตัวตรวจของอาจารย์จากรากโฟลเดอร์นี้ได้ด้วย
+ 
+ ```console
+-python 01_Proposal/check_proposal.py 01_Proposal/proposal.json
+-python 03_Results/course_bridge/runtime/check_submission.py --policy-file 03_Results/course_bridge/runtime/completed_policy.py --contract group
++python 2-src/proposal/check_proposal.py 2-src/proposal/proposal.json
++python 3-results/course_bridge/runtime/check_submission.py --policy-file 3-results/course_bridge/runtime/completed_policy.py --contract group
+ ```
+ 
+-รุ่นของไฟล์ตรวจใช้ SHA จาก [บัญชีแหล่งต้นทาง](06_References/TEACHER_LAB07_SOURCE.json)
++รุ่นของไฟล์ตรวจใช้ SHA จาก [บัญชีแหล่งต้นทาง](../references/teacher_lab07_source.json)
+ 
+--- PACKAGE_BUILD.json
++++ 1-docs/metadata/package_build.json
+@@ -35,7 +35,7 @@
+     "pairs": 3,
+     "duration_s": 180,
+     "kind": "recorded-context replay of controller with recomputed hormones and CPG",
+-    "metrics": "03_Results/simulation/Worksheet_M1_M2.csv"
++    "metrics": "3-results/simulation/Worksheet_M1_M2.csv"
+   },
+   "demo": {
+     "source": "IMG_4568.MOV",
+@@ -46,11 +46,11 @@
+     "frame_alignment_verified": false
+   },
+   "documents": {
+-    "01_Proposal/Week07_Proposal_Current_TH.docx": "09bc871aefb9e39e0c40bf2a1f204798c50d9b074b9c9fe92a8c81547596a535",
+-    "03_Results/Week07_Results_TH.docx": "bce4afcd7773c649cb0350e2d5f3add9ff27b39756102ef3a3e863bcce46e6b3",
+-    "05_Worksheet/Week07_Worksheet_TH.docx": "77d6990fbca51aae541259e5c5c553b92494ba50e9f82e7dfb381d072027dbe0"
++    "1-docs/lab_documents/Lab07_Proposal_Group7.docx": "09bc871aefb9e39e0c40bf2a1f204798c50d9b074b9c9fe92a8c81547596a535",
++    "1-docs/lab_documents/Lab07_Report_Group7.docx": "bce4afcd7773c649cb0350e2d5f3add9ff27b39756102ef3a3e863bcce46e6b3",
++    "1-docs/lab_documents/Lab07_Student_Worksheet_TH.docx": "77d6990fbca51aae541259e5c5c553b92494ba50e9f82e7dfb381d072027dbe0"
+   },
+-  "source_coverage": "02_Source/hardware/manifest_coverage.json",
++  "source_coverage": "2-src/hardware/manifest_coverage.json",
+   "course_check": {
+     "instructor_repo": "potiwat/RAE67_bio_ins",
+     "commit": "fa528b169f1127ee3e0e9fae3d721546bf1b82d2",
+--- README.md
++++ README.md
+@@ -2,35 +2,35 @@
+ 
+ **กลุ่ม 7 · ทดลองวันที่ 12 พฤศจิกายน 2569**
+ 
+-[ดูวิดีโอเล่นกับโคมจริง 10 นาทีบน YouTube](https://youtu.be/-zckfxbT9Jk?feature=shared) · [เปิดไฟล์วิดีโอต้นฉบับ](07_Evidence/present/IMG_4568.MOV)
++[ดูวิดีโอเล่นกับโคมจริง 10 นาทีบน YouTube](https://youtu.be/-zckfxbT9Jk?feature=shared) · [เปิดไฟล์วิดีโอต้นฉบับ](3-results/evidence/present/IMG_4568.MOV)
+ 
+ | เอกสารหลัก | เนื้อหา |
+ |---|---|
+-| [รายงานผล Word](03_Results/Week07_Results_TH.docx) | วิธีทดลอง กราฟที่ใช้แกนเวลาร่วมกัน ผลแยกสามคู่ และข้อจำกัดของการวัด |
+-| [ใบงาน Word](05_Worksheet/Week07_Worksheet_TH.docx) · [ใบงาน Markdown](05_Worksheet/worksheet.md) | คำถามงานวิจัย สถาปัตยกรรม สมการ ตัวชี้วัด ผลบนคอมและหุ่นจริง และคำตอบตามใบงาน |
+-| [Proposal Word](01_Proposal/Week07_Proposal_Current_TH.docx) · [Proposal PDF](01_Proposal/Week07_Proposal_Current_TH.pdf) | ตัวแปรควบคุม ตารางสิ่งเร้า และแผนการเปรียบเทียบ |
++| [รายงานผล Word](1-docs/lab_documents/Lab07_Report_Group7.docx) | วิธีทดลอง กราฟที่ใช้แกนเวลาร่วมกัน ผลแยกสามคู่ และข้อจำกัดของการวัด |
++| [ใบงาน Word](1-docs/lab_documents/Lab07_Student_Worksheet_TH.docx) · [ใบงาน Markdown](1-docs/markdown/worksheet.md) | คำถามงานวิจัย สถาปัตยกรรม สมการ ตัวชี้วัด ผลบนคอมและหุ่นจริง และคำตอบตามใบงาน |
++| [Proposal Word](1-docs/lab_documents/Lab07_Proposal_Group7.docx) · [Proposal PDF](1-docs/lab_documents/Lab07_Proposal_Group7.pdf) | ตัวแปรควบคุม ตารางสิ่งเร้า และแผนการเปรียบเทียบ |
+ 
+ ## ผลจากหุ่นจริง
+ 
+ C0 ใช้สิ่งเร้าโดยตรง (R = S) ส่วน C1 ใช้ระดับฮอร์โมน (R = H) เก็บ 3 คู่ รอบละ 180 วินาที ทั้ง 6 รอบผ่านครบ 6 อารมณ์ รวม 21,464 ตัวอย่าง เมื่อปล่อย Touch คาบการส่ายฐาน ID1 ในช่วงที่เหลือของ Happy เฉลี่ย **2.806 วินาทีต่อรอบใน C0 และ 2.750 วินาทีต่อรอบใน C1** โดยให้น้ำหนักแต่ละคู่เท่ากัน ช่วงหลังปล่อยวัดได้ 1–2 รอบต่อการทดลอง ค่าเฉลี่ยการเปลี่ยนคาบของ CPG (M2) ลดลงในสองคู่และเพิ่มขึ้นในหนึ่งคู่
+ 
+-- [กราฟก่อนแตะ ระหว่างแตะ และหลังปล่อย](03_Results/Figures/01_Happy_input_CPG_and_encoder.png) ขยายช่วงวินาที 39–67 ของรอบทดลอง เริ่ม Touch ที่วินาที 42 และปล่อยที่วินาที 59
+-- [กราฟคาบ CPG และคาบฐานทั้งสามคู่](03_Results/Figures/02_Touch_release_all_pairs.png) แต่ละจุดคือคาบเต็มที่วัดได้
+-- [กราฟทั้งหกอารมณ์ตลอด 180 วินาที](03_Results/Figures/03_Six_state_timeline.png) แสดงค่า φ ที่ระบบเลือกตามลำดับเวลาจริง
+-- [ดัชนีหกรอบ](03_Results/real_robot/summary/Run_index.csv) · [ตาราง M1 และ M2 ของหุ่นจริง](03_Results/real_robot/summary/Worksheet_M1_M2.csv)
++- [กราฟก่อนแตะ ระหว่างแตะ และหลังปล่อย](3-results/figures/01_Happy_input_CPG_and_encoder.png) ขยายช่วงวินาที 39–67 ของรอบทดลอง เริ่ม Touch ที่วินาที 42 และปล่อยที่วินาที 59
++- [กราฟคาบ CPG และคาบฐานทั้งสามคู่](3-results/figures/02_Touch_release_all_pairs.png) แต่ละจุดคือคาบเต็มที่วัดได้
++- [กราฟทั้งหกอารมณ์ตลอด 180 วินาที](3-results/figures/03_Six_state_timeline.png) แสดงค่า φ ที่ระบบเลือกตามลำดับเวลาจริง
++- [ดัชนีหกรอบ](3-results/real_robot/summary/Run_index.csv) · [ตาราง M1 และ M2 ของหุ่นจริง](3-results/real_robot/summary/Worksheet_M1_M2.csv)
+ 
+ ## ตรวจตามโจทย์อาจารย์
+ 
+-[ผลตรวจข้อกำหนด Lab 07 ทีละข้อ](LAB07_REQUIREMENTS_TH.md) รวมตัวตรวจ Proposal และ policy ของอาจารย์ ผล bridge สองเงื่อนไข × สามรอบ และขอบเขตที่โคมใช้สถาปัตยกรรม Raspberry Pi 5
++[ผลตรวจข้อกำหนด Lab 07 ทีละข้อ](1-docs/markdown/lab07_requirements_th.md) รวมตัวตรวจ Proposal และ policy ของอาจารย์ ผล bridge สองเงื่อนไข × สามรอบ และขอบเขตที่โคมใช้สถาปัตยกรรม Raspberry Pi 5
+ 
+ ## ตรวจข้อมูลเพิ่มเติม
+ 
+ | ส่วน | หลักฐาน |
+ |---|---|
+-| หุ่นจริง | [คำอธิบายข้อมูล](03_Results/README_TH.md) และโฟลเดอร์ P1–P3 ใน [real_robot](03_Results/real_robot/) |
+-| แบบจำลอง | [วิธีรันซ้ำและผลใหม่ 3 คู่](03_Results/simulation/README_TH.md) ใช้บริบทของ C0 ในคู่นั้นกับทั้งสองเงื่อนไข |
+-| ระบบและซอร์ส | [แผนภาพทางเดินข้อมูล](04_Design/Lamp_data_flow.png) · [ซอร์สและเครื่องมือวิเคราะห์](02_Source/) |
+-| การสาธิต | [คลิปและ CSV](07_Evidence/present/README_TH.md) บันทึกครั้งเดียวตั้งแต่ feedback แรกถึงสุดท้าย 631.926 วินาที รวมช่วง Safety คืนท่า |
+-| ที่มาของแบบจำลอง | [เอกสารอ้างอิง](06_References/README_TH.md) |
++| หุ่นจริง | [คำอธิบายข้อมูล](1-docs/markdown/results_guide_th.md) และโฟลเดอร์ P1–P3 ใน [real_robot](3-results/real_robot/) |
++| แบบจำลอง | [วิธีรันซ้ำและผลใหม่ 3 คู่](1-docs/markdown/simulation_th.md) ใช้บริบทของ C0 ในคู่นั้นกับทั้งสองเงื่อนไข |
++| ระบบและซอร์ส | [แผนภาพทางเดินข้อมูล](4-figures/lamp_data_flow.png) · [ซอร์สและเครื่องมือวิเคราะห์](2-src/) |
++| การสาธิต | [คลิปและ CSV](1-docs/markdown/evidence_present_th.md) บันทึกครั้งเดียวตั้งแต่ feedback แรกถึงสุดท้าย 631.926 วินาที รวมช่วง Safety คืนท่า |
++| ที่มาของแบบจำลอง | [เอกสารอ้างอิง](1-docs/references/README.md) |
+ 
+ ตรวจ SHA-256 และสัญญาข้อมูลทั้งชุดจากโฟลเดอร์นี้ด้วย `python verify_package.py` บนคอม
+--- THIRD_PARTY_NOTICES.md
++++ 1-docs/references/third_party_notices.md
+@@ -1,3 +1,3 @@
+ # Sources and attribution
+ 
+-The hormone model and SO(2) oscillator draw on the Bio Inspired Robotics course materials and prior coursework identified in [the references](06_References/README_TH.md). The accompanying teaching-source excerpts retain their file-level notices. The measurements, paired protocol, demonstrated lamp configuration and current report are the work of Group 7. Hardware source identities and dependencies are documented under [02_Source](02_Source/).
++The hormone model and SO(2) oscillator draw on the Bio Inspired Robotics course materials and prior coursework identified in [the references](README.md). The accompanying teaching-source excerpts retain their file-level notices. The measurements, paired protocol, demonstrated lamp configuration and current report are the work of Group 7. Hardware source identities and dependencies are documented under [2-src](2-src/).
+--- verify_package.py
++++ verify_package.py
+@@ -15,9 +15,9 @@
+ import xml.etree.ElementTree as ET
+ 
+ ROOT=Path(__file__).resolve().parent
+-DOCS=("01_Proposal/Week07_Proposal_Current_TH.docx","03_Results/Week07_Results_TH.docx","05_Worksheet/Week07_Worksheet_TH.docx")
++DOCS=("1-docs/lab_documents/Lab07_Proposal_Group7.docx","1-docs/lab_documents/Lab07_Report_Group7.docx","1-docs/lab_documents/Lab07_Student_Worksheet_TH.docx")
+ ESTATES={"normal","happy","angry","interested","afraid","sleepy"}
+-MOVIE="07_Evidence/present/IMG_4568.MOV"
++MOVIE="3-results/evidence/present/IMG_4568.MOV"
+ VIDEO_LINK="https://youtu.be/-zckfxbT9Jk?feature=shared"
+ 
+ def require(ok,message):
+@@ -36,9 +36,9 @@
+ def obj(path):return json.loads(path.read_text(encoding="utf-8-sig"))
+ 
+ def manifest_check():
+-    manifest=obj(ROOT/"MANIFEST_SHA256.json")
++    manifest=obj(ROOT/"manifest_sha256.json")
+     files={p.relative_to(ROOT).as_posix() for p in ROOT.rglob("*") if p.is_file()
+-           and p!=ROOT/"MANIFEST_SHA256.json" and "__pycache__" not in p.parts and ".git" not in p.parts
++           and p!=ROOT/"manifest_sha256.json" and "__pycache__" not in p.parts and ".git" not in p.parts
+            and p.suffix not in (".pyc",".pyo") and not p.name.startswith("~$")}
+     require(set(manifest)==files,"Package inventory changed")
+     for name,value in manifest.items():
+@@ -47,7 +47,7 @@
+     return len(manifest)
+ 
+ def real_check():
+-    base=ROOT/"03_Results/real_robot";index=rows(base/"summary/Run_index.csv")
++    base=ROOT/"3-results/real_robot";index=rows(base/"summary/Run_index.csv")
+     require({(int(x["pair"]),x["condition"]) for x in index}=={(p,c) for p in (1,2,3) for c in ("C0","C1")} and len(index)==6,"Invalid paired design")
+     count=0; model_rows=0;identities=set();accepted=set()
+     for entry in index:
+@@ -64,13 +64,13 @@
+         count+=n;model_rows+=int(entry["in_window_phi_rows"]);identities.add((ident["manifest_sha256"],ident["study_sha256"]));accepted.add(h.hexdigest())
+     require(len(identities)==1 and count==21464 and model_rows==21458,"Evidence total or version mismatch")
+     require(not {x["trace_sha256"] for x in obj(base/"excluded_attempts.json")}.intersection(accepted),"An accepted trace also appears in exclusions")
+-    for part in (base/"summary/Worksheet_M1_M2.csv",ROOT/"03_Results/simulation/Worksheet_M1_M2.csv"):
++    for part in (base/"summary/Worksheet_M1_M2.csv",ROOT/"3-results/simulation/Worksheet_M1_M2.csv"):
+         met=rows(part)
+         require(len(met)==36 and {(int(v["pair"]),v["condition"],v["state"]) for v in met}=={(p,c,st) for p in (1,2,3) for c in ("C0","C1") for st in ESTATES},"Incomplete state table: "+str(part))
+     return count,model_rows
+ 
+ def evidence_check():
+-    d=ROOT/"07_Evidence/present";v=obj(d/"SESSION_VERIFICATION.json")
++    d=ROOT/"3-results/evidence/present";v=obj(d/"SESSION_VERIFICATION.json")
+     require(digest(ROOT/MOVIE)==v["video"]["sha256"] and (ROOT/MOVIE).stat().st_size==v["video"]["size_bytes"],"Video copy differs")
+     counts=Counter();states=set();times=[]
+     with (d/"present_feedback.csv").open(encoding="utf-8-sig",newline="") as f:
+@@ -78,7 +78,7 @@
+     require(set(counts)=={1,2,3,4,5} and ESTATES<=states and len(times)==v["feedback_rows"]==64212,"Demo rows, joints or states missing")
+     require(abs(max(times)-min(times)-v["duration_s"])<.00001 and v["video"]["duration_s"]==632.18,"Video or feedback span differs")
+     require(all(digest(d/name)==sha for name,sha in v["csv_sha256"].items()),"Original CSV hash differs")
+-    for note in (ROOT/"README.md",d/"README_TH.md"):
++    for note in (ROOT/"README.md",ROOT/"1-docs/markdown/evidence_present_th.md"):
+         require(VIDEO_LINK in note.read_text(encoding="utf-8"),"Missing direct viewing link")
+     return len(times),v["duration_s"]
+ 
+@@ -95,10 +95,10 @@
+             require("180" in text and ("21,464" in text or "21464" in text),"Current protocol missing in "+name)
+             if name==DOCS[1]:
+                 embedded={hashlib.sha256(z.read(n)).hexdigest() for n in z.namelist() if n.startswith("word/media/")}
+-                figures={digest(f) for f in (ROOT/"03_Results/Figures").glob("*.png")}
++                figures={digest(f) for f in (ROOT/"3-results/Figures").glob("*.png")}
+                 require(embedded==figures,"Report figures differ from the delivered PNGs")
+-    require(banned.search((ROOT/"05_Worksheet/worksheet.md").read_text(encoding="utf-8-sig").replace("micro ROS และ ESP32","")) is None,"Historical result in Markdown worksheet")
+-    for relative in ("README.md","LAB07_REQUIREMENTS_TH.md","03_Results/README_TH.md","04_Design/README_TH.md","05_Worksheet/worksheet.md","06_References/README_TH.md","07_Evidence/present/README_TH.md"):
++    require(banned.search((ROOT/"1-docs/markdown/worksheet.md").read_text(encoding="utf-8-sig").replace("micro ROS และ ESP32","")) is None,"Historical result in Markdown worksheet")
++    for relative in ("README.md","1-docs/markdown/lab07_requirements_th.md","1-docs/markdown/results_guide_th.md","1-docs/markdown/design_notes_th.md","1-docs/markdown/worksheet.md","1-docs/references/README.md","1-docs/markdown/evidence_present_th.md"):
+         path=ROOT/relative;text=path.read_text(encoding="utf-8-sig")
+         for match in re.finditer(r"\]\((?:<([^>]+)>|([^\s)]+))\)",text):
+             link=match.group(1) or match.group(2);parts=urlsplit(link)
+@@ -107,30 +107,30 @@
+             require(target.is_relative_to(ROOT) and target.exists(),f"Broken link in {relative}: {link}")
+ 
+ def course_check():
+-    base=ROOT/"03_Results"
+-    proof=obj(ROOT/"06_References/TEACHER_LAB07_SOURCE.json")
++    base=ROOT/"3-results"
++    proof=obj(ROOT/"1-docs/references/teacher_lab07_source.json")
+     upstream=proof["files"]
+     checker=base/"course_bridge/runtime/check_submission.py"
+-    proposal_checker=ROOT/"01_Proposal/check_proposal.py"
+-    contract=ROOT/"04_Design/interface_contract.json"
++    proposal_checker=ROOT/"2-src/proposal/check_proposal.py"
++    contract=ROOT/"2-src/config/interface_contract.json"
+     for file,key in ((checker,"check_submission.py"),(proposal_checker,"check_proposal.py"),(contract,"interface_contract.json")):
+         require(digest(file)==upstream[key]["sha256"],"Teacher reference checksum differs: "+key)
+     policy=checker.with_name("completed_policy.py")
+     with tempfile.TemporaryDirectory() as tmp:
+         policy_copy=Path(tmp)/policy.name;shutil.copyfile(policy,policy_copy)
+         for command in ([str(checker),"--policy-file",str(policy_copy),"--contract","group"],
+-                        [str(proposal_checker),str(ROOT/"01_Proposal/proposal.json")]):
++                        [str(proposal_checker),str(ROOT/"2-src/proposal/proposal.json")]):
+             result=subprocess.run([sys.executable,"-B",*command],capture_output=True,text=True,timeout=15)
+             require(result.returncode==0,"Official checker failed: "+result.stdout+result.stderr)
+     cv=obj(base/"course_bridge/verification.json")
+     require(cv["group_checker_transition_pairs"]==40 and cv["group_checker_failures"]==0 and cv["matched_seeds"]==[41,42,43]
+             and cv["preregistered_primary_rows"]==42 and cv["retained_source_outcomes"]==60,"Missing matched bridge results")
+     seven={v["name"] for v in obj(contract)["topics"]}
+-    extended={v["topic"] for v in obj(ROOT/"04_Design/TOPIC_CONTRACT_13.json")["topics"]}
++    extended={v["topic"] for v in obj(ROOT/"2-src/config/topic_contract_13.json")["topics"]}
+     ros=rows(base/"course_ros/message_counts.csv");report=obj(base/"course_ros/verification.json")
+     require(len(seven)==7 and len(extended)==13 and seven<extended,"Topic design count mismatch")
+     require({v["topic"] for v in ros}==seven and sum(int(v["messages_in_bag"]) for v in ros)==7425 and report["verified_all_cdr_messages"],"Invalid observed 7-topic ROS evidence")
+-    require(len(rows(ROOT/"04_Design/TOPIC_COVERAGE.csv"))==13 and len(rows(base/"real_robot/summary/Topic_coverage_by_run.csv"))==78,"Incomplete native coverage inventory")
++    require(len(rows(ROOT/"3-results/coverage/topic_coverage.csv"))==13 and len(rows(base/"real_robot/summary/Topic_coverage_by_run.csv"))==78,"Incomplete native coverage inventory")
+ 
+ if __name__=="__main__":
+     files=manifest_check()
+--- 01_Proposal/proposal.json
++++ 2-src/proposal/proposal.json
+@@ -4,7 +4,7 @@
+   "platform": "LampBio-Inpire, a 5-DOF robotic lamp running present on Raspberry Pi 5 with native camera/GPIO/I2C/servo UART/LED SPI",
+   "question": "เมื่อทำงานด้วยสิ่งเร้าเดียวกัน การผ่านฮอร์โมน H ก่อนปรับ φ เปลี่ยนความถี่ CPG และความต่างระหว่างคาบอย่างไร และคาบการเต้นของฐาน Happy เปลี่ยนตามหรือไม่",
+   "hypothesis": "หลังปล่อย Touch ค่า H จะค่อย ๆ ลด จึงคาดว่า C1 จะคงจังหวะเร็วไว้ชั่วคราว ขณะที่ C0 ลด φ ตาม S ทันที ทดสอบค่าเฉลี่ยความต่างระหว่างคาบแยกตามคู่เพื่อดูว่าลดลงสม่ำเสมอหรือไม่",
+-  "biological_inspiration_source": "แนวคิดการสะสมและสลายสัญญาณฮอร์โมนตาม Lab04–05 และวงจรประสาทกำเนิดจังหวะ SO(2) ของ Dr. Poramate ตาม Lab03 ดู 06_References/README_TH.md",
++  "biological_inspiration_source": "แนวคิดการสะสมและสลายสัญญาณฮอร์โมนตาม Lab04–05 และวงจรประสาทกำเนิดจังหวะ SO(2) ของ Dr. Poramate ตาม Lab03 ดู 1-docs/references/README.md",
+   "AHM_equation": "H[k+1] = clip(H[k] + 0.05*(0.8*S[k] - 0.6*H[k] - 0.2*H[k]), 0, 1); H[0]=0.",
+   "SO2_CPG_equation": "o1[k+1]=tanh(alpha*(cos(phi)*o1[k]+sin(phi)*o2[k])); o2[k+1]=tanh(alpha*(-sin(phi)*o1[k]+cos(phi)*o2[k])); both use the same prior state.",
+   "integration_description": "R = S in C0 and R = H in C1. Ordinary phi = 0.10 + 0.03*R. During Happy phi = 0.11798049926757813 + (0.13-0.11798049926757813)*R, in rad/update. The decoder maps phase to motor targets and a state-colored LED.",
+@@ -91,27 +91,27 @@
+       "provenance": "checked against the selected Happy bank and runtime configuration"
+     }
+   ],
+-  "simulation_plan": "Run three paired 180 s recorded-context controller simulations. Share Pn/C0 routing, start oscillator states and active envelopes within each pair; recalculate S,H,R,phi,o1,o2 and M1/M2. Re-run using 03_Results/simulation/README_TH.md.",
++  "simulation_plan": "Run three paired 180 s recorded-context controller simulations. Share Pn/C0 routing, start oscillator states and active envelopes within each pair; recalculate S,H,R,phi,o1,o2 and M1/M2. Re-run using 1-docs/markdown/simulation_th.md.",
+   "real_robot_plan": "Run present on one Raspberry Pi 5 with five STS3215 servos. Compare C0 direct (R=S) and C1 hormone (R=H) in three matched pairs, six 180 s runs. Use native encoder/goal records, the actual camera and ToF. Convert motor ticks to angles relative to the configured Normal position (360/4096 deg/tick).",
+   "clock_correlation_plan": "Store source event identifiers and acquisition/recognition/dispatch timestamps. Native Pi motor feedback is monotonic; pair it with owner BOOTTIME anchors. No subtraction of clocks on different hosts. External video first frame is not hardware synchronized; absolute physical onset error is unmeasured.",
+   "safety_stop_plan": "คงขอบมุมและโปรไฟล์เดิม ใช้ feedback ที่มอเตอร์รายงานกับตัวตรวจแรงต้าน ID1, ID2, ID4 ผู้ดูแลเว้นทางเคลื่อน ดูสายและ Emergency ถ้ารอบวัดถูกขัดจังหวะให้เก็บสาเหตุและตรวจการประคองก่อนรันใหม่",
+-  "order_counterbalancing": "The six measured runs are documented in 03_Results/real_robot/summary/Run_index.csv.",
++  "order_counterbalancing": "The six measured runs are documented in 3-results/real_robot/summary/Run_index.csv.",
+   "paired_seed_or_participant_plan": "P1 uses the same person in camera view; P2 and P3 use the same displayed portrait for both members of each pair. Day-specific human demo is a separate record; no population-level behavioral inference. Replays use equal Pn/C0 initial oscillator states within each software pair.",
+-  "expected_input_ids_before_run": "Hardware schedule fixes study_button_16.0; study_touch_42.0; study_touch_78.0, study_touch_78.4, study_touch_78.8 and study_burst_78.8; study_near_108.0 and scheduled release at 136 s. Matched lab bridge uses its separately preregistered seven source IDs under 03_Results/course_bridge/preregistered_protocol.json.",
++  "expected_input_ids_before_run": "Hardware schedule fixes study_button_16.0; study_touch_42.0; study_touch_78.0, study_touch_78.4, study_touch_78.8 and study_burst_78.8; study_near_108.0 and scheduled release at 136 s. Matched lab bridge uses its separately preregistered seven source IDs under 3-results/course_bridge/preregistered_protocol.json.",
+   "controlled_trial_duration_s": 180,
+   "human_scenario_duration_s": 600,
+   "human_demonstration": {
+     "movie_s": 632.18,
+     "motor_feedback_span_s": 631.926064984,
+     "motor_feedback_rows": 64212,
+-    "video": "07_Evidence/present/IMG_4568.MOV",
++    "video": "3-results/evidence/present/IMG_4568.MOV",
+     "youtube": "https://youtu.be/-zckfxbT9Jk?feature=shared",
+     "frame_alignment_verified": false,
+-    "motor_feedback_csv": "07_Evidence/present/present_feedback.csv",
+-    "events_csv": "07_Evidence/present/present_events.csv"
++    "motor_feedback_csv": "3-results/evidence/present/present_feedback.csv",
++    "events_csv": "3-results/evidence/present/present_events.csv"
+   },
+   "timeline": "12 พ.ย. 2569 กลุ่ม 7 ตรวจตัวเปิดและรอบเริ่ม เก็บหุ่นจริงสามคู่และรอบเล่นสาธิต แล้วรันแบบจำลองบริบทเดียวกัน วิเคราะห์กราฟและตรวจซ้ำไฟล์ส่ง โดยสมาชิกกลุ่มรับผิดชอบการตรวจหลักฐานร่วมกัน",
+-  "hardware_limit": "The Raspberry Pi 5 records native data; every controlled run contains in-window observations for 12 of 13 design groups. The face group has no in-window stream. Button and touch are scripted in these trials. The separate PC course ROS 2 bag contains 7,425 messages across all seven required topics. The project defines six additional observation topics in 04_Design/TOPIC_CONTRACT_13.json.",
++  "hardware_limit": "The Raspberry Pi 5 records native data; every controlled run contains in-window observations for 12 of 13 design groups. The face group has no in-window stream. Button and touch are scripted in these trials. The separate PC course ROS 2 bag contains 7,425 messages across all seven required topics. The project defines six additional observation topics in 2-src/config/topic_contract_13.json.",
+   "real_robot_sample_counts": {
+     "C0_raw": 10732,
+     "C1_raw": 10732,
+--- 02_Source/README.md
++++ 2-src/README.md
+@@ -4,19 +4,19 @@
+ 
+ ## คำนวณซ้ำบนพีซี
+ 
+-เปิดเทอร์มินัลที่โฟลเดอร์หลักของชุดส่ง ซึ่งมี `02_Source` และ `03_Results` อยู่ข้างกัน เมื่อมี Python, NumPy และ Matplotlib แล้ว ใช้คำสั่งนี้เพื่อตรวจและคำนวณซ้ำทั้งหมด
++เปิดเทอร์มินัลที่โฟลเดอร์หลักของชุดส่ง ซึ่งมี `2-src` และ `3-results` อยู่ข้างกัน เมื่อมี Python, NumPy และ Matplotlib แล้ว ใช้คำสั่งนี้เพื่อตรวจและคำนวณซ้ำทั้งหมด
+ 
+ ```sh
+-python -B 02_Source/reproduce.py
++python -B 2-src/reproduce.py
+ ```
+ 
+-คำสั่งอ่านไฟล์ใน `03_Results/real_robot/P1…P3/C0,C1/original` แล้วสร้างตารางและกราฟในพื้นที่ชั่วคราว เมื่อต้องการเก็บผล ให้ตั้งชื่อโฟลเดอร์ใหม่
++คำสั่งอ่านไฟล์ใน `3-results/real_robot/P1…P3/C0,C1/original` แล้วสร้างตารางและกราฟในพื้นที่ชั่วคราว เมื่อต้องการเก็บผล ให้ตั้งชื่อโฟลเดอร์ใหม่
+ 
+ ```sh
+-python -B 02_Source/reproduce.py --output ../Lab07_rebuilt
++python -B 2-src/reproduce.py --output ../Lab07_rebuilt
+ ```
+ 
+-บน Windows ที่ใช้ Python 3.13 ติดตั้งรุ่นที่ตรวจแล้วได้ด้วย `py -3.13 -m pip install -r 02_Source/requirements.txt` และเรียกโปรแกรมด้วย `py -3.13 -B 02_Source/reproduce.py` การคำนวณใช้ไฟล์ในชุดส่งบนพีซีได้โดยปิดหุ่นไว้
++บน Windows ที่ใช้ Python 3.13 ติดตั้งรุ่นที่ตรวจแล้วได้ด้วย `py -3.13 -m pip install -r 2-src/requirements.txt` และเรียกโปรแกรมด้วย `py -3.13 -B 2-src/reproduce.py` การคำนวณใช้ไฟล์ในชุดส่งบนพีซีได้โดยปิดหุ่นไว้
+ 
+ | สิ่งที่จะตรวจ | ตำแหน่งผล |
+ |---|---|
+@@ -49,7 +49,7 @@
+ | `bio_inspire/runtime/`, `shared/runtime/` | FSM, AHM, CPG, การแปลงเป็นเป้าข้อต่อ, เซนเซอร์ และตัวควบคุมของโคม |
+ | `supplemental_sources.json` | SHA-256 และที่มาของตัวกำหนดจังหวะ Happy, ฟังก์ชันตรวจตัวอย่าง ToF ตอนเริ่ม, โมดูล telemetry, ตัวอ่านบัส และไฟล์ภาพเป้ากล้อง |
+ 
+-ไฟล์ใต้ `hardware/` ที่มีชื่อ `trial`, `test_` หรือ `last_` บางรายการเป็นไฟล์ที่ตัวเปิดกำหนดให้ตรวจแฮชก่อนทำงาน ชื่อและเนื้อหาจึงคงตามฉบับที่บันทึกไว้ ตารางและกราฟ Lab 7 อ้างอิงเฉพาะหกรอบใน `03_Results/real_robot`
++ไฟล์ใต้ `hardware/` ที่มีชื่อ `trial`, `test_` หรือ `last_` บางรายการเป็นไฟล์ที่ตัวเปิดกำหนดให้ตรวจแฮชก่อนทำงาน ชื่อและเนื้อหาจึงคงตามฉบับที่บันทึกไว้ ตารางและกราฟ Lab 7 อ้างอิงเฉพาะหกรอบใน `3-results/real_robot`
+ 
+ [ภาพอ้างอิงที่ใช้เป็นเป้ากล้อง](hardware/bio_inspire/experiments/lab07_present_safety_pair1_20261112/qa/face_target_grace_hopper.jpg) มี SHA-256 `a8ca6d734765703b09728ab47fe59f473d93ae3967fc24c7c0288c3c7adb7130` ตรงกับตัวอย่าง `grace_hopper.jpg` ของ Matplotlib หลักฐานจาก P2/P3 บันทึกการตรวจพบใบหน้าผ่านกล้อง ส่วน `portrait_sha256` ในไฟล์ประจำรอบเป็นแฮชของโปรแกรมปรับการเริ่มวัด [ภาพตัวอย่างจาก Matplotlib](https://matplotlib.org/3.6.3/gallery/images_contours_and_fields/image_demo.html)
+ 
+--- 02_Source/reproduce.py
++++ 2-src/reproduce.py
+@@ -108,7 +108,7 @@
+ 
+ def compare_results(output, reference):
+     csvs = sorted(output.glob("real_robot/**/*.csv"))
+-    figures = sorted((output / "Figures").glob("*.png"))
++    figures = sorted((output / "figures").glob("*.png"))
+     if len(csvs) != 33 or len(figures) != 3:
+         raise ValueError(f"Expected 33 CSVs and 3 figures, produced {len(csvs)} and {len(figures)}.")
+     exact = 0
+@@ -130,8 +130,8 @@
+     if not __debug__:
+         raise RuntimeError("Run Python without -O; the study routines use assertions for experimental checks.")
+     parser = argparse.ArgumentParser(description=__doc__)
+-    parser.add_argument("--results", type=Path, default=Path(__file__).resolve().parents[1] / "03_Results",
+-                        help="submission's 03_Results directory")
++    parser.add_argument("--results", type=Path, default=Path(__file__).resolve().parents[1] / "3-results",
++                        help="submission's 3-results directory")
+     parser.add_argument("--output", type=Path, help="retain the 33 tables and 3 PNGs in this new directory")
+     parser.add_argument("--strict-figures", action="store_true", help="require all rendered PNGs to match byte for byte")
+     args = parser.parse_args()
+--- 03_Results/README_TH.md
++++ 1-docs/markdown/results_guide_th.md
+@@ -1,24 +1,24 @@
+ # ผลการทดลองวันที่ 12 พฤศจิกายน 2569
+ 
+-[รายงานผล Word](Week07_Results_TH.docx) อธิบายวิธีทดลองไว้ก่อนผลและมีคำอธิบายใต้กราฟทุกภาพ ตัวชี้วัดหลักคือ M1 = 1/mean(T) หน่วย Hz และ M2 = mean(|Tₙ − Tₙ₋₁|) หน่วยวินาที นับเฉพาะคาบเต็มและผลต่างภายในช่วงต่อเนื่องเดียวกัน
++[รายงานผล Word](../lab_documents/Lab07_Report_Group7.docx) อธิบายวิธีทดลองไว้ก่อนผลและมีคำอธิบายใต้กราฟทุกภาพ ตัวชี้วัดหลักคือ M1 = 1/mean(T) หน่วย Hz และ M2 = mean(|Tₙ − Tₙ₋₁|) หน่วยวินาที นับเฉพาะคาบเต็มและผลต่างภายในช่วงต่อเนื่องเดียวกัน
+ 
+ | คำถาม | เปิดไฟล์ |
+ |---|---|
+-| รอบใดใช้เป้าคนหรือรูปหน้า เรียง C0/C1 อย่างไร เก็บนานเท่าไร | [Run_index.csv](real_robot/summary/Run_index.csv) |
+-| เมื่อ H ลดหลังปล่อย Touch แล้ว φ ที่ใช้เปลี่ยนไปเท่าไร | [ค่าที่บันทึกหลังปล่อย](real_robot/summary/Happy_H_phi_samples.csv) |
+-| คาบของสัญญาณ o₁ เปลี่ยนอย่างไร | [CPG_cycles.csv](real_robot/summary/CPG_cycles.csv) และ [ตัวชี้วัดแยกคู่และสถานะ](real_robot/summary/Worksheet_M1_M2.csv) |
+-| มอเตอร์ฐานส่ายจริงเท่าไร | [คาบจาก encoder ID1](real_robot/summary/Happy_dance_cycles.csv) และ [ค่าเฉลี่ยตามช่วงสิ่งเร้า](real_robot/summary/Happy_ON_OFF_periods.csv) |
+-| แบบจำลองให้ผลใดเมื่อสองเงื่อนไขใช้บริบทท่าและเฟสเริ่มต้นเดียวกัน | [ตารางจากแบบจำลอง](simulation/Worksheet_M1_M2.csv) และ [ข้อสมมติ](simulation/README_TH.md) |
++| รอบใดใช้เป้าคนหรือรูปหน้า เรียง C0/C1 อย่างไร เก็บนานเท่าไร | [Run_index.csv](../../3-results/real_robot/summary/Run_index.csv) |
++| เมื่อ H ลดหลังปล่อย Touch แล้ว φ ที่ใช้เปลี่ยนไปเท่าไร | [ค่าที่บันทึกหลังปล่อย](../../3-results/real_robot/summary/Happy_H_phi_samples.csv) |
++| คาบของสัญญาณ o₁ เปลี่ยนอย่างไร | [CPG_cycles.csv](../../3-results/real_robot/summary/CPG_cycles.csv) และ [ตัวชี้วัดแยกคู่และสถานะ](../../3-results/real_robot/summary/Worksheet_M1_M2.csv) |
++| มอเตอร์ฐานส่ายจริงเท่าไร | [คาบจาก encoder ID1](../../3-results/real_robot/summary/Happy_dance_cycles.csv) และ [ค่าเฉลี่ยตามช่วงสิ่งเร้า](../../3-results/real_robot/summary/Happy_ON_OFF_periods.csv) |
++| แบบจำลองให้ผลใดเมื่อสองเงื่อนไขใช้บริบทท่าและเฟสเริ่มต้นเดียวกัน | [ตารางจากแบบจำลอง](../../3-results/simulation/Worksheet_M1_M2.csv) และ [ข้อสมมติ](simulation_th.md) |
+ 
+ ใน [P1](real_robot/P1/), [P2](real_robot/P2/) และ [P3](real_robot/P3/) มี C0 และ C1 ครบ ภายในแต่ละเงื่อนไข `control.csv` เก็บ S, H, R, φ, o₁/o₂ และสถานะ `all_CPG_banks.csv` เก็บจังหวะของตัวกำเนิดแต่ละตัวแม้ขณะยังไม่ได้เลือกใช้ ส่วน `five_joint_feedback.csv` เป็นคำสั่งมอเตอร์และค่าที่ encoder อ่านได้จริงครบห้าข้อ เวลาของโมเดล ตัวกำเนิด และมอเตอร์มีคอลัมน์นาฬิกาของตนเอง
+ 
+-ไฟล์ใน `original/` เป็นบันทึกจากรอบนั้นพร้อมข้อมูลยืนยันตัวเปิด `present` ของ LampBio-Inpire และการตรวจช่วง 0 ≤ t < 180 วินาที [รายการรอบที่กันออก](real_robot/excluded_attempts.json) บอกสาเหตุและจำนวนตัวอย่าง ข้อความสาเหตุการหยุดและชื่อเส้นทางในบันทึกเดิมคงตามที่ Pi รายงานขณะทดลอง ข้อมูลของรอบที่กันออกไม่ได้ใช้คำนวณผลในตาราง
++ไฟล์ใน `original/` เป็นบันทึกจากรอบนั้นพร้อมข้อมูลยืนยันตัวเปิด `present` ของ LampBio-Inpire และการตรวจช่วง 0 ≤ t < 180 วินาที [รายการรอบที่กันออก](../../3-results/real_robot/excluded_attempts.json) บอกสาเหตุและจำนวนตัวอย่าง ข้อความสาเหตุการหยุดและชื่อเส้นทางในบันทึกเดิมคงตามที่ Pi รายงานขณะทดลอง ข้อมูลของรอบที่กันออกไม่ได้ใช้คำนวณผลในตาราง
+ 
+ 
+ ## แบบฝึก interface ของอาจารย์
+ 
+-[ผล bridge บนเวลาเสมือน 22 วินาที](course_bridge/README_TH.md) เปรียบเทียบการส่ง ideal กับการส่งที่มี delay/drop ส่วน [การทดสอบ ROS 2 สามโหนดบนคอม](course_ros/README_TH.md) มี bag และยอดจริงของเจ็ดหัวข้อ งานวิจัยของโคมใช้ตัวแปร R=S หรือ R=H ในสามคู่รอบละ 180 วินาทีตามตารางด้านบน
++[ผล bridge บนเวลาเสมือน 22 วินาที](course_bridge_th.md) เปรียบเทียบการส่ง ideal กับการส่งที่มี delay/drop ส่วน [การทดสอบ ROS 2 สามโหนดบนคอม](course_ros_th.md) มี bag และยอดจริงของเจ็ดหัวข้อ งานวิจัยของโคมใช้ตัวแปร R=S หรือ R=H ในสามคู่รอบละ 180 วินาทีตามตารางด้านบน
+ 
+-[ตาราง 13 หัวข้อและข้อจำกัด](../04_Design/TOPIC_COVERAGE.csv) และ [ข้อมูลรายรอบ](real_robot/summary/Topic_coverage_by_run.csv) แสดงว่าค่าใดมาจากสคริปต์ ค่าใดอ่านจากหุ่น และค่าใดมีเฉพาะช่วงเริ่ม
++[ตาราง 13 หัวข้อและข้อจำกัด](../../3-results/coverage/topic_coverage.csv) และ [ข้อมูลรายรอบ](../../3-results/real_robot/summary/Topic_coverage_by_run.csv) แสดงว่าค่าใดมาจากสคริปต์ ค่าใดอ่านจากหุ่น และค่าใดมีเฉพาะช่วงเริ่ม
+ 
+-ไฟล์ `native_topics.csv` ของแต่ละรอบรวมค่าที่ดึงย้อนจากบันทึกเดิมตามเวลาของรอบนั้น ตัวอย่าง [คู่ที่ 1 C0](real_robot/P1/C0/native_topics.csv) และ [คู่ที่ 1 C1](real_robot/P1/C1/native_topics.csv) คอลัมน์ `native_source` ระบุที่มา และ `scope` บอกว่าแถวนั้นอยู่ในช่วงวัดหรือช่วงเตรียมเริ่ม
++ไฟล์ `native_topics.csv` ของแต่ละรอบรวมค่าที่ดึงย้อนจากบันทึกเดิมตามเวลาของรอบนั้น ตัวอย่าง [คู่ที่ 1 C0](../../3-results/real_robot/P1/C0/native_topics.csv) และ [คู่ที่ 1 C1](../../3-results/real_robot/P1/C1/native_topics.csv) คอลัมน์ `native_source` ระบุที่มา และ `scope` บอกว่าแถวนั้นอยู่ในช่วงวัดหรือช่วงเตรียมเริ่ม
+--- 04_Design/README_TH.md
++++ 1-docs/markdown/design_notes_th.md
+@@ -1,6 +1,6 @@
+ # สถาปัตยกรรมโคมและการบันทึกข้อมูล
+ 
+-[แผนภาพระบบ](Lamp_data_flow.png) · [Mermaid ที่แก้ไขได้](Lamp_data_flow.mmd) · [ผังสายที่กลุ่มยืนยัน](LampBio-Inpire_Wiring_User_Final.jpg)
++[แผนภาพระบบ](../../4-figures/lamp_data_flow.png) · [Mermaid ที่แก้ไขได้](../../4-figures/lamp_data_flow.mmd) · [ผังสายที่กลุ่มยืนยัน](../../4-figures/lampbio-inpire_wiring_user_final.jpg)
+ 
+ 1. ตัวเก็บการทดลองป้อน Button, Touch และ logical Near ตามตารางเดิมทั้งคู่ กล้องจริงให้ตำแหน่งสำหรับการตามหน้า GPIO และ ToF จริงยังส่งข้อมูลให้ตัวควบคุม
+ 2. FSM เลือก Normal, Interested, Happy, Angry, Afraid หรือ Sleepy สาขาควบคุมจังหวะใช้ R = S ใน C0 และ R = H ใน C1 เพื่อกำหนด φ ให้ CPG
+@@ -8,11 +8,11 @@
+ 4. Encoder และ feedback ทางไฟฟ้าบอกสถานะข้อต่อ ตัวควบคุมความปลอดภัยของ LampBio-Inpire ตรวจแรงต้านที่ ID1, ID2, ID4 และบันทึกเหตุที่ระบบร้องขอให้หยุดกับการคืนท่า
+ 5. Pi บันทึกเหตุการณ์และตัวอย่างภายในเครื่อง แล้วส่งสำเนาให้คอมตรวจ checksum และแปลงเป็น CSV
+ 
+-[สัญญาหัวข้อ ROS 2 จำนวน 13 รายการ](TOPIC_CONTRACT_13.json) ให้ชื่อ ชนิดข้อมูล หน่วย และ QoS สำหรับการออกแบบตามรายวิชา การบันทึกรอบ 180 วินาทีทั้งหกครั้งใช้ตัวบันทึก native บน Pi JSONL และ CSV มีข้อมูลในช่วงวัด 12 จาก 13 หัวข้อ ข้อมูลกรอบใบหน้าที่บันทึกได้ 4 กรอบอยู่ก่อนเริ่มจับเวลา ส่วน rosbag ของแบบฝึกบนคอมมี 7 หัวข้อ รวม 7,425 ข้อความ
++[สัญญาหัวข้อ ROS 2 จำนวน 13 รายการ](../../2-src/config/topic_contract_13.json) ให้ชื่อ ชนิดข้อมูล หน่วย และ QoS สำหรับการออกแบบตามรายวิชา การบันทึกรอบ 180 วินาทีทั้งหกครั้งใช้ตัวบันทึก native บน Pi JSONL และ CSV มีข้อมูลในช่วงวัด 12 จาก 13 หัวข้อ ข้อมูลกรอบใบหน้าที่บันทึกได้ 4 กรอบอยู่ก่อนเริ่มจับเวลา ส่วน rosbag ของแบบฝึกบนคอมมี 7 หัวข้อ รวม 7,425 ข้อความ
+ 
+ 
+ ## Bridge สามโหนดสำหรับแบบฝึกบนคอม
+ 
+-[ผังสามโหนดของ Lab 07](ROS_bridge_roles.png) และ [สัญญา 7 หัวข้อของอาจารย์](interface_contract.json) ระบุบทบาทของ /week07_inputs, /week07_interaction และ /week07_output_collector ใช้ RELIABLE, KEEP_LAST depth 10 และ VOLATILE สำหรับหัวข้อในแบบฝึก Bool, Float32, String, Float32MultiArray และ ColorRGBA ไม่มี Header ตารางเวลาแบบฝึก offline เก็บ source_id, เวลาแหล่งสัญญาณ, เวลารับและเวลาสั่งในไฟล์ข้างเคียง ส่วนหลักฐาน ROS บนคอมเก็บเวลา callback และเวลารับข้อความตามนาฬิกาของเครื่อง การเทียบกับเวลาที่หุ่นจริงขยับต้องมีแหล่งเวลาและจุดสังเกตทางกายภาพเพิ่ม ดู [ผลแบบฝึก bridge](../03_Results/course_bridge/) และ [ผล ROS 2 บนคอม](../03_Results/course_ros/)
++[ผังสามโหนดของ Lab 07](../../4-figures/ros_bridge_roles.png) และ [สัญญา 7 หัวข้อของอาจารย์](../../2-src/config/interface_contract.json) ระบุบทบาทของ /week07_inputs, /week07_interaction และ /week07_output_collector ใช้ RELIABLE, KEEP_LAST depth 10 และ VOLATILE สำหรับหัวข้อในแบบฝึก Bool, Float32, String, Float32MultiArray และ ColorRGBA ไม่มี Header ตารางเวลาแบบฝึก offline เก็บ source_id, เวลาแหล่งสัญญาณ, เวลารับและเวลาสั่งในไฟล์ข้างเคียง ส่วนหลักฐาน ROS บนคอมเก็บเวลา callback และเวลารับข้อความตามนาฬิกาของเครื่อง การเทียบกับเวลาที่หุ่นจริงขยับต้องมีแหล่งเวลาและจุดสังเกตทางกายภาพเพิ่ม ดู [ผลแบบฝึก bridge](../3-results/course_bridge/) และ [ผล ROS 2 บนคอม](../3-results/course_ros/)
+ 
+-[เทียบหัวข้อทั้ง 13 กับค่าที่บันทึกได้](TOPIC_COVERAGE.csv) และ [ยอดหลักฐานแยกตามคู่](../03_Results/real_robot/summary/Topic_coverage_by_run.csv)
++[เทียบหัวข้อทั้ง 13 กับค่าที่บันทึกได้](../../3-results/coverage/topic_coverage.csv) และ [ยอดหลักฐานแยกตามคู่](../../3-results/real_robot/summary/Topic_coverage_by_run.csv)
+--- 05_Worksheet/worksheet.md
++++ 1-docs/markdown/worksheet.md
+@@ -26,7 +26,7 @@
+ 
+ ### ระบบรับสิ่งเร้า เลือกท่าทาง และสั่งมอเตอร์อย่างไร
+ 
+-![เส้นทางข้อมูลจากอินพุตผ่านตัวควบคุมไปยังมอเตอร์ ไฟ และตัวบันทึกของ LampBio-Inpire](../04_Design/Lamp_data_flow.png)
++![เส้นทางข้อมูลจากอินพุตผ่านตัวควบคุมไปยังมอเตอร์ ไฟ และตัวบันทึกของ LampBio-Inpire](../../4-figures/lamp_data_flow.png)
+ 
+ บน Raspberry Pi 5 โปรแกรมอ่านปุ่มและสัมผัสผ่าน GPIO อ่านระยะจาก ToF ผ่าน I²C และรับภาพจากกล้อง CSI ตัวถอดจังหวะส่งเป้ามอเตอร์ผ่านผู้ควบคุม UART เพียงตัวเดียวไปยังเซอร์โวทั้งห้าข้อ FSM เลือกท่าและสีของไฟ LED 16 ดวง ส่วนเฟส CPG กำหนดความสว่างผ่าน SPI ตัวบันทึกบน Pi เก็บเป้าท่าและมุมที่ encoder อ่านได้
+ 
+@@ -40,7 +40,7 @@
+ 
+ ตั้งท่า Normal เป็นศูนย์อ้างอิง ตรวจทิศหมุนและขอบมุมของแต่ละข้อ ทดสอบการหยุดเมื่อพบแรงต้านที่ ID1, ID2, ID4 และจัดสายให้พ้นแนวเคลื่อน เคยมีรอบที่ต้องหยุดเพราะโคมสัมผัสสายด้านหลังขณะอยู่ในท่า Afraid
+ 
+-[ผังระบบฉบับแก้ไขได้](../04_Design/Lamp_data_flow.mmd) · [วงจรไฟฟ้า LampBio-Inpire](../04_Design/LampBio-Inpire_Wiring_User_Final.jpg)
++[ผังระบบฉบับแก้ไขได้](../../4-figures/lamp_data_flow.mmd) · [วงจรไฟฟ้า LampBio-Inpire](../../4-figures/lampbio-inpire_wiring_user_final.jpg)
+ 
+ ## กราฟ ROS 2 และสัญญาของ 13 topics
+ 
+@@ -80,7 +80,7 @@
+ 
+ ไฟล์ native บน Pi มีข้อมูลอย่างน้อยบางช่วงใน 12/13 กลุ่มของแต่ละรอบหุ่นจริง ส่วนกรอบใบหน้าไม่มีบันทึกรายเฟรมต่อเนื่องตลอด 180 วินาที
+ 
+-[สัญญา 7 หัวข้อของอาจารย์](https://github.com/potiwat/RAE67_bio_ins/blob/fa528b169f1127ee3e0e9fae3d721546bf1b82d2/lab_07/interface_contract.json) · [สัญญาของโคม 13 หัวข้อ](../04_Design/TOPIC_CONTRACT_13.json) · [ข้อมูลที่พบรายหัวข้อ](../04_Design/TOPIC_COVERAGE.csv) · [ผล rosbag บน WSL](../03_Results/course_ros/message_counts.csv)
++[สัญญา 7 หัวข้อของอาจารย์](https://github.com/potiwat/RAE67_bio_ins/blob/fa528b169f1127ee3e0e9fae3d721546bf1b82d2/lab_07/interface_contract.json) · [สัญญาของโคม 13 หัวข้อ](../../2-src/config/topic_contract_13.json) · [ข้อมูลที่พบรายหัวข้อ](../../3-results/coverage/topic_coverage.csv) · [ผล rosbag บน WSL](../../3-results/course_ros/message_counts.csv)
+ 
+ ### การส่งข้อความและเกณฑ์ตรวจข้อมูลเก่า
+ 
+@@ -141,7 +141,7 @@
+ 
+ C0 ผ่าน 21/21 และ C1 ผ่าน 19/21 คงสอง ID ที่ขาดในตัวหารและให้เวลาเป็น N/A นโยบายของกลุ่มผ่านการตรวจ 40/40 คู่สถานะ–เหตุการณ์ (SHA-256 ย่อ 2a7d07a3cf68)
+ 
+-[เกณฑ์ก่อนรัน](../03_Results/course_bridge/preregistered_protocol.json) · [policy ของกลุ่ม](../03_Results/course_bridge/runtime/completed_policy.py) · [คำสั่งรันและผลตรวจ](../03_Results/course_bridge/README_TH.md) · [ผลราย ID](../03_Results/course_bridge/primary_outcomes.csv) · [config](../03_Results/course_bridge/runs_20261112/C1_r02/config.json) · [input trace](../03_Results/course_bridge/runs_20261112/C1_r02/input_trace.csv) · [command trace](../03_Results/course_bridge/runs_20261112/C1_r02/command_trace.csv) · [events](../03_Results/course_bridge/runs_20261112/C1_r02/events.csv) · [manifest](../03_Results/course_bridge/runs_20261112/manifest.json)
++[เกณฑ์ก่อนรัน](../../3-results/course_bridge/preregistered_protocol.json) · [policy ของกลุ่ม](../../3-results/course_bridge/runtime/completed_policy.py) · [คำสั่งรันและผลตรวจ](course_bridge_th.md) · [ผลราย ID](../../3-results/course_bridge/primary_outcomes.csv) · [config](../../3-results/course_bridge/runs_20261112/C1_r02/config.json) · [input trace](../../3-results/course_bridge/runs_20261112/C1_r02/input_trace.csv) · [command trace](../../3-results/course_bridge/runs_20261112/C1_r02/command_trace.csv) · [events](../../3-results/course_bridge/runs_20261112/C1_r02/events.csv) · [manifest](../../3-results/course_bridge/runs_20261112/manifest.json)
+ 
+ ## คำถามวิจัย สมการ และวิธีทดลอง
+ 
+@@ -198,7 +198,7 @@
+ 
+ แยกเก็บรอบที่หยุดก่อนกำหนดหรือมีสิ่งเร้าปะปน พร้อมระบุสาเหตุที่คัดออก
+ 
+-[ที่มาของสมการและ SO(2) CPG ของ Dr. Poramate](../06_References/README_TH.md) · [ดัชนีรอบหุ่นจริงและ SHA](../03_Results/real_robot/summary/Run_index.csv) · [รอบที่คัดออกและเหตุผล](../03_Results/real_robot/excluded_attempts.json)
++[ที่มาของสมการและ SO(2) CPG ของ Dr. Poramate](../references/README.md) · [ดัชนีรอบหุ่นจริงและ SHA](../../3-results/real_robot/summary/Run_index.csv) · [รอบที่คัดออกและเหตุผล](../../3-results/real_robot/excluded_attempts.json)
+ 
+ ### ตัวชี้วัดและหลักจัดการข้อมูลที่วัดไม่ได้
+ 
+@@ -225,13 +225,13 @@
+ 
+ หากระบบแจ้งแรงต้าน ให้ผู้เล่นเอาสิ่งกีดขวางออกและเว้นแนวเคลื่อน หากการเคลื่อนผิดปกติให้หยุดฉุกเฉิน
+ 
+-[คลิปชุด present](../07_Evidence/present/IMG_4568.MOV) · [ชมทาง YouTube](https://youtu.be/-zckfxbT9Jk?feature=shared) · [ข้อมูลข้อต่อ](../07_Evidence/present/present_feedback.csv) · [เหตุการณ์ระหว่างเล่น](../07_Evidence/present/present_events.csv)
++[คลิปชุด present](../../3-results/evidence/present/IMG_4568.MOV) · [ชมทาง YouTube](https://youtu.be/-zckfxbT9Jk?feature=shared) · [ข้อมูลข้อต่อ](../../3-results/evidence/present/present_feedback.csv) · [เหตุการณ์ระหว่างเล่น](../../3-results/evidence/present/present_events.csv)
+ 
+ ### ผลการทดลอง AHM–CPG
+ 
+ ### สิ่งเร้าส่งผลถึงฐานโคมอย่างไรในช่วง Happy
+ 
+-![ค่า R ค่า φ สัญญาณ o₁ และมุมฐานจาก encoder ในคู่ P1](../03_Results/Figures/01_Happy_input_CPG_and_encoder.png)
++![ค่า R ค่า φ สัญญาณ o₁ และมุมฐานจาก encoder ในคู่ P1](../../3-results/figures/01_Happy_input_CPG_and_encoder.png)
+ 
+ รูปที่ 1 คู่ P1 ช่วง 39–67 s แถบเทาคือช่วงค้าง Touch แถวบนลงล่างแสดง R, φ, คลื่น o₁ และมุมฐานจาก encoder ID1 เทียบกับมัธยฐานช่วง 45–59 s เส้นสีน้ำเงินคือ C0 และสีส้มคือ C1 จุดสีส้มชี้ให้เห็นว่าเมื่อปล่อย Touch แล้ว H ยังเหลือประมาณ 0.50 ที่ 0.95 s และ 0.10 ที่ 2.89 s หลังปล่อย
+ 
+@@ -249,11 +249,11 @@
+ | 0.947 | 0.4996 | 0.12399 | 0.11798 |
+ | 2.892 | 0.1017 | 0.11920 | 0.11798 |
+ 
+-[ตัวอย่าง H และ φ หลังปล่อย Touch](../03_Results/real_robot/summary/Happy_H_phi_samples.csv) · [คาบ CPG รายรอบ](../03_Results/real_robot/summary/CPG_cycles.csv)
++[ตัวอย่าง H และ φ หลังปล่อย Touch](../../3-results/real_robot/summary/Happy_H_phi_samples.csv) · [คาบ CPG รายรอบ](../../3-results/real_robot/summary/CPG_cycles.csv)
+ 
+ ### คาบหลังปล่อย Touch ทั้งสามคู่
+ 
+-![คาบของ CPG และคาบการส่ายฐานจาก encoder เมื่อปล่อย Touch ในคู่ P1 P2 และ P3](../03_Results/Figures/02_Touch_release_all_pairs.png)
++![คาบของ CPG และคาบการส่ายฐานจาก encoder เมื่อปล่อย Touch ในคู่ P1 P2 และ P3](../../3-results/figures/02_Touch_release_all_pairs.png)
+ 
+ รูปที่ 2 แต่ละคอลัมน์คือหนึ่งคู่ เมื่อปล่อย Touch ที่ 59 s แถวบนแสดง φ ของ C0 (สีน้ำเงิน) ลดทันทีจาก 0.130 เป็น 0.118 rad/update ส่วน C1 (สีส้ม) ค่อย ๆ ลดตาม H แถวกลางคือคาบ CPG แถวล่างคือคาบการส่ายฐานที่ encoder ID1 วัดจริง แต่ละจุดแสดงคาบที่วัดครบ ณ เวลานั้น จุดยิ่งสูง คาบยิ่งยาวและจังหวะยิ่งช้า หลังปล่อย ฐานใน C1 ยังส่ายเร็วกว่าชั่วคราวทั้งสามคู่ เฉลี่ยแบบให้น้ำหนักแต่ละคู่เท่ากัน C1 อยู่ที่ 2.750 เทียบกับ C0 2.806 วินาทีต่อคาบ โดยวัดได้เพียง 1–2 คาบเต็มต่อรอบ
+ 
+@@ -269,7 +269,7 @@
+ 
+ ในซอฟต์แวร์จำลอง 3 คู่ รอบละ 180 s โดยใช้บริบทจาก C0 ร่วมกันภายในคู่ แต่ละรอบ Happy มี 7 คาบเต็มและ 6 คู่คาบ M1 เฉลี่ยของ C0 / C1 เท่ากับ 0.343372 / 0.345161 Hz และ M2 เท่ากับ 0.053671 / 0.053530 s
+ 
+-[คาบการส่ายฐานจาก encoder](../03_Results/real_robot/summary/Happy_ON_OFF_periods.csv) · [ผล M1/M2 บนหุ่นจริง](../03_Results/real_robot/summary/Worksheet_M1_M2.csv) · [ผล M1/M2 ในซอฟต์แวร์](../03_Results/simulation/Worksheet_M1_M2.csv)
++[คาบการส่ายฐานจาก encoder](../../3-results/real_robot/summary/Happy_ON_OFF_periods.csv) · [ผล M1/M2 บนหุ่นจริง](../../3-results/real_robot/summary/Worksheet_M1_M2.csv) · [ผล M1/M2 ในซอฟต์แวร์](../../3-results/simulation/Worksheet_M1_M2.csv)
+ 
+ ### สิ่งเร้ากับสถานะทั้งหก
+ 
+@@ -284,7 +284,7 @@
+ | Afraid | 9 / 10 | 0.1976 / 0.1976 | 6 / 7 | 0.00094 / 0.00097 |
+ | Sleepy | 12 / 10 | 0.1470 / 0.1470 | 9 / 7 | 0.00004 / 0.00004 |
+ 
+-![สิ่งเร้าตามสคริปต์ ค่า φ และสถานะทั้งหกในคู่ P1](../03_Results/Figures/03_Six_state_timeline.png)
++![สิ่งเร้าตามสคริปต์ ค่า φ และสถานะทั้งหกในคู่ P1](../../3-results/figures/03_Six_state_timeline.png)
+ 
+ รูปที่ 3 คู่ P1 ช่วง 0–180 s อ่านตามแนวตั้งจาก R ไปยัง φ และสถานะของ FSM ปุ่มฐานนำไปสู่ Interested การค้าง Touch นำไปสู่ Happy การสัมผัสสามครั้งนำไปสู่ Angry และ Near นำไปสู่ Afraid เมื่อว่าง โคมกลับ Normal และเข้าสู่ Sleepy ช่วง Interested และ Angry สั้นเกินกว่าจะวัดคาบเต็มตามเกณฑ์ได้
+ 
+@@ -341,14 +341,14 @@
+ 
+ ### เช็กลิสต์เอกสารส่ง Week 07
+ 
+-[ผังระบบและสัญญา 7 topics](../04_Design/interface_contract.json)
+-
+-[ผล bridge หกรอบและเหตุการณ์ที่ขาด](../03_Results/course_bridge/README_TH.md)
+-
+-[Proposal ฉบับปัจจุบัน](../01_Proposal/Week07_Proposal_Current_TH.docx)
+-
+-[ไฟล์ proposal.json](../01_Proposal/proposal.json)
+-
+-[รายงานผลและกราฟสามคู่](../03_Results/Week07_Results_TH.docx)
+-
+-[คลิปเล่นกับคนและ CSV ของชุด present](../07_Evidence/present/README_TH.md)
++[ผังระบบและสัญญา 7 topics](../../2-src/config/interface_contract.json)
++
++[ผล bridge หกรอบและเหตุการณ์ที่ขาด](course_bridge_th.md)
++
++[Proposal ฉบับปัจจุบัน](../lab_documents/Lab07_Proposal_Group7.docx)
++
++[ไฟล์ proposal.json](../../2-src/proposal/proposal.json)
++
++[รายงานผลและกราฟสามคู่](../lab_documents/Lab07_Report_Group7.docx)
++
++[คลิปเล่นกับคนและ CSV ของชุด present](evidence_present_th.md)
+--- 06_References/README_TH.md
++++ 1-docs/references/README.md
+@@ -7,4 +7,4 @@
+ - [Lab 4 ของกลุ่ม](https://github.com/menulis4725/Lab_Bio-Inspire/tree/main/Week_04_Lab_04) และ [ซอร์สการคำนวณฮอร์โมน](student_hormone.py.txt)
+ - [Lab 5 ของกลุ่ม](https://github.com/menulis4725/Lab_Bio-Inspire/tree/main/Week_05_Lab_05) และ [สมการรวมของรายวิชา](course_model.py.txt)
+ 
+-ค่าที่ใช้กับโคมจริงและข้อจำกัดของการวัดระบุใน [รายงานผล](../03_Results/Week07_Results_TH.docx) แหล่งอ้างอิงข้างต้นใช้ระบุที่มาของสมการ
++ค่าที่ใช้กับโคมจริงและข้อจำกัดของการวัดระบุใน [รายงานผล](../lab_documents/Lab07_Report_Group7.docx) แหล่งอ้างอิงข้างต้นใช้ระบุที่มาของสมการ
+--- 07_Evidence/present/README_TH.md
++++ 1-docs/markdown/evidence_present_th.md
+@@ -1,15 +1,15 @@
+ # คลิปเล่นกับโคมจริงและข้อมูลรอบเดียวกัน
+ 
+-**[ดูคลิปบน YouTube](https://youtu.be/-zckfxbT9Jk?feature=shared)** · [วิดีโอต้นฉบับ IMG_4568.MOV](IMG_4568.MOV)
++**[ดูคลิปบน YouTube](https://youtu.be/-zckfxbT9Jk?feature=shared)** · [วิดีโอต้นฉบับ IMG_4568.MOV](../../3-results/evidence/present/IMG_4568.MOV)
+ 
+ ผู้เล่นโต้ตอบกับโคม LampBio-Inpire ผ่านตัวเปิดที่เรียกในชุดส่งนี้ว่า `present` เมื่อวันที่ 12 พฤศจิกายน 2569 วิดีโอยาว **632.180 วินาที** และช่วงเวลา feedback แรกถึงสุดท้ายยาว **631.926 วินาที** (ต่างกัน 0.254 วินาที) ไฟล์ที่แนบมี SHA-256 ตรงกับต้นฉบับบน Desktop ทั้งไฟล์ ระยะเวลาที่ใกล้กันเพียงอย่างเดียวยังระบุตำแหน่งเฟรมที่ตรงกับเวลา 0 ของ CSV ไม่ได้
+ 
+ | ไฟล์ | สิ่งที่วัด |
+ |---|---|
+-| [present_feedback.csv](present_feedback.csv) | 64,212 แถว ครบ ID1–5 และพบทั้ง 6 อารมณ์ มีเป้ามอเตอร์ ตำแหน่ง encoder ความเร็ว โหลด กระแสในหน่วยรีจิสเตอร์ แรงดันและอุณหภูมิ |
+-| [present_events.csv](present_events.csv) | 338 รายการจากทั้ง 4 ช่วง มีบริบทการเล่นและเหตุการณ์ระบบ Safety |
+-| [Last_Owner_FSM_Events.csv](Last_Owner_FSM_Events.csv) | บันทึก FSM ที่ตัวเปิดเก็บไว้เฉพาะช่วงสุดท้าย |
+-| [Last_Viewer_Status.json](Last_Viewer_Status.json) | สถานะกล้อง ระยะ จังหวะ และประวัติขอบ GPIO ที่ยังอยู่ในตัวเก็บของช่วงสุดท้าย เป็นภาพสถานะหนึ่งเวลา |
+-| [SESSION_VERIFICATION.json](SESSION_VERIFICATION.json) | ช่วงเวลา จำนวนแถวแยกข้อ ข้อมูลวิดีโอ และ SHA-256 ของไฟล์ |
++| [present_feedback.csv](../../3-results/evidence/present/present_feedback.csv) | 64,212 แถว ครบ ID1–5 และพบทั้ง 6 อารมณ์ มีเป้ามอเตอร์ ตำแหน่ง encoder ความเร็ว โหลด กระแสในหน่วยรีจิสเตอร์ แรงดันและอุณหภูมิ |
++| [present_events.csv](../../3-results/evidence/present/present_events.csv) | 338 รายการจากทั้ง 4 ช่วง มีบริบทการเล่นและเหตุการณ์ระบบ Safety |
++| [Last_Owner_FSM_Events.csv](../../3-results/evidence/present/Last_Owner_FSM_Events.csv) | บันทึก FSM ที่ตัวเปิดเก็บไว้เฉพาะช่วงสุดท้าย |
++| [Last_Viewer_Status.json](../../3-results/evidence/present/Last_Viewer_Status.json) | สถานะกล้อง ระยะ จังหวะ และประวัติขอบ GPIO ที่ยังอยู่ในตัวเก็บของช่วงสุดท้าย เป็นภาพสถานะหนึ่งเวลา |
++| [SESSION_VERIFICATION.json](../../3-results/evidence/present/SESSION_VERIFICATION.json) | ช่วงเวลา จำนวนแถวแยกข้อ ข้อมูลวิดีโอ และ SHA-256 ของไฟล์ |
+ 
+ เปิดหน้าต่างครั้งเดียว ตัวบันทึกมอเตอร์แบ่งเป็น 4 ช่วงระหว่างการเล่นและการคืนท่าจาก Safety มีคำร้องหยุดจาก ID1, ID4 และ ID2 ตามลำดับ `elapsed_s` นับจาก feedback แรกของหน้าต่างนั้น และ `recording` บอกช่วงที่มาของแถวนั้น การสาธิตนี้แยกจากรอบเปรียบเทียบ C0/C1 ที่กำหนดสิ่งเร้าไว้ล่วงหน้า
+--- 03_Results/course_bridge/README_TH.md
++++ 1-docs/markdown/course_bridge_th.md
+@@ -6,7 +6,7 @@
+ 
+ ## คำถามและวิธีทดลอง
+ 
+-เมื่อใช้ FSM และชุดสิ่งเร้าเดิม ความล่าช้าและการทิ้งข้อความมีผลต่อการตอบสนองและการตรวจข้อมูลขาดความสดอย่างไร? ก่อนเก็บผล กลุ่มคาดว่าโปรไฟล์ stressed จะเพิ่มอายุข้อความ จำนวนข้อความที่ทิ้ง และข้อความผิดลำดับ ซึ่งอาจเพิ่มจำนวนช่วง fault และจำนวนเหตุการณ์ที่ตอบสนองไม่ครบ คำถามและสมมติฐานนี้อยู่ในบันทึกการออกแบบของกลุ่มลงวันที่ 26 ตุลาคม วันที่ 12 พฤศจิกายน เวลา 22:05:17 น. กลุ่มตรึงรายการอินพุต, deadline, หน้าต่างสังเกต และ seeds ซ้ำก่อนรันใหม่ ตัวตรวจของอาจารย์ตรวจผ่าน 40/40 คู่สถานะ–เหตุการณ์ เวลา 22:06 น. ตามเวลาไทย [บันทึกการออกแบบก่อนมีผล](group_protocol_before_results_TH.md) · [เงื่อนไขที่ตรึงสำหรับรอบนี้](preregistered_protocol.json) · [คำสั่งและเวลาที่รันจริง](execution_record.json)
++เมื่อใช้ FSM และชุดสิ่งเร้าเดิม ความล่าช้าและการทิ้งข้อความมีผลต่อการตอบสนองและการตรวจข้อมูลขาดความสดอย่างไร? ก่อนเก็บผล กลุ่มคาดว่าโปรไฟล์ stressed จะเพิ่มอายุข้อความ จำนวนข้อความที่ทิ้ง และข้อความผิดลำดับ ซึ่งอาจเพิ่มจำนวนช่วง fault และจำนวนเหตุการณ์ที่ตอบสนองไม่ครบ คำถามและสมมติฐานนี้อยู่ในบันทึกการออกแบบของกลุ่มลงวันที่ 26 ตุลาคม วันที่ 12 พฤศจิกายน เวลา 22:05:17 น. กลุ่มตรึงรายการอินพุต, deadline, หน้าต่างสังเกต และ seeds ซ้ำก่อนรันใหม่ ตัวตรวจของอาจารย์ตรวจผ่าน 40/40 คู่สถานะ–เหตุการณ์ เวลา 22:06 น. ตามเวลาไทย [บันทึกการออกแบบก่อนมีผล](group_protocol_before_results_th.md) · [เงื่อนไขที่ตรึงสำหรับรอบนี้](../../3-results/course_bridge/preregistered_protocol.json) · [คำสั่งและเวลาที่รันจริง](../../3-results/course_bridge/execution_record.json)
+ 
+ - นโยบายใช้ normal, interested, happy, afraid และ sleepy เมื่ออยู่นอก afraid การแตะเข้า happy ส่วนปุ่มและ approach เข้า interested นโยบายที่รันตรงกับไฟล์กลุ่มเดิมแบบไบต์ต่อไบต์ ค่า SHA-256 คือ `2a7d07a3cf685a248becc075cb23c06e8bbe7af41631ccf6cb23d8e8cc16159c`
+ - ทุกคู่ใช้เวลาจำลอง 0–22.00 s รวมปลายทั้งสองข้างที่ dt = 0.02 s จึงมี 1,101 ticks และ 3,303 ข้อความจากสามช่องอินพุต ตัวหน่วงการออกคำสั่งเท่ากับ 0.04 s ตัวกรองป้องกันสัญญาณรบกวน เส้นทาง FSM และข้อจำกัดคำสั่งเหมือนกันทั้งคู่ ใช้ seed 41, 42 และ 43 จับคู่ข้อความต้นทางและ noise
+@@ -24,7 +24,7 @@
+ | 43 | C0 ideal | 7 | 0 | 0 | 0.04 / 0.14 | 20 | 9 |
+ | 43 | C1 stressed | 7 | 0 | 0 | 0.10 / 0.18 | 56 | 17 |
+ 
+-มัธยฐานเวลาตอบสนองเมื่อรวมเฉพาะเหตุการณ์ที่พบ onset ครบเป็น 0.04 s ใน C0 (21 เหตุการณ์) และ 0.12 s ใน C1 (19 เหตุการณ์) เหตุการณ์ `clear_02` ของ seed 41 และ `button_02` ของ seed 42 มีจำนวนการรู้จำตรงกับ ID และชนิดเหตุการณ์เท่ากับศูนย์ ทั้งสองรายการคงอยู่ในตัวหาร 7 ของรอบนั้นและมี latency เป็น N/A [ผลครบทั้ง 42 อินพุตหลัก](primary_outcomes.csv) · [ผลสรุปรายรอบ](transport_summary.csv)
++มัธยฐานเวลาตอบสนองเมื่อรวมเฉพาะเหตุการณ์ที่พบ onset ครบเป็น 0.04 s ใน C0 (21 เหตุการณ์) และ 0.12 s ใน C1 (19 เหตุการณ์) เหตุการณ์ `clear_02` ของ seed 41 และ `button_02` ของ seed 42 มีจำนวนการรู้จำตรงกับ ID และชนิดเหตุการณ์เท่ากับศูนย์ ทั้งสองรายการคงอยู่ในตัวหาร 7 ของรอบนั้นและมี latency เป็น N/A [ผลครบทั้ง 42 อินพุตหลัก](../../3-results/course_bridge/primary_outcomes.csv) · [ผลสรุปรายรอบ](../../3-results/course_bridge/transport_summary.csv)
+ 
+ | Seed | โปรไฟล์ | รับ / ส่ง | รับเข้าใช้ | ทิ้งหลังรับเพราะผิดลำดับ | ทิ้งระหว่างส่ง | เลยหน้าต่าง 22 s | อายุข้อความเฉลี่ย / สูงสุดที่รับได้ (s) |
+ |---:|---|---:|---:|---:|---:|---:|---:|
+@@ -43,7 +43,7 @@
+ 
+ ## ขอบเขตและหลักฐาน
+ 
+-เจ็ด application topics ประกอบด้วย button/touch แบบ Bool, distance แบบ Float32 หน่วย m, interaction และ emotion แบบ String, servo_command แบบ Float32MultiArray หน่วย rad ตามลำดับ [tilt, extend, nod] และ rgb_command แบบ ColorRGBA ค่า RGB หาร 255 และ alpha = 1 สัญญา ROS กำหนด RELIABLE, KEEP_LAST depth 10, VOLATILE ตัวอย่างคำสั่งในไฟล์จริงของการจำลอง C0/41 ที่ 1.14 s เป็น interested ให้ [0.016, 0.016, 0.016] rad และ [1.0, 0.70588235, 0.0, 1.0] [สัญญาเจ็ด topic](runtime/interface_contract.json) · [คำสั่งที่บันทึกของ C0/41](runs_20261112/C0_r01/command_trace.csv)
++เจ็ด application topics ประกอบด้วย button/touch แบบ Bool, distance แบบ Float32 หน่วย m, interaction และ emotion แบบ String, servo_command แบบ Float32MultiArray หน่วย rad ตามลำดับ [tilt, extend, nod] และ rgb_command แบบ ColorRGBA ค่า RGB หาร 255 และ alpha = 1 สัญญา ROS กำหนด RELIABLE, KEEP_LAST depth 10, VOLATILE ตัวอย่างคำสั่งในไฟล์จริงของการจำลอง C0/41 ที่ 1.14 s เป็น interested ให้ [0.016, 0.016, 0.016] rad และ [1.0, 0.70588235, 0.0, 1.0] [สัญญาเจ็ด topic](../../3-results/course_bridge/runtime/interface_contract.json) · [คำสั่งที่บันทึกของ C0/41](../../3-results/course_bridge/runs_20261112/C0_r01/command_trace.csv)
+ 
+ การทดลองนี้ใช้ process เดียวและนาฬิกาเสมือนร่วมกัน ค่า latency สิ้นสุดที่การเปลี่ยนคำสั่งจำลอง การวัด ROS/DDS บนเครือข่ายและการวัดมุมหรือแสงจากโคม Raspberry Pi 5 ต้องใช้บันทึกคนละชนิด ข้อความของทั้งเจ็ด topic ไม่มี Header เชื่อม ID และเวลา acquisition กับผู้รับ การอนุมานเวลา source-to-physical ต้องมีการเชื่อมเวลาและการวัด onset ที่ตัวอุปกรณ์
+ 
+@@ -52,14 +52,14 @@
+ | นโยบายที่ตรวจและตัวตรวจฉบับอาจารย์ | `runtime/completed_policy.py`, `runtime/check_submission.py` |
+ | ตัวรันอย่างเป็นทางการและสมการรายวิชา | `runtime/offline_lab.py`, `runtime/lamp_week07/` |
+ | ผลดิบแต่ละรอบ | `runs_20261112/C0_r01` ถึง `C1_r03` ภายในมี `input_trace.csv`, `command_trace.csv`, `events.csv`, `config.json`, `metrics.json` |
+-| รายงานและตัวตรวจความครบของรอบหลัก | [รายงาน HTML ของอาจารย์](runs_20261112/report.html) · [ผลรวมจากตัวรัน](runs_20261112/summary.json) · [SHA-256](runs_20261112/manifest.json) · [สำเนา source ที่ใช้รัน](runs_20261112/source_snapshot/) |
+-| Replay จากอินพุต C1/42 | [รายงาน replay](replay_seed42_20261112/report.html) · [SHA-256 ของ replay](replay_seed42_20261112/manifest.json) · [ผลเทียบไบต์และ hash ของ trace ทั้งสาม](verification.json) |
++| รายงานและตัวตรวจความครบของรอบหลัก | [รายงาน HTML ของอาจารย์](../../3-results/course_bridge/runs_20261112/report.html) · [ผลรวมจากตัวรัน](../../3-results/course_bridge/runs_20261112/summary.json) · [SHA-256](../../3-results/course_bridge/runs_20261112/manifest.json) · [สำเนา source ที่ใช้รัน](runs_20261112/source_snapshot/) |
++| Replay จากอินพุต C1/42 | [รายงาน replay](../../3-results/course_bridge/replay_seed42_20261112/report.html) · [SHA-256 ของ replay](../../3-results/course_bridge/replay_seed42_20261112/manifest.json) · [ผลเทียบไบต์และ hash ของ trace ทั้งสาม](../../3-results/course_bridge/verification.json) |
+ 
+-Replay อ่านตารางหน่วงเวลาและการทิ้งข้อความจริงจาก `runs_20261112/C1_r02/input_trace.csv` ผล `input_trace.csv`, `command_trace.csv` และ `events.csv` ของ replay ตรงกับรอบนั้นทุกไบต์ ตัวรันเรียกรอบเดี่ยวในโฟลเดอร์ replay ว่า `C1_r01` และอ่าน seed 42 จาก config ข้างไฟล์อินพุต การตรวจย้อนกลับเทียบ source ที่ตรึงไว้กับ Git ต้นทางและเทียบ hash ของไฟล์หลักฐาน 36 ไฟล์ในรอบหลักกับ 11 ไฟล์ใน replay [ที่มาของ source และ SHA-256](source_provenance.json) · [บทปฏิบัติการต้นทางฉบับที่ใช้](https://github.com/potiwat/RAE67_bio_ins/tree/fa528b169f1127ee3e0e9fae3d721546bf1b82d2/lab_07)
++Replay อ่านตารางหน่วงเวลาและการทิ้งข้อความจริงจาก `runs_20261112/C1_r02/input_trace.csv` ผล `input_trace.csv`, `command_trace.csv` และ `events.csv` ของ replay ตรงกับรอบนั้นทุกไบต์ ตัวรันเรียกรอบเดี่ยวในโฟลเดอร์ replay ว่า `C1_r01` และอ่าน seed 42 จาก config ข้างไฟล์อินพุต การตรวจย้อนกลับเทียบ source ที่ตรึงไว้กับ Git ต้นทางและเทียบ hash ของไฟล์หลักฐาน 36 ไฟล์ในรอบหลักกับ 11 ไฟล์ใน replay [ที่มาของ source และ SHA-256](../../3-results/course_bridge/source_provenance.json) · [บทปฏิบัติการต้นทางฉบับที่ใช้](https://github.com/potiwat/RAE67_bio_ins/tree/fa528b169f1127ee3e0e9fae3d721546bf1b82d2/lab_07)
+ 
+ ## ตรวจหรือรันใหม่
+ 
+-เปิดเทอร์มินัลใน `03_Results/course_bridge` ใช้ Python 3.10 ขึ้นไป ตัวรันใช้เฉพาะ standard library ตรวจชุดผลที่จัดส่งด้วยคำสั่งนี้
++เปิดเทอร์มินัลใน `3-results/course_bridge` ใช้ Python 3.10 ขึ้นไป ตัวรันใช้เฉพาะ standard library ตรวจชุดผลที่จัดส่งด้วยคำสั่งนี้
+ 
+ ```text
+ python -B verify_results.py
+--- 03_Results/course_ros/README_TH.md
++++ 1-docs/markdown/course_ros_th.md
+@@ -12,7 +12,7 @@
+ | `/week07_interaction` → `/week07_output_collector` | `/lamp/servo_command` | `std_msgs/msg/Float32MultiArray` ลำดับ tilt, extend, nod (rad) |
+ | `/week07_interaction` → `/week07_output_collector` | `/lamp/rgb_command` | `std_msgs/msg/ColorRGBA` ช่องสี 0–1 และ α = 1 |
+ 
+-พบจุดเผยแพร่และรับจากสามโหนดหลัก 14 จุด และจุดรับของ `/rosbag2_recorder` อีก 7 จุด ผู้สังเกตกราฟบันทึกชื่อโหนด ชนิดข้อความ และ GID ของแต่ละจุด Fast DDS รายงาน `RELIABLE` และ `VOLATILE` ทุกจุด ส่วน history/depth ที่ถามผ่านเครือข่ายคืนค่า `UNKNOWN/0` โค้ดของโหนดกำหนด `KEEP_LAST` และ depth 10 [จุดเชื่อมต่อที่สังเกต](observed_endpoints.csv) · [ภาพรวมกราฟที่บันทึก](observed_graph.json)
++พบจุดเผยแพร่และรับจากสามโหนดหลัก 14 จุด และจุดรับของ `/rosbag2_recorder` อีก 7 จุด ผู้สังเกตกราฟบันทึกชื่อโหนด ชนิดข้อความ และ GID ของแต่ละจุด Fast DDS รายงาน `RELIABLE` และ `VOLATILE` ทุกจุด ส่วน history/depth ที่ถามผ่านเครือข่ายคืนค่า `UNKNOWN/0` โค้ดของโหนดกำหนด `KEEP_LAST` และ depth 10 [จุดเชื่อมต่อที่สังเกต](../../3-results/course_ros/observed_endpoints.csv) · [ภาพรวมกราฟที่บันทึก](../../3-results/course_ros/observed_graph.json)
+ 
+ ## ผลที่วัดได้
+ 
+@@ -21,15 +21,15 @@
+ | อินพุต 3 topic | 1,101 | 1,098 | 959 |
+ | เอาต์พุต 4 topic | 1,140 | 1,137 | 1,137 |
+ 
+-โปรโตคอลกำหนด 1,101 เฟรม ตั้งแต่ 0.00 ถึง 22.00 วินาที นาฬิกาบนเครื่องวัดระหว่างบรรทัดเผยแพร่อินพุตแรกกับสุดท้ายได้ 22.0012 วินาที โหนด interaction ทำงานก่อนเริ่มและหลังสิ้นสุดสัญญาณต้นทาง จึงมีจำนวนรอบส่งเอาต์พุตต่างจากจำนวนเฟรมอินพุต ตัวรับเห็นสถานะ Normal 519 ครั้ง, Interested 268, Happy 96, Afraid 100 และ Sleepy 154 [จำนวนข้อความต่อ topic](message_counts.csv) · [ผลตรวจทั้งรอบ](verification.json)
++โปรโตคอลกำหนด 1,101 เฟรม ตั้งแต่ 0.00 ถึง 22.00 วินาที นาฬิกาบนเครื่องวัดระหว่างบรรทัดเผยแพร่อินพุตแรกกับสุดท้ายได้ 22.0012 วินาที โหนด interaction ทำงานก่อนเริ่มและหลังสิ้นสุดสัญญาณต้นทาง จึงมีจำนวนรอบส่งเอาต์พุตต่างจากจำนวนเฟรมอินพุต ตัวรับเห็นสถานะ Normal 519 ครั้ง, Interested 268, Happy 96, Afraid 100 และ Sleepy 154 [จำนวนข้อความต่อ topic](../../3-results/course_ros/message_counts.csv) · [ผลตรวจทั้งรอบ](../../3-results/course_ros/verification.json)
+ 
+-เริ่ม collector แล้วเปิด recorder ตามด้วย interaction รอจนค้นพบ subscription ของ recorder ครบเจ็ด topic ก่อนเปิด inputs หลักฐานการพร้อมบันทึกเกิดก่อนการเผยแพร่อินพุตแรก 281.047 ms รวมใน bag 7,425 ข้อความ ทั้งเจ็ด topic อ่านกลับจาก SQLite และถอดรหัส CDR ได้ครบ ข้อมูลที่ bag เก็บน้อยกว่าที่ต้นทางส่ง 142 ข้อความต่ออินพุต ในบันทึกของ interaction มีอินพุตน้อยกว่าที่ต้นทางส่ง 3 ข้อความต่อ topic ข้อความในสัญญารายวิชาไม่มี Header หรือเลขลำดับจากต้นทาง จึงระบุตัวอย่างที่ขาดแต่ละตัวจาก bag เพียงอย่างเดียวไม่ได้ และไม่มีค่าความหน่วงจากเซนเซอร์ถึงการเคลื่อนจริง [ข้อมูล bag](bag_info.txt) · [ตัวอย่างข้อความที่ถอดรหัส](message_samples.json)
++เริ่ม collector แล้วเปิด recorder ตามด้วย interaction รอจนค้นพบ subscription ของ recorder ครบเจ็ด topic ก่อนเปิด inputs หลักฐานการพร้อมบันทึกเกิดก่อนการเผยแพร่อินพุตแรก 281.047 ms รวมใน bag 7,425 ข้อความ ทั้งเจ็ด topic อ่านกลับจาก SQLite และถอดรหัส CDR ได้ครบ ข้อมูลที่ bag เก็บน้อยกว่าที่ต้นทางส่ง 142 ข้อความต่ออินพุต ในบันทึกของ interaction มีอินพุตน้อยกว่าที่ต้นทางส่ง 3 ข้อความต่อ topic ข้อความในสัญญารายวิชาไม่มี Header หรือเลขลำดับจากต้นทาง จึงระบุตัวอย่างที่ขาดแต่ละตัวจาก bag เพียงอย่างเดียวไม่ได้ และไม่มีค่าความหน่วงจากเซนเซอร์ถึงการเคลื่อนจริง [ข้อมูล bag](../../3-results/course_ros/bag_info.txt) · [ตัวอย่างข้อความที่ถอดรหัส](../../3-results/course_ros/message_samples.json)
+ 
+-บันทึกรายโหนดมี 3,303 แถวจาก inputs, 7,854 แถวจาก interaction และ 4,548 แถวจาก collector เวลาแต่ละบรรทัดเป็น `perf_counter_ns` บนโฮสต์เดียวกัน [inputs.csv](inputs.csv) · [interaction.csv](interaction.csv) · [collector.csv](collector.csv)
++บันทึกรายโหนดมี 3,303 แถวจาก inputs, 7,854 แถวจาก interaction และ 4,548 แถวจาก collector เวลาแต่ละบรรทัดเป็น `perf_counter_ns` บนโฮสต์เดียวกัน [inputs.csv](../../3-results/course_ros/inputs.csv) · [interaction.csv](../../3-results/course_ros/interaction.csv) · [collector.csv](../../3-results/course_ros/collector.csv)
+ 
+ ## ซอร์สที่ใช้และการแก้หนึ่งบรรทัด
+ 
+-ตรวจไฟล์แพ็กเกจ 10 ไฟล์เทียบ Git blob ของ commit `fa528b169f1127ee3e0e9fae3d721546bf1b82d2` ก่อน build เมื่อใช้ไฟล์อาจารย์โดยตรง Jazzy ส่ง `Float32MultiArray.data` ออกมาเป็น `array.array` และตัวเขียน CSV เรียก `json.dumps` แล้วเกิด `TypeError` ก่อนเริ่ม inputs รอบที่วัดผลใช้ `list(servo.data)` สำหรับ payload ของ CSV การเรียกเผยแพร่ไปยัง DDS ยังส่งวัตถุข้อความเดิม ตรวจ CDR ของข้อความทดสอบก่อนและหลังอ่านค่าไปเขียน CSV ได้ SHA-256 เดียวกัน นโยบายกลุ่มมี SHA-256 `2a7d07a3cf685a248becc075cb23c06e8bbe7af41631ccf6cb23d8e8cc16159c` [ซอร์สรายวิชา ณ commit ที่ใช้](https://github.com/potiwat/RAE67_bio_ins/tree/fa528b169f1127ee3e0e9fae3d721546bf1b82d2/lab_07) · [รายการ SHA](reproduce/source_provenance.json) · [ข้อผิดพลาดเดิม](compatibility/original_jazzy_exception.txt) · [diff](compatibility/jazzy_trace.patch) · [แฮชไฟล์ที่รัน](compatibility/source_change.json) · [ผลทดสอบ CDR](compatibility/wire_check.json)
++ตรวจไฟล์แพ็กเกจ 10 ไฟล์เทียบ Git blob ของ commit `fa528b169f1127ee3e0e9fae3d721546bf1b82d2` ก่อน build เมื่อใช้ไฟล์อาจารย์โดยตรง Jazzy ส่ง `Float32MultiArray.data` ออกมาเป็น `array.array` และตัวเขียน CSV เรียก `json.dumps` แล้วเกิด `TypeError` ก่อนเริ่ม inputs รอบที่วัดผลใช้ `list(servo.data)` สำหรับ payload ของ CSV การเรียกเผยแพร่ไปยัง DDS ยังส่งวัตถุข้อความเดิม ตรวจ CDR ของข้อความทดสอบก่อนและหลังอ่านค่าไปเขียน CSV ได้ SHA-256 เดียวกัน นโยบายกลุ่มมี SHA-256 `2a7d07a3cf685a248becc075cb23c06e8bbe7af41631ccf6cb23d8e8cc16159c` [ซอร์สรายวิชา ณ commit ที่ใช้](https://github.com/potiwat/RAE67_bio_ins/tree/fa528b169f1127ee3e0e9fae3d721546bf1b82d2/lab_07) · [รายการ SHA](../../3-results/course_ros/reproduce/source_provenance.json) · [ข้อผิดพลาดเดิม](../../3-results/course_ros/compatibility/original_jazzy_exception.txt) · [diff](../../3-results/course_ros/compatibility/jazzy_trace.patch) · [แฮชไฟล์ที่รัน](../../3-results/course_ros/compatibility/source_change.json) · [ผลทดสอบ CDR](../../3-results/course_ros/compatibility/wire_check.json)
+ 
+ ## ตรวจหรือรันซ้ำ
+ 
+--- 03_Results/simulation/README_TH.md
++++ 1-docs/markdown/simulation_th.md
+@@ -36,7 +36,7 @@
+ - ค่า φ ปกติของทุก bank เท่ากับ `0.10 + 0.03R` หน่วย rad/update เมื่อ `behavior` เป็น Happy จะเปลี่ยน φ ของ Happy bank เป็น `0.11798049926757813 + (0.13 − 0.11798049926757813) × R` ตามตัวควบคุมของ LampBio-Inpire และตัวปรับเงื่อนไข C0 ในการทดลองจริง
+ - ทุก bank คำนวณ SO(2) จากค่าเก่า (x, y) คู่เดียวกัน โดย `x′ = tanh(1.1 × (cosφ × x + sinφ × y))` และ `y′ = tanh(1.1 × (−sinφ × x + cosφ × y))` ออสซิลเลเตอร์เดินต่อเนื่องระหว่างเปลี่ยนสถานะ ก่อนติดตั้ง φ ใหม่ที่กริด 0.05 s จะเดินออสซิลเลเตอร์ของช่วงก่อนหน้าด้วย φ ที่ใช้อยู่
+ - นาฬิกา AHM เดินทุก 0.05 s ของเวลาสถานการณ์ ส่วนออสซิลเลเตอร์เดินที่ `dt_model = 0.05 s` ด้วยตัวคูณเวลา 0.5 สำหรับ body และ afraid และ 3.402/3.8 สำหรับ happy ดังนั้นเวลาเอาต์พุตประจำการอัปเดตลำดับ n เท่ากับ `n × 0.05 / time_scale` เริ่มนับ n ใหม่ที่ 0 ในการจำลองทั้งคู่ เศษของคาบอัปเดต ณ จุดเริ่มกำหนดเป็น 0 เพราะไฟล์ seed ไม่ได้เก็บค่านี้ การรันใช้กริดเวลาคงที่และละความแปรปรวนของเวลารันจริงบน Pi
+-- สมการและค่าพารามิเตอร์ตรวจเทียบกับ `normal_ahm.py`, `body_rhythm.py`, `state_rhythms.py`, `small_happy_trial.py`, `afraid_rhythm.py`, `presentation_accepted_20261110.py` ใน `bio_inspire/runtime/` พร้อม [ตัวบันทึกการทดลอง](../../02_Source/hardware/bio_inspire/experiments/lab07_present_safety_pair1_20261112/instrument.py) และ [โปรแกรมวิเคราะห์ฮอร์โมน](../../02_Source/analysis/hormone_response.py) กลุ่มตรวจสมการกับ [โค้ดต้นแบบของ Lab 5](../../06_References/course_model.py.txt)
++- สมการและค่าพารามิเตอร์ตรวจเทียบกับ `normal_ahm.py`, `body_rhythm.py`, `state_rhythms.py`, `small_happy_trial.py`, `afraid_rhythm.py`, `presentation_accepted_20261110.py` ใน `bio_inspire/runtime/` พร้อม [ตัวบันทึกการทดลอง](../../2-src/hardware/bio_inspire/experiments/lab07_present_safety_pair1_20261112/instrument.py) และ [โปรแกรมวิเคราะห์ฮอร์โมน](../../2-src/analysis/hormone_response.py) กลุ่มตรวจสมการกับ [โค้ดต้นแบบของ Lab 5](../references/course_model.py.txt)
+ 
+ ## วิธีนับคาบและขอบเขตผล
+ 
+@@ -58,7 +58,7 @@
+ 
+ ใน trace คอลัมน์ `phi_selected` เป็นคำสั่งที่จะใช้ช่วงถัดไป ส่วน `*_step`/ `*_node_s` ระบุลำดับและเวลาเอาต์พุตล่าสุดของแต่ละ bank ค่า `eligible_episode=0` หมายถึงปิดการนับคาบ ณ เวลาแถวนั้น แถวที่ t = 180 s เป็นสถานะปลายการทดลอง จึงใช้ N/A ในคอลัมน์คำสั่งของช่วงถัดไป
+ 
+-เปิดเทอร์มินัลใน `03_Results/simulation` แล้วใช้ Python 3 โดยเก็บโฟลเดอร์ `../real_robot/` ไว้ข้างกัน โปรแกรมใช้เฉพาะไลบรารีมาตรฐาน และตรวจ SHA-256 ของอินพุตก่อนคำนวณ
++เปิดเทอร์มินัลใน `3-results/simulation` แล้วใช้ Python 3 โดยเก็บโฟลเดอร์ `../real_robot/` ไว้ข้างกัน โปรแกรมใช้เฉพาะไลบรารีมาตรฐาน และตรวจ SHA-256 ของอินพุตก่อนคำนวณ
+ 
+ ```text
+ python -B run_simulation.py --verify
+--- 02_Source/analysis/export_native_topics.py
++++ 2-src/analysis/export_native_topics.py
+@@ -1,6 +1,6 @@
+ """Map recorded Pi observations to the 13 field groups, preserving each source's clock.
+ 
+-From the package root: python -B 02_Source/analysis/export_native_topics.py [--verify]
++From the package root: python -B 2-src/analysis/export_native_topics.py [--verify]
+ Standard library only. Blank fields belong to a different record type or are unavailable.
+ elapsed_s is relative to original/summary.json.started_s. BOOTTIME source timestamps, the
+ native monotonic timestamps of the five joint registers and the comparison anchor are retained.
+@@ -18,9 +18,9 @@
+ from pathlib import Path
+ 
+ ROOT = Path(__file__).resolve().parents[2]
+-ROBOT = ROOT / "03_Results" / "real_robot"
+-DESIGN = ROOT / "04_Design"
+-DEMO = ROOT / "07_Evidence" / "present"
++ROBOT = ROOT / "3-results" / "real_robot"
++DESIGN = ROOT / "4-figures"
++DEMO = ROOT / "3-results/evidence" / "present"
+ TOFSRC, TRACESRC, FACESRC = "original/tof_frames.jsonl.gz", "original/trace.jsonl.gz", "original/portrait_close.json"
+ BUTTON, TOUCH, DISTANCE, EVENT, EMOTION, GOAL, LED, STATUS, AHM, JOINT, FACE, DIAG, TRACE = (
+     "/lamp/" + s for s in ("input/button", "input/touch", "input/distance", "interaction", "emotion",
+@@ -316,7 +316,7 @@
+     assert [x["topic"] for x in contract] == list(SPECS)
+     frozen = read_json(ROBOT/"SHA256.json")
+     demo = demo_notes()
+-    bag = {r["topic"]:int(r["messages_in_bag"]) for r in read_csv(ROOT/"03_Results/course_ros/message_counts.csv")}
++    bag = {r["topic"]:int(r["messages_in_bag"]) for r in read_csv(ROOT/"3-results/course_ros/message_counts.csv")}
+     assert len(bag) == 7 and sum(bag.values()) == 7425 and set(bag) == set(list(SPECS)[:7])
+     group_rows, totals, tof_totals = [], Counter(), Counter()
+     for pair in (1,2,3):
+@@ -326,7 +326,7 @@
+             totals.update(counts)
+             tof_states = Counter(r["tof_measurement_state"] for r in records if r["record_type"] == "tof_frame")
+             tof_totals.update(tof_states)
+-            origin = f"03_Results/real_robot/P{pair}/{cond}/native_topics.csv"
++            origin = f"3-results/real_robot/P{pair}/{cond}/native_topics.csv"
+             save_or_check(ROOT/origin, csv_data(records,HEAD),opt.verify)
+             for t in contract:
+                 name = t["topic"]
+--- 02_Source/analysis/hormone_response_figures.py
++++ 2-src/analysis/hormone_response_figures.py
+@@ -156,7 +156,7 @@
+     fig.savefig(path,dpi=200);plt.close(fig)
+ 
+ def make_figures(dest,all_runs):
+-    figs=dest/"Figures";figs.mkdir(parents=True,exist_ok=True)
++    figs=dest/"figures";figs.mkdir(parents=True,exist_ok=True)
+     one=[r for r in all_runs if r["pair"]==all_runs[0]["pair"]]
+     if one[0]["pair"]==1:
+         time_figure(figs/"01_Happy_input_CPG_and_encoder.png",one)

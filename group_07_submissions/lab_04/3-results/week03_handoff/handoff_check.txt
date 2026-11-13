@@ -1,0 +1,5 @@
+Week03 original contract loaded successfully.
+R=0: phi_rad=0.2, stride_half_m=0.055
+R=1: phi_rad=0.4, stride_half_m=0.065
+C1_step.csv: all 601 rows match the original comparison run.
+Source: https://github.com/menulis4725/Lab_Bio-Inspire/blob/main/Week_03_Lab_03/03_Results/Week4_Bridge/handoff_contract.json

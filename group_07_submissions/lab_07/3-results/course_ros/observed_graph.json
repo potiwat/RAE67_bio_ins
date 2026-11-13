@@ -1,0 +1,324 @@
+{
+  "monotonic_ns": 19047975185,
+  "utc": "2026-11-12T15:11:56.569291+00:00",
+  "nodes": [
+    {
+      "name": "rosbag2_recorder",
+      "namespace": "/"
+    },
+    {
+      "name": "week07_graph_observer",
+      "namespace": "/"
+    },
+    {
+      "name": "week07_inputs",
+      "namespace": "/"
+    },
+    {
+      "name": "week07_interaction",
+      "namespace": "/"
+    },
+    {
+      "name": "week07_output_collector",
+      "namespace": "/"
+    }
+  ],
+  "topic_types": {
+    "/lamp/input/button": [
+      "std_msgs/msg/Bool"
+    ],
+    "/lamp/input/touch": [
+      "std_msgs/msg/Bool"
+    ],
+    "/lamp/input/distance": [
+      "std_msgs/msg/Float32"
+    ],
+    "/lamp/interaction": [
+      "std_msgs/msg/String"
+    ],
+    "/lamp/emotion": [
+      "std_msgs/msg/String"
+    ],
+    "/lamp/servo_command": [
+      "std_msgs/msg/Float32MultiArray"
+    ],
+    "/lamp/rgb_command": [
+      "std_msgs/msg/ColorRGBA"
+    ]
+  },
+  "observed_endpoints": [
+    {
+      "topic": "/lamp/emotion",
+      "message_type": "std_msgs/msg/String",
+      "endpoint": "publisher",
+      "node": "week07_interaction",
+      "namespace": "/",
+      "reliability": "RELIABLE",
+      "durability": "VOLATILE",
+      "history": "UNKNOWN",
+      "depth": 0,
+      "liveliness": "AUTOMATIC",
+      "gid": "010f83724402cff50000000000001703"
+    },
+    {
+      "topic": "/lamp/emotion",
+      "message_type": "std_msgs/msg/String",
+      "endpoint": "subscription",
+      "node": "rosbag2_recorder",
+      "namespace": "/",
+      "reliability": "RELIABLE",
+      "durability": "VOLATILE",
+      "history": "UNKNOWN",
+      "depth": 0,
+      "liveliness": "AUTOMATIC",
+      "gid": "010f837232024bb30000000000002704"
+    },
+    {
+      "topic": "/lamp/emotion",
+      "message_type": "std_msgs/msg/String",
+      "endpoint": "subscription",
+      "node": "week07_output_collector",
+      "namespace": "/",
+      "reliability": "RELIABLE",
+      "durability": "VOLATILE",
+      "history": "UNKNOWN",
+      "depth": 0,
+      "liveliness": "AUTOMATIC",
+      "gid": "010f8372240249c50000000000001404"
+    },
+    {
+      "topic": "/lamp/input/button",
+      "message_type": "std_msgs/msg/Bool",
+      "endpoint": "publisher",
+      "node": "week07_inputs",
+      "namespace": "/",
+      "reliability": "RELIABLE",
+      "durability": "VOLATILE",
+      "history": "UNKNOWN",
+      "depth": 0,
+      "liveliness": "AUTOMATIC",
+      "gid": "010f8372520207bd0000000000001303"
+    },
+    {
+      "topic": "/lamp/input/button",
+      "message_type": "std_msgs/msg/Bool",
+      "endpoint": "subscription",
+      "node": "rosbag2_recorder",
+      "namespace": "/",
+      "reliability": "RELIABLE",
+      "durability": "VOLATILE",
+      "history": "UNKNOWN",
+      "depth": 0,
+      "liveliness": "AUTOMATIC",
+      "gid": "010f837232024bb30000000000002a04"
+    },
+    {
+      "topic": "/lamp/input/button",
+      "message_type": "std_msgs/msg/Bool",
+      "endpoint": "subscription",
+      "node": "week07_interaction",
+      "namespace": "/",
+      "reliability": "RELIABLE",
+      "durability": "VOLATILE",
+      "history": "UNKNOWN",
+      "depth": 0,
+      "liveliness": "AUTOMATIC",
+      "gid": "010f83724402cff50000000000001304"
+    },
+    {
+      "topic": "/lamp/input/distance",
+      "message_type": "std_msgs/msg/Float32",
+      "endpoint": "publisher",
+      "node": "week07_inputs",
+      "namespace": "/",
+      "reliability": "RELIABLE",
+      "durability": "VOLATILE",
+      "history": "UNKNOWN",
+      "depth": 0,
+      "liveliness": "AUTOMATIC",
+      "gid": "010f8372520207bd0000000000001503"
+    },
+    {
+      "topic": "/lamp/input/distance",
+      "message_type": "std_msgs/msg/Float32",
+      "endpoint": "subscription",
+      "node": "rosbag2_recorder",
+      "namespace": "/",
+      "reliability": "RELIABLE",
+      "durability": "VOLATILE",
+      "history": "UNKNOWN",
+      "depth": 0,
+      "liveliness": "AUTOMATIC",
+      "gid": "010f837232024bb30000000000002b04"
+    },
+    {
+      "topic": "/lamp/input/distance",
+      "message_type": "std_msgs/msg/Float32",
+      "endpoint": "subscription",
+      "node": "week07_interaction",
+      "namespace": "/",
+      "reliability": "RELIABLE",
+      "durability": "VOLATILE",
+      "history": "UNKNOWN",
+      "depth": 0,
+      "liveliness": "AUTOMATIC",
+      "gid": "010f83724402cff50000000000001504"
+    },
+    {
+      "topic": "/lamp/input/touch",
+      "message_type": "std_msgs/msg/Bool",
+      "endpoint": "publisher",
+      "node": "week07_inputs",
+      "namespace": "/",
+      "reliability": "RELIABLE",
+      "durability": "VOLATILE",
+      "history": "UNKNOWN",
+      "depth": 0,
+      "liveliness": "AUTOMATIC",
+      "gid": "010f8372520207bd0000000000001403"
+    },
+    {
+      "topic": "/lamp/input/touch",
+      "message_type": "std_msgs/msg/Bool",
+      "endpoint": "subscription",
+      "node": "rosbag2_recorder",
+      "namespace": "/",
+      "reliability": "RELIABLE",
+      "durability": "VOLATILE",
+      "history": "UNKNOWN",
+      "depth": 0,
+      "liveliness": "AUTOMATIC",
+      "gid": "010f837232024bb30000000000002c04"
+    },
+    {
+      "topic": "/lamp/input/touch",
+      "message_type": "std_msgs/msg/Bool",
+      "endpoint": "subscription",
+      "node": "week07_interaction",
+      "namespace": "/",
+      "reliability": "RELIABLE",
+      "durability": "VOLATILE",
+      "history": "UNKNOWN",
+      "depth": 0,
+      "liveliness": "AUTOMATIC",
+      "gid": "010f83724402cff50000000000001404"
+    },
+    {
+      "topic": "/lamp/interaction",
+      "message_type": "std_msgs/msg/String",
+      "endpoint": "publisher",
+      "node": "week07_interaction",
+      "namespace": "/",
+      "reliability": "RELIABLE",
+      "durability": "VOLATILE",
+      "history": "UNKNOWN",
+      "depth": 0,
+      "liveliness": "AUTOMATIC",
+      "gid": "010f83724402cff50000000000001603"
+    },
+    {
+      "topic": "/lamp/interaction",
+      "message_type": "std_msgs/msg/String",
+      "endpoint": "subscription",
+      "node": "rosbag2_recorder",
+      "namespace": "/",
+      "reliability": "RELIABLE",
+      "durability": "VOLATILE",
+      "history": "UNKNOWN",
+      "depth": 0,
+      "liveliness": "AUTOMATIC",
+      "gid": "010f837232024bb30000000000002604"
+    },
+    {
+      "topic": "/lamp/interaction",
+      "message_type": "std_msgs/msg/String",
+      "endpoint": "subscription",
+      "node": "week07_output_collector",
+      "namespace": "/",
+      "reliability": "RELIABLE",
+      "durability": "VOLATILE",
+      "history": "UNKNOWN",
+      "depth": 0,
+      "liveliness": "AUTOMATIC",
+      "gid": "010f8372240249c50000000000001304"
+    },
+    {
+      "topic": "/lamp/rgb_command",
+      "message_type": "std_msgs/msg/ColorRGBA",
+      "endpoint": "publisher",
+      "node": "week07_interaction",
+      "namespace": "/",
+      "reliability": "RELIABLE",
+      "durability": "VOLATILE",
+      "history": "UNKNOWN",
+      "depth": 0,
+      "liveliness": "AUTOMATIC",
+      "gid": "010f83724402cff50000000000001903"
+    },
+    {
+      "topic": "/lamp/rgb_command",
+      "message_type": "std_msgs/msg/ColorRGBA",
+      "endpoint": "subscription",
+      "node": "rosbag2_recorder",
+      "namespace": "/",
+      "reliability": "RELIABLE",
+      "durability": "VOLATILE",
+      "history": "UNKNOWN",
+      "depth": 0,
+      "liveliness": "AUTOMATIC",
+      "gid": "010f837232024bb30000000000002804"
+    },
+    {
+      "topic": "/lamp/rgb_command",
+      "message_type": "std_msgs/msg/ColorRGBA",
+      "endpoint": "subscription",
+      "node": "week07_output_collector",
+      "namespace": "/",
+      "reliability": "RELIABLE",
+      "durability": "VOLATILE",
+      "history": "UNKNOWN",
+      "depth": 0,
+      "liveliness": "AUTOMATIC",
+      "gid": "010f8372240249c50000000000001604"
+    },
+    {
+      "topic": "/lamp/servo_command",
+      "message_type": "std_msgs/msg/Float32MultiArray",
+      "endpoint": "publisher",
+      "node": "week07_interaction",
+      "namespace": "/",
+      "reliability": "RELIABLE",
+      "durability": "VOLATILE",
+      "history": "UNKNOWN",
+      "depth": 0,
+      "liveliness": "AUTOMATIC",
+      "gid": "010f83724402cff50000000000001803"
+    },
+    {
+      "topic": "/lamp/servo_command",
+      "message_type": "std_msgs/msg/Float32MultiArray",
+      "endpoint": "subscription",
+      "node": "rosbag2_recorder",
+      "namespace": "/",
+      "reliability": "RELIABLE",
+      "durability": "VOLATILE",
+      "history": "UNKNOWN",
+      "depth": 0,
+      "liveliness": "AUTOMATIC",
+      "gid": "010f837232024bb30000000000002904"
+    },
+    {
+      "topic": "/lamp/servo_command",
+      "message_type": "std_msgs/msg/Float32MultiArray",
+      "endpoint": "subscription",
+      "node": "week07_output_collector",
+      "namespace": "/",
+      "reliability": "RELIABLE",
+      "durability": "VOLATILE",
+      "history": "UNKNOWN",
+      "depth": 0,
+      "liveliness": "AUTOMATIC",
+      "gid": "010f8372240249c50000000000001504"
+    }
+  ]
+}

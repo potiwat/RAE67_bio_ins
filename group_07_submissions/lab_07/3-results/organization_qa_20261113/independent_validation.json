@@ -1,0 +1,34 @@
+{
+  "all_original_files_verified": 3059,
+  "original_files_missing_or_changed": [],
+  "current_source_files_mapped": 565,
+  "previous_versions_kept_in_backup": 2109,
+  "documents": [
+    {
+      "file": "1-docs/lab_documents/Lab07_Proposal_Group7.docx",
+      "identical": true
+    },
+    {
+      "file": "1-docs/lab_documents/Lab07_Proposal_Group7.pdf",
+      "identical": true
+    },
+    {
+      "file": "1-docs/lab_documents/Lab07_Report_Group7.docx",
+      "identical": true
+    },
+    {
+      "file": "1-docs/lab_documents/Lab07_Student_Worksheet_TH.docx",
+      "identical": true
+    }
+  ],
+  "previous_lab_reference_files": 309,
+  "previous_lab_differences": [],
+  "python_files_parsed": 259,
+  "syntax_errors": [],
+  "markdown_files_checked": 14,
+  "broken_links": [],
+  "case_collisions": [],
+  "old_repository_modified": false,
+  "teacher_root_files_modified_by_this_task": false,
+  "other_repository_files_accounted_for": 385
+}

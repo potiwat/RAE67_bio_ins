@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+~$*
+.venv/
+
+# Public fork: keep original movie local; publish the existing YouTube link.
+/3-results/evidence/present/IMG_4568.MOV

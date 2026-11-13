@@ -1,0 +1,49 @@
+{
+  "upstream": "https://github.com/potiwat/RAE67_bio_ins",
+  "commit": "fa528b169f1127ee3e0e9fae3d721546bf1b82d2",
+  "package_path": "lab_07",
+  "files": {
+    "setup.py": {
+      "git_blob_sha1": "3edbb1021f7c6457a8f547c2fc3a2c64525113d3",
+      "sha256": "0c4d211dc27d9b3e3203889322b66c7ccc156e4a2d6a5e6cc2e92e69a51de267"
+    },
+    "setup.cfg": {
+      "git_blob_sha1": "e415d7bd7f3885e11962dbfe6b4c8129c66c21db",
+      "sha256": "41350599e7c17feb03066fa0d6fe9b2bbadd59b57c82065509392ed68e0d3e99"
+    },
+    "package.xml": {
+      "git_blob_sha1": "66769635c6cf00c67f8541816f60755bae4d890d",
+      "sha256": "467839d4f048c40a7857ed47a447d62faf8945b84b8cb9068de6feb763c153ee"
+    },
+    "resource/lamp_week07": {
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "interface_contract.json": {
+      "git_blob_sha1": "29724e04d3678655b22f1461a1976bf21fc19113",
+      "sha256": "ac2ab214d555ca91af99b324425d0e48d43e16cfd34509046bb426016f14c926"
+    },
+    "lamp_week07/__init__.py": {
+      "git_blob_sha1": "b3ada64513c9c0c7090a9a75f00102d840bfcc27",
+      "sha256": "7b2e4348204e9cb9f309380710e3e92047e30f37094ac8fca7079bb281073c92"
+    },
+    "lamp_week07/course_model.py": {
+      "git_blob_sha1": "bb711894f587da5917c24e6b6db7d6b64a4ba1e0",
+      "sha256": "55ced08d6453c3db30d3c971397c27fb92b20324e611afd7aef9017fc428ec30"
+    },
+    "lamp_week07/bridge.py": {
+      "git_blob_sha1": "cd4a08a0c7634ac9b191747d69d876d949606ee8",
+      "sha256": "a8e3bdd031706c4d176bef07693b7239782dc443c8ca3726b336aa1f929fde65"
+    },
+    "lamp_week07/student_policy.py": {
+      "git_blob_sha1": "aa7874e2cc1f76231e14503b90f44fcd3cf78f91",
+      "sha256": "30e7007508d60745a406d93d27de7638b57c834deae189bf5c94861008e4d658"
+    },
+    "lamp_week07/ros_nodes.py": {
+      "git_blob_sha1": "4a1596aafaa68cc70a6bc3fdbaa9b15cb0c063c6",
+      "sha256": "4e05a23a629b80abd64b7a72ae274e1ebcf47eae97dd45e996b58ace9fb1037e"
+    }
+  },
+  "group_policy_source": "Lamp/Lab07/completed_policy.py",
+  "group_policy_sha256": "2a7d07a3cf685a248becc075cb23c06e8bbe7af41631ccf6cb23d8e8cc16159c"
+}

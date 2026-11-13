@@ -1,0 +1,37 @@
+{
+  "recording_date": "2026-11-12",
+  "manifest_sha256": "c951dd23f744b9e835a4d8457be3126386ec445ffea0f5a1c0056ff96b3ae28f",
+  "groups": {
+    "own_sha256": {
+      "recorded": 95,
+      "present": 94
+    },
+    "protected_sha256": {
+      "recorded": 132,
+      "present": 130
+    },
+    "dependency_sha256": {
+      "recorded": 13,
+      "present": 13
+    }
+  },
+  "unavailable": [
+    {
+      "path": "shared/experiments/presentation_safety_play_20261110/test_release_plan.py",
+      "sha256": "3ef555fa7112407d3144470b492e5f92925f17e08af4c42196ea8396f9189322",
+      "role": "pre-launch checksum of regression test source"
+    },
+    {
+      "path": "bio_inspire/hardware/presentation_20261107/last_camera_frame.json",
+      "sha256": "bab98ffded76a98652e367e23bb6f98139fe05568f33d6e09fc73245d707cd28",
+      "role": "pre-launch checksum of a previous presentation's camera diagnostic"
+    },
+    {
+      "path": "bio_inspire/hardware/presentation_20261107/last_gaze_stop.json",
+      "sha256": "5f25cb1668f34334b4d07f2761b8f21e945db3fcaf9a4a13acfcbc7b319f8e05",
+      "role": "pre-launch checksum of a previous presentation's stop diagnostic"
+    }
+  ],
+  "offline_analysis_recordings": 6,
+  "recorded_guard_set_complete_for_fresh_deployment": false
+}

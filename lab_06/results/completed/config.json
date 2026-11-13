@@ -1,0 +1,78 @@
+{
+  "provenance": "proposed course model",
+  "dt_s": 0.02,
+  "duration_s": 22.0,
+  "scheduler_delay_s": 0.04,
+  "debounce_s": 0.06,
+  "stale_s": 0.12,
+  "near_enter_m": 0.2,
+  "near_exit_m": 0.28,
+  "approach_enter_m": 0.8,
+  "approach_exit_m": 0.95,
+  "active_timeout_s": 2.0,
+  "sleep_after_s": 6.0,
+  "max_slew_rad_s": 0.8,
+  "seed": 41,
+  "states": [
+    "normal",
+    "interested",
+    "happy",
+    "afraid",
+    "sleepy"
+  ],
+  "semantic_joint_bounds_rad": [
+    0.35,
+    0.25,
+    0.3
+  ],
+  "rgb": {
+    "normal": [
+      60,
+      90,
+      140
+    ],
+    "interested": [
+      255,
+      180,
+      0
+    ],
+    "happy": [
+      40,
+      220,
+      80
+    ],
+    "afraid": [
+      230,
+      30,
+      30
+    ],
+    "sleepy": [
+      50,
+      40,
+      100
+    ]
+  },
+  "learning": "none; fixed rules and fixed parameters",
+  "latency_limit_s": 1.0,
+  "timing_scope": "simulated first applied motion/RGB; physical onset not measured",
+  "priority": [
+    "fault",
+    "near",
+    "clear",
+    "touch",
+    "button",
+    "approach",
+    "timeout",
+    "idle"
+  ],
+  "repeats": "seeded synthetic replications, not physical trials",
+  "policy": "student",
+  "conditions": [
+    "C0",
+    "C1"
+  ],
+  "repeat_count": 3,
+  "replay": null,
+  "replay_input_sha256": null,
+  "replay_seed": null
+}

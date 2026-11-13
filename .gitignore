@@ -18,3 +18,9 @@ lab_05/instructor_reference.py
 lab_05/output/
 lab_05/*Instructor*
 lab_05/*Validation*
+
+# group submission evidence: keep the lab results that the reports refer to
+!lab_04/results/
+!lab_05/results/
+!lab_06/results/
+!lab_07/results/

@@ -1,0 +1,9 @@
+﻿Lab 7 • LampBio-Inpire real robot (present launcher) • 12 November 2026
+
+summary/Run_index.csv maps the six accepted traces to the actual launch and source hashes. Pair 1 used a person; pairs 2 and 3 used a fixed portrait detected by the live Pi camera. Order P1 C0>C1, P2 C1>C0, P3 C0>C1. C0 routes R=S. C1 routes R=H. A paired run measured 180 seconds per condition.
+
+P1,C0 is stored as P1/C0, similarly for each other pair and condition. control.csv contains measured H, R, the selected oscillator and phi in rad/update. all_CPG_banks.csv also includes inactive banks. five_joint_feedback.csv contains native goals, encoders (degrees relative to the configured Normal angle), signed speed, load and current (device units), supply (V) and temperature (degrees Celsius). Times are seconds relative to the individual trial start; snapshot, model, bank and native sample timestamps are retained separately. original/ contains the untouched recorder files, shortcut identity and integrity audit.
+
+Primary worksheet outputs are summary/CPG_cycles.csv and summary/Worksheet_M1_M2.csv. M1 = 1 / mean(T) Hz. M2 = mean absolute successive period change, seconds, within a continuous full-output episode only. T_cpg_s is on the logical output clock; T_observed_s is elapsed wall time. No complete eligible cycle is reported as N/A. summary/Happy_dance_cycles.csv uses actual ID1 encoder crossings. For ON/OFF comparison include only cycles fully contained within each stage. H averaged over a complete cycle and H at an instant are distinct quantities.
+
+For the first pair only, a source-handoff warning begins after t >= 180 s. The original warning and the recorded timestamps are retained in window_review.json. Failed setup, wire contact and in-window input-history faults were excluded before analysis. No motor action is needed to read this package.

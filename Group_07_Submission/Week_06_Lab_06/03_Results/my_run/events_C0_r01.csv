@@ -1,0 +1,74 @@
+event_id,kind,source_time_s,recognized_time_s,input_id,status,decision_time_s,queued_time_s,first_motion_s,first_rgb_s,applied_time_s,old_state,new_state,reason,motion_latency_s,rgb_latency_s,both_onset_s,both_latency_s,pass_1s_both
+e0001,button,1.0,1.0,button_01,responded,1.0,1.0,1.04,1.04,1.04,normal,interested,,0.04,0.04,1.04,0.04,True
+e0002,button,1.0,1.04,button_01,no_state_change,1.04,,,,,interested,interested,same state; no new expression required,,,,,
+e0003,touch,3.0,3.0,touch_01,responded,3.0,3.0,3.04,3.04,3.04,interested,happy,,0.04,0.04,3.04,0.04,True
+e0004,timeout,3.0,3.0,internal_timeout,discarded_priority,3.0,,,,,interested,,higher priority touch,,,,,
+e0005,approach,5.0,5.0,approach_01,preempted_before_apply,5.0,5.0,,,,happy,interested,preempted by e0007,,,,,
+e0006,timeout,5.0,5.0,internal_timeout,discarded_priority,5.0,,,,,happy,,higher priority approach,,,,,
+e0007,clear,5.0,5.02,approach_01,preempted_before_apply,5.02,5.02,,,,interested,normal,preempted by e0008,,,,,
+e0008,approach,5.0,5.04,approach_01,preempted_before_apply,5.04,5.04,,,,normal,interested,preempted by e0009,,,,,
+e0009,clear,5.0,5.06,approach_01,preempted_before_apply,5.06,5.06,,,,interested,normal,preempted by e0010,,,,,
+e0010,approach,5.0,5.08,approach_01,preempted_before_apply,5.08,5.08,,,,normal,interested,preempted by e0011,,,,,
+e0011,clear,5.0,5.1,approach_01,preempted_before_apply,5.1,5.1,,,,interested,normal,preempted by e0012,,,,,
+e0012,approach,5.0,5.12,approach_01,preempted_before_apply,5.12,5.12,,,,normal,interested,preempted by e0013,,,,,
+e0013,clear,5.0,5.14,approach_01,preempted_before_apply,5.14,5.14,,,,interested,normal,preempted by e0014,,,,,
+e0014,approach,5.0,5.16,approach_01,preempted_before_apply,5.16,5.16,,,,normal,interested,preempted by e0015,,,,,
+e0015,clear,5.0,5.18,approach_01,preempted_before_apply,5.18,5.18,,,,interested,normal,preempted by e0016,,,,,
+e0016,approach,5.0,5.2,approach_01,responded,5.2,5.2,5.24,5.24,5.24,normal,interested,,0.24,0.24,5.24,0.24,True
+e0017,clear,5.0,5.36,approach_01,preempted_before_apply,5.36,5.36,,,,interested,normal,preempted by e0018,,,,,
+e0018,approach,5.0,5.4,approach_01,preempted_before_apply,5.4,5.4,,,,normal,interested,preempted by e0019,,,,,
+e0019,clear,5.0,5.42,approach_01,preempted_before_apply,5.42,5.42,,,,interested,normal,preempted by e0020,,,,,
+e0020,approach,5.0,5.46,approach_01,preempted_partial,5.46,5.46,5.5,,5.5,normal,interested,preempted by e0021,0.5,,,,
+e0021,clear,5.0,5.52,approach_01,responded,5.52,5.52,5.56,5.56,5.56,interested,normal,,0.56,0.56,5.56,0.56,True
+e0022,approach,5.0,5.68,approach_01,preempted_before_apply,5.68,5.68,,,,normal,interested,preempted by e0023,,,,,
+e0023,clear,5.0,5.7,approach_01,preempted_before_apply,5.7,5.7,,,,interested,normal,preempted by e0024,,,,,
+e0024,approach,5.0,5.72,approach_01,responded,5.72,5.72,5.76,5.76,5.76,normal,interested,,0.76,0.76,5.76,0.76,True
+e0025,clear,5.0,5.88,approach_01,responded,5.88,5.88,5.92,5.92,5.92,interested,normal,,0.92,0.92,5.92,0.92,True
+e0026,approach,5.0,5.94,approach_01,responded,5.94,5.94,5.98,5.98,5.98,normal,interested,,0.98,0.98,5.98,0.98,True
+e0027,clear,5.0,6.02,approach_01,responded,6.02,6.02,6.06,6.06,6.06,interested,normal,,1.06,1.06,6.06,1.06,False
+e0028,approach,5.0,6.08,approach_01,preempted_before_apply,6.08,6.08,,,,normal,interested,preempted by e0029,,,,,
+e0029,clear,5.0,6.12,approach_01,preempted_before_apply,6.12,6.12,,,,interested,normal,preempted by e0030,,,,,
+e0030,approach,5.0,6.14,approach_01,preempted_before_apply,6.14,6.14,,,,normal,interested,preempted by e0031,,,,,
+e0031,clear,5.0,6.18,approach_01,preempted_before_apply,6.18,6.18,,,,interested,normal,preempted by e0032,,,,,
+e0032,approach,5.0,6.2,approach_01,responded,6.2,6.2,6.24,6.24,6.24,normal,interested,,1.24,1.24,6.24,1.24,False
+e0033,clear,5.0,6.32,approach_01,preempted_before_apply,6.32,6.32,,,,interested,normal,preempted by e0034,,,,,
+e0034,approach,5.0,6.34,approach_01,preempted_before_apply,6.34,6.34,,,,normal,interested,preempted by e0035,,,,,
+e0035,clear,5.0,6.36,approach_01,preempted_before_apply,6.36,6.36,,,,interested,normal,preempted by e0036,,,,,
+e0036,approach,5.0,6.38,approach_01,preempted_before_apply,6.38,6.38,,,,normal,interested,preempted by e0037,,,,,
+e0037,clear,6.4,6.4,clear_01,responded,6.4,6.4,6.44,6.44,6.44,interested,normal,,0.04,0.04,6.44,0.04,True
+e0039,near,7.0,7.0,near_01,responded,7.0,7.0,7.04,7.04,7.04,normal,afraid,,0.04,0.04,7.04,0.04,True
+e0038,touch,7.0,7.0,touch_conflict,discarded_priority,7.0,,,,,normal,,higher priority near,,,,,
+e0040,clear,7.0,7.2,near_01,responded,7.2,7.2,7.24,7.24,7.24,afraid,normal,,0.24,0.24,7.24,0.24,True
+e0041,near,7.0,7.28,near_01,responded,7.28,7.28,7.32,7.32,7.32,normal,afraid,,0.32,0.32,7.32,0.32,True
+e0042,clear,7.0,7.42,near_01,preempted_before_apply,7.42,7.42,,,,afraid,normal,preempted by e0043,,,,,
+e0043,near,7.0,7.44,near_01,preempted_before_apply,7.44,7.44,,,,normal,afraid,preempted by e0044,,,,,
+e0044,clear,7.0,7.46,near_01,preempted_before_apply,7.46,7.46,,,,afraid,normal,preempted by e0045,,,,,
+e0045,near,7.0,7.48,near_01,preempted_partial,7.48,7.48,7.52,,7.52,normal,afraid,preempted by e0046,0.52,,,,
+e0046,clear,7.0,7.56,near_01,preempted_before_apply,7.56,7.56,,,,afraid,normal,preempted by e0047,,,,,
+e0047,near,7.0,7.58,near_01,preempted_partial,7.58,7.58,7.62,,7.62,normal,afraid,preempted by e0048,0.62,,,,
+e0048,clear,7.0,7.72,near_01,preempted_before_apply,7.72,7.72,,,,afraid,normal,preempted by e0049,,,,,
+e0049,near,7.0,7.74,near_01,preempted_partial,7.74,7.74,,,7.78,normal,afraid,preempted by e0050,,,,,
+e0050,clear,7.0,7.82,near_01,preempted_before_apply,7.82,7.82,,,,afraid,normal,preempted by e0051,,,,,
+e0051,near,7.0,7.86,near_01,preempted_before_apply,7.86,7.86,,,,normal,afraid,preempted by e0052,,,,,
+e0052,clear,7.0,7.9,near_01,preempted_before_apply,7.9,7.9,,,,afraid,normal,preempted by e0053,,,,,
+e0053,near,7.0,7.92,near_01,preempted_partial,7.92,7.92,,,7.96,normal,afraid,preempted by e0054,,,,,
+e0054,clear,7.0,7.98,near_01,preempted_before_apply,7.98,7.98,,,,afraid,normal,preempted by e0055,,,,,
+e0055,near,7.0,8.0,near_01,preempted_before_apply,8.0,8.0,,,,normal,afraid,preempted by e0056,,,,,
+e0056,clear,7.0,8.02,near_01,preempted_before_apply,8.02,8.02,,,,afraid,normal,preempted by e0057,,,,,
+e0057,near,7.0,8.04,near_01,preempted_partial,8.04,8.04,,,8.08,normal,afraid,preempted by e0058,,,,,
+e0058,clear,7.0,8.14,near_01,preempted_before_apply,8.14,8.14,,,,afraid,normal,preempted by e0059,,,,,
+e0059,near,7.0,8.16,near_01,preempted_partial,8.16,8.16,,,8.2,normal,afraid,preempted by e0060,,,,,
+e0060,clear,7.0,8.28,near_01,preempted_before_apply,8.28,8.28,,,,afraid,normal,preempted by e0061,,,,,
+e0061,near,7.0,8.3,near_01,preempted_partial,8.3,8.3,,,8.34,normal,afraid,preempted by e0062,,,,,
+e0062,clear,7.0,8.52,near_01,preempted_before_apply,8.52,8.52,,,,afraid,normal,preempted by e0063,,,,,
+e0063,near,7.0,8.54,near_01,preempted_partial,8.54,8.54,,,8.58,normal,afraid,preempted by e0064,,,,,
+e0064,clear,7.0,8.82,near_01,preempted_before_apply,8.82,8.82,,,,afraid,normal,preempted by e0065,,,,,
+e0065,near,7.0,8.84,near_01,preempted_partial,8.84,8.84,,,8.88,normal,afraid,preempted by e0066,,,,,
+e0066,clear,7.0,8.96,near_01,preempted_before_apply,8.96,8.96,,,,afraid,normal,preempted by e0067,,,,,
+e0067,near,7.0,8.98,near_01,preempted_before_apply,8.98,8.98,,,,normal,afraid,preempted by e0068,,,,,
+e0068,clear,9.0,9.0,clear_02,responded,9.0,9.0,9.04,9.04,9.04,afraid,normal,,0.04,0.04,9.04,0.04,True
+e0069,fault,11.0,11.0,invalid_01,no_state_change,11.0,,,,,normal,normal,same state; no new expression required,,,,,
+e0070,fault,12.0,12.0,stale_01,no_state_change,12.0,,,,,normal,normal,same state; no new expression required,,,,,
+e0071,idle,15.0,15.0,internal_idle,responded,15.0,15.0,15.04,15.04,15.04,normal,sleepy,,0.04,0.04,15.04,0.04,True
+e0072,button,18.0,18.0,button_02,responded,18.0,18.0,18.04,18.04,18.04,sleepy,interested,,0.04,0.04,18.04,0.04,True
+e0073,timeout,20.0,20.0,internal_timeout,responded,20.0,20.0,20.04,20.04,20.04,interested,normal,,0.04,0.04,20.04,0.04,True

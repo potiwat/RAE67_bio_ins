@@ -1,0 +1,22 @@
+%%{init: {"flowchart": {"curve": "stepAfter"}}}%%
+flowchart LR
+    INPUT["ปุ่ม · Touch · Near<br/>GPIO / ToF หรือสคริปต์ทดลอง"] --> EVENT["ประมวลเหตุการณ์"]
+    EVENT --> FSM["FSM เลือกหนึ่งในหกสถานะ"]
+    INPUT --> DRIVE["C0 รับ R = S<br/>C1 รับ R = H จาก AHM"]
+    DRIVE --> CPG["SO(2) CPG<br/>R กำหนดค่าก้าวเฟส φ"]
+    FSM -->|สถานะ| CPG
+    CAM["กล้อง CSI"] --> FACE["ตรวจใบหน้า"] --> GAZE["เป้าติดตามใบหน้า"]
+    FB["ข้อมูลป้อนกลับเซอร์โว<br/>ตำแหน่งและแรงขับ"] --> DETECT["ตรวจแรงต้าน<br/>ID1 · ID2 · ID4"]
+    DETECT --> HOLD["หยุดและคืน Normal<br/>เมื่อยืนยันว่าทางโล่ง"]
+    FSM --> MAP["แปลงเป็นคำสั่งมอเตอร์และไฟ"]
+    CPG --> MAP
+    GAZE --> MAP
+    HOLD --> MAP
+    MAP --> AXES["เซอร์โว 5 ข้อ<br/>ส่งเป้ามุมผ่าน UART"]
+    MAP --> LED["ไฟหัวโคมผ่าน SPI<br/>สีตามสถานะ · ความสว่างตามจังหวะ"]
+    DRIVE --> LOG["บันทึกเวลา S, H, R, φ, o₁/o₂<br/>สถานะ เป้ามุม และ encoder"]
+    CPG --> LOG
+    FSM --> LOG
+    FB --> LOG
+    MAP --> LOG
+    LOG --> CSV["ส่งออก CSV"]

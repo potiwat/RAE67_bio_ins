@@ -1,0 +1,28 @@
+{
+  "start_sent_s": 15474.607436252,
+  "live_face_at_start": null,
+  "live_face_at_measurement": {
+    "captured_s": 15478.542669,
+    "status": "TRACKING",
+    "box": [
+      0.4625,
+      0.43333333333333335,
+      0.146875,
+      0.2611111111111111
+    ]
+  },
+  "native_normal_ready_s": 15477.924979753,
+  "live_face_frames": 3256,
+  "last_startup_view": {
+    "state": "IDLE",
+    "ready": false,
+    "error": "",
+    "positions": null,
+    "behavior": null,
+    "route_phase": null
+  },
+  "native_cleanup_confirmed": true,
+  "native_owner_existed": true,
+  "study_done": true,
+  "aborted": null
+}

@@ -1,0 +1,81 @@
+{
+  "protocol": "robustness-full",
+  "controller_source": "reference",
+  "student_file": null,
+  "student_file_sha256": null,
+  "robustness_condition": "C2",
+  "seed_base": 202602,
+  "trial_count": 45,
+  "config": {
+    "dt": 0.02,
+    "duration_s": 20.0,
+    "threshold_m": 0.35,
+    "enter_threshold_m": 0.32,
+    "exit_threshold_m": 0.38,
+    "beta": 0.25,
+    "target_distance_m": 0.35,
+    "kp": 2.0,
+    "command_min": -0.6,
+    "command_max": 0.6,
+    "sensor_min_m": 0.02,
+    "sensor_max_m": 4.0,
+    "stable_duration_s": 0.5
+  },
+  "plan": [
+    {
+      "condition": "C2",
+      "noise_sigma_m": 0.0,
+      "delay_ms": 0,
+      "trials": 5
+    },
+    {
+      "condition": "C2",
+      "noise_sigma_m": 0.0,
+      "delay_ms": 100,
+      "trials": 5
+    },
+    {
+      "condition": "C2",
+      "noise_sigma_m": 0.0,
+      "delay_ms": 300,
+      "trials": 5
+    },
+    {
+      "condition": "C2",
+      "noise_sigma_m": 0.01,
+      "delay_ms": 0,
+      "trials": 5
+    },
+    {
+      "condition": "C2",
+      "noise_sigma_m": 0.01,
+      "delay_ms": 100,
+      "trials": 5
+    },
+    {
+      "condition": "C2",
+      "noise_sigma_m": 0.01,
+      "delay_ms": 300,
+      "trials": 5
+    },
+    {
+      "condition": "C2",
+      "noise_sigma_m": 0.03,
+      "delay_ms": 0,
+      "trials": 5
+    },
+    {
+      "condition": "C2",
+      "noise_sigma_m": 0.03,
+      "delay_ms": 100,
+      "trials": 5
+    },
+    {
+      "condition": "C2",
+      "noise_sigma_m": 0.03,
+      "delay_ms": 300,
+      "trials": 5
+    }
+  ],
+  "claim_boundary": "Proposed course model; validate all limits before real-hardware use."
+}

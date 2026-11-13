@@ -1,0 +1,246 @@
+{
+  "schema_version": 1,
+  "runs": [
+    {
+      "condition": "C1",
+      "repeat": 1,
+      "seed": null,
+      "event_count": 12,
+      "external_input_count": 10,
+      "external_responded_both_count": 7,
+      "external_pass_1s_both_count": 7,
+      "external_no_both_onset_count": 3,
+      "primary_expected_count": 7,
+      "primary_both_onset_count": 7,
+      "primary_pass_1s_both_count": 7,
+      "primary_missing_both_count": 0,
+      "max_both_latency_s": 0.14,
+      "median_both_latency_s": 0.04,
+      "states_observed": [
+        "afraid",
+        "happy",
+        "interested",
+        "normal",
+        "sleepy"
+      ],
+      "state_transition_count": 9,
+      "event_status_counts": {
+        "responded": 9,
+        "policy_held": 1,
+        "no_state_change": 2
+      },
+      "external_status_counts": {
+        "responded": 7,
+        "policy_held": 1,
+        "no_state_change": 2
+      },
+      "command_clamp_count": 0,
+      "source_outcomes": [
+        {
+          "input_id": "button_01",
+          "kind": "button",
+          "source_time_s": 1.0,
+          "primary_expected_both": true,
+          "recognized_count": 1,
+          "event_id": "e0001",
+          "status": "responded",
+          "first_candidate_status": "responded",
+          "candidate_status_counts": {
+            "responded": 1
+          },
+          "first_motion_s": 1.14,
+          "first_rgb_s": 1.14,
+          "both_onset_s": 1.14,
+          "motion_latency_s": 0.14,
+          "rgb_latency_s": 0.14,
+          "both_latency_s": 0.14,
+          "pass_1s_both": true
+        },
+        {
+          "input_id": "touch_01",
+          "kind": "touch",
+          "source_time_s": 3.0,
+          "primary_expected_both": true,
+          "recognized_count": 1,
+          "event_id": "e0002",
+          "status": "responded",
+          "first_candidate_status": "responded",
+          "candidate_status_counts": {
+            "responded": 1
+          },
+          "first_motion_s": 3.1,
+          "first_rgb_s": 3.1,
+          "both_onset_s": 3.1,
+          "motion_latency_s": 0.1,
+          "rgb_latency_s": 0.1,
+          "both_latency_s": 0.1,
+          "pass_1s_both": true
+        },
+        {
+          "input_id": "approach_01",
+          "kind": "approach",
+          "source_time_s": 5.0,
+          "primary_expected_both": true,
+          "recognized_count": 1,
+          "event_id": "e0003",
+          "status": "responded",
+          "first_candidate_status": "responded",
+          "candidate_status_counts": {
+            "responded": 1
+          },
+          "first_motion_s": 5.04,
+          "first_rgb_s": 5.04,
+          "both_onset_s": 5.04,
+          "motion_latency_s": 0.04,
+          "rgb_latency_s": 0.04,
+          "both_latency_s": 0.04,
+          "pass_1s_both": true
+        },
+        {
+          "input_id": "clear_01",
+          "kind": "clear",
+          "source_time_s": 6.4,
+          "primary_expected_both": true,
+          "recognized_count": 1,
+          "event_id": "e0004",
+          "status": "responded",
+          "first_candidate_status": "responded",
+          "candidate_status_counts": {
+            "responded": 1
+          },
+          "first_motion_s": 6.44,
+          "first_rgb_s": 6.44,
+          "both_onset_s": 6.44,
+          "motion_latency_s": 0.04,
+          "rgb_latency_s": 0.04,
+          "both_latency_s": 0.04,
+          "pass_1s_both": true
+        },
+        {
+          "input_id": "touch_conflict",
+          "kind": "touch",
+          "source_time_s": 7.0,
+          "primary_expected_both": false,
+          "recognized_count": 1,
+          "event_id": "e0006",
+          "status": "policy_held",
+          "first_candidate_status": "policy_held",
+          "candidate_status_counts": {
+            "policy_held": 1
+          },
+          "first_motion_s": null,
+          "first_rgb_s": null,
+          "both_onset_s": null,
+          "motion_latency_s": null,
+          "rgb_latency_s": null,
+          "both_latency_s": null,
+          "pass_1s_both": null
+        },
+        {
+          "input_id": "near_01",
+          "kind": "near",
+          "source_time_s": 7.0,
+          "primary_expected_both": true,
+          "recognized_count": 1,
+          "event_id": "e0005",
+          "status": "responded",
+          "first_candidate_status": "responded",
+          "candidate_status_counts": {
+            "responded": 1
+          },
+          "first_motion_s": 7.04,
+          "first_rgb_s": 7.04,
+          "both_onset_s": 7.04,
+          "motion_latency_s": 0.04,
+          "rgb_latency_s": 0.04,
+          "both_latency_s": 0.04,
+          "pass_1s_both": true
+        },
+        {
+          "input_id": "clear_02",
+          "kind": "clear",
+          "source_time_s": 9.0,
+          "primary_expected_both": true,
+          "recognized_count": 1,
+          "event_id": "e0007",
+          "status": "responded",
+          "first_candidate_status": "responded",
+          "candidate_status_counts": {
+            "responded": 1
+          },
+          "first_motion_s": 9.04,
+          "first_rgb_s": 9.04,
+          "both_onset_s": 9.04,
+          "motion_latency_s": 0.04,
+          "rgb_latency_s": 0.04,
+          "both_latency_s": 0.04,
+          "pass_1s_both": true
+        },
+        {
+          "input_id": "invalid_01",
+          "kind": "fault",
+          "source_time_s": 11.0,
+          "primary_expected_both": false,
+          "recognized_count": 1,
+          "event_id": "e0008",
+          "status": "no_state_change",
+          "first_candidate_status": "no_state_change",
+          "candidate_status_counts": {
+            "no_state_change": 1
+          },
+          "first_motion_s": null,
+          "first_rgb_s": null,
+          "both_onset_s": null,
+          "motion_latency_s": null,
+          "rgb_latency_s": null,
+          "both_latency_s": null,
+          "pass_1s_both": null
+        },
+        {
+          "input_id": "stale_01",
+          "kind": "fault",
+          "source_time_s": 12.0,
+          "primary_expected_both": false,
+          "recognized_count": 1,
+          "event_id": "e0009",
+          "status": "no_state_change",
+          "first_candidate_status": "no_state_change",
+          "candidate_status_counts": {
+            "no_state_change": 1
+          },
+          "first_motion_s": null,
+          "first_rgb_s": null,
+          "both_onset_s": null,
+          "motion_latency_s": null,
+          "rgb_latency_s": null,
+          "both_latency_s": null,
+          "pass_1s_both": null
+        },
+        {
+          "input_id": "button_02",
+          "kind": "button",
+          "source_time_s": 18.0,
+          "primary_expected_both": true,
+          "recognized_count": 1,
+          "event_id": "e0011",
+          "status": "responded",
+          "first_candidate_status": "responded",
+          "candidate_status_counts": {
+            "responded": 1
+          },
+          "first_motion_s": 18.1,
+          "first_rgb_s": 18.1,
+          "both_onset_s": 18.1,
+          "motion_latency_s": 0.1,
+          "rgb_latency_s": 0.1,
+          "both_latency_s": 0.1,
+          "pass_1s_both": true
+        }
+      ],
+      "latency_denominator": "all external inputs retained; pass count applies only to both observed onsets",
+      "primary_denominator": "predeclared 7 baseline expression/recovery sources; excludes intentional conflict and already-neutral faults",
+      "source_onset_aggregation": "earliest motion and RGB across all candidates with same input_id and kind; per-event onset retained separately",
+      "claim_scope": "simulated commanded pose/RGB onset only; physical device response unmeasured"
+    }
+  ]
+}

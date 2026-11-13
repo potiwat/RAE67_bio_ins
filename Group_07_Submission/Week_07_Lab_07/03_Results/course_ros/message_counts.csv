@@ -1,0 +1,8 @@
+topic,message_type,publisher,subscriber,published_in_role_trace,received_in_role_trace,messages_in_bag
+/lamp/emotion,std_msgs/msg/String,week07_interaction,week07_output_collector,1140,1137,1137
+/lamp/input/button,std_msgs/msg/Bool,week07_inputs,week07_interaction,1101,1098,959
+/lamp/input/distance,std_msgs/msg/Float32,week07_inputs,week07_interaction,1101,1098,959
+/lamp/input/touch,std_msgs/msg/Bool,week07_inputs,week07_interaction,1101,1098,959
+/lamp/interaction,std_msgs/msg/String,week07_interaction,week07_output_collector,1140,1137,1137
+/lamp/rgb_command,std_msgs/msg/ColorRGBA,week07_interaction,week07_output_collector,1140,1137,1137
+/lamp/servo_command,std_msgs/msg/Float32MultiArray,week07_interaction,week07_output_collector,1140,1137,1137

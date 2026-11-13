@@ -1,0 +1,7 @@
+pair,seed,transport,profile,published,received,accepted,discarded_out_of_order,transport_dropped,censored_after_trial,mean_received_age_s,max_received_age_s,total_ticks,fault_ticks,baseline_invalid_window_fault_ticks,baseline_stale_window_fault_ticks,outside_probe_windows_fault_ticks,state_transitions,source_ids_retained,primary_expected,observed_both,passed_1s,late_observed,missing_both,observed_both_median_s,observed_both_max_s
+1,41,C0,ideal,3303,3303,3303,0,0,0,0.0,0.0,1101,20,7,13,0,9,10,7,7,7,0,0,0.04,0.14
+1,41,C1,stressed,3303,3031,1618,1413,257,15,0.07685252391949851,0.18,1101,54,5,10,39,17,10,7,6,6,0,1,0.15,0.2
+2,42,C0,ideal,3303,3303,3303,0,0,0,0.0,0.0,1101,20,7,13,0,10,10,7,7,7,0,0,0.06,0.14
+2,42,C1,stressed,3303,3007,1586,1421,287,9,0.077931493182574,0.18,1101,81,5,11,65,36,10,7,6,6,0,1,0.14,0.22
+3,43,C0,ideal,3303,3303,3303,0,0,0,0.0,0.0,1101,20,7,13,0,9,10,7,7,7,0,0,0.04,0.14
+3,43,C1,stressed,3303,2991,1598,1393,300,12,0.07648946840521564,0.18,1101,56,5,12,39,17,10,7,7,7,0,0,0.1,0.18

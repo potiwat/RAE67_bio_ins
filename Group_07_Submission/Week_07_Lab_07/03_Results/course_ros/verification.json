@@ -1,0 +1,61 @@
+{
+  "trace_rows": {
+    "inputs": 3303,
+    "interaction": 7854,
+    "collector": 4548
+  },
+  "trace_spans_s": {
+    "inputs": 22.00122837,
+    "interaction": 22.78162997,
+    "collector": 22.722136501
+  },
+  "source_virtual_frames": 1101,
+  "source_virtual_span_s": [
+    0.0,
+    22.0
+  ],
+  "recorder_ready_to_first_source_publish_ms": 281.047085,
+  "interaction_output_ticks": 1140,
+  "emotion_messages_in_collector": {
+    "normal": 519,
+    "interested": 268,
+    "happy": 96,
+    "afraid": 100,
+    "sleepy": 154
+  },
+  "sqlite_integrity": "ok",
+  "bag_total_messages": 7425,
+  "bag_topic_count": 7,
+  "bag_sha256": "0a377928d7f13b5cba430ac8c8f5c9548514ec301c780e51f61ada393887d4a5",
+  "application_roles": [
+    "week07_inputs",
+    "week07_interaction",
+    "week07_output_collector"
+  ],
+  "observed_application_endpoints": 14,
+  "observed_recorder_subscriptions": 7,
+  "observed_reliability": [
+    "RELIABLE"
+  ],
+  "observed_durability": [
+    "VOLATILE"
+  ],
+  "observed_history": [
+    "UNKNOWN"
+  ],
+  "observed_depth": [
+    0
+  ],
+  "verified_all_cdr_messages": true,
+  "servo_layout": {
+    "label": "tilt_extend_nod_rad",
+    "size": 3,
+    "stride": 3,
+    "offset": 0
+  },
+  "observed_rgb_range": [
+    0.0,
+    1.0
+  ],
+  "source_to_physical_latency_s": null
+}

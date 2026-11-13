@@ -1,0 +1,18 @@
+[
+  {
+    "condition": "C1",
+    "profile": "step",
+    "peak_h": 0.9997153923247306,
+    "peak_r": 0.9997153923247306,
+    "auc_h_left": 9.999644341657826,
+    "latency_s": 0.15000000000000036,
+    "rise_10_90_s": 2.6999999999999993,
+    "recovery_s": 2.8500000000000014,
+    "upper_clamp_fraction": 0.0,
+    "lower_clamp_fraction": 0.0,
+    "phi_total_variation_rad": 0.39982925159514415,
+    "stride_total_variation_m": 0.019991462579757223,
+    "fault_count": 0,
+    "na_reason": "C0 has no H; non-step profiles have no step-response timing metrics; recovery may exceed trial"
+  }
+]

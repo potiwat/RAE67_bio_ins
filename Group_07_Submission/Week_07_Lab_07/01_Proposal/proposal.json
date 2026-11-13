@@ -1,0 +1,121 @@
+{
+  "group": 7,
+  "date": "2026-11-12",
+  "platform": "LampBio-Inpire, a 5-DOF robotic lamp running present on Raspberry Pi 5 with native camera/GPIO/I2C/servo UART/LED SPI",
+  "question": "เมื่อทำงานด้วยสิ่งเร้าเดียวกัน การผ่านฮอร์โมน H ก่อนปรับ φ เปลี่ยนความถี่ CPG และความต่างระหว่างคาบอย่างไร และคาบการเต้นของฐาน Happy เปลี่ยนตามหรือไม่",
+  "hypothesis": "หลังปล่อย Touch ค่า H จะค่อย ๆ ลด จึงคาดว่า C1 จะคงจังหวะเร็วไว้ชั่วคราว ขณะที่ C0 ลด φ ตาม S ทันที ทดสอบค่าเฉลี่ยความต่างระหว่างคาบแยกตามคู่เพื่อดูว่าลดลงสม่ำเสมอหรือไม่",
+  "biological_inspiration_source": "แนวคิดการสะสมและสลายสัญญาณฮอร์โมนตาม Lab04–05 และวงจรประสาทกำเนิดจังหวะ SO(2) ของ Dr. Poramate ตาม Lab03 ดู 06_References/README_TH.md",
+  "AHM_equation": "H[k+1] = clip(H[k] + 0.05*(0.8*S[k] - 0.6*H[k] - 0.2*H[k]), 0, 1); H[0]=0.",
+  "SO2_CPG_equation": "o1[k+1]=tanh(alpha*(cos(phi)*o1[k]+sin(phi)*o2[k])); o2[k+1]=tanh(alpha*(-sin(phi)*o1[k]+cos(phi)*o2[k])); both use the same prior state.",
+  "integration_description": "R = S in C0 and R = H in C1. Ordinary phi = 0.10 + 0.03*R. During Happy phi = 0.11798049926757813 + (0.13-0.11798049926757813)*R, in rad/update. The decoder maps phase to motor targets and a state-colored LED.",
+  "independent_variable": "วิธีเลือกสัญญาณ R สำหรับกำหนด φ ที่ตัวควบคุมใช้",
+  "conditions": [
+    {
+      "name": "C0 direct",
+      "baseline": true,
+      "change": "ใช้ R=S โดยตรง พร้อมบันทึก H ที่สังเกตได้",
+      "repeats": 3
+    },
+    {
+      "name": "C1 hormone",
+      "baseline": false,
+      "change": "ใช้ R=H จากโมเดลฮอร์โมน โดยใช้ตาราง S เดียวกับ C0 ในแต่ละคู่",
+      "repeats": 3
+    }
+  ],
+  "metrics": [
+    {
+      "name": "M1 CPG frequency",
+      "unit": "Hz",
+      "measurement": "1/mean(T); T between successive interpolated rising zero crossings of o1 within a fully active continuous state on the oscillator output clock.",
+      "missing_rule": "N/A when there is no complete eligible period; include cycle count."
+    },
+    {
+      "name": "M2 cycle-to-cycle change",
+      "unit": "s",
+      "measurement": "Mean absolute T[n]-T[n-1] within the same eligible continuous episode; summarize per pair before taking between-pair means.",
+      "missing_rule": "N/A when no adjacent complete periods. Discard crossing episode boundaries."
+    },
+    {
+      "name": "Happy base sway period",
+      "unit": "s/cycle",
+      "measurement": "Time between same-direction mid-angle crossings of native ID1 encoder, gated using the calibrated high and low excursions; ON and OFF use full cycles contained inside the stage.",
+      "missing_rule": "N/A for missing full swings, display counts and mark crossing-edge cycles separately."
+    }
+  ],
+  "controls": [
+    "ตาราง Button, Touch และ logical Near เดียวกันในทั้งสองเงื่อนไข รอบละ 180 วินาที",
+    "ใช้เป้ากล้องเดียวกันภายในคู่ เปิดด้วยโปรแกรม present และใช้ตัวตรวจแรงต้าน ID1, ID2 และ ID4",
+    "H เริ่มที่ 0 ทุกครั้ง คงท่า PID ความเร็ว ความเร่ง และตัวถอดจังหวะของมอเตอร์",
+    "บันทึกเฟสจริงของแต่ละรอบหุ่น แยกเงื่อนไขตั้งต้นออกจากผลที่เกิดจาก H"
+  ],
+  "parameters": [
+    {
+      "name": "dt",
+      "value": 0.05,
+      "unit": "s",
+      "provenance": "Lab05 update and recorded hormone step in present"
+    },
+    {
+      "name": "alpha",
+      "value": 1.1,
+      "unit": "unitless",
+      "provenance": "Retained Lab03/Lab05 SO(2) body model"
+    },
+    {
+      "name": "hormone rates",
+      "value": [
+        0.8,
+        0.6,
+        0.2
+      ],
+      "unit": "1/s",
+      "provenance": "AHM production, decay and leak in the runtime"
+    },
+    {
+      "name": "phi ordinary limits",
+      "value": [
+        0.1,
+        0.13
+      ],
+      "unit": "rad/update",
+      "provenance": "Active AHM mapping in present"
+    },
+    {
+      "name": "phi during Happy",
+      "value": [
+        0.11798049926757813,
+        0.13
+      ],
+      "unit": "rad/update",
+      "provenance": "checked against the selected Happy bank and runtime configuration"
+    }
+  ],
+  "simulation_plan": "Run three paired 180 s recorded-context controller simulations. Share Pn/C0 routing, start oscillator states and active envelopes within each pair; recalculate S,H,R,phi,o1,o2 and M1/M2. Re-run using 03_Results/simulation/README_TH.md.",
+  "real_robot_plan": "Run present on one Raspberry Pi 5 with five STS3215 servos. Compare C0 direct (R=S) and C1 hormone (R=H) in three matched pairs, six 180 s runs. Use native encoder/goal records, the actual camera and ToF. Convert motor ticks to angles relative to the configured Normal position (360/4096 deg/tick).",
+  "clock_correlation_plan": "Store source event identifiers and acquisition/recognition/dispatch timestamps. Native Pi motor feedback is monotonic; pair it with owner BOOTTIME anchors. No subtraction of clocks on different hosts. External video first frame is not hardware synchronized; absolute physical onset error is unmeasured.",
+  "safety_stop_plan": "คงขอบมุมและโปรไฟล์เดิม ใช้ feedback ที่มอเตอร์รายงานกับตัวตรวจแรงต้าน ID1, ID2, ID4 ผู้ดูแลเว้นทางเคลื่อน ดูสายและ Emergency ถ้ารอบวัดถูกขัดจังหวะให้เก็บสาเหตุและตรวจการประคองก่อนรันใหม่",
+  "order_counterbalancing": "The six measured runs are documented in 03_Results/real_robot/summary/Run_index.csv.",
+  "paired_seed_or_participant_plan": "P1 uses the same person in camera view; P2 and P3 use the same displayed portrait for both members of each pair. Day-specific human demo is a separate record; no population-level behavioral inference. Replays use equal Pn/C0 initial oscillator states within each software pair.",
+  "expected_input_ids_before_run": "Hardware schedule fixes study_button_16.0; study_touch_42.0; study_touch_78.0, study_touch_78.4, study_touch_78.8 and study_burst_78.8; study_near_108.0 and scheduled release at 136 s. Matched lab bridge uses its separately preregistered seven source IDs under 03_Results/course_bridge/preregistered_protocol.json.",
+  "controlled_trial_duration_s": 180,
+  "human_scenario_duration_s": 600,
+  "human_demonstration": {
+    "movie_s": 632.18,
+    "motor_feedback_span_s": 631.926064984,
+    "motor_feedback_rows": 64212,
+    "video": "07_Evidence/present/IMG_4568.MOV",
+    "youtube": "https://youtu.be/-zckfxbT9Jk?feature=shared",
+    "frame_alignment_verified": false,
+    "motor_feedback_csv": "07_Evidence/present/present_feedback.csv",
+    "events_csv": "07_Evidence/present/present_events.csv"
+  },
+  "timeline": "12 พ.ย. 2569 กลุ่ม 7 ตรวจตัวเปิดและรอบเริ่ม เก็บหุ่นจริงสามคู่และรอบเล่นสาธิต แล้วรันแบบจำลองบริบทเดียวกัน วิเคราะห์กราฟและตรวจซ้ำไฟล์ส่ง โดยสมาชิกกลุ่มรับผิดชอบการตรวจหลักฐานร่วมกัน",
+  "hardware_limit": "The Raspberry Pi 5 records native data; every controlled run contains in-window observations for 12 of 13 design groups. The face group has no in-window stream. Button and touch are scripted in these trials. The separate PC course ROS 2 bag contains 7,425 messages across all seven required topics. The project defines six additional observation topics in 04_Design/TOPIC_CONTRACT_13.json.",
+  "real_robot_sample_counts": {
+    "C0_raw": 10732,
+    "C1_raw": 10732,
+    "total_raw": 21464,
+    "total_in_window": 21458
+  }
+}

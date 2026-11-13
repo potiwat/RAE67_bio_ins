@@ -1,0 +1,131 @@
+{
+  "started_utc": "2026-11-12T15:11:52.913938+00:00",
+  "finished_utc": "2026-11-12T15:12:18.866610+00:00",
+  "seed": 41,
+  "ros_distro": "jazzy",
+  "domain_id": 87,
+  "discovery_range": "LOCALHOST",
+  "system": "Linux-6.18.58.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "rmw": "rmw_fastrtps_cpp",
+  "same_host": "LAPTOP-CI6CEGKT",
+  "topic_messages_in_bag": {
+    "/lamp/interaction": 1137,
+    "/lamp/emotion": 1137,
+    "/lamp/rgb_command": 1137,
+    "/lamp/servo_command": 1137,
+    "/lamp/input/button": 959,
+    "/lamp/input/distance": 959,
+    "/lamp/input/touch": 959
+  },
+  "source_to_physical_latency_s": null,
+  "events": [
+    {
+      "event": "isolated_graph_checked",
+      "monotonic_ns": 16241843803,
+      "utc": "2026-11-12T15:11:53.760835+00:00",
+      "domain": "87",
+      "rmw": "rmw_fastrtps_cpp"
+    },
+    {
+      "event": "launched_collector",
+      "monotonic_ns": 16244662271,
+      "utc": "2026-11-12T15:11:53.763652+00:00",
+      "pid": 548
+    },
+    {
+      "event": "collector_subscribed",
+      "monotonic_ns": 16622284167,
+      "utc": "2026-11-12T15:11:54.141276+00:00"
+    },
+    {
+      "event": "launched_recorder",
+      "monotonic_ns": 16630238817,
+      "utc": "2026-11-12T15:11:54.149230+00:00",
+      "pid": 562
+    },
+    {
+      "event": "recorder_node_visible",
+      "monotonic_ns": 17209951413,
+      "utc": "2026-11-12T15:11:54.728946+00:00"
+    },
+    {
+      "event": "launched_interaction",
+      "monotonic_ns": 17217410993,
+      "utc": "2026-11-12T15:11:54.736404+00:00",
+      "pid": 580
+    },
+    {
+      "event": "all_seven_recorder_subscriptions_ready_before_source",
+      "monotonic_ns": 17596061691,
+      "utc": "2026-11-12T15:11:55.115052+00:00"
+    },
+    {
+      "event": "launched_input",
+      "monotonic_ns": 17598966310,
+      "utc": "2026-11-12T15:11:55.117955+00:00",
+      "pid": 594
+    },
+    {
+      "event": "three_role_endpoints_visible",
+      "monotonic_ns": 19032586619,
+      "utc": "2026-11-12T15:11:56.551579+00:00"
+    },
+    {
+      "event": "live_graph_captured",
+      "monotonic_ns": 19050952360,
+      "utc": "2026-11-12T15:11:56.569942+00:00",
+      "endpoints": 21,
+      "nodes": [
+        {
+          "name": "rosbag2_recorder",
+          "namespace": "/"
+        },
+        {
+          "name": "week07_graph_observer",
+          "namespace": "/"
+        },
+        {
+          "name": "week07_inputs",
+          "namespace": "/"
+        },
+        {
+          "name": "week07_interaction",
+          "namespace": "/"
+        },
+        {
+          "name": "week07_output_collector",
+          "namespace": "/"
+        }
+      ]
+    },
+    {
+      "event": "official_source_completed",
+      "monotonic_ns": 39956992021,
+      "utc": "2026-11-12T15:12:17.475984+00:00"
+    },
+    {
+      "event": "stopped_input",
+      "monotonic_ns": 40127618414,
+      "utc": "2026-11-12T15:12:17.646612+00:00",
+      "returncode": 0
+    },
+    {
+      "event": "stopped_interaction",
+      "monotonic_ns": 40452388531,
+      "utc": "2026-11-12T15:12:17.971383+00:00",
+      "returncode": 0
+    },
+    {
+      "event": "stopped_collector",
+      "monotonic_ns": 40977663433,
+      "utc": "2026-11-12T15:12:18.496658+00:00",
+      "returncode": 0
+    },
+    {
+      "event": "stopped_recorder",
+      "monotonic_ns": 41153389819,
+      "utc": "2026-11-12T15:12:18.672384+00:00",
+      "returncode": 0
+    }
+  ]
+}

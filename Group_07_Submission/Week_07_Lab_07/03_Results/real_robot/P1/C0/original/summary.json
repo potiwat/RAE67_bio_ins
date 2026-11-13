@@ -1,0 +1,180 @@
+{
+  "condition": "C0",
+  "protocol": "conditioned_tof_v2",
+  "started_s": 9563.32390355,
+  "last_elapsed_s": 180.03225951700006,
+  "complete": true,
+  "aborted": null,
+  "writer_error": null,
+  "dropped": 0,
+  "written": 3575,
+  "states": [
+    "afraid",
+    "angry",
+    "happy",
+    "interested",
+    "normal",
+    "sleepy"
+  ],
+  "behaviors": [
+    "afraid",
+    "angry",
+    "angry_transition",
+    "button_look",
+    "happy",
+    "interested",
+    "normal",
+    "normal_transition",
+    "sleepy",
+    "sleepy_transition"
+  ],
+  "interruptions": [],
+  "physical_stimulus_outside_script": false,
+  "physical_coinput": false,
+  "suppressed_approach_candidates": 1,
+  "model_input_problems": [
+    "input_history_overflow"
+  ],
+  "tof_published_frames": 1856,
+  "tof_frames_sha256": "5d41d920cb1a2550156e806601139e0c5ee8887397c5f56c705bc6fea3d9c40a",
+  "actual_launch_flags": [
+    "--experimental-contact",
+    "--auto-contact-recovery",
+    "--tof-mode2-trial",
+    "--isolate-tof",
+    "--id1-effort-trial",
+    "--id2-contact-recovery",
+    "--id2-effort-trial",
+    "--id4-effort-trial",
+    "--accepted-coordination",
+    "--contact-ids",
+    "1,2,4"
+  ],
+  "seed_at_start": {
+    "h": 0.0,
+    "r_condition": "C0",
+    "native_log_dir": "/dev/shm/lab07_present_safety_pair1_20261112_C0_1794485164028088235/native/run_1794485205668804969",
+    "banks": {
+      "body": [
+        -0.3028432749426511,
+        0.5468909552221648,
+        27,
+        0.0
+      ],
+      "happy": [
+        0.56567168299214,
+        0.13618823191393328,
+        48,
+        0.0
+      ],
+      "afraid": [
+        -0.3028432749426511,
+        0.5468909552221648,
+        27,
+        0.0
+      ]
+    },
+    "route": "MatchedSleepy",
+    "driver": "AcceptedRhythms",
+    "happy_phase_divisor": 0.889679715302491,
+    "enabled_ids": [
+      1,
+      2,
+      4
+    ]
+  },
+  "trace_sha256": "3174d2af190ab4e4a66503026d8a46e516eb3dff2e6b18ccb265538c7c716fb9",
+  "native_archive": "/home/menulis/projects/lelamp/camera_tracking/shared/hardware/lab07_present_safety_pair1_20261112/conditioned_tof_v2/P1/C0_1794485164028088235/native/run_1794485205668804969",
+  "max_observed_ui_poll_gap_s": 0.04931223099993076,
+  "in_memory_observer_max_ms": 5.289653998261201,
+  "native_trace_builder_max_ms": 4.03321900012088,
+  "slow_diagnostic_calls": [],
+  "protected_identity_after": {
+    "desktop_exec": [
+      "/home/menulis/lamp-test-venv/bin/python",
+      "-B",
+      "/home/menulis/projects/lelamp/camera_tracking/shared/experiments/presentation_safety_play_20261110/present_safety_start.py"
+    ],
+    "desktop_sha256": "18943ac684bb769fdd8a55423ae49db04f0750d839b3a1f793a4cd20fc8f2950",
+    "entry_sha256": "b14df0a6557526f1a66212fe1a33d80a297ac73f341d696acbcfee3bd9166854",
+    "launcher_sha256": "e9177ba4269b979d15749f460e18c58e4b835af8dbeb9f732e847e7c10d2aff1",
+    "config_sha256": "31796f2871e23977dd375fec84796b2707a645b16169ccbace5b1aaa24b00f10",
+    "profile_sha256": "4430452e363d775ab3005ffaec920dc4d5163b00c393c97ebbc044771dfd62da",
+    "manifest_sha256": "c951dd23f744b9e835a4d8457be3126386ec445ffea0f5a1c0056ff96b3ae28f",
+    "verified_groups": {
+      "own_sha256": 95,
+      "protected_sha256": 132,
+      "dependency_sha256": 13
+    },
+    "profile_condition": "C1",
+    "start_gate": "five_fresh_base_press_releases_no_Start_M",
+    "PID": {
+      "1": {
+        "p": 8,
+        "i": 0,
+        "d": 16
+      },
+      "2": {
+        "p": 32,
+        "i": 0,
+        "d": 20
+      },
+      "3": {
+        "p": 24,
+        "i": 0,
+        "d": 26
+      },
+      "4": {
+        "p": 5,
+        "i": 0,
+        "d": 0
+      },
+      "5": {
+        "p": 7,
+        "i": 0,
+        "d": 3
+      }
+    },
+    "normal_raw": {
+      "1": 2019,
+      "2": 2837,
+      "3": 2746,
+      "4": 1997,
+      "5": 2696
+    },
+    "script": {
+      "button": [
+        [
+          16.0,
+          24.0
+        ]
+      ],
+      "touch": [
+        [
+          42.0,
+          59.0
+        ],
+        [
+          78.0,
+          78.2
+        ],
+        [
+          78.4,
+          78.6
+        ],
+        [
+          78.8,
+          79.0
+        ]
+      ],
+      "near": [
+        [
+          108.0,
+          136.0
+        ]
+      ]
+    },
+    "script_sha256": "85c3a0256d5c54c18056971feb9ee4e78db01e75d92466d04bbcda80a2a99bd3"
+  },
+  "script_is_not_physical_contact": true
+}

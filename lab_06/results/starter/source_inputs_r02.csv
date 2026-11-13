@@ -1,0 +1,11 @@
+input_id,kind,source_time_s,primary_expected_both
+button_01,button,1.0,True
+touch_01,touch,3.0,True
+approach_01,approach,5.0,True
+clear_01,clear,6.4,True
+touch_conflict,touch,7.0,False
+near_01,near,7.0,True
+clear_02,clear,9.0,True
+invalid_01,fault,11.0,False
+stale_01,fault,12.0,False
+button_02,button,18.0,True

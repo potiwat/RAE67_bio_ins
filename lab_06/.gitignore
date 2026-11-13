@@ -2,3 +2,6 @@ __pycache__/
 *.py[cod]
 results/
 .venv/
+
+# group submission evidence (keep)
+!results/

@@ -1,0 +1,33 @@
+test_hysteresis_preserves_state_inside_band (test_lab02.ControllerTests.test_hysteresis_preserves_state_inside_band) ... ok
+test_invalid_sample_uses_safe_command (test_lab02.ControllerTests.test_invalid_sample_uses_safe_command) ... ok
+test_proportional_command_is_clamped (test_lab02.ControllerTests.test_proportional_command_is_clamped) ... ok
+test_controller_comparison_writes_expected_trials (test_lab02.ExperimentTests.test_controller_comparison_writes_expected_trials) ... ok
+test_sensor_delay_increases_enter_latency (test_lab02.ExperimentTests.test_sensor_delay_increases_enter_latency) ... ok
+test_reference_trajectory_key_times (test_lab02.TrajectoryTests.test_reference_trajectory_key_times) ... ok
+test_adapter_runs_all_conditions (test_student_integration.StudentIntegrationTests.test_adapter_runs_all_conditions) ... ok
+test_complete_submission_runs_protocol_and_grader (test_student_integration.StudentIntegrationTests.test_complete_submission_runs_protocol_and_grader) ... ok
+test_diagnostic_report_identifies_unfinished_starter (test_student_integration.StudentIntegrationTests.test_diagnostic_report_identifies_unfinished_starter) ... FAIL
+test_invalid_sample_uses_student_safe_command (test_student_integration.StudentIntegrationTests.test_invalid_sample_uses_student_safe_command) ... ok
+test_loader_accepts_student_file (test_student_integration.StudentIntegrationTests.test_loader_accepts_student_file) ... ok
+test_unfinished_starter_fails_before_writing_results (test_student_integration.StudentIntegrationTests.test_unfinished_starter_fails_before_writing_results) ... FAIL
+
+======================================================================
+FAIL: test_diagnostic_report_identifies_unfinished_starter (test_student_integration.StudentIntegrationTests.test_diagnostic_report_identifies_unfinished_starter)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\RAE67_bio_ins\lab_02\tests\test_student_integration.py", line 77, in test_diagnostic_report_identifies_unfinished_starter
+    self.assertGreater(report["failed"], 0)
+AssertionError: 0 not greater than 0
+
+======================================================================
+FAIL: test_unfinished_starter_fails_before_writing_results (test_student_integration.StudentIntegrationTests.test_unfinished_starter_fails_before_writing_results)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\RAE67_bio_ins\lab_02\tests\test_student_integration.py", line 67, in test_unfinished_starter_fails_before_writing_results
+    with self.assertRaisesRegex(NotImplementedError, "unfinished TODO"):
+AssertionError: NotImplementedError not raised
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.221s
+
+FAILED (failures=2)

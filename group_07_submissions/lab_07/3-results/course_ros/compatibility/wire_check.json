@@ -1,0 +1,18 @@
+{
+  "message_type": "std_msgs/msg/Float32MultiArray",
+  "python_data_type": "<class 'array.array'>",
+  "unmodified_logger_error": "Object of type array is not JSON serializable",
+  "wire_bytes_before_sha256": "b7e36ca1c0a52da43146c8e1059cc775ebc7b05a051a85ece7b5ac2b527b450b",
+  "wire_bytes_after_sha256": "b7e36ca1c0a52da43146c8e1059cc775ebc7b05a051a85ece7b5ac2b527b450b",
+  "cdr_bytes": 60,
+  "round_trip_equal": true,
+  "decoded_servo": [
+    0.27000001072883606,
+    0.17000000178813934,
+    -0.20999999344348907
+  ],
+  "layout_label": "tilt_extend_nod_rad",
+  "layout_size": 3,
+  "layout_stride": 3,
+  "policy_sha256": "2a7d07a3cf685a248becc075cb23c06e8bbe7af41631ccf6cb23d8e8cc16159c"
+}

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Bio-Inspire Presentation
+Comment=Presentation: grouped positions across all emotions, Happy 2.5s, preserved heading and breathing LEDs. Press Start to move.
+Exec=/home/menulis/lamp-test-venv/bin/python -B /home/menulis/projects/lelamp/camera_tracking/bio_inspire/deploy/open_presentation.py
+Path=/home/menulis/projects/lelamp/camera_tracking
+Icon=applications-science
+Terminal=false
+StartupNotify=false

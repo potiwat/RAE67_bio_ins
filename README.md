@@ -1,16 +1,3 @@
-# หลักฐานวิดีโอการทดลอง Lab07 — กลุ่ม 7
-
-ดาวน์โหลดวิดีโอทั้งสองไฟล์ได้จาก [GitHub Release: Lab07 - Group 07 Video Evidence](https://github.com/Tonkao1725/BioInspired-Robotics-Labs-Fork-/releases/tag/lab07-video-evidence) โดยตรง ไฟล์วิดีโอจริงเก็บใน Releases แยกจาก Git Tree ส่วน CSV และข้อมูลการทดลองอยู่ใน [โฟลเดอร์หลักฐาน](group_07_submissions/lab_07/3-results/evidence/)
-
-| ชื่อคลิปต้นฉบับ | ระยะเวลา | วัตถุประสงค์ | ดาวน์โหลดวิดีโอ | ข้อมูล CSV ที่เกี่ยวข้อง |
-|---|---|---|---|---|
-| คลิปทดลองเล่น.mp4 | 167.05 วินาที (2:47.05) | หลักฐานประกอบรอบเล่นกับโคม C1 และข้อมูล diagnostic ที่กู้คืน | [default.mp4](https://github.com/Tonkao1725/BioInspired-Robotics-Labs-Fork-/releases/download/lab07-video-evidence/default.mp4) | [CSV รอบทดลองเล่น](<group_07_submissions/lab_07/3-results/evidence/CSV ของ วิดีโอทดลองเล่น/CSV ของ วิดีโอทดลองเล่น.csv>) |
-| คลิปเล่นกับคน_10นาที_C1.MOV | 610.947 วินาที (10:10.947) | หลักฐานรอบเล่นกับคน C1 เพิ่มเติม แยกจากชุด controlled C0/C1 | [_10._C1.MOV](https://github.com/Tonkao1725/BioInspired-Robotics-Labs-Fork-/releases/download/lab07-video-evidence/_10._C1.MOV) | [CSV รอบเล่นกับคน 10 นาที](<group_07_submissions/lab_07/3-results/evidence/CSV_คลิปเล่นกับคน_10นาที_C1_20261106/CSV_คลิปเล่นกับคน_10นาที.csv>) |
-
-วิดีโอทั้งสองเป็นหลักฐานการทดลองคนละรอบ ยังไม่ได้ยืนยันการ Synchronize Frame กับ CSV แบบ Frame-by-frame และไม่ถือว่าเฟรมแรกตรงกับเวลา 0 ของ CSV โดยอัตโนมัติ ดูชื่อไฟล์ ขนาด และ SHA-256 ใน [ดัชนีวิดีโอ](group_07_submissions/lab_07/3-results/evidence/VIDEO_INDEX.md)
-
----
-
 # งานส่งรายวิชา Bio-Inspired Robotics — กลุ่ม 7
 
 นักศึกษาได้ทำ Lab02–Lab07 และบันทึกงานผ่าน GitHub Repository ส่วนตัวตามลำดับสัปดาห์ ก่อนทราบข้อกำหนดว่าต้อง Fork Repository ของผู้สอนโดยตรง จึงได้ย้ายสำเนางานทั้งหมดมายัง Fork นี้ เพื่อให้ผู้สอนสามารถเข้าตรวจสอบงานได้สะดวกและเป็นไปตามข้อกำหนด
@@ -27,7 +14,7 @@
 | Lab07 | [lab_07](group_07_submissions/lab_07/) |
 | งานเพิ่มเติม | [extra](group_07_submissions/extra/) |
 
-โฟลเดอร์ lab_02–lab_07 ที่ Root เป็นไฟล์ต้นฉบับของผู้สอน ส่วนงานของนักศึกษาอยู่ใน group_07_submissions ตามลิงก์ข้างต้น โดยคงไฟล์ original_files ที่ Git ติดตามใน Lab07 ไว้ครบถ้วน
+โฟลเดอร์ lab_02–lab_07 ที่ Root เป็นไฟล์ต้นฉบับของผู้สอน ส่วนงานของนักศึกษาอยู่ใน group_07_submissions ตามลิงก์ข้างต้น โดยเก็บสำเนาชุด Lab07 ก่อนจัดไว้ครบในเครื่องที่ `local_backup_20261113/lab07_before/` และใช้ชุดทดลองวันที่ 12 พฤศจิกายนเป็นชุดส่งปัจจุบัน
 
 ## ประวัติการบันทึกงาน
 
@@ -150,3 +137,9 @@ python3 check_proposal.py proposal.json
 อ่าน [คู่มือ Lab 07](lab_07/README.md) และ [ใบงาน Word](lab_07/Week07_Student_Worksheet_TH.docx) เติม TODO ใน `lamp_week07/student_policy.py` และ proposal ก่อนส่ง checker ของ starter ควร FAIL จนกว่างานส่วนนี้ครบ ใช้ Lab07 starter ได้เอง หรือใช้ policy ของกลุ่มที่ทำเสร็จจาก Lab06 ตามคู่มือ
 
 Lab07 เป็น proposed course model เปรียบเทียบ C0 ideal delivery กับ C1 modeled jitter/drop ด้วยเวลาเสมือน ผล offline ไม่ใช่ ROS/DDS หรือ physical latency benchmark ส่วน ROS 2 adapter source ต้องใช้เครื่อง Ubuntu 24.04 + ROS 2 Jazzy ที่เตรียมไว้แล้ว ชุดสาธารณะไม่รวมเฉลย reference policy tests หรือผลทดลองของผู้สอน
+
+## ชุดเอกสาร Lab07 ปัจจุบัน
+
+ชุดทดลองวันที่ 12 พฤศจิกายน 2569 จัดเอกสารแยกเป็นรายงาน ใบงาน และ Proposal โดยรักษาไฟล์ Word/PDF เดิมทุกไบต์ ดู [เอกสาร Lab07](group_07_submissions/lab_07/1-docs/README.md) ประวัติ commit วันที่ 6–7 พฤศจิกายนข้างต้นเป็นประวัติชุดก่อนหน้า ไม่ใช่การอ้างว่างานวันที่ 12 พฤศจิกายนถูกส่งในวันเดิม
+
+วิดีโอชุดเก่าที่เผยแพร่ใน GitHub Releases ยังอยู่ตามเดิม ดู [ดัชนีหลักฐานชุดเก่า](group_07_submissions/lab_07/1-docs/references/previous_video_evidence.md) แยกจากคลิปทดลองใหม่วันที่ 12 พฤศจิกายนที่ลิงก์ YouTube ในชุดส่ง

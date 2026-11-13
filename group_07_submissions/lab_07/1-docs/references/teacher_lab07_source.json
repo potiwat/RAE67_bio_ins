@@ -1,0 +1,36 @@
+{
+  "repository": "potiwat/RAE67_bio_ins",
+  "commit": "fa528b169f1127ee3e0e9fae3d721546bf1b82d2",
+  "directory": "lab_07",
+  "required_deliverables": "README.md lines 140-145",
+  "files": {
+    "README.md": {
+      "sha256": "89f6edc9f7d4500756197f4762b069754541e9cfa8f06a1266e355743ee5fc48",
+      "link": "https://github.com/potiwat/RAE67_bio_ins/blob/fa528b169f1127ee3e0e9fae3d721546bf1b82d2/lab_07/README.md"
+    },
+    "worksheet.md": {
+      "sha256": "c8ef356b793c3d17011ebdf0d02a4feaebdb6bb42457932207b0651df43ed69b",
+      "link": "https://github.com/potiwat/RAE67_bio_ins/blob/fa528b169f1127ee3e0e9fae3d721546bf1b82d2/lab_07/worksheet.md"
+    },
+    "Week07_Student_Worksheet_TH.docx": {
+      "sha256": "9254baec8d4cd84c43fdea7f1369ada4b9dcf1493266078993ac1fafa0daa995",
+      "link": "https://github.com/potiwat/RAE67_bio_ins/blob/fa528b169f1127ee3e0e9fae3d721546bf1b82d2/lab_07/Week07_Student_Worksheet_TH.docx"
+    },
+    "check_proposal.py": {
+      "sha256": "09d263657533b4bb27adcd5132c49b1724b1d6c62e6b981797ac240b86202472",
+      "link": "https://github.com/potiwat/RAE67_bio_ins/blob/fa528b169f1127ee3e0e9fae3d721546bf1b82d2/lab_07/check_proposal.py"
+    },
+    "check_submission.py": {
+      "sha256": "9da360d32dcf821afa950d830de3b2fb91add20b7a1d8613677be91c45789621",
+      "link": "https://github.com/potiwat/RAE67_bio_ins/blob/fa528b169f1127ee3e0e9fae3d721546bf1b82d2/lab_07/check_submission.py"
+    },
+    "interface_contract.json": {
+      "sha256": "ac2ab214d555ca91af99b324425d0e48d43e16cfd34509046bb426016f14c926",
+      "link": "https://github.com/potiwat/RAE67_bio_ins/blob/fa528b169f1127ee3e0e9fae3d721546bf1b82d2/lab_07/interface_contract.json"
+    },
+    "offline_lab.py": {
+      "sha256": "f4dc70ce61612190fafb164fa7c001959a6a8b008f0baef57695ed79d5fd40f9",
+      "link": "https://github.com/potiwat/RAE67_bio_ins/blob/fa528b169f1127ee3e0e9fae3d721546bf1b82d2/lab_07/offline_lab.py"
+    }
+  }
+}

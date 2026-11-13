@@ -1,9 +1,0 @@
-{
-  "completed": true,
-  "condition": "C1",
-  "trace_count": 659,
-  "input_fixture_identical": true,
-  "cleanup_confirmed": true,
-  "phi_reference_parity": true,
-  "paired_analysis": "../comparison_r01/REPORT_TH.md"
-}

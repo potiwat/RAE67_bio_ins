@@ -1,0 +1,17 @@
+{
+  "eligible": true,
+  "trace_sha256": "672c35b0ac6d76676e1242d9b8edf8b453361bf8aa134b1a26629498d1884f3d",
+  "original_model_input_problems": [
+    "input_history_overflow"
+  ],
+  "analysis_window_s": [
+    0,
+    180
+  ],
+  "boundary_handoff_s": {
+    "snapshot": 180.0159757729998,
+    "owner": 180.0159757729998,
+    "model": 180.01561189899985,
+    "input": 180.0156076580006
+  }
+}

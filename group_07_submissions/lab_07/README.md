@@ -1,52 +1,44 @@
-## วิดีโอหลักฐานการทดลอง Lab07 — สถานะ GitHub ปัจจุบัน
+# Lab 7 ผลของฮอร์โมนต่อจังหวะ CPG ของ LampBio-Inpire
 
-ไฟล์วิดีโอจริงทั้งสองอยู่ใน [GitHub Releases](https://github.com/Tonkao1725/BioInspired-Robotics-Labs-Fork-/releases/tag/lab07-video-evidence) ไม่ได้แนบอยู่ใน Git Tree ของ `3-results/evidence` ดาวน์โหลด [คลิปทดลองเล่น — default.mp4](https://github.com/Tonkao1725/BioInspired-Robotics-Labs-Fork-/releases/download/lab07-video-evidence/default.mp4) และ [คลิปเล่นกับคน 10 นาที — _10._C1.MOV](https://github.com/Tonkao1725/BioInspired-Robotics-Labs-Fork-/releases/download/lab07-video-evidence/_10._C1.MOV) ได้โดยตรง
+**กลุ่ม 7 · ทดลองวันที่ 12 พฤศจิกายน 2569**
 
-CSV และข้อมูลการทดลองอยู่ใน [3-results/evidence](3-results/evidence/) ตามเดิม ชื่อไฟล์บน Release ต่างจากชื่อไฟล์ต้นฉบับ แต่ SHA-256 ตรงกับค่าต้นฉบับที่ระบุไว้ ดู [ดัชนีวิดีโอพร้อมลิงก์ CSV ขนาด และ SHA-256](3-results/evidence/VIDEO_INDEX.md)
+[ดูวิดีโอเล่นกับโคมจริง 10 นาทีบน YouTube](https://youtu.be/-zckfxbT9Jk?feature=shared) · [เปิดไฟล์วิดีโอต้นฉบับ](1-docs/metadata/local_video.json)
 
-วิดีโอทั้งสองเป็นหลักฐานการทดลองคนละรอบ ยังไม่ได้ยืนยันการ Synchronize Frame กับ CSV แบบ Frame-by-frame และไม่ถือว่าเฟรมแรกตรงกับเวลา 0 ของ CSV โดยอัตโนมัติ ข้อความสถานะชุด local/ZIP เดิมด้านล่างเป็นประวัติการเตรียมชุดงาน
+| เอกสารหลัก | เนื้อหา |
+|---|---|
+| [รายงานผล Word](1-docs/lab_documents/Lab07_Report_Group7.docx) | วิธีทดลอง กราฟที่ใช้แกนเวลาร่วมกัน ผลแยกสามคู่ และข้อจำกัดของการวัด |
+| [ใบงาน Word](1-docs/lab_documents/Lab07_Student_Worksheet_TH.docx) · [ใบงาน Markdown](1-docs/markdown/worksheet.md) | คำถามงานวิจัย สถาปัตยกรรม สมการ ตัวชี้วัด ผลบนคอมและหุ่นจริง และคำตอบตามใบงาน |
+| [Proposal Word](1-docs/lab_documents/Lab07_Proposal_Group7.docx) · [Proposal PDF](1-docs/lab_documents/Lab07_Proposal_Group7.pdf) | ตัวแปรควบคุม ตารางสิ่งเร้า และแผนการเปรียบเทียบ |
 
-> ผลตรวจล่าสุด: เพิ่ม `2-src/calibration_readonly/read_only_bus.py` จากไฟล์ที่ผู้ใช้ส่งแล้ว ตรวจ syntax และ mock transport/baseline ผ่าน 25 tests; ยังไม่ได้ build ROS2/Pi หรือรันฮาร์ดแวร์จริง ดู [รายงาน QA](1-docs/checks/qa_report_th.md)
+## ผลจากหุ่นจริง
 
-> ประวัติชุด local: เคยเก็บวิดีโอต้นฉบับใน `3-results/evidence/` และยังไม่ได้อัปโหลด ณ เวลาจัดชุดนั้น ปัจจุบันดาวน์โหลดวิดีโอจริงจาก GitHub Releases ตามหัวข้อด้านบน
+C0 ใช้สิ่งเร้าโดยตรง (R = S) ส่วน C1 ใช้ระดับฮอร์โมน (R = H) เก็บ 3 คู่ รอบละ 180 วินาที ทั้ง 6 รอบผ่านครบ 6 อารมณ์ รวม 21,464 ตัวอย่าง เมื่อปล่อย Touch คาบการส่ายฐาน ID1 ในช่วงที่เหลือของ Happy เฉลี่ย **2.806 วินาทีต่อรอบใน C0 และ 2.750 วินาทีต่อรอบใน C1** โดยให้น้ำหนักแต่ละคู่เท่ากัน ช่วงหลังปล่อยวัดได้ 1–2 รอบต่อการทดลอง ค่าเฉลี่ยการเปลี่ยนคาบของ CPG (M2) ลดลงในสองคู่และเพิ่มขึ้นในหนึ่งคู่
 
-# Week07 LeLamp ชุดส่งงานฉบับ 6 พฤศจิกายน 2026
+- [กราฟก่อนแตะ ระหว่างแตะ และหลังปล่อย](3-results/figures/01_Happy_input_CPG_and_encoder.png) ขยายช่วงวินาที 39–67 ของรอบทดลอง เริ่ม Touch ที่วินาที 42 และปล่อยที่วินาที 59
+- [กราฟคาบ CPG และคาบฐานทั้งสามคู่](3-results/figures/02_Touch_release_all_pairs.png) แต่ละจุดคือคาบเต็มที่วัดได้
+- [กราฟทั้งหกอารมณ์ตลอด 180 วินาที](3-results/figures/03_Six_state_timeline.png) แสดงค่า φ ที่ระบบเลือกตามลำดับเวลาจริง
+- [ดัชนีหกรอบ](3-results/real_robot/summary/Run_index.csv) · [ตาราง M1 และ M2 ของหุ่นจริง](3-results/real_robot/summary/Worksheet_M1_M2.csv)
 
-เปิด3ไฟล์หลัก — ใช้ Word ฉบับที่ผู้ใช้แก้ไขและส่งล่าสุดจาก Desktop คัดลอกตรงต้นฉบับโดยไม่แก้เนื้อหา/ฟอนต์/รูปแบบ:
+## ตรวจตามโจทย์อาจารย์
 
-1. [ใบงาน Word](1-docs/lab_documents/Lab07_Student_Worksheet_TH.docx) หรือ [Markdown](1-docs/markdown/worksheet.md)
-2. [Proposal Word](1-docs/lab_documents/Lab07_Proposal_Group7.docx) (ไม่มีฉบับ PDF ใน Git Tree ของชุดนี้)
-3. [รายงานผลฉบับผู้ใช้แก้ไขล่าสุด](1-docs/lab_documents/Lab07_Report_Group7.docx)
+[ผลตรวจข้อกำหนด Lab 07 ทีละข้อ](1-docs/markdown/lab07_requirements_th.md) รวมตัวตรวจ Proposal และ policy ของอาจารย์ ผล bridge สองเงื่อนไข × สามรอบ และขอบเขตที่โคมใช้สถาปัตยกรรม Raspberry Pi 5
 
-[ตรวจตามข้อกำหนดLab07](1-docs/checks/submission_audit_20261106_th.md) • [ผลsoftwarechecks](3-results/final_submission_checks_20261106/results.json) • [รายการWordทุกไฟล์](1-docs/markdown/word_files_index_th.md)
+## ตรวจข้อมูลเพิ่มเติม
 
-## ข้อมูลที่แนบ
+| ส่วน | หลักฐาน |
+|---|---|
+| หุ่นจริง | [คำอธิบายข้อมูล](1-docs/markdown/results_guide_th.md) และโฟลเดอร์ P1–P3 ใน [real_robot](3-results/real_robot/) |
+| แบบจำลอง | [วิธีรันซ้ำและผลใหม่ 3 คู่](1-docs/markdown/simulation_th.md) ใช้บริบทของ C0 ในคู่นั้นกับทั้งสองเงื่อนไข |
+| ระบบและซอร์ส | [แผนภาพทางเดินข้อมูล](4-figures/lamp_data_flow.png) · [ซอร์สและเครื่องมือวิเคราะห์](2-src/) |
+| การสาธิต | [คลิปและ CSV](1-docs/markdown/evidence_present_th.md) บันทึกครั้งเดียวตั้งแต่ feedback แรกถึงสุดท้าย 631.926 วินาที รวมช่วง Safety คืนท่า |
+| ที่มาของแบบจำลอง | [เอกสารอ้างอิง](1-docs/references/README.md) |
 
-- [AHM real6trials](1-docs/markdown/six_trial_report_th.md) และ [simulation6trials](3-results/simulation_final/summary.json)
-- [Teacher completedpolicy/transport/ROS3roles](3-results/course_bridge_verified_20261026_27/RECOVERY_AUDIT.json)
-- [LivePi→WSL60s934rows](3-results/live_wsl_20261106/TECHNICAL_STATUS.json)
-- [คลิปเล่นและCSV](3-results/evidence/VIDEO_INDEX.md)
-- [13topiccontract](2-src/ros2_package/config/topic_contract_13.json), [Draw.io](4-figures/lelamp_architecture.drawio), [sourceกราฟ3roles](4-figures/course_three_roles_source.json)
+ตรวจ SHA-256 และสัญญาข้อมูลทั้งชุดจากโฟลเดอร์นี้ด้วย `python verify_package.py` บนคอม
 
-แยก C0/C1 transport ideal/delaydrop จาก AHM R=S/H และNormalpilotคนละรุ่น ผลCPGo1ไม่ใช่หลักฐานphysicalsmoothness มีN/A/hold/ordereffectตามจริง ROSอยู่WSLเชื่อมPiแบบlive; PiคุมUARTเอง Pi 5 ควบคุมโคมโดยตรง ส่วน WSL รับข้อมูลผ่าน SSH ไม่มี MCU แยกหรือ micro-ROS Agent
+## โครงสร้างชุดส่ง
 
-มีเฉพาะ Word Final 3 ไฟล์ในชุดส่ง ต้นฉบับและ Word เวอร์ชันเก่าย้ายออกแล้ว; raw pilot/failedattempts ที่เป็นหลักฐานการทดลองยังคงไว้ตามจริง ไม่ใช้แทน final trials
+`1-docs` เอกสารและใบงาน, `2-src` โค้ด/config, `3-results` ข้อมูลและหลักฐาน, `4-figures` ผังระบบ ดู [รวมเอกสาร](1-docs/README.md) สำเนาชุดเดิมก่อนจัดเก็บเฉพาะในเครื่องที่ `../../local_backup_20261113/lab07_before/` ชุดเก่าและข้อมูลวันที่ 6–7 พฤศจิกายนไม่ถูกนำมาปนกับผลวันที่ 12 พฤศจิกายน
 
-ตรวจไฟล์ด้วย `python verify_package.py` และทดสอบแบบmockด้วย `python run_pc_checks.py` ไม่เปิดฮาร์ดแวร์ ใช้completedpolicyผ่าน `python check_submission.py --policy-file completed_policy.py --contract group` ใน2-src/ros2_package; student_policy.pyเก็บเป็นstarterต้นฉบับ
+## วิดีโอสำหรับ GitHub Fork
 
-ประวัติสถานะก่อนเผยแพร่: ชุดในเครื่องเคยระบุว่ายังไม่ได้อัป GitHub/ส่งให้อาจารย์ ปัจจุบันสำเนางานอยู่ใน Fork และวิดีโออยู่ใน Releases แล้ว การเผยแพร่นี้ไม่ใช่การรับรองคะแนน การอนุมัติโดยผู้สอน หรือหลักฐานยืนยันเวลาส่งถึงผู้สอน
-
-
-## หลักฐานเพิ่มเติม: เล่นกับคน10นาที
-
-[CSVของคลิปเล่นกับคน10นาที C1](3-results/evidence/CSV_คลิปเล่นกับคน_10นาที_C1_20261106/README_TH.md) เก็บจริง600.02s/7,098snapshots ครบ13topics แยกจากcontrolled C0/C1เดิม; วิดีโอรอบนี้เผยแพร่ใน GitHub Releases ส่วน CSV อยู่ในโฟลเดอร์หลักฐานตามเดิม ยังไม่ตรวจframe synchronization ไม่เปลี่ยนWordทั้ง3ไฟล์
-
-## ตำแหน่งรูปวงจร วิดีโอ และ CSV
-
-เปิด [รายการตำแหน่งไฟล์](1-docs/markdown/file_locations_th.md) เพื่อหารูปวงจรใน `4-figures` และ CSV ใน `3-results/evidence` ส่วนไฟล์วิดีโอจริงอยู่ใน GitHub Releases รูปคัดลอกตรงต้นฉบับ ไม่แก้Wordทั้ง3ไฟล์
-
-## การจัดหมวดเอกสารตาม repository
-
-เอกสารหลักรวมใน `1-docs`: [รายงาน](1-docs/lab_documents/Lab07_Report_Group7.docx), [ข้อเสนอ](1-docs/lab_documents/Lab07_Proposal_Group7.docx), [ใบงาน Word](1-docs/lab_documents/Lab07_Student_Worksheet_TH.docx), [ใบงาน Markdown](1-docs/markdown/worksheet.md)
-
-`2-src` เก็บ source code; `3-results` เก็บข้อมูลและหลักฐานราย run; `4-figures` เก็บรูปและแผนภาพ ดู [รายงานจัดไฟล์](1-docs/checks/organization_report_th.md) และ [mapping](1-docs/checks/file_mapping.json) สำเนาต้นฉบับอยู่ `original_files` ไม่ใช่ชุดสำหรับอัปโหลด
+[ดูคลิปชุดใหม่วันที่ 12 พฤศจิกายน](https://youtu.be/-zckfxbT9Jk?feature=shared) · [ชื่อ/ขนาด/SHA256 ของไฟล์วิดีโอที่เก็บในเครื่อง](1-docs/metadata/local_video.json) ตัววิดีโอไม่อยู่ใน Git tree ส่วน CSV และเอกสารยังรวมครบ [วิดีโอชุดก่อนหน้าและลิงก์ Release เดิม](1-docs/references/previous_video_evidence.md)

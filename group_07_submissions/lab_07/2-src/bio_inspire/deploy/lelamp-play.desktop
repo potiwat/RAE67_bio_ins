@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=LeLamp - Camera and Start Auto
-Comment=View camera; press Start Auto to play
-Exec=/home/menulis/lamp-test-venv/bin/python -B /home/menulis/projects/lelamp/camera_tracking/bio_inspire/deploy/open_play.py
-Terminal=false
-StartupNotify=false
-X-GNOME-Autostart-enabled=true

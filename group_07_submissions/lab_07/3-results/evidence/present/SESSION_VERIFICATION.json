@@ -1,0 +1,122 @@
+{
+  "launch_cutoff_ns": 1794491867121550592,
+  "owner_recordings": [
+    {
+      "recording": "run_1794492106988632468",
+      "rows": 16770,
+      "native_error": null,
+      "native_duration_s": 163.86480407800002,
+      "PID_readback_unchanged": true,
+      "safety_phase_at_close": "NORMAL_PARKED",
+      "enabled_contact_ids": [
+        1,
+        2,
+        4
+      ]
+    },
+    {
+      "recording": "run_1794492272552059282",
+      "rows": 3543,
+      "native_error": null,
+      "native_duration_s": 32.278860839999936,
+      "PID_readback_unchanged": true,
+      "safety_phase_at_close": "NORMAL_PARKED",
+      "enabled_contact_ids": [
+        1,
+        2,
+        4
+      ]
+    },
+    {
+      "recording": "run_1794492305248051550",
+      "rows": 11393,
+      "native_error": null,
+      "native_duration_s": 111.2872016020001,
+      "PID_readback_unchanged": true,
+      "safety_phase_at_close": "NORMAL_PARKED",
+      "enabled_contact_ids": [
+        1,
+        2,
+        4
+      ]
+    },
+    {
+      "recording": "run_1794492417536091086",
+      "rows": 32506,
+      "native_error": null,
+      "native_duration_s": 321.40338137699996,
+      "PID_readback_unchanged": true,
+      "safety_phase_at_close": "PLAY",
+      "enabled_contact_ids": [
+        1,
+        2,
+        4
+      ]
+    }
+  ],
+  "first_feedback_monotonic_s": 342.713976943,
+  "last_feedback_monotonic_s": 974.640041927,
+  "duration_s": 631.926064984,
+  "feedback_rows": 64212,
+  "rows_per_id": {
+    "1": 12868,
+    "2": 12854,
+    "3": 12791,
+    "4": 12912,
+    "5": 12787
+  },
+  "fsm_state_rows": {
+    "(startup/transition)": 2838,
+    "normal": 22585,
+    "afraid": 2575,
+    "interested": 11790,
+    "happy": 11181,
+    "angry": 7870,
+    "sleepy": 5373
+  },
+  "feedback_intervals_s": {
+    "1": {
+      "median": 0.049989027500032535,
+      "maximum": 0.2897828400000435
+    },
+    "2": {
+      "median": 0.04996243999994476,
+      "maximum": 0.28953481500002454
+    },
+    "3": {
+      "median": 0.04995003300001599,
+      "maximum": 0.2858967129999428
+    },
+    "4": {
+      "median": 0.0498985295000125,
+      "maximum": 0.28554850099999385
+    },
+    "5": {
+      "median": 0.04992057300000852,
+      "maximum": 0.28539271900001495
+    }
+  },
+  "event_entries": 338,
+  "csv_sha256": {
+    "Last_Owner_FSM_Events.csv": "4b8054bb07687337d32157505881edcbf4f18579bfa0300057e23ff1808982c5",
+    "present_events.csv": "c3077f59893635524d7b31ff2998ca31ec9d9464b079f247102b89094f85010d",
+    "present_feedback.csv": "01bea7f6f8d051b50739d74cfc2ab76823f5e7902990cfb4cd93fd24acfbe405"
+  },
+  "clock_origin": "first real motor feedback sample; independent of external video start",
+  "recording_type": "Ordinary play with the desktop launcher (present)",
+  "video": {
+    "filename": "IMG_4568.MOV",
+    "duration_s": 632.18,
+    "size_bytes": 1002636438,
+    "sha256": "5dc3991ceff51916d2a9d66f8477ae2d1635ec7acb9b2c468461145141ee3399",
+    "transfer_verified_against_original": true,
+    "video_to_feedback_frame_alignment_verified": false,
+    "feedback_span_s": 631.926064984
+  },
+  "last_viewer_snapshot": {
+    "file": "Last_Viewer_Status.json",
+    "sha256": "a40741e23f32855ccaf88549857b144ecf90dcdd5289accf25b9934ae17f8897",
+    "snapshot_owner_s": 974.370699541,
+    "coverage": "single final viewer snapshot; includes last owner rolling GPIO edge history, no full-session face or hormone series"
+  }
+}

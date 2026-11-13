@@ -1,7 +1,3 @@
 # Sources and attribution
 
-- Course AHM/SO2/FSM/interface material: potiwat/RAE67_bio_ins; pinned references and hashes in06_References and2-src/ros2_package/worksheet_review/section4_sources. Some course files carry educational/UNLICENSED labels; retained source labels are not replaced by a blanket project license.
-- 2-src/ros2_package contains the course transport scaffold/reference. Its historical proposal and C0/C1 ideal/delay-drop experiment are not the current research proposal or current S/H comparison.
-- Reviewed external references and their original license/commit notices are listed in1-docs/references/upstream_reuse_catalog_20261028.json. Listing a repository is not a claim that every referenced method is used in the hardware runtime.
-- New group implementation and chosen poses/limits are documented in the current proposal and source. No project-wide license has been invented for the students. Preserve file-level attribution when publishing.
-- Real logs retain original source hashes and clock identities. No camera image/video file is included automatically in this staging package; video references remain pending user selection.
+The hormone model and SO(2) oscillator draw on the Bio Inspired Robotics course materials and prior coursework identified in [the references](README.md). The accompanying teaching-source excerpts retain their file-level notices. The measurements, paired protocol, demonstrated lamp configuration and current report are the work of Group 7. Hardware source identities and dependencies are documented under [2-src](../../2-src).

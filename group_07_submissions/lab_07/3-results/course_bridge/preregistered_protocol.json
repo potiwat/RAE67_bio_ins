@@ -1,0 +1,102 @@
+{
+  "frozen_before_running": true,
+  "declared_local": "2026-11-12T22:05:17+07:00",
+  "declared_utc": "2026-11-12T15:05:17+00:00",
+  "source_commit": "fa528b169f1127ee3e0e9fae3d721546bf1b82d2",
+  "experiment": "Course Lab 07 five-state seven-topic offline transport bridge",
+  "runtime_scope": "synthetic input, virtual single process, applied software commands",
+  "group_positive_policy": {
+    "touch": "happy",
+    "button": "interested",
+    "approach": "interested",
+    "afraid_rule": "only near, clear and fault take precedence"
+  },
+  "primary_expected_input_ids": [
+    "button_01",
+    "touch_01",
+    "approach_01",
+    "clear_01",
+    "near_01",
+    "clear_02",
+    "button_02"
+  ],
+  "other_source_input_ids_to_retain": [
+    "touch_conflict",
+    "invalid_01",
+    "stale_01"
+  ],
+  "primary_denominator_per_trial": 7,
+  "source_outcomes_per_trial": 10,
+  "observation_window_s": [
+    0.0,
+    22.0
+  ],
+  "both_command_deadline_s": 1.0,
+  "both_latency_definition": "max(earliest applied motion, earliest applied RGB) minus original source time, matching input_id and event kind",
+  "missing_rule": "Any missing onset within 0..22 s: retain null both latency and pass flag. If both are observed after the 1 s deadline, report latency and mark late.",
+  "pairs": [
+    {
+      "repeat": 1,
+      "seed": 41,
+      "conditions": [
+        "C0",
+        "C1"
+      ]
+    },
+    {
+      "repeat": 2,
+      "seed": 42,
+      "conditions": [
+        "C0",
+        "C1"
+      ]
+    },
+    {
+      "repeat": 3,
+      "seed": 43,
+      "conditions": [
+        "C0",
+        "C1"
+      ]
+    }
+  ],
+  "conditions": {
+    "C0": "ideal modeled transport, zero delay/drop",
+    "C1": {
+      "delay_choices_s": [
+        0,
+        0.02,
+        0.04,
+        0.06,
+        0.1,
+        0.14,
+        0.18
+      ],
+      "random_drop_probability": 0.08,
+      "burst_drop_half_open_s": [
+        12.5,
+        12.7
+      ]
+    }
+  },
+  "matched_controls": {
+    "source": "seeded synthetic truth and noise matched within pair",
+    "time_step_s": 0.02,
+    "ticks": 1101,
+    "messages_per_tick": 3,
+    "messages_per_trial": 3303,
+    "scheduler_delay_s": 0.04,
+    "window_end_s": 22.0,
+    "group_policy_sha256": "2a7d07a3cf685a248becc075cb23c06e8bbe7af41631ccf6cb23d8e8cc16159c"
+  },
+  "replay_design": {
+    "condition": "C1",
+    "seed": 42,
+    "input": "runs_20261112/C1_r02/input_trace.csv",
+    "compare": [
+      "input_trace.csv",
+      "command_trace.csv",
+      "events.csv"
+    ]
+  }
+}

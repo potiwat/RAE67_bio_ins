@@ -1,0 +1,24 @@
+{
+  "group_checker_transition_pairs": 40,
+  "group_checker_failures": 0,
+  "matched_source_messages_per_pair": 3303,
+  "matched_seeds": [
+    41,
+    42,
+    43
+  ],
+  "official_manifests_verified_file_counts": {
+    "runs_20261112": 36,
+    "replay_seed42_20261112": 11
+  },
+  "retained_source_outcomes": 60,
+  "preregistered_primary_rows": 42,
+  "replay_condition": "C1",
+  "replay_seed": 42,
+  "replay_byte_identical_sha256": {
+    "input_trace.csv": "e9e6f18065ad9ea07c987f36616950259920861f5c75289623c11a06b7a45878",
+    "command_trace.csv": "95706888882f4cf1cf2d7aac7ed3d5c65e8a2ea9661ecc5c7c6aed46de0f54b2",
+    "events.csv": "52041baedac19711d654078306c5d281b9d8058ff749e2540044392623d1569d"
+  },
+  "replay_metrics_equal_except_repeat_number": true
+}

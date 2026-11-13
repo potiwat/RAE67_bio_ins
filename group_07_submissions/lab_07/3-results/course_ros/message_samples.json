@@ -1,0 +1,66 @@
+{
+  "/lamp/interaction": {
+    "first_bag_system_time_ns": 1794496315071796099,
+    "message_type": "std_msgs/msg/String",
+    "payload": {
+      "data": ""
+    }
+  },
+  "/lamp/emotion": {
+    "first_bag_system_time_ns": 1794496315071828203,
+    "message_type": "std_msgs/msg/String",
+    "payload": {
+      "data": "normal"
+    }
+  },
+  "/lamp/rgb_command": {
+    "first_bag_system_time_ns": 1794496315071909745,
+    "message_type": "std_msgs/msg/ColorRGBA",
+    "payload": {
+      "r": 0.23529411852359772,
+      "g": 0.3529411852359772,
+      "b": 0.5490196347236633,
+      "a": 1.0
+    }
+  },
+  "/lamp/servo_command": {
+    "first_bag_system_time_ns": 1794496315071905640,
+    "message_type": "std_msgs/msg/Float32MultiArray",
+    "payload": {
+      "data": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "layout": [
+        {
+          "label": "tilt_extend_nod_rad",
+          "size": 3,
+          "stride": 3
+        }
+      ],
+      "data_offset": 0
+    }
+  },
+  "/lamp/input/button": {
+    "first_bag_system_time_ns": 1794496318236480426,
+    "message_type": "std_msgs/msg/Bool",
+    "payload": {
+      "data": false
+    }
+  },
+  "/lamp/input/distance": {
+    "first_bag_system_time_ns": 1794496318236610381,
+    "message_type": "std_msgs/msg/Float32",
+    "payload": {
+      "data": 1.206590175628662
+    }
+  },
+  "/lamp/input/touch": {
+    "first_bag_system_time_ns": 1794496318236520726,
+    "message_type": "std_msgs/msg/Bool",
+    "payload": {
+      "data": false
+    }
+  }
+}

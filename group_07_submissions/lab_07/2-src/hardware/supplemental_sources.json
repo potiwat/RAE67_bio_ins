@@ -1,0 +1,22 @@
+{
+  "bio_inspire/runtime/presentation_accepted_20261110.py": {
+    "sha256": "b2a35137f0509c0702578f5b84f503556c329c92595eb8670479d8b2532bf23c",
+    "source": "11 Nov 2026 Pi source snapshot, PI_SOURCE_MANIFEST.json"
+  },
+  "shared/experiments/central_feedback_shadow_20261110/startup_freshness.py": {
+    "sha256": "4a6608b49881878ffcb2d9de9a4dc575e350accd45dd2be1ae9f0fb7da5116af",
+    "source": "11 Nov 2026 Pi source snapshot, PI_SOURCE_MANIFEST.json"
+  },
+  "bio_inspire/experiments/ros13.py": {
+    "sha256": "60ae13d88c47128a067405784a882fd13a64ce21dd6af39193d40bdc748c11b0",
+    "source": "6 Nov 2026 project source snapshot, MANIFEST_SHA256.json"
+  },
+  "calibration_readonly/read_only_bus.py": {
+    "sha256": "b01bd7a0af312de85004659564620ef04712611d60f045474ed4ef85871e6a24",
+    "source": "6 Nov 2026 project source snapshot, MANIFEST_SHA256.json"
+  },
+  "bio_inspire/experiments/lab07_present_safety_pair1_20261112/qa/face_target_grace_hopper.jpg": {
+    "sha256": "a8ca6d734765703b09728ab47fe59f473d93ae3967fc24c7c0288c3c7adb7130",
+    "source": "Retained reference photograph; matches Matplotlib sample_data/grace_hopper.jpg"
+  }
+}

@@ -1,0 +1,9 @@
+Verified 237/240 launch-manifest entries against the archived hardware sources.
+3 original guard files are listed in hardware/manifest_coverage.json.
+Processing P1/C0 and P1/C1 ...
+Processing P2/C0 and P2/C1 ...
+Processing P3/C0 and P3/C1 ...
+Checked 111 original files, 21,464 raw rows, 21,458 in-window phi readings.
+All 33 rebuilt CSVs match the submitted data; 31 are byte-identical.
+Rebuilt all 3 figures; 0 PNGs are byte-identical.
+PNG rendering may vary by Matplotlib, FreeType and system fonts. See README.md.

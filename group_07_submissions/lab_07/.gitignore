@@ -1,19 +1,7 @@
 __pycache__/
-*.pyc
+*.py[cod]
+~$*
 .venv/
-.env
-.env.*
-build/
-install/
-log/
-*.mp4
-*.mov
-*.avi
-*.mkv
-*.tmp
-2-src/results/new_*/
 
-_originals_20261106/
-
-*.MOV
-*.MP4
+# Public fork: keep original movie local; publish the existing YouTube link.
+/3-results/evidence/present/IMG_4568.MOV

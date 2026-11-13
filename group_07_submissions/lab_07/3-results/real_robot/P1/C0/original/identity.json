@@ -1,0 +1,93 @@
+{
+  "desktop_exec": [
+    "/home/menulis/lamp-test-venv/bin/python",
+    "-B",
+    "/home/menulis/projects/lelamp/camera_tracking/shared/experiments/presentation_safety_play_20261110/present_safety_start.py"
+  ],
+  "desktop_sha256": "18943ac684bb769fdd8a55423ae49db04f0750d839b3a1f793a4cd20fc8f2950",
+  "entry_sha256": "b14df0a6557526f1a66212fe1a33d80a297ac73f341d696acbcfee3bd9166854",
+  "launcher_sha256": "e9177ba4269b979d15749f460e18c58e4b835af8dbeb9f732e847e7c10d2aff1",
+  "config_sha256": "31796f2871e23977dd375fec84796b2707a645b16169ccbace5b1aaa24b00f10",
+  "profile_sha256": "4430452e363d775ab3005ffaec920dc4d5163b00c393c97ebbc044771dfd62da",
+  "manifest_sha256": "c951dd23f744b9e835a4d8457be3126386ec445ffea0f5a1c0056ff96b3ae28f",
+  "verified_groups": {
+    "own_sha256": 95,
+    "protected_sha256": 132,
+    "dependency_sha256": 13
+  },
+  "profile_condition": "C1",
+  "start_gate": "five_fresh_base_press_releases_no_Start_M",
+  "PID": {
+    "1": {
+      "p": 8,
+      "i": 0,
+      "d": 16
+    },
+    "2": {
+      "p": 32,
+      "i": 0,
+      "d": 20
+    },
+    "3": {
+      "p": 24,
+      "i": 0,
+      "d": 26
+    },
+    "4": {
+      "p": 5,
+      "i": 0,
+      "d": 0
+    },
+    "5": {
+      "p": 7,
+      "i": 0,
+      "d": 3
+    }
+  },
+  "normal_raw": {
+    "1": 2019,
+    "2": 2837,
+    "3": 2746,
+    "4": 1997,
+    "5": 2696
+  },
+  "script": {
+    "button": [
+      [
+        16.0,
+        24.0
+      ]
+    ],
+    "touch": [
+      [
+        42.0,
+        59.0
+      ],
+      [
+        78.0,
+        78.2
+      ],
+      [
+        78.4,
+        78.6
+      ],
+      [
+        78.8,
+        79.0
+      ]
+    ],
+    "near": [
+      [
+        108.0,
+        136.0
+      ]
+    ]
+  },
+  "script_sha256": "85c3a0256d5c54c18056971feb9ee4e78db01e75d92466d04bbcda80a2a99bd3",
+  "happy_phi_low": 0.11798049926757813,
+  "happy_phi_high": 0.13,
+  "study_sha256": "c1e709b01d65464cfb53416b9a14da98966204413c07cf5bb8c684681b2a0675",
+  "effective_condition": "C0",
+  "protocol": "conditioned_tof_v2",
+  "pair": 1
+}

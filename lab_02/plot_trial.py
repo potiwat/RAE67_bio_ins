@@ -11,6 +11,8 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
+from plot_annotations import response_markers
+
 
 def optional_float(value: str) -> float | None:
     return None if value == "" else float(value)
@@ -60,6 +62,40 @@ def plot_trial(csv_path: Path, output_path: Path) -> None:
         if row["event_label"] in ("ENTER_NEAR", "EXIT_NEAR", "INVALID"):
             time = float(row["time_s"])
             command_ax.axvline(time, color="#B84A4A", alpha=0.25, linewidth=0.8)
+
+    for marker in response_markers(rows):
+        kind = marker["kind"]
+        physical_time = marker["physical_time_s"]
+        response_time = marker["response_time_s"]
+        distance_ax.axvline(
+            physical_time, color="#161616", linestyle="--", linewidth=1.2
+        )
+        distance_ax.annotate(
+            f"physical {kind}: {physical_time:.2f} s",
+            xy=(physical_time, 0.98),
+            xycoords=("data", "axes fraction"),
+            xytext=(3, -3),
+            textcoords="offset points",
+            ha="left",
+            va="top",
+            fontsize=8,
+            rotation=90,
+        )
+        if response_time is not None:
+            command_ax.axvline(
+                response_time, color="#6B4C9A", linestyle=":", linewidth=1.4
+            )
+            command_ax.annotate(
+                f"first correct {kind}: {response_time:.2f} s",
+                xy=(response_time, 0.98),
+                xycoords=("data", "axes fraction"),
+                xytext=(3, -3),
+                textcoords="offset points",
+                ha="left",
+                va="top",
+                fontsize=8,
+                rotation=90,
+            )
 
     figure.suptitle(
         f"{rows[0]['trial_id']} | {condition} | sigma={rows[0]['noise_sigma_m']} m | delay={rows[0]['delay_ms']} ms"

@@ -1,10 +1,10 @@
 {
-  "question": "For the same paired 600 s human-lamp stimulus sequence, does a combined jitter-and-drop transport profile change applied nod frequency, source-to-physical motion/RGB latency, or response-missing fraction relative to ideal transport in a hormone-modulated SO(2) nod controller?",
+  "question": "For the same paired 600 s human-lamp stimulus sequence, does a combined jitter-and-drop transport profile change applied nod frequency, gated source-to-physical motion/RGB latency, or response-missing fraction relative to ideal transport in a hormone-modulated SO(2) nod controller?",
   "hypothesis": "Compared with C0, C1 will increase median both_latency_s and response-missing fraction and will increase within-trial variability of nod_frequency_hz. This is a hypothesis about the combined transport profile; it does not assign separate causal effects to jitter and drop.",
   "biological_inspiration_source": "The design is inspired by artificial-hormone integration and release described by Homchanthanakul et al. (2019), DOI 10.1109/IROS40897.2019.8968580, and the adaptive locomotion architecture of Ngamkajornwiwat et al. (2020), DOI 10.1109/ACCESS.2020.2992794. The proposed lamp uses an artificial arousal variable that integrates interaction stimuli and modulates a rhythmic generator; it is an engineering analogy, not a claim of reproducing a human endocrine mechanism.",
   "AHM_equation": "Source notation: H_c(t)=beta*H_c(t-1)+H_g(t)-H_r(t), H_g(t)=alpha_h*f(S(t)), H_r(t)=sum_i(gamma_i*Receptor_i(t)). Operational proposed model: P=k_prod*S, C=k_clear*H_old, B=k_bind*R_old, H_new=clamp(H_old+dt_h*(P-C-B),0,1), R_new=clamp(H_new,0,1). The single artificial hormone H represents bounded arousal.",
   "SO2_CPG_equation": "Week 03 SO(2) recurrence: a1(t+1)=alpha_cpg*(cos(phi)*o1(t)+sin(phi)*o2(t)); a2(t+1)=alpha_cpg*(-sin(phi)*o1(t)+cos(phi)*o2(t)); o1(t+1)=tanh(a1(t+1)); o2(t+1)=tanh(a2(t+1)). Both activations use the old outputs in a simultaneous update.",
-  "integration_description": "Timestamped button, touch, and distance events create S. The AHM produces R, then phi=clamp(phi_0+phi_gain*R,phi_min,phi_max). The SO(2) output drives nod_cmd=clamp(nod_gain*o1,-nod_limit,nod_limit), while the verified emotion FSM retains fault/near/clear safety priority and selects the RGB expression. The future experiment will log every boundary from stimulus identity through AHM, CPG, applied command, measured nod motion, and photodiode RGB onset.",
+  "integration_description": "Timestamped button, touch, and distance events create S. The AHM produces R, then phi=clamp(phi_0+phi_gain*R,phi_min,phi_max). The SO(2) output drives nod_cmd=clamp(nod_gain*o1,-nod_limit,nod_limit), while the verified emotion FSM retains fault/near/clear safety priority and selects RGB. Because the CPG normally oscillates continuously, both_latency_s is measured only in predeclared gated probes: hold physical nod at 0 rad and RGB at neutral for 1.0 s while warming the CPG internally, then open both gates for one UUID-labelled event. Ongoing-motion events remain in the all-source log but are not mislabelled as new motion onsets. Every boundary from UUID acquisition through AHM, CPG, applied command, measured nod motion, and photodiode onset is logged.",
   "independent_variable": "A predeclared two-level transport profile: C0 ideal versus C1 combined modeled delay choices, independent random drop, and one fixed burst-drop interval. Jitter and drop are not analyzed as separate factors.",
   "conditions": [
     {
@@ -30,21 +30,21 @@
     {
       "name": "both_latency_s",
       "unit": "s",
-      "measurement": "max(first measured nod-motion onset, first photodiode RGB onset) minus the matched sensor acquisition time for the same UUID, after applying the accepted clock map.",
-      "missing_rule": "Store null with reason if UUID matching or clock correlation is unavailable, either physical onset is absent before the observation window closes, the clock error bound exceeds 0.005 s, or a safety stop censors the response."
+      "measurement": "For a predeclared gated rest-to-motion probe, max(nod onset, RGB onset) minus matched UUID acquisition time after clock mapping. Nod onset is the first measured angle departure of at least 0.01 rad from the neutral baseline for 3 consecutive camera frames; RGB onset is a photodiode change of at least 0.05 normalized units for 3 consecutive samples. Search only the 1.0 s post-source window.",
+      "missing_rule": "Store null plus one exclusive status: missing when an expected gated probe has no complete motion/RGB onset within 1.0 s; overlap when another source arrives before attribution closes; held when policy intentionally keeps state; censored for safety stop/trial end; invalid_clock when UUID/clock mapping is absent or error exceeds 0.005 s. Only responded probes have numeric latency; ongoing ungated CPG motion is never reused as onset."
     },
     {
       "name": "response_missing_fraction",
       "unit": "proportion",
-      "measurement": "Number of predeclared expected interaction UUIDs without both physical onsets divided by all predeclared expected UUIDs, reported with dropped, censored, policy-held, and safety-stop reasons separated.",
-      "missing_rule": "The fraction itself is null only if the predeclared denominator trace is lost; individual missing responses remain in the numerator rather than being excluded."
+      "measurement": "Number of predeclared gated activation UUIDs with status missing divided by the full frozen activation-probe denominator. Responded, missing, overlap, held, censored, and invalid_clock counts are also reported so no outcome disappears.",
+      "missing_rule": "The fraction is null only if the frozen denominator manifest is lost. A no-onset expected probe remains missing; overlap, held, censored, and invalid_clock remain visible in the denominator and their own status counts rather than being silently excluded or converted to zero latency."
     }
   ],
   "controls": [
     "Use the same verified five-state policy, safety priority, AHM/CPG code commit, bounds, slew limits, and initial states in both conditions.",
     "Pair each C0/C1 trial by participant and stimulus schedule; reuse the same event UUIDs, values, and source times while changing only the declared transport profile.",
     "Keep the same lamp, sensor placement, servo, RGB LED, power supply, firmware, ROS 2 QoS contract, calibration files, room lighting, camera, photodiode, and logging rates.",
-    "Reset H, CPG state, FSM state, message queues, and log origin before each trial and use the same 60 s familiarization period."
+    "Reset H, CPG state, FSM state, message queues, and log origin before each trial; apply the same 1.0 s internal CPG warmup and gated neutral pre-probe procedure in both conditions."
   ],
   "parameters": [
     {"name": "hormone_dt_s", "value": 0.05, "unit": "s", "provenance": "Lab 04 proposed course model"},
@@ -52,22 +52,30 @@
     {"name": "k_clear", "value": 0.6, "unit": "1/s", "provenance": "Lab 04 proposed course model"},
     {"name": "k_bind", "value": 0.2, "unit": "normalized H/s per receptor", "provenance": "Lab 04 proposed course model"},
     {"name": "alpha_cpg", "value": 1.1, "unit": "dimensionless", "provenance": "Week 03 proposed course model"},
+    {"name": "cpg_dt_s", "value": 0.05, "unit": "s/update", "provenance": "Week 03 proposed course model"},
+    {"name": "cpg_initial_outputs", "value": [0.1, 0.0], "unit": "dimensionless [o1,o2]", "provenance": "Week 03 nonzero initial condition"},
+    {"name": "cpg_internal_warmup_s", "value": 1.0, "unit": "s", "provenance": "Predeclared gated-probe protocol"},
     {"name": "phi_0", "value": 0.2, "unit": "rad/update", "provenance": "Week 03 proposed course model"},
     {"name": "phi_gain", "value": 0.2, "unit": "rad/update per receptor", "provenance": "Lab 03-04 handoff mapping"},
     {"name": "phi_bounds", "value": [0.1, 0.45], "unit": "rad/update", "provenance": "Lab 03-04 handoff bounds"},
     {"name": "nod_gain", "value": 0.3, "unit": "rad", "provenance": "Lab 06-07 proposed lamp output bound"},
     {"name": "nod_limit", "value": 0.3, "unit": "rad", "provenance": "Lab 06-07 proposed lamp safety bound"},
+    {"name": "neutral_preprobe_s", "value": 1.0, "unit": "s", "provenance": "Predeclared rest-to-motion attribution rule"},
+    {"name": "motion_onset_threshold", "value": 0.01, "unit": "rad from neutral", "provenance": "To be confirmed above calibrated camera noise floor"},
+    {"name": "onset_persistence", "value": 3, "unit": "consecutive samples/frames", "provenance": "Predeclared debounce against measurement noise"},
+    {"name": "rgb_onset_threshold", "value": 0.05, "unit": "normalized photodiode change", "provenance": "To be confirmed above calibrated photodiode noise floor"},
+    {"name": "onset_observation_window_s", "value": 1.0, "unit": "s", "provenance": "Predeclared response deadline"},
     {"name": "C1_delay_choices", "value": [0.0, 0.02, 0.04, 0.06, 0.1, 0.14, 0.18], "unit": "s", "provenance": "Lab 07 proposed combined stress profile"},
     {"name": "C1_random_drop_probability", "value": 0.08, "unit": "probability", "provenance": "Lab 07 proposed combined stress profile"},
     {"name": "clock_error_acceptance", "value": 0.005, "unit": "s", "provenance": "Predeclared measurement-quality threshold"}
   ],
-  "simulation_plan": "Future work will add the stated AHM and SO(2) nodes to a timestamped simulator, execute 12 paired C0/C1 seeds for 600 s per condition, and preserve source, receipt, decision, AHM/CPG state, applied command, and synthetic physical-onset traces with config and SHA-256 manifests. Analysis code will be frozen before unblinding condition labels. The current 22 s offline transport scaffold is a protocol check only and is not counted as this simulation.",
+  "simulation_plan": "Future work will add the stated AHM and SO(2) nodes to a timestamped simulator, execute 12 paired C0/C1 seeds for 600 s per condition, and preserve source, receipt, decision, AHM/CPG state, gate state, applied command, and synthetic physical-onset traces with config and SHA-256 manifests. Each latency probe uses the frozen 1.0 s neutral gate, nonzero CPG initialization, 1.0 s internal warmup, UUID attribution, thresholds, persistence, and outcome statuses defined above. Analysis code will be frozen before unblinding condition labels. The current 22 s offline transport scaffold is a protocol check only and is not counted as this simulation.",
   "real_robot_plan": "After simulation and institutional approval, use Ubuntu 24.04/ROS 2 Jazzy with a micro-ROS ESP32 interface, calibrated button/touch/distance sensors, one bounded nod servo, and normalized RGB output. Calibrate rad-to-PWM mapping and joint limits with the lamp unloaded, measure nod angle with an external camera/encoder, measure light onset with a photodiode, then run a 600 s play scenario per condition. Record raw rosbag, MCU sidecar, camera/encoder, photodiode, calibration, and environmental logs; do not infer physical onset from command receipt.",
   "clock_correlation_plan": "Assign every acquisition a UUID in a versioned stamped wrapper/sidecar and propagate it through decisions and commands. Record host monotonic time and MCU tick; estimate offset and drift from two-way synchronization pulses before and after each trial. Feed a common TTL marker to the acquisition logger, motion recorder, and photodiode DAQ. Define the error bound as maximum synchronization residual plus half the slowest sampling period; if it exceeds 0.005 s, source-to-physical latency is N/A rather than subtracting incomparable clocks.",
   "safety_stop_plan": "A trained operator holds a hardware power-cut emergency stop. Stop immediately for contact with a participant, unexpected motion, command beyond calibrated rad/PWM limits, repeated stale/fault state over 0.5 s, servo current or temperature above manufacturer limits, loose hardware, clock/logger failure, or participant request. On stop, cut servo power, set neutral RGB, retain logs, label the trial censored, inspect the lamp, and do not resume until the cause is cleared.",
   "order_counterbalancing": "Use a paired crossover with 12 participants: odd participant IDs receive C0 then C1 and even IDs receive C1 then C0, with a reset and at least 5 min rest between conditions. Stimulus-script variants are balanced across the two orders and analysis uses participant as the pairing block.",
   "paired_seed_or_participant_plan": "Simulation uses 12 fixed seeds paired across C0/C1. Future real-robot work recruits 12 consenting adults, assigns pseudonymous participant IDs, obtains written informed consent and ethics approval before data collection, allows withdrawal without penalty, and stores the linkage file separately from de-identified traces. Each participant completes both conditions using the same UUID stimulus script.",
-  "expected_input_ids_before_run": "Before each 600 s trial, freeze the complete expected-response UUID list in the stimulus manifest. The primary subset includes button_01, touch_01, approach_01, clear_01, near_01, clear_02, and button_02 for each repeated scenario block; conflict and fault probes remain in the all-source denominator with their expected no-onset status.",
+  "expected_input_ids_before_run": "Before each 600 s trial, freeze the complete UUID list and mark which events are gated activation probes. The primary rest-to-motion subset is button_activate_b01 through button_activate_b05 and touch_activate_b01 through touch_activate_b05, each preceded by 1.0 s neutral output. Other approach/clear/near events, conflicts, faults, and events during ongoing motion remain in the all-source table with responded/overlap/held/censored/invalid_clock status but are not retrospectively promoted into the latency denominator.",
   "human_scenario_duration_s": 600,
   "timeline": "Planned only: 2026-11-16 to 2026-11-22 implement and unit-test timestamped AHM-CPG simulation; 2026-11-23 to 2026-11-29 run paired simulation and freeze analysis; 2026-11-30 to 2026-12-06 bench calibration and safety review; human trials begin only after ethics/consent approval, followed by de-identified analysis and an uncertainty/limitations review in the next two weeks."
 }

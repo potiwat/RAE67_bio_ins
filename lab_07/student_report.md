@@ -21,6 +21,34 @@
 | `/lamp/servo_command` | `Float32MultiArray` | rad; `[tilt, extend, nod]` |
 | `/lamp/rgb_command` | `ColorRGBA` | RGB normalized 0–1, alpha=1 |
 
+### Three-role graph และ future MCU extension
+
+```text
+ROLE 1: synthetic_inputs (offline/ROS source)
+  ├─ /lamp/input/button   Bool
+  ├─ /lamp/input/touch    Bool          QoS ของทั้ง 7 topics:
+  └─ /lamp/input/distance Float32 [m]   RELIABLE / KEEP_LAST 10 / VOLATILE
+                 │
+                 ▼
+ROLE 2: interaction (guard + debounce/hysteresis + FSM + scheduler)
+  ├─ /lamp/interaction    String [event]
+  ├─ /lamp/emotion        String [state]
+  ├─ /lamp/servo_command  Float32MultiArray [rad: tilt,extend,nod]
+  └─ /lamp/rgb_command    ColorRGBA [0..1, alpha=1]
+                 │
+                 ▼
+ROLE 3: output_collector (software receipt/log boundary)
+
+FUTURE HARDWARE — ยังไม่มีในชุดทดลองนี้
+physical sensors → ESP32/micro-ROS client → micro-ROS Agent ─┐
+                                                            ├→ input topics
+servo/RGB hardware ← calibrated ESP32 driver ← Agent ←──────┘ output topics
+        │
+        └→ camera/encoder + photodiode = physical onset boundary
+```
+
+ใน offline fixture มี acquisition/source time ร่วมกันใน process เดียว แต่ชนิด Bool/Float32/String/ColorRGBA บน ROS interface ไม่มี Header หรือ UUID. Sidecar ของแต่ละ node จึงบอกได้เฉพาะ local publish/receipt/decision time; ห้ามลบ monotonic timestamps ข้าม node จนกว่าจะมี identity และ clock map. Collector เป็นเพียง software receipt ไม่ใช่ physical onset ส่วน timestamp wrapper, MCU clock correlation, driver และเครื่องมือวัดจริงในกราฟเป็น future extension ตาม proposal
+
 เวลามีหลาย boundary ที่ห้ามรวมกัน: acquisition คือ sensor สร้างข้อมูล, receipt คือ adapter รับ message, decision คือ FSM เลือก state, applied software output คือ command ผ่าน scheduler แล้ว ส่วน physical onset ต้องวัดการเคลื่อนจริง/แสงจริงด้วยอุปกรณ์ภายนอก การทดลอง offline วัดได้ถึง applied software output เท่านั้น
 
 Primary denominator ประกาศไว้ 7 IDs เหมือน Lab 06: `button_01`, `touch_01`, `approach_01`, `clear_01`, `near_01`, `clear_02`, `button_02` โดยเก็บ all 10 sources และ missing reasons ไว้ด้วย
@@ -82,7 +110,7 @@ Replay อ่าน input/config ของ C1 seed 42 และได้ trace �
 
 ### Proposal ที่ยังไม่ได้ทดลองจริง
 
-`proposal.json` วางแผน AHM → SO(2) CPG → nod ภายใต้ ideal เทียบ combined jitter/drop, 12 paired repeats ต่อ condition และ human scenario 600 s พร้อม UUID/clock error bound, calibration, consent, counterbalancing และ hardware emergency stop. ส่วนนี้เป็น future plan; offline runner ข้างต้นไม่มี AHM/CPG, ROS/DDS, participant หรือ physical lamp
+รายละเอียดอยู่ใน [student_proposal.md](student_proposal.md) และ `proposal.json`: วางแผน AHM → SO(2) CPG → nod ภายใต้ ideal เทียบ combined jitter/drop, 12 paired repeats ต่อ condition และ human scenario 600 s พร้อม gated rest-to-motion probes, UUID/clock error bound, calibration, consent, counterbalancing และ hardware emergency stop. การ gate ทำให้นิยาม physical onset ใหม่ได้แม้ CPG ปกติจะ oscillate ต่อเนื่อง ส่วนทั้งหมดนี้เป็น future plan; offline runner ข้างต้นไม่มี AHM/CPG, ROS/DDS, participant หรือ physical lamp
 
 ## อภิปรายผลและข้อจำกัด
 

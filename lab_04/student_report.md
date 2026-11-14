@@ -19,6 +19,28 @@
 3. C4 ตัด binding ออก จึงคาดว่าจะคง H มากกว่า C1 ภายใต้ stimulus เดียวกัน
 4. spike หนึ่ง sample (`0.05 s`) ควรทำให้ H เพิ่มเพียงเล็กน้อยและยังอยู่ใน bounds ส่วน fault หนึ่ง sampleควร reset H/R เป็น 0 แล้วเริ่มสะสมใหม่ใน sample ถัดไป
 
+## Block diagram และ state memory
+
+```text
+S_k ─────────────► P = k_prod S_k ───────────────┐
+                                                  │ (+)
+H_old ──────────► C = k_clear H_old ─────────────┤ (−)
+  │                                               ▼
+  └─► R_old ───► B = k_bind R_old ──(−)──► Euler sum
+                                                   │
+                                                   ▼
+                                             H_raw → clamp
+                                                   │
+                            ┌── memory next step ───┤
+                            ▼                      ▼
+                          H_old                  H_new ─► R_new
+                                                             │
+                                                             ▼
+                                          bounded phi / stride mapping
+```
+
+Stimulus เปลี่ยน production โดยตรง ส่วน clearance และ binding อ่าน H/R เก่าก่อน update เดียวกัน ผลรวมจึงสร้าง H ใหม่เพียงครั้งเดียว จากนั้น H ใหม่ถูกเก็บเป็น state สำหรับรอบถัดไปและ receptor ใหม่จึงส่งต่อไปยัง mapping. เส้น memory ทำให้ model มีประวัติ แม้ stimulus ปัจจุบันจะเท่ากันก็ตาม
+
 ## วิธีทดลองและผล
 
 ตรวจโค้ดด้วยคำสั่งต่อไปนี้ก่อน แล้วจึงรัน profile โดยแยก output directory เพื่อไม่ให้ผลเดิมถูกเขียนทับ

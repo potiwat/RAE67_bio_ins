@@ -16,6 +16,23 @@
 2. C2 น่าจะลด false trigger และการสลับสถานะเมื่อเทียบกับ C1 เพราะมี low-pass filter และ hysteresis แต่ต้องแลกกับ latency ตอนเข้าและออกจากสถานะ เนื่องจากค่ากรองเปลี่ยนช้ากว่าค่าดิบและต้องข้าม threshold คนละค่า
 3. เมื่อ sensor delay เพิ่มเป็น 300 ms เส้น state/command น่าจะเลื่อนช้ากว่าเหตุการณ์ทางกายภาพประมาณระดับเดียวกับ delay โดยอาจมีผลจาก sampling และ filter เพิ่มเติม
 
+## Sensorimotor block diagram
+
+```text
+บุคคล/สิ่งแวดล้อม
+   │  true distance (m)
+   ▼
+Sensor model ── raw sample + timestamp ──► Controller
+(noise/delay/invalid)                      │ filter memory + FAR/NEAR state
+                                          │ bounded command [0, 1]
+                                          ▼
+                                     Lamp/actuator output
+                                          │
+                                          └ - - ► บุคคลรับรู้แล้วตอบสนอง
+```
+
+ลูกศรทึบคือข้อมูลที่ simulator นี้คำนวณจริง ส่วน feedback เส้นประจากการแสดงออกของโคมกลับไปยังพฤติกรรมบุคคลเป็นสิ่งที่ระบบจริงควรมี แต่ trial นี้ใช้ trajectory ระยะที่กำหนดไว้ล่วงหน้า จึงยังไม่ได้จำลอง closed-loop human response
+
 ## วิธีทดลอง
 
 ใช้ controller ใน `student_controller.py` ผ่าน checker 10 รายการและ unit tests จากนั้นรันสาม protocol โดยไม่เขียนทับผลเดิม:
@@ -40,6 +57,19 @@ comparison ใช้ 5 trials ต่อ condition, `dt=0.02 s`, noise `0.01 m`, 
 | C3 | 1.6 | 1.798 | 0.043 | 0.089 | 0.109 |
 
 ผล C2 แบบ full robustness ที่ไม่มี noise แสดง enter latency เพิ่มจาก `0.423 s` ที่ delay 0 ms เป็น `0.523 s` ที่ 100 ms และ `0.723 s` ที่ 300 ms ส่วนทุกชุด C2 มี extra switches และ false trigger rate เท่ากับ 0 ในการรันนี้ เมื่อมี noise ผล latency แกว่งตาม seed แต่ชุด delay 300 ms ยังช้ากว่าชุด delay 0 ms โดยรวม
+
+### กราฟตัวแทน C1 และ C2
+
+ใช้ trial `r01`, noise `0.01 m`, delay `0 ms` เหมือนกัน เส้นประสีดำระบุ physical crossing จาก expected state และเส้นจุดสีม่วงระบุ first correct response หลัง crossing
+
+| Trial | physical enter / first correct (s) | physical exit / first correct (s) |
+|---|---:|---:|
+| C1_n0.01_d000_r01 | 6.86 / 6.86 | 13.16 / 13.16 |
+| C2_n0.01_d000_r01 | 6.86 / 7.24 | 13.16 / 13.58 |
+
+![C1 representative trial with annotated crossings](student_figures/C1_n0.01_d000_r01.png)
+
+![C2 representative trial with annotated crossings](student_figures/C2_n0.01_d000_r01.png)
 
 ## อภิปรายผลและข้อจำกัด
 

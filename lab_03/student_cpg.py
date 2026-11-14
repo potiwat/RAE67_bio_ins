@@ -1,8 +1,4 @@
-"""Student template for Lab 03.
-
-Keep function names and return structures unchanged so the
-grader and experiment runner can load this file.
-"""
+"""Student Lab 03 implementation of the SO(2) CPG and bounded mapping."""
 
 from __future__ import annotations
 
@@ -19,7 +15,6 @@ def clamp(value: float, low: float, high: float) -> float:
 
 def so2_step(o1: float, o2: float, alpha: float, phi: float) -> tuple[float, float]:
     """Return o1(t+1), o2(t+1) using a simultaneous update."""
-    # SO(2) equations from lec5.pptx slide 18; both outputs use o1(t), o2(t).
     c, s = math.cos(phi), math.sin(phi)
     a1 = alpha * (c * o1 + s * o2)
     a2 = alpha * (-s * o1 + c * o2)
@@ -29,15 +24,14 @@ def so2_step(o1: float, o2: float, alpha: float, phi: float) -> tuple[float, flo
 def decode_tripod(o1: float, o2: float, stride_half: float,
                    lift_height: float) -> dict[str, dict[str, float | bool]]:
     """Return x_rel, lift, and contact for all six legs."""
-    # Tripod B uses the opposite phase sign from Tripod A.
-    legs: dict[str, dict[str, float | bool]] = {}
-    for leg, sign in TRIPOD_SIGN.items():
-        legs[leg] = {
+    return {
+        leg: {
             "x_rel": stride_half * sign * o1,
             "lift": lift_height * max(0.0, sign * o2),
             "contact": sign * o2 <= 0.0,
         }
-    return legs
+        for leg, sign in TRIPOD_SIGN.items()
+    }
 
 
 def bounded_modulation(m: float, phi0: float = 0.20,
@@ -48,7 +42,6 @@ def bounded_modulation(m: float, phi0: float = 0.20,
                        stride_bounds: tuple[float, float] = (0.040, 0.070),
                        ) -> tuple[float, float]:
     """Map slow input m to bounded phi and stride commands."""
-    # Each command is clamped to its own bounds.
-    phi = clamp(phi0 + phi_gain * m, phi_bounds[0], phi_bounds[1])
-    stride = clamp(stride0 + stride_gain * m, stride_bounds[0], stride_bounds[1])
+    phi = clamp(phi0 + phi_gain * m, *phi_bounds)
+    stride = clamp(stride0 + stride_gain * m, *stride_bounds)
     return phi, stride

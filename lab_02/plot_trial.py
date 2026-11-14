@@ -21,6 +21,32 @@ def load_rows(path: Path) -> list[dict[str, str]]:
         return list(csv.DictReader(handle))
 
 
+def crossing_time(
+    time_s: list[float], distance_m: list[float], direction: str, threshold_m: float
+) -> float | None:
+    for index in range(1, len(time_s)):
+        previous, current = distance_m[index - 1], distance_m[index]
+        crossed = (direction == "down" and previous >= threshold_m > current) or (
+            direction == "up" and previous <= threshold_m < current
+        )
+        if crossed:
+            fraction = (threshold_m - previous) / (current - previous)
+            return time_s[index - 1] + fraction * (time_s[index] - time_s[index - 1])
+    return None
+
+
+def first_correct_response(
+    rows: list[dict[str, str]], event_time_s: float | None, desired_state: str
+) -> float | None:
+    if event_time_s is None:
+        return None
+    for row in rows:
+        time_s = float(row["time_s"])
+        if time_s >= event_time_s and row["state"] == desired_state and row["valid"] == "1":
+            return time_s
+    return None
+
+
 def plot_trial(csv_path: Path, output_path: Path) -> None:
     rows = load_rows(csv_path)
     if not rows:
@@ -51,13 +77,35 @@ def plot_trial(csv_path: Path, output_path: Path) -> None:
 
     command_ax.plot(time_s, command, color="#C17824", linewidth=2, label="command")
     command_ax.step(time_s, state, where="post", color="#147A8C", linewidth=1.5, label="state: NEAR=1")
+    for direction, desired_state, color in (
+        ("down", "NEAR", "#B84A4A"),
+        ("up", "FAR", "#5D6DB1"),
+    ):
+        event_time = crossing_time(time_s, true_distance, direction, 0.35)
+        response_time = first_correct_response(rows, event_time, desired_state)
+        if event_time is not None:
+            command_ax.axvline(
+                event_time,
+                color=color,
+                linestyle=":",
+                linewidth=1.5,
+                label=f"physical {direction} crossing",
+            )
+        if response_time is not None:
+            command_ax.axvline(
+                response_time,
+                color=color,
+                linestyle="--",
+                linewidth=1.5,
+                label=f"first correct {direction} response",
+            )
     command_ax.set_xlabel("time (s)")
     command_ax.set_ylabel("command / state")
     command_ax.grid(True, alpha=0.25)
-    command_ax.legend(loc="best")
+    command_ax.legend(loc="best", ncol=2)
 
     for row in rows:
-        if row["event_label"] in ("ENTER_NEAR", "EXIT_NEAR", "INVALID"):
+        if row["event_label"] == "INVALID":
             time = float(row["time_s"])
             command_ax.axvline(time, color="#B84A4A", alpha=0.25, linewidth=0.8)
 

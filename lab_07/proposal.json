@@ -1,40 +1,101 @@
 {
-  "question": "เมื่อฮอร์โมนเทียม H ที่สะสมจากการสัมผัสและการเข้าใกล้ถูกใช้ปรับ phase increment φ ของ SO(2) CPG ที่ขับท่าพยักหน้า (nod) ของโคมในสถานะ happy ความถี่การพยักหน้าเปลี่ยนตามความถี่การเล่นของผู้ใช้หรือไม่ และ latency ของการตอบสนองยังอยู่ภายใน 1 s หรือไม่",
-  "hypothesis": "ถ้า φ ของ CPG ถูกปรับด้วย R จาก AHM (C1) แล้ว ความถี่ nod ช่วงที่ผู้ใช้สัมผัสบ่อยจะสูงกว่าเงื่อนไข φ คงที่ (C0) และค่อยๆ กลับ baseline หลังหยุดเล่น เพราะ H สะสมจาก production และลดลงด้วย clearance/binding ส่วน both latency ไม่ต่างกันเพราะ FSM และ output path เหมือนกัน ผลนี้ใช้ได้เฉพาะ proposed course model และโคมที่สอบเทียบแล้ว",
-  "biological_inspiration_source": "การปรับจังหวะ central pattern generator ด้วย neuromodulator/ฮอร์โมนในสัตว์ ตามแนวทาง Artificial Hormone Mechanism ของ Homchanthanakul et al. (2019, IROS) และการเชื่อม hormone กับ CPG ใน Ngamkajornwiwat et al. (2020, IEEE Access 8:91587-91602) กลไกที่ใช้คือ stimulus เพิ่ม production ของ H, H ลดด้วย clearance และ receptor binding แล้ว receptor output ปรับความถี่ของ CPG",
-  "AHM_equation": "Hc(t) = β·Hc(t−1) + Hg(t) − Hr(t), Hg = α·f(S), Hr = Σγi·Receptor_i (Homchanthanakul 2019); proposed course model: H(k+1) = clamp(H + dt(k_prod·S − k_clear·H − k_bind·R), 0, 1), R = H, S = 1 เมื่อมี touch หรือ approach ใน tick นั้น",
-  "SO2_CPG_equation": "a1(t+1) = α[cos φ·o1(t) + sin φ·o2(t)], a2(t+1) = α[−sin φ·o1(t) + cos φ·o2(t)], oi(t+1) = tanh(ai(t+1)) อัปเดตพร้อมกัน, α = 1.10, initial (o1, o2) = (0.10, 0)",
-  "integration_description": "AHM–CPG: φ = clamp(0.20 + 0.20·R, 0.10, 0.45) rad ต่อ step แล้ว nod = 0.18·o1 rad ส่งผ่าน /lamp/servo_command เฉพาะในสถานะ happy ส่วน FSM (Lab 06/07) ยังเลือก state และ RGB เหมือนเดิม",
-  "independent_variable": "แหล่งของ φ ใน CPG ของท่า nod: C0 ใช้ φ คงที่ 0.20 rad, C1 ใช้ φ จาก R ของ AHM",
+  "question": "For the same predeclared button, touch, and approach inputs, does coupling a bounded hormone-inspired AHM to the SO(2) CPG change mean servo-command total variation without increasing median source-to-command onset latency by more than 0.10 s, compared with a fixed-parameter CPG?",
+  "hypothesis": "In the proposed model, AHM-to-CPG coupling will reduce mean per-step servo-command total variation by at least 10% versus C0, while the paired median source-to-command onset latency is no more than 0.10 s slower. These are prospective decision thresholds, not observed results; evaluate both with paired trials and report all missing outcomes.",
+  "biological_inspiration_source": "Conceptual inspiration: hormone-mediated modulation of locomotion in the adaptive locomotion architecture of Ngamkajornwiwat et al. (2020), IEEE Access 8, 91587-91602, DOI 10.1109/ACCESS.2020.2992794. The project is not a reproduction of that paper's MNLC, hormone equations, terrain adaptation, or results. The Week04 course AHM equation is used as an explicitly proposed teaching model.",
+  "AHM_equation": "Course-model discrete update: R_old=clamp((H_old-H_min)/(H_max-H_min),0,1); P=k_prod*S; C=k_clear*H_old; B=k_bind*R_old; H_new=clamp(H_old+dt*(P-C-B),0,1); R_new=H_new. This is the Week04 proposed course model, not a claim that the paper uses this exact equation. H and S are dimensionless; P,C,B are normalized-H/s.",
+  "SO2_CPG_equation": "Use the Week03 simultaneous recurrence: a1_next=alpha*(cos(phi)*o1+sin(phi)*o2); a2_next=alpha*(-sin(phi)*o1+cos(phi)*o2); o1_next=tanh(a1_next); o2_next=tanh(a2_next). Read both old outputs before updating either. Source attribution: Week03 course handout, citing legacy lec5.pptx slide 18; alpha/phi and the proposed mapping below require validation and are not certified hardware values.",
+  "integration_description": "Map the new receptor value to phi=clamp(0.20+0.20*R,0.10,0.45) rad and amplitude_scale=0.75+0.25*R. CPG outputs drive bounded semantic servo targets in [tilt,extend,nod] order; the FSM remains responsible for event/state priority and the CPG modulates only the expressive motion component. Convert RGB channels to [0,1] by integer/255 with alpha=1.0. No hormone state directly commands a motor.",
+  "independent_variable": "AHM-to-SO(2)-CPG coupling: disconnected fixed CPG (C0) versus bounded receptor-to-phase/amplitude mapping (C1).",
   "conditions": [
-    {"name": "C0", "baseline": true, "change": "φ คงที่ 0.20 rad (R = 0 ตลอด) ใช้ FSM, poses, RGB, bounds และ slew ชุดเดียวกับ C1", "repeats": 3},
-    {"name": "C1", "baseline": false, "change": "φ = clamp(0.20 + 0.20·R, 0.10, 0.45) จาก AHM (k_prod 0.8, k_clear 0.6, k_bind 0.2) สิ่งอื่นเหมือน C0", "repeats": 3}
+    {
+      "name": "C0",
+      "baseline": true,
+      "change": "Fixed CPG parameters alpha=1.10 and phi=0.20 rad; compute and log the same AHM state as C1 but do not feed it into CPG parameters.",
+      "repeats": 3
+    },
+    {
+      "name": "C1",
+      "baseline": false,
+      "change": "Connect the same AHM receptor R to phi=clamp(0.20+0.20*R,0.10,0.45) rad and amplitude_scale=0.75+0.25*R; change no other factor.",
+      "repeats": 3
+    }
   ],
   "metrics": [
-    {"name": "nod_frequency_hz", "unit": "Hz", "measurement": "1/คาบเฉลี่ยระหว่างจุดตัดศูนย์ขาขึ้นของ nod: simulation ใช้ /lamp/servo_command ที่ output_collector รับ, real robot ใช้ IMU บนหัวโคม แยกช่วงนาที 2–5 และ 5–8", "missing_rule": "ช่วงที่มีจุดตัดน้อยกว่า 2 ครั้งเป็น N/A และยังนับใน denominator ของทุกช่วง happy"},
-    {"name": "both_latency_s", "unit": "s", "measurement": "max(first motion onset, first RGB onset) − source time ของ input เดียวกัน: simulation ใช้ virtual clock ของ offline_lab, real robot ใช้กล้อง 240 fps และ photodiode เทียบกับ timestamp ของ ESP32", "missing_rule": "ไม่พบ onset ภายใน 22 s หรือภายใน scenario เป็น N/A พร้อม status ไม่แทนด้วย 0, denominator คือ expected input IDs ที่ประกาศก่อนรัน"}
+    {
+      "name": "mean_servo_command_total_variation",
+      "unit": "rad per output interval",
+      "measurement": "For the three commanded radian channels, sum abs(q[j]-q[j-1]) over adjacent samples and channels, divide by the number of intervals; calculate per trial over the declared active-input window. Also retain channel-wise values.",
+      "missing_rule": "A trial without a complete timestamped command trace is missing, never zero; retain trial ID and reason and do not replace it. Report all three repeats and paired differences."
+    },
+    {
+      "name": "source_to_servo_onset_latency",
+      "unit": "s",
+      "measurement": "For each predeclared expected input ID, subtract the input source event time from the first servo command change >=0.02 rad; report simulation command onset separately from real-robot measured physical onset.",
+      "missing_rule": "If no qualifying command/physical onset occurs in the observation window, record missing/censored with reason and retain in the denominator; do not substitute zero. Do not mix command and physical-onset measurements."
+    }
   ],
   "controls": [
-    "policy เดียวกัน: lamp_week07/student_policy.py ที่ผ่าน check_submission (SHA-256 บันทึกใน manifest)",
-    "stimuli เดียวกัน: offline ใช้ seeds 41/42/43 คู่กัน, real robot ใช้ script 10 นาทีเดียวกันและผู้เล่นคนเดิมทั้ง C0/C1",
-    "hardware/configuration เดียวกัน: poses, RGB, bounds tilt ±0.35 extend ±0.25 nod ±0.30 rad, slew ≤ 0.8 rad/s, ไฟล์สอบเทียบ servo เดียวกันทุก trial"
+    "Identical FSM transition table, input waveform and predeclared event IDs within each paired C0/C1 repeat.",
+    "Identical initial oscillator state, hormone initial state, dt, scheduler, bounds, RGB/state mapping and observation window.",
+    "Same robot, sensor placement, actuator limits, firmware/driver version and calibration for paired real-robot trials; log any deviation."
   ],
   "parameters": [
-    {"name": "k_prod", "value": 0.8, "unit": "normalized H/s", "provenance": "proposed course model (Lab 04/05)"},
-    {"name": "k_clear", "value": 0.6, "unit": "1/s", "provenance": "proposed course model (Lab 04/05)"},
-    {"name": "k_bind", "value": 0.2, "unit": "normalized H/s ต่อ R", "provenance": "proposed course model (Lab 04/05)"},
-    {"name": "alpha", "value": 1.1, "unit": "dimensionless", "provenance": "SO(2) CPG ใน lec5 สไลด์ 18, ค่าจาก Lab 03"},
-    {"name": "phi_bounds", "value": [0.1, 0.45], "unit": "rad/step", "provenance": "bounded mapping ของ Lab 03–05"},
-    {"name": "nod_gain", "value": 0.18, "unit": "rad", "provenance": "amplitude ท่า happy ของ Lab 06"},
-    {"name": "dt", "value": 0.02, "unit": "s", "provenance": "tick ของ Lab 06/07 interaction node"}
+    {
+      "name": "AHM k_prod",
+      "value": 0.8,
+      "unit": "normalized H/s",
+      "provenance": "Week04 proposed course model; confirm against the project implementation before use."
+    },
+    {
+      "name": "AHM k_clear",
+      "value": 0.6,
+      "unit": "s^-1",
+      "provenance": "Week04 proposed course model; confirm against the project implementation before use."
+    },
+    {
+      "name": "AHM k_bind",
+      "value": 0.2,
+      "unit": "normalized H/s per normalized receptor",
+      "provenance": "Week04 proposed course model; confirm against the project implementation before use."
+    },
+    {
+      "name": "AHM dt",
+      "value": 0.05,
+      "unit": "s",
+      "provenance": "Proposed project simulation step; validate numerical stability before trials."
+    },
+    {
+      "name": "SO(2) alpha",
+      "value": 1.1,
+      "unit": "dimensionless",
+      "provenance": "Week03 course baseline, proposed course model."
+    },
+    {
+      "name": "SO(2) phi C0",
+      "value": 0.2,
+      "unit": "rad/update",
+      "provenance": "Week03 course baseline, proposed course model."
+    },
+    {
+      "name": "SO(2) phi C1 bounds",
+      "value": [0.1, 0.45],
+      "unit": "rad/update",
+      "provenance": "Week04 proposed bounded mapping; verify in code and calibrate before hardware use."
+    },
+    {
+      "name": "servo semantic bounds",
+      "value": [0.35, 0.25, 0.3],
+      "unit": "rad [tilt,extend,nod]",
+      "provenance": "Lab07 proposed course model only; hardware linkage and safe limits are not verified."
+    }
   ],
-  "simulation_plan": "ใช้ ROS 2 Jazzy graph ของ Lab 07 (synthetic_inputs, interaction, output_collector) เพิ่ม AHM และ CPG ใน interaction node, บันทึก sidecar traces และ ros2 bag ทั้ง 7 topics, รัน offline_lab C0/C1 seeds 41–43 แล้ว replay ตรวจ byte-for-byte",
-  "real_robot_plan": "ESP32 + micro-ROS อ่าน button, touch และ ToF distance ส่ง 3 input topics, host รัน interaction/AHM/CPG ส่ง servo/RGB กลับ, แปลง rad เป็น PWM ด้วยไฟล์สอบเทียบ neutral/ทิศทาง/limit, วัด onset จริงด้วยกล้อง 240 fps, photodiode และ IMU",
-  "clock_correlation_plan": "ESP32 ใส่ source_id และ micros() ลง serial sidecar ทุก input, host บันทึก perf_counter_ns พร้อม source_id, ซิงก์สอง clock ด้วยไฟกระพริบ LED ต้นและท้าย trial แล้ว fit drift แบบเส้นตรง รายงาน error bound ไม่เกิน 1 frame (4.2 ms) บวก jitter ที่วัดได้",
-  "safety_stop_plan": "ผู้ควบคุม (นางสาวสมฤทัย แก้วสุข) ถือปุ่ม e-stop ที่ตัดไฟ servo โดยตรง, หยุดทันทีเมื่อโคมเข้าใกล้หน้าเกิน 0.20 m โดยไม่เข้า afraid, servo ร้อนผิดปกติ หรือ link ขาดเกิน 0.12 s แล้วไม่กลับท่ากลาง",
-  "order_counterbalancing": "simulation ใช้ seed คู่เดียวกันทั้ง C0/C1, real robot สลับลำดับแบบ C0→C1, C1→C0, C0→C1 ในสาม session",
-  "paired_seed_or_participant_plan": "seeds 41/42/43 ใช้คู่กันทั้ง C0/C1; real robot ใช้ผู้เล่นคนเดิมทั้งสอง condition ในแต่ละ session หลังให้ข้อมูลและขอความยินยอม เก็บข้อมูลแบบไม่ระบุตัวตน",
-  "expected_input_ids_before_run": "button_01, touch_01, approach_01, clear_01, near_01, clear_02, button_02 (baseline 7 IDs) และเก็บ touch_conflict, invalid_01, stale_01 ไว้ใน all 10 sources",
+  "simulation_plan": "Implement the completed FSM, Week04 proposed AHM, Week03 simultaneous SO(2) recurrence and bounded servo decoder in a separate project branch/module. Run C0 and C1 for three paired seeds with identical source inputs and reset state. Log source input IDs/times, H/R, oscillator state, command outputs, configuration and source hashes. The present Lab07 offline runner only measures its own C0 ideal versus C1 modeled transport experiment; it does not implement this AHM/CPG comparison.",
+  "real_robot_plan": "Not run in this workspace. Before any trial, identify the available robot/MCU/driver and ROS 2 Jazzy host; implement and bench-test the versioned seven-topic adapter, map semantic radian targets through measured linkage calibration, verify neutral pose/direction/bounds and emergency stop with actuators disabled, then conduct three paired C0/C1 repeats. Record source IDs, calibrated physical onset (encoder or synchronized video), sensor/driver configuration and failures. Do not treat ROS bag receipt as physical movement.",
+  "clock_correlation_plan": "Attach a unique source input_id in the acquisition/logging wrapper and carry it in sidecar logs across source, controller decision, command and physical observation; the seven wire messages do not contain Header/input IDs. Use one host monotonic clock where possible. For MCU/host/video, record synchronization markers before and after each trial, estimate offset/drift and report a conservative error bound. If identity or clock uncertainty exceeds the predeclared tolerance, mark latency unavailable rather than infer it from message order.",
+  "safety_stop_plan": "A named operator supervises every real-robot run and has an immediately reachable hardware E-stop. Start with actuators disabled; verify neutral, direction, per-joint bounds, rate limits and watchdog before enabling. Stop on unexpected motion, limit violation, stale sensor/command, communication loss, participant discomfort or any contact risk; disable torque/power as appropriate, preserve logs, and do not resume until the cause is reviewed.",
+  "order_counterbalancing": "Use balanced order C0-C1, C1-C0, C0-C1 for the three paired blocks; keep the same seed/input schedule inside each pair. Reset and re-calibrate to the same neutral state between trials and record order, rest and any protocol deviation.",
+  "paired_seed_or_participant_plan": "Simulation: pair seeds 41, 42, 43 across C0/C1. Real robot: use the same scripted input schedule and source IDs within each condition pair; if people provide inputs, obtain required consent and use participant IDs rather than names, with condition order counterbalanced and withdrawal/missing trials retained.",
+  "expected_input_ids_before_run": "Predeclare button_01, touch_01, approach_01, clear_01, near_01, clear_02, button_02 as the primary expected set for the Lab07 supplied protocol. For the proposed AHM/CPG project, freeze the selected positive response IDs and mapping in a versioned protocol before collecting data; use the identical denominator for C0 and C1 and report the full source_outcomes, including misses.",
   "human_scenario_duration_s": 600,
-  "timeline": "สัปดาห์ที่ 1 เพิ่ม AHM และ CPG ใน interaction node และทดสอบ offline, สัปดาห์ที่ 2 ต่อ ESP32 micro-ROS และสอบเทียบ servo/RGB, สัปดาห์ที่ 3 ทดลอง simulation ครบ 6 trials, สัปดาห์ที่ 4 ทดลอง real robot 6 sessions, สัปดาห์ที่ 5 วิเคราะห์และเขียนรายงาน ผู้รับผิดชอบทุกขั้น: นางสาวสมฤทัย แก้วสุข"
+  "timeline": "Week 1: freeze question, protocol, input IDs, consent/safety review and interface graph. Week 2: implement AHM/CPG integration and unit tests; record code/config hashes. Week 3: run paired simulation pilot and verify metrics/missing rules without tuning on test outcomes. Week 4: bench calibration, safety checks and three paired real-robot trials per condition if hardware is available and approved. Week 5: run the 600 s human-interaction scenario under the approved protocol, analyze paired data and submit report, raw traces, manifest and deviations. Dates and hardware availability must be confirmed by the group/instructor."
 }

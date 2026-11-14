@@ -60,21 +60,23 @@ class StudentIntegrationTests(unittest.TestCase):
         adapter = working_factory("C2", LabConfig())
         self.assertEqual(adapter.step(0.0, None, False), ("FAR", 0.0, None))
 
-    def test_unfinished_starter_fails_before_writing_results(self):
+    def test_completed_starter_runs_protocol_and_writes_results(self):
         student_file = Path(__file__).resolve().parents[1] / "student_controller.py"
         with tempfile.TemporaryDirectory() as temp_dir:
             output = Path(temp_dir) / "student_results"
-            with self.assertRaisesRegex(NotImplementedError, "unfinished TODO"):
-                run_protocol(
-                    "controller-comparison", output, trials=1,
-                    controller_source="student", student_file=student_file,
-                )
-            self.assertFalse(output.exists())
+            trials, aggregate = run_protocol(
+                "controller-comparison", output, trials=1,
+                controller_source="student", student_file=student_file,
+            )
+            self.assertEqual(len(trials), 4)
+            self.assertEqual(len(aggregate), 4)
+            self.assertTrue((output / "run_config.json").is_file())
 
-    def test_diagnostic_report_identifies_unfinished_starter(self):
+    def test_diagnostic_report_accepts_completed_starter(self):
         student_file = Path(__file__).resolve().parents[1] / "student_controller.py"
         report = evaluate_submission(student_file)
-        self.assertGreater(report["failed"], 0)
+        self.assertEqual(report["failed"], 0, report["checks"])
+        self.assertEqual(report["passed"], 10)
         self.assertEqual(report["checks"][0]["status"], "PASS")
 
     def test_loader_accepts_student_file(self):

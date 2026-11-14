@@ -15,7 +15,8 @@ def response_markers(rows: list[dict[str, str]]) -> list[dict[str, object]]:
 
         response_time = None
         for candidate in rows[index:]:
-            if candidate["state"] == expected:
+            if (candidate["state"] == expected
+                    and candidate.get("valid", "1") == "1"):
                 response_time = float(candidate["time_s"])
                 break
 

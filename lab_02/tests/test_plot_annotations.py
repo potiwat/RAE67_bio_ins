@@ -31,6 +31,23 @@ class PlotAnnotationTests(unittest.TestCase):
 
         self.assertIsNone(response_markers(rows)[0]["response_time_s"])
 
+    def test_invalid_matching_row_is_not_a_correct_response(self):
+        rows = [
+            {"time_s": "0.0", "expected_state": "FAR", "state": "FAR",
+             "valid": "1"},
+            {"time_s": "1.0", "expected_state": "NEAR", "state": "FAR",
+             "valid": "1"},
+            {"time_s": "1.1", "expected_state": "NEAR", "state": "NEAR",
+             "valid": "0"},
+            {"time_s": "1.3", "expected_state": "NEAR", "state": "NEAR",
+             "valid": "1"},
+        ]
+
+        self.assertEqual(
+            response_markers(rows)[0]["response_time_s"],
+            1.3,
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

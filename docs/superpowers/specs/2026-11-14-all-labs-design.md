@@ -103,4 +103,3 @@ Pre-run predictions will be drafted from the documented equations, clearly label
 - Choose focused extra tests when the supplied checks leave a meaningful edge case uncovered.
 - Keep comments concise and aligned with the terminology already used by each lab.
 - Stop and report any mismatch between README instructions, checker behavior, and equations rather than silently choosing one.
-

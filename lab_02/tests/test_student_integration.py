@@ -43,6 +43,16 @@ def working_factory(condition, config):
     return StudentControllerAdapter(condition, config, CompletedStudentController, Parameters)
 
 
+def write_unfinished_submission(path):
+    path.write_text(
+        "from student_controller import Parameters, StudentController as BaseController\n\n"
+        "class StudentController(BaseController):\n"
+        "    def update_filter(self, raw_distance_m):\n"
+        "        raise NotImplementedError\n",
+        encoding="utf-8",
+    )
+
+
 class StudentIntegrationTests(unittest.TestCase):
     def test_adapter_runs_all_conditions(self):
         for condition in ("C0", "C1", "C2", "C3"):
@@ -61,8 +71,9 @@ class StudentIntegrationTests(unittest.TestCase):
         self.assertEqual(adapter.step(0.0, None, False), ("FAR", 0.0, None))
 
     def test_unfinished_starter_fails_before_writing_results(self):
-        student_file = Path(__file__).resolve().parents[1] / "student_controller.py"
         with tempfile.TemporaryDirectory() as temp_dir:
+            student_file = Path(temp_dir) / "unfinished_submission.py"
+            write_unfinished_submission(student_file)
             output = Path(temp_dir) / "student_results"
             with self.assertRaisesRegex(NotImplementedError, "unfinished TODO"):
                 run_protocol(
@@ -72,10 +83,12 @@ class StudentIntegrationTests(unittest.TestCase):
             self.assertFalse(output.exists())
 
     def test_diagnostic_report_identifies_unfinished_starter(self):
-        student_file = Path(__file__).resolve().parents[1] / "student_controller.py"
-        report = evaluate_submission(student_file)
-        self.assertGreater(report["failed"], 0)
-        self.assertEqual(report["checks"][0]["status"], "PASS")
+        with tempfile.TemporaryDirectory() as temp_dir:
+            student_file = Path(temp_dir) / "unfinished_submission.py"
+            write_unfinished_submission(student_file)
+            report = evaluate_submission(student_file)
+            self.assertGreater(report["failed"], 0)
+            self.assertEqual(report["checks"][0]["status"], "PASS")
 
     def test_loader_accepts_student_file(self):
         student_file = Path(__file__).resolve().parents[1] / "student_controller.py"

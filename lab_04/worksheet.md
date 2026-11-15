@@ -1,72 +1,74 @@
 # ใบงาน Lab04 (รายงาน 1–2 หน้า)
 
-ชื่อ/รหัส นางสาวสมฤทัย แก้วสุข รหัสนักศึกษา 6752500185  วันที่ ______  code version/hash student_hormone.py SHA256 10f95bd776df33723a46edef8ac8920ba7072259beee898b5fe85f69b8fb56b5
+ชื่อ/รหัส __________________ กลุ่ม ______ วันที่ 11/11/2026 code version/hash ______
 
 ## A. ก่อนรัน (10 นาที)
 
-![block diagram](figures/block_diagram.png)
+Block diagram: `S → P=k_prod·S`; `H_old → C=k_clear·H_old` และ `H_old → R_old → B=k_bind·R_old`; `H_old + dt(P−C−B) → clamp → H_new → receptor → R_new → bounded mapping → phi/stride`
 
-S เพิ่ม production P → P ทำให้ H เพิ่ม ขณะที่ clearance C ลด H ตาม H_old และ binding B ลด H ตาม R_old → H ใหม่เกิดจาก H_old บวกผลสุทธิ dt·(P−C−B) H จึงเก็บประวัติของ stimulus ไว้ (ยังไม่หายทันทีเมื่อ S เป็น 0) → receptor แปลง H เป็น R ช่วง 0–1 → R ใช้ปรับ phi และ stride ผ่าน bounded mapping
-
-> หมายเหตุ: prediction เขียนหลังจากรันโปรแกรมแล้ว คอลัมน์ prediction และเหตุผลจึงเขียนเชิงคุณภาพจากสมการเท่านั้น ตัวเลขอยู่ในคอลัมน์ผลจริง
+เหตุและผล: S กำหนดอัตราการผลิต P; H_old กำหนด clearance C และ receptor R_old ที่ใช้หา binding B; ผลสุทธิ P−C−B ปรับสถานะ H โดยมีประวัติจาก H_old; receptor อ่าน H_new แล้ว mapping จำกัดคำสั่ง phi และ stride ให้อยู่ใน bounds
 
 | Comparison | prediction ก่อนรัน | เหตุผลจาก term ในสมการ | ผลจริงหลังรัน |
 |---|---|---|---|
-| C2 กับ C1 | H ขึ้นเร็วกว่าและสูงกว่า C1 ช่วงเปิด stimulus | P = k_prod·S ใหญ่ขึ้น ส่วน C และ B เท่าเดิม ผลสุทธิ P−C−B จึงเป็นบวกมากขึ้น | peak_H 1.0000 (ชน upper bound) เทียบกับ 0.9997, latency 0.10 s เทียบกับ 0.15 s, rise 1.05 s เทียบกับ 2.70 s, AUC 10.672 เทียบกับ 9.9996, recovery 2.85 s เท่ากัน upper clamp 0.290 |
-| C3 กับ C1 | H สะสมสูงกว่าและลดลงช้ากว่ามากหลังปิด stimulus | C = k_clear·H_old เล็กลง H จึงถูกกำจัดช้า ทั้งช่วงเปิดและช่วงปิด | peak_H 1.0000, AUC 11.389 (สูงสุด), rise 1.45 s, recovery 5.10 s เทียบกับ 2.85 s ของ C1 ช้ากว่า 2.25 s upper clamp 0.273 |
-| C4 กับ C1 | H สูงขึ้นและฟื้นช้าลงเล็กน้อย | ตัด B = k_bind·R_old ออก จึงเหลือแค่ clearance ที่ลด H | peak_H 1.0000, AUC 10.755, rise 1.70 s, recovery 3.80 s ช้ากว่า C1 0.95 s upper clamp 0.258 |
-| C0 กับ C1 | C0 ตอบสนองทันทีและหยุดทันที ไม่มีความจำ | C0 ใช้ R = S โดยตรง ไม่มี state H จึงไม่มี P/C/B | C0 ไม่มี H (peak_H และ AUC เป็น N/A), latency 0.05 s (ความละเอียดของ log), rise 0.00 s, recovery 0.05 s เทียบกับ C1 latency 0.15 s, rise 2.70 s, recovery 2.85 s |
+| C2 vs C1 | H เพิ่มเร็วกว่า; peak อาจเท่ากันเมื่อชน upper bound | `k_prod` สูงขึ้นทำให้ P สูงขึ้น แต่ H ถูก clamp ที่ 1 | latency 0.10 เทียบ 0.15 s; peak_H 1.000 เทียบ 0.999715; AUC_H 10.672410 เทียบ 9.999644 |
+| C3 vs C1 | H สะสม/คงอยู่มากกว่าและ recovery ช้ากว่า | `k_clear` ต่ำลงทำให้ C ลดลง | recovery 5.10 เทียบ 2.85 s; AUC_H 11.389145 เทียบ 9.999644 |
+| C4 vs C1 | H/AUC มีแนวโน้มสูงขึ้น | `k_bind=0` ทำให้ไม่มี B มาหักออกจาก H | AUC_H 10.754720 เทียบ 9.999644; peak_H 1.000 เทียบ 0.999715 |
+| C0 vs C1 | C0 ตอบสนอง R ตรงกับ S ส่วน C1 มี lag และ H state | C0 ไม่มี hormone state; C1 คำนวณ H แล้วอ่าน receptor | latency ที่วัดได้ 0.05 เทียบ 0.15 s; C0 ไม่มี H (N/A) |
 
-เขียนว่า prediction ใดอาจเปลี่ยนเพราะ H มี upper bound=1: prediction ว่า C2, C3, C4 จะมี peak สูงกว่า C1 อาจไม่จริงในเชิงตัวเลข เพราะ H ถูก clamp ไว้ที่ 1 ทั้งสามเงื่อนไขจึงมี peak_H = 1.0000 เท่ากันหมด ผลต่างไปปรากฏที่ AUC, rise time, recovery และ upper clamp fraction แทน (C2 0.290, C3 0.273, C4 0.258 ส่วน C1 = 0)
+เขียนว่า prediction ใดอาจเปลี่ยนเพราะ H มี upper bound=1: แม้ C2/C3/C4 สร้าง H มากกว่าหรือคงอยู่ได้นานกว่า peak_H ก็อาจเท่ากับ C1 ที่ 1.0 ได้ ต้องใช้ AUC, recovery และ clamp fraction ร่วมเปรียบเทียบ
 
 ## B. เติม code และคำนวณมือ (20 นาที)
 
-1. สมการ source: จากเอกสาร Week04 ที่อ้าง Homchanthanakul et al. (2019), IROS, DOI 10.1109/IROS40897.2019.8968580 Hc(t) = β·Hc(t−1) + Hg(t) − Hr(t),   Hg(t) = α·f(S(t)),   Hr(t) = Σ γᵢ·Receptorᵢ(t)
-   proposed course model: R_old = clamp((H_old − H_min)/(H_max − H_min), 0, 1); P = k_prod·S,  C = k_clear·H_old,  B = k_bind·R_old   [normalized H / s]; H_raw = H_old + dt·(P − C − B),  H_new = clamp(H_raw, 0, 1),  R_new = receptor(H_new); phi = clamp(0.20 + 0.20·R_new, 0.10, 0.45) rad,  stride_half = clamp(0.055 + 0.010·R_new, 0.040, 0.070) m; dt = 0.05 s, duration 30 s, H0 = 0 (เป็น proposed course model ไม่ได้แทน β ด้วย k_clear โดยตรง)
-2. receptor(H=0.2, H_min=0.1, H_max=0.5) = (0.2−0.1)/(0.5−0.1) = 0.25
-3. step เก็บ H_old และ R_old ก่อนคำนวณ P, C, B แล้วอัปเดต H ครั้งเดียว
-4. คำนวณมือ (ตารางด้านล่าง) ตรงกับ C1_step.csv
-5. check_submission.py ผ่าน 13/13 case
+1. สมการต้นทางตามเอกสารประกอบ: `Hc(t)=beta Hc(t−1)+Hg(t)−Hr(t)`, `Hg=alpha f(S)`, `Hr=sum(gamma_i Receptor_i)`; ส่วนค่าตัวเลขในแล็บเป็น proposed course model แบบ Euler แยก `P=k_prod S`, `C=k_clear H_old`, `B=k_bind R_old` และ clamp H
+2. ทดสอบ receptor ที่ H=.2, H_min=.1, H_max=.5: `(0.2−0.1)/(0.5−0.1)=0.25`
+3. ใน step ใช้ H_old และ R_old ก่อนคำนวณ P/C/B แล้วอัปเดต H เพียงครั้งเดียว
+4. เมื่อ H_old=0,S=1 (C1): P=.8, C=0, B=0, H_raw=H_new=.04, R_new=.04, phi=.208 rad, stride=.0554 m; รอบถัดไป H=.0784, R=.0784, phi=.21568 rad, stride=.055784 m
+5. รัน checker: 13/13 cases ผ่าน; output เก็บใน `results/submission_check.json`
 
 | input_time_s | time_s | P | C | B | H_raw | H | R | phi |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|
 |10.00|10.05|0.8000|0.0000|0.0000|0.0400|0.0400|0.0400|0.2080|
 |10.05|10.10|0.8000|0.0240|0.0080|0.0784|0.0784|0.0784|0.2157|
 
-แถว CSV ที่เลือกสอดคล้องกับ time convention อย่างไร? แถวแรกของไฟล์ (time_s = 0.00 และ 0.05) ยังอยู่ช่วง S = 0 ค่าทุกตัวจึงเป็น 0 time_s ในแต่ละแถวคือเวลาหลัง update ส่วน input_time_s คือเวลาต้นช่วงที่ใช้ stimulus stimulus เปิดที่ input_time_s = 10.00 ผลจึงอยู่ในแถว time_s = 10.05 (H = 0.0400) และ update ถัดไปอยู่ที่ 10.10 (H = 0.0784) ตรงกับที่คำนวณมือ
+แถว CSV ที่เลือกสอดคล้องกับ time convention อย่างไร? input_time_s ระบุเวลาเริ่ม update ส่วน time_s ระบุเวลาสถานะหลัง update ดังนั้น input 10.00 จึงได้ state ที่ 10.05
 
 ## C. Controlled comparison (20 นาที)
 
+รัน C0–C4 ใช้ dt,duration,H0,stimulus,mapping เดียวกัน เปิด report.html และกรอกค่าจาก metrics.json ไม่อ่านค่าด้วยสายตาอย่างเดียว
+
 | Condition | peak_H | AUC_H | latency s | rise s | recovery s | upper clamp fraction | phi TV rad |
 |---|---|---|---|---|---|---|---|
-|C0|N/A (ไม่มี H)|N/A|0.05|0.00|0.05|N/A|0.4000|
-|C1|0.9997|9.9996|0.15|2.70|2.85|0.000|0.3998|
-|C2|1.0000|10.6724|0.10|1.05|2.85|0.290|0.3999|
-|C3|1.0000|11.3891|0.15|1.45|5.10|0.273|0.3979|
-|C4|1.0000|10.7547|0.15|1.70|3.80|0.258|0.3995|
+|C0|N/A|N/A|0.050|0.000|0.050|N/A|0.400000|
+|C1|0.999715|9.999644|0.150|2.700|2.850|0.000000|0.399829|
+|C2|1.000000|10.672410|0.100|1.050|2.850|0.290000|0.399943|
+|C3|1.000000|11.389145|0.150|1.450|5.100|0.273333|0.397890|
+|C4|1.000000|10.754720|0.150|1.700|3.800|0.258333|0.399548|
 
-- C3 ฟื้นช้ากว่า C1 เท่าไร? recovery ของ C3 = 5.10 s และ C1 = 2.85 s (จาก metrics.csv) ผลต่าง 5.10 − 2.85 = 2.25 s C3 จึงฟื้นช้ากว่า C1 2.25 s สอดคล้องกับ k_clear ที่ลดจาก 0.6 เป็น 0.25 ทำให้ H ลดลงช้าหลังปิด stimulus ที่ 20 s (ความละเอียดของเวลาคือ 0.05 s)
-- C2/C3 peak เท่ากันหรือไม่ และ metric ใดแยกได้? C2 และ C3 มี peak_H = 1.0000 เท่ากันเพราะชน upper bound จึงใช้ peak แยกไม่ได้ metric ที่แยกได้คือ recovery (C2 2.85 s, C3 5.10 s), rise 10–90 (C2 1.05 s, C3 1.45 s), latency (C2 0.10 s, C3 0.15 s), AUC (C2 10.672, C3 11.389 H·s) และ upper clamp fraction (C2 0.290, C3 0.273) สรุปคือ C2 ขึ้นเร็วกว่าเพราะ production สูง ส่วน C3 ค้างนานกว่าเพราะ clearance ต่ำ
-- C0 มี H หรือไม่ / TV ต่ำพิสูจน์คุณภาพ gait ได้หรือไม่? C0 ไม่มี H ใน CSV ช่อง h, raw, p, c, b เป็นค่าว่าง และ peak_H, AUC เป็น N/A เพราะ C0 ใช้ R = S โดยตรง phi TV ของทุก condition ใกล้กันมาก (C0 0.4000, C1 0.3998, C3 0.3979 rad) ค่า TV ต่ำเพียงอย่างเดียวจึงพิสูจน์คุณภาพ gait ไม่ได้ เพราะ TV บอกแค่ผลรวมของการเปลี่ยนคำสั่ง ไม่ได้บอกจังหวะ ความเร็วในการตอบสนอง ความเสถียร หรือการเดินจริง และ Lab04 ยังไม่ได้รัน CPG
+ตอบด้วยตัวเลข: C3 ฟื้นช้ากว่า C1 เท่าไร? C2/C3 peak เท่ากันหรือไม่ และ metric ใดแยกสองระบบนี้ได้? C0 มี H หรือไม่? TV ที่ต่ำกว่าเพียงอย่างเดียวพิสูจน์คุณภาพ gait ได้หรือไม่?
+
+ผลเปรียบเทียบ: C3 recovery ช้ากว่า C1 อยู่ 2.25 s (5.10−2.85); C2/C3 peak_H เท่ากันที่ 1.000 แต่ AUC_H ต่างกัน 10.672410 กับ 11.389145 และ recovery ต่างกัน 2.85 กับ 5.10 s; C0 ไม่มี H (N/A); TV ที่ต่ำกว่าไม่ใช่หลักฐานคุณภาพ gait เพราะ Lab04 ไม่ได้จำลอง gait
 
 ## D. Extreme tests และ handoff (10 นาที)
 
-- zero: H = R = 0 ตลอด 30 s, phi = 0.20, stride = 0.055, fault = 0 (แถวท้าย 29.80–30.00 s เป็น 0 ทั้งหมด)
-- one: H เพิ่มจนประมาณ 1 (≥ 0.999 ตั้งแต่ 8.50 s) แถวท้าย H = R = 1.0000, phi = 0.40, stride = 0.065, upper clamp fraction = 0, AUC 28.75
-- Spike มี on interval 1 แถว (input_time_s = 10.00) นาน 0.05 s ได้ H = R = 0.0400 ที่ 10.05 แล้วลดลงเป็น 0.0384 ที่ 10.10 และ 0.0369 ที่ 10.15 หลัง fault ระบบ reset และกลับมาสะสมได้: แถวก่อน fault time_s 15.00 H = 0.9831, fault = 0; แถว fault time_s 15.05 (S = NaN) H = R = 0, raw = p = c = b = 0, fault = 1, phi = 0.2000, stride = 0.0550; แถวถัดไป 15.10 H = 0.0400 และ 15.15 H = 0.0784 เริ่มสะสมใหม่จากศูนย์ fault_count = 1
-- Contract: ใช้ ../lab_03/results/week4_bridge/handoff_contract.json จาก Lab 03 runner รับได้ alpha = 1.1, dt = 0.05, lift = 0.03 ตรงเดิม ผล C1 เท่ากับที่ใช้ contract ที่แจก (AUC 9.9996, latency 0.15 s, recovery 2.85 s)
-- R = 0 → phi 0.200 rad, stride 0.055 m; R = 1 → phi 0.400 rad, stride 0.065 m อยู่ใน bounds ทั้งคู่
-- software bounds กับ actuator limits/emergency stop: software bounds คือการ clamp ค่าในโปรแกรม (H 0–1, phi 0.10–0.45 rad, stride 0.040–0.070 m) ซึ่งจำกัดเฉพาะคำสั่งที่ส่งออกไป actuator limits คือขีดจำกัดจริงของมอเตอร์และกลไก (มุม, torque, ความเร็ว) ที่ต้องดูจาก datasheet และตรวจกับหุ่นจริง ส่วน emergency stop เป็นกลไกหยุดฉุกเฉินแยกอิสระจาก software นี้ ใช้ได้แม้โปรแกรมผิดพลาด software bounds จึงไม่ได้แทนสองอย่างนี้
-- สิ่งที่ Lab04 ยังไม่ได้ทดสอบ: Lab04 ยังไม่ได้รัน CPG ไม่ได้วัด body motion, gait, ความเสถียร พลังงาน หรือแรงสัมผัส และยังไม่ได้ทดสอบกับ sensor และหุ่นยนต์จริง (ผลทั้งหมดมาจาก simulator) ก่อนอ้างผลกับหุ่นจริงต้องเก็บหลักฐาน integrated test กับ CPG (Week05), การวัด actuator tracking, การทดสอบ fault กับ sensor จริง และยืนยัน limits/emergency stop ของฮาร์ดแวร์
+รัน zero,one,spike,fault ของ C1 ตรวจว่า spike มี on interval เพียงหนึ่งแถว fault มี flag และ state reset แล้วเริ่มกลับได้ แยก software bounds จาก actuator limits และ emergency stop
+
+ทดลองส่ง contract เดิมของ Week03 จาก `..\lab_03\results\week4_bridge\handoff_contract.json` แล้วตรวจ phi/stride ที่ R=0 และ R=1: R=0 ให้ phi=0.200 rad, stride=0.055 m; R=1 ให้ phi=0.400 rad, stride=0.065 m ระบุสิ่งที่ Lab04 ยังไม่ได้ทดสอบ: การรัน CPG/gait แบบ integrated, body motion, actuator, contact force และ hardware safety
+
+ผล extreme tests: zero มี peak_H=0 และ fault_count=0; one มี peak_H≈1; spike มี stimulus=1 หนึ่ง update ที่ input_time_s=10.00 และ peak_H=0.04; fault_count=1 โดย input_time_s=15.00 ส่งผลให้ H=R=0 ที่ state time_s=15.05 จากนั้น state เริ่มสะสมใหม่ที่ 15.10
 
 ## E. สรุปส่งงาน (10 นาที)
 
-H ทำหน้าที่เป็นความจำของ stimulus: ทุก step H ใหม่ = H_old + dt·(P − C − B) เมื่อ S = 1 production ทำให้ H สะสมขึ้นเรื่อย ๆ จน clearance และ binding สมดุล และเมื่อ S กลับเป็น 0 H ยังค้างอยู่และลดลงตาม clearance/binding ไม่ได้หายทันทีแบบ C0 สมการ source คือ Hc(t) = β·Hc(t−1) + Hg − Hr จาก Homchanthanakul et al. (2019) ส่วนสมการ Euler ที่แยก P, C, B, ค่าอัตรา, bounds และ mapping ไป phi/stride เป็น proposed course model ของ Lab
+เขียน 3 ย่อหน้า: (1) กลไกและ provenance (2) prediction ที่ข้อมูลสนับสนุน/ปฏิเสธพร้อมตัวเลข (3) ข้อจำกัดและการทดลอง Week05 ที่ต้องทำต่อ แนบคำสั่งรันและ config/hash ทุกข้อสรุปต้องอ้าง metric หรือ timestamp
 
-ข้อมูลสนับสนุน prediction ว่า C2 ขึ้นเร็วกว่า (latency 0.10 s, rise 1.05 s เทียบกับ C1 0.15 s และ 2.70 s), C3 ค้างนานกว่า (recovery 5.10 s เทียบกับ 2.85 s) และ C4 ฟื้นช้ากว่า C1 (3.80 s) ส่วน prediction ว่า peak จะสูงกว่าต้องปรับ เพราะ C2–C4 มี peak_H = 1.0000 เท่ากันจากการ clamp (upper clamp 0.258–0.290) C0 ตอบสนองภายใน 0.05 s ที่ 10.05 s แต่ไม่มีความจำ การคำนวณมือ H = 0.0400 และ 0.0784 ตรงกับแถว 10.05 และ 10.10 ของ C1_step.csv และ fault ที่ 15.05 s reset แล้วสะสมใหม่ได้
+Checklist: ☑ code ☑ comparison CSV 5 files ☑ extreme CSV 4 files ☑ config ☑ plots ☑ metrics ☑ report ☑ คำสั่งรันซ้ำ
 
-ผลนี้มาจาก simulator ด้วย proposed course model ยังไม่ได้รัน CPG ไม่มี gait, dynamics หรือหุ่นจริง และค่าอัตราไม่ได้ปรับจากข้อมูลจริง ใน Week05 ควรต่อ R เข้ากับ CPG ของ Lab03 แล้วเปรียบเทียบแบบ one-factor เช่น เปลี่ยนเฉพาะ phi หรือเฉพาะ stride และเทียบ C0 กับ hormone condition ด้วยการวัด frequency, speed และ transient ของ gait จริงในแบบจำลอง เพื่อแยกผลของ hormone dynamics ออกจากผลของ CPG และ mapping
+คำสั่งรันซ้ำ (จากโฟลเดอร์ `lab_04`, ใช้ output directories ว่าง):
 
-คำสั่งรัน: python lab04.py --controller-source student --condition all --profile step --output-dir results/comparison; --condition C1 --profile zero / one / spike / fault --output-dir results/zero, results/one, results/spike, results/fault; --condition C1 --profile step --contract ../lab_03/results/week4_bridge/handoff_contract.json --output-dir results/lab03_contract  config: results/*/config.json (controller_sha256 10f95bd776df33723a46edef8ac8920ba7072259beee898b5fe85f69b8fb56b5, runner_sha256 f66d8f29996644c2fb9cc3830298c3bd339080120e9eb657767eb7071b94e3cd)
-
-Checklist: ☑ code ☑ comparison CSV 5 files ☑ extreme CSV 4 files ☑ config ☑ plots ☑ metrics □ report ☑ คำสั่งรันซ้ำ
+```powershell
+python check_submission.py --student-file student_hormone.py
+python lab04.py --controller-source student --condition all --profile step --contract ..\lab_03\results\week4_bridge\handoff_contract.json --output-dir results\comparison
+python lab04.py --controller-source student --condition C1 --profile zero --contract ..\lab_03\results\week4_bridge\handoff_contract.json --output-dir results\zero
+python lab04.py --controller-source student --condition C1 --profile one --contract ..\lab_03\results\week4_bridge\handoff_contract.json --output-dir results\one
+python lab04.py --controller-source student --condition C1 --profile spike --contract ..\lab_03\results\week4_bridge\handoff_contract.json --output-dir results\spike
+python lab04.py --controller-source student --condition C1 --profile fault --contract ..\lab_03\results\week4_bridge\handoff_contract.json --output-dir results\fault
+```
